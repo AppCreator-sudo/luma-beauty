@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-14T02:06:44+07:00",
+  "updated_at": "2026-10-14T02:34:23+07:00",
   "timezone": "Asia/Novosibirsk",
   "next_task_id": "OPS-04",
   "tasks": [
@@ -1513,19 +1513,24 @@
       "id": "OPS-04",
       "title": "Codex Cloud: доступ к серверу и передача данных",
       "phase": "operations",
-      "status": "awaiting_input",
+      "status": "awaiting_approval",
       "dependencies": [
         "OPS-01"
       ],
       "sources": [
         "docs/CODEX_CLOUD.md",
         "docs/CURRENT_STATE.md",
-        "docs/TRANSFER_20261014.md"
+        "docs/TRANSFER_20261014.md",
+        "docs/CLOUD_SERVER_ACCESS.md",
+        "scripts/cloud-private.mjs",
+        "scripts/cloud-server.mjs",
+        "deploy/luma-cloud-admin.py",
+        "deploy/cloud-transfer/manifest.json"
       ],
       "skills": [],
-      "approved_at": "2026-10-14",
+      "approved_at": "2026-10-14T02:15:28+07:00",
       "started_at": "2026-10-14T02:06:44+07:00",
-      "local_done_at": null,
+      "local_done_at": "2026-10-14T02:34:23+07:00",
       "verified_at": null,
       "published_at": null,
       "due_at": null,

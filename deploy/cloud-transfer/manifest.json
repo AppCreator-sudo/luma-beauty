@@ -1,0 +1,13 @@
+{
+  "capturedAt": "2026-10-13T19:26:56.347635+00:00",
+  "sourceRelease": "20261011-v2-client-cabinet-reference-r2",
+  "files": 14,
+  "databaseBytes": 540672,
+  "bundleBytes": 464496,
+  "bundleSha256": "7cb05186c112f4e320c16c1dd5de54e08e8fed5929d7c31751375e74b6c9b9bf",
+  "snapshotIntegrity": "ok",
+  "snapshotForeignKeys": "ok",
+  "fullSnapshot": true,
+  "serverAccountInstalled": false,
+  "secretValueLocation": "Local protected file; not repository"
+}
