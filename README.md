@@ -2,6 +2,8 @@
 
 Бьюти-площадка: равноправные самостоятельные мастера и салоны, работы, карта, гостевая/авторизованная запись и кабинеты клиента/мастера/владельца салона. Ранее называлась Atelie/«Ателье». Разработка только **v2**; утверждённый UI переносится точно, функции и роли сохраняются.
 
+Исходники: закрытый [AppCreator-sudo/luma-beauty](https://github.com/AppCreator-sudo/luma-beauty), ветка main. Настройка облачной среды — [CODEX_CLOUD](docs/CODEX_CLOUD.md); подтверждение GitHub не означает публикацию среды.
+
 ## Начало работы агента
 
 Прочитать [AGENTS](AGENTS.md), [инструкцию чата](docs/NEW_CHAT_GUIDE.md), [checkpoint](docs/WORK_CHECKPOINT.md), [текущее состояние](docs/CURRENT_STATE.md). Затем открыть одну карточку из [списка задач](docs/tasks/README.md), её навыки и [точные эталоны UI](docs/V2_UI_REFERENCE_IMPLEMENTATION.md). PNG/старые RELEASE не перезаписывать.

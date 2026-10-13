@@ -4,11 +4,11 @@
 
 ## Текущая задача переноса
 
-**DOC-02 проверена. Следующее действие — OPS-01, статус awaiting_input:** локальная Git-подготовка завершена, нужен вход в GitHub или пустой закрытый репозиторий AppCreator-sudo/luma-beauty. После фактической загрузки проверить private/head; [отчёт подготовки](TRANSFER_20261014.md). Не продолжать UI в этой локальной сессии.
+**DOC-02/OPS-01 завершены, OPS-02 проверена в объёме инструкции.** Исходники загружены в закрытый [AppCreator-sudo/luma-beauty](https://github.com/AppCreator-sudo/luma-beauty), main; исходное дерево Git сверено целиком. [Отчёт передачи](TRANSFER_20261014.md). **Следующее действие — [OPS-03](tasks/OPS-03.md): создать и опубликовать cloud-среду в аккаунте пользователя.** Готовый запрос — в CODEX_CLOUD. Не продолжать UI в этой локальной сессии.
 
-[DOC-02 актуализация инструкций](tasks/DOC-02.md) → [OPS-01 закрытый AppCreator-sudo/luma-beauty](tasks/OPS-01.md) → [OPS-02 настройка/передача в Codex Cloud](tasks/OPS-02.md). Стадии и факты находятся в карточках/реестре; локальный commit не считать GitHub-загрузкой, готовую cloud-инструкцию не считать опубликованной средой.
+[DOC-02 актуализация инструкций](tasks/DOC-02.md) → [OPS-01 закрытый AppCreator-sudo/luma-beauty](tasks/OPS-01.md) → [OPS-02 подготовка инструкции Codex Cloud](tasks/OPS-02.md) → [OPS-03 реальная настройка/publish](tasks/OPS-03.md). Стадии и факты находятся в карточках/реестре; локальный commit не считать GitHub-загрузкой, готовую cloud-инструкцию не считать опубликованной средой.
 
-Читать [README](../README.md), [CODEX_CLOUD](CODEX_CLOUD.md), [инструкцию нового чата](NEW_CHAT_GUIDE.md), [список задач](tasks/README.md). До факта private remote/head не объявлять перенос завершённым. Не запрашивать пароль/токен в чат; авторизация только в GitHub/его обычном окне.
+Читать [README](../README.md), [CODEX_CLOUD](CODEX_CLOUD.md), [инструкцию нового чата](NEW_CHAT_GUIDE.md), [список задач](tasks/README.md). GitHub remote/head/private проверены; cloud Environment published пока не подтверждён. Не запрашивать пароль/токен в чат; авторизация только в GitHub/его обычном окне.
 
 ## После переноса — первая задача разработки
 

@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-14T01:16:23+07:00",
+  "updated_at": "2026-10-14T01:54:00+07:00",
   "timezone": "Asia/Novosibirsk",
-  "next_task_id": "OPS-01",
+  "next_task_id": "OPS-03",
   "tasks": [
     {
       "id": "U-00",
@@ -1313,7 +1313,7 @@
       "id": "OPS-01",
       "title": "Закрытый GitHub: безопасный исходный репозиторий",
       "phase": "operations",
-      "status": "awaiting_input",
+      "status": "published",
       "dependencies": [
         "DOC-02"
       ],
@@ -1326,12 +1326,12 @@
       ],
       "skills": [],
       "approved_at": "2026-10-14",
-      "started_at": null,
+      "started_at": "2026-10-14T01:38:34+07:00",
       "local_done_at": "2026-10-14T01:16:23+07:00",
-      "verified_at": null,
-      "published_at": null,
+      "verified_at": "2026-10-14T01:54:00+07:00",
+      "published_at": "2026-10-14T01:54:00+07:00",
       "due_at": null,
-      "owner_chat": "current pwa chat",
+      "owner_chat": "01a102e0-744b-7a33-931d-ab120601f36a",
       "card": "OPS-01.md",
       "order": 49
     },
@@ -1339,7 +1339,7 @@
       "id": "OPS-02",
       "title": "Codex Cloud: воспроизводимая подготовка и передача",
       "phase": "operations",
-      "status": "blocked",
+      "status": "verified",
       "dependencies": [
         "OPS-01"
       ],
@@ -1351,12 +1351,12 @@
       ],
       "skills": [],
       "approved_at": "2026-10-14",
-      "started_at": null,
-      "local_done_at": null,
-      "verified_at": null,
+      "started_at": "2026-10-14T01:54:00+07:00",
+      "local_done_at": "2026-10-14T01:54:00+07:00",
+      "verified_at": "2026-10-14T01:54:00+07:00",
       "published_at": null,
       "due_at": null,
-      "owner_chat": "current pwa chat",
+      "owner_chat": "01a102e0-744b-7a33-931d-ab120601f36a",
       "card": "OPS-02.md",
       "order": 50
     },
@@ -1483,6 +1483,31 @@
       "owner_chat": null,
       "card": "CHECK-001.md",
       "order": 55
+    },
+    {
+      "id": "OPS-03",
+      "title": "Codex Cloud: создание и публикация среды",
+      "phase": "operations",
+      "status": "awaiting_input",
+      "dependencies": [
+        "OPS-02"
+      ],
+      "sources": [
+        "docs/CODEX_CLOUD.md",
+        "AGENTS.md",
+        "scripts/cloud-setup.sh",
+        "docs/WORK_CHECKPOINT.md"
+      ],
+      "skills": [],
+      "approved_at": "2026-10-14",
+      "started_at": null,
+      "local_done_at": null,
+      "verified_at": null,
+      "published_at": null,
+      "due_at": null,
+      "owner_chat": null,
+      "card": "OPS-03.md",
+      "order": 56
     }
   ]
 }
