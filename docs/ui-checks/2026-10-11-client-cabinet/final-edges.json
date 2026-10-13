@@ -1,0 +1,11 @@
+{
+  "date": "2026-10-11T15:25:55.854Z",
+  "results": [
+    "800/801 no overflow",
+    "reduced motion, short mobile menu and Back",
+    "real load error/retry",
+    "header notification action preserves dirty profile when exit declined",
+    "profile and mobile header 44 px targets"
+  ],
+  "pageErrors": []
+}

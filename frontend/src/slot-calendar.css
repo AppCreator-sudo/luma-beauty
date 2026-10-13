@@ -1,0 +1,59 @@
+.slot-calendar {
+  display: grid;
+  grid-template-columns: minmax(326px, 360px) minmax(0, 320px);
+  align-items: start;
+  gap: 28px;
+}
+.slot-calendar .calendar-month { min-width: 0; }
+.slot-calendar .calendar-top { align-items: center; gap: 8px; margin-bottom: 8px; }
+.slot-calendar .eyebrow { font-size: 9px; }
+.slot-calendar .calendar-top h3 { font-size: 28px; margin: 5px 0 0; }
+.slot-calendar .calendar-arrows { gap: 0; }
+.slot-calendar .calendar-arrows button {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border-radius: 6px;
+}
+.slot-calendar .calendar-arrows button:hover { background: #eee8dc; }
+.slot-calendar .calendar-grid { grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 3px; }
+.slot-calendar .calendar-weekday { font-size: 12px; padding-block: 10px; }
+.slot-calendar .calendar-day {
+  aspect-ratio: auto;
+  height: 48px;
+  padding: 0;
+  border-radius: 6px;
+  font-size: 20px;
+  color: var(--muted);
+}
+.slot-calendar .calendar-day.available { color: var(--ink); }
+.slot-calendar .calendar-day.active { border-radius: 6px; color: #fff; }
+.slot-calendar .calendar-day i { width: 4px; height: 4px; bottom: 5px; }
+.slot-calendar .calendar-legend {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin: 14px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+.slot-calendar .calendar-legend i { width: 4px; height: 4px; border-radius: 50%; background: #a38150; }
+.slot-calendar .calendar-times { min-width: 0; border-top: 0; margin-top: 0; padding-top: 0; }
+.slot-calendar .times-title { font-size: 16px; line-height: 1.5; margin: 9px 0 18px; }
+.slot-calendar .time-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+.slot-calendar .time-choice { min-height: 44px; padding: 8px 4px; font-size: 15px; border-radius: 6px; }
+.slot-calendar .calendar-empty { font-size: 14px; line-height: 1.6; margin-top: 0; }
+.slot-calendar button:focus-visible { outline: 2px solid var(--wine); outline-offset: 2px; }
+.slot-calendar.compact { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+@media (max-width: 1100px) and (min-width: 801px), (max-width: 650px) {
+  .slot-calendar { grid-template-columns: minmax(0, 360px); gap: 22px; }
+  .slot-calendar .calendar-times { border-top: 1px solid var(--line); padding-top: 18px; }
+}
+@media (max-width: 360px) {
+  .booking-page:has(.slot-calendar) { width: calc(100% - 12px); }
+  .booking-page .booking-progress button { flex: 1; padding-inline: 0; gap: 4px; }
+  .slot-calendar .calendar-grid { gap: 0; }
+  .slot-calendar .calendar-top h3 { font-size: 26px; }
+}

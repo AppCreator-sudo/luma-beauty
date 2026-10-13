@@ -1,0 +1,107 @@
+{
+  "archived_at": "2026-10-11T23:55:21+07:00",
+  "files": [
+    {
+      "original": "docs/AUDIT_2026-09-22.md",
+      "archive": "docs/archive/2026-10-11-docs-cleanup/AUDIT_2026-09-22.md",
+      "original_sha256": "841e7fa27c19097d3dd5720c4c29fd506ce40c828f8c7806c25fd612a73e3ed0",
+      "kind": "obsolete"
+    },
+    {
+      "original": "docs/IMPLEMENTATION_PLAN_2026-09-24.md",
+      "archive": "docs/archive/2026-10-11-docs-cleanup/IMPLEMENTATION_PLAN_2026-09-24.md",
+      "original_sha256": "83008ef55bca499cae7066ba0efbe2dfe00815cc70a12589cd6a0e6fcce60706",
+      "kind": "obsolete"
+    },
+    {
+      "original": "docs/ROADMAP.md",
+      "archive": "docs/archive/2026-10-11-docs-cleanup/ROADMAP.md",
+      "original_sha256": "042728665d24f3954b350c2dfa6f64738aa7af6d543691339ad252a51d9de145",
+      "kind": "obsolete"
+    },
+    {
+      "original": "docs/V2_BLUEPRINT.md",
+      "archive": "docs/archive/2026-10-11-docs-cleanup/V2_BLUEPRINT.md",
+      "original_sha256": "d2aa6b3e34a03c83fe4a27d78dffb39ec0204ff1c58eb2a61525cf95a1f053fc",
+      "kind": "obsolete"
+    },
+    {
+      "original": "docs/V2_PRIORITIES.md",
+      "archive": "docs/archive/2026-10-11-docs-cleanup/V2_PRIORITIES.md",
+      "original_sha256": "f0c658e174ffc9dd5fbbda558c1bf2814b2359484ac01dbc1a136c5b48771058",
+      "kind": "obsolete"
+    },
+    {
+      "original": "docs/V2_CATALOG_COMPACT_PROPOSAL.md",
+      "archive": "docs/archive/2026-10-11-docs-cleanup/V2_CATALOG_COMPACT_PROPOSAL.md",
+      "original_sha256": "9df08d5b69e0db826008a4b5bc9aafbd0a44079ad493cf86d9dce42341bb7687",
+      "kind": "obsolete"
+    },
+    {
+      "original": "docs/V2_HOME_REDESIGN_CONCEPT.md",
+      "archive": "docs/archive/2026-10-11-docs-cleanup/V2_HOME_REDESIGN_CONCEPT.md",
+      "original_sha256": "8a075e1f400d4029f19f769b87b7020312250b8a563ccb5e3e07c927806ab806",
+      "kind": "obsolete"
+    },
+    {
+      "original": "docs/U06_LOCAL_CHECKPOINT_20261011.md",
+      "archive": "docs/archive/2026-10-11-docs-cleanup/U06_LOCAL_CHECKPOINT_20261011.md",
+      "original_sha256": "70039bd8b8d72331f22636a8d3791d793a5434de7ec4a3b1dc1066f06232fcd8",
+      "kind": "obsolete"
+    },
+    {
+      "original": "docs/design/GRADIENT_NAV_BAR.md",
+      "archive": "docs/archive/2026-10-11-docs-cleanup/design/GRADIENT_NAV_BAR.md",
+      "original_sha256": "977a8aeabfd73e4bfe8df57e718cfb064a9c632b90ad4b02785a14fd9b97ce08",
+      "kind": "obsolete"
+    },
+    {
+      "original": "docs/V2_PRELAUNCH_BRAND.md",
+      "archive": "docs/archive/2026-10-11-docs-cleanup/V2_PRELAUNCH_BRAND.md",
+      "original_sha256": "d9156ad016242628fd937fa60eec72020d0cd26ab9e6c172f6243e596b4976c4",
+      "kind": "obsolete"
+    },
+    {
+      "original": "docs/PRODUCT_VISION.md",
+      "archive": "docs/archive/2026-10-11-docs-cleanup/PRODUCT_VISION.md",
+      "original_sha256": "4662121fe9cea710a947dca1de870fb0f01712fc97f86e48ea588d846fbb87c3",
+      "kind": "obsolete"
+    },
+    {
+      "original": "docs/NEW_CHAT_GUIDE.md",
+      "archive": "docs/archive/2026-10-11-docs-cleanup/NEW_CHAT_GUIDE.md",
+      "original_sha256": "156c282d712e76705cb61e635a0ae3105af089b761b9933eae8151fa1eab67d1",
+      "kind": "working_snapshot"
+    },
+    {
+      "original": "docs/WORK_CHECKPOINT.md",
+      "archive": "docs/archive/2026-10-11-docs-cleanup/WORK_CHECKPOINT.md",
+      "original_sha256": "33325a57020a0ea3e35180a8cfac6fdc12e6678c9cf54bf012b8fa4e523400d2",
+      "kind": "working_snapshot"
+    },
+    {
+      "original": "docs/CURRENT_STATE.md",
+      "archive": "docs/archive/2026-10-11-docs-cleanup/CURRENT_STATE.md",
+      "original_sha256": "c664f81509c09013416f8443282239fdab73011de937169a6800fa80cc4c9ba2",
+      "kind": "working_snapshot"
+    },
+    {
+      "original": "docs/PROJECT_ROADMAP.md",
+      "archive": "docs/archive/2026-10-11-docs-cleanup/PROJECT_ROADMAP.md",
+      "original_sha256": "4e981aca2379a98f365742b5530bf906fbe69b844ec9c26614562c93834a75f0",
+      "kind": "working_snapshot"
+    },
+    {
+      "original": "docs/V2_NEXT_IMPLEMENTATION.md",
+      "archive": "docs/archive/2026-10-11-docs-cleanup/V2_NEXT_IMPLEMENTATION.md",
+      "original_sha256": "827fe4613007c212e2c5bcb482c586a42fd9d8ae5ab2b2f94c182ca31a1245c9",
+      "kind": "working_snapshot"
+    },
+    {
+      "original": "docs/V2_UI_REFERENCE_IMPLEMENTATION.md",
+      "archive": "docs/archive/2026-10-11-docs-cleanup/V2_UI_REFERENCE_IMPLEMENTATION.md",
+      "original_sha256": "d1d18aaf93bf20992823a8efd6fab6f3b488609a118a890232839e89ec5cb25a",
+      "kind": "working_snapshot"
+    }
+  ]
+}

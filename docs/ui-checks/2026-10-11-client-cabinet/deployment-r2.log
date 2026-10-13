@@ -1,0 +1,26 @@
+Current release, frontend marker and unchanged runtime baselines verified
+Archive hash, runtime hashes, full whitelist, paths and links verified
+Source layout verified; dependencies and shared data stay in place
+Archive hash, runtime hashes, full whitelist, paths and links verified
+Existing hashed assets are compatible
+Previous files and permissions recorded in the private backup
+Closed consistent snapshot created; integrity and foreign keys verified
+Clone verified: allowed files changed, original release and all old assets preserved
+Client migration applied and repeated safely
+(node:593150) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+Client migration integrity, foreign keys and prior data verified
+Complete packaged server starts; private clone health and client 401 verified
+Current release, frontend marker and unchanged runtime baselines verified
+Closed consistent snapshot created; integrity and foreign keys verified
+Client migration applied and repeated safely
+(node:593197) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+Client migration integrity, foreign keys and prior data verified
+curl: (7) Failed to connect to 127.0.0.1 port 3100 after 0 ms: Couldn't connect to server
+Client migration integrity, foreign keys and prior data verified
+/opt/atelie/backups/20261011-v2-client-cabinet-reference-r2/pre-switch.sqlite: OK
+DEPLOYED 2026-10-11 16:15:02 UTC
+PUBLISHED /opt/atelie/releases/20261011-v2-client-cabinet-reference-r2
+BACKUP /opt/atelie/backups/20261011-v2-client-cabinet-reference-r2
+Previous code, dependency target and old assets retained; shared database snapshot verified

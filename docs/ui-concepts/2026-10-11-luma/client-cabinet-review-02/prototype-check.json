@@ -1,0 +1,318 @@
+{
+  "date": "2026-10-11T12:42:05.414Z",
+  "checks": [
+    {
+      "state": "move",
+      "width": 1440
+    },
+    {
+      "state": "pending",
+      "width": 1440
+    },
+    {
+      "state": "conflict",
+      "width": 1440
+    },
+    {
+      "state": "owner",
+      "width": 1440
+    },
+    {
+      "state": "owner-salon",
+      "width": 1440
+    },
+    {
+      "state": "accepted",
+      "width": 1440
+    },
+    {
+      "state": "declined",
+      "width": 1440
+    },
+    {
+      "state": "cancel",
+      "width": 1440
+    },
+    {
+      "state": "cancelled",
+      "width": 1440
+    },
+    {
+      "state": "review",
+      "width": 1440
+    },
+    {
+      "state": "review-saved",
+      "width": 1440
+    },
+    {
+      "state": "import",
+      "width": 1440
+    },
+    {
+      "state": "import-preview",
+      "width": 1440
+    },
+    {
+      "state": "profile",
+      "width": 1440
+    },
+    {
+      "state": "profile-saved",
+      "width": 1440
+    },
+    {
+      "state": "security",
+      "width": 1440
+    },
+    {
+      "state": "recovery",
+      "width": 1440
+    },
+    {
+      "state": "signout-others",
+      "width": 1440
+    },
+    {
+      "state": "data",
+      "width": 1440
+    },
+    {
+      "state": "help",
+      "width": 1440
+    },
+    {
+      "state": "notifications",
+      "width": 1440
+    },
+    {
+      "state": "push-denied",
+      "width": 1440
+    },
+    {
+      "state": "empty",
+      "width": 1440
+    },
+    {
+      "state": "menu",
+      "width": 1440
+    },
+    {
+      "state": "saved",
+      "width": 1440
+    },
+    {
+      "state": "masters",
+      "width": 1440
+    },
+    {
+      "state": "move",
+      "width": 390
+    },
+    {
+      "state": "pending",
+      "width": 390
+    },
+    {
+      "state": "conflict",
+      "width": 390
+    },
+    {
+      "state": "owner",
+      "width": 390
+    },
+    {
+      "state": "owner-salon",
+      "width": 390
+    },
+    {
+      "state": "accepted",
+      "width": 390
+    },
+    {
+      "state": "declined",
+      "width": 390
+    },
+    {
+      "state": "cancel",
+      "width": 390
+    },
+    {
+      "state": "cancelled",
+      "width": 390
+    },
+    {
+      "state": "review",
+      "width": 390
+    },
+    {
+      "state": "review-saved",
+      "width": 390
+    },
+    {
+      "state": "import",
+      "width": 390
+    },
+    {
+      "state": "import-preview",
+      "width": 390
+    },
+    {
+      "state": "profile",
+      "width": 390
+    },
+    {
+      "state": "profile-saved",
+      "width": 390
+    },
+    {
+      "state": "security",
+      "width": 390
+    },
+    {
+      "state": "recovery",
+      "width": 390
+    },
+    {
+      "state": "signout-others",
+      "width": 390
+    },
+    {
+      "state": "data",
+      "width": 390
+    },
+    {
+      "state": "help",
+      "width": 390
+    },
+    {
+      "state": "notifications",
+      "width": 390
+    },
+    {
+      "state": "push-denied",
+      "width": 390
+    },
+    {
+      "state": "empty",
+      "width": 390
+    },
+    {
+      "state": "menu",
+      "width": 390
+    },
+    {
+      "state": "saved",
+      "width": 390
+    },
+    {
+      "state": "masters",
+      "width": 390
+    },
+    {
+      "state": "move",
+      "width": 320
+    },
+    {
+      "state": "pending",
+      "width": 320
+    },
+    {
+      "state": "conflict",
+      "width": 320
+    },
+    {
+      "state": "owner",
+      "width": 320
+    },
+    {
+      "state": "owner-salon",
+      "width": 320
+    },
+    {
+      "state": "accepted",
+      "width": 320
+    },
+    {
+      "state": "declined",
+      "width": 320
+    },
+    {
+      "state": "cancel",
+      "width": 320
+    },
+    {
+      "state": "cancelled",
+      "width": 320
+    },
+    {
+      "state": "review",
+      "width": 320
+    },
+    {
+      "state": "review-saved",
+      "width": 320
+    },
+    {
+      "state": "import",
+      "width": 320
+    },
+    {
+      "state": "import-preview",
+      "width": 320
+    },
+    {
+      "state": "profile",
+      "width": 320
+    },
+    {
+      "state": "profile-saved",
+      "width": 320
+    },
+    {
+      "state": "security",
+      "width": 320
+    },
+    {
+      "state": "recovery",
+      "width": 320
+    },
+    {
+      "state": "signout-others",
+      "width": 320
+    },
+    {
+      "state": "data",
+      "width": 320
+    },
+    {
+      "state": "help",
+      "width": 320
+    },
+    {
+      "state": "notifications",
+      "width": 320
+    },
+    {
+      "state": "push-denied",
+      "width": 320
+    },
+    {
+      "state": "empty",
+      "width": 320
+    },
+    {
+      "state": "menu",
+      "width": 320
+    },
+    {
+      "state": "saved",
+      "width": 320
+    },
+    {
+      "state": "masters",
+      "width": 320
+    }
+  ],
+  "pageErrors": []
+}

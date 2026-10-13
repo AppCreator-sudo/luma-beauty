@@ -1,0 +1,22 @@
+.category-picker,.teaching-picker{border:1px solid #ded6ca;padding:18px 20px;margin:0 0 18px;min-width:0}
+.category-picker legend,.teaching-picker legend{padding:0 8px;font-weight:700;color:#203329}
+.category-picker p,.teaching-picker p{margin:0 0 12px;color:#716e68;font-size:13px}
+.category-options{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:8px}
+.category-options label,.teaching-picker label{display:flex;align-items:center;gap:9px;padding:10px 12px;border:1px solid #e4dbcf;background:#fffcf7;cursor:pointer;font-size:14px}
+.category-options input,.teaching-picker input{width:17px;height:17px;accent-color:#642139;flex:none}
+.teaching-picker label{margin-bottom:10px;max-width:270px}
+.teaching-picker p{margin-bottom:0}
+.master-training-badge,.profile-training-badge{display:inline-flex;align-items:center;width:max-content;padding:6px 11px;border:1px solid #cbb690;border-radius:999px;color:#684c26;background:#f7efdd;font-size:12px;font-weight:700;letter-spacing:.02em}
+.master-training-badge{margin:0 0 10px 18px}
+.profile-training-badge{margin:0 0 12px}
+.studio-start-checklist{display:grid;grid-template-columns:minmax(190px,1fr) minmax(250px,1.4fr);gap:26px;padding:25px 28px;background:#e9e2d5;margin-bottom:24px}
+.studio-start-checklist h2{font-size:32px;line-height:1;margin:9px 0}
+.studio-start-checklist p{font-size:12px;color:#63665e;margin:0}
+.studio-start-checklist ol{list-style:none;margin:0;padding:0;display:grid;gap:7px}
+.studio-start-checklist li{display:flex;align-items:center;gap:11px;background:#fffaf2;padding:10px 12px;font-size:12px}
+.studio-start-checklist li>span{display:grid;place-items:center;flex:none;width:25px;height:25px;border-radius:50%;background:#5b1e35;color:white}
+.studio-start-checklist li.done>span{background:#244633}
+.studio-start-checklist li strong{flex:1}
+.studio-start-checklist li small{color:#53705a}
+.studio-start-checklist li button{display:flex;align-items:center;gap:4px;color:#5b1e35;background:none;border:0;white-space:nowrap;font-size:11px}
+@media(max-width:700px){.studio-start-checklist{grid-template-columns:1fr;padding:20px;gap:16px}}

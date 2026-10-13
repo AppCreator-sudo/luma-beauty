@@ -1,0 +1,42 @@
+{
+  "created": "2026-10-11",
+  "timezone": "Asia/Novosibirsk",
+  "status": "approved-implemented-verified-published",
+  "approved_behavior": "both catalog and inspiration use Show more; no automatic loading",
+  "tool": "built-in imagegen",
+  "sources": [
+    "sources/implemented-u06-desktop.png",
+    "sources/implemented-u06-mobile.png"
+  ],
+  "files": [
+    {
+      "file": "catalog-desktop.png",
+      "sha256": "e07d8a5347ae84432a6213ebacb503da4a296bff6f65f54500b2716bd6f2a039",
+      "bytes": 1730967,
+      "origin": "imagegen-review-03"
+    },
+    {
+      "file": "inspiration-desktop.png",
+      "sha256": "6e425ddebe72acaa3340275798a4d22af3f891142421a4f1908d22dccac866e7",
+      "bytes": 1996030,
+      "origin": "imagegen-review-03"
+    },
+    {
+      "file": "mobile.png",
+      "sha256": "61dd57a49754ef3293831d408b8a476b29142026a163c742a1994bbb8a4920fb",
+      "bytes": 1747782,
+      "origin": "imagegen-review-03"
+    },
+    {
+      "file": "work-desktop.png",
+      "sha256": "a4d016a4cf7f606ab12f4455427d261af456ffa125d97c030082ddd9bcca3081",
+      "bytes": 1772611,
+      "origin": "unchanged-review-02"
+    }
+  ],
+  "approved": "2026-10-11",
+  "implemented": "2026-10-11",
+  "verified": "2026-10-11",
+  "published": "2026-10-11T14:32:02+07:00",
+  "release": "20261011-v2-catalog-works-reference"
+}

@@ -1,0 +1,14 @@
+.master-card-promoted{padding:10px;background:#f7eedc;outline:1px solid #c6a369;outline-offset:0}
+.master-card-promoted .master-cover{box-shadow:0 0 0 1px #c6a369}
+.promotion-disclosure{width:fit-content;max-width:100%;font-size:11px;color:#6f4b1b;margin:10px 0}
+.promotion-disclosure summary{cursor:pointer;display:list-item;padding:5px 9px;background:#ead7af;border-radius:4px;font-weight:700}
+.promotion-disclosure>div{padding:8px 0;max-width:270px;overflow-wrap:anywhere;color:var(--ink)}
+.promotion-disclosure small,.promotion-disclosure>div>span{display:block;line-height:1.7}
+.map-entry-promoted{padding:0 10px;margin:6px 0;background:#f7eedc;border:1px solid #c6a369}
+.map-entry-promoted .map-result{border-top:0}
+.map-entry .promotion-disclosure{margin-top:0}
+.atelier-marker-promoted span{background:#bf954b;border-color:#fff6df;color:#1b3028;box-shadow:0 0 0 3px #d9b97888,0 2px 8px #0004;font-style:normal;font-size:20px}
+.map-promotion-legend{position:absolute;left:14px;top:14px;z-index:400;background:#fffefa;border:1px solid #c6a369;padding:8px 10px;font-size:11px;color:#72501e;max-width:calc(100% - 80px);box-shadow:0 2px 10px #0002}
+.map-popup .promotion-disclosure{margin-top:8px;font-size:11px}
+.map-popup .promotion-disclosure>div{max-width:200px}
+@media(max-width:560px){.master-card-promoted{padding:6px}.promotion-disclosure{font-size:10px}.master-card-promoted .master-caption{align-items:start}.master-card-promoted .master-caption h3{overflow-wrap:anywhere}.map-promotion-legend{font-size:10px}}

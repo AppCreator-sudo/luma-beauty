@@ -1,0 +1,51 @@
+{
+  "created": "2026-10-11",
+  "timezone": "Asia/Novosibirsk",
+  "status": "approved-implemented-verified-published",
+  "source_reference": "docs/ui-concepts/2026-10-10-luma/cabinet.png",
+  "tool": "built-in imagegen",
+  "files": [
+    {
+      "file": "desktop.png",
+      "sha256": "dc9601c160aee732fb025a1c256e6125ca79bfa7d712454f27347130afb67926",
+      "bytes": 1704735
+    },
+    {
+      "file": "sections.png",
+      "sha256": "284ab6e64a6080fdeb55e67e096d74e774fb711d53e4b235a966e8324ce456c0",
+      "bytes": 1725226
+    },
+    {
+      "file": "details-saved-settings.png",
+      "sha256": "98850825d2078d1f97c4601a14bef98d18f57dc4819be2d3ddc4f4852865b144",
+      "bytes": 1639141
+    },
+    {
+      "file": "mobile.png",
+      "sha256": "7bfd59fd14e33a357990a29f7e87a9f36dfdfa2592445367274dfb0c55cb18ed",
+      "bytes": 1876489
+    }
+  ],
+  "approved": "2026-10-11",
+  "approval": {
+    "desktop_mobile": true,
+    "sections": 7,
+    "optional_private_profile": true,
+    "notification_center": true,
+    "rescheduling": "request-confirmed-by-master-or-salon-owner; original-appointment-remains-until-accepted",
+    "implementation_order": [
+      "U-07",
+      "U-08",
+      "U-08C",
+      "U-09"
+    ],
+    "copy_clarifications": [
+      "Push на этом устройстве выключены",
+      "Контакт передаётся при отправке заявки"
+    ]
+  },
+  "local_verified": "11.10.2026 22:57:52",
+  "release_report": "../../../RELEASE_20261011_CLIENT_CABINET_REFERENCE.md",
+  "published": "2026-10-11T23:15:02+07:00",
+  "release": "20261011-v2-client-cabinet-reference-r2"
+}

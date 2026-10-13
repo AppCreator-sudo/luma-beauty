@@ -1,0 +1,53 @@
+.masters-grid:has(.identity-card){grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.identity-card{--identity-avatar-size:120px;--identity-avatar-left:20px;display:flex;flex-direction:column;background:#fcfaf5;border:1px solid #d6c8b4;min-width:0;overflow:hidden;border-radius:3px}
+.identity-card .master-cover{display:block;width:100%;aspect-ratio:1.45;overflow:hidden;background:#ede5d8;position:relative;isolation:isolate}
+.identity-personal-art{display:block;position:relative;width:100%;height:100%}
+.identity-personal .personal-cover-art,.identity-staff .personal-cover-art,.personal-public-page .personal-cover-art{--cover-light:#f3e8d6;--cover-dark:#ddc9ab;--cover-line:#b2936570;display:block;position:absolute;inset:0;background:linear-gradient(125deg,var(--cover-light),var(--cover-dark));overflow:hidden;isolation:isolate}
+.identity-personal .personal-cover-theme-wine,.identity-staff .personal-cover-theme-wine,.personal-public-page .personal-cover-theme-wine{--cover-light:#883e51;--cover-dark:#4e1e2d;--cover-line:#ebcf9b60}
+.identity-personal .personal-cover-theme-green,.identity-staff .personal-cover-theme-green,.personal-public-page .personal-cover-theme-green{--cover-light:#41624e;--cover-dark:#18372c;--cover-line:#dbd3a760}
+.identity-personal .personal-cover-art,.identity-staff .personal-cover-art{bottom:68px}
+.identity-personal .personal-cover-orbit,.identity-staff .personal-cover-orbit,.personal-public-page .personal-cover-orbit{position:absolute;right:-6%;top:-32%;width:70%;aspect-ratio:1;border:1px solid var(--cover-line);border-radius:50%;box-shadow:0 0 0 26px var(--cover-line);opacity:.45;transform:rotate(-25deg)}
+.identity-personal .personal-cover-line,.identity-staff .personal-cover-line,.personal-public-page .personal-cover-line{position:absolute;inset:20px 24px;border:1px solid var(--cover-line);border-left:0;border-bottom:0}
+.identity-personal .personal-cover-photo,.identity-staff .personal-cover-photo,.personal-public-page .personal-cover-photo{display:block;width:100%;height:100%;object-fit:cover;object-position:center;transform:none}
+.identity-personal-seam{display:block;position:absolute;inset:auto 0 0;height:68px;background:#fcfaf5;border-top:1px solid #c8b99a50}
+.identity-portrait-shell{display:grid;place-items:center;position:absolute;left:var(--identity-avatar-left);bottom:8px;width:var(--identity-avatar-size);height:var(--identity-avatar-size);border-radius:50%;border:4px solid #fcfaf5;box-shadow:0 0 0 1px #c8b8a4;overflow:hidden;background:#e8decf}
+.identity-card .identity-portrait-shell img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 25%;transform:none}
+.identity-portrait-initial{font:400 65px/1 'Cormorant Garamond',Georgia,serif;color:var(--wine)}
+.identity-card .image-arrow{width:44px;height:44px;right:12px;top:12px;bottom:auto;background:#fcfaf5;color:var(--wine);border:1px solid var(--line);z-index:2}
+.identity-salon .salon-card-art{position:relative}
+.identity-salon .salon-card-image{position:relative}
+.identity-salon .salon-card-image>img{object-fit:cover;transform:none}
+.identity-salon .salon-card-fallback{background:linear-gradient(135deg,#254236,#112c24);color:#d9c394;padding:22px;position:relative}
+.identity-salon .salon-card-fallback:before,.identity-salon .salon-card-fallback:after{content:'';position:absolute;inset:16px 20%;border:1px solid #d9c39460;border-radius:45% 45% 0 0;pointer-events:none}
+.identity-salon .salon-card-fallback:after{inset:28px 27%;border-color:#d9c39430}
+.identity-salon .salon-card-fallback>svg,.identity-salon .salon-card-fallback>span{position:relative;z-index:1}
+.identity-salon .salon-card-brand{height:68px;min-height:68px;padding:0;gap:0;background:#fcfaf5}
+.identity-salon .salon-card-brand .salon-mark{position:absolute;left:50%;bottom:8px;transform:translateX(-50%);width:var(--identity-avatar-size);height:var(--identity-avatar-size);padding:10px;border:4px solid #fcfaf5;border-radius:50%;box-shadow:0 0 0 1px #c8b8a4;background:#1c352b;color:#d9c394;font-size:65px}
+.identity-salon .salon-card-brand .salon-mark img{object-fit:contain;object-position:center;transform:none}
+.identity-salon .salon-card-brand>span:last-child{display:none}
+.identity-card-copy{display:flex;flex-direction:column;padding:18px 20px 20px;flex:1;min-width:0}
+.identity-card .master-caption{padding:0;margin:0;display:block;min-height:114px}
+.identity-card .master-caption>div{min-width:0}
+.identity-kind{display:inline-flex;align-items:center;min-height:25px;padding:4px 9px;color:var(--wine);background:#f1e4df;font-size:10px;border:1px solid #e5cfc5;border-radius:20px;line-height:1.2}
+.identity-salon .identity-kind{background:#eaf0e8;color:#254236;border-color:#c7d4c5}
+.identity-staff .identity-kind{background:#eaf0e8;color:#254236;border-color:#c7d4c5}
+.identity-salon-name{margin:0 0 7px;font-size:11px;color:#465248;overflow-wrap:anywhere}
+.identity-card .master-caption h3{font:400 34px/1.05 'Cormorant Garamond',Georgia,serif;margin:10px 0 7px;overflow-wrap:anywhere}
+.identity-city{display:flex;align-items:center;gap:5px;margin:0;color:var(--muted);font-size:11px;overflow-wrap:anywhere}
+.identity-city>svg{flex:none}
+.identity-social{display:flex;align-items:center;gap:6px;min-height:32px;font-size:11px;flex-wrap:wrap;margin:0 0 8px}
+.identity-social>svg{color:#a98a58;flex:none}
+.identity-social .master-training-badge{font-size:9px;padding:4px 8px;margin:0 0 0 auto}
+.identity-directions{font-size:12px;line-height:1.5;margin:0;min-height:36px;overflow-wrap:anywhere;color:#465248}
+.identity-card .master-price{font-size:14px;margin:9px 0 14px;line-height:1.4;color:var(--ink)}
+.identity-card-footer{margin-top:auto;border-top:1px solid var(--line);padding-top:10px}
+.identity-card .master-available,.identity-time{display:flex;align-items:center;gap:8px;margin:0 0 10px;min-height:44px;font-size:11px;line-height:1.5;color:var(--ink);background:none;padding:0;overflow-wrap:anywhere}
+.identity-card .master-available>svg,.identity-time>svg{flex:none}
+.identity-card .master-available>svg:last-child{margin-left:auto}
+.identity-card-footer .button{min-height:48px;padding:12px 16px;font-size:12px;justify-content:center;gap:10px}
+.identity-card :is(a,button):focus-visible{outline:2px solid var(--wine);outline-offset:3px}
+.work-byline .work-salon-name{display:block;font-size:9px;color:#787568;margin-top:2px}
+@media(max-width:1000px){.masters-grid:has(.identity-card){grid-template-columns:repeat(2,minmax(0,1fr))}.identity-card .master-caption h3{font-size:31px}}
+@media(max-width:560px){.masters-grid:has(.identity-card){grid-template-columns:minmax(0,1fr);gap:18px}.identity-card{--identity-avatar-size:112px;--identity-avatar-left:18px}.identity-card .master-cover{aspect-ratio:1.4}.identity-card-copy{padding:16px 18px 18px}.identity-card .master-caption{min-height:0;margin-bottom:10px}.identity-card .master-caption h3{font-size:32px}.identity-directions{min-height:0}}
+@media(prefers-reduced-motion:reduce){.identity-card,.identity-card *{transition:none!important;animation:none!important}}
+.identity-match{margin:0 0 7px;font-size:11px}.identity-match a{display:inline-flex;align-items:center;min-height:44px;text-decoration:underline}

@@ -1,0 +1,65 @@
+# Source allowlist: unrelated downloads, old root patch scripts and local data
+# stay on this computer and never enter the initial repository.
+/*
+!/.gitignore
+!/.gitattributes
+!/.nvmrc
+!/.env.example
+!/AGENTS.md
+!/README.md
+!/package.json
+!/package-lock.json
+!/server.mjs
+!/.github/
+!/.agents/
+/.agents/*
+!/.agents/skills/
+!/frontend/
+!/lib/
+!/public/
+!/scripts/
+!/tests/
+!/deploy/
+!/docs/
+!/components/
+!/media/
+/media/*
+!/media/mock-seed/
+
+# Dependencies and reproducible output
+**/node_modules/
+/public/v2/
+/public/vendor/
+*.tsbuildinfo
+**/__pycache__/
+*.pyc
+
+# Local state, credentials and application databases
+.env
+.env.*
+!.env.example
+*.sqlite
+*.sqlite-*
+*.db
+*.db-*
+vapid.json
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa*
+id_ed25519*
+**/SSH_ACCESS_PRIVATE.md
+**/*_PRIVATE.*
+**/private-client/
+**/uploads/
+/.cache/
+/.local-data/
+/data/
+*.tar.gz
+*.zip
+
+# New browser runs produce disposable evidence; approved historic QA is kept.
+/test-results/
+/playwright-report/
+/media/qa/

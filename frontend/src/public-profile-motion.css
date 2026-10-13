@@ -1,0 +1,136 @@
+/* Public identities enter after their loaded page is mounted.
+   Backwards fill keeps delayed actions visible and releases transforms at rest. */
+@media (prefers-reduced-motion: no-preference) {
+  .personal-public-page .personal-cover > .personal-cover-art,
+  .salon-concept-page .salon-concept-hero > .salon-concept-visual {
+    animation: public-profile-visual-open .65s cubic-bezier(.2,.7,.25,1) backwards;
+  }
+
+  .personal-public-page .personal-cover > .personal-portrait,
+  .salon-concept-page .salon-public-identity > .salon-mark {
+    animation: public-profile-visual-open .6s cubic-bezier(.2,.7,.25,1) .07s backwards;
+  }
+
+  .personal-public-page .personal-profile-details > .personal-profile-heading,
+  .personal-public-page .personal-profile-details > .profile-location,
+  .personal-public-page .personal-profile-details > .profile-bio,
+  .personal-public-page .personal-profile-details > .profile-stats,
+  .salon-concept-page .salon-public-identity > div,
+  .salon-concept-page .salon-concept-intro > .salon-concept-bio,
+  .salon-concept-page .salon-concept-intro > .salon-concept-location,
+  .salon-concept-page .salon-concept-intro > .salon-concept-facts,
+  .salon-concept-page .salon-concept-intro > .salon-concept-time {
+    animation: public-profile-copy-open .6s cubic-bezier(.2,.7,.25,1) .12s backwards;
+  }
+
+  .personal-public-page .personal-profile-details > .profile-location,
+  .salon-concept-page .salon-concept-intro > .salon-concept-bio {
+    animation-delay: .18s;
+  }
+
+  .personal-public-page .personal-profile-details > .profile-bio,
+  .salon-concept-page .salon-concept-intro > .salon-concept-location {
+    animation-delay: .23s;
+  }
+
+  .personal-public-page .personal-profile-details > .profile-stats,
+  .salon-concept-page .salon-concept-intro > .salon-concept-facts {
+    animation-delay: .27s;
+  }
+
+  .salon-concept-page .salon-concept-intro > .salon-concept-time {
+    animation-delay: .31s;
+  }
+
+  .personal-public-page .profile-hero-copy > .personal-profile-cta,
+  .salon-concept-page .salon-concept-intro > .salon-concept-actions,
+  .salon-concept-page .salon-concept-intro > .salon-concept-closed {
+    animation: public-profile-actions-open .58s cubic-bezier(.2,.7,.25,1) .26s backwards;
+  }
+
+  .personal-public-page .profile-main > .stories-row,
+  .personal-public-page .profile-main > .profile-tabs {
+    animation: public-profile-actions-open .55s cubic-bezier(.2,.7,.25,1) .3s backwards;
+  }
+
+  .personal-public-page .profile-main > .profile-tabs {
+    animation-delay: .34s;
+  }
+
+  .salon-concept-page .salon-concept-body > .public-salon-team > .section-head,
+  .salon-concept-page .salon-concept-body > .salon-concept-services > .section-head,
+  .salon-concept-page > .salon-concept-works > .section-head,
+  .salon-concept-page .public-salon-staff > .compact-team-card {
+    animation: public-profile-copy-open .6s cubic-bezier(.2,.7,.25,1) .34s backwards;
+  }
+
+  .salon-concept-page .salon-concept-body > .salon-concept-services > .section-head,
+  .salon-concept-page > .salon-concept-works > .section-head,
+  .salon-concept-page .public-salon-staff > .compact-team-card {
+    animation-delay: .39s;
+  }
+
+  .salon-concept-page .public-salon-staff > .compact-team-card:nth-child(2) {
+    animation-delay: .44s;
+  }
+
+  .salon-concept-page .public-salon-staff > .compact-team-card:nth-child(3) {
+    animation-delay: .49s;
+  }
+
+  .salon-concept-page .public-salon-staff > .compact-team-card:nth-child(n + 4) {
+    animation-delay: .54s;
+  }
+
+  /* Each conditional panel mounts again when its tab is selected. */
+  .personal-public-page .profile-main > .profile-panel {
+    animation: public-profile-tab-open .42s cubic-bezier(.2,.7,.25,1) .04s backwards;
+  }
+
+  .personal-public-page .profile-tabs > button[aria-selected='true']::after {
+    transform-origin: left center;
+    animation: public-profile-tab-line .32s cubic-bezier(.2,.7,.25,1) backwards;
+  }
+}
+
+@keyframes public-profile-visual-open {
+  from { opacity: .65; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes public-profile-copy-open {
+  from { opacity: .6; transform: translateY(22px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes public-profile-actions-open {
+  from { opacity: .8; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes public-profile-tab-open {
+  from { opacity: .7; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes public-profile-tab-line {
+  from { opacity: .65; transform: scaleX(.35); }
+  to { opacity: 1; transform: scaleX(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .personal-public-page :is(
+    .personal-cover-art, .personal-portrait, .personal-profile-heading,
+    .profile-location, .profile-bio, .profile-stats, .personal-profile-cta,
+    .stories-row, .profile-tabs, .profile-panel
+  ),
+  .salon-concept-page :is(
+    .salon-concept-visual, .salon-public-identity > .salon-mark,
+    .salon-public-identity > div, .salon-concept-bio, .salon-concept-location,
+    .salon-concept-facts, .salon-concept-time, .salon-concept-actions,
+    .salon-concept-closed, .section-head, .compact-team-card
+  ),
+  .personal-public-page .profile-tabs > button[aria-selected='true']::after {
+    animation: none;
+  }
+}

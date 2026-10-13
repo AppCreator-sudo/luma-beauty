@@ -1,0 +1,69 @@
+.salon-page :is(.salon-works-panel,.salon-page-settings,.staff-appearance,.salon-portfolio){min-width:0}
+.salon-page .studio-welcome.salon-workspace-welcome{display:grid;grid-template-columns:minmax(0,1fr);gap:12px;align-items:stretch}
+.salon-page .salon-workspace-welcome>.studio-header-actions{justify-content:flex-end;min-width:0;flex-wrap:wrap}
+.salon-page .salon-staff-profile-editor>.staff-appearance{margin-bottom:18px}
+.salon-page .salon-works-selector{display:grid;gap:6px;max-width:480px;margin:0 0 16px;font-size:12px}
+.salon-page .salon-works-selector select{min-height:44px;min-width:0;width:100%;font-size:13px}
+.salon-page .salon-works-copy{margin:0 0 16px;font-size:12px;color:var(--muted);line-height:1.6}
+.salon-page .salon-portfolio .work-upload{grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:20px;padding:18px;margin-bottom:18px;border:1px solid var(--line);background:#f3efe6;align-items:start;min-width:0}
+.salon-page .salon-portfolio .work-upload-fields{border:0;padding:0;margin:0;display:grid;gap:12px;min-width:0}
+.salon-page .salon-portfolio .work-upload-fields label{margin:0;gap:6px;font-size:12px;min-width:0}
+.salon-page .salon-portfolio .upload-title strong{font-size:14px}
+.salon-page .salon-portfolio .upload-title small{font-size:12px;line-height:1.5}
+.salon-page .salon-portfolio .work-photo-picker{padding:14px;gap:8px;background:#fffcf7;min-width:0}
+.salon-page .salon-portfolio .work-photo-picker input{font-size:12px;min-height:44px;max-width:100%;width:100%}
+.salon-page .salon-portfolio .work-photo-picker input::file-selector-button{min-height:44px;margin-block:0;padding:8px 12px}
+.salon-page .salon-portfolio .work-upload-fields :is(input,select,textarea){min-width:0;min-height:44px;font-size:13px;max-width:100%}
+.salon-page .salon-portfolio .work-upload-fields textarea{min-height:82px;resize:vertical}
+.salon-page .salon-portfolio .work-upload-fields :is(.button,.text-link){min-height:44px}
+.salon-page .salon-portfolio .work-inline-service{padding:12px;gap:10px;min-width:0}
+.salon-page .salon-portfolio .work-upload-preview{padding:14px;gap:10px;align-self:start;min-width:0}
+.salon-page .salon-portfolio .work-preview-empty{min-height:180px;padding:20px;font-size:13px}
+.salon-page .salon-portfolio .work-preview-main{aspect-ratio:4/3;max-height:260px;object-fit:contain;background:#f0eae0}
+.salon-page .salon-portfolio .work-preview-thumbnails img{object-fit:contain;background:#f0eae0}
+.salon-page .salon-portfolio .work-upload-preview h3{font-size:23px;overflow-wrap:anywhere}
+.salon-page .salon-portfolio-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:18px 0 12px;min-width:0}
+.salon-page .salon-portfolio-heading h3{font:400 27px/1.2 'Cormorant Garamond',Georgia,serif;margin:0;overflow-wrap:anywhere}
+.salon-page .salon-portfolio-heading>span{font-size:12px;color:var(--muted);flex:none}
+.salon-page .salon-portfolio-empty{padding:12px 14px;margin:0;border:1px dashed var(--line);font-size:13px;line-height:1.6}
+.salon-page .salon-portfolio-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,200px),1fr));gap:14px}
+.salon-page .salon-portfolio-grid article{min-width:0;border:1px solid var(--line);background:#fffcf7}
+.salon-page .salon-portfolio-grid article>a{display:block;min-width:0}
+.salon-page .salon-portfolio-grid img{display:block;width:100%;aspect-ratio:1;object-fit:contain;background:#f0eae0}
+.salon-page .salon-portfolio-grid article>div{padding:8px 10px;display:flex;gap:8px;align-items:start;min-height:60px}
+.salon-page .salon-portfolio-grid article>div>div{flex:1;min-width:0}
+.salon-page .salon-portfolio-grid p{margin:0;font-size:12px;line-height:1.5;overflow-wrap:anywhere}
+.salon-page .salon-portfolio-grid small{display:block;margin-top:4px;font-size:11px;line-height:1.4;color:var(--muted);overflow-wrap:anywhere}
+.salon-page .salon-portfolio-grid button{width:44px;height:44px;flex:none;display:grid;place-items:center;border:1px solid var(--line);background:#f7f1ea;color:var(--wine)}
+.salon-page .salon-portfolio-grid button:hover{background:#efe0dd;border-color:#b48781}
+.salon-page .salon-portfolio .studio-action-notice{padding:10px 12px;background:#edf2ed;border-left:3px solid #365344;font-size:13px;line-height:1.5;margin:0 0 12px}
+.salon-page .salon-appearance-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px;margin:0 0 20px;align-items:start}
+.salon-page .salon-appearance-preview,.salon-page .salon-appearance-controls{min-width:0}
+.salon-page .salon-appearance-preview .cabinet-identity{margin:0}
+.salon-page .salon-appearance-preview>.eyebrow{display:block;margin-bottom:10px}
+.salon-page .salon-appearance-controls{padding:16px;border:1px solid var(--line);background:#f3efe6;display:grid;gap:16px}
+.salon-page .salon-appearance-controls .salon-image-field{margin:0}
+.salon-page .salon-appearance-controls .salon-image-controls{flex-wrap:wrap;gap:8px}
+.salon-page .salon-appearance-controls :is(.button,.text-link){min-height:44px;font-size:12px}
+.salon-page .salon-appearance-preview>p,.salon-page .salon-appearance-controls>p{margin:10px 0 0;font-size:12px;line-height:1.6;color:var(--muted)}
+.salon-page .salon-settings-heading{margin:0 0 14px;font:400 29px/1.2 'Cormorant Garamond',Georgia,serif}
+.salon-page .salon-page-form{max-width:100%;padding:18px;border:1px solid var(--line);background:#f3efe6;display:grid;gap:14px;min-width:0}
+.salon-page .salon-page-form label{margin:0;gap:6px;font-size:12px;min-width:0}
+.salon-page .salon-page-form :is(input:not([type=checkbox]),select,textarea){min-width:0;max-width:100%;min-height:44px;font-size:13px}
+.salon-page .salon-page-form .form-row{gap:12px}
+.salon-page .salon-page-form p{margin:0;line-height:1.6;overflow-wrap:anywhere}
+.salon-page .salon-page-form textarea{min-height:82px;resize:vertical}
+.salon-page .salon-page-form>.button{justify-self:start;min-height:44px;font-size:12px}
+.salon-page .salon-page-form .checkbox-line{min-height:44px;cursor:pointer}
+.salon-page .staff-appearance{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px;align-items:start}
+.salon-page .staff-appearance .salon-image-field{margin:0}
+.salon-page .staff-appearance-details{padding:16px;background:#f3efe6;border:1px solid var(--line);min-width:0}
+.salon-page .staff-appearance-details h3{margin:0 0 10px;font:400 28px/1.2 'Cormorant Garamond',Georgia,serif}
+.salon-page .staff-appearance-details p{margin:12px 0 0;font-size:12px;line-height:1.6;color:var(--muted)}
+.salon-page .staff-appearance-details :is(.button,.text-link){min-height:44px;font-size:12px}
+.salon-page .salon-cabinet-refresh-error{margin:0 0 14px;display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;min-width:0;padding:10px 12px;border:1px solid #c48b87;background:#fff6f3;font-size:12px;color:var(--wine);overflow-wrap:anywhere}
+.salon-page .salon-cabinet-refresh-error button{min-height:44px;padding:8px 12px;border:1px solid var(--line);background:#fffaf4;color:var(--wine);font-size:12px}
+.salon-page :is(.salon-portfolio,.salon-page-settings,.staff-appearance) :is(button,input,textarea,select,a):focus-visible{outline:2px solid var(--wine);outline-offset:3px}
+@media(max-width:760px){.salon-page .salon-portfolio .work-upload,.salon-page .salon-appearance-grid,.salon-page .staff-appearance{grid-template-columns:minmax(0,1fr);gap:16px}.salon-page .salon-portfolio .work-upload-preview{width:100%}.salon-page .salon-portfolio .work-preview-empty{min-height:140px}.salon-page .salon-portfolio-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}}
+@media(max-width:560px){.salon-page .salon-portfolio .work-upload{padding:12px}.salon-page .salon-portfolio .work-photo-picker{padding:12px}.salon-page .salon-portfolio .work-photo-picker input{padding:8px;font-size:11px}.salon-page .salon-portfolio .work-photo-picker input::file-selector-button{margin-right:6px;padding-inline:8px}.salon-page .salon-portfolio-grid article>div{padding:6px;gap:5px}.salon-page .salon-portfolio-grid p{font-size:11px}.salon-page .salon-page-form{padding:14px}.salon-page .salon-page-form .form-row{grid-template-columns:minmax(0,1fr)}.salon-page .salon-appearance-controls,.salon-page .staff-appearance-details{padding:14px}.salon-page .salon-portfolio-heading{align-items:start}}
+@media(max-width:560px){.salon-page .salon-page-settings>.section-head{flex-wrap:wrap;gap:12px}.salon-page .salon-page-settings>.section-head>div{flex-basis:100%}}

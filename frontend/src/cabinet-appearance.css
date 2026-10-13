@@ -1,0 +1,42 @@
+.cabinet-identity{--appearance-bg:#e5d8c4;--appearance-ink:#713147;border:1px solid #ded3c6;border-radius:10px;overflow:hidden;background:#fcfaf6;min-width:0;text-align:left}
+.appearance-theme-cream{--appearance-bg:#e5d8c4;--appearance-ink:#713147}
+.appearance-theme-wine{--appearance-bg:#713147;--appearance-ink:#f1e5d7}
+.appearance-theme-green{--appearance-bg:#263f34;--appearance-ink:#f1e5d7}
+.cabinet-identity-cover{height:120px;position:relative;background:var(--appearance-bg);color:var(--appearance-ink);overflow:hidden}
+.cabinet-identity-cover>img{width:100%;height:100%;object-fit:cover;object-position:center}
+.cabinet-cover-pattern{position:absolute;inset:0;background:radial-gradient(ellipse at 85% 15%,#ffffff18,transparent 55%),repeating-linear-gradient(115deg,transparent 0 48px,#ffffff10 49px 50px,transparent 51px 96px)}
+.cabinet-identity-salon .cabinet-cover-pattern{background:linear-gradient(90deg,#ffffff14 1px,transparent 1px),linear-gradient(#ffffff14 1px,transparent 1px);background-size:58px 58px}
+.cabinet-identity .cabinet-edit-appearance{position:absolute;top:14px;right:14px;min-height:44px;background:#fcfaf6;color:#26352e;border-color:#ded3c6;padding:10px 14px;font-size:12px;box-shadow:0 2px 12px #00000008}
+.cabinet-identity-content{position:relative;display:flex;gap:20px;padding:0 22px 18px;align-items:center;min-width:0}
+.cabinet-identity-avatar{position:relative;flex:none;width:112px;height:112px;margin-top:-42px;border:5px solid #fcfaf6;border-radius:50%;overflow:hidden;background:#e5d8c4;color:#713147;display:grid;place-items:center;box-shadow:0 1px 0 #ded3c6}
+.cabinet-identity-avatar img{width:100%;height:100%;border-radius:50%;object-fit:cover;object-position:center 30%}
+.cabinet-identity-avatar>span{font:italic 72px/1 'Cormorant Garamond',Georgia,serif}
+.cabinet-identity-salon .cabinet-identity-avatar img{object-fit:contain;padding:9px;background:#fcfaf6}
+.cabinet-identity-copy{min-width:0;padding-top:14px;overflow-wrap:anywhere}
+.cabinet-identity .cabinet-identity-copy h1,.cabinet-identity .cabinet-identity-copy h3{margin:4px 0;font:400 34px/1.05 'Cormorant Garamond',Georgia,serif}
+.cabinet-identity .cabinet-identity-copy p{margin:6px 0 0;font-size:12px;line-height:1.5;color:#83756a}
+.cabinet-staff-portrait{width:200px;flex:none;position:relative;margin-top:-45px}
+.cabinet-staff-portrait .salon-staff-visual{margin:0;padding-top:0;background:transparent}
+.cabinet-staff-portrait .salon-staff-brand{display:none}
+.appearance-intro{font-size:13px;line-height:1.6;color:#83756a;max-width:760px;margin:0 0 18px}
+.appearance-editor-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;align-items:start}
+.appearance-editor-grid>*{min-width:0}
+.appearance-controls{display:grid;gap:16px}
+.appearance-controls>.salon-image-field{padding:14px 16px;border:1px solid #ded3c6;border-radius:6px;background:#faf7f0}
+.appearance-theme-form fieldset{border:0;padding:0;margin:0 0 14px;min-width:0}
+.appearance-theme-form legend{font-size:13px;font-weight:600;margin-bottom:8px}
+.appearance-theme-options{display:flex;flex-wrap:wrap;gap:8px}
+.appearance-theme-choice{display:flex;align-items:center;gap:7px;min-height:44px;padding:8px 10px;border:1px solid #ded3c6;border-radius:5px;font-size:12px;cursor:pointer;background:#fcfaf6}
+.appearance-theme-choice:has(input:checked){border-color:#713147;box-shadow:inset 0 0 0 1px #713147}
+.appearance-theme-choice input{accent-color:#713147;margin:0}
+.appearance-theme-swatch{display:block;width:18px;height:18px;border-radius:50%;background:var(--appearance-bg);border:1px solid #00000014}
+.appearance-live-preview>.eyebrow{display:block;margin-bottom:10px}
+.appearance-live-preview>.muted{font-size:12px;line-height:1.6}
+.appearance-panel .button,.appearance-panel .salon-image-controls .text-link{min-height:44px}
+.studio-workspace .studio-welcome:has(>.cabinet-identity){display:grid;grid-template-columns:minmax(0,1fr);gap:12px}
+.studio-workspace .studio-welcome>.studio-header-actions{justify-content:flex-end}
+.studio-refresh-error:not(:empty){display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;padding:12px 16px;margin-bottom:14px;background:#f4e9e1;font-size:13px}
+.studio-refresh-error .text-link{min-height:44px}
+.cabinet-identity :focus-visible,.appearance-panel :focus-visible{outline:2px solid #713147;outline-offset:3px}
+@media(max-width:760px){.appearance-editor-grid{grid-template-columns:minmax(0,1fr);gap:18px}.appearance-live-preview{grid-row:1}.cabinet-identity-cover{height:110px}.cabinet-identity-content{gap:14px;padding:0 16px 16px}.cabinet-identity-avatar{width:96px;height:96px;margin-top:-34px}.cabinet-identity .cabinet-identity-copy h1,.cabinet-identity .cabinet-identity-copy h3{font-size:28px}.cabinet-identity-copy .eyebrow{font-size:8px;letter-spacing:1.5px}.cabinet-staff-portrait{width:170px}}
+@media(max-width:400px){.cabinet-identity-content{gap:10px;padding-inline:12px}.cabinet-identity-avatar{width:82px;height:82px}.cabinet-identity .cabinet-edit-appearance{top:10px;right:10px;padding-inline:10px}.cabinet-identity .cabinet-identity-copy h1,.cabinet-identity .cabinet-identity-copy h3{font-size:25px}.cabinet-staff-portrait{width:172px}.cabinet-identity-staff .cabinet-identity-content{flex-wrap:wrap}.cabinet-identity-staff .cabinet-identity-copy{padding-top:0}.appearance-controls>.salon-image-field{padding:12px}.appearance-theme-choice{padding:8px}}

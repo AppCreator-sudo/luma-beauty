@@ -1,0 +1,18 @@
+{
+  "origin": "https://atelie-13-143-66-1.sslip.io",
+  "checked_at": "2026-10-11T11:21:14.054Z",
+  "checks": [
+    "master time/contact/native Back 1440",
+    "master time/contact/native Back 390",
+    "master shared menu and Back 390",
+    "master time/contact/native Back 320",
+    "salon time/contact/native Back 1440",
+    "salon time/contact/native Back 390",
+    "salon shared menu and Back 390",
+    "salon time/contact/native Back 320",
+    "invalid guest link in new UI",
+    "new entry/SW, no page errors or production mutations"
+  ],
+  "pageErrors": [],
+  "mutationAttempts": []
+}

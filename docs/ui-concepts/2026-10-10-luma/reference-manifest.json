@@ -1,0 +1,32 @@
+{
+  "approvedOn": "2026-10-10",
+  "status": "user-approved-ui-reference",
+  "implementationStatus": "not-yet-implemented",
+  "files": [
+    {
+      "file": "cabinet.png",
+      "sha256": "fa419778b6322558412dad48c328dcc0bb0241c8e17e3f3c64ccab06ad1a2c88",
+      "bytes": 1504043
+    },
+    {
+      "file": "salon.png",
+      "sha256": "9fc523135d24443b3d5624238cb8503e8ba06498a9bb10bab6ec180b19d59623",
+      "bytes": 1797719
+    },
+    {
+      "file": "master.png",
+      "sha256": "207e83a94b72b03ec6b9b20e3922d512fd8481096f72e4bdb1240e407a3bdf86",
+      "bytes": 2055939
+    },
+    {
+      "file": "calendar.png",
+      "sha256": "f25becd12930e6aaa17e5fe00b89e88c2aa96417f4a60120f003d6516e9fca93",
+      "bytes": 1541371
+    },
+    {
+      "file": "map.png",
+      "sha256": "0e07b82ae434f53e72c53a99e3550a2266baa47005c887d66ea3028882e6b427",
+      "bytes": 2127358
+    }
+  ]
+}

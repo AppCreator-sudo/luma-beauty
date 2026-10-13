@@ -1,0 +1,89 @@
+{
+  "checks": [
+    {
+      "tab": "overview",
+      "width": 1440
+    },
+    {
+      "tab": "visits",
+      "width": 1440
+    },
+    {
+      "tab": "saved",
+      "width": 1440
+    },
+    {
+      "tab": "masters",
+      "width": 1440
+    },
+    {
+      "tab": "reviews",
+      "width": 1440
+    },
+    {
+      "tab": "notifications",
+      "width": 1440
+    },
+    {
+      "tab": "settings",
+      "width": 1440
+    },
+    {
+      "tab": "overview",
+      "width": 390
+    },
+    {
+      "tab": "visits",
+      "width": 390
+    },
+    {
+      "tab": "saved",
+      "width": 390
+    },
+    {
+      "tab": "masters",
+      "width": 390
+    },
+    {
+      "tab": "reviews",
+      "width": 390
+    },
+    {
+      "tab": "notifications",
+      "width": 390
+    },
+    {
+      "tab": "settings",
+      "width": 390
+    },
+    {
+      "tab": "overview",
+      "width": 320
+    },
+    {
+      "tab": "visits",
+      "width": 320
+    },
+    {
+      "tab": "saved",
+      "width": 320
+    },
+    {
+      "tab": "masters",
+      "width": 320
+    },
+    {
+      "tab": "reviews",
+      "width": 320
+    },
+    {
+      "tab": "notifications",
+      "width": 320
+    },
+    {
+      "tab": "settings",
+      "width": 320
+    }
+  ],
+  "pageErrors": []
+}

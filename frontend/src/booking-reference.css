@@ -1,0 +1,236 @@
+/* U-08: exact booking review-01 geometry, scoped to booking/visit routes. */
+.booking-reference{background:#faf7f1;color:#213a30;font:14px/1.6 Manrope,Arial,sans-serif;overflow-wrap:anywhere}
+body:has(.booking-reference){background:#faf7f1}
+.booking-reference a{color:inherit;text-decoration:none}
+.booking-reference button,.booking-reference input,.booking-reference textarea{font:inherit;color:inherit}
+.booking-reference h1,.booking-reference h2,.booking-reference h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:400;line-height:1.12;margin:0;letter-spacing:0}
+.booking-reference h1{font-size:46px}.booking-reference h2{font-size:32px}.booking-reference h3{font-size:27px}
+.booking-reference p{margin:0;color:#7a8177;font-size:13px;line-height:1.8}.booking-reference em{color:#a78049;font-weight:300}
+.booking-reference button:focus-visible,.booking-reference a:focus-visible{outline:2px solid #a78049;outline-offset:3px}.booking-reference h1:focus{outline:0}
+.booking-reference{max-width:1240px;margin:auto;padding:24px 40px 64px;min-height:calc(100dvh - 78px)}
+.booking-reference .back-link{display:inline-flex;align-items:center;min-height:44px;color:#8c704c;font-size:12px}
+.booking-reference .eyebrow{display:block;font-size:10px;letter-spacing:2px;color:#a17c42;line-height:1.6}
+.booking-reference .booking-top{display:flex;align-items:center;justify-content:space-between;margin:16px 0}
+.booking-reference .booking-top>p{font-size:12px}
+.booking-reference .progress{display:flex;gap:32px;border-bottom:1px solid #e2d6c5;padding-bottom:16px;margin-bottom:32px}
+.booking-reference .progress>button{display:flex;align-items:center;gap:10px;min-height:44px;font-size:13px;color:#8a897f}
+.booking-reference .progress>button>span{width:26px;height:26px;border:1px solid #d4c7b2;border-radius:50%;display:grid;place-items:center;font-size:11px;flex-shrink:0}
+.booking-reference .progress>button.active{color:#70243d;font-weight:700}
+.booking-reference .progress>button.active>span{background:#70243d;border-color:#70243d;color:white}
+.booking-reference .progress>button.done{color:#213a30}
+.booking-reference .progress>button.done>span{background:#193b30;color:#fff;border-color:#193b30}
+.booking-reference .layout{display:grid;grid-template-columns:minmax(0,1fr) 294px;gap:32px;align-items:start}
+.booking-reference .step-content{min-width:0}
+.booking-reference .step-heading{margin-bottom:28px}
+.booking-reference .step-heading .eyebrow{margin-bottom:10px}
+.booking-reference .step-heading h1{margin-bottom:10px}
+.booking-reference .step-heading p{max-width:560px}
+.booking-reference .service-list{border-top:1px solid #e2d6c5}
+.booking-reference .service-row{display:flex;align-items:center;gap:20px;padding:24px 0;border-bottom:1px solid #e2d6c5;min-height:94px}
+.booking-reference .service-row>div{min-width:0;flex:1}
+.booking-reference .service-row p{margin-top:6px;font-size:12px}
+.booking-reference .service-row>strong{font-size:14px;font-weight:400;color:#70243d;white-space:nowrap}
+.booking-reference .arrow{color:#70243d;font-size:20px}
+.booking-reference .hint{font-size:12px;margin-top:18px}
+.booking-reference .button{min-height:48px;padding:11px 20px;border-radius:3px;border:1px solid transparent;display:inline-flex;justify-content:center;align-items:center;gap:24px;font-size:13px;line-height:1.4;text-align:center}
+.booking-reference .wine{background:#70243d;color:#faf7f1}
+.booking-reference .outline{background:transparent;border-color:#c6b38f}
+.booking-reference .step-actions{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:28px}
+.booking-reference .summary{border:1px solid #dccdb4;background:#fcfaf5;border-radius:4px;min-width:0}
+.booking-reference .summary-body{padding:20px}
+.booking-reference .identity{display:flex;gap:12px;align-items:center;padding-bottom:20px;border-bottom:1px solid #e2d6c5}
+.booking-reference .avatar{flex:0 0 56px;width:56px;height:56px;display:grid;place-items:center;background:#e9e0d2;color:#a17d42;font:33px 'Cormorant Garamond',Georgia,serif;border-radius:50%;border:2px solid #faf7f1;box-shadow:0 0 0 1px #c9b58e}
+.booking-reference .identity>div{min-width:0}
+.booking-reference .identity h3{font-size:25px;margin:3px 0 5px}
+.booking-reference .identity small{font-size:8px;letter-spacing:1px;color:#a17d42}
+.booking-reference .identity p{font-size:10px}
+.booking-reference .summary dl{margin:0}
+.booking-reference .summary dl>div{display:flex;justify-content:space-between;gap:12px;align-items:start;padding:17px 0;border-bottom:1px solid #e2d6c5;font-size:11px}
+.booking-reference .summary dt{color:#858477;flex-shrink:0}
+.booking-reference .summary dd{margin:0;text-align:right;overflow-wrap:anywhere;font-size:12px}
+.booking-reference .total{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:20px 0}
+.booking-reference .total>span{font-size:11px;color:#858477}
+.booking-reference .total>strong{font:28px 'Cormorant Garamond',Georgia,serif;color:#70243d;white-space:nowrap}
+.booking-reference .privacy{font-size:11px;line-height:1.9}
+.booking-reference .desktop-summary{position:sticky;top:20px}
+.booking-reference .mobile-summary{display:none}
+.booking-reference .people{border-top:1px solid #e2d6c5}
+.booking-reference .person{display:flex;align-items:center;gap:18px;padding:18px 0;border-bottom:1px solid #e2d6c5}
+.booking-reference .person>div{flex:1;min-width:0}
+.booking-reference .person p{font-size:12px;margin-top:6px}
+.booking-reference .small-avatar{width:52px;height:52px;flex-basis:52px}
+.booking-reference .any .avatar{background:#193b30;color:#c9ad77}
+.booking-reference .any h3{font-size:25px}
+.booking-reference .date-time{display:grid;grid-template-columns:minmax(0,326px) minmax(0,1fr);gap:24px;border-top:1px solid #e2d6c5;padding-top:24px}
+.booking-reference .calendar-title{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+.booking-reference .calendar-title h3{font-size:26px}
+.booking-reference .calendar-title>div{display:flex}
+.booking-reference .calendar-title button{width:44px;height:44px;font-size:26px;border:0;background:transparent}
+.booking-reference .dates{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:2px}
+.booking-reference .dates>span{display:grid;place-items:center;min-width:0}
+.booking-reference .dates .weekday{font-size:11px;color:#858477;height:36px}
+.booking-reference .dates>button{height:44px;border:0;background:transparent;border-radius:3px;color:#a6a497;position:relative;font-size:15px}
+.booking-reference .dates>button.available{color:#213a30}
+.booking-reference .dates>button.selected,.booking-reference .hours>button.selected{background:#193b30;color:#faf7f1}
+.booking-reference .dates i{position:absolute;bottom:3px;left:calc(50% - 2px);width:4px;height:4px;border-radius:50%;background:#a38150}
+.booking-reference .legend{display:flex;gap:8px;align-items:center;margin-top:12px;font-size:11px}
+.booking-reference .legend i{width:4px;height:4px;border-radius:50%;background:#a38150}
+.booking-reference .times>.eyebrow{margin-bottom:10px}
+.booking-reference .times h3{font-size:25px;margin-bottom:20px}
+.booking-reference .hours{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.booking-reference .hours>button{border:1px solid #d6c7ad;background:transparent;border-radius:3px;min-height:44px;padding:8px 4px;font-size:13px}
+.booking-reference .times>p{font-size:11px;margin-top:16px}
+.booking-reference .contact-form{max-width:560px}
+.booking-reference .fields{display:grid;gap:20px}
+.booking-reference .fields label{font-size:12px}
+.booking-reference .fields label>small{color:#8d8b7d;font-size:11px;float:right}
+.booking-reference .fields input,.booking-reference .fields textarea{display:block;width:100%;min-height:48px;padding:12px;border:1px solid #dac9ad;border-radius:3px;background:transparent;margin-top:8px;font-size:14px}
+.booking-reference .fields textarea{resize:vertical}
+.booking-reference .contact-form>.privacy{margin-top:18px}
+.booking-reference .notice{padding:16px;border:1px solid #cda99c;background:#f8eee9;border-radius:3px;margin:0 0 24px;color:#70243d}
+.booking-reference .notice strong{font-size:13px}
+.booking-reference .notice p{font-size:12px;margin-top:5px}
+.booking-reference .contact-form>.notice{margin-top:20px}
+.booking-reference .empty-panel{border:1px solid #e2d6c5;border-radius:4px;padding:32px;background:#fcfaf5}
+.booking-reference .empty-icon{font-size:30px;color:#a17d42}
+.booking-reference .empty-panel h2{margin:12px 0}
+.booking-reference .empty-panel p{max-width:520px;margin-bottom:22px}
+.booking-reference .result-page{max-width:730px;margin:34px auto 0}
+.booking-reference .result-heading{margin-bottom:28px}
+.booking-reference .result-heading h1{margin:10px 0 12px}
+.booking-reference .result-card{padding:28px;border:1px solid #dccdb4;border-radius:4px;background:#fcfaf5}
+.booking-reference .result-status{display:flex;gap:9px;align-items:center;font-size:12px;color:#8b713f;margin-bottom:20px}
+.booking-reference .dot{width:7px;height:7px;border-radius:50%;background:#b39252}
+.booking-reference .dot.confirmed,.booking-reference .dot.done{background:#193b30}
+.booking-reference .dot.cancelled{background:#70243d}
+.booking-reference .result-card .identity{padding-bottom:22px}
+.booking-reference .result-card>h2{margin:24px 0}
+.booking-reference .result-facts{display:grid;grid-template-columns:1fr 1fr;gap:20px;border-bottom:1px solid #e2d6c5;padding-bottom:24px}
+.booking-reference .result-facts span{display:block;font-size:11px;color:#8d8b7d;margin-bottom:7px}
+.booking-reference .result-facts strong{font-size:14px;font-weight:400}
+.booking-reference .result-note{font-size:12px;max-width:530px;margin:22px 0}
+.booking-reference .result-actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.booking-reference .text-button{border:0;background:transparent;color:#70243d;font-size:12px;min-height:44px;padding:0 10px}
+.booking-reference .result-back{margin-top:16px;font-size:12px;min-height:44px;display:flex;align-items:center}
+.booking-reference dialog{max-width:440px;width:calc(100% - 32px);border:1px solid #dccdb4;border-radius:5px;padding:26px;background:#faf7f1;color:#213a30}
+.booking-reference dialog::backdrop{background:#102d2480;backdrop-filter:blur(6px)}
+.booking-reference dialog h2{margin-bottom:12px}
+.booking-reference dialog .step-actions{flex-wrap:wrap}
+@media(max-width:1000px){.booking-reference .layout{grid-template-columns:minmax(0,1fr) 270px;gap:24px}
+.booking-reference .date-time{grid-template-columns:1fr}
+.booking-reference .times{border-top:1px solid #e2d6c5;padding-top:22px}
+.booking-reference .contact-form .step-actions{flex-wrap:wrap}
+}
+@media(max-width:760px){.booking-reference .public-header-inner{height:72px;padding:0 20px;gap:12px}
+.booking-reference .cabinet-brand>span{font-size:36px}
+.booking-reference .cabinet-branch{height:44px;width:29px}
+.booking-reference .cabinet-brand small{font-size:9px}
+.booking-reference .public-header-inner>nav,.booking-reference .public-header-actions .account{display:none}
+.booking-reference .public-header-actions{gap:6px}
+.booking-reference .public-header-actions .public-menu-toggle{display:grid;place-items:center;border:1px solid #c1a07180;border-radius:50%}
+.booking-reference{padding:14px 20px 36px}
+.booking-reference .back-link{font-size:12px}
+.booking-reference .booking-top{margin:8px 0}
+.booking-reference .booking-top>p{display:none}
+.booking-reference .progress{gap:8px;justify-content:space-between;padding-bottom:12px;margin-bottom:20px}
+.booking-reference .progress>button{gap:5px;font-size:12px}
+.booking-reference .progress>button>span{height:22px;width:22px;font-size:10px}
+.booking-reference .layout{display:flex;flex-direction:column;gap:24px}
+.booking-reference .step-content{width:100%;order:2}
+.booking-reference .desktop-summary{display:none}
+.booking-reference .mobile-summary{display:block;order:1;width:100%}
+.booking-reference .mobile-summary>summary{list-style:none;display:flex;justify-content:space-between;align-items:center;gap:8px;padding:14px 16px;min-height:48px;font-size:12px;cursor:pointer}
+.booking-reference .mobile-summary>summary::-webkit-details-marker{display:none}
+.booking-reference .step-heading{margin-bottom:24px}
+.booking-reference .step-heading h1{font-size:38px}
+.booking-reference .step-heading p{font-size:12px}
+.booking-reference .step-heading .eyebrow{font-size:9px;margin-bottom:8px}
+.booking-reference .service-row{gap:12px;padding:20px 0;min-height:92px}
+.booking-reference .service-row h3{font-size:25px}
+.booking-reference .service-row>strong{font-size:12px}
+.booking-reference .service-row p{font-size:11px}
+.booking-reference .person{gap:12px}
+.booking-reference .person h3{font-size:26px}
+.booking-reference .person.any h3{font-size:23px}
+.booking-reference .person p{font-size:11px}
+.booking-reference .date-time{padding-top:18px;gap:22px}
+.booking-reference .calendar-title h3{font-size:27px}
+.booking-reference .dates>button{height:46px}
+.booking-reference .dates .weekday{font-size:12px}
+.booking-reference .hours{grid-template-columns:repeat(3,minmax(0,1fr))}
+.booking-reference .hours>button{font-size:14px;min-height:46px}
+.booking-reference .times h3{font-size:27px;margin-bottom:16px}
+.booking-reference .fields input,.booking-reference .fields textarea{font-size:16px}
+.booking-reference .contact-form .step-actions{flex-wrap:nowrap}
+.booking-reference .step-actions .button{padding:11px 16px;font-size:12px;gap:10px}
+.booking-reference .step-actions .wine{flex:1}
+.booking-reference .result-page{margin:24px 0 0}
+.booking-reference .result-heading h1{font-size:40px}
+.booking-reference .result-heading p{font-size:12px}
+.booking-reference .result-card{padding:20px 16px}
+.booking-reference .result-card>h2{font-size:30px}
+.booking-reference .result-facts{gap:20px 12px}
+.booking-reference .result-facts strong{font-size:13px}
+.booking-reference .result-actions{flex-direction:column;align-items:stretch}
+.booking-reference .result-actions .text-button{text-align:center}
+.booking-reference .empty-panel{padding:24px 18px}
+.booking-reference .empty-panel h2{font-size:30px}
+.booking-reference .empty-panel .step-actions{flex-wrap:wrap}
+.booking-reference .empty-panel .button{width:100%}
+}
+@media(max-width:350px){.booking-reference{padding-inline:16px}
+.booking-reference .public-header-inner{padding-inline:16px}
+.booking-reference .progress{gap:4px}
+.booking-reference .progress>button{font-size:11px;gap:4px}
+.booking-reference .progress>button>span{width:20px;height:20px}
+.booking-reference .step-heading h1{font-size:35px}
+.booking-reference .service-row h3{font-size:23px}
+.booking-reference .service-row{gap:8px}
+.booking-reference .service-row>strong{font-size:11px}
+.booking-reference .step-actions .button{padding-inline:12px;gap:8px}
+.booking-reference .identity p{font-size:9px}
+}
+@media(prefers-reduced-motion:reduce){.booking-reference *{scroll-behavior:auto}
+}
+
+
+.booking-reference .progress>button{border:0;padding:0;background:transparent;text-align:left;letter-spacing:0}.booking-reference .progress>button:disabled{opacity:1;cursor:default}
+.booking-reference .back-link{margin:0;font-weight:400;gap:4px}.booking-reference .eyebrow{font-size:10px;font-weight:400;letter-spacing:2px;line-height:1.6;color:#a17c42}
+.booking-reference .button{letter-spacing:0;font-weight:400;text-transform:none;white-space:normal;cursor:pointer}
+.booking-reference .button.wine{color:#faf7f1}.booking-reference .button.outline{color:#213a30;border-color:#c6b38f}
+.booking-reference .back-link{display:inline-flex;width:fit-content;min-height:44px;margin:0;align-items:center}
+.booking-reference .booking-duration-note{font-size:11px;line-height:1.5;margin:18px 0 0;color:#7d8274}
+.booking-reference .service-row,.booking-reference .person{border:0;border-bottom:1px solid #e2d6c5;background:transparent;width:100%;text-align:left;font:inherit;color:inherit}
+.booking-reference .service-row:hover,.booking-reference .person:hover{background:#f1ebdf55}
+.booking-reference .avatar{overflow:hidden}.booking-reference .avatar>img{width:100%;height:100%;display:block;object-fit:cover;border-radius:50%}.booking-reference .identity .avatar{font-family:'Cormorant Garamond',Georgia,serif}
+.booking-reference .summary-body:has(small) .avatar{flex-shrink:0}
+.booking-reference .privacy{display:block}.booking-reference .contact-form>.privacy svg{display:inline-block;vertical-align:middle;margin-right:3px;flex-shrink:0}
+.booking-reference .result-back>a{min-height:44px;display:inline-flex;gap:6px;align-items:center}
+body:has(.booking-reference) .public-header-inner{max-width:1320px}
+.booking-reference .result-facts strong{overflow-wrap:anywhere}.booking-reference .notice p{color:#70243d}
+.booking-reference .reference-slot-calendar{display:grid;grid-template-columns:minmax(0,326px) minmax(0,1fr);gap:24px;border-top:1px solid #e2d6c5;padding-top:24px}
+.booking-reference .reference-slot-calendar .calendar-top{display:flex;align-items:center;justify-content:space-between;gap:0;margin-bottom:10px}
+.booking-reference .reference-slot-calendar .calendar-top .eyebrow{display:none}.booking-reference .reference-slot-calendar .calendar-top h3{font-size:26px;margin:0;text-transform:capitalize}
+.booking-reference .reference-slot-calendar .calendar-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:2px}
+.booking-reference .reference-slot-calendar .calendar-weekday{height:36px;display:grid;place-items:center;font:11px Manrope,Arial,sans-serif;color:#858477;padding:0;text-transform:none;letter-spacing:0}
+.booking-reference .reference-slot-calendar .calendar-day{height:44px;border:0;background:transparent;border-radius:3px;color:#a6a497;position:relative;font:15px Manrope,Arial,sans-serif;padding:0;aspect-ratio:auto}
+.booking-reference .reference-slot-calendar .calendar-day.available{color:#213a30}.booking-reference .reference-slot-calendar .calendar-day.active{background:#193b30;color:#faf7f1}
+.booking-reference .reference-slot-calendar .calendar-day i{bottom:3px;width:4px;height:4px;background:#a38150}
+.booking-reference .reference-slot-calendar .calendar-legend{gap:8px;margin:12px 0 0;font-size:11px}
+.booking-reference .reference-slot-calendar .calendar-times{padding:0;margin:0;border:0}.booking-reference .reference-slot-calendar .calendar-times>.eyebrow{margin-bottom:10px}
+.booking-reference .reference-slot-calendar .times-title{font:25px/1.12 'Cormorant Garamond',Georgia,serif;margin:0 0 20px;gap:0;text-transform:capitalize}.booking-reference .reference-slot-calendar .times-title svg{display:none}
+.booking-reference .reference-slot-calendar .time-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.booking-reference .reference-slot-calendar .time-choice{border:1px solid #d6c7ad;background:transparent;border-radius:3px;min-height:44px;padding:8px 4px;font:13px Manrope,Arial,sans-serif;color:#213a30}
+.booking-reference .reference-slot-calendar .time-choice.active{background:#193b30;color:#faf7f1}.booking-reference .reference-slot-calendar .calendar-empty{font-size:12px}
+.booking-reference .slot-loading{padding:22px 0}
+.booking-reference .booking-cancel-dialog{max-width:440px;width:calc(100% - 32px);border:1px solid #dccdb4;border-radius:5px;padding:26px;background:#faf7f1;color:#213a30}
+.booking-reference .booking-cancel-dialog::backdrop{background:#102d2480;backdrop-filter:blur(6px)}
+.booking-reference .booking-cancel-dialog h2{margin-bottom:12px}.booking-reference .booking-cancel-dialog .step-actions{flex-wrap:wrap}.booking-reference .booking-cancel-dialog .notice{margin-top:16px;margin-bottom:0}
+.booking-reference .booking-cancel-dialog[open],.booking-reference .reference-step{animation:luma-booking-enter 480ms cubic-bezier(.2,.8,.2,1) both}
+.booking-reference .booking-loader{display:block;width:24px;height:24px;border:1px solid #dac9ad;border-top-color:#193b30;border-radius:50%;animation:luma-booking-spin 1s linear infinite}
+@keyframes luma-booking-enter{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}@keyframes luma-booking-spin{to{transform:rotate(360deg)}}
+@media(max-width:1000px){.booking-reference .reference-slot-calendar{grid-template-columns:1fr}.booking-reference .reference-slot-calendar .calendar-times{border-top:1px solid #e2d6c5;padding-top:22px}}
+@media(max-width:760px){.booking-reference .reference-slot-calendar{padding-top:18px;gap:22px}.booking-reference .reference-slot-calendar .calendar-top h3{font-size:27px}.booking-reference .reference-slot-calendar .calendar-day{height:46px}.booking-reference .reference-slot-calendar .calendar-weekday{font-size:12px}.booking-reference .reference-slot-calendar .time-choice{font-size:14px;min-height:46px}.booking-reference .reference-slot-calendar .times-title{font-size:27px;margin-bottom:16px}}
+@media(min-width:761px){body:has(.booking-reference) .public-header-inner{height:78px}}
+@media(max-width:359px){.booking-reference .reference-slot-calendar .calendar-grid{margin-inline:-14px;column-gap:0}}
+@media(prefers-reduced-motion:reduce){.booking-reference .reference-step,.booking-reference .booking-cancel-dialog[open],.booking-reference .booking-loader{animation:none}}

@@ -1,0 +1,19 @@
+{
+  "created": "2026-10-11",
+  "timezone": "Asia/Novosibirsk",
+  "status": "rejected-visual-mismatch-not-implemented",
+  "tool": "built-in imagegen",
+  "source_reference": "docs/ui-concepts/2026-10-10-luma/master.png",
+  "files": [
+    {
+      "file": "desktop.png",
+      "sha256": "ae297db9857dfe9a1b09f97efb5ff3d836ea522e5885502cf7604a3b4ba389e5",
+      "bytes": 1949065
+    },
+    {
+      "file": "mobile.png",
+      "sha256": "529b5054d6b625a220d57c3c1b880b182a79be40d24ab3a8b38229e2a17c87f7",
+      "bytes": 1940006
+    }
+  ]
+}

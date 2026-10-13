@@ -1,0 +1,93 @@
+.salon-page { padding-top: 54px; padding-bottom: 80px; }
+.salon-create { max-width: 620px; }
+.salon-page .studio-panel { margin-bottom: 26px; }
+.salon-switch { display: grid; gap: 8px; max-width: 400px; margin-bottom: 24px; }
+.salon-staff-list { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px; }
+.salon-staff-list button { display: flex; gap: 12px; align-items: center; text-align: left; padding: 16px 20px; border: 1px solid var(--line); background: var(--paper); color: var(--ink); }
+.salon-staff-list button.active { border-color: var(--wine); box-shadow: inset 0 -3px var(--wine); }
+.salon-staff-list span, .salon-services span { display: grid; gap: 6px; }
+.salon-staff-list small, .salon-services small { color: var(--muted); }
+.salon-add-staff, .salon-visit-form { background: var(--paper); padding: 24px; margin: 24px 0; border: 1px solid var(--line); }
+.salon-add-staff .direction-picker { display: flex; flex-wrap: wrap; gap: 12px; }
+.salon-add-staff .direction-picker label { display: flex; align-items: center; gap: 8px; }
+.salon-add-staff .direction-picker input { width: auto; }
+.salon-staff-profile fieldset { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 24px; }
+.salon-staff-profile fieldset label { display: flex; align-items: center; gap: 8px; margin: 0; }
+.salon-education { border: 1px solid var(--line); padding: 18px; }
+.salon-online { border: 1px solid var(--line); padding: 18px; }
+.public-salon-page { padding-block: 60px 90px; }
+.public-salon-intro { display: grid; grid-template-columns: 1.5fr 1fr; gap: 60px; align-items: start; }
+.public-salon-address { display: flex; align-items: center; gap: 10px; }
+.public-salon-note { border: 1px solid var(--line); padding: 30px; }
+.public-salon-note h2 { font-size: 42px; margin-top: 20px; }
+.public-salon-note p { color: var(--muted); font-size: 13px; line-height: 1.7; }
+.public-salon-team { margin-top: 50px; }
+.public-salon-staff { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 20px; }
+.public-salon-staff article { padding: 28px; background: var(--paper); border: 1px solid var(--line); display: flex; flex-direction: column; align-items: start; gap: 15px; }
+.public-salon-staff h3 { font-size: 34px; margin: 0; }
+.public-salon-staff p { font-size: 12px; color: var(--muted); }
+.public-salon-staff img { width: 70px; height: 70px; object-fit: cover; border-radius: 50%; }
+.salon-preview-note { border: 1px solid var(--gold); padding: 18px; font-size: 13px; }
+.salon-calendar-tools { display: flex; flex-wrap: wrap; align-items: end; gap: 12px; }
+.salon-calendar-tools label { display: grid; gap: 8px; }
+.salon-calendar-tools input, .salon-switch select { border: 1px solid var(--line); background: var(--paper); padding: 12px; min-height: 49px; color: var(--ink); }
+.salon-visit-time { display: grid; gap: 6px; min-width: 76px; }
+.salon-visit-time b { font-size: 20px; }
+.salon-visit-time small { color: var(--muted); }
+.salon-services { margin-bottom: 28px; }
+.salon-services > div { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 18px 0; border-bottom: 1px solid var(--line); }
+.salon-invitation { display: grid; gap: 14px; padding: 20px; border: 1px solid var(--line); max-width: 680px; min-width: 0; }
+.salon-invitation input { min-width: 0; width: 100%; }
+.salon-role-picker { flex-direction: column; }
+.salon-role-picker button { min-height: 44px; }
+.team-calendar-filters { display: flex; flex-wrap: wrap; align-items: end; gap: 24px; margin: 24px 0; }
+.team-calendar-filters > label:first-child, .archived-calendar > label, .archive-visit > label:not(.checkbox-line) { display: grid; gap: 8px; font-size: 12px; }
+.team-calendar-filters input[type=search], .archive-visit select, .archived-calendar input { border: 1px solid var(--line); padding: 12px; background: var(--paper); color: var(--ink); max-width: 100%; min-height: 44px; }
+.team-day-count { font-size: 12px; margin-bottom: 20px; color: var(--wine); }
+.team-day-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 18px; }
+.team-day-card, .archived-staff-list > article { background: var(--paper); border: 1px solid var(--line); padding: 20px; min-width: 0; }
+.team-day-heading { display: flex; justify-content: space-between; align-items: start; gap: 15px; margin-bottom: 18px; }
+.team-day-heading h3 { font-size: 32px; overflow-wrap: anywhere; margin: 0; }
+.team-day-visits { display: grid; gap: 8px; }
+.team-day-visit { display: grid; width: 100%; text-align: left; gap: 5px; padding: 12px; background: var(--cream); border: 1px solid var(--line); border-left: 3px solid var(--gold); color: var(--ink); }
+.team-day-visit.pending { border-left-color: var(--wine); }
+.team-day-visit.done { opacity: .65; }
+.team-day-visit span { font-size: 12px; font-weight: 700; }
+.team-day-visit strong { font-size: 13px; overflow-wrap: anywhere; }
+.team-day-visit small { color: var(--muted); font-size: 11px; }
+.team-day-actions, .archive-visit-actions { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 20px; }
+.team-day-actions .text-link { font-size: 11px; }
+.staff-archive > h3 { font-size: 34px; margin: 22px 0 12px; }
+.staff-archive > p, .salon-archives > p { font-size: 13px; color: var(--muted); line-height: 1.7; }
+.archive-blocker { border: 1px solid var(--gold); padding: 16px; }
+.archive-upcoming, .archived-staff-list { display: grid; gap: 18px; margin: 24px 0; }
+.archive-visit { padding: 20px; border: 1px solid var(--line); background: var(--paper); }
+.archive-visit h4, .archived-visit h4 { font-size: 24px; margin: 12px 0; }
+.archive-visit p { font-size: 12px; line-height: 1.7; }
+.archive-visit .checkbox-line { margin-top: 18px; }
+.staff-archive > .checkbox-line { margin: 22px 0; }
+.archived-calendar { border-top: 1px solid var(--line); padding-top: 20px; margin-top: 20px; }
+.archived-calendar > label { max-width: 250px; }
+.archived-visit { border-top: 1px solid var(--line); padding-top: 18px; margin-top: 18px; font-size: 12px; }
+@media (max-width: 700px) {
+  .team-day-grid { grid-template-columns: minmax(0,1fr); }
+  .salon-main-tabs { overflow-x: auto; white-space: nowrap; }
+  .team-calendar-filters { display: grid; grid-template-columns: minmax(0,1fr); }
+  .team-calendar .salon-calendar-tools { display: flex; }
+  .archived-staff-list .team-day-heading { flex-direction: column; }
+  .public-salon-page { padding-block: 32px 65px; }
+  .public-salon-intro, .public-salon-staff { grid-template-columns: minmax(0,1fr); gap: 20px; }
+  .salon-booking .booking-progress { gap: 8px; }
+  .salon-booking .booking-progress button { gap: 6px; font-size: 10px; }
+  .salon-booking .booking-summary { grid-row: auto; }
+  .public-salon-page .booking-service { gap: 16px; }
+  .salon-page { padding-top: 30px; }
+  .salon-team .section-head { align-items: start; flex-direction: column; gap: 16px; }
+  .salon-staff-list { flex-direction: column; }
+  .salon-calendar-tools { display: grid; grid-template-columns: 1fr 1fr; }
+  .salon-calendar-tools .button { padding: 12px 10px; font-size: 12px; }
+  .salon-visit { display: grid; grid-template-columns: minmax(0, 1fr); gap: 14px; }
+  .salon-visit .appointment-actions { flex-direction: row; justify-content: start; gap: 20px; margin-left: 0; }
+  .salon-visit-time { display: flex; align-items: center; gap: 12px; }
+  .salon-add-staff, .salon-visit-form { padding: 16px; }
+}

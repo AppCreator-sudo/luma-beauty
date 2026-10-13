@@ -1,0 +1,12 @@
+import fs from 'node:fs';
+import sharp from 'sharp';
+import { execFileSync } from 'node:child_process';
+execFileSync(process.execPath,['--check','lib/image-upload.mjs']);
+execFileSync(process.execPath,['--check','lib/appointment-editing.mjs']);
+for (const f of ['server.mjs','lib/client-cabinet.mjs','lib/publications.mjs','lib/guest-bookings.mjs','lib/workspaces.mjs','lib/salon-public.mjs','lib/salon-calendar.mjs','lib/social-auth.mjs','lib/auth-providers.mjs','lib/promotions.mjs','lib/address-suggestions.mjs','lib/map-viewport.mjs','scripts/promotions.mjs','scripts/benchmark-map.mjs','scripts/sqlite-migration-snapshot.mjs','public/app.js','public/media.js','public/booking-draft.js','public/guest-booking.js','public/sw.js']) execFileSync(process.execPath,['--check',f]);
+for (const size of [192,512]) await sharp('public/favicon.svg').resize(size,size).png().toFile(`public/icon-${size}.png`);
+await sharp('public/assets/ornament.png').resize(1200).webp({quality:80}).toFile('public/assets/ornament.webp');
+fs.mkdirSync('public/vendor',{recursive:true});
+for(const file of ['leaflet.js','leaflet.css'])fs.copyFileSync('node_modules/leaflet/dist/'+file,'public/vendor/'+file);
+for (const f of ['index.html','app.js','style.css','manifest.webmanifest','sw.js']) if(!fs.existsSync(`public/${f}`)) throw Error(`Missing ${f}`);
+console.log('Application syntax, static assets and PWA icons verified.');

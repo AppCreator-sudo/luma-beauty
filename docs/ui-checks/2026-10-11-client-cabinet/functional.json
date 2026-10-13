@@ -1,0 +1,14 @@
+{
+  "date": "2026-10-11T14:40:29.995Z",
+  "results": [
+    "previous run completed reschedule/owner/withdraw/decline/cancel; continuing remaining checks",
+    "own completed review persists; duplicate and completed cancellation rejected",
+    "inbox read persists; other client sees no events",
+    "optional profile and round portrait save/reload; invalid image preserves saved image; avatar private",
+    "own data export excludes credentials and professional notes",
+    "personal-link preview/claim; no duplicates or secret in history; ownership after claim",
+    "signed-in booking prefill and automatic account attachment",
+    "shared spring menu locks background and Back closes it first"
+  ],
+  "pageErrors": []
+}

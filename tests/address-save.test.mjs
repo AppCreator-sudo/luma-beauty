@@ -1,0 +1,86 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import {spawn} from 'node:child_process';
+import fs from 'node:fs';
+import path from 'node:path';
+import os from 'node:os';
+import {pathToFileURL} from 'node:url';
+
+test('save validates exact address server-side, preserves old data on errors, allows verified houses without coordinates and protects concurrent edits',async t=>{
+  const dir=fs.mkdtempSync(path.join(os.tmpdir(),'atelie-address-save-')),origin='http://localhost:3220';
+  const fixture=path.join(dir,'server.mjs');fs.writeFileSync(fixture,`import {installAddressProvider} from ${JSON.stringify(pathToFileURL(path.resolve('tests/helpers/address-provider.mjs')).href)};installAddressProvider();await import(${JSON.stringify(pathToFileURL(path.resolve('server.mjs')).href)});`);
+  const child=spawn(process.execPath,[fixture],{env:{...process.env,PORT:'3220',DATA_DIR:dir,APP_ORIGIN:origin,NODE_ENV:'test',DADATA_API_KEY:'fake-address-save-key',ADDRESS_DAILY_LIMIT:'9000'},stdio:['ignore','pipe','pipe']});
+  let logs='';child.stdout.on('data',b=>logs+=b);child.stderr.on('data',b=>logs+=b);
+  t.after(async()=>{const done=child.exitCode===null?new Promise(r=>child.once('exit',r)):Promise.resolve();child.kill();await done;fs.rmSync(dir,{recursive:true,force:true})});
+  let ready=false;for(let i=0;i<100;i++){try{if((await fetch(origin+'/api/health')).ok){ready=true;break}}catch{}await new Promise(r=>setTimeout(r,100))}assert.ok(ready,logs);
+  let ip=0;function client(){return {cookie:'',ip:'198.51.100.'+(++ip),async call(url,body,method=body===undefined?'GET':'POST',source=origin){const r=await fetch(origin+'/api'+url,{method,headers:{Origin:source,Cookie:this.cookie,'Content-Type':'application/json','X-Forwarded-For':this.ip},body:body===undefined?undefined:JSON.stringify(body)});if(r.headers.get('set-cookie'))this.cookie=r.headers.get('set-cookie').split(';')[0];return {status:r.status,data:await r.json()}}}}
+  const master=client(),other=client(),owner=client(),guest=client();
+  for(const [c,role] of [[master,'master'],[other,'master'],[owner,'salon']]){const r=await c.call('/auth/register',{login:'save-'+role+'-'+c.ip.split('.').at(-1),password:'TestPassword123',account_type:role});assert.equal(r.status,201,JSON.stringify(r.data))}
+  assert.equal((await guest.call('/address/check',{city:'Новосибирск',address:'Громова 21'})).status,401);
+  assert.equal((await master.call('/address/check',{city:'Новосибирск',address:'Громова 21'},'POST','https://foreign.invalid')).status,403);
+  const addressInput={city:'город Новосибирск',address:'Громова 21'};
+  assert.equal((await guest.call('/profile/address',addressInput,'PUT')).status,401);
+  assert.equal((await owner.call('/profile/address',addressInput,'PUT')).status,403);
+  assert.equal((await other.call('/profile/address',addressInput,'PUT','https://foreign.invalid')).status,403);
+  assert.equal((await other.call('/profile',{name:'Новый мастер',slug:'new-draft',categories:['Маникюр'],address_mode:'preserve'},'PUT')).status,400,'Creating a page requires a saved address');
+  const draft=await other.call('/profile/address',addressInput,'PUT');assert.equal(draft.status,200);assert.equal(draft.data.address_result.address,'ул Громова, д 21');
+  const draftStudio=(await other.call('/studio')).data;assert.equal(draftStudio.profile,null,'Saving an address does not create a profile');assert.deepEqual(draftStudio.address_draft,{city:'Новосибирск',address:'ул Громова, д 21',latitude:54.958,longitude:82.897});
+  assert.equal((await other.call('/profile',{name:'Новый мастер',slug:'new-draft',categories:['Маникюр'],address_mode:'preserve',city:'Подмена',address:'Неверный 99'},'PUT')).status,200);
+  assert.equal((await other.call('/studio')).data.profile.address,draftStudio.address_draft.address,'New page uses persisted draft, ignores submitted address');
+  const page={name:'Адресная проверка',slug:'save-master',city:'город Новосибирск',address:'Громова 21',categories:['Маникюр'],published:true,address_mode:'on-save',latitude:0,longitude:0};
+  const first=await master.call('/profile',page,'PUT');assert.equal(first.status,200);assert.equal(first.data.city,'Новосибирск');assert.equal(first.data.address,'ул Громова, д 21');assert.equal(first.data.latitude,54.958,'Client coordinates replaced with verified point');assert.equal(first.data.address_result.checked,true);
+  for(const [city,address] of [['Новосибирск','Громова 999'],['Томск','Громова 21'],['Новосибирск','Громова 21 к 2'],['Новосибирск','Несуществующая 21'],['Новосибирск','Удаленная 21'],['Новосибирск','Улица без дома']]){
+    const invalid=await master.call('/profile',{...page,city,address,name:'Не должно сохраниться',latitude:null,longitude:null},'PUT');assert.equal(invalid.status,400,city+' '+address);
+    const stored=(await master.call('/studio')).data.profile;assert.equal(stored.name,page.name);assert.equal(stored.address,first.data.address);
+  }
+  const failure=await master.call('/profile',{...page,address:'Сбой 21'},'PUT');assert.equal(failure.status,503);assert.ok(!JSON.stringify(failure.data).includes('PRIVATE_PROVIDER_DETAILS'));
+  const block=await master.call('/profile',{...page,city:'Новосибирск',address:'Громова 21 корпус 3'},'PUT');assert.equal(block.status,200);assert.match(block.data.address,/корпус 3/);
+  const approximate=await master.call('/profile',{...page,city:'Новосибирск',address:'Пример 21'},'PUT');assert.equal(approximate.status,200);assert.equal(approximate.data.latitude,null);assert.equal(approximate.data.address_result.needs_point,true);
+  assert.equal((await master.call('/map/masters')).data.filter(p=>p.slug===page.slug).length,0,'No approximate public marker');
+  const check=(await master.call('/address/check',{city:'Новосибирск',address:'Пример 21'})).data;assert.ok(check.manual.selection);assert.equal(check.points.length,0);
+  const point=(await master.call('/address/confirm-point',{selection:check.manual.selection,confirmed:true,latitude:54.9581,longitude:82.8971})).data.point;
+  assert.equal((await other.call('/profile',{...page,slug:'other-save',city:'Новосибирск',address:check.address,latitude:point.latitude,longitude:point.longitude,address_selection:point.selection},'PUT')).status,400);
+  assert.equal((await master.call('/profile',{...page,city:'Новосибирск',address:check.address,latitude:point.latitude,longitude:point.longitude,address_selection:point.selection},'PUT')).status,200);
+  const noMode=await master.call('/profile',{...page,address_mode:undefined,city:'Новосибирск',address:'Громова 21',latitude:54.958,longitude:82.897},'PUT');assert.equal(noMode.status,400,'Legacy clients cannot bypass point proof');
+  const pending=master.call('/profile',{...page,city:'Новосибирск',address:'Задержка 21'},'PUT');await new Promise(r=>setTimeout(r,100));
+  const old=(await master.call('/studio')).data.profile;assert.equal((await master.call('/profile',{...old,address_mode:'on-save',name:'Другой запрос'},'PUT')).status,200);
+  assert.equal((await pending).status,409,'Async validation cannot overwrite newer profile changes');
+  const wid=(await owner.call('/salons',{name:'Адресный салон',city:'Новосибирск'})).data.id;
+  const salonPage={name:'Адресный салон',slug:'save-salon',city:'Новосибирск',address:'Громова 21',utc_offset:420,published:false,address_mode:'on-save'};
+  assert.equal((await owner.call('/salons/'+wid+'/page',salonPage,'PUT')).status,200);
+  assert.equal((await owner.call('/salons/'+wid+'/page',{...salonPage,address:'Громова 999'},'PUT')).status,400);
+  const salonApprox=await owner.call('/salons/'+wid+'/page',{...salonPage,address:'Пример 21'},'PUT');assert.equal(salonApprox.status,200);assert.equal(salonApprox.data.address_result.needs_point,true);
+  // Separate saves update only address columns, while main settings always preserve persisted addresses.
+  const existing=(await master.call('/studio')).data.profile;
+  const addressOnly=await master.call('/profile/address',{...addressInput,name:'Не сохранять',bio:'Не сохранять',published:false,theme:'wine'},'PUT');assert.equal(addressOnly.status,200);
+  const changed=(await master.call('/studio')).data.profile;
+  for(const field of ['name','slug','bio','theme','published','category','teaches','categories','avatar'])assert.deepEqual(changed[field],existing[field],field+' untouched by address save');
+  assert.equal((await master.call('/profile/address',{...addressInput,address:'Громова 999'},'PUT')).status,400);
+  assert.deepEqual((await master.call('/studio')).data.profile,changed,'Invalid house preserves all existing profile fields');
+  assert.equal((await master.call('/profile/address',{...addressInput,address:'Пример 21'},'PUT')).status,400,'A house without an exact map point is rejected by the new form');
+  assert.deepEqual((await master.call('/studio')).data.profile,changed,'Missing exact point preserves the old address');
+  assert.equal((await master.call('/profile/address',{...addressInput,address:'Сбой 21'},'PUT')).status,503);
+  assert.equal((await master.call('/profile',{...changed,name:'Сохранение страницы',address_mode:'preserve',city:'Подмена',address:'Сбой 21',latitude:0,longitude:0},'PUT')).status,200);
+  const preserved=(await master.call('/studio')).data.profile;assert.equal(preserved.address,changed.address);assert.equal(preserved.latitude,changed.latitude);assert.equal(preserved.name,'Сохранение страницы');
+  assert.equal((await master.call('/profile/address',{city:check.city,address:check.address,latitude:point.latitude,longitude:point.longitude,address_selection:point.selection},'PUT')).status,200);
+  assert.equal((await master.call('/profile/address',{city:check.city,address:check.address,latitude:point.latitude,longitude:point.longitude},'PUT')).status,200);
+  assert.equal((await master.call('/studio')).data.profile.latitude,point.latitude,'Rechecking a saved manual marker retains it');
+  const salonBefore=(await owner.call('/salons/'+wid)).data;
+  assert.equal((await guest.call('/salons/'+wid+'/address',addressInput,'PUT')).status,401);
+  assert.equal((await master.call('/salons/'+wid+'/address',addressInput,'PUT')).status,404);
+  assert.equal((await owner.call('/salons/'+wid+'/address',addressInput,'PUT','https://foreign.invalid')).status,403);
+  assert.equal((await owner.call('/salons/'+wid+'/address',{...addressInput,name:'Не сохранять',utc_offset:180,published:true},'PUT')).status,200);
+  const salonAfter=(await owner.call('/salons/'+wid)).data;
+  for(const field of ['name','slug','bio','utc_offset','published'])assert.deepEqual(salonAfter.workspace[field],salonBefore.workspace[field],field+' untouched by salon address save');
+  assert.deepEqual(salonAfter.staff,salonBefore.staff);
+  assert.equal((await owner.call('/salons/'+wid+'/address',{...addressInput,address:'Громова 999'},'PUT')).status,400);
+  assert.deepEqual((await owner.call('/salons/'+wid)).data,salonAfter,'Invalid salon address does not change other data');
+  assert.equal((await owner.call('/salons/'+wid+'/address',{...addressInput,address:'Пример 21'},'PUT')).status,400,'Salon also requires an exact map point');
+  assert.deepEqual((await owner.call('/salons/'+wid)).data,salonAfter);
+  assert.equal((await owner.call('/salons/'+wid+'/page',{...salonPage,name:'Сохранение салона',address_mode:'preserve',city:'Подмена',address:'Сбой 21'},'PUT')).status,200);
+  assert.equal((await owner.call('/salons/'+wid)).data.workspace.address,salonAfter.workspace.address);
+  const concurrent=other.call('/profile/address',{city:'Новосибирск',address:'Задержка 21 корпус 3'},'PUT');await new Promise(r=>setTimeout(r,100));
+  assert.equal((await other.call('/profile/address',{city:'Новосибирск',address:'Громова 21 корпус 3'},'PUT')).status,200);
+  assert.equal((await concurrent).status,409,'Address validation cannot overwrite a concurrent address save');
+  for(const response of [first.data,approximate.data,check,salonApprox.data])for(const secret of ['fake-address-save-key','PRIVATE_PROVIDER_DETAILS','house_fias_id'])assert.ok(!JSON.stringify(response).includes(secret));
+});

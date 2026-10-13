@@ -1,0 +1,65 @@
+.staff-visit-fields{border:0;padding:0;margin:0;min-width:0}
+.employee-workspace{padding-block:28px 65px}
+.employee-workspace .studio-welcome{gap:16px;align-items:center;margin-bottom:20px;flex-wrap:wrap}
+.employee-workspace .studio-welcome>div:nth-child(2){flex:1;min-width:0}
+.employee-workspace .studio-welcome h1{font-size:34px;margin:5px 0;overflow-wrap:anywhere}
+.employee-workspace .studio-welcome p{margin:0;font-size:12px}
+.employee-salon-mark{width:64px;height:64px;flex:none;display:grid;place-items:center;border:1px solid var(--line);border-radius:50%;overflow:hidden;background:#fcfaf4}
+.employee-salon-mark img{width:100%;height:100%;object-fit:contain;border-radius:50%}
+.employee-salon-mark span{font:400 italic 42px/1 'Cormorant Garamond',Georgia,serif;color:var(--wine)}
+.employee-workspace .studio-header-actions{flex-wrap:wrap;gap:8px}
+.employee-workspace .studio-header-actions .button{font-size:11px;min-height:44px;padding-inline:14px}
+.employee-workspace .salon-switch{margin-bottom:16px;font-size:12px;max-width:420px}
+.employee-workspace .studio-panel{padding:20px 24px;margin-bottom:18px;min-width:0}
+.employee-workspace .section-head{margin-bottom:14px}
+.employee-workspace .section-head h2{font-size:40px;overflow-wrap:anywhere}
+.employee-workspace .studio-tabs{margin-bottom:18px;gap:24px}
+.employee-workspace .studio-tabs button{min-height:44px;font-size:12px;padding-block:11px}
+.employee-workspace .salon-calendar-tools{gap:10px}
+.employee-workspace .salon-calendar-tools label{font-size:12px;gap:6px}
+.employee-workspace .salon-calendar-tools input{min-height:44px;font-size:13px}
+.employee-workspace .salon-calendar-tools .button{min-height:44px;font-size:12px;padding-inline:16px}
+.employee-workspace .salon-calendar>p.muted{margin:10px 0 16px;font-size:12px}
+.employee-workspace .staff-calendar-workspace{display:grid;grid-template-columns:minmax(0,1fr);gap:20px;align-items:start}
+.employee-workspace .staff-calendar-workspace.has-editor{grid-template-columns:minmax(0,1fr) 350px}
+.employee-workspace .staff-calendar-workspace>*{min-width:0}
+.employee-workspace .staff-day-agenda{grid-column:1;grid-row:1}
+.employee-workspace .salon-visit-form{grid-column:2;grid-row:1;margin:0;max-width:none;padding:18px;background:#f3efe6;border-top:3px solid var(--wine)}
+.employee-workspace .salon-visit-form h3{font:400 30px/1.1 'Cormorant Garamond',Georgia,serif;margin:0 0 16px}
+.employee-workspace .settings-form label{font-size:12px;margin:0;gap:6px;min-width:0}
+.employee-workspace .staff-visit-fields{display:grid;gap:14px}
+.employee-workspace .settings-form :is(input:not([type=checkbox]),select,textarea){min-width:0;min-height:44px;font-size:13px}
+.employee-workspace .salon-visit-form .form-row{grid-template-columns:minmax(0,1fr);gap:14px}
+.employee-workspace .salon-visit-form textarea{min-height:72px;resize:vertical}
+.employee-workspace .staff-visit-actions{display:flex;gap:8px;margin-top:16px;flex-wrap:wrap}
+.employee-workspace .staff-visit-actions .button{min-height:44px;font-size:11px;padding-inline:13px}
+.employee-workspace .staff-visit-actions .button-wine{flex:1}
+.employee-workspace .staff-day-agenda .empty-state{padding:30px 18px;min-height:0;border:1px dashed var(--line)}
+.employee-workspace .staff-day-agenda .empty-state h3{font-size:28px;margin-block:6px}
+.employee-workspace .staff-day-agenda .empty-star{font-size:22px}
+.employee-workspace .staff-day-agenda .empty-state p{font-size:13px;margin-bottom:0}
+.employee-workspace .appointment-card{padding:14px 16px;gap:16px;min-width:0;flex-wrap:wrap}
+.employee-workspace .appointment-card>div:nth-child(2){min-width:0;flex:1}
+.employee-workspace .appointment-card h3,.employee-workspace .appointment-card p{overflow-wrap:anywhere}
+.employee-workspace .appointment-actions{flex-wrap:wrap;gap:8px}
+.employee-workspace .appointment-actions button{min-height:44px;padding:8px 10px;border:1px solid var(--line);background:#fcfaf4}
+.employee-workspace .employee-save-notice{margin:0 0 16px;padding:12px 14px;background:#edf2ed;border-left:3px solid #365344;font-size:13px}
+.employee-workspace .salon-services{margin-bottom:18px}
+.employee-workspace .salon-services>div{padding:12px 0;min-width:0}
+.employee-workspace .salon-services span{min-width:0;font-size:14px;overflow-wrap:anywhere}
+.employee-workspace .salon-services small{font-size:12px}
+.employee-workspace .salon-services .icon-link{min-width:44px;min-height:44px;border:1px solid var(--line)}
+.employee-workspace .settings-form:not(.salon-visit-form){display:grid;gap:14px;max-width:760px;padding:18px;background:#f3efe6;border:1px solid var(--line)}
+.employee-workspace .settings-form h3{font-size:28px;margin:0}
+.employee-workspace .settings-form:not(.salon-visit-form) .form-row{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.employee-workspace .settings-form .button{min-height:44px}
+.employee-workspace .schedule-fields{gap:14px}
+.employee-workspace .schedule-save-state{margin:0}
+.employee-workspace .weekday-picker{display:grid;grid-template-columns:repeat(7,minmax(44px,1fr));gap:7px;margin:0}
+.employee-workspace .weekday-picker label{display:flex;justify-content:center;align-items:center;gap:6px;min-height:44px;padding:6px;margin:0;border:1px solid var(--line);background:#fffcf7;cursor:pointer}
+.employee-workspace .weekday-picker label:has(input:checked){background:var(--wine);border-color:var(--wine);color:white}
+.employee-workspace .weekday-picker input{width:15px;height:15px;margin:0;flex:none}
+.employee-workspace :is(button,input,textarea,select,a):focus-visible{outline:2px solid var(--wine);outline-offset:3px}
+@media(max-width:1000px){.employee-workspace .staff-calendar-workspace.has-editor{grid-template-columns:minmax(0,1fr) 320px}}
+@media(max-width:800px){.employee-workspace .staff-calendar-workspace.has-editor{grid-template-columns:minmax(0,1fr)}.employee-workspace .salon-visit-form{grid-column:1;grid-row:1}.employee-workspace .has-editor .staff-day-agenda{grid-row:2}.employee-workspace .studio-header-actions{flex-basis:100%}}
+@media(max-width:560px){.employee-workspace{padding-block:24px 85px}.employee-workspace .studio-panel{padding:18px}.employee-workspace .studio-welcome h1{font-size:29px}.employee-workspace .section-head h2{font-size:34px}.employee-workspace .salon-calendar-tools{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.employee-workspace .salon-calendar-tools .button{padding-inline:8px;font-size:11px}.employee-workspace .salon-calendar-tools input{width:100%;min-width:0}.employee-workspace .appointment-actions{margin-left:0}.employee-workspace .weekday-picker{grid-template-columns:repeat(auto-fit,minmax(44px,1fr))}.employee-workspace .weekday-picker label{padding:6px 3px;gap:3px}.employee-workspace .settings-form:not(.salon-visit-form){padding:14px}.employee-workspace .salon-visit-form{padding:16px}.employee-workspace .salon-services>div{gap:10px}}

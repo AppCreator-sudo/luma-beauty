@@ -1,0 +1,11 @@
+{
+  "date": "2026-10-11T14:54:30.634Z",
+  "results": [
+    "fresh request and conflict were verified in previous run",
+    "salon owner opens future visit from notification link and accepts request on mobile",
+    "both client API routes are private; initial /me contains optional profile",
+    "empty cabinet; 113 inbox events paginate without duplicates; all read includes later pages",
+    "actual password, revoke other sessions and recovery rotate code; Back warns before losing new code"
+  ],
+  "pageErrors": []
+}

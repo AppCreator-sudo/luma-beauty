@@ -1,0 +1,25 @@
+# U-08 — проверка работающего UI, 11 октября 2026
+
+Снимки без префикса `live-` сделаны на **отдельной локальной тестовой базе**; их имена/услуги/цены/контакты — тестовые, не создавались в production. `live-*` — проверка опубликованного интерфейса с действующими публичными данными, только чтение; отправка заявок и другие изменения заблокированы. [Протокол рабочего сайта](live-check.json). Это доказательство реализации, не замена утверждённых исходных PNG. [Эталон](../../ui-concepts/2026-10-11-luma/booking-review-01/README.md), [отчёт](../../RELEASE_20261011_BOOKING_REFERENCE.md).
+
+- [busy-slot-390.png](busy-slot-390.png)
+- [cancelled-1440.png](cancelled-1440.png)
+- [client-save-390.png](client-save-390.png)
+- [confirmed-390.png](confirmed-390.png)
+- [contact-short-320.png](contact-short-320.png)
+- [invalid-link-390.png](invalid-link-390.png)
+- [live-master-1440.png](live-master-1440.png)
+- [live-master-320.png](live-master-320.png)
+- [live-master-390.png](live-master-390.png)
+- [live-salon-1440.png](live-salon-1440.png)
+- [live-salon-320.png](live-salon-320.png)
+- [live-salon-390.png](live-salon-390.png)
+- [master-contact-390.png](master-contact-390.png)
+- [master-result-1440.png](master-result-1440.png)
+- [master-service-1440.png](master-service-1440.png)
+- [master-time-1440.png](master-time-1440.png)
+- [master-time-320.png](master-time-320.png)
+- [no-windows-320.png](no-windows-320.png)
+- [salon-contact-390.png](salon-contact-390.png)
+- [salon-master-1440.png](salon-master-1440.png)
+- [salon-result-390.png](salon-result-390.png)

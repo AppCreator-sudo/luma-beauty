@@ -1,0 +1,4 @@
+import { Link } from 'react-router-dom';
+import '../brand.css';
+export function Branch({ className = '' }: { className?: string }) { return <svg className={'cabinet-branch ' + className} viewBox="0 0 80 110" fill="none" aria-hidden="true"><path d="M8 105Q42 73 66 7M31 77Q17 55 12 50Q28 55 35 68M39 63Q21 38 21 31Q40 43 44 51M48 43Q35 21 39 15Q51 28 52 33M54 33Q65 13 75 9Q72 25 54 33M46 51Q61 33 76 34Q66 47 46 51M36 69Q53 54 71 61Q56 72 36 69M25 85Q42 76 57 82Q47 89 25 85M61 18Q58 7 64 2Q66 13 61 18" stroke="currentColor" strokeWidth="1.1"/><path d="M31 77L14 53M39 63L23 34M48 43L40 18M54 33L72 12M46 51L72 36M36 69L67 62M25 85L53 83" stroke="currentColor" strokeWidth=".55"/></svg>; }
+export function Brand() { return <Link to="/" className="cabinet-brand" aria-label="Luma Beauty — главная"><span>Luma<small>BEAUTY</small></span><Branch/></Link>; }

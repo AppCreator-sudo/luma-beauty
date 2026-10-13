@@ -1,0 +1,19 @@
+.address-fields{border:1px solid var(--line);padding:18px;display:flex;flex-direction:column;gap:16px;min-width:0;margin:8px 0}
+.address-fields legend{font-size:12px;font-weight:700;padding:0 6px}
+.address-fields p{margin:0;font-size:12px;line-height:1.6}
+.address-fields small{font-size:10px}
+.address-fields .button{align-self:start}
+.address-suggest-field>label{font-size:12px;display:block;margin-bottom:8px;font-weight:700}
+.address-suggest-input{position:relative;min-width:0}
+.address-suggest-input>input{width:100%;min-width:0;min-height:45px;padding:12px 14px;border:1px solid var(--line);background:#fffdf8}
+.address-suggest-popup{position:absolute;z-index:120;top:100%;left:0;right:0;background:#fffdf8;border:1px solid #baa989;box-shadow:0 8px 20px #17221b21;max-height:300px;overflow:auto}
+.address-suggest-popup.above{top:auto;bottom:100%}
+.address-suggest-popup button{display:flex;align-items:start;gap:9px;width:100%;padding:12px 14px;text-align:left;border:0;border-bottom:1px solid var(--line);background:none;font-size:12px;line-height:1.6;white-space:normal;overflow-wrap:anywhere}
+.address-suggest-popup button svg{flex:none;margin-top:3px;color:var(--wine)}
+.address-suggest-popup button:hover,.address-suggest-popup button.active{background:#eee5d6}
+.address-suggest-popup p{padding:12px 14px}
+.address-provider{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:9px 14px;background:#f3efe6;font-size:10px;color:#827c72}
+.address-provider img{width:61px;height:18px;object-fit:contain;flex:none}
+.address-point-picker{display:grid;gap:12px;min-width:0}.address-point-map{height:320px;width:100%;min-width:0;z-index:0}.address-manual-marker{border:2px solid white;border-radius:50%;background:#70233a;color:white;box-shadow:0 1px 8px #0006;text-align:center;line-height:26px;font-size:18px}
+.address-point-picker[aria-busy=true] .address-point-map{pointer-events:none;opacity:.6}
+@media(max-width:560px){.address-fields{padding:14px}.address-suggest-popup{max-height:240px}}

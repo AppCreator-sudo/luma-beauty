@@ -1,0 +1,582 @@
+{
+  "started": "2026-10-11T16:21:22.692Z",
+  "origin": "https://atelie-13-143-66-1.sslip.io",
+  "expectedEntry": "index-DOhSf4e6.js",
+  "checks": [
+    {
+      "name": "me-1440",
+      "status": "PASS",
+      "details": {
+        "path": "/v2/me",
+        "url": "https://atelie-13-143-66-1.sslip.io/v2/me",
+        "layout": {
+          "width": 1440,
+          "scrollWidth": 1440,
+          "overflow": 0,
+          "offenders": []
+        },
+        "headings": [
+          "Ваше пространство."
+        ]
+      }
+    },
+    {
+      "name": "auth-1440",
+      "status": "PASS",
+      "details": {
+        "path": "/v2/auth",
+        "url": "https://atelie-13-143-66-1.sslip.io/v2/auth",
+        "layout": {
+          "width": 1440,
+          "scrollWidth": 1440,
+          "overflow": 0,
+          "offenders": []
+        },
+        "headings": [
+          "Снова здравствуйте."
+        ]
+      }
+    },
+    {
+      "name": "masters-1440",
+      "status": "PASS",
+      "details": {
+        "path": "/v2/masters",
+        "url": "https://atelie-13-143-66-1.sslip.io/v2/masters",
+        "layout": {
+          "width": 1440,
+          "scrollWidth": 1440,
+          "overflow": 0,
+          "offenders": []
+        },
+        "headings": [
+          "Мастера и салоны"
+        ]
+      }
+    },
+    {
+      "name": "inspiration-1440",
+      "status": "PASS",
+      "details": {
+        "path": "/v2/inspiration",
+        "url": "https://atelie-13-143-66-1.sslip.io/v2/inspiration",
+        "layout": {
+          "width": 1440,
+          "scrollWidth": 1440,
+          "overflow": 0,
+          "offenders": []
+        },
+        "headings": [
+          "Вдохновение в деталях."
+        ]
+      }
+    },
+    {
+      "name": "master-1440",
+      "status": "PASS",
+      "details": {
+        "path": "/v2/m/studio",
+        "url": "https://atelie-13-143-66-1.sslip.io/v2/m/studio",
+        "layout": {
+          "width": 1440,
+          "scrollWidth": 1440,
+          "overflow": 0,
+          "offenders": []
+        },
+        "headings": [
+          "Студия Бьюти"
+        ]
+      }
+    },
+    {
+      "name": "master-booking-1440",
+      "status": "PASS",
+      "details": {
+        "path": "/v2/book/studio",
+        "url": "https://atelie-13-143-66-1.sslip.io/v2/book/studio",
+        "layout": {
+          "width": 1440,
+          "scrollWidth": 1440,
+          "overflow": 0,
+          "offenders": []
+        },
+        "headings": [
+          "Время для себя."
+        ]
+      }
+    },
+    {
+      "name": "salon-1440",
+      "status": "PASS",
+      "details": {
+        "path": "/v2/s/saloon",
+        "url": "https://atelie-13-143-66-1.sslip.io/v2/s/saloon",
+        "layout": {
+          "width": 1440,
+          "scrollWidth": 1440,
+          "overflow": 0,
+          "offenders": []
+        },
+        "headings": [
+          "салон красоты"
+        ]
+      }
+    },
+    {
+      "name": "salon-booking-1440",
+      "status": "PASS",
+      "details": {
+        "path": "/v2/s/saloon/book",
+        "url": "https://atelie-13-143-66-1.sslip.io/v2/s/saloon/book",
+        "layout": {
+          "width": 1440,
+          "scrollWidth": 1440,
+          "overflow": 0,
+          "offenders": []
+        },
+        "headings": [
+          "Время для себя."
+        ]
+      }
+    },
+    {
+      "name": "me-390",
+      "status": "PASS",
+      "details": {
+        "path": "/v2/me",
+        "url": "https://atelie-13-143-66-1.sslip.io/v2/me",
+        "layout": {
+          "width": 390,
+          "scrollWidth": 390,
+          "overflow": 0,
+          "offenders": []
+        },
+        "headings": [
+          "Ваше пространство."
+        ]
+      }
+    },
+    {
+      "name": "auth-390",
+      "status": "PASS",
+      "details": {
+        "path": "/v2/auth",
+        "url": "https://atelie-13-143-66-1.sslip.io/v2/auth",
+        "layout": {
+          "width": 390,
+          "scrollWidth": 390,
+          "overflow": 0,
+          "offenders": []
+        },
+        "headings": [
+          "Снова здравствуйте."
+        ]
+      }
+    },
+    {
+      "name": "masters-390",
+      "status": "PASS",
+      "details": {
+        "path": "/v2/masters",
+        "url": "https://atelie-13-143-66-1.sslip.io/v2/masters",
+        "layout": {
+          "width": 390,
+          "scrollWidth": 390,
+          "overflow": 0,
+          "offenders": []
+        },
+        "headings": [
+          "Мастера и салоны"
+        ]
+      }
+    },
+    {
+      "name": "inspiration-390",
+      "status": "PASS",
+      "details": {
+        "path": "/v2/inspiration",
+        "url": "https://atelie-13-143-66-1.sslip.io/v2/inspiration",
+        "layout": {
+          "width": 390,
+          "scrollWidth": 390,
+          "overflow": 0,
+          "offenders": []
+        },
+        "headings": [
+          "Вдохновение в деталях."
+        ]
+      }
+    },
+    {
+      "name": "master-390",
+      "status": "PASS",
+      "details": {
+        "path": "/v2/m/studio",
+        "url": "https://atelie-13-143-66-1.sslip.io/v2/m/studio",
+        "layout": {
+          "width": 390,
+          "scrollWidth": 390,
+          "overflow": 0,
+          "offenders": [
+            {
+              "tag": "BUTTON",
+              "className": "",
+              "left": 314,
+              "right": 401
+            }
+          ]
+        },
+        "headings": [
+          "Студия Бьюти"
+        ]
+      }
+    },
+    {
+      "name": "master-booking-390",
+      "status": "PASS",
+      "details": {
+        "path": "/v2/book/studio",
+        "url": "https://atelie-13-143-66-1.sslip.io/v2/book/studio",
+        "layout": {
+          "width": 390,
+          "scrollWidth": 390,
+          "overflow": 0,
+          "offenders": []
+        },
+        "headings": [
+          "Время для себя."
+        ]
+      }
+    },
+    {
+      "name": "salon-390",
+      "status": "PASS",
+      "details": {
+        "path": "/v2/s/saloon",
+        "url": "https://atelie-13-143-66-1.sslip.io/v2/s/saloon",
+        "layout": {
+          "width": 390,
+          "scrollWidth": 390,
+          "overflow": 0,
+          "offenders": []
+        },
+        "headings": [
+          "салон красоты"
+        ]
+      }
+    },
+    {
+      "name": "salon-booking-390",
+      "status": "PASS",
+      "details": {
+        "path": "/v2/s/saloon/book",
+        "url": "https://atelie-13-143-66-1.sslip.io/v2/s/saloon/book",
+        "layout": {
+          "width": 390,
+          "scrollWidth": 390,
+          "overflow": 0,
+          "offenders": []
+        },
+        "headings": [
+          "Время для себя."
+        ]
+      }
+    },
+    {
+      "name": "me-320",
+      "status": "PASS",
+      "details": {
+        "path": "/v2/me",
+        "url": "https://atelie-13-143-66-1.sslip.io/v2/me",
+        "layout": {
+          "width": 320,
+          "scrollWidth": 320,
+          "overflow": 0,
+          "offenders": []
+        },
+        "headings": [
+          "Ваше пространство."
+        ]
+      }
+    },
+    {
+      "name": "auth-320",
+      "status": "PASS",
+      "details": {
+        "path": "/v2/auth",
+        "url": "https://atelie-13-143-66-1.sslip.io/v2/auth",
+        "layout": {
+          "width": 320,
+          "scrollWidth": 320,
+          "overflow": 0,
+          "offenders": []
+        },
+        "headings": [
+          "Снова здравствуйте."
+        ]
+      }
+    },
+    {
+      "name": "masters-320",
+      "status": "PASS",
+      "details": {
+        "path": "/v2/masters",
+        "url": "https://atelie-13-143-66-1.sslip.io/v2/masters",
+        "layout": {
+          "width": 320,
+          "scrollWidth": 320,
+          "overflow": 0,
+          "offenders": []
+        },
+        "headings": [
+          "Мастера и салоны"
+        ]
+      }
+    },
+    {
+      "name": "inspiration-320",
+      "status": "PASS",
+      "details": {
+        "path": "/v2/inspiration",
+        "url": "https://atelie-13-143-66-1.sslip.io/v2/inspiration",
+        "layout": {
+          "width": 320,
+          "scrollWidth": 320,
+          "overflow": 0,
+          "offenders": []
+        },
+        "headings": [
+          "Вдохновение в деталях."
+        ]
+      }
+    },
+    {
+      "name": "master-320",
+      "status": "PASS",
+      "details": {
+        "path": "/v2/m/studio",
+        "url": "https://atelie-13-143-66-1.sslip.io/v2/m/studio",
+        "layout": {
+          "width": 320,
+          "scrollWidth": 320,
+          "overflow": 0,
+          "offenders": [
+            {
+              "tag": "BUTTON",
+              "className": "",
+              "left": 314,
+              "right": 401
+            }
+          ]
+        },
+        "headings": [
+          "Студия Бьюти"
+        ]
+      }
+    },
+    {
+      "name": "master-booking-320",
+      "status": "PASS",
+      "details": {
+        "path": "/v2/book/studio",
+        "url": "https://atelie-13-143-66-1.sslip.io/v2/book/studio",
+        "layout": {
+          "width": 320,
+          "scrollWidth": 320,
+          "overflow": 0,
+          "offenders": []
+        },
+        "headings": [
+          "Время для себя."
+        ]
+      }
+    },
+    {
+      "name": "salon-320",
+      "status": "PASS",
+      "details": {
+        "path": "/v2/s/saloon",
+        "url": "https://atelie-13-143-66-1.sslip.io/v2/s/saloon",
+        "layout": {
+          "width": 320,
+          "scrollWidth": 320,
+          "overflow": 0,
+          "offenders": [
+            {
+              "tag": "BUTTON",
+              "className": "",
+              "left": 295,
+              "right": 372
+            }
+          ]
+        },
+        "headings": [
+          "салон красоты"
+        ]
+      }
+    },
+    {
+      "name": "salon-booking-320",
+      "status": "PASS",
+      "details": {
+        "path": "/v2/s/saloon/book",
+        "url": "https://atelie-13-143-66-1.sslip.io/v2/s/saloon/book",
+        "layout": {
+          "width": 320,
+          "scrollWidth": 320,
+          "overflow": 0,
+          "offenders": []
+        },
+        "headings": [
+          "Время для себя."
+        ]
+      }
+    },
+    {
+      "name": "production-entry",
+      "status": "PASS",
+      "details": {
+        "htmlStatus": 200,
+        "entryStatus": 200
+      }
+    },
+    {
+      "name": "anonymous-client-profile",
+      "status": "PASS",
+      "details": {
+        "path": "/api/client/profile",
+        "status": 401
+      }
+    },
+    {
+      "name": "anonymous-client-appointments",
+      "status": "PASS",
+      "details": {
+        "path": "/api/client/appointments",
+        "status": 401
+      }
+    },
+    {
+      "name": "anonymous-client-data",
+      "status": "PASS",
+      "details": {
+        "path": "/api/client/data",
+        "status": 401
+      }
+    },
+    {
+      "name": "public-catalog-discovery",
+      "status": "PASS",
+      "details": {
+        "count": 2,
+        "masterSlug": "studio",
+        "salonSlug": "saloon"
+      }
+    },
+    {
+      "name": "mobile-menu-and-back-390",
+      "status": "PASS",
+      "details": {
+        "width": 390,
+        "locked": {
+          "position": "fixed",
+          "top": "0px",
+          "overflow": "hidden",
+          "overscroll": "none",
+          "index": 1,
+          "scrollY": 0
+        },
+        "restored": {
+          "position": "",
+          "overflow": "",
+          "top": 0
+        },
+        "returnedTo": "https://atelie-13-143-66-1.sslip.io/v2/masters",
+        "menuLayout": {
+          "width": 390,
+          "scrollWidth": 390,
+          "overflow": 0,
+          "offenders": []
+        }
+      }
+    },
+    {
+      "name": "mobile-menu-and-back-320",
+      "status": "PASS",
+      "details": {
+        "width": 320,
+        "locked": {
+          "position": "fixed",
+          "top": "0px",
+          "overflow": "hidden",
+          "overscroll": "none",
+          "index": 1,
+          "scrollY": 0
+        },
+        "restored": {
+          "position": "",
+          "overflow": "",
+          "top": 0
+        },
+        "returnedTo": "https://atelie-13-143-66-1.sslip.io/v2/masters",
+        "menuLayout": {
+          "width": 320,
+          "scrollWidth": 320,
+          "overflow": 0,
+          "offenders": []
+        }
+      }
+    },
+    {
+      "name": "no-pageerrors",
+      "status": "PASS"
+    },
+    {
+      "name": "no-write-requests",
+      "status": "PASS"
+    }
+  ],
+  "skipped": [],
+  "pageErrors": [],
+  "consoleErrors": [],
+  "requestFailures": [],
+  "blockedWrites": [],
+  "screenshots": [
+    "C:\\Users\\Admin\\Desktop\\pwa\\.cache\\client-cabinet-check\\production-me-1440.png",
+    "C:\\Users\\Admin\\Desktop\\pwa\\.cache\\client-cabinet-check\\production-auth-1440.png",
+    "C:\\Users\\Admin\\Desktop\\pwa\\.cache\\client-cabinet-check\\production-masters-1440.png",
+    "C:\\Users\\Admin\\Desktop\\pwa\\.cache\\client-cabinet-check\\production-inspiration-1440.png",
+    "C:\\Users\\Admin\\Desktop\\pwa\\.cache\\client-cabinet-check\\production-master-1440.png",
+    "C:\\Users\\Admin\\Desktop\\pwa\\.cache\\client-cabinet-check\\production-master-booking-1440.png",
+    "C:\\Users\\Admin\\Desktop\\pwa\\.cache\\client-cabinet-check\\production-salon-1440.png",
+    "C:\\Users\\Admin\\Desktop\\pwa\\.cache\\client-cabinet-check\\production-salon-booking-1440.png",
+    "C:\\Users\\Admin\\Desktop\\pwa\\.cache\\client-cabinet-check\\production-me-390.png",
+    "C:\\Users\\Admin\\Desktop\\pwa\\.cache\\client-cabinet-check\\production-auth-390.png",
+    "C:\\Users\\Admin\\Desktop\\pwa\\.cache\\client-cabinet-check\\production-masters-390.png",
+    "C:\\Users\\Admin\\Desktop\\pwa\\.cache\\client-cabinet-check\\production-inspiration-390.png",
+    "C:\\Users\\Admin\\Desktop\\pwa\\.cache\\client-cabinet-check\\production-master-390.png",
+    "C:\\Users\\Admin\\Desktop\\pwa\\.cache\\client-cabinet-check\\production-master-booking-390.png",
+    "C:\\Users\\Admin\\Desktop\\pwa\\.cache\\client-cabinet-check\\production-salon-390.png",
+    "C:\\Users\\Admin\\Desktop\\pwa\\.cache\\client-cabinet-check\\production-salon-booking-390.png",
+    "C:\\Users\\Admin\\Desktop\\pwa\\.cache\\client-cabinet-check\\production-me-320.png",
+    "C:\\Users\\Admin\\Desktop\\pwa\\.cache\\client-cabinet-check\\production-auth-320.png",
+    "C:\\Users\\Admin\\Desktop\\pwa\\.cache\\client-cabinet-check\\production-masters-320.png",
+    "C:\\Users\\Admin\\Desktop\\pwa\\.cache\\client-cabinet-check\\production-inspiration-320.png",
+    "C:\\Users\\Admin\\Desktop\\pwa\\.cache\\client-cabinet-check\\production-master-320.png",
+    "C:\\Users\\Admin\\Desktop\\pwa\\.cache\\client-cabinet-check\\production-master-booking-320.png",
+    "C:\\Users\\Admin\\Desktop\\pwa\\.cache\\client-cabinet-check\\production-salon-320.png",
+    "C:\\Users\\Admin\\Desktop\\pwa\\.cache\\client-cabinet-check\\production-salon-booking-320.png",
+    "C:\\Users\\Admin\\Desktop\\pwa\\.cache\\client-cabinet-check\\production-me-menu-390.png",
+    "C:\\Users\\Admin\\Desktop\\pwa\\.cache\\client-cabinet-check\\production-me-menu-320.png"
+  ],
+  "limitations": [
+    "Anonymous production inspection; authenticated cabinet flows were verified locally.",
+    "Physical OS gestures and push delivery to a real phone are outside this check."
+  ],
+  "finished": "2026-10-11T16:21:38.821Z",
+  "previousInspectionStarted": "2026-10-11T16:17:17.727Z",
+  "menuRetry": "Only mobile-menu checks repeated after correcting strict 0 versus -0 test assertion; application unchanged.",
+  "passed": 33,
+  "failed": 0,
+  "result": "PASS"
+}

@@ -1,0 +1,201 @@
+/* Navigation remains in the normal page flow; solid cream is the fallback. */
+:root {
+  --site-header-height: 83px;
+}
+
+.site-header.navigation-glass {
+  position: sticky;
+  top: 0;
+  background: #f7f3eb;
+  border-bottom-color: rgb(177 145 96 / 30%);
+  box-shadow: 0 3px 18px rgb(50 41 23 / 4%);
+}
+
+.site-header.navigation-glass .wordmark {
+  min-height: 44px;
+  align-items: center;
+}
+
+.site-header.navigation-glass .header-ghost {
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.site-header.navigation-glass .header-account {
+  min-height: 44px;
+  border-color: rgb(177 145 96 / 36%);
+}
+
+.site-header.navigation-glass .mobile-overlay {
+  background: #f8f4ec;
+  border-bottom: 1px solid rgb(177 145 96 / 30%);
+  box-shadow: 0 9px 20px rgb(50 41 23 / 8%);
+}
+
+.bottom-nav.navigation-glass {
+  background: #faf7f0;
+  border-top-color: rgb(177 145 96 / 32%);
+  box-shadow: 0 -6px 22px rgb(40 35 28 / 7%);
+}
+
+.bottom-nav.navigation-glass .bottom-link {
+  min-height: 44px;
+  color: #695e51;
+}
+
+.bottom-nav.navigation-glass .bottom-link.active {
+  color: var(--wine);
+}
+
+/* Keep existing sticky surfaces clear of the shared header. */
+.site-header.navigation-glass + main .catalog-toolbar {
+  top: var(--site-header-height);
+}
+
+.site-header.navigation-glass + main .profile-aside {
+  top: calc(var(--site-header-height) + 18px);
+}
+
+.site-header.navigation-glass + main .booking-summary {
+  top: calc(var(--site-header-height) + 25px);
+}
+
+@supports ((backdrop-filter: blur(10px)) or (-webkit-backdrop-filter: blur(10px))) {
+  .site-header.navigation-glass,
+  .bottom-nav.navigation-glass,
+  .site-header.navigation-glass .mobile-overlay {
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+  }
+
+  .site-header.navigation-glass {
+    background: rgb(247 243 235 / 90%);
+  }
+
+  .bottom-nav.navigation-glass {
+    background: rgb(250 247 240 / 94%);
+  }
+
+  .site-header.navigation-glass .mobile-overlay {
+    background: rgb(248 244 236 / 97%);
+  }
+}
+
+@media (max-width: 800px) {
+  :root {
+    --site-header-height: 66px;
+  }
+
+  .site-header.navigation-glass .mobile-menu-toggle,
+  .site-header.navigation-glass .header-account {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .site-header.navigation-glass .mobile-overlay {
+    top: 100%;
+    gap: 6px;
+  }
+
+  .site-header.navigation-glass .mobile-overlay > a {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+  }
+}
+
+/* Brief feedback keeps navigation responsive without moving its hit areas. */
+.site-header.navigation-glass :is(.nav-link, .header-account, .header-ghost, .mobile-menu-toggle, .mobile-overlay > a) {
+  transition: background-color 240ms ease, color 240ms ease;
+}
+
+.site-header.navigation-glass :is(.header-account, .header-ghost, .mobile-menu-toggle) > svg,
+.bottom-nav.navigation-glass .bottom-link > svg {
+  transition: transform 240ms ease;
+}
+
+.site-header.navigation-glass :is(.nav-link, .mobile-overlay > a):active {
+  color: var(--wine);
+}
+
+.site-header.navigation-glass :is(.header-account, .header-ghost, .mobile-menu-toggle, .mobile-overlay > a):active {
+  background-color: rgb(194 162 113 / 20%);
+}
+
+.site-header.navigation-glass :is(.header-account, .header-ghost, .mobile-menu-toggle):active > svg,
+.bottom-nav.navigation-glass .bottom-link:active > svg {
+  transform: translateY(1.5px) scale(.91);
+}
+
+@media (max-width: 800px) {
+  .site-header.navigation-glass .mobile-overlay {
+    animation: navigation-menu-open 315ms cubic-bezier(.2, .7, .3, 1);
+  }
+
+  .site-header.navigation-glass :is(.mobile-menu-toggle, .header-ghost, .mobile-overlay > a) {
+    border-radius: 8px;
+  }
+
+  .bottom-nav.navigation-glass .bottom-link {
+    isolation: isolate;
+    transition: color 240ms ease;
+  }
+
+  .bottom-nav.navigation-glass .bottom-link::after {
+    content: '';
+    position: absolute;
+    inset: 5px 4px;
+    z-index: -1;
+    pointer-events: none;
+    border-radius: 12px;
+    border: 1px solid rgb(177 145 96 / 27%);
+    background: rgb(230 211 175 / 68%);
+    box-shadow: inset 0 1px 0 rgb(255 255 255 / 65%);
+    opacity: 0;
+    transform: scale(.91);
+    transition: opacity 270ms ease, transform 300ms ease;
+  }
+
+  .bottom-nav.navigation-glass .bottom-link.active::after {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .bottom-nav.navigation-glass .bottom-link.active::before {
+    content: none;
+  }
+
+  .bottom-nav.navigation-glass .bottom-link.active > svg {
+    animation: navigation-icon-settle 330ms cubic-bezier(.2, .7, .3, 1);
+  }
+}
+
+@keyframes navigation-menu-open {
+  from { opacity: 0; transform: translateY(-10.5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes navigation-icon-settle {
+  from { transform: translateY(3px) scale(.91); }
+  to { transform: translateY(0) scale(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-header.navigation-glass .mobile-overlay,
+  .bottom-nav.navigation-glass .bottom-link.active > svg {
+    animation: none;
+  }
+
+  .site-header.navigation-glass :is(.nav-link, .header-account, .header-ghost, .mobile-menu-toggle, .mobile-overlay > a),
+  .site-header.navigation-glass :is(.header-account, .header-ghost, .mobile-menu-toggle) > svg,
+  .bottom-nav.navigation-glass .bottom-link,
+  .bottom-nav.navigation-glass .bottom-link > svg,
+  .bottom-nav.navigation-glass .bottom-link::after {
+    transition: none;
+  }
+
+  .site-header.navigation-glass :is(.header-account, .header-ghost, .mobile-menu-toggle):active > svg,
+  .bottom-nav.navigation-glass .bottom-link:active > svg {
+    transform: none;
+  }
+}

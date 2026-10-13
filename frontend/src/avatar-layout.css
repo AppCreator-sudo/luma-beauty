@@ -1,0 +1,45 @@
+/* Keep the image inside a square grid track, even for tall source photos.
+   The contextual selectors raise specificity above the older salon overrides. */
+main :is(
+  .cabinet-identity-avatar,
+  .salon-mark,
+  .identity-portrait-shell,
+  .compact-master-avatar,
+  .salon-staff-portrait,
+  .staff-setup-portrait,
+  .compact-team-portrait,
+  .owner-salon-mark,
+  .employee-salon-mark,
+  .profile-avatar,
+  .salon-booking .summary-master .salon-mark,
+  .identity-salon .salon-card-brand .salon-mark
+) {
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1fr);
+  padding: 0;
+}
+
+/* Crop without stretching; each portrait keeps its existing object-position. */
+main :is(
+  .cabinet-identity-avatar,
+  .salon-mark,
+  .identity-portrait-shell,
+  .compact-master-avatar,
+  .salon-staff-portrait,
+  .staff-setup-portrait,
+  .compact-team-portrait,
+  .owner-salon-mark,
+  .employee-salon-mark,
+  .profile-avatar,
+  .salon-booking .summary-master .salon-mark,
+  .identity-salon .salon-card-brand .salon-mark
+) > img {
+  display: block;
+  min-width: 0;
+  min-height: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border-radius: 50%;
+  object-fit: cover;
+}

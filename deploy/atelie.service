@@ -1,0 +1,22 @@
+[Unit]
+Description=Atelie beauty PWA
+After=network.target
+
+[Service]
+Type=simple
+User=atelie
+Group=atelie
+WorkingDirectory=/opt/atelie/current
+EnvironmentFile=/etc/atelie.env
+ExecStart=/usr/local/bin/node server.mjs
+Restart=on-failure
+RestartSec=3
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/opt/atelie/shared
+UMask=0027
+
+[Install]
+WantedBy=multi-user.target

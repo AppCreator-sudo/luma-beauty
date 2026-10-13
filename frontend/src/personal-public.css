@@ -1,0 +1,560 @@
+.personal-public-page {
+  color: #292820;
+  background: #f8f5ee;
+  font-family: Manrope, Arial, sans-serif;
+}
+
+.personal-public-page .container {
+  width: min(100% - 72px, 1240px);
+}
+
+.personal-public-page .profile-breadcrumb {
+  padding-block: 10px;
+}
+
+.personal-public-page .profile-breadcrumb a {
+  min-height: 44px;
+  color: #70695f;
+}
+
+.personal-public-page .profile-hero {
+  min-height: 0;
+  background: #f8f5ee;
+  color: #292820;
+  overflow: visible;
+}
+
+.personal-public-page .profile-hero::after {
+  display: none;
+}
+
+.personal-public-page .profile-hero-inner {
+  display: block;
+  min-height: 0;
+  padding-block: 6px 0;
+  border-bottom: 1px solid #ded5c9;
+}
+
+.personal-public-page .personal-cover {
+  position: relative;
+  height: 180px;
+  border: 1px solid #d7c7b0;
+  border-radius: 4px;
+}
+
+.personal-public-page .personal-cover-art {
+  border-radius: 3px;
+}
+
+.personal-public-page .personal-cover-orbit {
+  width: 43%;
+  top: -145%;
+  right: 4%;
+}
+
+.personal-public-page .personal-cover-line {
+  inset: 22px 26px;
+}
+
+.personal-public-page .personal-portrait {
+  position: absolute;
+  left: 26px;
+  bottom: -64px;
+  width: 132px;
+  height: 132px;
+  z-index: 1;
+}
+
+.personal-public-page .profile-avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 5px solid #f8f5ee;
+  box-shadow: 0 0 0 1px #c8b8a4;
+  padding: 0;
+  background: #f8f5ee;
+}
+
+.personal-public-page .profile-avatar img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 25%;
+}
+
+.personal-public-page .personal-portrait-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at 50% 15%, #f7ecdd, #e3d1be);
+}
+
+.personal-public-page .personal-portrait-placeholder span {
+  font: 400 62px/1 'Cormorant Garamond', Georgia, serif;
+  letter-spacing: -.06em;
+  color: #864a51;
+}
+
+.personal-public-page .profile-hero-copy {
+  min-width: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 320px);
+  gap: 28px;
+  padding: 22px 26px 24px;
+}
+
+.personal-public-page .personal-profile-details,
+.personal-public-page .personal-profile-cta {
+  min-width: 0;
+}
+
+.personal-public-page .personal-profile-heading {
+  min-height: 88px;
+  padding-left: 157px;
+  margin-bottom: 14px;
+}
+
+.personal-public-page .personal-profile-cta {
+  align-self: center;
+}
+
+.personal-public-page .profile-hero-copy .eyebrow {
+  color: #7a3446;
+  font-size: 9px;
+  letter-spacing: .22em;
+}
+
+.personal-public-page .profile-hero-copy h1 {
+  font: 400 clamp(42px, 4.5vw, 62px)/1 'Cormorant Garamond', Georgia, serif;
+  letter-spacing: -.04em;
+  overflow-wrap: anywhere;
+  margin: 7px 0 10px;
+}
+
+.personal-public-page .personal-identity-line {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.personal-public-page .personal-profile-label,
+.personal-public-page .profile-training-badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 27px;
+  padding: 5px 12px;
+  margin: 0;
+  border: 1px solid #e3cfc6;
+  border-radius: 30px;
+  background: #f0dfd7;
+  color: #6f3040;
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: .015em;
+  text-transform: none;
+}
+
+.personal-public-page .profile-training-badge {
+  background: transparent;
+  border-color: #ddd5c7;
+  color: #70695f;
+}
+
+.personal-public-page .profile-location {
+  font: 400 24px/1.3 'Cormorant Garamond', Georgia, serif;
+  color: #514c42;
+  margin-bottom: 12px;
+  overflow-wrap: anywhere;
+}
+
+.personal-public-page .profile-location span {
+  padding-inline: 5px;
+  color: #9d8a78;
+}
+
+.personal-public-page .profile-bio {
+  max-width: 620px;
+  margin-bottom: 14px;
+  font-size: 12px;
+  line-height: 1.75;
+  color: #70695f;
+  overflow-wrap: anywhere;
+}
+
+.personal-public-page .profile-stats {
+  gap: 21px;
+  margin: 0 0 18px;
+  flex-wrap: wrap;
+}
+
+.personal-public-page .profile-stats span {
+  flex-direction: row;
+  align-items: baseline;
+  gap: 6px;
+  padding-right: 21px;
+  color: #70695f;
+  border-color: #ded5c9;
+  font-size: 10px;
+}
+
+.personal-public-page .profile-stats b {
+  font: 400 24px/1 'Cormorant Garamond', Georgia, serif;
+  color: #713147;
+}
+
+.personal-public-page .personal-booking-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.personal-public-page .personal-nearest {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  min-height: 54px;
+  padding: 10px 14px;
+  border: 1px solid #ded5c9;
+  border-radius: 4px;
+  background: #f1ede4;
+  color: #52483e;
+  min-width: 0;
+}
+
+.personal-public-page .personal-nearest > svg {
+  flex: none;
+}
+
+.personal-public-page .personal-nearest > span {
+  min-width: 0;
+  flex: 1;
+}
+
+.personal-public-page .personal-nearest small {
+  display: block;
+  margin-bottom: 2px;
+  font-size: 9px;
+  color: #70695f;
+}
+
+.personal-public-page .personal-nearest strong {
+  font: 400 19px/1.2 'Cormorant Garamond', Georgia, serif;
+  overflow-wrap: anywhere;
+}
+
+.personal-public-page .personal-book-button {
+  min-width: 0;
+  width: 100%;
+  min-height: 54px;
+  border-radius: 4px;
+  font-size: 12px;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.personal-public-page .profile-hero-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+}
+
+.personal-public-page .profile-hero-actions .button {
+  flex: none;
+  min-width: 0;
+  min-height: 44px;
+  padding: 9px 14px;
+  border-radius: 4px;
+  border-color: #ded5c9;
+  color: #713147;
+  font-size: 10px;
+  letter-spacing: .015em;
+  gap: 9px;
+}
+
+.personal-public-page .profile-share {
+  width: 44px;
+  min-width: 44px;
+  min-height: 44px;
+  border: 1px solid #ded5c9;
+  border-radius: 4px;
+  color: #713147;
+}
+
+.personal-public-page .profile-body {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 28px;
+  padding-block: 22px 80px;
+}
+
+.personal-public-page .profile-main {
+  min-width: 0;
+  grid-row: auto;
+}
+
+.personal-public-page .stories-row {
+  gap: 14px;
+  padding: 2px 0 18px;
+}
+
+.personal-public-page .stories-row:empty {
+  display: none;
+}
+
+.personal-public-page .stories-row button {
+  min-height: 44px;
+  flex: none;
+}
+
+.personal-public-page .stories-row button > span {
+  border-color: #b68c88;
+}
+
+.personal-public-page .profile-tabs {
+  gap: 26px;
+}
+
+.personal-public-page .profile-tabs button {
+  min-height: 48px;
+  font-size: 11px;
+  letter-spacing: .06em;
+  color: #70695f;
+}
+
+.personal-public-page .profile-tabs button.active {
+  color: #713147;
+}
+
+.personal-public-page .profile-panel {
+  padding-top: 22px;
+}
+
+.personal-public-page .section-head.compact {
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.personal-public-page .section-head.compact h2 {
+  font: 400 clamp(38px, 3.7vw, 50px)/1 'Cormorant Garamond', Georgia, serif;
+  margin-top: 7px;
+}
+
+.personal-public-page .section-head h2 em {
+  color: #935969;
+}
+
+.personal-public-page .section-head > .muted {
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.personal-public-page .profile-work-grid {
+  gap: 7px;
+}
+
+.personal-public-page .service-row {
+  padding-block: 14px;
+  gap: 16px;
+}
+
+.personal-public-page .service-row > div:first-child {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.personal-public-page .service-row > div:last-child {
+  flex-wrap: wrap;
+  justify-content: end;
+  gap: 10px;
+}
+
+.personal-public-page .service-row a {
+  min-height: 44px;
+  min-width: 44px;
+  align-items: center;
+}
+
+.personal-public-page .reviews-list article {
+  padding: 18px;
+  overflow-wrap: anywhere;
+}
+
+.personal-public-page .about-copy,
+.personal-public-page .about-location {
+  overflow-wrap: anywhere;
+}
+
+.personal-public-page .about-location svg {
+  flex: none;
+}
+
+.personal-public-page :focus-visible {
+  outline: 2px solid #713147;
+  outline-offset: 3px;
+}
+
+@media (max-width: 1050px) {
+  .personal-public-page .profile-hero-copy {
+    grid-template-columns: minmax(0, 1fr) 260px;
+    gap: 22px;
+  }
+
+  .personal-public-page .profile-hero-copy h1 {
+    font-size: 48px;
+  }
+
+  .personal-public-page .profile-work-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+@media (max-width: 800px) {
+  .personal-public-page .container {
+    width: calc(100% - 34px);
+  }
+
+  .personal-public-page .profile-hero-copy {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .personal-public-page .profile-hero-copy h1 {
+    font-size: 52px;
+  }
+
+  .personal-public-page .personal-booking-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .personal-public-page .profile-stats {
+    margin-bottom: 0;
+  }
+
+  .personal-public-page .profile-body {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 650px) {
+  .personal-public-page .profile-hero-inner {
+    display: block;
+    padding-block: 4px 0;
+  }
+
+  .personal-public-page .personal-cover {
+    height: 155px;
+  }
+
+  .personal-public-page .personal-cover-orbit {
+    width: 75%;
+    top: -60%;
+    right: -5%;
+  }
+
+  .personal-public-page .profile-hero-copy {
+    padding: 18px 0 22px;
+    gap: 16px;
+  }
+
+  .personal-public-page .personal-profile-heading {
+    padding: 45px 0 0;
+    min-height: 0;
+    margin-bottom: 12px;
+  }
+
+  .personal-public-page .personal-portrait {
+    width: 108px;
+    height: 108px;
+    left: 18px;
+    bottom: -52px;
+  }
+
+  .personal-public-page .profile-hero-copy h1 {
+    font-size: clamp(42px, 11vw, 52px);
+    margin-top: 8px;
+  }
+
+  .personal-public-page .profile-location {
+    font-size: 22px;
+  }
+
+  .personal-public-page .profile-stats {
+    gap: 12px;
+  }
+
+  .personal-public-page .profile-stats span {
+    gap: 5px;
+    padding-right: 12px;
+  }
+
+  .personal-public-page .personal-booking-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .personal-public-page .personal-nearest {
+    justify-content: space-between;
+  }
+
+  .personal-public-page .personal-nearest > span {
+    flex: 1;
+  }
+
+  .personal-public-page .personal-book-button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .personal-public-page .profile-tabs {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 8px;
+    overflow: visible;
+  }
+
+  .personal-public-page .profile-tabs button {
+    font-size: 10px;
+    letter-spacing: 0;
+    white-space: normal;
+    padding: 12px 2px;
+  }
+
+  .personal-public-page .service-row {
+    align-items: start;
+  }
+
+  .personal-public-page .service-row > div:last-child {
+    flex-direction: column;
+    align-items: end;
+    gap: 2px;
+  }
+
+  .personal-public-page .service-row h3 {
+    font-size: 25px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .personal-public-page .button,
+  .personal-public-page .button svg,
+  .personal-public-page .aside-link {
+    transition: none;
+  }
+
+  .personal-public-page .button:hover,
+  .personal-public-page .button:hover svg {
+    transform: none;
+  }
+}

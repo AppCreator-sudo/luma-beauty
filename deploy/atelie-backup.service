@@ -1,0 +1,6 @@
+[Unit]
+Description=Atelie database and uploads backup
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/python3 /opt/atelie/current/deploy/backup.py
+UMask=0077

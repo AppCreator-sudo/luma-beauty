@@ -1,0 +1,23 @@
+{
+  "mimeTypes": [
+    "image/jpeg",
+    "image/png",
+    "image/webp"
+  ],
+  "maxBytes": 8388608,
+  "maxPixels": 40000000,
+  "maxSide": 10000,
+  "avatar": {
+    "minWidth": 256,
+    "minHeight": 256,
+    "recommendedWidth": 800,
+    "recommendedHeight": 800
+  },
+  "cover": {
+    "minWidth": 800,
+    "minHeight": 450,
+    "recommendedWidth": 1600,
+    "recommendedHeight": 900,
+    "landscape": true
+  }
+}

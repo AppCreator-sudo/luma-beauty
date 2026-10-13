@@ -1,0 +1,76 @@
+.cabinet-flow{min-width:0;display:grid;gap:14px}
+.cabinet-flow fieldset[hidden],.cabinet-flow [hidden]{display:none!important}
+.cabinet-steps{min-width:0;margin:0 0 4px}
+.cabinet-steps ol{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));padding:0;margin:0;list-style:none;gap:6px}
+.cabinet-steps li{min-width:0;border-bottom:2px solid var(--line);color:var(--muted)}
+.cabinet-steps li.is-current{border-color:var(--wine);color:var(--wine)}
+.cabinet-steps li.is-complete{border-color:#547061;color:#365344}
+.cabinet-steps button,.cabinet-step-label{display:flex;align-items:center;gap:6px;min-height:44px;padding:5px 3px;font:inherit;font-size:12px;line-height:1.3;background:none;border:0;color:inherit;text-align:left;width:100%;overflow-wrap:anywhere}
+.cabinet-steps button:disabled{opacity:1;cursor:default}
+.cabinet-steps button>span,.cabinet-step-label>span{display:grid;place-items:center;width:22px;height:22px;flex:0 0 22px;border:1px solid currentColor;border-radius:50%;font-size:11px}
+.cabinet-step-count{font-size:12px;margin:8px 0 0;color:var(--muted)}
+.cabinet-flow .cabinet-step-panel{min-width:0;margin:0;padding:0;border:0;display:grid;gap:12px}
+.cabinet-step-panel h3{font-size:27px;margin:0;line-height:1.1}
+.cabinet-step-panel p{margin:0;font-size:12px;line-height:1.5}
+.cabinet-flow label{min-width:0;display:grid;gap:6px;font-size:12px;margin:0}
+.cabinet-flow input:not([type=checkbox]),.cabinet-flow select,.cabinet-flow textarea{width:100%;min-width:0;min-height:44px;font-size:13px}
+.cabinet-flow .form-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;min-width:0}
+.cabinet-flow-actions{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:4px;min-width:0}
+.cabinet-flow-actions .button{min-height:44px;padding-inline:14px;font-size:12px}
+.cabinet-flow-actions .button-wine{margin-left:auto}
+.cabinet-summary{margin:0;padding:12px;background:#f2eee5;display:grid;gap:9px;min-width:0}
+dl.cabinet-summary>div{display:grid;grid-template-columns:minmax(80px,.6fr) minmax(0,1fr);gap:12px;align-items:baseline}
+.cabinet-summary dt{font-size:12px;color:var(--muted)}
+.cabinet-summary dd{margin:0;font-size:13px;overflow-wrap:anywhere}
+.cabinet-inline-note{padding:10px 12px;background:#f2eee5;font-size:12px}
+.cabinet-flow :is(button,input,select,textarea):focus-visible{outline:2px solid var(--wine);outline-offset:2px}
+.studio-page .work-upload.cabinet-flow,.salon-page .work-upload.cabinet-flow{align-items:start;gap:16px;padding:16px}
+.work-upload.cabinet-flow .work-preview-main{max-height:270px;object-fit:contain;background:#f2eee5}
+.work-upload.cabinet-flow .work-preview-empty{min-height:150px}
+/* Keep the working identity small; large covers belong to public pages. */
+.studio-workspace .studio-welcome>.cabinet-identity,.owner-workspace .salon-workspace-welcome>.cabinet-identity{position:relative;display:grid;grid-template-columns:72px minmax(0,1fr);width:100%;min-width:0;max-width:none;border:0;background:transparent;gap:14px;overflow:visible}
+.studio-workspace .studio-welcome>.cabinet-identity .cabinet-identity-cover,.owner-workspace .salon-workspace-welcome>.cabinet-identity .cabinet-identity-cover{position:static;height:auto;min-height:0;background:none;grid-column:1;grid-row:1;overflow:visible}
+.studio-workspace .studio-welcome>.cabinet-identity .cabinet-identity-cover>img,.studio-workspace .studio-welcome>.cabinet-identity .cabinet-cover-pattern,.owner-workspace .salon-workspace-welcome .cabinet-identity-cover>img,.owner-workspace .salon-workspace-welcome .cabinet-cover-pattern{display:none}
+.studio-workspace .studio-welcome>.cabinet-identity .cabinet-identity-content,.owner-workspace .salon-workspace-welcome>.cabinet-identity .cabinet-identity-content{display:contents}
+.studio-workspace .studio-welcome>.cabinet-identity .cabinet-identity-avatar,.owner-workspace .salon-workspace-welcome .cabinet-identity-avatar{width:72px;height:72px;margin:0;grid-column:1;grid-row:1;border:1px solid var(--line)}
+.studio-workspace .studio-welcome>.cabinet-identity .cabinet-identity-avatar>span,.owner-workspace .salon-workspace-welcome .cabinet-identity-avatar>span{font-size:44px}
+.studio-workspace .studio-welcome>.cabinet-identity .cabinet-identity-copy,.owner-workspace .salon-workspace-welcome>.cabinet-identity .cabinet-identity-copy{grid-column:2;grid-row:1;min-width:0;padding-top:0;padding-bottom:52px}
+.studio-workspace .studio-welcome>.cabinet-identity .cabinet-identity-copy h1,.owner-workspace .salon-workspace-welcome .cabinet-identity-copy h1{font-size:34px;line-height:1.05;margin:3px 0 5px;overflow-wrap:anywhere}
+.studio-workspace .studio-welcome>.cabinet-identity .cabinet-edit-appearance,.owner-workspace .salon-workspace-welcome>.cabinet-identity .cabinet-edit-appearance{position:absolute;left:86px;bottom:0;top:auto;right:auto;margin:0;min-height:44px;white-space:nowrap;font-size:12px;background:var(--cream);border:1px solid var(--line);z-index:1}
+.studio-workspace .studio-welcome,.owner-workspace .salon-workspace-welcome{gap:14px;margin-bottom:14px;align-items:start}
+.studio-workspace .studio-panel,.owner-workspace .studio-panel{padding:18px 20px;margin-bottom:16px}
+.owner-workspace .salon-performer .section-head h2{font-size:32px}
+.owner-workspace .salon-team .section-head{margin-bottom:10px}
+.owner-workspace .salon-team>.muted{font-size:12px;margin:8px 0 12px}
+.owner-workspace .salon-staff-list{grid-template-columns:repeat(auto-fit,minmax(175px,1fr));gap:8px}
+.owner-workspace .salon-staff-list button{min-height:64px;padding:10px 12px}
+.owner-workspace .team-day-grid{grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.owner-workspace .team-day-card{padding:14px;min-height:0}
+.owner-workspace .team-day-actions{gap:8px;flex-wrap:wrap}
+.owner-workspace .team-day-actions button{min-height:44px;font-size:12px}
+.owner-workspace .salon-visit-form{max-width:none;padding:16px}
+.calendar-workspace-page .calendar-agenda .empty-state,.owner-workspace .staff-day-agenda .empty-state{padding:20px 12px;min-height:0}
+@media(max-width:800px){.cabinet-flow-actions .button-wine{flex:1}.studio-workspace .studio-welcome,.owner-workspace .salon-workspace-welcome{display:flex;flex-direction:column}.studio-workspace .studio-panel,.owner-workspace .studio-panel{padding:16px}.owner-workspace .team-day-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.owner-workspace .salon-staff-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.studio-workspace .studio-welcome>.cabinet-identity,.owner-workspace .salon-workspace-welcome>.cabinet-identity{grid-template-columns:56px minmax(0,1fr);gap:12px}.studio-workspace .studio-welcome>.cabinet-identity .cabinet-identity-avatar,.owner-workspace .salon-workspace-welcome>.cabinet-identity .cabinet-identity-avatar{width:56px;height:56px}.studio-workspace .studio-welcome>.cabinet-identity .cabinet-edit-appearance,.owner-workspace .salon-workspace-welcome>.cabinet-identity .cabinet-edit-appearance{left:68px}}
+@media(max-width:560px){.cabinet-steps button,.cabinet-step-label{flex-direction:column;align-items:flex-start;gap:4px;overflow-wrap:normal;word-break:normal;min-height:64px}}
+@media(max-width:560px){.cabinet-steps button,.cabinet-step-label{font-size:11px}.cabinet-flow .form-row{grid-template-columns:minmax(0,1fr)}dl.cabinet-summary>div{grid-template-columns:1fr;gap:3px}.owner-workspace .team-day-grid,.owner-workspace .salon-staff-list{grid-template-columns:minmax(0,1fr)}.studio-workspace .studio-welcome>.cabinet-identity .cabinet-identity-copy h1,.owner-workspace .salon-workspace-welcome .cabinet-identity-copy h1{font-size:29px}}
+
+/* Salon owners manage staff services with the same compact controls as personal services. */
+.salon-services-manager{display:grid;gap:18px;min-width:0}
+.salon-services-list{min-width:0}
+.salon-services-list .service-row{padding:12px 0;gap:14px}
+.salon-services-list .service-row>div:first-child{min-width:0}
+.salon-services-list .service-row h3{font-size:24px;overflow-wrap:anywhere}
+.salon-services-list .service-row span{font-size:12px}
+.salon-services-list .service-row>div:last-child{gap:12px;flex:none}
+.salon-services-list button{width:44px;height:44px;flex:none;display:grid;place-items:center;border:1px solid var(--line);background:#f7f1ea;color:#a24753}
+.salon-services-empty{padding:14px;background:#f3efe6;color:var(--muted);font-size:13px;line-height:1.5}
+.salon-service-form{grid-template-columns:minmax(0,2fr) minmax(100px,1fr) minmax(130px,1fr) auto;gap:12px;padding:14px;margin:0;border:1px solid var(--line);background:#f3efe6}
+.salon-service-form label{margin:0;gap:6px;font-size:12px;min-width:0}
+.salon-service-form input{min-width:0;min-height:44px;font-size:13px}
+.salon-service-form .button{min-height:44px;padding-inline:16px}
+.salon-service-form :is(.form-error,.salon-service-notice){grid-column:1/-1;margin:0}
+.salon-service-notice{padding:10px 12px;background:#edf2ed;border-left:3px solid #365344;font-size:13px;line-height:1.5}
+.salon-services-manager :is(button,input):focus-visible{outline:2px solid var(--wine);outline-offset:2px}
+@media(max-width:1000px){.salon-service-form{grid-template-columns:minmax(0,2fr) minmax(0,1fr)}.salon-service-form .button{justify-content:center}}
+@media(max-width:560px){.salon-services-manager{gap:14px}.salon-services-list .service-row{gap:8px}.salon-services-list .service-row h3{font-size:21px}.salon-services-list .service-row>div:last-child{gap:8px}.salon-service-form{grid-template-columns:minmax(0,1fr);padding:12px}}

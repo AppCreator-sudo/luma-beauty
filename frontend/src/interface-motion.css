@@ -1,0 +1,46 @@
+/* Public previews enter once when rendered; working forms retain their layout. */
+@media (prefers-reduced-motion: no-preference) {
+  main .compact-master-card,
+  main .inspiration-preview {
+    animation: public-preview-enter .6s cubic-bezier(.2,.7,.25,1) backwards;
+    transition: border-color .18s, box-shadow .18s;
+  }
+  main .compact-master-card:nth-child(2), main .inspiration-preview:nth-child(2) { animation-delay: .05s; }
+  main .compact-master-card:nth-child(3), main .inspiration-preview:nth-child(3) { animation-delay: .1s; }
+  main .compact-master-card:nth-child(4), main .inspiration-preview:nth-child(4) { animation-delay: .15s; }
+  main .compact-master-identity, main .inspiration-author {
+    animation: public-preview-content-enter .6s cubic-bezier(.2,.7,.25,1) backwards;
+    animation-delay: inherit;
+  }
+  main .compact-master-avatar { transition: transform .18s; }
+  main .button, main .compact-master-book, main .round-action {
+    transition: background .18s, border-color .18s, color .18s, transform .14s;
+  }
+  main .button:active:not(:disabled), main .compact-master-book:active, main .round-action:active:not(:disabled) { transform: translateY(1.5px); }
+  main .inspiration-photo:active > img { transform: scale(1.0375); }
+}
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  main .compact-master-card:hover, main .inspiration-preview:hover {
+    border-color: #b89a6d;
+    box-shadow: 0 7.5px 24px rgb(50 41 23 / 7%);
+  }
+  main .compact-master-card:hover .compact-master-avatar { transform: translateY(-3px); }
+  main .inspiration-photo:hover > img { transform: scale(1.0375); }
+}
+@media (prefers-reduced-motion: reduce) {
+  main .compact-master-card, main .inspiration-preview, main .compact-master-identity, main .inspiration-author, main .compact-master-avatar, main .button, main .compact-master-book, main .round-action, .inspiration-page .inspiration-photo > img {
+    animation: none;
+    transition: none;
+  }
+  .inspiration-page .inspiration-photo:hover > img, .inspiration-page .inspiration-photo:active > img { transform: none; }
+}
+@keyframes public-preview-enter {
+  from { opacity: .7; }
+  to { opacity: 1; }
+}
+
+/* Animate the content, keeping the card position used for Back restoration stable. */
+@keyframes public-preview-content-enter {
+  from { translate: 0 12px; }
+  to { translate: 0 0; }
+}

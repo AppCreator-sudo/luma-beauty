@@ -1,0 +1,16 @@
+{
+  "id": "U-07N-auth-review-02",
+  "status": "approved-implemented-verified-published",
+  "approved_date": "2026-10-11",
+  "timezone": "Asia/Novosibirsk",
+  "clarification": "role font 16px/700, minimum button height 48px; three existing roles; providers disabled Soon",
+  "published_at": "2026-10-11T16:42:28+07:00",
+  "frontend_release": "20261011-v2-navigation-auth-reference",
+  "files": {
+    "index.html": "edb2df220a661a00df287f94f227cb86aa67f8cc520c947ba906d579c9ac0145",
+    "login-1440.png": "3b7671eb98d3f69a68c242b9e8889928d23170c3567734412a3e68d20f6b41df",
+    "login-390.png": "ff1a5d4b28c905c7133deb95e8e28e7793fbe55a18724b592df6addcca8fd06d",
+    "register-1440.png": "72d4c236c002e28cf4b5ae82cc06d46701fd506748a4851aeee0be050e50737b",
+    "register-390.png": "fd3f786ddd3be31d03a949c38925e5b0a195753ab1f5a8ba241a11bbf82d8957"
+  }
+}
