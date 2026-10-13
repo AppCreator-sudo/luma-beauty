@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-14T02:57:15+07:00",
+  "updated_at": "2026-10-14T03:05:17+07:00",
   "timezone": "Asia/Novosibirsk",
-  "next_task_id": "OPS-04",
+  "next_task_id": "OPS-03",
   "tasks": [
     {
       "id": "U-00",
@@ -1513,7 +1513,7 @@
       "id": "OPS-04",
       "title": "Полная передача файлов, данных и существующих секретов в private GitHub",
       "phase": "operations",
-      "status": "in_progress",
+      "status": "published",
       "dependencies": [
         "OPS-01"
       ],
@@ -1531,8 +1531,8 @@
       "approved_at": "2026-10-14T02:15:28+07:00",
       "started_at": "2026-10-14T02:06:44+07:00",
       "local_done_at": "2026-10-14T02:34:23+07:00",
-      "verified_at": null,
-      "published_at": null,
+      "verified_at": "2026-10-14T03:05:17+07:00",
+      "published_at": "2026-10-14T03:05:17+07:00",
       "due_at": null,
       "owner_chat": "01a102e0-744b-7a33-931d-ab120601f36a",
       "card": "OPS-04.md",
