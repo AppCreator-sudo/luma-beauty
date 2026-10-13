@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-14T01:54:00+07:00",
+  "updated_at": "2026-10-14T02:06:44+07:00",
   "timezone": "Asia/Novosibirsk",
-  "next_task_id": "OPS-03",
+  "next_task_id": "OPS-04",
   "tasks": [
     {
       "id": "U-00",
@@ -1508,6 +1508,30 @@
       "owner_chat": null,
       "card": "OPS-03.md",
       "order": 56
+    },
+    {
+      "id": "OPS-04",
+      "title": "Codex Cloud: доступ к серверу и передача данных",
+      "phase": "operations",
+      "status": "awaiting_input",
+      "dependencies": [
+        "OPS-01"
+      ],
+      "sources": [
+        "docs/CODEX_CLOUD.md",
+        "docs/CURRENT_STATE.md",
+        "docs/TRANSFER_20261014.md"
+      ],
+      "skills": [],
+      "approved_at": "2026-10-14",
+      "started_at": "2026-10-14T02:06:44+07:00",
+      "local_done_at": null,
+      "verified_at": null,
+      "published_at": null,
+      "due_at": null,
+      "owner_chat": "01a102e0-744b-7a33-931d-ab120601f36a",
+      "card": "OPS-04.md",
+      "order": 57
     }
   ]
 }
