@@ -6,16 +6,21 @@ def git(*args):
     return subprocess.run(['git',*args],cwd=ROOT,capture_output=True,check=True).stdout
 files=[x for x in git('ls-files','-z').decode('utf-8').split('\0') if x]
 errors=[]; total=0; inventory=[]
+# Explicit 2026-10-14 user authorization for the complete PRIVATE handoff.
+transfer=json.loads((ROOT/'deploy/cloud-transfer/manifest.json').read_text(encoding='utf8'))
+approved={('deploy/cloud-transfer/'+name):digest for name,digest in transfer.get('plainFiles',{}).items()}
 secret=re.compile(rb'(?:github_pat_[A-Za-z0-9_]{20,}|gh[pousr]_[A-Za-z0-9]{30,}|sk-(?:proj-)?[A-Za-z0-9_-]{30,}|-----BEGIN (?:RSA |OPENSSH |EC )?PRIVATE KEY-----)')
 for name in files:
     parts=PurePosixPath(name).parts
-    if any(x in {'node_modules','.cache','data','.local-data','private-client','uploads'} for x in parts): errors.append(name+': local/private directory')
-    if ('PRIVATE' in PurePosixPath(name).name or name.endswith(('.sqlite','.db','.pem','.key','.tar.gz'))
+    authorized=name in approved
+    if not authorized and any(x in {'node_modules','.cache','data','.local-data','private-client','uploads'} for x in parts): errors.append(name+': local/private directory')
+    if not authorized and ('PRIVATE' in PurePosixPath(name).name or name.endswith(('.sqlite','.db','.pem','.key','.tar.gz'))
         or (PurePosixPath(name).name.startswith('.env') and PurePosixPath(name).name!='.env.example')):errors.append(name+': forbidden private file')
     data=git('show',':'+name);total+=len(data)
-    if data.startswith(b'SQLite format 3\0'):errors.append(name+': SQLite database in index')
+    if not authorized and data.startswith(b'SQLite format 3\0'):errors.append(name+': SQLite database in index')
     if len(data)>100*1024*1024:errors.append(name+': exceeds GitHub single-file limit')
-    if secret.search(data):errors.append(name+': credential-like content; inspect privately, do not push')
+    if not authorized and secret.search(data):errors.append(name+': credential-like content; inspect privately, do not push')
+    if authorized and hashlib.sha256(data).hexdigest()!=approved[name]:errors.append(name+': authorized transfer checksum mismatch')
     inventory.append({'path':name,'bytes':len(data),'sha256':hashlib.sha256(data).hexdigest()})
 required=['AGENTS.md','.env.example','.nvmrc','README.md','package-lock.json','frontend/package-lock.json',
           'server.mjs','scripts/cloud-setup.sh','docs/CODEX_CLOUD.md',

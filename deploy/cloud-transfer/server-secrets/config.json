@@ -1,0 +1,8 @@
+{
+  "host": "13.143.66.1",
+  "user": "root",
+  "port": 22,
+  "authentication": "existing-password",
+  "credentialsFile": "SSH_ACCESS_PRIVATE.md",
+  "newAccountRequired": false
+}

@@ -63,3 +63,9 @@ id_ed25519*
 /test-results/
 /playwright-report/
 /media/qa/
+
+# Explicit user request, 2026-10-14: complete private repository handoff.
+!/deploy/cloud-transfer/source-data/
+!/deploy/cloud-transfer/source-data/**
+!/deploy/cloud-transfer/server-secrets/
+!/deploy/cloud-transfer/server-secrets/**

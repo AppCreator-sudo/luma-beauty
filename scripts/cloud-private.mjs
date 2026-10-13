@@ -51,6 +51,28 @@ function readBundle(filename) {
   return {payload,files};
 }
 
+function readPlainTransfer() {
+  const transfer=path.join(root,'deploy/cloud-transfer');
+  const manifest=JSON.parse(fs.readFileSync(path.join(transfer,'manifest.json'),'utf8'));
+  const files=[];
+  function collect(directory,target) {
+    for(const entry of fs.readdirSync(directory,{withFileTypes:true})) {
+      const input=path.join(directory,entry.name),output=path.join(target,entry.name);
+      if(entry.isSymbolicLink())throw new Error('Unexpected transfer symlink');
+      if(entry.isDirectory())collect(input,output);
+      else if(entry.isFile()) {
+        const data=fs.readFileSync(input);
+        const relative=path.relative(transfer,input).split(path.sep).join('/');
+        if(crypto.createHash('sha256').update(data).digest('hex')!==manifest.plainFiles[relative])throw new Error('Transfer checksum mismatch');
+        files.push({target:output,data});
+      }
+    }
+  }
+  collect(path.join(transfer,'source-data'),source);
+  collect(path.join(transfer,'server-secrets'),access);
+  return {payload:{release:manifest.sourceRelease,capturedAt:manifest.capturedAt},files};
+}
+
 async function prepareDev() {
   if (!fs.existsSync(path.join(source,'atelie.sqlite'))) throw new Error('Restore the source snapshot first');
   if (fs.existsSync(dev)) throw new Error('Existing cloud-dev must be preserved; choose a separate workspace');
@@ -79,7 +101,7 @@ try {
   if (extra.length || !['verify','restore','prepare-dev'].includes(command)) throw new Error('Use verify, restore or prepare-dev');
   if (command==='prepare-dev') await prepareDev();
   else {
-    const {payload,files}=readBundle(filename);
+    const {payload,files}=fs.existsSync(path.join(root,'deploy/cloud-transfer/source-data/atelie.sqlite')) ? readPlainTransfer() : readBundle(filename);
     if (command==='restore') {
       if (fs.existsSync(source)||fs.existsSync(access)) throw new Error('Existing private output must be preserved');
       for (const file of files) {

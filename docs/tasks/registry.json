@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-14T02:39:59+07:00",
+  "updated_at": "2026-10-14T02:57:15+07:00",
   "timezone": "Asia/Novosibirsk",
   "next_task_id": "OPS-04",
   "tasks": [
@@ -1511,9 +1511,9 @@
     },
     {
       "id": "OPS-04",
-      "title": "Codex Cloud: доступ к серверу и передача данных",
+      "title": "Полная передача файлов, данных и существующих секретов в private GitHub",
       "phase": "operations",
-      "status": "awaiting_approval",
+      "status": "in_progress",
       "dependencies": [
         "OPS-01"
       ],
@@ -1524,8 +1524,8 @@
         "docs/CLOUD_SERVER_ACCESS.md",
         "scripts/cloud-private.mjs",
         "scripts/cloud-server.mjs",
-        "deploy/luma-cloud-admin.py",
-        "deploy/cloud-transfer/manifest.json"
+        "deploy/cloud-transfer/manifest.json",
+        "scripts/cloud-server.py"
       ],
       "skills": [],
       "approved_at": "2026-10-14T02:15:28+07:00",

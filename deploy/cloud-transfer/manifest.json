@@ -9,5 +9,28 @@
   "snapshotForeignKeys": "ok",
   "fullSnapshot": true,
   "serverAccountInstalled": false,
-  "secretValueLocation": "Local protected file; not repository"
+  "secretValueLocation": "Private repository, by explicit repeated user request",
+  "plainSourceIncluded": true,
+  "existingServerCredentialsIncluded": true,
+  "newAccountRequired": false,
+  "plainFiles": {
+    "source-data/atelie.sqlite": "9f3014c15c09dbdac177a465e5d1d5693194386c00c871b962b45b353b69fd52",
+    "source-data/atelie.sqlite-shm": "fd4c9fda9cd3f9ae7c962b0ddf37232294d55580e1aa165aa06129b8549389eb",
+    "source-data/atelie.sqlite-wal": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "source-data/vapid.json": "d46f42dbfc83d6ac4c77ce6464caf88c62b2c9b530aa85045c890e6b8e2292c4",
+    "source-data/uploads/a4fe1139-88ea-4773-b3fb-2106b67146a9.webp": "84ed2f68501e24f9406ad7153a9973e6a3eee8398b65a39e97b8d2a7c1596cd0",
+    "source-data/uploads/atelie-media-logo-c0d32bdd-11f1-4567-a664-995fe2b4f4f0.webp": "1a57ebe2254c0d0590f0d6d383a5ab0e948b24c90de21542b9f3fc744b72860b",
+    "source-data/uploads/atelie-media-portrait-12bc08f7-2b64-447d-8d2b-9d9b94210a6a.webp": "6801a467cafdfc068cedffb0fc7d1b1439e4e371be61147517aeda8586d383e1",
+    "source-data/uploads/atelie-media-portrait-435fdafa-5dd1-422a-b695-9d90e8b053fb.webp": "525339ed71461f9ba32d2fdc0e84eb316f078c5af18129555b20c28dc419cd91",
+    "source-data/uploads/atelie-media-portrait-9f87c06d-d9d1-4963-a77d-de16bbdcaa6d.webp": "6801a467cafdfc068cedffb0fc7d1b1439e4e371be61147517aeda8586d383e1",
+    "source-data/uploads/atelie-media-portrait-ab65aa68-303a-4fa3-a258-dc4ae3e6c717.webp": "6801a467cafdfc068cedffb0fc7d1b1439e4e371be61147517aeda8586d383e1",
+    "source-data/uploads/atelie-media-portrait-cee05d5f-16af-45db-8e7c-b32008ff7f52.webp": "6801a467cafdfc068cedffb0fc7d1b1439e4e371be61147517aeda8586d383e1",
+    "source-data/uploads/atelie-media-portrait-ef7ce723-bbf5-442d-9290-b9177c47d3e7.webp": "6801a467cafdfc068cedffb0fc7d1b1439e4e371be61147517aeda8586d383e1",
+    "server-secrets/address-local.env": "b52c2fc1afa1c1df38a6944693a845d7c10ad1e875abb4d3e2c82afbbc93f1b7",
+    "server-secrets/config.json": "ce6a42e766b5d9d47a79fbe003aba3b0ef1ea178b54ccbf208a9c903e135befa",
+    "server-secrets/import.env": "93bfda55d919efd5172ab58bae35187fab19a5372784262828c0e2833e9f8d59",
+    "server-secrets/known_hosts": "09cbf08a7fef46b49adb99c3904cef32cf9373f636a17387f09af404372608b4",
+    "server-secrets/production.env": "a5d697706be0f7cd999810f727dc815b2beafe241090d2972970d7510b80a893",
+    "server-secrets/SSH_ACCESS_PRIVATE.md": "29857fe82c68214dbac90d77165bee5a012c616b8ecfa6d812fb710732d139bf"
+  }
 }
