@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-14T23:24:45+07:00",
+  "updated_at": "2026-10-14T23:33:01+07:00",
   "timezone": "Asia/Novosibirsk",
   "next_task_id": "U-10-01",
   "tasks": [
@@ -1800,8 +1800,8 @@
     {
       "id": "OPS-05",
       "title": "Синхронизация опубликованных обновлений с private GitHub",
-      "phase": "operations",
-      "status": "in_progress",
+      "phase": "completed",
+      "status": "published",
       "dependencies": [
         "U-06-02",
         "OPS-01"
@@ -1809,16 +1809,17 @@
       "sources": [
         "docs/RELEASE_20261014_PUBLIC_PROFILES_UNIFIED.md",
         "docs/RELEASE_20261014_MAP_REFERENCE.md",
-        "docs/WORK_CHECKPOINT.md"
+        "docs/WORK_CHECKPOINT.md",
+        "docs/GITHUB_SYNC_20261014.md"
       ],
       "skills": [
         ".agents/skills/atelier-v2-ui-implementation/SKILL.md"
       ],
       "approved_at": "2026-10-14T23:24:45+07:00",
       "started_at": "2026-10-14T23:24:45+07:00",
-      "local_done_at": null,
-      "verified_at": null,
-      "published_at": null,
+      "local_done_at": "2026-10-14T23:33:01+07:00",
+      "verified_at": "2026-10-14T23:33:01+07:00",
+      "published_at": "2026-10-14T23:33:01+07:00",
       "due_at": null,
       "owner_chat": "01a102e0-744b-7a33-931d-ab120601f36a",
       "card": "OPS-05.md",
