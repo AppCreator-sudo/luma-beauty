@@ -1,0 +1,190 @@
+{
+  "at": "2026-10-14T13:12:02.399Z",
+  "origin": "https://atelie-13-143-66-1.sslip.io",
+  "phase": "published-scrollbar",
+  "results": [
+    {
+      "width": 1365,
+      "metrics": [
+        {
+          "route": "masters",
+          "viewport": 1365,
+          "client": 1350,
+          "gutter": "stable",
+          "brand": {
+            "x": 40,
+            "width": 130.75,
+            "right": 170.75
+          },
+          "nav": [
+            {
+              "x": 513.671875,
+              "width": 71.828125,
+              "right": 585.5
+            },
+            {
+              "x": 629.5,
+              "width": 109.3125,
+              "right": 738.8125
+            },
+            {
+              "x": 782.8125,
+              "width": 50.6875,
+              "right": 833.5
+            }
+          ],
+          "actions": {
+            "x": 1176.40625,
+            "width": 133.59375,
+            "right": 1310
+          },
+          "overflow": false
+        },
+        {
+          "route": "inspiration",
+          "viewport": 1365,
+          "client": 1350,
+          "gutter": "stable",
+          "brand": {
+            "x": 40,
+            "width": 130.75,
+            "right": 170.75
+          },
+          "nav": [
+            {
+              "x": 513.671875,
+              "width": 71.828125,
+              "right": 585.5
+            },
+            {
+              "x": 629.5,
+              "width": 109.3125,
+              "right": 738.8125
+            },
+            {
+              "x": 782.8125,
+              "width": 50.6875,
+              "right": 833.5
+            }
+          ],
+          "actions": {
+            "x": 1176.40625,
+            "width": 133.59375,
+            "right": 1310
+          },
+          "overflow": false
+        },
+        {
+          "route": "map",
+          "viewport": 1365,
+          "client": 1365,
+          "gutter": "stable",
+          "brand": {
+            "x": 40,
+            "width": 130.75,
+            "right": 170.75
+          },
+          "nav": [
+            {
+              "x": 513.671875,
+              "width": 71.828125,
+              "right": 585.5
+            },
+            {
+              "x": 629.5,
+              "width": 109.3125,
+              "right": 738.8125
+            },
+            {
+              "x": 782.8125,
+              "width": 50.6875,
+              "right": 833.5
+            }
+          ],
+          "actions": {
+            "x": 1176.40625,
+            "width": 133.59375,
+            "right": 1310
+          },
+          "overflow": false
+        },
+        {
+          "route": "masters",
+          "viewport": 1365,
+          "client": 1350,
+          "gutter": "stable",
+          "brand": {
+            "x": 40,
+            "width": 130.75,
+            "right": 170.75
+          },
+          "nav": [
+            {
+              "x": 513.671875,
+              "width": 71.828125,
+              "right": 585.5
+            },
+            {
+              "x": 629.5,
+              "width": 109.3125,
+              "right": 738.8125
+            },
+            {
+              "x": 782.8125,
+              "width": 50.6875,
+              "right": 833.5
+            }
+          ],
+          "actions": {
+            "x": 1176.40625,
+            "width": 133.59375,
+            "right": 1310
+          },
+          "overflow": false
+        }
+      ],
+      "deltas": [
+        {
+          "route": "masters",
+          "nav": [
+            0,
+            0,
+            0
+          ],
+          "brand": 0,
+          "actions": 0
+        },
+        {
+          "route": "inspiration",
+          "nav": [
+            0,
+            0,
+            0
+          ],
+          "brand": 0,
+          "actions": 0
+        },
+        {
+          "route": "map",
+          "nav": [
+            0,
+            0,
+            0
+          ],
+          "brand": 0,
+          "actions": 0
+        },
+        {
+          "route": "masters",
+          "nav": [
+            0,
+            0,
+            0
+          ],
+          "brand": 0,
+          "actions": 0
+        }
+      ]
+    }
+  ]
+}

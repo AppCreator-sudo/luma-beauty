@@ -1,0 +1,79 @@
+/* One profile composition for a person, a salon and its appearance preview. */
+.public-reference.public-page-shell .public-content{display:block}
+.public-reference.public-page-shell .public-cover{height:190px;isolation:isolate;background:#193b30;color:#faf7f1;--cover-pattern-opacity:.62}
+.public-reference.public-page-shell .public-cover-cream{background:#e5d8c4;color:#213a30;--cover-pattern-opacity:.13}
+.public-reference.public-page-shell .public-cover-wine{background:#70243d;--cover-pattern-opacity:.32}
+.public-reference.public-page-shell .public-cover-pattern{background:transparent url('/v2/assets/ornament.webp') center/cover no-repeat;mix-blend-mode:luminosity;opacity:var(--cover-pattern-opacity);pointer-events:none}
+.public-reference.public-page-shell .public-cover-heading{left:max(40px,calc((100% - 1426px)/2));bottom:34px;color:inherit;text-shadow:none}
+.public-reference.public-page-shell .public-cover-heading p{font-size:40px;line-height:1.05;margin-top:8px}
+.public-reference.public-page-shell .public-cover-heading em{color:#c1a071}
+.public-reference.public-page-shell .public-cover-cream .public-cover-heading em{color:#795b36}
+.public-reference.public-page-shell .public-cover:after{display:none}
+.public-reference.public-page-shell .public-cover-photo{color:#faf7f1}
+.public-reference.public-page-shell .public-cover-photo:after{display:block;content:'';position:absolute;inset:0;background:linear-gradient(90deg,#10251fc4,transparent 75%);pointer-events:none}
+.public-reference.public-page-shell .public-cover-photo .public-cover-heading{text-shadow:0 1px 8px #0008}
+.public-reference.public-page-shell .public-cover-photo .public-cover-heading em{color:#dbc69f}
+.public-reference.public-page-shell .public-identity{display:grid;grid-template-columns:160px minmax(0,1fr) auto;column-gap:24px;row-gap:0;align-items:start;min-height:0;padding:22px 0 18px;text-align:left}
+.public-reference.public-page-shell .public-avatar{width:160px;height:160px;flex-basis:auto;grid-column:1;grid-row:1/3;margin-top:-56px;align-self:start}
+.public-reference.public-page-shell .public-identity-copy{grid-column:2/-1;grid-row:2;min-width:0;width:auto;flex:initial}
+.public-reference.public-page-shell .public-identity-title{grid-column:2;grid-row:1;font:400 42px/1.08 'Cormorant Garamond',serif;margin:0 0 4px;min-width:0;overflow-wrap:anywhere}
+.public-reference.public-page-shell .public-profile-meta{display:flex;flex-wrap:wrap;align-items:center;gap:0 18px}
+.public-reference.public-page-shell .public-kind{width:auto;justify-content:flex-start;flex-wrap:wrap;gap:6px;border:0;padding:0;margin:8px 0}
+.public-reference.public-page-shell .public-kind>span{border:1px solid #c7b695;border-radius:20px;padding:4px 9px;font-size:11px;line-height:1.5}
+.public-reference.public-page-shell .public-address{justify-content:flex-start;margin:6px 0}
+.public-reference.public-page-shell .public-categories{margin:6px 0}
+.public-reference.public-page-shell .public-rating{margin:6px 0 0;flex-wrap:wrap;min-height:22px}
+.public-reference.public-page-shell .public-rating button{padding:0 5px}
+.public-reference.public-page-shell .public-identity-actions{grid-column:3;grid-row:1;display:flex;flex-direction:row;align-items:center;justify-content:flex-end;gap:10px;margin:0;padding:0;align-self:start;width:auto}
+.public-reference.public-page-shell .public-identity-actions .button{order:0;padding-inline:20px;min-height:46px;white-space:nowrap;justify-content:center}
+.public-reference.public-page-shell .public-identity-actions .public-icon{width:46px;height:46px;flex:0 0 46px}
+.public-reference.public-page-shell .public-master-layout{display:grid;grid-template-columns:minmax(0,1fr) 286px;gap:30px;align-items:start}
+.public-reference.public-page-shell .public-main{grid-column:1;grid-row:1;min-width:0;width:100%}
+.public-reference.public-page-shell .public-master-aside{grid-column:2;grid-row:1;padding:0;min-width:0;width:100%}
+.public-reference.public-page-shell .public-tabs{justify-content:flex-start;gap:30px}
+.public-reference.public-page-shell .public-panel{background:transparent;border-radius:0;padding:24px 0 0;margin:0}
+.public-reference.public-page-shell .public-team-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.public-reference.public-page-shell .public-notice{margin:0 0 20px}
+/* Preview uses exactly the same cover and identity components, at its own available width. */
+.public-reference.public-page-preview{container-type:inline-size;min-height:0;padding:0;border:1px solid #e2d6c5;border-radius:8px;overflow:hidden}
+.public-reference.public-page-preview .public-content{padding-inline:24px}
+.public-reference.public-page-preview .public-cover{height:170px}
+.public-reference.public-page-preview .public-cover-heading{left:24px;bottom:30px}
+.public-reference.public-page-preview .public-cover-heading p{font-size:32px}
+.public-reference.public-page-preview .public-avatar{width:100px;height:100px;margin-top:-47px}
+.public-reference.public-page-preview .public-identity{grid-template-columns:100px minmax(0,1fr);gap:16px;padding:18px 0}
+.public-reference.public-page-preview .public-identity-title{font-size:30px}
+.public-reference.public-page-preview .public-identity-actions{grid-column:1/-1;grid-row:3;justify-content:flex-start;margin-top:14px}
+.public-reference.public-page-preview .public-identity-actions .button{flex:1}
+.public-reference.public-page-preview .cabinet-edit-appearance{z-index:2}
+@media(max-width:1000px) and (min-width:761px){
+ .public-reference.public-page-shell .public-identity{grid-template-columns:120px minmax(0,1fr);gap:18px}
+ .public-reference.public-page-shell .public-avatar{width:120px;height:120px;margin-top:-44px}
+ .public-reference.public-page-shell .public-identity-actions{grid-column:2;grid-row:3;justify-content:flex-start;margin-top:12px}
+ .public-reference.public-page-shell .public-identity-title{font-size:35px}
+ .public-reference.public-page-shell .public-master-layout{grid-template-columns:minmax(0,1fr) 260px;gap:22px}
+}
+@media(max-width:760px){
+ .public-reference.public-page-shell .public-cover{height:164px}
+ .public-reference.public-page-shell .public-cover-heading{left:20px;bottom:36px}
+ .public-reference.public-page-shell .public-cover-heading p{font-size:30px}
+ .public-reference.public-page-shell .public-identity{grid-template-columns:88px minmax(0,1fr);gap:8px 16px;padding:16px 0 22px;align-items:start}
+ .public-reference.public-page-shell .public-avatar{width:88px;height:88px;margin-top:-42px;border-width:3px;grid-row:1}
+ .public-reference.public-page-shell .public-identity-copy{grid-column:1/-1;grid-row:2;width:auto}
+ .public-reference.public-page-shell .public-identity-title{font-size:30px;align-self:center}
+ .public-reference.public-page-shell .public-kind{margin-block:8px;gap:5px}
+ .public-reference.public-page-shell .public-kind>span{font-size:10px;padding:3px 7px}
+ .public-reference.public-page-shell .public-identity-actions{display:flex;grid-column:1/-1;grid-row:3;justify-content:flex-start;gap:8px;width:100%;padding:0}
+ .public-reference.public-page-shell .public-identity-actions .button{flex:1;white-space:normal;padding-inline:10px}
+ .public-reference.public-page-shell .public-master-layout{display:flex;flex-direction:column;gap:20px}
+ .public-reference.public-page-shell .public-tabs{gap:24px}
+ .public-reference.public-page-shell .public-panel{padding-top:20px}
+ .public-reference.public-page-shell .public-team-grid{grid-template-columns:1fr}
+}
+@container(max-width:400px){
+ .public-reference.public-page-preview .public-identity{grid-template-columns:70px minmax(0,1fr);gap:14px}
+ .public-reference.public-page-preview .public-avatar{width:70px;height:70px}
+ .public-reference.public-page-preview .public-content{padding-inline:14px}
+ .public-reference.public-page-preview .public-cover-heading{left:14px}
+ .public-reference.public-page-preview .public-identity-title{font-size:27px}
+}

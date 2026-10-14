@@ -1,0 +1,566 @@
+{
+  "tag": "20261014-v2-public-profiles-unified",
+  "prepared_at": "2026-10-14T21:48:07+07:00",
+  "published": false,
+  "base_release": "20261014-v2-header-alignment",
+  "package": ".cache/public-profile-release-candidate-20261014.zip",
+  "package_sha256": "5f5c63c3184bce5fe978926422939e3d70608d3faeeab354901ddc2905cb1125",
+  "package_bytes": 1386582,
+  "files": [
+    {
+      "path": "server.mjs",
+      "bytes": 49808,
+      "sha256": "f6d5f83299af6e6fb8e346a2e2ffea7e33dff1f64c0f15cbb892c28d86865925"
+    },
+    {
+      "path": "lib/profile-page-options.mjs",
+      "bytes": 2355,
+      "sha256": "981a9bee4cbf6cd4584166eba049d61bc64fd79d11bc719ff4c60b365dbb5763"
+    },
+    {
+      "path": "lib/review-ratings.mjs",
+      "bytes": 2192,
+      "sha256": "88b29fab829de74239731db3b46af1e2524faa911beb97a4bfe12ed97df107b1"
+    },
+    {
+      "path": "lib/salon-public.mjs",
+      "bytes": 17280,
+      "sha256": "b52f3bb2c1735c849519e26ad8639ae48e60152c08bedee044da3d764fba46e3"
+    },
+    {
+      "path": "lib/client-cabinet.mjs",
+      "bytes": 16159,
+      "sha256": "758fc2557eb4e0949cf4f4b5be85d4f64309621b13225a4781440ec26b30a373"
+    },
+    {
+      "path": "lib/map-viewport.mjs",
+      "bytes": 23637,
+      "sha256": "411fac4a7cd3b27334e5e54f0a1dd3824bf4a7e6460b76a1a17110935c6f25d0"
+    },
+    {
+      "path": "public/sw.js",
+      "bytes": 2302,
+      "sha256": "308c496c78b28d39cfb79ba122aceeecca8567990b9459c6ccb4a50f22a713ca"
+    },
+    {
+      "path": "public/v2/assets/Access-sDNW5cUA.js",
+      "bytes": 5962,
+      "sha256": "26f6ec6465dc37bf91e9638c0f8ac893c0f0962b88fa0ba2557161b765e3fffa"
+    },
+    {
+      "path": "public/v2/assets/Account-CIx9jrul.js",
+      "bytes": 58493,
+      "sha256": "5959b75eb5c6331251d2dc716768a9d299d54770e4067c7c410311056e39b986"
+    },
+    {
+      "path": "public/v2/assets/AccountTools-BgM3j-xR.js",
+      "bytes": 2580,
+      "sha256": "dd180df737cd0157a667eb44b5054b93cd8fc184af03fb54419b34fdd5259f41"
+    },
+    {
+      "path": "public/v2/assets/arrow-left-BcD69sJi.js",
+      "bytes": 161,
+      "sha256": "cde5ec55a013688b78974e94cd061b5b0338f2545a3af92c61fbfa79b8454bc9"
+    },
+    {
+      "path": "public/v2/assets/arrow-right-keqo1_q7.js",
+      "bytes": 161,
+      "sha256": "52e5c5af197c942873c4ccc4ad64a1f130e37132e6d54f7f744922d1c787e832"
+    },
+    {
+      "path": "public/v2/assets/auth-BWWYcPMa.js",
+      "bytes": 1194,
+      "sha256": "9c22b83fa4d143ee58420a599dc952f20c3ea047abf486721c2947f37857ffbf"
+    },
+    {
+      "path": "public/v2/assets/Auth-D65MfHou.js",
+      "bytes": 6474,
+      "sha256": "af24a06264557dc16d66172583276a18eb60573ec2f62d1f3f76f2086cd6b99e"
+    },
+    {
+      "path": "public/v2/assets/Auth-DThlPZOZ.css",
+      "bytes": 4202,
+      "sha256": "60b4b90bb5b923302cfad00fe63b66332f590888dcbfa8d5aff64b7f1b18efdb"
+    },
+    {
+      "path": "public/v2/assets/Booking-CNgoWWe8.js",
+      "bytes": 12544,
+      "sha256": "59b5d2fc170e186c21cb9d31d67b7dfbb297a3ee843a37da53c4b1d15b88efe1"
+    },
+    {
+      "path": "public/v2/assets/booking-reference-Dr1YZcs3.css",
+      "bytes": 23189,
+      "sha256": "86da60707514001aad21da94560e4daff02cfed82352fdf4e190160ab4e82b23"
+    },
+    {
+      "path": "public/v2/assets/booking-reference-KJ6AquDU.js",
+      "bytes": 3620,
+      "sha256": "c7ba7e4c5625330c1ab338ceab83a4f4e8ff88d5caa50619dbded18150a1d49f"
+    },
+    {
+      "path": "public/v2/assets/BookingReference-POrfKdVK.js",
+      "bytes": 7228,
+      "sha256": "fd6a353b07b7e0d79b88ae91ff18dcb2e2746c700d7a83296560b068fd907df0"
+    },
+    {
+      "path": "public/v2/assets/catalog-reference-DUbz95h4.css",
+      "bytes": 14119,
+      "sha256": "edc215161b3ff66d53399a9f66be00fd655238a021ae8c6b0095b0882da42008"
+    },
+    {
+      "path": "public/v2/assets/categories-BVWI37mm.js",
+      "bytes": 168,
+      "sha256": "d978a3d63d629d1470ba501ce7919dbd7758c5790dbf449ff7b0f22c0f5c50ad"
+    },
+    {
+      "path": "public/v2/assets/check-Cg3KuNkj.js",
+      "bytes": 116,
+      "sha256": "956538def48da21682c7ad7d58d9db3482f6ba3f499277d62304846717a025c3"
+    },
+    {
+      "path": "public/v2/assets/chevron-right-BWAouY_T.js",
+      "bytes": 278,
+      "sha256": "746043dee71da9454354a9b0388b3b4c3d5960039d3b3824e44bfe5b65fa4d51"
+    },
+    {
+      "path": "public/v2/assets/cormorant-garamond-cyrillic-300-italic-Bi4RSOgf.woff2",
+      "bytes": 12392,
+      "sha256": "9fb8233b7fd152cdc83f124981f78710e78a2462129e61e68ffb476c20101fea"
+    },
+    {
+      "path": "public/v2/assets/cormorant-garamond-cyrillic-300-italic-Bo30KLu4.woff",
+      "bytes": 15612,
+      "sha256": "e0acaab460a92f62097245b640bbcbaf814d7aeabaaf1953c37afdaf0ee529a3"
+    },
+    {
+      "path": "public/v2/assets/cormorant-garamond-cyrillic-300-normal-DZNkLIMe.woff2",
+      "bytes": 12256,
+      "sha256": "f892c7e0f8d9953af1119b6db5542b01860d467b3377b3859a4c477ad0e90353"
+    },
+    {
+      "path": "public/v2/assets/cormorant-garamond-cyrillic-300-normal-KEduutn5.woff",
+      "bytes": 15164,
+      "sha256": "3c26d7447c04f0da3e27fcf34ae90ecd5091f7d1a40c68d0e15374d9cca181c2"
+    },
+    {
+      "path": "public/v2/assets/cormorant-garamond-cyrillic-400-normal-CVFrM67f.woff",
+      "bytes": 15696,
+      "sha256": "11a86b7cdc25186a0a119cfc4e9269032ae8b11aa9e70acf98e48ac5d05e390d"
+    },
+    {
+      "path": "public/v2/assets/cormorant-garamond-cyrillic-400-normal-DD2KOZkl.woff2",
+      "bytes": 12776,
+      "sha256": "0d23162e67528fdc5fe1b12bedc525a69bbdc86d5d9f3c2ee9e9ee459934ecd4"
+    },
+    {
+      "path": "public/v2/assets/cormorant-garamond-cyrillic-ext-300-italic-B31MkR9z.woff2",
+      "bytes": 14216,
+      "sha256": "ff8f8b9be1aeb1cafbe203c88624f625a4efc7d96104a9bc5d94cfd085ceb5f2"
+    },
+    {
+      "path": "public/v2/assets/cormorant-garamond-cyrillic-ext-300-italic-Dj41S4NK.woff",
+      "bytes": 18552,
+      "sha256": "1be34612f3d76f3194dcb1ac400d7d9488999f45593a5f79fa68f28e9ffc7609"
+    },
+    {
+      "path": "public/v2/assets/cormorant-garamond-cyrillic-ext-300-normal-B5wCrnbP.woff",
+      "bytes": 16860,
+      "sha256": "cd0be1e75089fff915f49f5885f2269ac112c1c1bfa6266650c9867ea8367a0a"
+    },
+    {
+      "path": "public/v2/assets/cormorant-garamond-cyrillic-ext-300-normal-D8IReVS-.woff2",
+      "bytes": 13284,
+      "sha256": "b53d6bd5290a7ea963caff6102f36f88ab069e29399abc998f295609eb0ab38d"
+    },
+    {
+      "path": "public/v2/assets/cormorant-garamond-cyrillic-ext-400-normal-DLdKLAvx.woff",
+      "bytes": 17428,
+      "sha256": "2373fdbd96854b3a6868d3ea36019d0e6f2f48c9990de8f80f0ae867fbaa4a53"
+    },
+    {
+      "path": "public/v2/assets/cormorant-garamond-cyrillic-ext-400-normal-W3Dto7M0.woff2",
+      "bytes": 13920,
+      "sha256": "02a3bbfd23dfcfac40ad87d8954078cd96f8a85e661fc73617245fe06d2aa4ea"
+    },
+    {
+      "path": "public/v2/assets/cormorant-garamond-latin-300-italic-DRnsRYID.woff",
+      "bytes": 31772,
+      "sha256": "f1fcfb1d2ffbc32dc96f9ade4e6b86cf30d012e51bfc6566ce06a95d9f1f8185"
+    },
+    {
+      "path": "public/v2/assets/cormorant-garamond-latin-300-italic-qkwBXYHn.woff2",
+      "bytes": 22484,
+      "sha256": "b931f0a45f9d8a362e45e950c004ff00c8ab7932c2c401b4db9c2b7b9247f01a"
+    },
+    {
+      "path": "public/v2/assets/cormorant-garamond-latin-300-normal-BuXLI6C0.woff",
+      "bytes": 29960,
+      "sha256": "7e0ceef064d516c531f4634b93ccd035bfefec833f7c03c500c284f12c777d77"
+    },
+    {
+      "path": "public/v2/assets/cormorant-garamond-latin-300-normal-Cw-E_7L1.woff2",
+      "bytes": 21908,
+      "sha256": "8973d65ce70fb03cee5788acbcc36bc9e74bda2227bbef99f26c826514cc79f7"
+    },
+    {
+      "path": "public/v2/assets/cormorant-garamond-latin-400-normal-B-1hWBU7.woff2",
+      "bytes": 22876,
+      "sha256": "8048ac209bec741e1c29cd0cfac5aac1c0c2ba8c3ddbd4a58fa9bd92ef5c63c2"
+    },
+    {
+      "path": "public/v2/assets/cormorant-garamond-latin-400-normal-B7YtguxJ.woff",
+      "bytes": 30980,
+      "sha256": "b926f33f9d3d5cb64e639b8fe9ad5380560a63f3e7a29d212f2b80a2d22ec051"
+    },
+    {
+      "path": "public/v2/assets/cormorant-garamond-latin-ext-300-italic-Bt0Wsy7Q.woff2",
+      "bytes": 19252,
+      "sha256": "3ab42e875af4d19fabaace31f930db2016901ee73a7bada43f215279895fc1e0"
+    },
+    {
+      "path": "public/v2/assets/cormorant-garamond-latin-ext-300-italic-DambfolG.woff",
+      "bytes": 27664,
+      "sha256": "03356b96255dac67fdf3cce11bdd20b795cb50c3ecb9cde5abd3ad7260eb6559"
+    },
+    {
+      "path": "public/v2/assets/cormorant-garamond-latin-ext-300-normal-BsCYHBWC.woff2",
+      "bytes": 19080,
+      "sha256": "7e86fb56e35ccb1ecc5d71110d9097ef9132bce69b6a296528f05f25aa1657d2"
+    },
+    {
+      "path": "public/v2/assets/cormorant-garamond-latin-ext-300-normal-DueGyF8j.woff",
+      "bytes": 26992,
+      "sha256": "239ac4df9a06b302e6dd4fd7512b3e067d3ca002b27d136b66c95d5d5be5d2ba"
+    },
+    {
+      "path": "public/v2/assets/cormorant-garamond-latin-ext-400-normal-Drx2k2n9.woff2",
+      "bytes": 19888,
+      "sha256": "375a088756d1cb10eb91a9a7de18ad5e9858689abe76496dd78e560fef0bbebb"
+    },
+    {
+      "path": "public/v2/assets/cormorant-garamond-latin-ext-400-normal-uvC0WHQr.woff",
+      "bytes": 27928,
+      "sha256": "751bcaa2bf2f07cb2b03f6c83e548dc254d3161741245fa96b372e78cf4c4055"
+    },
+    {
+      "path": "public/v2/assets/cormorant-garamond-vietnamese-300-italic-CCKicgM4.woff2",
+      "bytes": 6184,
+      "sha256": "98ec980c1b2761f716ec6806afad4d5c09eb421d2a14c24e357c76605e606641"
+    },
+    {
+      "path": "public/v2/assets/cormorant-garamond-vietnamese-300-italic-DjSFy2Pr.woff",
+      "bytes": 8852,
+      "sha256": "4806a751f7eac4f6de7270bb90387b4c2a259ed9ec89ccd15a756fdb38cdb354"
+    },
+    {
+      "path": "public/v2/assets/cormorant-garamond-vietnamese-300-normal-BTzPAsHw.woff2",
+      "bytes": 6224,
+      "sha256": "69385da0768a18063115f170ca9dc2eb088894131ed3d22f641301b48b1c2319"
+    },
+    {
+      "path": "public/v2/assets/cormorant-garamond-vietnamese-300-normal-ByHlPz7v.woff",
+      "bytes": 8744,
+      "sha256": "96549681fc96c92449c400cc509b74b3a6aa1fbb4f7881587d3fbc236ffb9453"
+    },
+    {
+      "path": "public/v2/assets/cormorant-garamond-vietnamese-400-normal-4uxlocMh.woff",
+      "bytes": 9316,
+      "sha256": "d2eac685abd3003ac60c4a208fe1d2febceba397964db73df656b1d2d62e2b24"
+    },
+    {
+      "path": "public/v2/assets/cormorant-garamond-vietnamese-400-normal-6K-YXo6g.woff2",
+      "bytes": 6744,
+      "sha256": "eddcd28ffd8e111c669789b2978019359bb67b2e2696e566364fd37133c20a3b"
+    },
+    {
+      "path": "public/v2/assets/Discover-CM9WOWwV.css",
+      "bytes": 17024,
+      "sha256": "3b31482ac18222ed2db56c67a895164e4797f929262d97d5dfa3efabdd2ecd7d"
+    },
+    {
+      "path": "public/v2/assets/Discover-DVZacVSS.js",
+      "bytes": 24314,
+      "sha256": "5df735adf30313e4ec51a9cbb4d4fc50277aeace9f08e6f0212ded96800ecde0"
+    },
+    {
+      "path": "public/v2/assets/ExperienceFields-Byyyk2YQ.js",
+      "bytes": 4302,
+      "sha256": "0eb42bcff1067fd9def23d10039c2a897c6fc9414dfdcfa6cbb9b2aa97fe40ba"
+    },
+    {
+      "path": "public/v2/assets/ExperienceFields-CNl74QcO.css",
+      "bytes": 7632,
+      "sha256": "f50d86d4bc32f56be2cf1b924418141480503360106389cc6b4c537ff7a00e7a"
+    },
+    {
+      "path": "public/v2/assets/eye-By430vvy.js",
+      "bytes": 630,
+      "sha256": "f9557f6bed933a20a50f3ec62c03cba813a704cad915bd709a64d58945e74b4b"
+    },
+    {
+      "path": "public/v2/assets/index-BFS5dvrk.css",
+      "bytes": 113592,
+      "sha256": "544f094b23f5757ad953330edc27fa1c2c1ef3fc858cf26ac6fff12efd37653a"
+    },
+    {
+      "path": "public/v2/assets/index-DTyXEPty.js",
+      "bytes": 415243,
+      "sha256": "d891502135da22c93023b809625b9991f68eec7b2f140c6979ef4d924b589038"
+    },
+    {
+      "path": "public/v2/assets/Join-C8T5ie2L.js",
+      "bytes": 1840,
+      "sha256": "b70215cfb9f93c4b7732b333fa5cebfcb9cb51dd63021be37e2eacb5a9dcd0d2"
+    },
+    {
+      "path": "public/v2/assets/layers-2x-Bpkbi35X.png",
+      "bytes": 1259,
+      "sha256": "066daca850d8ffbef007af00b06eac0015728dee279c51f3cb6c716df7c42edf"
+    },
+    {
+      "path": "public/v2/assets/layers-BWBAp2CZ.png",
+      "bytes": 696,
+      "sha256": "1dbbe9d028e292f36fcba8f8b3a28d5e8932754fc2215b9ac69e4cdecf5107c6"
+    },
+    {
+      "path": "public/v2/assets/manrope-cyrillic-400-normal-BMzJvInZ.woff2",
+      "bytes": 7840,
+      "sha256": "5a987d1484070f1ea54de7c10ebfa4057a18e379361dbe5fd5c4fa4c2d95ef39"
+    },
+    {
+      "path": "public/v2/assets/manrope-cyrillic-400-normal-Dvx59UGC.woff",
+      "bytes": 10032,
+      "sha256": "377eaffaf00d2fe381870f08f098e3ad266618253c9d4197647b89816784e49c"
+    },
+    {
+      "path": "public/v2/assets/manrope-cyrillic-700-normal-7JNVKxyl.woff",
+      "bytes": 10004,
+      "sha256": "64d81d2579261c073c8e7ed0964f7b1735707ac3afc6c60a49531918e1cb128f"
+    },
+    {
+      "path": "public/v2/assets/manrope-cyrillic-700-normal-Dw_fZAg2.woff2",
+      "bytes": 7852,
+      "sha256": "2ad647b9159d27d27f4999b30598f92e60449fb20d80803bc7b85afafbb446d5"
+    },
+    {
+      "path": "public/v2/assets/manrope-cyrillic-ext-400-normal-CRdE35mU.woff2",
+      "bytes": 1624,
+      "sha256": "2888616ddce6d7a011b083bc27527df3313f1df71dc54fd752a83f347f4e8e29"
+    },
+    {
+      "path": "public/v2/assets/manrope-cyrillic-ext-400-normal-Djnz4Wsr.woff",
+      "bytes": 2200,
+      "sha256": "2ba8c74e257f85e4462880a1bf39ca3db270b11923d14a674080ef8f6289a7da"
+    },
+    {
+      "path": "public/v2/assets/manrope-cyrillic-ext-700-normal-cq7F7ESW.woff2",
+      "bytes": 1568,
+      "sha256": "0dc9d9b75bffd07e25f727e8d67a39cc731e21c718b3b86267226bb4e2757813"
+    },
+    {
+      "path": "public/v2/assets/manrope-cyrillic-ext-700-normal-ezu7N0xg.woff",
+      "bytes": 2176,
+      "sha256": "eed028eaa08fc76f336ca9e4c0a629f6f538d23530c49bf4411703df7d3fe723"
+    },
+    {
+      "path": "public/v2/assets/manrope-greek-400-normal-CM4qok81.woff2",
+      "bytes": 5280,
+      "sha256": "47f1b5621859a25df69ec1f1c7ed0ca3aadc3eccd1770c6e89cd5af06f1a0bf8"
+    },
+    {
+      "path": "public/v2/assets/manrope-greek-400-normal-DuX9RsAR.woff",
+      "bytes": 6772,
+      "sha256": "b1ef144fe025cbadcfb7880bc611535586d7f45461e7add7305ea2ea9ccad6ed"
+    },
+    {
+      "path": "public/v2/assets/manrope-greek-700-normal-CHUG9PD8.woff2",
+      "bytes": 5236,
+      "sha256": "b37807fe106dc58c57642635ae7ea172abe65b380fea7b8894615a5883b26ec5"
+    },
+    {
+      "path": "public/v2/assets/manrope-greek-700-normal-DyfsrCpP.woff",
+      "bytes": 6744,
+      "sha256": "caefb2ca9d80515325f901a72b5f3a88a6cb23b603a7aa2ed25e07133214aeb3"
+    },
+    {
+      "path": "public/v2/assets/manrope-latin-400-normal-8tf8FM3T.woff",
+      "bytes": 18292,
+      "sha256": "1bf66c29a29f1b71d507cb97fc138cd130b856ed05b55decd3a2944b413cb636"
+    },
+    {
+      "path": "public/v2/assets/manrope-latin-400-normal-PaqtzbVb.woff2",
+      "bytes": 14108,
+      "sha256": "849290ef12a2eeb9af5c11924120d11aa4ae8b435ed3347d7fc8bc240c293ca3"
+    },
+    {
+      "path": "public/v2/assets/manrope-latin-700-normal-BZp_XxE4.woff2",
+      "bytes": 14212,
+      "sha256": "d2a12c85a831e4b5db341767d0347fa3d1361d22a1fcb3e361a16b6c90080f71"
+    },
+    {
+      "path": "public/v2/assets/manrope-latin-700-normal-DGRFkw-m.woff",
+      "bytes": 18412,
+      "sha256": "e5d35fda4759b0d63ebcc6cca0627d98d9208254ce851c85df29e4d12aeafb61"
+    },
+    {
+      "path": "public/v2/assets/manrope-latin-ext-400-normal-C-X6QNXX.woff",
+      "bytes": 11316,
+      "sha256": "143798f65cc631e6af5a77f0d34a2597bbef1ff1b24b73f6e6b12c2a79ebeb14"
+    },
+    {
+      "path": "public/v2/assets/manrope-latin-ext-400-normal-CMDvPJRp.woff2",
+      "bytes": 8292,
+      "sha256": "72c5354a6f814f3bd38dc3d8caee774f7557b301e69d8428e677b7b73d58d9ee"
+    },
+    {
+      "path": "public/v2/assets/manrope-latin-ext-700-normal-DYOwVNan.woff2",
+      "bytes": 8276,
+      "sha256": "dc7c46d7eb269cc90650d7f70cf49aafa39a98444e6882cc84096acbc156bfcd"
+    },
+    {
+      "path": "public/v2/assets/manrope-latin-ext-700-normal-eVCcYqtJ.woff",
+      "bytes": 11352,
+      "sha256": "b707ffc6454e54831a69d6c7db32d427b4a2bb914153c1f850fc4f888be7c35f"
+    },
+    {
+      "path": "public/v2/assets/manrope-vietnamese-400-normal-D7E_mLGF.woff",
+      "bytes": 6108,
+      "sha256": "1d4631ba5036c35a61c5e342f06d4ffffab85ac0e800fda9e0ceff8ef19aebea"
+    },
+    {
+      "path": "public/v2/assets/manrope-vietnamese-400-normal-DHb3EETF.woff2",
+      "bytes": 4464,
+      "sha256": "dcb0ae6367203b04f930051188cbe02e8096c42db99d5ab6b77f16287fb4fa1b"
+    },
+    {
+      "path": "public/v2/assets/manrope-vietnamese-700-normal-CUqMx5-1.woff2",
+      "bytes": 4552,
+      "sha256": "36c3f8e0a1c59e1bc2fd2a9cabab5b478b488882beebb534e4bd1a8360bf845b"
+    },
+    {
+      "path": "public/v2/assets/manrope-vietnamese-700-normal-pt65Fn2Z.woff",
+      "bytes": 6364,
+      "sha256": "19bc9ab84376bb2f88eb858d4293c75dad965c70df7755d0a7f03d10080174b2"
+    },
+    {
+      "path": "public/v2/assets/Map-DQjkbKbn.js",
+      "bytes": 176809,
+      "sha256": "4370030e8586e6c41bd630916f02c563632ad3e0b5e1494f01a00f4e9da2d237"
+    },
+    {
+      "path": "public/v2/assets/Map-l3OKkjbZ.css",
+      "bytes": 29334,
+      "sha256": "ccf3a6200c3807500b171ab12762319ad9167d9b4f72a6f0d5581b51caef0dd4"
+    },
+    {
+      "path": "public/v2/assets/marker-icon-hN30_KVU.png",
+      "bytes": 1466,
+      "sha256": "574c3a5cca85f4114085b6841596d62f00d7c892c7b03f28cbfa301deb1dc437"
+    },
+    {
+      "path": "public/v2/assets/MasterCabinet-0UJyFArd.js",
+      "bytes": 24049,
+      "sha256": "a9510e00c80c9be6f1c8d921a40107bfa86a7c553317509244a24342c4f2b82a"
+    },
+    {
+      "path": "public/v2/assets/MasterCabinet-DPOmeXt-.css",
+      "bytes": 38130,
+      "sha256": "c17ab4712c276d92eaebb1cb16d7958821ad3e4cdffed253ff0d60590187d8de"
+    },
+    {
+      "path": "public/v2/assets/ornament.webp",
+      "bytes": 162130,
+      "sha256": "5e46c7c6f3d00026d9a3b10f6d7b9b2554bdb8b0f44effda49cc9bc699b0db61"
+    },
+    {
+      "path": "public/v2/assets/Profile-CZc9rywN.js",
+      "bytes": 10659,
+      "sha256": "c0f3fced743e5388a75a93b15693b736fd5d76c257b3bfa492a2f650d34ea8b6"
+    },
+    {
+      "path": "public/v2/assets/Profile-D_QIfYG8.css",
+      "bytes": 7090,
+      "sha256": "be274033a01dde9695e11315915e80a5c960a63dc94b2cb2a56ff2a94456383c"
+    },
+    {
+      "path": "public/v2/assets/PromotionBadge-BrYZDxDg.js",
+      "bytes": 1581,
+      "sha256": "ab84a353e7af5006bf1ecfb1edf727e827cde77a4ec6137e389d66a42f48adf0"
+    },
+    {
+      "path": "public/v2/assets/PublicSalon-CMqWzVw7.css",
+      "bytes": 16294,
+      "sha256": "48ca5958a922ed9c44bb0546177c878b75a95ab606c61980ad526683b67670b7"
+    },
+    {
+      "path": "public/v2/assets/PublicSalon-DR2tJ721.js",
+      "bytes": 20704,
+      "sha256": "fef09b4fd2e16df84b87c5f8b6e3bbdb220ab2bd655e6f077037b77ab3318546"
+    },
+    {
+      "path": "public/v2/assets/PublicWorkTile-DPC1nEnd.js",
+      "bytes": 1656,
+      "sha256": "92826c0e1e21a0eb4a83b13c833f5b850c8c0f4a30459369c6eedd4ee8c8ef5d"
+    },
+    {
+      "path": "public/v2/assets/Salon-Br7IrKhZ.css",
+      "bytes": 55686,
+      "sha256": "4563933b773d3591f3f0f49af1aba22e9eb9374d8443e53313d478618c9f62e9"
+    },
+    {
+      "path": "public/v2/assets/Salon-DfZUQLnx.js",
+      "bytes": 92794,
+      "sha256": "af9e26adec2f89c926b280d70d87a9af32fb4d7db4a85ea3278c660eefe84320"
+    },
+    {
+      "path": "public/v2/assets/salon-visual-BBvLgNZR.css",
+      "bytes": 6189,
+      "sha256": "0f97f1e69633c6702c5a5dc0fe6432366ea97e4c4dec33a3eafccb5c331f5217"
+    },
+    {
+      "path": "public/v2/assets/share-2-DKsSEOlk.js",
+      "bytes": 348,
+      "sha256": "92b9420df907415fed7687854095fe6a6a4bf18abf35bfb234af84ac8cc6d161"
+    },
+    {
+      "path": "public/v2/assets/shield-check-BkOKmcIv.js",
+      "bytes": 316,
+      "sha256": "7629f68045ec5355deab9504c8b1e5d812ab52e6dedc52e2b5f413a6fce8a7dc"
+    },
+    {
+      "path": "public/v2/assets/star-uyHDOnzD.js",
+      "bytes": 469,
+      "sha256": "1470ece535a312babd475593ce1790f44643af47ecbaea7007b0a2ee7a370574"
+    },
+    {
+      "path": "public/v2/assets/Studio-B4ZI4NW7.js",
+      "bytes": 62088,
+      "sha256": "996f6607c32d802e38c42a9ba232366bef4c523fd632852c4103c6bcbb013843"
+    },
+    {
+      "path": "public/v2/assets/Studio-BXryK7CJ.css",
+      "bytes": 45345,
+      "sha256": "60a662d31a2b0a7f01137f4b75d365924a04ad946f6dbba83896a71d94eccac3"
+    },
+    {
+      "path": "public/v2/assets/useResource-_7JoGI80.js",
+      "bytes": 654,
+      "sha256": "0b5966df59ae18a31be98c7ef7a77b5a0065cdb391383a6b51f3ec206176e1ff"
+    },
+    {
+      "path": "public/v2/assets/users-BWN4FUbP.js",
+      "bytes": 301,
+      "sha256": "ebb4f77284bfa524b362ef78fe7082cf1cba71ae834deb8ae9959d63de398500"
+    },
+    {
+      "path": "public/v2/hero-v2.webp",
+      "bytes": 78880,
+      "sha256": "4762eeeefd3a8fed66213a959738fd9be1dea32fc700e8ad14d6737eb4206a84"
+    },
+    {
+      "path": "public/v2/index.html",
+      "bytes": 859,
+      "sha256": "ef98fdb86d331bf96c65ecd6a96f1d09001c8a15018f35f7d80eb7e072bf130b"
+    }
+  ]
+}

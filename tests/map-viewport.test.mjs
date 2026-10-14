@@ -38,7 +38,7 @@ test('indexed map: complete counts, bounded markers, all sidebar pages, filters 
     assert.throws(()=>map.read({...query,cursor:first.next.slice(0,-1)+'!'}));
     for(const malformed of [{bbox:'0,0,1'},{bbox:'0,91,1,92'},{bbox:'Infinity,0,1,1'},{bbox:'0,1,1,0'},{bbox:'181,0,1,1'},{bbox:'0,,1,1'},{bbox:['0,0,1,1']},{zoom:'21'},{zoom:'-1'},{zoom:'NaN'},{limit:'49'},{limit:'0'},{q:['Москва']},{category:{foo:'bar'}},{cursor:'x'.repeat(2049)}])assert.throws(()=>map.read(malformed));
     const publicText=JSON.stringify(first);assert.ok(!publicText.includes('private_note')&&!publicText.includes('Private operator')&&!publicText.includes('bio'));
-    assert.deepEqual(Object.keys(first.items[0]).sort(),['address','avatar','categories','category','city','kind','latitude','longitude','name','slug','teaches','user_id'].sort());
+    assert.deepEqual(Object.keys(first.items[0]).sort(),['address','avatar','categories','category','city','kind','latitude','longitude','name','rating','review_count','slug','teaches','user_id'].sort());
   }finally{fixture.db.close()}
 });
 

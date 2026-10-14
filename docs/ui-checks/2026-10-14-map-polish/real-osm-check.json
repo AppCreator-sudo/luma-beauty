@@ -1,0 +1,18 @@
+{
+  "at": "2026-10-14T12:22:59.248Z",
+  "scope": "local synthetic business data, actual OSM tile network; no production changes",
+  "reports": [
+    {
+      "width": 1440,
+      "successfulTiles": 75,
+      "tileHttpErrors": [],
+      "pageErrors": []
+    },
+    {
+      "width": 390,
+      "successfulTiles": 28,
+      "tileHttpErrors": [],
+      "pageErrors": []
+    }
+  ]
+}

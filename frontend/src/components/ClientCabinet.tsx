@@ -11,7 +11,7 @@ import '../client-cabinet.css';
 export type ClientTab='overview'|'visits'|'saved'|'masters'|'reviews'|'notifications'|'settings';
 export const clientSections=[
   {key:'overview',label:'Обзор',Icon:Home}, {key:'visits',label:'Мои записи',Icon:CalendarDays},
-  {key:'saved',label:'Сохранённое',Icon:Heart}, {key:'masters',label:'Мои мастера',Icon:Users},
+  {key:'saved',label:'Сохранённое',Icon:Heart}, {key:'masters',label:'Мастера и салоны',Icon:Users},
   {key:'reviews',label:'Отзывы',Icon:Star}, {key:'notifications',label:'Уведомления',Icon:Bell},
   {key:'settings',label:'Настройки',Icon:Settings},
 ] as const;

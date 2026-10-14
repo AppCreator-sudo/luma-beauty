@@ -29,6 +29,7 @@
 .appearance-theme-choice{display:flex;align-items:center;gap:7px;min-height:44px;padding:8px 10px;border:1px solid #ded3c6;border-radius:5px;font-size:12px;cursor:pointer;background:#fcfaf6}
 .appearance-theme-choice:has(input:checked){border-color:#713147;box-shadow:inset 0 0 0 1px #713147}
 .appearance-theme-choice input{accent-color:#713147;margin:0}
+.appearance-theme-options .appearance-theme-choice input[type=radio],.salon-page .salon-page-form .appearance-theme-options input[type=radio]{width:16px;height:16px;min-height:0;flex:0 0 16px;padding:0;margin:0;accent-color:#70243d}
 .appearance-theme-swatch{display:block;width:18px;height:18px;border-radius:50%;background:var(--appearance-bg);border:1px solid #00000014}
 .appearance-live-preview>.eyebrow{display:block;margin-bottom:10px}
 .appearance-live-preview>.muted{font-size:12px;line-height:1.6}

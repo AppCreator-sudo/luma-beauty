@@ -1,0 +1,87 @@
+{
+  "at": "2026-10-14T15:24:10.174Z",
+  "tag": "20261014-v2-public-profiles-unified",
+  "origin": "https://atelie-13-143-66-1.sslip.io",
+  "scope": "Anonymous production GET/HEAD only; no accounts, fixtures, settings, bookings or reviews written",
+  "checks": [
+    {
+      "name": "public build, SW, health and protected client API",
+      "status": "PASS"
+    },
+    {
+      "name": "master public API ratings and fields",
+      "status": "PASS"
+    },
+    {
+      "name": "salon public API ratings and fields",
+      "status": "PASS"
+    },
+    {
+      "name": "master profile 1440",
+      "status": "PASS"
+    },
+    {
+      "name": "salon profile 1440",
+      "status": "PASS"
+    },
+    {
+      "name": "natural map width 1440",
+      "status": "PASS"
+    },
+    {
+      "name": "master profile 390",
+      "status": "PASS"
+    },
+    {
+      "name": "salon profile 390",
+      "status": "PASS"
+    },
+    {
+      "name": "natural map width 390",
+      "status": "PASS"
+    },
+    {
+      "name": "mobile menu and Back 390",
+      "status": "PASS"
+    },
+    {
+      "name": "master profile 320",
+      "status": "PASS"
+    },
+    {
+      "name": "salon profile 320",
+      "status": "PASS"
+    },
+    {
+      "name": "natural map width 320",
+      "status": "PASS"
+    },
+    {
+      "name": "mobile menu and Back 320",
+      "status": "PASS"
+    }
+  ],
+  "pageErrors": [],
+  "blockedWrites": [],
+  "previousAt": "2026-10-14T15:20:09.642Z",
+  "retry": "Only unchecked scenarios repeated. Mobile map count is intentionally hidden with list panel; wait for loaded text instead of visibility. Application unchanged.",
+  "mapWidth1440": {
+    "gutter": "auto",
+    "client": 1440,
+    "inner": 1440,
+    "overflow": false
+  },
+  "mapWidth390": {
+    "gutter": "auto",
+    "client": 390,
+    "inner": 390,
+    "overflow": false
+  },
+  "mapWidth320": {
+    "gutter": "auto",
+    "client": 320,
+    "inner": 320,
+    "overflow": false
+  },
+  "result": "PASS"
+}

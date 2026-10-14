@@ -1,0 +1,922 @@
+{
+  "at": "2026-10-14T13:04:19.217Z",
+  "origin": "http://localhost:3250",
+  "phase": "before",
+  "results": [
+    {
+      "width": 1365,
+      "metrics": [
+        {
+          "route": "masters",
+          "viewport": 1365,
+          "client": 1350,
+          "gutter": "auto",
+          "brand": {
+            "x": 40,
+            "width": 130.75,
+            "right": 170.75
+          },
+          "nav": [
+            {
+              "x": 513.671875,
+              "width": 71.828125,
+              "right": 585.5
+            },
+            {
+              "x": 629.5,
+              "width": 109.3125,
+              "right": 738.8125
+            },
+            {
+              "x": 782.8125,
+              "width": 50.6875,
+              "right": 833.5
+            }
+          ],
+          "actions": {
+            "x": 1176.40625,
+            "width": 133.59375,
+            "right": 1310
+          },
+          "overflow": false
+        },
+        {
+          "route": "inspiration",
+          "viewport": 1365,
+          "client": 1350,
+          "gutter": "auto",
+          "brand": {
+            "x": 40,
+            "width": 130.75,
+            "right": 170.75
+          },
+          "nav": [
+            {
+              "x": 513.671875,
+              "width": 71.828125,
+              "right": 585.5
+            },
+            {
+              "x": 629.5,
+              "width": 109.3125,
+              "right": 738.8125
+            },
+            {
+              "x": 782.8125,
+              "width": 50.6875,
+              "right": 833.5
+            }
+          ],
+          "actions": {
+            "x": 1176.40625,
+            "width": 133.59375,
+            "right": 1310
+          },
+          "overflow": false
+        },
+        {
+          "route": "map",
+          "viewport": 1365,
+          "client": 1365,
+          "gutter": "auto",
+          "brand": {
+            "x": 40,
+            "width": 130.75,
+            "right": 170.75
+          },
+          "nav": [
+            {
+              "x": 521.171875,
+              "width": 71.828125,
+              "right": 593
+            },
+            {
+              "x": 637,
+              "width": 109.3125,
+              "right": 746.3125
+            },
+            {
+              "x": 790.3125,
+              "width": 50.6875,
+              "right": 841
+            }
+          ],
+          "actions": {
+            "x": 1191.40625,
+            "width": 133.59375,
+            "right": 1325
+          },
+          "overflow": false
+        },
+        {
+          "route": "masters",
+          "viewport": 1365,
+          "client": 1350,
+          "gutter": "auto",
+          "brand": {
+            "x": 40,
+            "width": 130.75,
+            "right": 170.75
+          },
+          "nav": [
+            {
+              "x": 513.671875,
+              "width": 71.828125,
+              "right": 585.5
+            },
+            {
+              "x": 629.5,
+              "width": 109.3125,
+              "right": 738.8125
+            },
+            {
+              "x": 782.8125,
+              "width": 50.6875,
+              "right": 833.5
+            }
+          ],
+          "actions": {
+            "x": 1176.40625,
+            "width": 133.59375,
+            "right": 1310
+          },
+          "overflow": false
+        }
+      ],
+      "deltas": [
+        {
+          "route": "masters",
+          "nav": [
+            0,
+            0,
+            0
+          ],
+          "brand": 0,
+          "actions": 0
+        },
+        {
+          "route": "inspiration",
+          "nav": [
+            0,
+            0,
+            0
+          ],
+          "brand": 0,
+          "actions": 0
+        },
+        {
+          "route": "map",
+          "nav": [
+            7.5,
+            7.5,
+            7.5
+          ],
+          "brand": 0,
+          "actions": 15
+        },
+        {
+          "route": "masters",
+          "nav": [
+            0,
+            0,
+            0
+          ],
+          "brand": 0,
+          "actions": 0
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "metrics": [
+        {
+          "route": "masters",
+          "viewport": 1440,
+          "client": 1425,
+          "gutter": "auto",
+          "brand": {
+            "x": 40,
+            "width": 130.75,
+            "right": 170.75
+          },
+          "nav": [
+            {
+              "x": 551.171875,
+              "width": 71.828125,
+              "right": 623
+            },
+            {
+              "x": 667,
+              "width": 109.3125,
+              "right": 776.3125
+            },
+            {
+              "x": 820.3125,
+              "width": 50.6875,
+              "right": 871
+            }
+          ],
+          "actions": {
+            "x": 1251.40625,
+            "width": 133.59375,
+            "right": 1385
+          },
+          "overflow": false
+        },
+        {
+          "route": "inspiration",
+          "viewport": 1440,
+          "client": 1425,
+          "gutter": "auto",
+          "brand": {
+            "x": 40,
+            "width": 130.75,
+            "right": 170.75
+          },
+          "nav": [
+            {
+              "x": 551.171875,
+              "width": 71.828125,
+              "right": 623
+            },
+            {
+              "x": 667,
+              "width": 109.3125,
+              "right": 776.3125
+            },
+            {
+              "x": 820.3125,
+              "width": 50.6875,
+              "right": 871
+            }
+          ],
+          "actions": {
+            "x": 1251.40625,
+            "width": 133.59375,
+            "right": 1385
+          },
+          "overflow": false
+        },
+        {
+          "route": "map",
+          "viewport": 1440,
+          "client": 1440,
+          "gutter": "auto",
+          "brand": {
+            "x": 40,
+            "width": 130.75,
+            "right": 170.75
+          },
+          "nav": [
+            {
+              "x": 558.671875,
+              "width": 71.828125,
+              "right": 630.5
+            },
+            {
+              "x": 674.5,
+              "width": 109.3125,
+              "right": 783.8125
+            },
+            {
+              "x": 827.8125,
+              "width": 50.6875,
+              "right": 878.5
+            }
+          ],
+          "actions": {
+            "x": 1266.40625,
+            "width": 133.59375,
+            "right": 1400
+          },
+          "overflow": false
+        },
+        {
+          "route": "masters",
+          "viewport": 1440,
+          "client": 1425,
+          "gutter": "auto",
+          "brand": {
+            "x": 40,
+            "width": 130.75,
+            "right": 170.75
+          },
+          "nav": [
+            {
+              "x": 551.171875,
+              "width": 71.828125,
+              "right": 623
+            },
+            {
+              "x": 667,
+              "width": 109.3125,
+              "right": 776.3125
+            },
+            {
+              "x": 820.3125,
+              "width": 50.6875,
+              "right": 871
+            }
+          ],
+          "actions": {
+            "x": 1251.40625,
+            "width": 133.59375,
+            "right": 1385
+          },
+          "overflow": false
+        }
+      ],
+      "deltas": [
+        {
+          "route": "masters",
+          "nav": [
+            0,
+            0,
+            0
+          ],
+          "brand": 0,
+          "actions": 0
+        },
+        {
+          "route": "inspiration",
+          "nav": [
+            0,
+            0,
+            0
+          ],
+          "brand": 0,
+          "actions": 0
+        },
+        {
+          "route": "map",
+          "nav": [
+            7.5,
+            7.5,
+            7.5
+          ],
+          "brand": 0,
+          "actions": 15
+        },
+        {
+          "route": "masters",
+          "nav": [
+            0,
+            0,
+            0
+          ],
+          "brand": 0,
+          "actions": 0
+        }
+      ]
+    },
+    {
+      "width": 800,
+      "metrics": [
+        {
+          "route": "masters",
+          "viewport": 800,
+          "client": 785,
+          "gutter": "auto",
+          "brand": {
+            "x": 28,
+            "width": 130.75,
+            "right": 158.75
+          },
+          "nav": [
+            {
+              "x": 231.171875,
+              "width": 71.828125,
+              "right": 303
+            },
+            {
+              "x": 347,
+              "width": 109.3125,
+              "right": 456.3125
+            },
+            {
+              "x": 500.3125,
+              "width": 50.6875,
+              "right": 551
+            }
+          ],
+          "actions": {
+            "x": 623.40625,
+            "width": 133.59375,
+            "right": 757
+          },
+          "overflow": false
+        },
+        {
+          "route": "inspiration",
+          "viewport": 800,
+          "client": 785,
+          "gutter": "auto",
+          "brand": {
+            "x": 28,
+            "width": 130.75,
+            "right": 158.75
+          },
+          "nav": [
+            {
+              "x": 231.171875,
+              "width": 71.828125,
+              "right": 303
+            },
+            {
+              "x": 347,
+              "width": 109.3125,
+              "right": 456.3125
+            },
+            {
+              "x": 500.3125,
+              "width": 50.6875,
+              "right": 551
+            }
+          ],
+          "actions": {
+            "x": 623.40625,
+            "width": 133.59375,
+            "right": 757
+          },
+          "overflow": false
+        },
+        {
+          "route": "map",
+          "viewport": 800,
+          "client": 800,
+          "gutter": "auto",
+          "brand": {
+            "x": 28,
+            "width": 130.75,
+            "right": 158.75
+          },
+          "nav": [
+            {
+              "x": 238.671875,
+              "width": 71.828125,
+              "right": 310.5
+            },
+            {
+              "x": 354.5,
+              "width": 109.3125,
+              "right": 463.8125
+            },
+            {
+              "x": 507.8125,
+              "width": 50.6875,
+              "right": 558.5
+            }
+          ],
+          "actions": {
+            "x": 638.40625,
+            "width": 133.59375,
+            "right": 772
+          },
+          "overflow": false
+        },
+        {
+          "route": "masters",
+          "viewport": 800,
+          "client": 785,
+          "gutter": "auto",
+          "brand": {
+            "x": 28,
+            "width": 130.75,
+            "right": 158.75
+          },
+          "nav": [
+            {
+              "x": 231.171875,
+              "width": 71.828125,
+              "right": 303
+            },
+            {
+              "x": 347,
+              "width": 109.3125,
+              "right": 456.3125
+            },
+            {
+              "x": 500.3125,
+              "width": 50.6875,
+              "right": 551
+            }
+          ],
+          "actions": {
+            "x": 623.40625,
+            "width": 133.59375,
+            "right": 757
+          },
+          "overflow": false
+        }
+      ],
+      "deltas": [
+        {
+          "route": "masters",
+          "nav": [
+            0,
+            0,
+            0
+          ],
+          "brand": 0,
+          "actions": 0
+        },
+        {
+          "route": "inspiration",
+          "nav": [
+            0,
+            0,
+            0
+          ],
+          "brand": 0,
+          "actions": 0
+        },
+        {
+          "route": "map",
+          "nav": [
+            7.5,
+            7.5,
+            7.5
+          ],
+          "brand": 0,
+          "actions": 15
+        },
+        {
+          "route": "masters",
+          "nav": [
+            0,
+            0,
+            0
+          ],
+          "brand": 0,
+          "actions": 0
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "metrics": [
+        {
+          "route": "masters",
+          "viewport": 390,
+          "client": 375,
+          "gutter": "auto",
+          "brand": {
+            "x": 20,
+            "width": 112.5,
+            "right": 132.5
+          },
+          "nav": [
+            {
+              "x": 0,
+              "width": 0,
+              "right": 0
+            },
+            {
+              "x": 0,
+              "width": 0,
+              "right": 0
+            },
+            {
+              "x": 0,
+              "width": 0,
+              "right": 0
+            }
+          ],
+          "actions": {
+            "x": 260,
+            "width": 95,
+            "right": 355
+          },
+          "overflow": false
+        },
+        {
+          "route": "inspiration",
+          "viewport": 390,
+          "client": 375,
+          "gutter": "auto",
+          "brand": {
+            "x": 20,
+            "width": 112.5,
+            "right": 132.5
+          },
+          "nav": [
+            {
+              "x": 0,
+              "width": 0,
+              "right": 0
+            },
+            {
+              "x": 0,
+              "width": 0,
+              "right": 0
+            },
+            {
+              "x": 0,
+              "width": 0,
+              "right": 0
+            }
+          ],
+          "actions": {
+            "x": 260,
+            "width": 95,
+            "right": 355
+          },
+          "overflow": false
+        },
+        {
+          "route": "map",
+          "viewport": 390,
+          "client": 390,
+          "gutter": "auto",
+          "brand": {
+            "x": 20,
+            "width": 112.5,
+            "right": 132.5
+          },
+          "nav": [
+            {
+              "x": 0,
+              "width": 0,
+              "right": 0
+            },
+            {
+              "x": 0,
+              "width": 0,
+              "right": 0
+            },
+            {
+              "x": 0,
+              "width": 0,
+              "right": 0
+            }
+          ],
+          "actions": {
+            "x": 275,
+            "width": 95,
+            "right": 370
+          },
+          "overflow": false
+        },
+        {
+          "route": "masters",
+          "viewport": 390,
+          "client": 375,
+          "gutter": "auto",
+          "brand": {
+            "x": 20,
+            "width": 112.5,
+            "right": 132.5
+          },
+          "nav": [
+            {
+              "x": 0,
+              "width": 0,
+              "right": 0
+            },
+            {
+              "x": 0,
+              "width": 0,
+              "right": 0
+            },
+            {
+              "x": 0,
+              "width": 0,
+              "right": 0
+            }
+          ],
+          "actions": {
+            "x": 260,
+            "width": 95,
+            "right": 355
+          },
+          "overflow": false
+        }
+      ],
+      "deltas": [
+        {
+          "route": "masters",
+          "nav": [
+            0,
+            0,
+            0
+          ],
+          "brand": 0,
+          "actions": 0
+        },
+        {
+          "route": "inspiration",
+          "nav": [
+            0,
+            0,
+            0
+          ],
+          "brand": 0,
+          "actions": 0
+        },
+        {
+          "route": "map",
+          "nav": [
+            0,
+            0,
+            0
+          ],
+          "brand": 0,
+          "actions": 15
+        },
+        {
+          "route": "masters",
+          "nav": [
+            0,
+            0,
+            0
+          ],
+          "brand": 0,
+          "actions": 0
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "metrics": [
+        {
+          "route": "masters",
+          "viewport": 320,
+          "client": 305,
+          "gutter": "auto",
+          "brand": {
+            "x": 20,
+            "width": 112.5,
+            "right": 132.5
+          },
+          "nav": [
+            {
+              "x": 0,
+              "width": 0,
+              "right": 0
+            },
+            {
+              "x": 0,
+              "width": 0,
+              "right": 0
+            },
+            {
+              "x": 0,
+              "width": 0,
+              "right": 0
+            }
+          ],
+          "actions": {
+            "x": 190,
+            "width": 95,
+            "right": 285
+          },
+          "overflow": false
+        },
+        {
+          "route": "inspiration",
+          "viewport": 320,
+          "client": 305,
+          "gutter": "auto",
+          "brand": {
+            "x": 20,
+            "width": 112.5,
+            "right": 132.5
+          },
+          "nav": [
+            {
+              "x": 0,
+              "width": 0,
+              "right": 0
+            },
+            {
+              "x": 0,
+              "width": 0,
+              "right": 0
+            },
+            {
+              "x": 0,
+              "width": 0,
+              "right": 0
+            }
+          ],
+          "actions": {
+            "x": 190,
+            "width": 95,
+            "right": 285
+          },
+          "overflow": false
+        },
+        {
+          "route": "map",
+          "viewport": 320,
+          "client": 320,
+          "gutter": "auto",
+          "brand": {
+            "x": 20,
+            "width": 112.5,
+            "right": 132.5
+          },
+          "nav": [
+            {
+              "x": 0,
+              "width": 0,
+              "right": 0
+            },
+            {
+              "x": 0,
+              "width": 0,
+              "right": 0
+            },
+            {
+              "x": 0,
+              "width": 0,
+              "right": 0
+            }
+          ],
+          "actions": {
+            "x": 205,
+            "width": 95,
+            "right": 300
+          },
+          "overflow": false
+        },
+        {
+          "route": "masters",
+          "viewport": 320,
+          "client": 305,
+          "gutter": "auto",
+          "brand": {
+            "x": 20,
+            "width": 112.5,
+            "right": 132.5
+          },
+          "nav": [
+            {
+              "x": 0,
+              "width": 0,
+              "right": 0
+            },
+            {
+              "x": 0,
+              "width": 0,
+              "right": 0
+            },
+            {
+              "x": 0,
+              "width": 0,
+              "right": 0
+            }
+          ],
+          "actions": {
+            "x": 190,
+            "width": 95,
+            "right": 285
+          },
+          "overflow": false
+        }
+      ],
+      "deltas": [
+        {
+          "route": "masters",
+          "nav": [
+            0,
+            0,
+            0
+          ],
+          "brand": 0,
+          "actions": 0
+        },
+        {
+          "route": "inspiration",
+          "nav": [
+            0,
+            0,
+            0
+          ],
+          "brand": 0,
+          "actions": 0
+        },
+        {
+          "route": "map",
+          "nav": [
+            0,
+            0,
+            0
+          ],
+          "brand": 0,
+          "actions": 15
+        },
+        {
+          "route": "masters",
+          "nav": [
+            0,
+            0,
+            0
+          ],
+          "brand": 0,
+          "actions": 0
+        }
+      ]
+    }
+  ]
+}

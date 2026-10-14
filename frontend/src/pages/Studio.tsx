@@ -80,6 +80,7 @@ function ProfileForm({ initial, addressDraft, onDone }: { initial?: Studio['prof
   const [addressBusy, setAddressBusy] = useState(false);
   const [categories, setCategories] = useState<string[]>(initial ? (initial.categories?.length ? initial.categories : [initial.category]) : []);
   const [teaches, setTeaches] = useState(Boolean(initial?.teaches));
+  const [lookingModels,setLookingModels]=useState(Boolean(initial?.looking_models));
   const availableDirections = [...directions, ...(initial?.categories || []).filter(value => !directions.includes(value))];
   const [bio, setBio] = useState(initial?.bio || '');
   const [experience, setExperience] = useState<number | null>(initial?.experience_months ?? null);
@@ -91,13 +92,13 @@ function ProfileForm({ initial, addressDraft, onDone }: { initial?: Studio['prof
     if (!categories.length) { setError('Выберите хотя бы одно направление.'); return; }
     if (experienceError) { setError(experienceError); return; }
     setBusy(true); setError('');
-    try { await json('/profile', 'PUT', { name, slug, categories, teaches, bio, experience_months: experience, address_mode: 'preserve' }); onDone(addressChanged(addressValue, savedAddress) ? 'Страница сохранена. Адрес сохраните отдельно.' : initial ? 'Страница сохранена.' : 'Страница создана и пока скрыта от клиентов.'); }
+    try { await json('/profile', 'PUT', { name, slug, categories, teaches, looking_models:lookingModels, bio, experience_months: experience, address_mode: 'preserve' }); onDone(addressChanged(addressValue, savedAddress) ? 'Страница сохранена. Адрес сохраните отдельно.' : initial ? 'Страница сохранена.' : 'Страница создана и пока скрыта от клиентов.'); }
     catch (reason) { setError(reason instanceof Error ? reason.message : 'Не удалось сохранить'); } finally { setBusy(false); }
   }
   return <form className="settings-form" onSubmit={submit}>
     <div className="form-row"><label>Ваше имя<input value={name} onChange={event => setName(event.target.value)} maxLength={80} required/></label><label>Адрес страницы<input value={slug} onChange={event => setSlug(event.target.value.toLowerCase().replace(/[^a-z0-9-]/g, ''))} minLength={3} maxLength={40} placeholder="anna-makeup" required/></label></div>
     <fieldset className="category-picker"><legend>Направления деятельности</legend><p>Отметьте всё, чем занимаетесь.</p><div className="category-options">{availableDirections.map(direction => <label key={direction}><input type="checkbox" checked={categories.includes(direction)} onChange={event => setCategories(current => event.target.checked ? [...current, direction] : current.filter(value => value !== direction))}/><span>{direction}</span></label>)}</div></fieldset>
-    <fieldset className="teaching-picker"><legend>Обучение</legend><label><input type="checkbox" checked={teaches} onChange={event => setTeaches(event.target.checked)}/><span>Провожу обучение</span></label><p>Отметка «Обучает» появится в вашей карточке и на странице.</p></fieldset>
+    <fieldset className="teaching-picker"><legend>Обучение</legend><label><input type="checkbox" checked={teaches} onChange={event => setTeaches(event.target.checked)}/><span>Провожу обучение</span></label><p>Отметка обучения появится в вашей карточке и на странице.</p><label><input type="checkbox" checked={lookingModels} onChange={event=>setLookingModels(event.target.checked)}/><span>Ищу моделей</span></label><p>Отметка появится рядом с обучением. Условия вы согласуете с клиентом отдельно.</p></fieldset>
     <label>О себе<textarea value={bio} onChange={event => setBio(event.target.value)} maxLength={1500} rows={4} placeholder="Ваш подход, опыт и любовь к делу"/></label>
     <ExperienceFields value={experience} onChange={setExperience} onValidationChange={setExperienceError}/>
     <AddressFields value={addressValue} saveEndpoint="/profile/address" onStart={() => setError('')} onChange={next => { setError(''); setAddressValue(next); }} onSaved={next => { setError(''); setAddressValue(next); setSavedAddress(next); }} onBusy={setAddressBusy} busy={busy}/>

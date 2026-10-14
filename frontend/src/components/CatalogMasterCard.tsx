@@ -27,11 +27,11 @@ export function CatalogMasterCard({ profile }: { profile: Profile }) {
         {image ? <img src={image} alt="" loading="lazy" width="84" height="84"/> : <span aria-hidden="true">{Array.from(profile.name.trim())[0] || 'а'}</span>}
       </Link>
       <div className="compact-master-copy">
-        <div className="compact-master-tags"><span className="compact-master-kind">{salon ? 'Салон' : staff ? 'Мастер салона' : 'Индивидуальный мастер'}</span>{profile.teaches ? <span className="compact-master-training">Обучает</span> : null}</div>
+        <div className="compact-master-tags"><span className="compact-master-kind">{salon ? 'Салон' : staff ? 'Мастер салона' : 'Индивидуальный мастер'}</span>{profile.teaches ? <span className="compact-master-training">{salon?'Обучаем':'Обучаю'}</span> : null}</div>
         <h3><Link to={detailPath} title={profile.name}>{profile.name}</Link></h3>
         <p className="compact-master-location">{profile.city ? <span><MapPin size={13} aria-hidden="true"/>{profile.city}</span> : null}{salon ? <span>{teamLabel(profile.staff?.length || 0)}</span> : staff && profile.salon_name ? <span>{profile.salon_name}</span> : null}</p>
         <p className="compact-master-directions" title={directions}>{directions || (salon ? 'Услуги команды' : 'Услуги мастера')}</p>
-        {!salon ? <p className="compact-master-rating"><Star size={14} aria-hidden="true"/><span>{profile.rating ? profile.rating.toFixed(1) : 'Пока без оценок'}{profile.review_count ? ' · ' + profile.review_count + ' отзывов' : ''}</span></p> : null}
+        <p className="compact-master-rating"><Star size={14} aria-hidden="true"/><span>{profile.rating ? profile.rating.toFixed(1) : 'Пока без оценок'}{profile.review_count ? ' · ' + profile.review_count + ' отзывов' : ''}</span></p>
       </div>
     </div>
     {salon && match ? <Link className="compact-master-match" to={'/s/' + profile.slug + '?master=' + encodeURIComponent(match.id) + '#works'}>В команде: {profile.matching_staff?.map(person => person.name).join(' · ')}<ArrowUpRight size={15} aria-hidden="true"/></Link> : null}

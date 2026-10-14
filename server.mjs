@@ -1,3 +1,5 @@
+import {reviewRating,publicReviews} from './lib/review-ratings.mjs';
+import {pageOptions} from './lib/profile-page-options.mjs';
 import { clientCabinet } from './lib/client-cabinet.mjs';
 import { appointmentEditing } from './lib/appointment-editing.mjs';
 import { experienceMonths, migrateProfileExperience } from './lib/profile-experience.mjs';
@@ -84,14 +86,14 @@ function profile(id){const p=one('SELECT * FROM profiles WHERE user_id=?',id);re
 function requireProfile(req,res,next){if(!profile(req.user.id))return res.status(400).json({error:'Сначала создайте страницу мастера'});next()}
 const schedule=schedules({db,fail,relatedMasters:id=>access.relatedIds(id),relatedMasterGroups:ids=>relatedPerformersBatch(db,ids),cityForMaster:id=>profile(id)?.city||personalAddress(id)?.city||''});
 function futureAvailability(master){return schedule.availability(master)}
-function publicProfile(p,viewer=''){const reviews=q(`SELECT r.id,r.rating,r.text,r.created,a.service FROM reviews r JOIN appointments a ON a.id=r.appointment_id WHERE r.master_id=? ORDER BY r.created DESC LIMIT 20`,p.user_id),rating=one('SELECT ROUND(AVG(rating),1) rating,COUNT(*) count FROM reviews WHERE master_id=?',p.user_id);return {...p,categories:p.categories||profileCategories(p.user_id),following:Boolean(viewer&&one('SELECT 1 FROM follows WHERE user_id=? AND master_id=?',viewer,p.user_id)),rating:rating.rating||null,review_count:rating.count,reviews,services:q('SELECT * FROM services WHERE user_id=?',p.user_id),works:portfolio(p.user_id,viewer),schedule:schedule.config(p.user_id),availability:futureAvailability(p.user_id)}}
+function publicProfile(p,viewer=''){const reviews=publicReviews(db,'master',p.user_id),rating=reviewRating(db,'master',p.user_id);return {...p,categories:p.categories||profileCategories(p.user_id),following:Boolean(viewer&&one('SELECT 1 FROM follows WHERE user_id=? AND master_id=?',viewer,p.user_id)),rating:rating.rating||null,review_count:rating.review_count,reviews,services:q('SELECT * FROM services WHERE user_id=?',p.user_id),works:portfolio(p.user_id,viewer),schedule:schedule.config(p.user_id),availability:futureAvailability(p.user_id)}}
 const catalogVisibility=`(p.published=1 AND NOT EXISTS (
   SELECT 1 FROM performers person JOIN workspaces salon ON salon.id=person.workspace_id WHERE person.id=p.user_id AND salon.kind='salon'
 ))`;
 function catalogProfile(p,nextAvailable=null){
- const rating=one('SELECT ROUND(AVG(rating),1) rating,COUNT(*) count FROM reviews WHERE master_id=?',p.user_id);
+ const rating=reviewRating(db,'master',p.user_id);
  const salon=one("SELECT w.id,w.slug,w.name,w.city,w.address,w.latitude,w.longitude,w.logo,w.cover,w.utc_offset FROM performers person JOIN workspaces w ON w.id=person.workspace_id WHERE person.id=? AND w.kind='salon'",p.user_id);
- return {...p,...(salon?{kind:'staff',published:1,city:salon.city,address:salon.address,latitude:salon.latitude,longitude:salon.longitude,salon_id:salon.id,salon_slug:salon.slug,salon_name:salon.name,salon_logo:salon.logo,salon_cover:salon.cover}:{}),categories:profileCategories(p.user_id),rating:rating.rating||null,review_count:rating.count,services:q('SELECT * FROM services WHERE user_id=?',p.user_id),works:q('SELECT id,user_id,image,caption,created FROM works WHERE user_id=? ORDER BY pinned DESC,position DESC,created DESC,id DESC LIMIT 1',p.user_id),schedule:{...schedule.config(p.user_id),...(salon?{utc_offset:salon.utc_offset}:{})},next_available:nextAvailable};
+ return {...p,...(salon?{kind:'staff',published:1,city:salon.city,address:salon.address,latitude:salon.latitude,longitude:salon.longitude,salon_id:salon.id,salon_slug:salon.slug,salon_name:salon.name,salon_logo:salon.logo,salon_cover:salon.cover}:{}),categories:profileCategories(p.user_id),rating:rating.rating||null,review_count:rating.review_count,services:q('SELECT * FROM services WHERE user_id=?',p.user_id),works:q('SELECT id,user_id,image,caption,created FROM works WHERE user_id=? ORDER BY pinned DESC,position DESC,created DESC,id DESC LIMIT 1',p.user_id),schedule:{...schedule.config(p.user_id),...(salon?{utc_offset:salon.utc_offset}:{})},next_available:nextAvailable};
 }
 const vapidFile=path.join(DATA,'vapid.json');
 const vapid=fs.existsSync(vapidFile)?JSON.parse(fs.readFileSync(vapidFile,'utf8')):webpush.generateVAPIDKeys();
@@ -245,7 +247,7 @@ app.put('/api/profile',requireUser,requireMaster,(req,res,next)=>addresses.saveL
   if(!categories.length||categories.length>CATEGORIES.length+1||categories.some(value=>!value||(!CATEGORIES.includes(value)&&!old?.categories.includes(value))))fail('Выберите направления из списка');
   db.exec('BEGIN IMMEDIATE');
   try{
-    run(`INSERT INTO profiles(user_id,slug,name,city,category,bio,theme,avatar,address,latitude,longitude,published,teaches) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT(user_id) DO UPDATE SET slug=excluded.slug,name=excluded.name,city=excluded.city,category=excluded.category,bio=excluded.bio,theme=excluded.theme,address=excluded.address,latitude=excluded.latitude,longitude=excluded.longitude,published=excluded.published,teaches=excluded.teaches`,req.user.id,slug,name,city,categories[0],str(b.bio,1500),b.theme===undefined?(old?.theme||'cream'):(['cream','wine','green'].includes(b.theme)?b.theme:'cream'),old?.avatar||'',str(b.address,200),lat,lng,b.published===undefined?(old?.published||0):(b.published?1:0),b.teaches===true?1:0);
+    run(`INSERT INTO profiles(user_id,slug,name,city,category,bio,theme,avatar,address,latitude,longitude,published,teaches,looking_models) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT(user_id) DO UPDATE SET slug=excluded.slug,name=excluded.name,city=excluded.city,category=excluded.category,bio=excluded.bio,theme=excluded.theme,address=excluded.address,latitude=excluded.latitude,longitude=excluded.longitude,published=excluded.published,teaches=excluded.teaches,looking_models=excluded.looking_models`,req.user.id,slug,name,city,categories[0],str(b.bio,1500),b.theme===undefined?(old?.theme||'cream'):(['cream','wine','green'].includes(b.theme)?b.theme:'cream'),old?.avatar||'',str(b.address,200),lat,lng,b.published===undefined?(old?.published||0):(b.published?1:0),pageOptions(b,old,fail).teaches,pageOptions(b,old,fail).looking_models);
     run('DELETE FROM profile_categories WHERE user_id=?',req.user.id);
     run('UPDATE profiles SET experience_months=? WHERE user_id=?',experience,req.user.id);
     for(const category of categories)run('INSERT INTO profile_categories(user_id,category) VALUES(?,?)',req.user.id,category);
@@ -310,7 +312,7 @@ app.delete('/api/avatar',requireUser,requireMaster,requireProfile,async(req,res)
   if(result.changes!==1)fail('Фото изменилось в другом окне. Обновите страницу и повторите удаление',409);
   await portraitUpload.removeOwned(before);res.json({ok:true,avatar:''});
 });
-app.get('/api/library',requireUser,(req,res)=>res.json({masters:q(`SELECT p.* FROM follows f JOIN profiles p ON p.user_id=f.master_id WHERE f.user_id=? AND p.published=1 ORDER BY f.created DESC`,req.user.id).map(p=>publicProfile(p,req.user.id)),works:savedWorks(req.user.id)}));
+app.get('/api/library',requireUser,(req,res)=>res.json({masters:q(`SELECT p.* FROM follows f JOIN profiles p ON p.user_id=f.master_id WHERE f.user_id=? AND p.published=1 ORDER BY f.created DESC`,req.user.id).map(p=>publicProfile(p,req.user.id)),salons:salons.saved(req.user.id),works:savedWorks(req.user.id)}));
 guestBookings({app,db,requireUser,requireClient,notify,fail,validateBooking:schedule.validate,resolveSalonBooking:salons.resolveBooking,bookingOffset:id=>schedule.config(id).utc_offset,recordClientVisit:(...args)=>clientControl.details(...args),clientComment:a=>one('SELECT comment FROM client_visit_details WHERE appointment_id=?',a.id)?.comment||''});
 const privateClientDir=path.join(DATA,'private-client');
 const clientControl=clientCabinet({app,db,requireUser,requireClient,access,schedule,notify,fail,privateDir:privateClientDir,privateUpload:createImageUpload({dataDir:privateClientDir,fail}),backupDir:path.join(DATA,'migration-backups')});

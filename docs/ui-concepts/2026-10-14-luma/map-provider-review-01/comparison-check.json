@@ -1,0 +1,40 @@
+{
+  "at": "2026-10-14T11:40:16.998Z",
+  "scope": "Preview-only background overlay on synthetic local UI; not production integration",
+  "reports": [
+    {
+      "width": 1440,
+      "engine": "MapLibre GL JS 6.14.0",
+      "styleSource": "https://tiles.openfreemap.org/styles/positron",
+      "bbox": [
+        37.567062,
+        55.732668,
+        37.656326,
+        55.768704
+      ],
+      "hiddenLayers": [
+        "water_name_point_label",
+        "airport"
+      ],
+      "errors": [],
+      "loaded": true
+    },
+    {
+      "width": 390,
+      "engine": "MapLibre GL JS 6.14.0",
+      "styleSource": "https://tiles.openfreemap.org/styles/positron",
+      "bbox": [
+        37.593241,
+        55.72537,
+        37.626715,
+        55.756293
+      ],
+      "hiddenLayers": [
+        "water_name_point_label",
+        "airport"
+      ],
+      "errors": [],
+      "loaded": true
+    }
+  ]
+}

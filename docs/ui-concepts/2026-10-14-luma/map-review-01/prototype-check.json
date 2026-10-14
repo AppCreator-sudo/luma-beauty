@@ -1,0 +1,109 @@
+{
+  "at": "2026-10-14T10:51:08.508Z",
+  "scope": "Standalone proposed UI only; not app/API verification",
+  "checks": [
+    {
+      "name": "desktop",
+      "width": 1440,
+      "height": 900,
+      "overflow": false
+    },
+    {
+      "name": "mobile-map",
+      "width": 390,
+      "height": 844,
+      "overflow": false
+    },
+    {
+      "name": "mobile-list",
+      "width": 390,
+      "height": 844,
+      "overflow": false
+    },
+    {
+      "name": "mobile-filters",
+      "width": 390,
+      "height": 844,
+      "overflow": false
+    },
+    {
+      "name": "mobile-group",
+      "width": 390,
+      "height": 844,
+      "overflow": false
+    },
+    {
+      "name": "mobile-empty",
+      "width": 390,
+      "height": 844,
+      "overflow": false
+    },
+    {
+      "name": "mobile-error",
+      "width": 390,
+      "height": 844,
+      "overflow": false
+    },
+    {
+      "name": "mobile-details-error",
+      "width": 390,
+      "height": 844,
+      "overflow": false
+    },
+    {
+      "name": "mobile-no-time",
+      "width": 390,
+      "height": 844,
+      "overflow": false
+    },
+    {
+      "name": "mobile-loading",
+      "width": 390,
+      "height": 844,
+      "overflow": false
+    },
+    {
+      "name": "mobile-geo-denied",
+      "width": 390,
+      "height": 844,
+      "overflow": false
+    },
+    {
+      "name": "mobile-tiles-error",
+      "width": 390,
+      "height": 844,
+      "overflow": false
+    },
+    {
+      "name": "mobile-details-loading",
+      "width": 390,
+      "height": 844,
+      "overflow": false
+    },
+    {
+      "name": "desktop-master",
+      "width": 1440,
+      "height": 900,
+      "overflow": false
+    },
+    {
+      "name": "small-long",
+      "width": 320,
+      "height": 568,
+      "overflow": false
+    },
+    {
+      "name": "short-landscape",
+      "width": 800,
+      "height": 600,
+      "overflow": false
+    }
+  ],
+  "interactions": [
+    "map/list",
+    "filter apply",
+    "card close",
+    "reduced motion"
+  ],
+  "pageErrors": []
+}

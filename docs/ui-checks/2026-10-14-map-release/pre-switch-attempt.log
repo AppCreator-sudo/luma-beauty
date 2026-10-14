@@ -1,0 +1,11 @@
+2026-10-14T19:38:32+07:00 Consistent private database backup created; integrity/FK OK
+2026-10-14T19:38:35+07:00 Release cloned and exact allowed runtime/assets installed; old assets/dependencies retained
+Traceback (most recent call last):
+  File "/opt/atelie/deploy-20261014-v2-map-reference.py", line 76, in <module>
+    child=subprocess.Popen(['runuser','-u','atelie','--',node,str(release/'server.mjs')],cwd=release,env=env,stdout=output,stderr=output)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/subprocess.py", line 1026, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/usr/lib/python3.12/subprocess.py", line 1955, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'runuser'

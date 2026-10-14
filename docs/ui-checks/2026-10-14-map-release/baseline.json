@@ -1,0 +1,51 @@
+{
+  "at": "2026-10-14T19:33:01+07:00",
+  "current": "/opt/atelie/releases/20261011-v2-client-cabinet-reference-r2",
+  "marker": "20261011-v2-client-cabinet-reference-r2",
+  "hashes": {
+    "server.mjs": "5c1ca504da3ff7185bd48add67ad4cad0d56540c1e43bc5428d39f32e6dc3aeb",
+    "package.json": "8f9d224af5b67d546fb13782b7f0ac08875386039a786de2c2141f324f2a1238",
+    "package-lock.json": "2364ed72f170046778e83e062d4443c497cc9ac629ffbb785ff44aef926dcdd3",
+    "public/v2/index.html": "2d51df3a04fc20ad0fb9e0c47ccf4076f4de9545b962e017e13e814b261650c6",
+    "public/sw.js": "03e72766b8f313eef6a395217ca429b6014125baa0ad438291f1cd256a9429ad",
+    "lib/address-suggestions.mjs": "da65fbb0ac435d385a17cca7770079f186b75cfbb567446b0809d73fb11b5095",
+    "lib/appointment-editing.mjs": "63fea3ff1d20587da23404e29dcba4824510592a659fdb8a5c88c745c375a7a1",
+    "lib/auth-providers.mjs": "fa1fc7c18aafa6a7a8db2377212540f62302566b6f2d400f0f50dd51eace0faa",
+    "lib/client-cabinet.mjs": "14506cd93cbb4199eeee7c88ce8813e774275c49169d76387aa90c07b28b486c",
+    "lib/geocoding.mjs": "d1227f134e69935c360d0a775bea6571cf457b7482b9211fd74e4cd89f437c35",
+    "lib/guest-bookings.mjs": "b483ef2e98382dfd6ee4902642c6abe58bd523af9d59db2468d5427844cb2eb9",
+    "lib/image-upload.mjs": "53968ddd6cdd0eef1b2fed9a7501a8fd3fd288158337fb909c469135aa4f1339",
+    "lib/map-viewport.mjs": "9cb3e54f7d1693a99ea58d6506ec85fcbdd384e3e3ce070022697124ebc01bd6",
+    "lib/profile-appearance.mjs": "cf63660b2ad72a47b7bf614edbd31c4e75db83f0cd0d519204d971d684f43744",
+    "lib/profile-experience.mjs": "e936b6aa33917084fd55c6129ccb9c99798bd3d83a8ee270fe9b607656c9de7a",
+    "lib/promotions.mjs": "6ee448380d6bc08b2408b6d19d73f2de310c72b96abd402a3b0e3f76a721e22e",
+    "lib/publications.mjs": "b7816575de21280b216041f1fbebfc14161b094759d82d52a5110adf578215da",
+    "lib/salon-calendar.mjs": "e816fc2b58f5287da07d3bffe6d1a593ae591a63fd60747985bac18040858311",
+    "lib/salon-content.mjs": "b1f8362f25545b5c052b619874bc1a9637d03293835baac7bdab120b7b1d56c2",
+    "lib/salon-public.mjs": "7ae86d2828c36bcf01cdc65c5da519cd20262326004bf4ba98a4f5edf8b1d570",
+    "lib/salon-readiness.mjs": "3fa20fa76be313bcdbfb7e3c5ba83888c30e08465e52da8f402f1b343b108aa0",
+    "lib/salon-service-key.mjs": "ca82d0b107ba9372e6c6c7a5ac7d933e9e5606c688db0cc7dbe206057196f7b0",
+    "lib/schedule.mjs": "92c89f500f6e4fb6f137eed7afe17b23e4f1317967e2334f7265726269755ab2",
+    "lib/social-auth.mjs": "72283e735a03c7f105296b9257b9a3ed9833fea991ef9a22a15557793fb48cc3",
+    "lib/workspaces.mjs": "874f293c7ede4f411e6df58978a15dcc0bac8f56edae23d94685d77b2ce85a4d",
+    "lib/categories.json": "5e64e81536719691f1a0ad4444b8acbdc530f5afa2b1d50538405e39ee771a6b",
+    "lib/image-rules.json": "edad72574dbf5b93f6d4d98f4db9444ef758cda38dde0f43d8623aa5837ef3f5"
+  },
+  "dependencies": "/opt/atelie/releases/20261003-v2-platform-addresses/node_modules",
+  "shared": "/opt/atelie/shared",
+  "schema_sha256": "9c62f18049f9e04e63fbe1a5821fc8744db1bdb450e2c512247fa8b4f8240acc",
+  "integrity": "ok",
+  "foreign_keys": "ok",
+  "origin": "https://atelie-13-143-66-1.sslip.io",
+  "node": "/usr/local/bin/node",
+  "shared_media": {
+    "uploads": {
+      "exists": true,
+      "inode": 535845
+    },
+    "private-client": {
+      "exists": true,
+      "inode": 667144
+    }
+  }
+}

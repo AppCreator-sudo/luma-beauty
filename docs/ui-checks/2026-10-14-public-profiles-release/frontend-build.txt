@@ -1,0 +1,114 @@
+npm notice run atelie-v2@0.1.0 build
+npm notice run tsc -b && vite build
+vite v7.3.6 building client environment for production...
+transforming...
+
+/v2/hero-v2.webp referenced in /v2/hero-v2.webp didn't resolve at build time, it will remain unchanged to be resolved at runtime
+
+/v2/assets/ornament.webp referenced in /v2/assets/ornament.webp didn't resolve at build time, it will remain unchanged to be resolved at runtime
+✓ 2107 modules transformed.
+rendering chunks...
+computing gzip size...
+../public/v2/assets/layers-BWBAp2CZ.png                                          0.70 kB
+../public/v2/index.html                                                          0.86 kB │ gzip:   0.52 kB
+../public/v2/assets/layers-2x-Bpkbi35X.png                                       1.26 kB
+../public/v2/assets/marker-icon-hN30_KVU.png                                     1.47 kB
+../public/v2/assets/manrope-cyrillic-ext-700-normal-cq7F7ESW.woff2               1.57 kB
+../public/v2/assets/manrope-cyrillic-ext-400-normal-CRdE35mU.woff2               1.62 kB
+../public/v2/assets/manrope-cyrillic-ext-700-normal-ezu7N0xg.woff                2.18 kB
+../public/v2/assets/manrope-cyrillic-ext-400-normal-Djnz4Wsr.woff                2.20 kB
+../public/v2/assets/manrope-vietnamese-400-normal-DHb3EETF.woff2                 4.46 kB
+../public/v2/assets/manrope-vietnamese-700-normal-CUqMx5-1.woff2                 4.55 kB
+../public/v2/assets/manrope-greek-700-normal-CHUG9PD8.woff2                      5.24 kB
+../public/v2/assets/manrope-greek-400-normal-CM4qok81.woff2                      5.28 kB
+../public/v2/assets/manrope-vietnamese-400-normal-D7E_mLGF.woff                  6.11 kB
+../public/v2/assets/cormorant-garamond-vietnamese-300-italic-CCKicgM4.woff2      6.18 kB
+../public/v2/assets/cormorant-garamond-vietnamese-300-normal-BTzPAsHw.woff2      6.22 kB
+../public/v2/assets/manrope-vietnamese-700-normal-pt65Fn2Z.woff                  6.36 kB
+../public/v2/assets/cormorant-garamond-vietnamese-400-normal-6K-YXo6g.woff2      6.74 kB
+../public/v2/assets/manrope-greek-700-normal-DyfsrCpP.woff                       6.74 kB
+../public/v2/assets/manrope-greek-400-normal-DuX9RsAR.woff                       6.77 kB
+../public/v2/assets/manrope-cyrillic-400-normal-BMzJvInZ.woff2                   7.84 kB
+../public/v2/assets/manrope-cyrillic-700-normal-Dw_fZAg2.woff2                   7.85 kB
+../public/v2/assets/manrope-latin-ext-700-normal-DYOwVNan.woff2                  8.28 kB
+../public/v2/assets/manrope-latin-ext-400-normal-CMDvPJRp.woff2                  8.29 kB
+../public/v2/assets/cormorant-garamond-vietnamese-300-normal-ByHlPz7v.woff       8.74 kB
+../public/v2/assets/cormorant-garamond-vietnamese-300-italic-DjSFy2Pr.woff       8.85 kB
+../public/v2/assets/cormorant-garamond-vietnamese-400-normal-4uxlocMh.woff       9.32 kB
+../public/v2/assets/manrope-cyrillic-700-normal-7JNVKxyl.woff                   10.00 kB
+../public/v2/assets/manrope-cyrillic-400-normal-Dvx59UGC.woff                   10.03 kB
+../public/v2/assets/manrope-latin-ext-400-normal-C-X6QNXX.woff                  11.32 kB
+../public/v2/assets/manrope-latin-ext-700-normal-eVCcYqtJ.woff                  11.35 kB
+../public/v2/assets/cormorant-garamond-cyrillic-300-normal-DZNkLIMe.woff2       12.26 kB
+../public/v2/assets/cormorant-garamond-cyrillic-300-italic-Bi4RSOgf.woff2       12.39 kB
+../public/v2/assets/cormorant-garamond-cyrillic-400-normal-DD2KOZkl.woff2       12.78 kB
+../public/v2/assets/cormorant-garamond-cyrillic-ext-300-normal-D8IReVS-.woff2   13.28 kB
+../public/v2/assets/cormorant-garamond-cyrillic-ext-400-normal-W3Dto7M0.woff2   13.92 kB
+../public/v2/assets/manrope-latin-400-normal-PaqtzbVb.woff2                     14.11 kB
+../public/v2/assets/manrope-latin-700-normal-BZp_XxE4.woff2                     14.21 kB
+../public/v2/assets/cormorant-garamond-cyrillic-ext-300-italic-B31MkR9z.woff2   14.22 kB
+../public/v2/assets/cormorant-garamond-cyrillic-300-normal-KEduutn5.woff        15.16 kB
+../public/v2/assets/cormorant-garamond-cyrillic-300-italic-Bo30KLu4.woff        15.61 kB
+../public/v2/assets/cormorant-garamond-cyrillic-400-normal-CVFrM67f.woff        15.70 kB
+../public/v2/assets/cormorant-garamond-cyrillic-ext-300-normal-B5wCrnbP.woff    16.86 kB
+../public/v2/assets/cormorant-garamond-cyrillic-ext-400-normal-DLdKLAvx.woff    17.43 kB
+../public/v2/assets/manrope-latin-400-normal-8tf8FM3T.woff                      18.29 kB
+../public/v2/assets/manrope-latin-700-normal-DGRFkw-m.woff                      18.41 kB
+../public/v2/assets/cormorant-garamond-cyrillic-ext-300-italic-Dj41S4NK.woff    18.55 kB
+../public/v2/assets/cormorant-garamond-latin-ext-300-normal-BsCYHBWC.woff2      19.08 kB
+../public/v2/assets/cormorant-garamond-latin-ext-300-italic-Bt0Wsy7Q.woff2      19.25 kB
+../public/v2/assets/cormorant-garamond-latin-ext-400-normal-Drx2k2n9.woff2      19.89 kB
+../public/v2/assets/cormorant-garamond-latin-300-normal-Cw-E_7L1.woff2          21.91 kB
+../public/v2/assets/cormorant-garamond-latin-300-italic-qkwBXYHn.woff2          22.48 kB
+../public/v2/assets/cormorant-garamond-latin-400-normal-B-1hWBU7.woff2          22.88 kB
+../public/v2/assets/cormorant-garamond-latin-ext-300-normal-DueGyF8j.woff       26.99 kB
+../public/v2/assets/cormorant-garamond-latin-ext-300-italic-DambfolG.woff       27.66 kB
+../public/v2/assets/cormorant-garamond-latin-ext-400-normal-uvC0WHQr.woff       27.93 kB
+../public/v2/assets/cormorant-garamond-latin-300-normal-BuXLI6C0.woff           29.96 kB
+../public/v2/assets/cormorant-garamond-latin-400-normal-B7YtguxJ.woff           30.98 kB
+../public/v2/assets/cormorant-garamond-latin-300-italic-DRnsRYID.woff           31.77 kB
+../public/v2/assets/Auth-DThlPZOZ.css                                            4.20 kB │ gzip:   1.22 kB
+../public/v2/assets/salon-visual-BBvLgNZR.css                                    6.19 kB │ gzip:   1.71 kB
+../public/v2/assets/Profile-D_QIfYG8.css                                         7.09 kB │ gzip:   1.88 kB
+../public/v2/assets/ExperienceFields-CNl74QcO.css                                7.63 kB │ gzip:   1.60 kB
+../public/v2/assets/catalog-reference-DUbz95h4.css                              14.12 kB │ gzip:   2.87 kB
+../public/v2/assets/PublicSalon-CMqWzVw7.css                                    16.29 kB │ gzip:   3.34 kB
+../public/v2/assets/Discover-CM9WOWwV.css                                       17.02 kB │ gzip:   4.16 kB
+../public/v2/assets/booking-reference-Dr1YZcs3.css                              23.19 kB │ gzip:   4.34 kB
+../public/v2/assets/Map-l3OKkjbZ.css                                            29.33 kB │ gzip:   6.45 kB
+../public/v2/assets/MasterCabinet-DPOmeXt-.css                                  38.13 kB │ gzip:   7.39 kB
+../public/v2/assets/Studio-BXryK7CJ.css                                         45.35 kB │ gzip:   7.97 kB
+../public/v2/assets/Salon-Br7IrKhZ.css                                          55.69 kB │ gzip:   8.30 kB
+../public/v2/assets/index-ALTOn12u.css                                         113.53 kB │ gzip:  22.40 kB
+../public/v2/assets/check-dKaro1Qf.js                                            0.12 kB │ gzip:   0.13 kB
+../public/v2/assets/arrow-left-Cd6I-1me.js                                       0.16 kB │ gzip:   0.16 kB
+../public/v2/assets/arrow-right-CzZkjAm_.js                                      0.16 kB │ gzip:   0.16 kB
+../public/v2/assets/categories-BVWI37mm.js                                       0.17 kB │ gzip:   0.15 kB
+../public/v2/assets/chevron-right-7YLJtQrR.js                                    0.28 kB │ gzip:   0.19 kB
+../public/v2/assets/users-BXLCvJSj.js                                            0.30 kB │ gzip:   0.22 kB
+../public/v2/assets/shield-check-BfOkzkHB.js                                     0.32 kB │ gzip:   0.24 kB
+../public/v2/assets/share-2-DCrDYwhY.js                                          0.35 kB │ gzip:   0.23 kB
+../public/v2/assets/star-D-w1hdgg.js                                             0.47 kB │ gzip:   0.29 kB
+../public/v2/assets/eye-CV_wxJMM.js                                              0.63 kB │ gzip:   0.34 kB
+../public/v2/assets/useResource-CewT5ltA.js                                      0.65 kB │ gzip:   0.33 kB
+../public/v2/assets/auth-BWWYcPMa.js                                             1.19 kB │ gzip:   0.69 kB
+../public/v2/assets/PromotionBadge-DdlLTUQK.js                                   1.58 kB │ gzip:   0.74 kB
+../public/v2/assets/PublicWorkTile-BgdnE17u.js                                   1.66 kB │ gzip:   0.93 kB
+../public/v2/assets/Join-Dyp2o8Wb.js                                             1.84 kB │ gzip:   1.06 kB
+../public/v2/assets/AccountTools-DaLeNkoq.js                                     2.58 kB │ gzip:   1.33 kB
+../public/v2/assets/booking-reference-CdtWag-j.js                                3.62 kB │ gzip:   1.59 kB
+../public/v2/assets/ExperienceFields-BPCWfZE1.js                                 4.30 kB │ gzip:   1.94 kB
+../public/v2/assets/Access-Dgq2Bi8e.js                                           5.96 kB │ gzip:   2.24 kB
+../public/v2/assets/Auth-__DBvBmq.js                                             6.47 kB │ gzip:   2.61 kB
+../public/v2/assets/BookingReference-CdpI40pS.js                                 7.23 kB │ gzip:   2.73 kB
+../public/v2/assets/Profile-M0HTHLHj.js                                         10.66 kB │ gzip:   3.79 kB
+../public/v2/assets/Booking-CkuQpW2p.js                                         12.54 kB │ gzip:   4.59 kB
+../public/v2/assets/PublicSalon-C4oi2NCy.js                                     20.70 kB │ gzip:   6.99 kB
+../public/v2/assets/MasterCabinet-WvTlKqAI.js                                   24.05 kB │ gzip:   7.57 kB
+../public/v2/assets/Discover-ih1E87YG.js                                        24.31 kB │ gzip:   8.57 kB
+../public/v2/assets/Account-C4P9_rcR.js                                         58.49 kB │ gzip:  15.39 kB
+../public/v2/assets/Studio-ByhspIVa.js                                          62.09 kB │ gzip:  17.77 kB
+../public/v2/assets/Salon-Ber-rOwC.js                                           92.79 kB │ gzip:  24.26 kB
+../public/v2/assets/Map-EQqbEbG4.js                                            176.81 kB │ gzip:  52.60 kB
+../public/v2/assets/index-Bq-znphI.js                                          415.24 kB │ gzip: 134.63 kB
+✓ built in 10.93s

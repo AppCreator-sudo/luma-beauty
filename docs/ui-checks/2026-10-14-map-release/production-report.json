@@ -1,0 +1,39 @@
+{
+  "at": "2026-10-14T12:48:22.943Z",
+  "tag": "20261014-v2-map-reference",
+  "origin": "https://atelie-13-143-66-1.sslip.io",
+  "scope": "anonymous production GET only; no fixture/login/booking/real-device OS gesture",
+  "checks": [
+    {
+      "name": "map reference and real card 1440",
+      "status": "PASS"
+    },
+    {
+      "name": "map reference and real card 390",
+      "status": "PASS"
+    },
+    {
+      "name": "mobile filters, menu and Back 390",
+      "status": "PASS"
+    },
+    {
+      "name": "public release entry, worker cache and API",
+      "status": "PASS"
+    },
+    {
+      "name": "map reference and real card 320",
+      "status": "PASS"
+    },
+    {
+      "name": "mobile filters, menu and Back 320",
+      "status": "PASS"
+    }
+  ],
+  "pageErrors": [],
+  "blockedWrites": [],
+  "localDnsFallback": "Verified existing server IP; original HTTPS hostname and certificate validation retained",
+  "publicPlaces": 2,
+  "result": "PASS",
+  "previousAt": "2026-10-14T12:45:18.139Z",
+  "retry": "Only narrow 320px checks repeated with longer network readiness wait; application unchanged"
+}

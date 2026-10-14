@@ -1,0 +1,21 @@
+{
+  "at": "2026-10-14T16:22:39.251Z",
+  "checks": [
+    {
+      "width": 1440,
+      "placesLoaded": true,
+      "loadedTiles": 24
+    },
+    {
+      "width": 390,
+      "placesLoaded": true,
+      "loadedTiles": 9
+    },
+    {
+      "width": 320,
+      "placesLoaded": true,
+      "loadedTiles": 6
+    }
+  ],
+  "result": "PASS"
+}

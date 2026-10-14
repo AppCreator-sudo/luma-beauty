@@ -4,6 +4,7 @@ import { ArrowRight, MapPin, X } from 'lucide-react';
 import { api, bookingPath, masterDate, masterDayKey, masterTime, money, profilePath } from '../lib/api';
 import { mapIdentity, type MapDetails, type MapMaster } from '../lib/map';
 import { currentPromotion, usePromotionClock } from '../lib/promotions';
+import { MapRating } from './MapRating';
 import { PromotionBadge } from './PromotionBadge';
 
 function slotLabel(start: number, offset: number) {
@@ -36,7 +37,7 @@ export function MapProfileCard({ profile, category, soon, onClose, onLayout }: {
     return () => observer.disconnect();
   }, [id]);
   useEffect(() => {
-    const close = (event: KeyboardEvent) => { if (event.key === 'Escape') onClose(); };
+    const close = (event: KeyboardEvent) => { if (event.key === 'Escape' && !document.querySelector('dialog[open]')) onClose(); };
     document.addEventListener('keydown', close);
     return () => document.removeEventListener('keydown', close);
   }, [onClose]);
@@ -58,8 +59,9 @@ export function MapProfileCard({ profile, category, soon, onClose, onLayout }: {
   return <article ref={element} className={'map-selected-card' + (current.promotion ? ' map-selected-card-promoted' : '')} aria-label="Карточка выбранного мастера или салона" aria-busy={result.loading}>
     {current.promotion && details?.cover ? <img className="map-card-cover" src={details.cover} alt={'Работа: ' + current.name}/> : null}
     <div className="map-card-body">
-      <div className="map-card-top"><span>{current.kind === 'salon' ? 'Салон' : 'Мастер'}</span><PromotionBadge promotion={current.promotion}/><button type="button" className="map-card-close" onClick={onClose} aria-label="Закрыть карточку"><X size={18}/></button></div>
-      <h2>{current.name}</h2>
+      <button type="button" className="map-card-close" onClick={onClose} aria-label="Закрыть карточку"><X size={18}/></button>
+      <div className="map-card-identity">{current.avatar ? <img className="map-card-avatar" src={current.avatar} alt=""/> : <span className="map-card-avatar map-avatar-fallback" aria-hidden="true">{current.name.slice(0, 1)}</span>}<div><span className={'map-kind' + (current.kind === 'salon' ? ' map-kind-salon' : '')}>{current.kind === 'salon' ? 'Салон' : 'Мастер'}</span><h2>{current.name}</h2><MapRating rating={current.rating} review_count={current.review_count}/></div></div>
+      <PromotionBadge promotion={current.promotion}/>
       <p className="map-card-category">{(current.categories || [current.category]).join(' · ')}{current.teaches ? ' · Обучает' : ''}</p>
       <p className="map-card-address"><MapPin size={15}/><span>{[current.city, current.address].filter(Boolean).join(' · ')}</span></p>
       {result.error ? <div className="map-card-error" role="alert"><p>{result.error}</p><button className="text-link" type="button" onClick={() => setReload(value => value + 1)}>Повторить</button></div> : result.loading ? <p className="map-card-loading" role="status">Ищем ближайшее время…</p> : slot ? <>

@@ -1,0 +1,41 @@
+TAP version 13
+# (node:18848) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: page migration preserves old salon teaching, images, user follows and is repeatable
+ok 1 - page migration preserves old salon teaching, images, user follows and is repeatable
+  ---
+  duration_ms: 11.2203
+  type: 'test'
+  ...
+# Subtest: omitted page options preserve saved settings and invalid checkboxes cannot become true
+ok 2 - omitted page options preserve saved settings and invalid checkboxes cannot become true
+  ---
+  duration_ms: 1.2993
+  type: 'test'
+  ...
+# (node:4728) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Profile HTTP checks use only synthetic .cache data; no production requests.
+# Subtest: public salon rating, saved collection, owner flags/palette and master models persist with role isolation
+ok 3 - public salon rating, saved collection, owner flags/palette and master models persist with role isolation
+  ---
+  duration_ms: 4258.5106
+  type: 'test'
+  ...
+# (node:18696) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: one rating standard: completed owned visits, venue history, counts and no private data
+ok 4 - one rating standard: completed owned visits, venue history, counts and no private data
+  ---
+  duration_ms: 12.56
+  type: 'test'
+  ...
+1..4
+# tests 4
+# suites 0
+# pass 4
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 4575.6397

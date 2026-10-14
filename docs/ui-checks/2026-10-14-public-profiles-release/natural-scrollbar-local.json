@@ -1,0 +1,140 @@
+{
+  "checks": [
+    {
+      "width": 1440,
+      "path": "/m/card-elite-free",
+      "gutter": "auto",
+      "inner": 1440,
+      "client": 1440,
+      "overflow": false,
+      "scroll": true
+    },
+    {
+      "width": 1440,
+      "path": "/s/card-salon",
+      "gutter": "auto",
+      "inner": 1440,
+      "client": 1440,
+      "overflow": false,
+      "scroll": true
+    },
+    {
+      "width": 1440,
+      "path": "/masters",
+      "gutter": "auto",
+      "inner": 1440,
+      "client": 1440,
+      "overflow": false,
+      "scroll": true
+    },
+    {
+      "width": 1440,
+      "path": "/inspiration",
+      "gutter": "auto",
+      "inner": 1440,
+      "client": 1440,
+      "overflow": false,
+      "scroll": true
+    },
+    {
+      "width": 1440,
+      "path": "/map",
+      "gutter": "auto",
+      "inner": 1440,
+      "client": 1440,
+      "overflow": false,
+      "scroll": false
+    },
+    {
+      "width": 390,
+      "path": "/m/card-elite-free",
+      "gutter": "auto",
+      "inner": 390,
+      "client": 390,
+      "overflow": false,
+      "scroll": true
+    },
+    {
+      "width": 390,
+      "path": "/s/card-salon",
+      "gutter": "auto",
+      "inner": 390,
+      "client": 390,
+      "overflow": false,
+      "scroll": true
+    },
+    {
+      "width": 390,
+      "path": "/masters",
+      "gutter": "auto",
+      "inner": 390,
+      "client": 390,
+      "overflow": false,
+      "scroll": true
+    },
+    {
+      "width": 390,
+      "path": "/inspiration",
+      "gutter": "auto",
+      "inner": 390,
+      "client": 390,
+      "overflow": false,
+      "scroll": true
+    },
+    {
+      "width": 390,
+      "path": "/map",
+      "gutter": "auto",
+      "inner": 390,
+      "client": 390,
+      "overflow": false,
+      "scroll": false
+    },
+    {
+      "width": 320,
+      "path": "/m/card-elite-free",
+      "gutter": "auto",
+      "inner": 320,
+      "client": 320,
+      "overflow": false,
+      "scroll": true
+    },
+    {
+      "width": 320,
+      "path": "/s/card-salon",
+      "gutter": "auto",
+      "inner": 320,
+      "client": 320,
+      "overflow": false,
+      "scroll": true
+    },
+    {
+      "width": 320,
+      "path": "/masters",
+      "gutter": "auto",
+      "inner": 320,
+      "client": 320,
+      "overflow": false,
+      "scroll": true
+    },
+    {
+      "width": 320,
+      "path": "/inspiration",
+      "gutter": "auto",
+      "inner": 320,
+      "client": 320,
+      "overflow": false,
+      "scroll": true
+    },
+    {
+      "width": 320,
+      "path": "/map",
+      "gutter": "auto",
+      "inner": 320,
+      "client": 320,
+      "overflow": false,
+      "scroll": false
+    }
+  ],
+  "result": "PASS"
+}

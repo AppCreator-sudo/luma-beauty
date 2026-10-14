@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-14T03:05:17+07:00",
+  "updated_at": "2026-10-14T23:24:45+07:00",
   "timezone": "Asia/Novosibirsk",
-  "next_task_id": "OPS-03",
+  "next_task_id": "U-10-01",
   "tasks": [
     {
       "id": "U-00",
@@ -309,7 +309,7 @@
       "id": "U-09-01",
       "title": "Карта: сверка функций и недостающие макеты",
       "phase": "ui",
-      "status": "ready",
+      "status": "approved",
       "dependencies": [],
       "sources": [
         "frontend/src/pages/Map.tsx",
@@ -324,13 +324,13 @@
       "skills": [
         ".agents/skills/atelier-v2-product-design/SKILL.md"
       ],
-      "approved_at": null,
-      "started_at": null,
-      "local_done_at": null,
-      "verified_at": null,
+      "approved_at": "2026-10-14T17:54:09+07:00",
+      "started_at": "2026-10-14T17:43:22+07:00",
+      "local_done_at": "2026-10-14T17:54:09+07:00",
+      "verified_at": "2026-10-14T17:54:09+07:00",
       "published_at": null,
       "due_at": null,
-      "owner_chat": null,
+      "owner_chat": "01a102e0-744b-7a33-931d-ab120601f36a",
       "card": "U-09-01.md",
       "order": 13
     },
@@ -338,7 +338,7 @@
       "id": "U-09-02",
       "title": "Карта: перенос UI и проверка сценариев",
       "phase": "ui",
-      "status": "blocked",
+      "status": "published",
       "dependencies": [
         "U-09-01"
       ],
@@ -353,18 +353,27 @@
         "docs/ui-concepts/2026-10-10-luma/map.png",
         "frontend/src/components/PublicHeader.tsx",
         "frontend/src/components/MenuOverlay.tsx",
-        "tests/map-viewport.test.mjs"
+        "tests/map-viewport.test.mjs",
+        "docs/V2_MAP_REFERENCE_AUDIT.md",
+        "docs/ui-concepts/2026-10-14-luma/map-review-01/README.md",
+        "frontend/src/components/MapFiltersSheet.tsx",
+        "scripts/verify-map-reference.mjs",
+        "tests/map-reference.browser.mjs",
+        "tests/fixtures/map-reference-server.mjs",
+        "docs/ui-checks/2026-10-14-map-reference/README.md",
+        "docs/RELEASE_20261014_MAP_REFERENCE.md",
+        "docs/ui-checks/2026-10-14-map-release/README.md"
       ],
       "skills": [
         ".agents/skills/atelier-v2-ui-implementation/SKILL.md"
       ],
-      "approved_at": null,
-      "started_at": null,
-      "local_done_at": null,
-      "verified_at": null,
-      "published_at": null,
+      "approved_at": "2026-10-14T17:54:09+07:00",
+      "started_at": "2026-10-14T17:54:09+07:00",
+      "local_done_at": "2026-10-14T18:17:19+07:00",
+      "verified_at": "2026-10-14T18:17:19+07:00",
+      "published_at": "2026-10-14T19:41:05+07:00",
       "due_at": null,
-      "owner_chat": null,
+      "owner_chat": "01a102e0-744b-7a33-931d-ab120601f36a",
       "card": "U-09-02.md",
       "order": 14
     },
@@ -372,9 +381,10 @@
       "id": "U-10-01",
       "title": "Остаточный UI: матрица маршрутов, ролей и состояний",
       "phase": "ui",
-      "status": "blocked",
+      "status": "ready",
       "dependencies": [
-        "U-09-02"
+        "U-09-02",
+        "U-09-05"
       ],
       "sources": [
         "frontend/src/main.tsx",
@@ -1083,10 +1093,10 @@
     {
       "id": "F-07",
       "title": "Рейтинг и сохранение салона: согласование функции",
-      "phase": "functional",
-      "status": "deferred",
+      "phase": "completed",
+      "status": "published",
       "dependencies": [
-        "U-11-02"
+        "U-06"
       ],
       "sources": [
         "lib/salon-public.mjs",
@@ -1094,18 +1104,23 @@
         "frontend/src/pages/PublicSalon.tsx",
         "lib/client-cabinet.mjs",
         "docs/V2_PUBLIC_PAGES_REFERENCE_AUDIT.md",
-        "tests/salon-public.test.mjs"
+        "tests/salon-public.test.mjs",
+        "docs/V2_PUBLIC_PROFILES_UNIFIED.md",
+        "docs/ui-checks/2026-10-14-public-profiles/README.md",
+        "docs/RELEASE_20261014_PUBLIC_PROFILES_UNIFIED.md",
+        "docs/ui-checks/2026-10-14-public-profiles-release/README.md"
       ],
       "skills": [
-        ".agents/skills/atelier-v2-product-design/SKILL.md"
+        ".agents/skills/atelier-v2-product-design/SKILL.md",
+        ".agents/skills/atelier-v2-ui-implementation/SKILL.md"
       ],
-      "approved_at": null,
-      "started_at": null,
-      "local_done_at": null,
-      "verified_at": null,
-      "published_at": null,
+      "approved_at": "2026-10-14",
+      "started_at": "2026-10-14T20:47:33+07:00",
+      "local_done_at": "2026-10-14T21:48:07+07:00",
+      "verified_at": "2026-10-14T21:48:07+07:00",
+      "published_at": "2026-10-14T22:17:50+07:00",
       "due_at": null,
-      "owner_chat": null,
+      "owner_chat": "01a102e0-744b-7a33-931d-ab120601f36a",
       "card": "F-07.md",
       "order": 40
     },
@@ -1488,7 +1503,7 @@
       "id": "OPS-03",
       "title": "Codex Cloud: создание и публикация среды",
       "phase": "operations",
-      "status": "awaiting_input",
+      "status": "deferred",
       "dependencies": [
         "OPS-02"
       ],
@@ -1537,6 +1552,277 @@
       "owner_chat": "01a102e0-744b-7a33-931d-ab120601f36a",
       "card": "OPS-04.md",
       "order": 57
+    },
+    {
+      "id": "U-09-03",
+      "title": "Карта: единый рейтинг и каплевидные маркеры",
+      "phase": "ui",
+      "status": "published",
+      "dependencies": [
+        "U-09-02"
+      ],
+      "sources": [
+        "lib/map-viewport.mjs",
+        "frontend/src/pages/Map.tsx",
+        "frontend/src/map-viewport.css",
+        "docs/ui-checks/2026-10-14-map-polish/README.md",
+        "lib/review-ratings.mjs",
+        "frontend/src/components/MapRating.tsx",
+        "tests/review-ratings.test.mjs",
+        "docs/RELEASE_20261014_MAP_REFERENCE.md",
+        "docs/ui-checks/2026-10-14-map-release/README.md"
+      ],
+      "skills": [
+        ".agents/skills/atelier-v2-product-design/SKILL.md",
+        ".agents/skills/atelier-v2-ui-implementation/SKILL.md"
+      ],
+      "approved_at": "2026-10-14T18:27:48+07:00",
+      "started_at": "2026-10-14T18:27:48+07:00",
+      "local_done_at": "2026-10-14T19:21:03+07:00",
+      "verified_at": "2026-10-14T19:21:03+07:00",
+      "published_at": "2026-10-14T19:41:05+07:00",
+      "due_at": null,
+      "owner_chat": "01a102e0-744b-7a33-931d-ab120601f36a",
+      "card": "U-09-03.md",
+      "order": 58
+    },
+    {
+      "id": "U-09-04",
+      "title": "Карта: сравнение текущей подложки и OpenFreeMap",
+      "phase": "ui",
+      "status": "deferred",
+      "dependencies": [
+        "U-09-02"
+      ],
+      "sources": [
+        "docs/V2_MAP.md",
+        "docs/ui-concepts/2026-10-10-luma/map.png",
+        "docs/V2_MAP_PROVIDER_OPTIONS.md",
+        "docs/ui-concepts/2026-10-14-luma/map-provider-review-01/README.md"
+      ],
+      "skills": [
+        ".agents/skills/atelier-v2-product-design/SKILL.md",
+        ".agents/skills/atelier-v2-ui-implementation/SKILL.md"
+      ],
+      "approved_at": "2026-10-14T18:27:48+07:00",
+      "started_at": "2026-10-14T18:27:48+07:00",
+      "local_done_at": "2026-10-14T18:49:10+07:00",
+      "verified_at": null,
+      "published_at": null,
+      "due_at": null,
+      "owner_chat": null,
+      "card": "U-09-04.md",
+      "order": 59
+    },
+    {
+      "id": "U-09-05",
+      "title": "Карта: финальная доводка текущего UI",
+      "phase": "ui",
+      "status": "published",
+      "dependencies": [
+        "U-09-02",
+        "U-09-03"
+      ],
+      "sources": [
+        "docs/V2_MAP_REFERENCE_AUDIT.md",
+        "docs/ui-concepts/2026-10-14-luma/map-review-01/README.md",
+        "frontend/src/pages/Map.tsx",
+        "tests/map-reference.browser.mjs",
+        "docs/ui-checks/2026-10-14-map-polish/README.md",
+        "docs/RELEASE_20261014_MAP_REFERENCE.md",
+        "docs/ui-checks/2026-10-14-map-release/README.md"
+      ],
+      "skills": [
+        ".agents/skills/atelier-v2-product-design/SKILL.md",
+        ".agents/skills/atelier-v2-ui-implementation/SKILL.md"
+      ],
+      "approved_at": "2026-10-14T19:08:12+07:00",
+      "started_at": "2026-10-14T19:08:12+07:00",
+      "local_done_at": "2026-10-14T19:21:03+07:00",
+      "verified_at": "2026-10-14T19:21:03+07:00",
+      "published_at": "2026-10-14T19:41:05+07:00",
+      "due_at": null,
+      "owner_chat": "01a102e0-744b-7a33-931d-ab120601f36a",
+      "card": "U-09-05.md",
+      "order": 60
+    },
+    {
+      "id": "BUG-006",
+      "title": "Шапка: сдвиг навигации при переходе на карту",
+      "phase": "ui",
+      "status": "published",
+      "dependencies": [
+        "U-09-05"
+      ],
+      "sources": [
+        "frontend/src/components/PublicHeader.tsx",
+        "frontend/src/public-reference.css",
+        "docs/RELEASE_20261014_MAP_REFERENCE.md",
+        "docs/RELEASE_20261014_HEADER_ALIGNMENT.md",
+        "docs/ui-checks/2026-10-14-header-alignment/README.md"
+      ],
+      "skills": [
+        ".agents/skills/atelier-v2-ui-implementation/SKILL.md"
+      ],
+      "approved_at": "2026-10-14T20:03:59+07:00",
+      "started_at": "2026-10-14T20:03:59+07:00",
+      "local_done_at": "2026-10-14T20:05:59+07:00",
+      "verified_at": "2026-10-14T20:05:59+07:00",
+      "published_at": "2026-10-14T20:09:38+07:00",
+      "due_at": null,
+      "owner_chat": "01a102e0-744b-7a33-931d-ab120601f36a",
+      "card": "BUG-006.md",
+      "order": 61
+    },
+    {
+      "id": "U-06-01",
+      "title": "Единое оформление публичных страниц мастера и салона",
+      "phase": "completed",
+      "status": "published",
+      "dependencies": [
+        "U-06"
+      ],
+      "sources": [
+        "docs/V2_PUBLIC_PAGES_REFERENCE_AUDIT.md",
+        "frontend/src/pages/PublicMaster.tsx",
+        "frontend/src/pages/SalonProfile.tsx",
+        "docs/V2_PUBLIC_PROFILES_UNIFIED.md",
+        "docs/ui-checks/2026-10-14-public-profiles/README.md",
+        "docs/RELEASE_20261014_PUBLIC_PROFILES_UNIFIED.md",
+        "docs/ui-checks/2026-10-14-public-profiles-release/README.md"
+      ],
+      "skills": [
+        ".agents/skills/atelier-v2-product-design/SKILL.md",
+        ".agents/skills/atelier-v2-ui-implementation/SKILL.md"
+      ],
+      "approved_at": "2026-10-14",
+      "started_at": "2026-10-14T20:47:33+07:00",
+      "local_done_at": "2026-10-14T21:48:07+07:00",
+      "verified_at": "2026-10-14T21:48:07+07:00",
+      "published_at": "2026-10-14T22:17:50+07:00",
+      "due_at": null,
+      "owner_chat": "01a102e0-744b-7a33-931d-ab120601f36a",
+      "card": "U-06-01.md",
+      "order": 62
+    },
+    {
+      "id": "BUG-007",
+      "title": "Палитры, стыки узора и соответствие предпросмотра",
+      "phase": "completed",
+      "status": "published",
+      "dependencies": [
+        "U-06"
+      ],
+      "sources": [
+        "docs/V2_PUBLIC_PAGES_REFERENCE_AUDIT.md",
+        "frontend/src/pages/PublicMaster.tsx",
+        "frontend/src/pages/SalonProfile.tsx",
+        "docs/V2_PUBLIC_PROFILES_UNIFIED.md",
+        "docs/ui-checks/2026-10-14-public-profiles/README.md",
+        "docs/RELEASE_20261014_PUBLIC_PROFILES_UNIFIED.md",
+        "docs/ui-checks/2026-10-14-public-profiles-release/README.md"
+      ],
+      "skills": [
+        ".agents/skills/atelier-v2-product-design/SKILL.md",
+        ".agents/skills/atelier-v2-ui-implementation/SKILL.md"
+      ],
+      "approved_at": "2026-10-14",
+      "started_at": "2026-10-14T20:47:33+07:00",
+      "local_done_at": "2026-10-14T21:48:07+07:00",
+      "verified_at": "2026-10-14T21:48:07+07:00",
+      "published_at": "2026-10-14T22:17:50+07:00",
+      "due_at": null,
+      "owner_chat": "01a102e0-744b-7a33-931d-ab120601f36a",
+      "card": "BUG-007.md",
+      "order": 63
+    },
+    {
+      "id": "F-13",
+      "title": "Отметки обучения и поиска моделей мастера и салона",
+      "phase": "completed",
+      "status": "published",
+      "dependencies": [
+        "U-06"
+      ],
+      "sources": [
+        "docs/V2_PUBLIC_PAGES_REFERENCE_AUDIT.md",
+        "frontend/src/pages/PublicMaster.tsx",
+        "frontend/src/pages/SalonProfile.tsx",
+        "docs/V2_PUBLIC_PROFILES_UNIFIED.md",
+        "docs/ui-checks/2026-10-14-public-profiles/README.md",
+        "docs/RELEASE_20261014_PUBLIC_PROFILES_UNIFIED.md",
+        "docs/ui-checks/2026-10-14-public-profiles-release/README.md"
+      ],
+      "skills": [
+        ".agents/skills/atelier-v2-product-design/SKILL.md",
+        ".agents/skills/atelier-v2-ui-implementation/SKILL.md"
+      ],
+      "approved_at": "2026-10-14",
+      "started_at": "2026-10-14T20:47:33+07:00",
+      "local_done_at": "2026-10-14T21:48:07+07:00",
+      "verified_at": "2026-10-14T21:48:07+07:00",
+      "published_at": "2026-10-14T22:17:50+07:00",
+      "due_at": null,
+      "owner_chat": "01a102e0-744b-7a33-931d-ab120601f36a",
+      "card": "F-13.md",
+      "order": 64
+    },
+    {
+      "id": "U-06-02",
+      "title": "Публикация единых профилей, настроек и избранного салонов",
+      "phase": "completed",
+      "status": "published",
+      "dependencies": [
+        "U-06-01",
+        "BUG-007",
+        "F-13",
+        "F-07"
+      ],
+      "sources": [
+        "docs/V2_PUBLIC_PROFILES_UNIFIED.md",
+        "docs/ui-checks/2026-10-14-public-profiles/README.md",
+        "docs/RELEASE_20261014_PUBLIC_PROFILES_UNIFIED.md",
+        "docs/ui-checks/2026-10-14-public-profiles-release/README.md"
+      ],
+      "skills": [
+        ".agents/skills/atelier-v2-ui-implementation/SKILL.md"
+      ],
+      "approved_at": "2026-10-14T22:08:30+07:00",
+      "started_at": "2026-10-14T22:08:30+07:00",
+      "local_done_at": "2026-10-14T22:31:48+07:00",
+      "verified_at": "2026-10-14T22:31:48+07:00",
+      "published_at": "2026-10-14T22:17:50+07:00",
+      "due_at": null,
+      "owner_chat": "01a102e0-744b-7a33-931d-ab120601f36a",
+      "card": "U-06-02.md",
+      "order": 65
+    },
+    {
+      "id": "OPS-05",
+      "title": "Синхронизация опубликованных обновлений с private GitHub",
+      "phase": "operations",
+      "status": "in_progress",
+      "dependencies": [
+        "U-06-02",
+        "OPS-01"
+      ],
+      "sources": [
+        "docs/RELEASE_20261014_PUBLIC_PROFILES_UNIFIED.md",
+        "docs/RELEASE_20261014_MAP_REFERENCE.md",
+        "docs/WORK_CHECKPOINT.md"
+      ],
+      "skills": [
+        ".agents/skills/atelier-v2-ui-implementation/SKILL.md"
+      ],
+      "approved_at": "2026-10-14T23:24:45+07:00",
+      "started_at": "2026-10-14T23:24:45+07:00",
+      "local_done_at": null,
+      "verified_at": null,
+      "published_at": null,
+      "due_at": null,
+      "owner_chat": "01a102e0-744b-7a33-931d-ab120601f36a",
+      "card": "OPS-05.md",
+      "order": 66
     }
   ]
 }

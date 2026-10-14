@@ -1,0 +1,85 @@
+{
+  "at": "2026-10-14T14:43:48.269Z",
+  "scope": "Local app + real API on synthetic .cache SQLite only",
+  "checks": [
+    {
+      "name": "master-1440",
+      "overflow": false
+    },
+    {
+      "name": "salon-1440",
+      "overflow": false
+    },
+    {
+      "name": "master-800",
+      "overflow": false
+    },
+    {
+      "name": "salon-800",
+      "overflow": false
+    },
+    {
+      "name": "master-390",
+      "overflow": false
+    },
+    {
+      "name": "salon-390",
+      "overflow": false
+    },
+    {
+      "name": "master-320",
+      "overflow": false
+    },
+    {
+      "name": "salon-320",
+      "overflow": false
+    },
+    {
+      "name": "anonymous-save-login-return-url"
+    },
+    {
+      "name": "client-collection-390",
+      "overflow": false
+    },
+    {
+      "name": "salon-save-reload-collection-remove-master-preserved"
+    },
+    {
+      "name": "owner-appearance-1440",
+      "overflow": false
+    },
+    {
+      "name": "owner-appearance-320",
+      "overflow": false
+    },
+    {
+      "name": "owner-three-palettes-save-reload-public-preview"
+    },
+    {
+      "name": "master-appearance-1440",
+      "overflow": false
+    },
+    {
+      "name": "master-appearance-320",
+      "overflow": false
+    },
+    {
+      "name": "master-three-palettes-save-reload-public-preview"
+    },
+    {
+      "name": "salon-no-reviews-320",
+      "overflow": false
+    },
+    {
+      "name": "both-types-empty-rating-and-salon-empty-reviews"
+    },
+    {
+      "name": "master-settings-320",
+      "overflow": false
+    },
+    {
+      "name": "reduced-motion"
+    }
+  ],
+  "pageErrors": []
+}

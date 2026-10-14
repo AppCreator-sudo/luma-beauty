@@ -32,7 +32,8 @@ export function Shell() {
   const clientReference=location.pathname==='/me';
   const standaloneCabinet = (clientReference&&me?.user?.account_type==='client') || (['/studio','/calendar'].includes(location.pathname) && me?.user?.account_type === 'master' && Boolean(me.profile)) || (location.pathname === '/salon' && Boolean(me?.workspaces?.some(w => w.kind === 'salon' && w.role === 'owner')));
   const bookingReference = /^\/book\/[^/]+\/?$/.test(location.pathname) || /^\/s\/[^/]+\/book\/?$/.test(location.pathname) || location.pathname === '/visit';
-  const publicReference = (clientReference&&!standaloneCabinet) || bookingReference || /^\/(m|s|w)\/[^/]+\/?$/.test(location.pathname) || ['/masters', '/inspiration', '/auth'].includes(location.pathname);
+  const mapReference = location.pathname === '/map';
+  const publicReference = (clientReference&&!standaloneCabinet) || bookingReference || /^\/(m|s|w)\/[^/]+\/?$/.test(location.pathname) || ['/masters', '/inspiration', '/auth'].includes(location.pathname) || mapReference;
   const accountTo = cabinetPath(me);
   const accountLabel = accountTo === '/salon' ? 'Салон' : accountTo === '/studio' ? 'Студия' : me?.user ? 'Моё' : 'Войти';
   return <AppContext.Provider value={{ me, refreshMe }}>
@@ -48,8 +49,8 @@ export function Shell() {
       </div>
       <MenuOverlay open={menuOpen} close={() => setMenuOpen(false)} trigger={menuToggle} id="home-navigation-menu" label="Навигация Luma Beauty"><NavigationMenuContent accountTo={accountTo} accountLabel={accountLabel} signedIn={Boolean(me?.user)}/></MenuOverlay>
     </header> : null}
-    <main id="main"><Outlet/></main>
-    {!standaloneCabinet && !bookingReference && !clientReference ? <footer className="site-footer"><div><Brand/><p>Красота начинается с человека.</p></div><nav aria-label="Навигация внизу страницы"><Link to="/masters">Мастера</Link><Link to="/inspiration">Вдохновение</Link><Link to="/map">Карта</Link><Link to="/studio">Открыть студию</Link></nav><span>© {new Date().getFullYear()} Luma Beauty</span></footer> : null}
+    <main id="main" className={mapReference ? 'map-reference-main' : undefined}><Outlet/></main>
+    {!standaloneCabinet && !bookingReference && !clientReference && !mapReference ? <footer className="site-footer"><div><Brand/><p>Красота начинается с человека.</p></div><nav aria-label="Навигация внизу страницы"><Link to="/masters">Мастера</Link><Link to="/inspiration">Вдохновение</Link><Link to="/map">Карта</Link><Link to="/studio">Открыть студию</Link></nav><span>© {new Date().getFullYear()} Luma Beauty</span></footer> : null}
     {!standaloneCabinet && !publicReference ? <nav className="bottom-nav navigation-glass" aria-label="Навигация приложения"><MobileNavItem to="/" label="Главная" icon={<Home size={20}/>}/><MobileNavItem to="/masters" label="Мастера" icon={<Compass size={20}/>}/><MobileNavItem to="/inspiration" label="Работы" icon={<Heart size={20}/>}/><MobileNavItem to="/map" label="Карта" icon={<MapPin size={20}/>}/><MobileNavItem to={accountTo} label={accountLabel} icon={me?.user?.account_type === 'master' ? <CalendarDays size={20}/> : <UserRound size={20}/>}/></nav> : null}
   </AppContext.Provider>;
 }

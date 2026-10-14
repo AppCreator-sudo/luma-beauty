@@ -1,0 +1,69 @@
+{
+  "at": "2026-10-14T13:07:56.201Z",
+  "origin": "http://localhost:51536",
+  "data": "fresh isolated synthetic SQLite; no production data",
+  "checks": [
+    {
+      "width": 1440,
+      "height": 900,
+      "selection": true,
+      "geometry": true,
+      "zoomWithoutEmptyFlash": true,
+      "viewPreserved": true,
+      "noOldNavigation": true,
+      "history": true
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "selection": true,
+      "geometry": true,
+      "zoomWithoutEmptyFlash": true,
+      "viewPreserved": true,
+      "noOldNavigation": true,
+      "history": true
+    },
+    {
+      "width": 320,
+      "height": 568,
+      "selection": true,
+      "geometry": true,
+      "zoomWithoutEmptyFlash": true,
+      "viewPreserved": true,
+      "noOldNavigation": true,
+      "history": true
+    },
+    {
+      "width": 800,
+      "height": 600,
+      "selection": true,
+      "geometry": true,
+      "zoomWithoutEmptyFlash": true,
+      "viewPreserved": true,
+      "noOldNavigation": true,
+      "history": true
+    },
+    {
+      "ratingsMasterAndSalon": true,
+      "unrated": true,
+      "svgDropMarkers": true,
+      "detailsLoading": true,
+      "detailsErrorRetry": true,
+      "noTimeFromRealCalendar": true,
+      "geolocationDenied": true,
+      "tileFailure": true
+    },
+    {
+      "paging": true,
+      "uniqueRows": true,
+      "filters": true,
+      "salonEmployeeLink": true,
+      "bookingAndBack": true,
+      "coincidentGroup": true,
+      "empty": true,
+      "retry": true,
+      "reducedMotion": true
+    }
+  ],
+  "pageErrors": []
+}

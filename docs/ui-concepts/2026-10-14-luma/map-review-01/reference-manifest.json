@@ -1,0 +1,41 @@
+{
+  "id": "U-09-map-review-01",
+  "created_at": "2026-10-14T17:51:24+07:00",
+  "status": "approved",
+  "implementation_status": "verified_local",
+  "approved_at": "2026-10-14T17:54:09+07:00",
+  "source": {
+    "path": "docs/ui-concepts/2026-10-10-luma/map.png",
+    "sha256": "0e07b82ae434f53e72c53a99e3550a2266baa47005c887d66ea3028882e6b427"
+  },
+  "files": {
+    "desktop-master.png": "fe19c2983eb7f63fce0bcbceb7d4403004d07a9d0edddb26114f9441fb44d86e",
+    "desktop.png": "82b94429cee2b24170c144ef95528cbc810fe75e163cf1009020ad8fd5f0583f",
+    "mobile-board.png": "24f28f956be3138299ee979a4c95de04c10fc9aef8657f6e462eac2a43b19300",
+    "mobile-details-error.png": "a96e3b3b439bcf61faf3936236af10bebd12d897ae311445c7d425be6a3b2989",
+    "mobile-details-loading.png": "841acc0e849dbc8375eac56a89854079efb2d9d991ee17d8af2f60b6091a7d73",
+    "mobile-empty.png": "880c52bf25b8903bd9c02743126991ac97478b413fa7660768ef1d87da665d8b",
+    "mobile-error.png": "09bd5a8bb4935c7b3942ca651f7a9bf5aaa3416294966b5c273d6678987953a5",
+    "mobile-filters.png": "32d8052f43e5d30191053ab14a7100d709bb68bf1141ade2cc3fdc8ff7622259",
+    "mobile-geo-denied.png": "97b7a9374462f197860dfd4f35eef69bc2f870f3634ac90daf93c4e655a8c8c3",
+    "mobile-group.png": "e639a40fb1d4ed205d946b21156072bb4b41f22b4dc66113dc953ac3d9645ad0",
+    "mobile-list.png": "c04052eba7932fec716bbbf09711f26d91c66df626d28406eee7a9bc18f2bce7",
+    "mobile-loading.png": "d9e1aba9f0e8cbfcdda9559f45833f8d67cc3da29c68173373c4e0b7adadd0de",
+    "mobile-map.png": "566dd68d4f9ec2cdd11b83143113ec9b64e255c32e69af2d72465054515b2059",
+    "mobile-no-time.png": "6f165bc52c6ae8ca0c31a58a3fa4fd6bf9a9861874a0d865b1122e998a892bf5",
+    "mobile-tiles-error.png": "9ad106f9ad25011a63b30e1a35fa32ce99d08ed35711cec764fb31b3148a0364",
+    "states-board.png": "4cc99ef21b2512006e1b95dbc8fdcd00a37b23e0cc89be8302b2bf786ca971ab"
+  },
+  "verified_at": "2026-10-14T18:17:19+07:00",
+  "published_at": null,
+  "text_sha256_lf": {
+    "capture.mjs": "584d95c68995e27edf0689ba6ec01b7936e29f1f13a229b04121620dcc74b508",
+    "index.html": "5cf117f926c095de78c409c65c530f9f8717e67d595dc674828dbc28d65e0654",
+    "mobile-board.html": "2c0edacfe5e00171934319e2da1c85e281bc117d5fb66a5dbcff1a724e6254c9",
+    "prototype-check.json": "7c622f7cd1e4278d07d2ba7d81f6561dd36d47edb08f5d2adcd6ad4b89fe9fc3",
+    "prototype.js": "b81a8f8406d0a012d08afccb68fffef44d59c87a006b9aa9165808faa08fed2e",
+    "README.md": "64d34e794d4aa9ff66f0ef7f161f2781e9b1d74f3d1b1b6b2a873a34aef57c43",
+    "states-board.html": "e405d69aa70d4981295f0992e2013a076d10608071982395fdaee431d0074bb8",
+    "styles.css": "dd3fa84dadc32136d256fec294bd6317e0dc2d2803b6b5a55d8f5cd334367f19"
+  }
+}

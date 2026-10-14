@@ -1,3 +1,4 @@
+/* Use the natural scrollbar width; no reserved gutter (user decision 14 Oct 2026). */
 .public-reference-header{position:relative;z-index:30;background:linear-gradient(110deg,#193b30,#102d24);color:#faf7f1}
 .public-header-inner{height:78px;max-width:1320px;margin:auto;padding:0 40px;display:flex;align-items:center;justify-content:space-between;gap:28px}
 .public-reference-header .cabinet-brand{color:#f7f2e8;display:flex;align-items:center;gap:9px;flex-shrink:0;line-height:.85;margin:0;height:64px}
@@ -60,3 +61,6 @@
 @media(max-width:760px){.public-header-inner{height:72px}.public-content{padding-inline:20px}.public-cover-heading{left:20px;bottom:54px}.public-cover-heading p{font-size:30px}.public-master .public-avatar{width:142px;height:142px;flex-basis:142px}.public-salon .public-panel{padding:0;background:transparent;margin-top:0;padding-top:20px}.public-reference .button{font-size:18px}}
 .public-salon .public-identity{align-items:center}.public-salon-divider svg{width:22px;height:30px;background:none;transform:rotate(70deg)}.public-salon-divider:before{background:linear-gradient(to right,var(--public-line) calc(50% - 24px),transparent calc(50% - 24px),transparent calc(50% + 24px),var(--public-line) calc(50% + 24px))}
 @media(prefers-reduced-motion:no-preference){.public-reference .public-avatar{animation:public-profile-visual-open .6s cubic-bezier(.2,.7,.25,1) .06s backwards}.public-reference .public-identity-copy{animation:public-profile-copy-open .6s cubic-bezier(.2,.7,.25,1) .12s backwards}.public-reference .public-tabs,.public-reference .public-panel{animation:public-profile-tab-open .42s cubic-bezier(.2,.7,.25,1) backwards}}
+
+/* Current public section, as in the approved map/header reference. */
+.public-header-inner>nav>a[aria-current=page]{position:relative}.public-header-inner>nav>a[aria-current=page]:after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:#c1a071}
