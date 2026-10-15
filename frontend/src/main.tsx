@@ -15,6 +15,7 @@ import './auth.css';
 import './promotions.css';
 import './address-fields.css';
 import './ui-density.css';
+import './compact-select.css';
 
 const HomePage = lazy(() => import('./pages/Discover').then(module => ({ default: module.HomePage })));
 const MastersPage = lazy(() => import('./pages/Discover').then(module => ({ default: module.MastersPage })));

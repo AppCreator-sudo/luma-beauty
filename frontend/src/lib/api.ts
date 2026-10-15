@@ -7,7 +7,8 @@ export type Work = {
   master_name?: string; slug?: string; city?: string; category?: string;
   avatar?: string; is_demo?: number; performer_id?: string; salon_id?: string; salon_slug?: string; salon_name?: string; salon_service_id?: string;
 };
-export type Slot = { id: string; start: number; end: number; master_ids?: string[] };
+export type SalonOffer = {master_id: string; service_id: string; price: number; duration: number; end?: number};
+export type Slot = { id: string; start: number; end: number; master_ids?: string[]; offers?: SalonOffer[] };
 export type Schedule = import('../../../lib/schedule-patterns.mjs').ScheduleDefinition;
 export type Review = { id: string; rating: number; text: string; created: number; service: string };
 export type Promotion = { label: 'Реклама'; until: number; advertiser: string; erid: string };
@@ -29,8 +30,10 @@ export type Workspace = { id: string; kind: 'solo' | 'salon'; theme?: 'cream'|'w
 export type Performer = { id: string; name: string; user_id: string | null; profile: Profile | null; services: Service[]; schedule: Schedule; schedule_configured?: boolean; invitation_expires?: number | null; bookable: number; ready?: boolean; missing?: string[] };
 export type SalonPost = {id: string; image: string; images: Photo[]; caption: string; kind: 'space' | 'news'; created: number};
 export type SalonPublication = Pick<Work,'id'|'image'|'images'|'caption'|'service_id'|'service_name'|'created'> & {publication_target: string; master_name?: string; kind: 'space' | 'news' | 'work'};
-export type SalonService = { id: string; name: string; price: number; duration: number; master_ids: string[] };
-export type PublicSalon = { theme?: 'cream'|'wine'|'green'; teaches?: number; looking_models?: number; saved?: boolean; rating?: number|null; review_count?: number; reviews?: Review[]; id: string; slug: string; name: string; city: string; bio: string; logo: string; cover: string; address: string; latitude: number | null; longitude: number | null; utc_offset: number; published: number; services: SalonService[]; works?: Work[]; posts?: SalonPost[]; staff: { id: string; name: string; avatar: string; teaches: number; experience_months?: number | null; categories: string[] }[] };
+export type SalonService = { id: string; name: string; price: number; duration: number; master_ids: string[]; offers?: SalonOffer[]; legacy_ids?: string[]; price_varies?: boolean; duration_varies?: boolean };
+export type CatalogAssignment = {performer_id: string; name: string; performer_active: boolean; service_id: string; active: boolean; price_override: number|null; duration_override: number|null};
+export type CatalogService = {id: string; name: string; category: string; price: number; duration: number; revision: number; active: boolean; needs_review: boolean; assignments: CatalogAssignment[]};
+export type PublicSalon = { theme?: 'cream'|'wine'|'green'; teaches?: number; looking_models?: number; saved?: boolean; rating?: number|null; review_count?: number; reviews?: Review[]; id: string; slug: string; name: string; city: string; bio: string; logo: string; cover: string; address: string; latitude: number | null; longitude: number | null; utc_offset: number; published: number; services: SalonService[]; requested_service?: SalonService|null; works?: Work[]; posts?: SalonPost[]; staff: { id: string; name: string; avatar: string; teaches: number; experience_months?: number | null; categories: string[] }[] };
 export const profilePath = (p: Pick<Profile, 'kind' | 'slug' | 'salon_slug'>) => p.kind === 'staff' && p.salon_slug ? '/s/' + p.salon_slug : (p.kind === 'salon' ? '/s/' : '/m/') + p.slug;
 export const bookingPath = (p: Pick<Profile, 'kind' | 'slug' | 'salon_slug' | 'user_id'>) => p.kind === 'staff' && p.salon_slug ? '/s/' + p.salon_slug + '/book?master=' + encodeURIComponent(p.user_id) : p.kind === 'salon' ? '/s/' + p.slug + '/book' : '/book/' + p.slug;
 export type Salon = { workspace: Workspace; staff: Performer[] };

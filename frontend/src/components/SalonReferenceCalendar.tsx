@@ -10,7 +10,9 @@ import '../calendar-reference.css';
 export const isSalonBreak = (a: Appointment) => Boolean(a.is_break || a.service === 'Время закрыто' && a.client_name === 'Перерыв' && !a.client_id && !a.guest_contact && a.price === 0);
 function minutes(time: number, offset: number) { const d = new Date(time + offset * 60000); return d.getUTCHours() * 60 + d.getUTCMinutes(); }
 function shift(date: string, amount: number) { return new Date(Date.parse(date + 'T12:00:00Z') + amount * 86400000).toISOString().slice(0, 10); }
-export function SalonReferenceCalendar({ salon, appointments, date, setDate, selectedStaff, setSelectedStaff, record, setRecord, create, setCreate, createStart, reload }: {
+export function SalonReferenceCalendar({ salon, appointments, date, setDate, selectedStaff, setSelectedStaff, record, setRecord, create, setCreate, createStart, reload, filter, setFilter }: {
+    filter: string;
+    setFilter: (id:string)=>void;
     salon: Salon;
     appointments: Appointment[];
     date: string;
@@ -25,7 +27,7 @@ export function SalonReferenceCalendar({ salon, appointments, date, setDate, sel
     reload: () => Promise<void>;
 }) {
     const offset = salon.workspace.utc_offset ?? 180;
-    const [filter, setFilter] = useState(''), [pending, setPending] = useState(false), [search, setSearch] = useState(''), [editing, setEditing] = useHistoryState('salon-calendar-edit', false, { flow: true }), [busy, setBusy] = useState(false), [error, setError] = useState(''), [notice, setNotice] = useState('');
+    const [pending, setPending] = useState(false), [search, setSearch] = useState(''), [editing, setEditing] = useHistoryState('salon-calendar-edit', false, { flow: true }), [busy, setBusy] = useState(false), [error, setError] = useState(''), [notice, setNotice] = useState('');
     const dialog = useRef<HTMLDialogElement>(null), panel = useRef<HTMLElement>(null);
     const selected = appointments.find(a => a.id === record), staff = salon.staff.find(p => p.id === selected?.master_id), creator = salon.staff.find(p => p.id === selectedStaff) || salon.staff[0];
     const people = salon.staff.filter(p => (!filter || p.id === filter) && p.name.toLocaleLowerCase('ru-RU').includes(search.toLocaleLowerCase('ru-RU')) && (!pending || appointments.some(a => a.master_id === p.id && a.status === 'pending' && masterDayKey(a.start, offset) === date)));

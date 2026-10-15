@@ -1,0 +1,6 @@
+/* Native lists: compact visual treatment, full touch target and keyboard focus. */
+select:not([multiple]){border:0!important;border-radius:10px!important;min-height:44px!important;padding:8px 30px 8px 12px!important;background-color:#eeeadd!important;color:inherit;font-size:14px!important;max-width:100%;box-shadow:none!important}
+select:not([multiple]):focus{outline:none}
+select:not([multiple]):focus-visible{outline:2px solid #b99760!important;outline-offset:2px}
+select:disabled{opacity:.65;cursor:not-allowed}
+@media(max-width:800px){select:not([multiple]){font-size:16px!important}}

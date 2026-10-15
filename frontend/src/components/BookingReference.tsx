@@ -9,9 +9,9 @@ export function BookingIdentity({ identity }: { identity: BookingIdentityValue }
   return <div className="identity"><span className="avatar">{identity.image ? <img src={identity.image} alt=""/> : identity.name.trim().slice(0, 1)}</span><div><small>{identity.salon ? 'САЛОН КРАСОТЫ' : 'САМОСТОЯТЕЛЬНЫЙ МАСТЕР'}</small><h3>{identity.name}</h3>{identity.city || identity.address ? <p>{[identity.city, identity.address].filter(Boolean).join(' · ')}</p> : null}</div></div>;
 }
 
-type SummaryProps = { identity: BookingIdentityValue; service?: { name: string; price: number; duration: number } | null; start?: number | null; offset: number; master?: string };
+type SummaryProps = { identity: BookingIdentityValue; service?: { name: string; price: number; duration: number; duration_varies?: boolean } | null; start?: number | null; offset: number; master?: string };
 function SummaryBody({ identity, service, start, offset, master }: SummaryProps) {
-  return <div className="summary-body"><BookingIdentity identity={identity}/><dl><div><dt>Услуга</dt><dd>{service?.name || 'Выберите услугу'}</dd></div>{identity.salon ? <div><dt>Мастер</dt><dd>{master || 'Выберите мастера'}</dd></div> : null}<div><dt>Длительность</dt><dd>{service ? service.duration + ' мин' : '—'}</dd></div><div><dt>Дата и время</dt><dd>{start ? masterDate(start, offset, { day: 'numeric', month: 'long' }) + ', ' + masterTime(start, offset) : 'Выберите время'}</dd></div></dl><div className="total"><span>Стоимость {identity.salon ? 'в салоне' : 'у мастера'}</span><strong>{service ? servicePriceLabel(service.price) : '—'}</strong></div><p className="privacy">Оплата напрямую {identity.salon ? 'в салоне' : 'мастеру'}.<br/>Заявка ожидает подтверждения.</p></div>;
+  return <div className="summary-body"><BookingIdentity identity={identity}/><dl><div><dt>Услуга</dt><dd>{service?.name || 'Выберите услугу'}</dd></div>{identity.salon ? <div><dt>Мастер</dt><dd>{master || 'Выберите мастера'}</dd></div> : null}<div><dt>Длительность</dt><dd>{service ? (service.duration_varies?'от ':'') + service.duration + ' мин' : '—'}</dd></div><div><dt>Дата и время</dt><dd>{start ? masterDate(start, offset, { day: 'numeric', month: 'long' }) + ', ' + masterTime(start, offset) : 'Выберите время'}</dd></div></dl><div className="total"><span>Стоимость {identity.salon ? 'в салоне' : 'у мастера'}</span><strong>{service ? servicePriceLabel(service.price) : '—'}</strong></div><p className="privacy">Оплата напрямую {identity.salon ? 'в салоне' : 'мастеру'}.<br/>Заявка ожидает подтверждения.</p></div>;
 }
 
 export function BookingLayout({ backTo, labels, step, setStep, summary, busy, children }: {
@@ -37,8 +37,8 @@ export function BookingNotice({ error }: { error: string }) {
 export function BookingActions({ back, next, disabled, busy = false }: { back: () => void; next?: () => void; disabled?: boolean; busy?: boolean }) {
   return <div className="step-actions"><button type="button" className="button outline" onClick={back} disabled={busy}>Назад</button>{next ? <button type="button" className="button wine" onClick={next} disabled={disabled || busy}>Продолжить <ArrowRight size={16}/></button> : null}</div>;
 }
-export function BookingServiceChoice({ service, selected, onSelect }: { service: { id: string; name: string; duration: number; price: number }; selected: boolean; onSelect: () => void }) {
-  return <button className="service-row" type="button" onClick={onSelect} aria-pressed={selected}><div><h3>{service.name}</h3><p>{service.duration} мин</p></div><strong>{servicePriceLabel(service.price)}</strong><ArrowRight className="arrow" size={18}/></button>;
+export function BookingServiceChoice({ service, selected, onSelect }: { service: { id: string; name: string; duration: number; price: number; duration_varies?: boolean }; selected: boolean; onSelect: () => void }) {
+  return <button className="service-row" type="button" onClick={onSelect} aria-pressed={selected}><div><h3>{service.name}</h3><p>{service.duration_varies?'от ':''}{service.duration} мин</p></div><strong>{servicePriceLabel(service.price)}</strong><ArrowRight className="arrow" size={18}/></button>;
 }
 export function BookingContactForm({ name, contact, notes, onName, onContact, onNotes, onSubmit, back, busy, disabled, salon = false }: {
   name: string; contact: string; notes: string; onName: (value: string) => void; onContact: (value: string) => void; onNotes: (value: string) => void;

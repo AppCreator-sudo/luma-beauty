@@ -1,0 +1,18 @@
+{
+  "at": "2026-10-15T13:19:51.098Z",
+  "scope": "Read-only source and isolated local copy; source and uploads untouched",
+  "preserved_tables": 42,
+  "preserved_rows": 901,
+  "migration": {
+    "migration": "salon-service-catalog-v1",
+    "created_at": 1792070390949,
+    "services": 4,
+    "definitions": 1,
+    "needs_review": 0
+  },
+  "integrity": "ok",
+  "foreign_keys": "ok",
+  "repeat": "idempotent",
+  "backup": "one closed pre-migration SQLite",
+  "existing_rows": "identical"
+}

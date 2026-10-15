@@ -1,0 +1,131 @@
+{
+  "at": "2026-10-15T13:31:35.445Z",
+  "scope": "Synthetic SQLite and localhost only",
+  "checks": [
+    {
+      "name": "create-direction-service-assign-master-and-derived-directions",
+      "pass": true
+    },
+    {
+      "name": "catalog-save-reload",
+      "pass": true
+    },
+    {
+      "name": "override-and-impact-preview-save",
+      "pass": true
+    },
+    {
+      "name": "services-1440",
+      "pass": true
+    },
+    {
+      "name": "service-editor-1440",
+      "pass": true
+    },
+    {
+      "name": "masters-1440",
+      "pass": true
+    },
+    {
+      "name": "master-services-context-and-browser-back-1440",
+      "pass": true
+    },
+    {
+      "name": "schedule-1440",
+      "pass": true
+    },
+    {
+      "name": "works-context-1440",
+      "pass": true
+    },
+    {
+      "name": "services-390",
+      "pass": true
+    },
+    {
+      "name": "service-editor-390",
+      "pass": true
+    },
+    {
+      "name": "masters-390",
+      "pass": true
+    },
+    {
+      "name": "master-services-context-and-browser-back-390",
+      "pass": true
+    },
+    {
+      "name": "schedule-390",
+      "pass": true
+    },
+    {
+      "name": "works-context-390",
+      "pass": true
+    },
+    {
+      "name": "services-320",
+      "pass": true
+    },
+    {
+      "name": "service-editor-320",
+      "pass": true
+    },
+    {
+      "name": "masters-320",
+      "pass": true
+    },
+    {
+      "name": "master-services-context-and-browser-back-320",
+      "pass": true
+    },
+    {
+      "name": "schedule-320",
+      "pass": true
+    },
+    {
+      "name": "works-context-320",
+      "pass": true
+    },
+    {
+      "name": "profile-only-edit-preserves-services-and-schedule",
+      "pass": true
+    },
+    {
+      "name": "calendar-cycle-save-and-copy-graph",
+      "pass": true
+    },
+    {
+      "name": "new-staff-wizard-shared-service-derived-direction-photo-and-schedule",
+      "pass": true
+    },
+    {
+      "name": "nearest-time-chips-confirm-master-contact-actual-price-duration-and-back",
+      "pass": true
+    },
+    {
+      "name": "browser-submit-uses-quoted-performer-offer-and-actual-duration",
+      "pass": true
+    },
+    {
+      "name": "legacy-booking-link-resolves",
+      "pass": true
+    },
+    {
+      "name": "archive-hides-new-booking-and-preserves-offer-rows",
+      "pass": true
+    },
+    {
+      "name": "dirty-editor-back-warning-keeps-input",
+      "pass": true
+    },
+    {
+      "name": "stale-service-edit-keeps-draft-and-rejects-overwrite",
+      "pass": true
+    },
+    {
+      "name": "database-and-browser-clean",
+      "pass": true
+    }
+  ],
+  "pageErrors": []
+}
