@@ -1,0 +1,37 @@
+{
+  "at": "2026-10-15T12:31:36.444Z",
+  "scope": "Anonymous live GET only; published earlier in master-portfolio release; no redeploy or business writes",
+  "checks": [
+    {
+      "name": "published current frontend/SW/health",
+      "status": "PASS"
+    },
+    {
+      "name": "master actual service/window price prefix 1440",
+      "status": "PASS"
+    },
+    {
+      "name": "salon actual service/window price prefix 1440",
+      "status": "PASS"
+    },
+    {
+      "name": "master actual service/window price prefix 390",
+      "status": "PASS"
+    },
+    {
+      "name": "salon actual service/window price prefix 390",
+      "status": "PASS"
+    },
+    {
+      "name": "master actual service/window price prefix 320",
+      "status": "PASS"
+    },
+    {
+      "name": "salon actual service/window price prefix 320",
+      "status": "PASS"
+    }
+  ],
+  "pageErrors": [],
+  "blockedWrites": [],
+  "result": "PASS"
+}

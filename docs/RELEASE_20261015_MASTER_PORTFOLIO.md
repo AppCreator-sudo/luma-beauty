@@ -43,3 +43,7 @@
   systemctl restart atelie
   ```
   Рабочая база данных и загруженные фотографии при откате остаются нетронутыми.
+
+## Повторное подтверждение и GitHub
+
+2026-10-15T19:29:25+07:00: [фактический current/frontend/SW/health и 7 публичных проверок цен](ui-checks/2026-10-15-service-prices-live-check/README.md) PASS. Код [bc1af39](https://github.com/AppCreator-sudo/luma-beauty/commit/bc1af397023551b86cdff6d49e47cdc40b26fdd1) подтверждён в remote main; [GitHub](GITHUB_SYNC_20261015_PRICES.md). Новое предложение U-10-19 является отдельным макетом и в этот runtime-выпуск не входит.

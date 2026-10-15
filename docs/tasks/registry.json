@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-15T18:40:02+07:00",
+  "updated_at": "2026-10-15T19:40:13+07:00",
   "timezone": "Asia/Novosibirsk",
-  "next_task_id": "U-10-01",
+  "next_task_id": "U-10-19",
   "tasks": [
     {
       "id": "U-00",
@@ -2209,6 +2209,39 @@
       "owner_chat": "Текущий чат pwa — деплой портфолио",
       "card": "U-10-18.md",
       "order": 108
+    },
+    {
+      "id": "U-10-19",
+      "title": "Простой салон: единый прайс, мастера и рабочие графики",
+      "phase": "ui",
+      "status": "awaiting_approval",
+      "dependencies": [
+        "U-10-17",
+        "U-10-18"
+      ],
+      "sources": [
+        "docs/V2_SALON_SIMPLICITY_PROPOSAL.md",
+        "docs/ui-concepts/2026-10-15-salon-simplicity/README.md",
+        "docs/ui-concepts/2026-10-15-salon-simplicity/index.html",
+        "frontend/src/components/SalonOwnerCabinet.tsx",
+        "frontend/src/components/StaffSetupForm.tsx",
+        "lib/workspaces.mjs",
+        "lib/service-directions.mjs",
+        "lib/salon-public.mjs"
+      ],
+      "skills": [
+        ".agents/skills/atelier-v2-product-design/SKILL.md",
+        ".agents/skills/atelier-v2-ui-implementation/SKILL.md"
+      ],
+      "approved_at": null,
+      "started_at": null,
+      "local_done_at": "2026-10-15T19:40:13+07:00",
+      "verified_at": "2026-10-15T19:40:13+07:00",
+      "published_at": null,
+      "due_at": null,
+      "owner_chat": "Текущий чат pwa — обсуждение простоты салона",
+      "card": "U-10-19.md",
+      "order": 109
     }
   ]
 }

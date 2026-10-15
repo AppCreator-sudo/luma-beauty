@@ -1,0 +1,80 @@
+{
+  "at": "2026-10-15T12:36:51.734Z",
+  "scope": "Standalone proposal with illustrative local data; no application/server changes",
+  "checks": [
+    {
+      "name": "services 1440",
+      "status": "PASS"
+    },
+    {
+      "name": "assign 1440",
+      "status": "PASS"
+    },
+    {
+      "name": "team 1440",
+      "status": "PASS"
+    },
+    {
+      "name": "assignment updates staff directions and filtered services 1440",
+      "status": "PASS"
+    },
+    {
+      "name": "schedule 1440",
+      "status": "PASS"
+    },
+    {
+      "name": "weekly and custom cycle fields stay coherent 1440",
+      "status": "PASS"
+    },
+    {
+      "name": "services 390",
+      "status": "PASS"
+    },
+    {
+      "name": "assign 390",
+      "status": "PASS"
+    },
+    {
+      "name": "team 390",
+      "status": "PASS"
+    },
+    {
+      "name": "assignment updates staff directions and filtered services 390",
+      "status": "PASS"
+    },
+    {
+      "name": "schedule 390",
+      "status": "PASS"
+    },
+    {
+      "name": "weekly and custom cycle fields stay coherent 390",
+      "status": "PASS"
+    },
+    {
+      "name": "services 320",
+      "status": "PASS"
+    },
+    {
+      "name": "assign 320",
+      "status": "PASS"
+    },
+    {
+      "name": "team 320",
+      "status": "PASS"
+    },
+    {
+      "name": "assignment updates staff directions and filtered services 320",
+      "status": "PASS"
+    },
+    {
+      "name": "schedule 320",
+      "status": "PASS"
+    },
+    {
+      "name": "weekly and custom cycle fields stay coherent 320",
+      "status": "PASS"
+    }
+  ],
+  "pageErrors": [],
+  "result": "PASS"
+}
