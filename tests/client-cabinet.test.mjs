@@ -16,7 +16,7 @@ function fixture(){
     CREATE TABLE booking_venues(appointment_id TEXT,workspace_id TEXT,name TEXT,slug TEXT,city TEXT,address TEXT,utc_offset INTEGER);
     CREATE TABLE notices(id TEXT PRIMARY KEY,user_id TEXT,title TEXT,body TEXT,created INTEGER);INSERT INTO notices VALUES('own','client','Ответ','Ответ мастера',1),('foreign','other','Чужое','Чужой текст',2);
     CREATE TABLE works(id TEXT,image TEXT,caption TEXT);CREATE TABLE reviews(id TEXT,appointment_id TEXT,rating INTEGER,text TEXT,created INTEGER);
-    CREATE TABLE saved_works(user_id TEXT,work_id TEXT,created INTEGER);CREATE TABLE follows(user_id TEXT,master_id TEXT,created INTEGER);`);
+    CREATE TABLE saved_works(user_id TEXT,work_id TEXT,created INTEGER);CREATE TABLE follows(user_id TEXT,master_id TEXT,created INTEGER);CREATE TABLE saved_salons(user_id TEXT,salon_id TEXT,created INTEGER);`);
   const fail=(message,status=400)=>{throw Object.assign(Error(message),{status})},routes=new Map(),notifyEvents=[];
   const app={use(){},...Object.fromEntries(['get','post','put','patch','delete'].map(method=>[method,(url,...handlers)=>routes.set(method+' '+url,handlers.at(-1))]))};
   const schedule=schedules({db,fail});schedule.save('master',{opening:600,closing:1200,utc_offset:420,weekdays:[0,1,2,3,4,5,6]});
@@ -54,6 +54,16 @@ test('private client projection and read markers never expose professional notes
   call('patch','/api/notices/read',{body:{all:true}});assert.ok(db.prepare('SELECT read_at FROM notices WHERE id=?').get('own').read_at);assert.equal(db.prepare('SELECT read_at FROM notices WHERE id=?').get('foreign').read_at,null);
   call('put','/api/client/profile',{body:{name:'Анна',contact:'@Anna_Beauty',city:'Новосибирск'}});assert.equal(control.profile('client').contact,'@anna_beauty');assert.equal(control.profile('other').name,'');
   const data=call('get','/api/client/data');assert.equal(data.appointments.length,1);assert.ok(!JSON.stringify(data).includes('Рабочая заметка'));assert.equal(data.notifications.length,1);db.close();
+});
+test('date overrides and cycles are rechecked when accepting a requested move',()=>{
+  const f=fixture(),{call,start,read,db,schedule}=f,before=read(),date=new Date(start+420*60000).toISOString().slice(0,10);
+  const cycle={opening:600,closing:1200,utc_offset:420,weekdays:[],mode:'cycle',cycle_start:date,work_days:2,rest_days:2,exceptions:[]};
+  schedule.save('master',cycle);
+  const request=call('post','/api/client/appointments/:id/reschedule',{body:{start:start+7200000}});
+  schedule.save('master',{...cycle,exceptions:[{date,working:false}]});
+  assert.throws(()=>call('patch','/api/appointments/:id/reschedule',{user:'manager',body:{request_id:request.id,decision:'accepted'}}),{status:409});assert.deepEqual(read(),before);
+  assert.equal(db.prepare('SELECT status FROM reschedule_requests WHERE id=?').get(request.id).status,'pending');
+  schedule.save('master',cycle);call('patch','/api/appointments/:id/reschedule',{user:'manager',body:{request_id:request.id,decision:'accepted'}});assert.equal(read().start,start+7200000);db.close();
 });
 
 test('changed master/timezone and hidden salon employee invalidate acceptance without touching original time',()=>{

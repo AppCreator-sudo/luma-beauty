@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-15T14:41:35+07:00",
+  "updated_at": "2026-10-15T17:29:32+07:00",
   "timezone": "Asia/Novosibirsk",
-  "next_task_id": "U-10-01",
+  "next_task_id": "U-10-15",
   "tasks": [
     {
       "id": "U-00",
@@ -1939,6 +1939,190 @@
       "owner_chat": "01a102e0-744b-7a33-931d-ab120601f36a",
       "card": "U-06-04.md",
       "order": 70
+    },
+    {
+      "id": "U-10-11",
+      "title": "Публикации: явный автор и портфолио выбранного сотрудника",
+      "phase": "completed",
+      "status": "published",
+      "dependencies": [],
+      "sources": [
+        "docs/V2_CABINET_REFINEMENT.md",
+        "frontend/src/components/SalonPublications.tsx",
+        "frontend/src/components/WorkUpload.tsx",
+        "frontend/src/components/SalonOwnerCabinet.tsx",
+        "frontend/src/salon-reference.css",
+        "frontend/src/ui-density.css"
+      ],
+      "skills": [
+        ".agents/skills/atelier-v2-product-design/SKILL.md",
+        ".agents/skills/atelier-v2-ui-implementation/SKILL.md"
+      ],
+      "approved_at": "2026-10-15T16:19:14+07:00",
+      "started_at": "2026-10-15T16:19:14+07:00",
+      "local_done_at": "2026-10-15T17:16:45+07:00",
+      "verified_at": "2026-10-15T17:16:45+07:00",
+      "published_at": "2026-10-15T17:24:19+07:00",
+      "due_at": null,
+      "owner_chat": "Текущий чат pwa — правки кабинетов и публикация",
+      "card": "U-10-11.md",
+      "order": 100
+    },
+    {
+      "id": "U-08-01",
+      "title": "Ближайшее окно: выбор времени и последовательность записи",
+      "phase": "completed",
+      "status": "published",
+      "dependencies": [],
+      "sources": [
+        "docs/V2_CABINET_REFINEMENT.md",
+        "frontend/src/pages/PublicMaster.tsx",
+        "frontend/src/components/SalonPublicWindow.tsx",
+        "frontend/src/pages/Booking.tsx",
+        "frontend/src/pages/PublicSalon.tsx",
+        "lib/salon-public.mjs",
+        "scripts/verify-cabinet-refinement.mjs",
+        "scripts/verify-cabinet-edge-cases.mjs"
+      ],
+      "skills": [
+        ".agents/skills/atelier-v2-product-design/SKILL.md",
+        ".agents/skills/atelier-v2-ui-implementation/SKILL.md"
+      ],
+      "approved_at": "2026-10-15T16:19:14+07:00",
+      "started_at": null,
+      "local_done_at": "2026-10-15T17:16:45+07:00",
+      "verified_at": "2026-10-15T17:16:45+07:00",
+      "published_at": "2026-10-15T17:24:19+07:00",
+      "due_at": null,
+      "owner_chat": "Текущий чат pwa — правки кабинетов и публикация",
+      "card": "U-08-01.md",
+      "order": 101
+    },
+    {
+      "id": "U-10-12",
+      "title": "График: дни недели, циклы и изменения отдельных дат",
+      "phase": "completed",
+      "status": "published",
+      "dependencies": [],
+      "sources": [
+        "docs/V2_CABINET_REFINEMENT.md",
+        "lib/schedule.mjs",
+        "frontend/src/pages/Studio.tsx",
+        "frontend/src/components/StaffSetupForm.tsx",
+        "lib/workspaces.mjs",
+        "lib/schedule-patterns.mjs",
+        "frontend/src/components/ScheduleFields.tsx",
+        "lib/salon-readiness.mjs",
+        "tests/schedule-patterns.test.mjs"
+      ],
+      "skills": [
+        ".agents/skills/atelier-v2-product-design/SKILL.md",
+        ".agents/skills/atelier-v2-ui-implementation/SKILL.md"
+      ],
+      "approved_at": "2026-10-15T16:19:14+07:00",
+      "started_at": null,
+      "local_done_at": "2026-10-15T17:16:45+07:00",
+      "verified_at": "2026-10-15T17:16:45+07:00",
+      "published_at": "2026-10-15T17:24:19+07:00",
+      "due_at": null,
+      "owner_chat": "Текущий чат pwa — правки кабинетов и публикация",
+      "card": "U-10-12.md",
+      "order": 102
+    },
+    {
+      "id": "U-10-13",
+      "title": "Оформление: редактирование на изображении и круглый кадр",
+      "phase": "completed",
+      "status": "published",
+      "dependencies": [],
+      "sources": [
+        "docs/V2_CABINET_REFINEMENT.md",
+        "frontend/src/components/AppearanceEditor.tsx",
+        "frontend/src/components/SalonVisual.tsx",
+        "frontend/src/pages/SalonSettings.tsx",
+        "lib/image-upload.mjs",
+        "lib/image-rules.json",
+        "frontend/src/components/ImageCropDialog.tsx",
+        "frontend/src/image-editor.css"
+      ],
+      "skills": [
+        ".agents/skills/atelier-v2-product-design/SKILL.md",
+        ".agents/skills/atelier-v2-ui-implementation/SKILL.md"
+      ],
+      "approved_at": "2026-10-15T16:19:14+07:00",
+      "started_at": null,
+      "local_done_at": "2026-10-15T17:16:45+07:00",
+      "verified_at": "2026-10-15T17:16:45+07:00",
+      "published_at": "2026-10-15T17:24:19+07:00",
+      "due_at": null,
+      "owner_chat": "Текущий чат pwa — правки кабинетов и публикация",
+      "card": "U-10-13.md",
+      "order": 103
+    },
+    {
+      "id": "U-10-14",
+      "title": "Компактность: общий стандарт и аудит маршрутов",
+      "phase": "completed",
+      "status": "published",
+      "dependencies": [
+        "U-10-11",
+        "U-08-01",
+        "U-10-12",
+        "U-10-13"
+      ],
+      "sources": [
+        "docs/V2_CABINET_REFINEMENT.md",
+        "frontend/src/main.tsx",
+        "frontend/src/components/Shell.tsx",
+        "frontend/src/cabinet-flows.css",
+        "docs/V2_UI_REFERENCE_IMPLEMENTATION.md",
+        "docs/V2_COMPACTNESS_AUDIT.md",
+        "frontend/src/ui-density.css",
+        "scripts/verify-onboarding-density.mjs"
+      ],
+      "skills": [
+        ".agents/skills/atelier-v2-product-design/SKILL.md",
+        ".agents/skills/atelier-v2-ui-implementation/SKILL.md"
+      ],
+      "approved_at": "2026-10-15T16:19:14+07:00",
+      "started_at": null,
+      "local_done_at": "2026-10-15T17:16:45+07:00",
+      "verified_at": "2026-10-15T17:16:45+07:00",
+      "published_at": "2026-10-15T17:24:19+07:00",
+      "due_at": null,
+      "owner_chat": "Текущий чат pwa — правки кабинетов и публикация",
+      "card": "U-10-14.md",
+      "order": 104
+    },
+    {
+      "id": "U-10-15",
+      "title": "Публикация правок кабинетов, графиков и ближайшего окна",
+      "phase": "ui",
+      "status": "in_progress",
+      "dependencies": [
+        "U-10-11",
+        "U-08-01",
+        "U-10-12",
+        "U-10-13",
+        "U-10-14"
+      ],
+      "sources": [
+        "docs/V2_CABINET_REFINEMENT.md",
+        "docs/V2_COMPACTNESS_AUDIT.md",
+        "docs/ui-checks/2026-10-15-cabinet-refinement/README.md"
+      ],
+      "skills": [
+        ".agents/skills/atelier-v2-ui-implementation/SKILL.md"
+      ],
+      "approved_at": "2026-10-15",
+      "started_at": "2026-10-15T17:22:23+07:00",
+      "local_done_at": null,
+      "verified_at": "2026-10-15T17:29:32+07:00",
+      "published_at": "2026-10-15T17:24:19+07:00",
+      "due_at": null,
+      "owner_chat": "Текущий чат pwa — публикация+гитхаб",
+      "card": "U-10-15.md",
+      "order": 105
     }
   ]
 }

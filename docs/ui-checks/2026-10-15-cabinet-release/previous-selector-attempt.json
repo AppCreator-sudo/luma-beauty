@@ -1,0 +1,28 @@
+{
+  "at": "2026-10-15T10:25:14.095Z",
+  "tag": "20261015-v2-cabinet-refinement",
+  "origin": "https://atelie-13-143-66-1.sslip.io",
+  "scope": "Anonymous production GET/HEAD only. No login, uploads, settings, accounts, appointments or reviews written.",
+  "checks": [
+    {
+      "name": "published build, PWA cache, health and protected data",
+      "status": "PASS"
+    },
+    {
+      "name": "master actual availability, schedule and eligible staff API",
+      "status": "PASS"
+    },
+    {
+      "name": "salon actual availability, schedule and eligible staff API",
+      "status": "PASS"
+    },
+    {
+      "name": "master nearest window selects locally then continues with chosen time 1440",
+      "status": "PASS"
+    }
+  ],
+  "pageErrors": [],
+  "blockedWrites": [],
+  "result": "FAIL",
+  "error": "expect(locator).toBeVisible() failed\n\nLocator: locator('.master-row').first()\nExpected: visible\nTimeout: 25000ms\nError: element(s) not found\n\nCall log:\n  - Expect \"toBeVisible\" locator('.master-row').first() with timeout 25000ms\n  - waiting for locator('.master-row').first()\n"
+}

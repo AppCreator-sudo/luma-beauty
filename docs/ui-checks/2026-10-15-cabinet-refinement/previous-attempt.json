@@ -1,0 +1,639 @@
+{
+  "at": "2026-10-15T09:51:00.119Z",
+  "scope": "Separate synthetic SQLite and localhost only; no production access",
+  "checks": [
+    {
+      "name": "master-window-selection-1440",
+      "pass": true
+    },
+    {
+      "name": "master-nearest-contact-1440",
+      "pass": true
+    },
+    {
+      "name": "master-nearest-back-preserves-selection-1440",
+      "pass": true
+    },
+    {
+      "name": "salon-window-selection-1440",
+      "pass": true
+    },
+    {
+      "name": "salon-nearest-contact-1440",
+      "pass": true
+    },
+    {
+      "name": "salon-nearest-back-preserves-selection-1440",
+      "pass": true
+    },
+    {
+      "name": "master-window-selection-390",
+      "pass": true
+    },
+    {
+      "name": "master-nearest-contact-390",
+      "pass": true
+    },
+    {
+      "name": "master-nearest-back-preserves-selection-390",
+      "pass": true
+    },
+    {
+      "name": "salon-window-selection-390",
+      "pass": true
+    },
+    {
+      "name": "salon-nearest-contact-390",
+      "pass": true
+    },
+    {
+      "name": "salon-nearest-back-preserves-selection-390",
+      "pass": true
+    },
+    {
+      "name": "master-window-selection-320",
+      "pass": true
+    },
+    {
+      "name": "master-nearest-contact-320",
+      "pass": true
+    },
+    {
+      "name": "master-nearest-back-preserves-selection-320",
+      "pass": true
+    },
+    {
+      "name": "salon-window-selection-320",
+      "pass": true
+    },
+    {
+      "name": "salon-nearest-contact-320",
+      "pass": true
+    },
+    {
+      "name": "salon-nearest-back-preserves-selection-320",
+      "pass": true
+    },
+    {
+      "name": "salon-publications-explicit-destinations-and-empty-author-scope",
+      "pass": true
+    },
+    {
+      "name": "publication-description-1440",
+      "pass": true
+    },
+    {
+      "name": "publication-create-author-service-save-reload",
+      "pass": true
+    },
+    {
+      "name": "staff-empty-portfolio-1440",
+      "pass": true
+    },
+    {
+      "name": "master-cycle-schedule-1440",
+      "pass": true
+    },
+    {
+      "name": "cycle-and-date-override-save-reload-public-availability",
+      "pass": true
+    },
+    {
+      "name": "api-publications-and-schedule-owner-rights",
+      "pass": true
+    },
+    {
+      "name": "avatar-crop-1440",
+      "pass": true
+    },
+    {
+      "name": "avatar-selected-region-saved-as-square-and-server-validated",
+      "pass": true
+    },
+    {
+      "name": "photo-cancel-cover-crop-delete-and-theme-fallback",
+      "pass": true
+    },
+    {
+      "name": "master-overview-1440",
+      "pass": true
+    },
+    {
+      "name": "master-services-1440",
+      "pass": true
+    },
+    {
+      "name": "master-works-1440",
+      "pass": true
+    },
+    {
+      "name": "master-appearance-1440",
+      "pass": true
+    },
+    {
+      "name": "master-settings-1440",
+      "pass": true
+    },
+    {
+      "name": "salon-0-1440",
+      "pass": true
+    },
+    {
+      "name": "salon-1-1440",
+      "pass": true
+    },
+    {
+      "name": "salon-2-1440",
+      "pass": true
+    },
+    {
+      "name": "salon-3-1440",
+      "pass": true
+    },
+    {
+      "name": "salon-4-1440",
+      "pass": true
+    },
+    {
+      "name": "salon-5-1440",
+      "pass": true
+    },
+    {
+      "name": "salon-6-1440",
+      "pass": true
+    },
+    {
+      "name": "client-overview-1440",
+      "pass": true
+    },
+    {
+      "name": "client-visits-1440",
+      "pass": true
+    },
+    {
+      "name": "client-saved-1440",
+      "pass": true
+    },
+    {
+      "name": "client-masters-1440",
+      "pass": true
+    },
+    {
+      "name": "client-reviews-1440",
+      "pass": true
+    },
+    {
+      "name": "client-notifications-1440",
+      "pass": true
+    },
+    {
+      "name": "client-settings-1440",
+      "pass": true
+    },
+    {
+      "name": "public-catalog-1440",
+      "pass": true
+    },
+    {
+      "name": "public-inspiration-1440",
+      "pass": true
+    },
+    {
+      "name": "public-map-1440",
+      "pass": true
+    },
+    {
+      "name": "public-auth-1440",
+      "pass": true
+    },
+    {
+      "name": "public-access-1440",
+      "pass": true
+    },
+    {
+      "name": "public-join-1440",
+      "pass": true
+    },
+    {
+      "name": "master-overview-390",
+      "pass": true
+    },
+    {
+      "name": "master-services-390",
+      "pass": true
+    },
+    {
+      "name": "master-works-390",
+      "pass": true
+    },
+    {
+      "name": "master-appearance-390",
+      "pass": true
+    },
+    {
+      "name": "master-settings-390",
+      "pass": true
+    },
+    {
+      "name": "salon-0-390",
+      "pass": true
+    },
+    {
+      "name": "salon-1-390",
+      "pass": true
+    },
+    {
+      "name": "salon-2-390",
+      "pass": true
+    },
+    {
+      "name": "salon-3-390",
+      "pass": true
+    },
+    {
+      "name": "salon-4-390",
+      "pass": true
+    },
+    {
+      "name": "salon-5-390",
+      "pass": true
+    },
+    {
+      "name": "salon-6-390",
+      "pass": true
+    },
+    {
+      "name": "client-overview-390",
+      "pass": true
+    },
+    {
+      "name": "client-visits-390",
+      "pass": true
+    },
+    {
+      "name": "client-saved-390",
+      "pass": true
+    },
+    {
+      "name": "client-masters-390",
+      "pass": true
+    },
+    {
+      "name": "client-reviews-390",
+      "pass": true
+    },
+    {
+      "name": "client-notifications-390",
+      "pass": true
+    },
+    {
+      "name": "client-settings-390",
+      "pass": true
+    },
+    {
+      "name": "public-catalog-390",
+      "pass": true
+    },
+    {
+      "name": "public-inspiration-390",
+      "pass": true
+    },
+    {
+      "name": "public-map-390",
+      "pass": true
+    },
+    {
+      "name": "public-auth-390",
+      "pass": true
+    },
+    {
+      "name": "public-access-390",
+      "pass": true
+    },
+    {
+      "name": "public-join-390",
+      "pass": true
+    },
+    {
+      "name": "api-publications-and-schedule-owner-rights",
+      "pass": true
+    },
+    {
+      "name": "master-overview-1440",
+      "pass": true
+    },
+    {
+      "name": "master-services-1440",
+      "pass": true
+    },
+    {
+      "name": "master-works-1440",
+      "pass": true
+    },
+    {
+      "name": "master-appearance-1440",
+      "pass": true
+    },
+    {
+      "name": "master-settings-1440",
+      "pass": true
+    },
+    {
+      "name": "salon-0-1440",
+      "pass": true
+    },
+    {
+      "name": "salon-1-1440",
+      "pass": true
+    },
+    {
+      "name": "salon-2-1440",
+      "pass": true
+    },
+    {
+      "name": "salon-3-1440",
+      "pass": true
+    },
+    {
+      "name": "salon-4-1440",
+      "pass": true
+    },
+    {
+      "name": "salon-5-1440",
+      "pass": true
+    },
+    {
+      "name": "salon-6-1440",
+      "pass": true
+    },
+    {
+      "name": "client-overview-1440",
+      "pass": true
+    },
+    {
+      "name": "client-visits-1440",
+      "pass": true
+    },
+    {
+      "name": "client-saved-1440",
+      "pass": true
+    },
+    {
+      "name": "client-masters-1440",
+      "pass": true
+    },
+    {
+      "name": "client-reviews-1440",
+      "pass": true
+    },
+    {
+      "name": "client-notifications-1440",
+      "pass": true
+    },
+    {
+      "name": "client-settings-1440",
+      "pass": true
+    },
+    {
+      "name": "public-catalog-1440",
+      "pass": true
+    },
+    {
+      "name": "public-inspiration-1440",
+      "pass": true
+    },
+    {
+      "name": "public-map-1440",
+      "pass": true
+    },
+    {
+      "name": "public-auth-1440",
+      "pass": true
+    },
+    {
+      "name": "public-access-1440",
+      "pass": true
+    },
+    {
+      "name": "public-join-1440",
+      "pass": true
+    },
+    {
+      "name": "master-overview-390",
+      "pass": true
+    },
+    {
+      "name": "master-services-390",
+      "pass": true
+    },
+    {
+      "name": "master-works-390",
+      "pass": true
+    },
+    {
+      "name": "master-appearance-390",
+      "pass": true
+    },
+    {
+      "name": "master-settings-390",
+      "pass": true
+    },
+    {
+      "name": "salon-0-390",
+      "pass": true
+    },
+    {
+      "name": "salon-1-390",
+      "pass": true
+    },
+    {
+      "name": "salon-2-390",
+      "pass": true
+    },
+    {
+      "name": "salon-3-390",
+      "pass": true
+    },
+    {
+      "name": "salon-4-390",
+      "pass": true
+    },
+    {
+      "name": "salon-5-390",
+      "pass": true
+    },
+    {
+      "name": "salon-6-390",
+      "pass": true
+    },
+    {
+      "name": "client-overview-390",
+      "pass": true
+    },
+    {
+      "name": "client-visits-390",
+      "pass": true
+    },
+    {
+      "name": "client-saved-390",
+      "pass": true
+    },
+    {
+      "name": "client-masters-390",
+      "pass": true
+    },
+    {
+      "name": "client-reviews-390",
+      "pass": true
+    },
+    {
+      "name": "client-notifications-390",
+      "pass": true
+    },
+    {
+      "name": "client-settings-390",
+      "pass": true
+    },
+    {
+      "name": "public-catalog-390",
+      "pass": true
+    },
+    {
+      "name": "public-inspiration-390",
+      "pass": true
+    },
+    {
+      "name": "public-map-390",
+      "pass": true
+    },
+    {
+      "name": "public-auth-390",
+      "pass": true
+    },
+    {
+      "name": "public-access-390",
+      "pass": true
+    },
+    {
+      "name": "public-join-390",
+      "pass": true
+    },
+    {
+      "name": "master-overview-320",
+      "pass": true
+    },
+    {
+      "name": "master-services-320",
+      "pass": true
+    },
+    {
+      "name": "api-publications-and-schedule-owner-rights",
+      "pass": true
+    },
+    {
+      "name": "master-overview-320",
+      "pass": true
+    },
+    {
+      "name": "master-services-320",
+      "pass": true
+    },
+    {
+      "name": "master-works-320",
+      "pass": true
+    },
+    {
+      "name": "master-appearance-320",
+      "pass": true
+    },
+    {
+      "name": "master-settings-320",
+      "pass": true
+    },
+    {
+      "name": "salon-0-320",
+      "pass": true
+    },
+    {
+      "name": "salon-1-320",
+      "pass": true
+    },
+    {
+      "name": "salon-2-320",
+      "pass": true
+    },
+    {
+      "name": "salon-3-320",
+      "pass": true
+    },
+    {
+      "name": "salon-4-320",
+      "pass": true
+    },
+    {
+      "name": "salon-5-320",
+      "pass": true
+    },
+    {
+      "name": "salon-6-320",
+      "pass": true
+    },
+    {
+      "name": "client-overview-320",
+      "pass": true
+    },
+    {
+      "name": "client-visits-320",
+      "pass": true
+    },
+    {
+      "name": "client-saved-320",
+      "pass": true
+    },
+    {
+      "name": "client-masters-320",
+      "pass": true
+    },
+    {
+      "name": "client-reviews-320",
+      "pass": true
+    },
+    {
+      "name": "client-notifications-320",
+      "pass": true
+    },
+    {
+      "name": "client-settings-320",
+      "pass": true
+    },
+    {
+      "name": "public-catalog-320",
+      "pass": true
+    },
+    {
+      "name": "public-inspiration-320",
+      "pass": true
+    },
+    {
+      "name": "public-map-320",
+      "pass": true
+    },
+    {
+      "name": "public-auth-320",
+      "pass": true
+    },
+    {
+      "name": "public-access-320",
+      "pass": true
+    },
+    {
+      "name": "public-join-320",
+      "pass": true
+    },
+    {
+      "name": "final-no-page-errors-and-database-integrity",
+      "pass": true
+    }
+  ],
+  "pageErrors": []
+}

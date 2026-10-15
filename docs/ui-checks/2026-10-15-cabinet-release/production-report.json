@@ -1,0 +1,133 @@
+{
+  "at": "2026-10-15T10:30:18.721Z",
+  "tag": "20261015-v2-cabinet-refinement",
+  "origin": "https://atelie-13-143-66-1.sslip.io",
+  "scope": "Anonymous production GET/HEAD only. Invitation preview POST requests are intentionally aborted in the browser. No login, uploads, settings, accounts, appointments or reviews written.",
+  "checks": [
+    {
+      "name": "published build, PWA cache, health and protected data",
+      "status": "PASS"
+    },
+    {
+      "name": "master actual availability, schedule and eligible staff API",
+      "status": "PASS"
+    },
+    {
+      "name": "salon actual availability, schedule and eligible staff API",
+      "status": "PASS"
+    },
+    {
+      "name": "master nearest window selects locally then continues with chosen time 1440",
+      "status": "PASS"
+    },
+    {
+      "name": "salon nearest window selects locally then continues with chosen time 1440",
+      "status": "PASS"
+    },
+    {
+      "name": "login shared header and compact responsive shell 1440",
+      "status": "PASS"
+    },
+    {
+      "name": "new-master shared header and compact responsive shell 1440",
+      "status": "PASS"
+    },
+    {
+      "name": "new-salon shared header and compact responsive shell 1440",
+      "status": "PASS"
+    },
+    {
+      "name": "guest-calendar shared header and compact responsive shell 1440",
+      "status": "PASS"
+    },
+    {
+      "name": "access shared header and compact responsive shell 1440",
+      "status": "PASS"
+    },
+    {
+      "name": "join shared header and compact responsive shell 1440",
+      "status": "PASS"
+    },
+    {
+      "name": "master nearest window selects locally then continues with chosen time 390",
+      "status": "PASS"
+    },
+    {
+      "name": "salon nearest window selects locally then continues with chosen time 390",
+      "status": "PASS"
+    },
+    {
+      "name": "login shared header and compact responsive shell 390",
+      "status": "PASS"
+    },
+    {
+      "name": "new-master shared header and compact responsive shell 390",
+      "status": "PASS"
+    },
+    {
+      "name": "new-salon shared header and compact responsive shell 390",
+      "status": "PASS"
+    },
+    {
+      "name": "guest-calendar shared header and compact responsive shell 390",
+      "status": "PASS"
+    },
+    {
+      "name": "access shared header and compact responsive shell 390",
+      "status": "PASS"
+    },
+    {
+      "name": "join shared header and compact responsive shell 390",
+      "status": "PASS"
+    },
+    {
+      "name": "master nearest window selects locally then continues with chosen time 320",
+      "status": "PASS"
+    },
+    {
+      "name": "salon nearest window selects locally then continues with chosen time 320",
+      "status": "PASS"
+    },
+    {
+      "name": "login shared header and compact responsive shell 320",
+      "status": "PASS"
+    },
+    {
+      "name": "new-master shared header and compact responsive shell 320",
+      "status": "PASS"
+    },
+    {
+      "name": "new-salon shared header and compact responsive shell 320",
+      "status": "PASS"
+    },
+    {
+      "name": "guest-calendar shared header and compact responsive shell 320",
+      "status": "PASS"
+    },
+    {
+      "name": "access shared header and compact responsive shell 320",
+      "status": "PASS"
+    },
+    {
+      "name": "join shared header and compact responsive shell 320",
+      "status": "PASS"
+    }
+  ],
+  "pageErrors": [],
+  "blockedReadPreviews": [
+    {
+      "method": "POST",
+      "path": "/api/invitations/preview"
+    },
+    {
+      "method": "POST",
+      "path": "/api/invitations/preview"
+    },
+    {
+      "method": "POST",
+      "path": "/api/invitations/preview"
+    }
+  ],
+  "blockedWrites": [],
+  "result": "PASS"
+}

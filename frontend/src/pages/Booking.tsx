@@ -17,7 +17,7 @@ function MasterBookingFlow({ slug }: { slug: string }) {
   const resource = useResource(() => api<Profile>('/profiles/' + encodeURIComponent(slug)), [slug]);
   const [serviceId, setServiceId] = useState(params.get('service') || '');
   const [start, setStart] = useState<number | null>(Number(params.get('start')) || null);
-  const [step, setStep] = useHistoryState('booking-step', () => params.get('service') ? 2 : 1, { backOnDecrease: true });
+  const [step, setStep] = useHistoryState('booking-step', () => params.get('service') ? (Number(params.get('start')) ? 3 : 2) : 1, { backOnDecrease: true });
   const {me}=useApp();
   const prefilled=useRef(false);
   useEffect(()=>{if(me?.user?.account_type==='client'&&me.client_profile&&!prefilled.current){prefilled.current=true;setName(value=>value||me.client_profile!.name);setContact(value=>value||me.client_profile!.contact)}},[me?.client_profile,me?.user?.account_type]);
@@ -33,7 +33,7 @@ function MasterBookingFlow({ slug }: { slug: string }) {
     else if (!service && step > 1) setStep(1);
     else if (step > 2 && !start) setStep(2);
   }, [profile, resource.loading, serviceId, service, step, start, setStep]);
-  useEffect(() => { if (start && profile && !resource.loading && !validStarts.has(start)) setStart(null); }, [profile, resource.loading, start, validStarts]);
+  useEffect(() => { if (start && profile && !resource.loading && !validStarts.has(start)) { setStart(null); setError('Это время уже недоступно. Выберите другое окно.'); } }, [profile, resource.loading, start, validStarts]);
   function chooseService(value: string) {
     const chosen = profile?.services.find(item => item.id === value);
     if (start && !profile?.availability?.some(slot => slot.start === start && chosen && slot.end - start >= chosen.duration * 60000)) setStart(null);

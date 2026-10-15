@@ -1,4 +1,4 @@
-import { useRef, useState, type FormEvent } from 'react';
+import { useRef, useState, type FormEvent, type ReactNode } from 'react';
 import {ArrowRight,Heart,Share2,Palette} from 'lucide-react';
 import {PublicPageCover,PublicPageIdentity} from './PublicPageIdentity';
 import { json, type Profile } from '../lib/api';
@@ -17,14 +17,14 @@ export function AppearanceThemePicker({value,onChange,disabled=false}:{value:The
   return <fieldset disabled={disabled}><legend>Цвет фона</legend><div className="appearance-theme-options">{themes.map(item=><label className={'appearance-theme-choice appearance-theme-'+item.value} key={item.value}><input type="radio" name="appearance-theme" value={item.value} checked={value===item.value} onChange={()=>onChange(item.value)}/><span className="appearance-theme-swatch" aria-hidden="true"/><span>{item.label}</span></label>)}</div></fieldset>;
 }
 
-export function CabinetIdentity({ name, image, cover, theme, kind, salonName, logo, onEdit, heading = 'h3', description, teaches, models, address, categories }: {
+export function CabinetIdentity({ name, image, cover, theme, kind, salonName, logo, onEdit, heading = 'h3', description, teaches, models, address, categories, avatarControls, coverControls }: {
   name: string; image?: string; cover?: string; theme?: string; kind: 'personal' | 'salon' | 'staff';
-  salonName?: string; logo?: string; onEdit?: () => void; heading?: 'h1' | 'h3'; description?: string; teaches?:number|boolean;models?:number|boolean;address?:string;categories?:string[];
+  salonName?: string; logo?: string; onEdit?: () => void; heading?: 'h1' | 'h3'; description?: string; teaches?:number|boolean;models?:number|boolean;address?:string;categories?:string[];avatarControls?:ReactNode;coverControls?:ReactNode;
 }) {
   const Heading = heading;
   if(kind!=='staff')return <section className="public-reference public-page-shell public-page-preview" aria-label="Предпросмотр оформления страницы">
-    <PublicPageCover cover={cover} theme={themeValue(theme||(kind==='salon'?'green':'cream'))}>{onEdit?<button type="button" className="button button-outline cabinet-edit-appearance" onClick={onEdit}><Palette size={16}/> Оформление</button>:null}</PublicPageCover>
-    <div className="public-content"><PublicPageIdentity name={name} image={image} salon={kind==='salon'} heading={heading} teaches={teaches} models={models} address={address} categories={categories} showRating={false} actions={<><span className="button button-wine">Записаться <ArrowRight size={17}/></span><span className="public-icon" aria-hidden="true"><Heart size={20}/></span><span className="public-icon" aria-hidden="true"><Share2 size={19}/></span></>}/></div>
+    <PublicPageCover cover={cover} theme={themeValue(theme||(kind==='salon'?'green':'cream'))}>{coverControls}{onEdit?<button type="button" className="button button-outline cabinet-edit-appearance" onClick={onEdit}><Palette size={16}/> Оформление</button>:null}</PublicPageCover>
+    <div className="public-content"><PublicPageIdentity name={name} image={image} salon={kind==='salon'} heading={heading} teaches={teaches} models={models} address={address} categories={categories} showRating={false} imageControls={avatarControls} actions={avatarControls||coverControls?undefined:<><span className="button button-wine">Записаться <ArrowRight size={17}/></span><span className="public-icon" aria-hidden="true"><Heart size={20}/></span><span className="public-icon" aria-hidden="true"><Share2 size={19}/></span></>}/></div>
   </section>;
   return <section className={'cabinet-identity cabinet-identity-' + kind + ' appearance-theme-' + themeValue(theme)} aria-label="Оформление страницы">
     <div className="cabinet-identity-cover">{cover ? <img src={cover} alt=""/> : <span className="cabinet-cover-pattern" aria-hidden="true"/>}{onEdit ? <button type="button" className="button button-outline cabinet-edit-appearance" onClick={onEdit}><Palette size={16}/> Оформление</button> : null}</div>
@@ -51,10 +51,11 @@ export function PersonalAppearance({ profile, onDone }: { profile: Profile; onDo
     finally { submitting.current = false; setBusy(false); }
   }
   return <section className="studio-panel appearance-panel"><div className="section-head compact"><div><span className="eyebrow">ВАШ ЛИЧНЫЙ СТИЛЬ</span><h2>Оформление <em>страницы.</em></h2></div></div><p className="appearance-intro">Фото мастера и фон меняются отдельно. Предпросмотр показывает их сочетание; выбранный цвет используется, когда обложка не загружена.</p>
-    <div className="appearance-editor-grid"><div className="appearance-controls">
-      <ImageUploadField kind="avatar" label="Фото мастера" image={avatar} endpoint="/avatar" disabled={busy} onSaved={image => { setAvatar(image); onDone(); }}/>
-      <ImageUploadField kind="cover" label="Обложка / фон страницы" image={cover} endpoint="/profile/cover" disabled={busy} onSaved={image => { setCover(image); onDone(); }}/>
-      <form onSubmit={save} className="appearance-theme-form" aria-busy={busy}><AppearanceThemePicker value={theme} onChange={value=>{setTheme(value);setNotice('')}} disabled={busy}/>{error ? <p className="form-error" role="alert">{error}</p> : null}{notice ? <p role="status">{notice}</p> : null}<button className="button button-wine" disabled={busy || theme === savedTheme}>{busy ? 'Сохраняем…' : 'Сохранить цвет фона'}</button></form>
-    </div><div className="appearance-live-preview"><span className="eyebrow">ПРЕДПРОСМОТР</span><CabinetIdentity name={profile.name} image={avatar} cover={cover} theme={theme} kind="personal" teaches={profile.teaches} models={profile.looking_models} address={[profile.city,profile.address].filter(Boolean).join(', ')} categories={profile.categories}/><p className="muted">Фотографии сохраняются сразу после загрузки. Цвет — кнопкой «Сохранить цвет фона».</p></div></div>
+    <div className="appearance-editor-direct"><CabinetIdentity name={profile.name} image={avatar} cover={cover} theme={theme} kind="personal" teaches={profile.teaches} models={profile.looking_models} address={[profile.city,profile.address].filter(Boolean).join(', ')} categories={profile.categories}
+      avatarControls={<ImageUploadField kind="avatar" label="Фото мастера" image={avatar} endpoint="/avatar" disabled={busy} onSaved={image=>{setAvatar(image);onDone()}}/>}
+      coverControls={<ImageUploadField kind="cover" label="Обложка страницы" image={cover} endpoint="/profile/cover" disabled={busy} onSaved={image=>{setCover(image);onDone()}}/>}/>
+      <p className="muted">Карандаш — выбрать фото и кадр. Фотографии сохраняются отдельно от цвета.</p>
+      <form onSubmit={save} className="appearance-theme-form" aria-busy={busy}><AppearanceThemePicker value={theme} onChange={value=>{setTheme(value);setNotice('')}} disabled={busy}/>{error?<p className="form-error" role="alert">{error}</p>:null}{notice?<p role="status">{notice}</p>:null}<button className="button button-wine" disabled={busy||theme===savedTheme}>{busy?'Сохраняем…':'Сохранить цвет фона'}</button></form>
+    </div>
   </section>;
 }

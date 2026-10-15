@@ -85,7 +85,7 @@ function requireClient(req,res,next){if(one('SELECT account_type FROM users WHER
 function profileCategories(id){return q('SELECT category FROM profile_categories WHERE user_id=? ORDER BY rowid',id).map(row=>row.category)}
 function profile(id){const p=one('SELECT * FROM profiles WHERE user_id=?',id);return p?{...p,categories:profileCategories(id)}:null}
 function requireProfile(req,res,next){if(!profile(req.user.id))return res.status(400).json({error:'Сначала создайте страницу мастера'});next()}
-const schedule=schedules({db,fail,relatedMasters:id=>access.relatedIds(id),relatedMasterGroups:ids=>relatedPerformersBatch(db,ids),cityForMaster:id=>profile(id)?.city||personalAddress(id)?.city||''});
+const schedule=schedules({db,fail,backupDir:path.join(DATA,'migration-backups'),relatedMasters:id=>access.relatedIds(id),relatedMasterGroups:ids=>relatedPerformersBatch(db,ids),cityForMaster:id=>profile(id)?.city||personalAddress(id)?.city||''});
 function futureAvailability(master){return schedule.availability(master)}
 function publicProfile(p,viewer=''){const reviews=publicReviews(db,'master',p.user_id),rating=reviewRating(db,'master',p.user_id);return {...p,categories:p.categories||profileCategories(p.user_id),following:Boolean(viewer&&one('SELECT 1 FROM follows WHERE user_id=? AND master_id=?',viewer,p.user_id)),rating:rating.rating||null,review_count:rating.review_count,reviews,services:servicesWithDirections(db,p.user_id),works:portfolio(p.user_id,viewer),schedule:schedule.config(p.user_id),availability:futureAvailability(p.user_id)}}
 const catalogVisibility=`(p.published=1 AND NOT EXISTS (

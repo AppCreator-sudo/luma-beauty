@@ -1,7 +1,9 @@
 import { useEffect, useId, useRef, useState, type ChangeEvent } from 'react';
-import { Building2, Upload } from 'lucide-react';
+import { Building2, Pencil, Trash2 } from 'lucide-react';
 import { api } from '../lib/api';
-import { imageUploadAccept, imageUploadHint, validateImageUpload, type ImageKind } from '../lib/imageUpload';
+import { imageUploadAccept, validateImageUpload, type ImageKind } from '../lib/imageUpload';
+import {ImageCropDialog} from './ImageCropDialog';
+import {useHistoryState} from '../lib/useHistoryState';
 import '../salon-visual.css';
 
 export function SalonMark({ name, logo, compact = false }: { name: string; logo?: string; compact?: boolean }) {
@@ -24,8 +26,9 @@ export function ImageUploadField({ endpoint, label, image, onSaved, kind, disabl
   const id = useId();
   const submitting = useRef(false);
   const input = useRef<HTMLInputElement>(null);
+  const [pendingFile,setPendingFile]=useState<File|null>(null);
+  const [cropOpen,setCropOpen]=useHistoryState('image-editor-'+endpoint,false,{flow:true});
   const [operation, setOperation] = useState<'checking' | 'uploading' | 'removing' | ''>('');
-  const helpId = id + '-help', errorId = id + '-error';
   const [current, setCurrent] = useState(image || ''), [busy, setBusy] = useState(false), [error, setError] = useState(''), [notice, setNotice] = useState('');
   useEffect(() => { setCurrent(image || ''); }, [image]);
   async function choose(event: ChangeEvent<HTMLInputElement>) {
@@ -35,19 +38,26 @@ export function ImageUploadField({ endpoint, label, image, onSaved, kind, disabl
     submitting.current = true; setBusy(true); setOperation('checking');
     try {
       await validateImageUpload(file, kind);
-      setOperation('uploading');
-      const body = new FormData(); body.set('image', file);
-      const result = await api<{ image: string }>(endpoint, { method: 'POST', body });
-      setCurrent(result.image); setNotice('Фото сохранено'); onSaved(result.image);
+      setPendingFile(file);setCropOpen(true);
     } catch (reason) { setError(reason instanceof Error ? reason.message : 'Не удалось сохранить фото'); }
     finally { submitting.current = false; setBusy(false); setOperation(''); }
   }
+  async function saveCrop(file:File){
+    if(submitting.current||disabled)return false;
+    submitting.current=true;setBusy(true);setOperation('uploading');setError('');
+    try{
+      const body=new FormData();body.set('image',file);
+      const result=await api<{image:string}>(endpoint,{method:'POST',body});
+      setCurrent(result.image);setNotice('Фото сохранено');setCropOpen(false);setPendingFile(null);onSaved(result.image);return true;
+    }catch(reason){setError(reason instanceof Error?reason.message:'Не удалось сохранить фото');return false}
+    finally{submitting.current=false;setBusy(false);setOperation('')}
+  }
   async function remove() {
-    if (submitting.current || disabled) return;
+    if (submitting.current || disabled || !confirm(endpoint.includes('/performers/')?'Удалить фото мастера? Онлайн-запись сотрудника будет выключена. Существующие визиты сохранятся.':'Удалить '+label.toLowerCase()+'?')) return;
     submitting.current = true; setError(''); setNotice(''); setBusy(true); setOperation('removing');
     try { await api(endpoint, { method: 'DELETE' }); setCurrent(''); setNotice('Фото удалено'); onSaved(''); }
     catch (reason) { setError(reason instanceof Error ? reason.message : 'Не удалось удалить фото'); }
     finally { submitting.current = false; setBusy(false); setOperation(''); }
   }
-  return <div className="salon-image-field" aria-busy={busy}><label htmlFor={id}>{label}</label><div className="salon-image-controls"><button type="button" className="button button-outline" onClick={() => input.current?.click()} disabled={disabled || busy}><Upload size={16}/>{operation === 'checking' ? 'Проверяем фото…' : busy ? 'Сохраняем…' : current ? 'Заменить фото' : 'Загрузить фото'}</button><input ref={input} id={id} aria-label={label} aria-describedby={helpId + (error ? ' ' + errorId : '')} aria-invalid={Boolean(error)} type="file" accept={imageUploadAccept} onChange={choose} disabled={disabled || busy}/>{current ? <button type="button" className="text-link" onClick={() => void remove()} disabled={disabled || busy}>Удалить фото</button> : null}</div><small id={helpId}>{imageUploadHint(kind)}</small>{error ? <p id={errorId} className="form-error" role="alert">{error}</p> : null}{notice ? <p role="status">{notice}</p> : null}</div>;
+  return <div className="media-edit-tools" aria-busy={busy}><button type="button" title={current?'Изменить '+label.toLowerCase():'Добавить '+label.toLowerCase()} aria-label={(current?'Изменить: ':'Добавить: ')+label} onClick={()=>input.current?.click()} disabled={disabled||busy}><Pencil size={18}/></button><input ref={input} id={id} aria-label={label} type="file" accept={imageUploadAccept} onChange={choose} disabled={disabled||busy}/>{current?<button type="button" title="Удалить фото" aria-label={'Удалить: '+label} disabled={disabled||busy} onClick={()=>void remove()}><Trash2 size={18}/></button>:null}{operation?<p className="media-edit-status" role="status">{operation==='checking'?'Проверяем фото…':operation==='removing'?'Удаляем…':'Сохраняем…'}</p>:null}{error&&!cropOpen?<p className="media-edit-status form-error" role="alert">{error}</p>:null}{notice?<span className="sr-only" role="status">{notice}</span>:null}{cropOpen&&pendingFile?<ImageCropDialog file={pendingFile} kind={kind} busy={busy} error={error} onCancel={()=>{setCropOpen(false);setPendingFile(null);setError('')}} onSave={saveCrop}/>:null}</div>;
 }

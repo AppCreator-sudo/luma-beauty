@@ -1,0 +1,120 @@
+/* Shared spacing for operational UI; editorial public compositions keep their grids. */
+:root{--form-gap:14px;--section-gap:24px;--control-height:44px}
+.master-cabinet .cabinet-body :is(.settings-form,.work-upload-fields,.staff-setup-fields){gap:var(--form-gap);min-width:0}
+.master-cabinet .cabinet-body .settings-form{max-width:940px}
+.master-cabinet .cabinet-body :is(.settings-form,.inline-service-form) label{font-size:14px;line-height:1.4;margin:0;gap:6px;min-width:0}
+.master-cabinet .cabinet-body :is(.settings-form,.inline-service-form) :is(input:not([type=checkbox]):not([type=radio]):not([type=file]):not([type=range]),select,textarea){box-sizing:border-box;min-width:0;max-width:100%;width:100%;min-height:44px;padding:10px 12px;border:1px solid #d8cbb8;border-radius:3px;background:#fffcf7;color:#213a30;font-size:14px;line-height:1.4}
+.master-cabinet .cabinet-body .settings-form>label{display:grid;margin-bottom:0}
+.master-cabinet .cabinet-body :is(.settings-form,.work-upload) p{margin-block:0;font-size:14px;line-height:1.5}
+.master-cabinet .cabinet-body :is(.settings-form,.work-upload) small{font-size:13px;line-height:1.5}
+.master-cabinet .cabinet-body :is(.settings-form,.work-upload) fieldset{min-width:0}
+.master-cabinet .cabinet-body :is(.category-picker,.teaching-picker){padding:12px 14px;margin:0;border-color:var(--line)}
+.master-cabinet .cabinet-body .category-options{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.master-cabinet .cabinet-body :is(.category-options label,.teaching-picker label){min-height:44px;padding:8px 10px;font-size:14px;display:flex;align-items:center}
+.master-cabinet .cabinet-body .teaching-picker{display:flex;flex-wrap:wrap;gap:8px 12px}
+.master-cabinet .cabinet-body .teaching-picker legend{margin-bottom:6px}
+.master-cabinet .cabinet-body .teaching-picker p{flex-basis:100%;font-size:13px}
+.master-cabinet .cabinet-body .teaching-picker label{margin:0;max-width:none}
+.master-cabinet .cabinet-body :is(.studio-panel,.salon-reference-panel,.client-panel){padding:20px;min-width:0}
+.master-cabinet .cabinet-body .section-head{margin-bottom:16px;gap:12px}
+.master-cabinet .cabinet-body .section-head h2{font-size:34px;margin-block:0;line-height:1.1}
+.master-cabinet .cabinet-body :is(.studio-settings,.studio-settings-side){gap:20px;align-items:start}
+.master-cabinet .cabinet-body .studio-settings{grid-template-columns:minmax(0,1.25fr) minmax(0,1fr)}
+.master-cabinet .cabinet-body :is(.settings-aside,.publication-control){margin-block:0 16px}
+.master-cabinet .cabinet-body .inline-service-form{display:grid;grid-template-columns:minmax(0,2fr) minmax(90px,1fr) minmax(110px,1fr);gap:12px;align-items:end;margin:0;padding:14px;border:1px solid var(--line);background:#f3efe6}
+.master-cabinet .cabinet-body .inline-service-form>label:first-child{grid-column:1/-1}
+.master-cabinet .cabinet-body .inline-service-form>label:has(select){grid-column:1/-1}
+.master-cabinet .cabinet-body .inline-service-form>.button{justify-self:start}
+.master-cabinet .cabinet-body .service-create{margin-top:16px;border-top:1px solid var(--line)}
+.master-cabinet .cabinet-body .service-create>summary{min-height:44px;padding-block:10px;cursor:pointer;font-size:15px;color:var(--wine)}
+.master-cabinet .cabinet-body .service-row{padding-block:12px;gap:12px;min-height:64px}
+.master-cabinet .cabinet-body :is(.button,.text-link){min-height:44px}
+.master-cabinet .cabinet-body .salon-publication-controls{display:flex;align-items:end;justify-content:space-between;gap:12px;margin:0 0 12px;flex-wrap:wrap}
+.master-cabinet .cabinet-body .salon-publication-controls label{display:grid;gap:6px;min-width:130px;max-width:360px;flex:1;font-size:14px}
+.master-cabinet .cabinet-body .salon-publication-controls select{min-height:44px;width:100%;font-size:14px;padding:8px;border:1px solid var(--line);background:#fffcf7}
+.master-cabinet .cabinet-body .publication-sections{margin-bottom:12px;gap:8px;flex-wrap:wrap}
+.publication-sections:empty{display:none}
+.master-cabinet .cabinet-body .publication-author{font-size:14px;margin:0;min-width:0;align-self:center}
+.master-cabinet .cabinet-body .publication-destination{padding:10px 12px;background:#eee9de;border-left:3px solid #b69b70;margin-bottom:12px;font-size:14px}
+.master-cabinet .cabinet-body .publication-destination p{font-size:13px;margin:4px 0 0;line-height:1.5}
+.master-cabinet .cabinet-body .work-upload.cabinet-flow{padding:0;gap:14px;background:transparent;border:0}
+.master-cabinet .cabinet-body .work-upload-fields{display:grid;gap:12px;margin:0;padding:0}
+.master-cabinet .cabinet-body .work-upload-fields .upload-title{margin:0;gap:8px}
+.master-cabinet .cabinet-body .work-upload-fields .cabinet-step-panel{gap:12px;margin:0;padding:0}
+.master-cabinet .cabinet-body .work-upload-fields label{font-size:14px;gap:6px;margin:0}
+.master-cabinet .cabinet-body .work-upload-fields label :is(input,select,textarea){min-height:44px;padding:10px;border:1px solid var(--line);font-size:14px}
+.master-cabinet .cabinet-body .work-upload-fields .text-link{margin:0;font-size:14px;justify-self:start}
+.master-cabinet .cabinet-body .cabinet-steps ol{gap:8px}
+.master-cabinet .cabinet-body .cabinet-steps :is(button,.cabinet-step-label){font-size:13px;min-height:48px;padding-block:4px;gap:6px}
+.master-cabinet .cabinet-body .cabinet-step-count{margin-top:4px;font-size:13px}
+.master-cabinet .cabinet-body .work-upload-preview{padding:14px;max-width:320px;align-self:start}
+.master-cabinet .cabinet-body .work-preview-main{max-height:240px;object-fit:contain}
+.master-cabinet .cabinet-body .salon-owner-publication-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.master-cabinet .cabinet-body .salon-owner-publication-list article{display:flex;flex-direction:row;align-items:start;gap:12px;padding:12px;min-width:0}
+.master-cabinet .cabinet-body .salon-owner-publication-list article>img{width:80px;height:104px;object-fit:cover;flex:none}
+.master-cabinet .cabinet-body .salon-owner-publication-list article>div{min-width:0;flex:1}
+.master-cabinet .cabinet-body .salon-owner-publication-list article>div>div{display:flex;align-items:center;gap:4px 12px;flex-wrap:wrap;margin-top:4px}
+.master-cabinet .cabinet-body .salon-owner-publication-list :is(p,small,.text-link){font-size:13px;line-height:1.5;margin:0}
+.master-cabinet .cabinet-body .salon-owner-publication-list .text-link{gap:5px}
+.master-cabinet .cabinet-body .staff-setup-identity{grid-template-columns:88px minmax(0,1fr);gap:14px}
+.master-cabinet .cabinet-body .staff-setup-portrait{width:88px;height:88px}
+.staff-setup-photo{display:grid;justify-items:center;gap:4px}
+.master-cabinet .cabinet-body .staff-setup-fields .staff-setup-check{display:flex;align-items:center;gap:8px;min-height:44px}
+.master-cabinet .cabinet-body .appearance-editor-direct{display:grid;gap:14px;min-width:0;max-width:980px}
+.master-cabinet .cabinet-body .appearance-editor-direct>.public-page-preview{width:100%;max-width:none;margin:0}
+.master-cabinet .cabinet-body .appearance-theme-form{max-width:620px;display:grid;gap:12px;margin:0}
+.master-cabinet .cabinet-body .appearance-theme-options{display:flex;gap:8px;flex-wrap:wrap}
+.master-cabinet .cabinet-body .appearance-theme-options .appearance-theme-choice{display:flex;align-items:center;gap:6px;min-height:44px;margin:0;padding:8px 10px}
+.master-cabinet .cabinet-body .salon-settings-heading{font-size:28px;margin:20px 0 12px}
+.public-reference.public-page-shell .public-window-times>button{flex:1;min-width:0;min-height:44px;border:1px solid #d2c2a5;border-radius:3px;background:transparent;color:inherit;font:14px Manrope,Arial,sans-serif;padding:8px 4px}
+.public-reference.public-page-shell .public-window-times>button[aria-pressed=true]{background:#193b30;color:#faf7f1;border-color:#193b30}
+.public-reference.public-page-shell .public-window-times>button:focus-visible{outline:2px solid #a78049;outline-offset:2px}
+.booking-reference .progress{margin-bottom:20px;padding-bottom:12px;gap:24px}.booking-reference .step-heading{margin-bottom:20px}.booking-reference .service-row{padding-block:16px;min-height:76px}.booking-reference .step-actions{margin-top:20px}
+.client-cabinet .cabinet-body .client-form-fields{gap:14px}.client-cabinet .cabinet-body .client-form-fields label{font-size:14px;gap:6px}.client-cabinet .cabinet-body .client-form-fields :is(input,textarea,select){min-height:44px}.client-cabinet .cabinet-body .client-panel{margin-block:0 16px}.client-cabinet .cabinet-body .client-heading{margin-bottom:20px}
+.page-content.access-page,.page-content.account-page{padding-block:32px 40px}.site-footer:not(.public-reference-footer){padding-bottom:max(24px,env(safe-area-inset-bottom))}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
+@media(max-width:1000px){.master-cabinet .cabinet-body .studio-settings{grid-template-columns:minmax(0,1fr)}.master-cabinet .cabinet-body .salon-owner-publication-list{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:560px){.master-cabinet .cabinet-body :is(.studio-panel,.salon-reference-panel,.client-panel){padding:16px}.master-cabinet .cabinet-body .section-head h2{font-size:30px}.master-cabinet .cabinet-body .inline-service-form{grid-template-columns:repeat(2,minmax(0,1fr));padding:12px}.master-cabinet .cabinet-body .inline-service-form>.button{grid-column:1/-1;justify-self:stretch}.master-cabinet .cabinet-body :is(.settings-form,.inline-service-form,.work-upload-fields) :is(input:not([type=checkbox]):not([type=radio]):not([type=file]),select,textarea),.master-cabinet .cabinet-body .salon-publication-controls select{font-size:16px}.master-cabinet .cabinet-body .cabinet-steps :is(button,.cabinet-step-label){flex-direction:row;align-items:center;min-height:48px}.master-cabinet .cabinet-body .work-upload-preview{display:none}.master-cabinet .cabinet-body .category-options{gap:6px}.master-cabinet .cabinet-body .category-options label{font-size:13px;padding-inline:7px}.master-cabinet .cabinet-body .salon-publication-controls>.button{font-size:13px;padding-inline:12px}.master-cabinet .cabinet-body .salon-owner-publication-list article>img{width:76px;height:98px}.master-cabinet .cabinet-body .appearance-theme-options .appearance-theme-choice{font-size:13px}.booking-reference .progress{gap:6px}.booking-reference .progress>button{font-size:12px;gap:5px}}
+@media(prefers-reduced-motion:reduce){.image-crop-dialog *,.media-edit-tools *{scroll-behavior:auto;transition:none}}
+
+/* Publication controls precede both the editor and the gallery on every width. */
+.master-cabinet .cabinet-body .salon-publications.salon-publication-reference{display:flex;flex-direction:column;gap:12px}
+.master-cabinet .cabinet-body .salon-publications.salon-publication-reference>.publication-sections{order:0;margin:0}
+.master-cabinet .cabinet-body .salon-publications.salon-publication-reference>.salon-publication-controls{order:1;margin:0}
+.master-cabinet .cabinet-body .salon-publications.salon-publication-reference>.salon-publication-editor{order:2;border:0;padding:0;width:100%}
+.master-cabinet .cabinet-body .salon-publications.salon-publication-reference>.salon-publication-gallery{order:3;width:100%}
+.master-cabinet .cabinet-body .salon-owner-publication-list article{display:grid;grid-template-columns:80px minmax(0,1fr);gap:6px 12px}
+.master-cabinet .cabinet-body .salon-owner-publication-list article>img{grid-column:1;grid-row:1/3}
+.master-cabinet .cabinet-body .salon-owner-publication-list article>div{display:contents}
+.master-cabinet .cabinet-body .salon-owner-publication-list article>div>p{grid-column:2;grid-row:1;align-self:end;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.master-cabinet .cabinet-body .salon-owner-publication-list article>div>small{grid-column:2;grid-row:2;align-self:start}
+.master-cabinet .cabinet-body .salon-owner-publication-list article>div>div{grid-column:1/-1;grid-row:3;flex-wrap:nowrap;justify-content:space-between;margin:0}
+.master-cabinet .cabinet-body .salon-owner-publication-list article .text-link{font-size:13px;min-width:44px}
+.master-cabinet .cabinet-body .studio-work-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(180px,100%),1fr));gap:12px;min-width:0;max-width:100%}
+.master-cabinet .cabinet-body .studio-work-grid article{min-width:0;border:1px solid var(--line);background:#fffcf7}
+.master-cabinet .cabinet-body .studio-work-grid article>a{display:block;min-width:0}
+.master-cabinet .cabinet-body .studio-work-grid article img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover}
+.master-cabinet .cabinet-body .studio-work-grid article>div{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:8px}
+.master-cabinet .cabinet-body .studio-work-grid article p{font-size:13px;line-height:1.5;min-width:0;margin:0;overflow-wrap:anywhere}
+.master-cabinet .cabinet-body .studio-work-grid article button{min-width:44px;min-height:44px;display:grid;place-items:center;flex:none;background:none;border:0;color:var(--wine)}
+.master-cabinet .cabinet-body .work-photo-picker input[type=file]{width:100%;min-width:0;max-width:100%;box-sizing:border-box}
+@media(max-width:760px){.master-cabinet .cabinet-body .studio-work-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* First-run forms use the same spacing and shared public header as existing accounts. */
+:is(.studio-onboarding,.salon-onboarding,.access-page){padding-block:32px 40px}
+:is(.studio-onboarding,.salon-onboarding) .editorial-heading{margin-bottom:20px;max-width:840px}
+:is(.studio-onboarding,.salon-onboarding) :is(.editorial-heading h1,.studio-welcome h1){font-size:48px;line-height:1.08;margin:8px 0 12px;letter-spacing:0}
+:is(.studio-onboarding,.salon-onboarding) :is(.studio-form-card,.studio-panel){max-width:900px;padding:20px}
+:is(.studio-onboarding,.salon-onboarding) .settings-form{display:grid;gap:14px;min-width:0}
+:is(.studio-onboarding,.salon-onboarding) .settings-form label{margin:0;font-size:14px;display:grid;gap:6px;min-width:0}
+:is(.studio-onboarding,.salon-onboarding) .settings-form :is(input:not([type=checkbox]):not([type=radio]),select,textarea){min-width:0;max-width:100%;width:100%;min-height:44px;padding:10px 12px;font-size:14px;background:#fffcf7;border:1px solid var(--line)}
+:is(.studio-onboarding,.salon-onboarding) .settings-form :is(.category-picker,.teaching-picker){padding:12px;margin:0}
+:is(.studio-onboarding,.salon-onboarding) .settings-form .category-options{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+:is(.studio-onboarding,.salon-onboarding) .settings-form :is(.category-options label,.teaching-picker label){display:flex;align-items:center;gap:8px;min-height:44px;padding:8px}
+:is(.studio-onboarding,.salon-onboarding) .settings-form :is(p,small){margin-block:0;font-size:13px;line-height:1.5}
+.salon-onboarding .studio-welcome{margin-bottom:20px;gap:16px}
+.salon-onboarding .studio-header-actions{gap:8px}
+.salon-onboarding .studio-header-actions .button{font-size:13px;padding-inline:12px;min-height:44px}
+.master-cabinet .cabinet-body .publication-control{padding:14px;gap:10px;margin:0 0 16px}
+.master-cabinet .cabinet-body .publication-control h3{font-size:25px;line-height:1.1;margin:0 0 6px}
+@media(max-width:560px){:is(.studio-onboarding,.salon-onboarding,.access-page){padding-block:24px 32px}:is(.studio-onboarding,.salon-onboarding) :is(.editorial-heading h1,.studio-welcome h1){font-size:38px}:is(.studio-onboarding,.salon-onboarding) :is(.studio-form-card,.studio-panel){padding:16px}:is(.studio-onboarding,.salon-onboarding) .settings-form :is(input:not([type=checkbox]):not([type=radio]),select,textarea){font-size:16px}.master-cabinet .cabinet-body .publication-control .button{width:auto;align-self:start}}

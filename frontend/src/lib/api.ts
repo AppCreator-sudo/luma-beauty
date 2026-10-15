@@ -7,8 +7,8 @@ export type Work = {
   master_name?: string; slug?: string; city?: string; category?: string;
   avatar?: string; is_demo?: number; performer_id?: string; salon_id?: string; salon_slug?: string; salon_name?: string; salon_service_id?: string;
 };
-export type Slot = { id: string; start: number; end: number };
-export type Schedule = { opening: number; closing: number; utc_offset: number; weekdays: number[] };
+export type Slot = { id: string; start: number; end: number; master_ids?: string[] };
+export type Schedule = import('../../../lib/schedule-patterns.mjs').ScheduleDefinition;
 export type Review = { id: string; rating: number; text: string; created: number; service: string };
 export type Promotion = { label: 'Реклама'; until: number; advertiser: string; erid: string };
 export type Profile = {

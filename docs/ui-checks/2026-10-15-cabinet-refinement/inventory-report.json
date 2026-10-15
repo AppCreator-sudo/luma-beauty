@@ -1,0 +1,79 @@
+{
+  "at": "2026-10-15T10:03:41.790Z",
+  "scope": "New accounts and guest route states; local synthetic fixture only",
+  "checks": [
+    {
+      "name": "new-master-1440",
+      "pass": true
+    },
+    {
+      "name": "new-salon-1440",
+      "pass": true
+    },
+    {
+      "name": "guest-studio-1440",
+      "pass": true
+    },
+    {
+      "name": "guest-salon-1440",
+      "pass": true
+    },
+    {
+      "name": "guest-calendar-1440",
+      "pass": true
+    },
+    {
+      "name": "guest-account-1440",
+      "pass": true
+    },
+    {
+      "name": "new-master-390",
+      "pass": true
+    },
+    {
+      "name": "new-salon-390",
+      "pass": true
+    },
+    {
+      "name": "guest-studio-390",
+      "pass": true
+    },
+    {
+      "name": "guest-salon-390",
+      "pass": true
+    },
+    {
+      "name": "guest-calendar-390",
+      "pass": true
+    },
+    {
+      "name": "guest-account-390",
+      "pass": true
+    },
+    {
+      "name": "new-master-320",
+      "pass": true
+    },
+    {
+      "name": "new-salon-320",
+      "pass": true
+    },
+    {
+      "name": "guest-studio-320",
+      "pass": true
+    },
+    {
+      "name": "guest-salon-320",
+      "pass": true
+    },
+    {
+      "name": "guest-calendar-320",
+      "pass": true
+    },
+    {
+      "name": "guest-account-320",
+      "pass": true
+    }
+  ],
+  "errors": []
+}

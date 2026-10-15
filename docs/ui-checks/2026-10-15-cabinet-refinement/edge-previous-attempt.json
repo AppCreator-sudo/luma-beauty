@@ -1,0 +1,208 @@
+{
+  "at": "2026-10-15T09:58:02.642Z",
+  "scope": "Additional local synthetic API/browser coverage; touch is Chrome emulation",
+  "checks": [
+    {
+      "name": "current-backend-custom-cycle-map-and-safe-code-rollback-fallback",
+      "pass": true
+    },
+    {
+      "name": "edge-home-1440",
+      "pass": true
+    },
+    {
+      "name": "edge-work-1440",
+      "pass": true
+    },
+    {
+      "name": "edge-calendar-1440",
+      "pass": true
+    },
+    {
+      "name": "edge-visit-1440",
+      "pass": true
+    },
+    {
+      "name": "edge-booking-master-1440",
+      "pass": true
+    },
+    {
+      "name": "edge-booking-salon-1440",
+      "pass": true
+    },
+    {
+      "name": "edge-missing-profile-1440",
+      "pass": true
+    },
+    {
+      "name": "edge-missing-work-1440",
+      "pass": true
+    },
+    {
+      "name": "edge-invalid-visit-1440",
+      "pass": true
+    },
+    {
+      "name": "edge-salon-calendar-1440",
+      "pass": true
+    },
+    {
+      "name": "edge-salon-media-preview-1440",
+      "pass": true
+    },
+    {
+      "name": "salon-3-1440",
+      "pass": true
+    },
+    {
+      "name": "master-works-1440",
+      "pass": true
+    },
+    {
+      "name": "master-appearance-1440",
+      "pass": true
+    },
+    {
+      "name": "edge-home-390",
+      "pass": true
+    },
+    {
+      "name": "edge-work-390",
+      "pass": true
+    },
+    {
+      "name": "edge-calendar-390",
+      "pass": true
+    },
+    {
+      "name": "edge-visit-390",
+      "pass": true
+    },
+    {
+      "name": "edge-booking-master-390",
+      "pass": true
+    },
+    {
+      "name": "edge-booking-salon-390",
+      "pass": true
+    },
+    {
+      "name": "edge-missing-profile-390",
+      "pass": true
+    },
+    {
+      "name": "edge-missing-work-390",
+      "pass": true
+    },
+    {
+      "name": "edge-invalid-visit-390",
+      "pass": true
+    },
+    {
+      "name": "edge-salon-calendar-390",
+      "pass": true
+    },
+    {
+      "name": "edge-salon-media-preview-390",
+      "pass": true
+    },
+    {
+      "name": "salon-3-390",
+      "pass": true
+    },
+    {
+      "name": "master-works-390",
+      "pass": true
+    },
+    {
+      "name": "master-appearance-390",
+      "pass": true
+    },
+    {
+      "name": "edge-home-320",
+      "pass": true
+    },
+    {
+      "name": "edge-work-320",
+      "pass": true
+    },
+    {
+      "name": "edge-calendar-320",
+      "pass": true
+    },
+    {
+      "name": "edge-visit-320",
+      "pass": true
+    },
+    {
+      "name": "edge-booking-master-320",
+      "pass": true
+    },
+    {
+      "name": "edge-booking-salon-320",
+      "pass": true
+    },
+    {
+      "name": "edge-missing-profile-320",
+      "pass": true
+    },
+    {
+      "name": "edge-missing-work-320",
+      "pass": true
+    },
+    {
+      "name": "edge-invalid-visit-320",
+      "pass": true
+    },
+    {
+      "name": "edge-salon-calendar-320",
+      "pass": true
+    },
+    {
+      "name": "edge-salon-media-preview-320",
+      "pass": true
+    },
+    {
+      "name": "salon-3-320",
+      "pass": true
+    },
+    {
+      "name": "master-works-320",
+      "pass": true
+    },
+    {
+      "name": "master-appearance-320",
+      "pass": true
+    },
+    {
+      "name": "edge-avatar-touch-crop-390",
+      "pass": true
+    },
+    {
+      "name": "touch-drag-and-browser-back-cancel-preserve-avatar-and-scroll",
+      "pass": true
+    },
+    {
+      "name": "custom-and-two-by-two-editor-save-reload",
+      "pass": true
+    },
+    {
+      "name": "edge-staff-copy-cycle-390",
+      "pass": true
+    },
+    {
+      "name": "staff-cropped-photo-cycle-copy-and-date-overrides-atomic-save",
+      "pass": true
+    },
+    {
+      "name": "edge-client-settings-0-1440",
+      "pass": true
+    },
+    {
+      "name": "failure",
+      "pass": false,
+      "message": "locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.client-settings-card').filter({ has: getByRole('heading', { name: 'Вход и безопасность', exact: true }) }).getByRole('button')\u001b[22m\n\n    at C:\\Users\\Admin\\Desktop\\pwa\\scripts\\verify-cabinet-edge-cases.mjs:43:361"
+    }
+  ],
+  "errors": []
+}

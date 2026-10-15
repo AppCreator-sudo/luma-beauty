@@ -1,0 +1,18 @@
+{
+  "at": "2026-10-15T10:15:42.986Z",
+  "scope": "Final open-publication form and gallery; independent viewport histories",
+  "checks": [
+    {
+      "name": "final-publication-open-layout-1440",
+      "pass": true
+    },
+    {
+      "name": "final-publication-open-layout-390",
+      "pass": true
+    },
+    {
+      "name": "final-publication-open-layout-320",
+      "pass": true
+    }
+  ]
+}

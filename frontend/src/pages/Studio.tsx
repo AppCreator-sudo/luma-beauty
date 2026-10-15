@@ -1,3 +1,5 @@
+import {ScheduleFields} from '../components/ScheduleFields';
+import {scheduleHasWork} from '../../../lib/schedule-patterns.mjs';
 import {ServiceDirectionEditor,ServiceDirectionSelect} from '../components/ServiceDirection';
 import { useHistoryState } from '../lib/useHistoryState';
 import { ExperienceFields } from '../components/ExperienceFields';
@@ -37,7 +39,7 @@ export function StudioPage() {
   if (me.user.account_type !== 'master') return <div className="container page-content"><div className="editorial-heading"><h1>Вы вошли как <em>клиент.</em></h1><p>Ваши записи и сохранённые работы находятся в личном кабинете.</p><Link className="button button-dark" to="/me">Открыть мой кабинет</Link></div></div>;
   if (!resource.data || resource.data[2] !== masterId) return resource.error ? <ErrorState message={resource.error} retry={resource.reload}/> : <Loading/>;
   const [studio, appointments] = resource.data;
-  if (!studio.profile) return <div className="container studio-page"><div className="editorial-heading"><span className="eyebrow">ПЕРВОЕ ЗНАКОМСТВО</span><h1>Расскажите <em>о себе.</em></h1><p>Сначала создайте скрытую страницу. Затем добавьте услугу и график — и откройте запись клиентам.</p><Link className="text-link" to="/access">Вход и безопасность</Link></div><div className="studio-form-card"><ProfileForm addressDraft={studio.address_draft} onDone={notice => { setSaveNotice(notice || ""); resource.reload(); refreshMe(); }}/></div></div>;
+  if (!studio.profile) return <div className="container studio-page studio-onboarding"><div className="editorial-heading"><span className="eyebrow">ПЕРВОЕ ЗНАКОМСТВО</span><h1>Расскажите <em>о себе.</em></h1><p>Сначала создайте скрытую страницу. Затем добавьте услугу и график — и откройте запись клиентам.</p><Link className="text-link" to="/access">Вход и безопасность</Link></div><div className="studio-form-card"><ProfileForm addressDraft={studio.address_draft} onDone={notice => { setSaveNotice(notice || ""); resource.reload(); refreshMe(); }}/></div></div>;
   const profile = studio.profile;
   async function share() { const url = location.origin + '/v2/m/' + profile.slug; if (navigator.share) await navigator.share({ title: profile.name, url }).catch(() => {}); else { await navigator.clipboard.writeText(url); alert('Ссылка скопирована'); } }
   return <MasterCabinet profile={profile} tab={tab} openTab={setTab} share={share}>
@@ -45,20 +47,18 @@ export function StudioPage() {
     {resource.error ? <div className="studio-refresh-error" role="alert"><span>Не удалось обновить кабинет: {resource.error}</span><button className="text-link" type="button" disabled={resource.loading} onClick={() => void resource.reload()}>Повторить обновление</button></div> : null}
     {tab === 'overview' ? <MasterOverview studio={{...studio, profile}} appointments={appointments} openTab={setTab} reload={resource.reload}/> : null}
     {tab === 'works' ? <section className="studio-panel studio-works-panel"><div className="section-head compact"><div><span className="eyebrow">ВАШИ ИСТОРИИ</span><h2>Мои <em>работы.</em></h2></div></div><WorkUpload services={studio.services} onDone={resource.reload}/><div className="studio-list-heading"><h3>Ваше портфолио</h3><span>Работ: {studio.works.length}</span></div>{studio.works.length ? <div className="studio-work-grid">{studio.works.map(work => <article key={work.id}><Link to={'/w/' + work.id}><img src={work.image} alt={work.caption || 'Ваша работа'}/></Link><div><p>{work.caption || 'Без подписи'}</p><button type="button" aria-label="Удалить работу" onClick={async () => { if (confirm('Удалить работу?')) { await api('/works/' + work.id, { method: 'DELETE' }); resource.reload(); } }}><Trash2 size={17}/></button></div></article>)}</div> : <p className="studio-list-hint">Сохранённые работы появятся здесь. Добавить фото можно и на скрытой странице.</p>}</section> : null}
-    {tab === 'services' ? <section className="studio-panel studio-services-panel"><div className="section-head compact"><div><span className="eyebrow">ВАШИ УСЛУГИ</span><h2>Услуги <em>и цены.</em></h2></div></div><ServiceForm categories={studio.profile?.categories||[]} onDone={resource.reload}/><div className="studio-list-heading"><h3>Список услуг</h3><span>Услуг: {studio.services.length}</span></div>{studio.services.length ? <div className="services-list">{studio.services.map(service => <div className="service-row" key={service.id}><div><h3>{service.name}</h3><span>{service.duration} мин</span><ServiceDirectionEditor key={service.id+':'+service.category+':'+studio.profile?.categories?.join()} service={service} categories={studio.profile?.categories||[]} endpoint="/services" onDone={resource.reload}/></div><div><strong>{money(service.price)}</strong><button type="button" aria-label={'Удалить услугу ' + service.name} onClick={async () => { if (confirm('Удалить услугу?')) { await api('/services/' + service.id, { method: 'DELETE' }); resource.reload(); } }}><Trash2 size={17}/></button></div></div>)}</div> : <EmptyState title="Услуг пока нет" text="Добавьте первую услугу, чтобы клиенты могли выбрать время записи."/>}</section> : null}
+    {tab === 'services' ? <section className="studio-panel studio-services-panel"><div className="section-head compact"><div><span className="eyebrow">ВАШИ УСЛУГИ</span><h2>Услуги <em>и цены.</em></h2></div></div><details className="service-create"><summary>Добавить услугу</summary><ServiceForm categories={studio.profile?.categories||[]} onDone={resource.reload}/></details><div className="studio-list-heading"><h3>Список услуг</h3><span>Услуг: {studio.services.length}</span></div>{studio.services.length ? <div className="services-list">{studio.services.map(service => <div className="service-row" key={service.id}><div><h3>{service.name}</h3><span>{service.duration} мин</span><ServiceDirectionEditor key={service.id+':'+service.category+':'+studio.profile?.categories?.join()} service={service} categories={studio.profile?.categories||[]} endpoint="/services" onDone={resource.reload}/></div><div><strong>{money(service.price)}</strong><button type="button" aria-label={'Удалить услугу ' + service.name} onClick={async () => { if (confirm('Удалить услугу?')) { await api('/services/' + service.id, { method: 'DELETE' }); resource.reload(); } }}><Trash2 size={17}/></button></div></div>)}</div> : <EmptyState title="Услуг пока нет" text="Добавьте первую услугу, чтобы клиенты могли выбрать время записи."/>}</section> : null}
     {tab === 'appearance' ? <PersonalAppearance key={profile.user_id} profile={profile} onDone={() => { resource.reload(); void refreshMe(); }}/>: null}
     {tab === 'settings' ? <div className="studio-settings"><section className="studio-panel"><div className="section-head compact"><div><span className="eyebrow">ПРОФЕССИОНАЛЬНАЯ ВИЗИТКА</span><h2>О вашей <em>странице.</em></h2></div></div><PublicationControl studio={studio} onDone={() => { resource.reload(); refreshMe(); }} openTab={setTab}/><ProfileForm initial={profile} onDone={notice => { setSaveNotice(notice || ""); resource.reload(); refreshMe(); }}/></section><div className="studio-settings-side"><section className="studio-panel" id="studio-schedule"><div className="section-head compact"><div><span className="eyebrow">ДЛЯ ЗАПИСИ</span><h2>Рабочий <em>график.</em></h2></div></div>{studio.schedule ? <ScheduleForm schedule={studio.schedule} configured={studio.schedule_configured} onDone={resource.reload}/> : <p>Обновите страницу, чтобы настроить расписание.</p>}</section><section className="studio-panel"><h2>Аккаунт</h2><Link className="button button-outline" to="/access">Вход и безопасность</Link><div className="settings-aside"><p>Уведомления о новых заявках</p><PushButton/></div><button className="button button-outline logout-button" onClick={async () => { await json('/auth/logout', 'POST', {}); await refreshMe(); navigate('/'); }}><LogOut size={16}/> Выйти</button></section></div></div> : null}</MasterCabinet>;
 }
 
-function formatMinutes(value: number) { return String(Math.floor(value / 60)).padStart(2, '0') + ':' + String(value % 60).padStart(2, '0'); }
-function timeMinutes(value: string) { const [hours, minutes] = value.split(':').map(Number); return hours * 60 + minutes; }
 
 function PublicationControl({ studio, onDone, openTab }: { studio: Studio; onDone: () => void; openTab: (tab: StudioTab) => void }) {
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState('');
   const published = Boolean(studio.profile?.published);
   const hasService = studio.services.length > 0;
-  const hasSchedule = Boolean(studio.schedule_configured && studio.schedule?.weekdays.length);
+  const hasSchedule = Boolean(studio.schedule_configured && studio.schedule && scheduleHasWork(studio.schedule));
   async function toggle() {
     setBusy(true); setError('');
     try { await json('/profile/publication', 'PATCH', { published: !published }); onDone(); }
@@ -125,29 +125,23 @@ function ServiceForm({ onDone,categories }: { onDone: () => void;categories:stri
 
 type ScheduleFormProps = { schedule: Schedule; onDone: () => void | Promise<unknown>; endpoint?: string; configured?: boolean; lockedOffset?: number };
 export function ScheduleForm(props: ScheduleFormProps) {
-  // Changing employee or receiving a newly saved schedule must reset the form.
-  const { schedule, endpoint = '/schedule', configured = true } = props;
-  const key = JSON.stringify([endpoint, configured, schedule.opening, schedule.closing, schedule.utc_offset, schedule.weekdays]);
-  return <ScheduleEditor key={key} {...props}/>;
+  return <ScheduleEditor key={(props.endpoint||'/schedule')+Boolean(props.configured)} {...props}/>;
 }
-function ScheduleEditor({ schedule, onDone, endpoint = '/schedule', configured = true, lockedOffset }: ScheduleFormProps) {
-  const [opening, setOpening] = useState(formatMinutes(schedule.opening)); const [closing, setClosing] = useState(formatMinutes(schedule.closing)); const [offset, setOffset] = useState(schedule.utc_offset); const [days, setDays] = useState(configured ? schedule.weekdays : []);
-  const signature = (open: string, close: string, zone: number, weekdays: number[]) => JSON.stringify([open, close, zone, [...weekdays].sort((a, b) => a - b)]);
-  const [saved, setSaved] = useState(configured ? signature(opening, closing, offset, days) : '');
-  const [message, setMessage] = useState(''); const [error, setError] = useState(''); const [busy, setBusy] = useState(false);
-  const dirty = signature(opening, closing, offset, days) !== saved;
-  async function submit(event: FormEvent) {
-    event.preventDefault(); setBusy(true); setMessage(''); setError('');
-    try { await json(endpoint, 'PUT', { opening: timeMinutes(opening), closing: timeMinutes(closing), utc_offset: offset, weekdays: days }); setSaved(signature(opening, closing, offset, days)); setMessage('График сохранён. Свободное время обновлено.'); await onDone(); }
-    catch (reason) { setError(reason instanceof Error ? reason.message : 'Не удалось сохранить график'); }
-    finally { setBusy(false); }
+function ScheduleEditor({schedule,onDone,endpoint='/schedule',configured=true,lockedOffset}:ScheduleFormProps) {
+  const [value,setValue]=useState<Schedule>({...schedule,weekdays:configured?schedule.weekdays:[],utc_offset:lockedOffset??schedule.utc_offset});
+  const [saved,setSaved]=useState(configured?JSON.stringify(value):'');
+  const [message,setMessage]=useState(''),[error,setError]=useState(''),[busy,setBusy]=useState(false);
+  const submitting=useRef(false),dirty=JSON.stringify(value)!==saved;
+  async function submit(event:FormEvent){
+    event.preventDefault();if(submitting.current)return;
+    submitting.current=true;setBusy(true);setMessage('');setError('');
+    try{
+      const result=await json<Schedule & {conflicting_appointments?:number}>(endpoint,'PUT',value);
+      setSaved(JSON.stringify(value));setMessage(result.conflicting_appointments?`График сохранён. ${result.conflicting_appointments} существующих записей вне новых рабочих часов сохранены. Проверьте календарь.`:'График сохранён. Свободное время обновлено.');await onDone();
+    }catch(reason){setError(reason instanceof Error?reason.message:'Не удалось сохранить график')}
+    finally{submitting.current=false;setBusy(false)}
   }
-  return <form className="settings-form schedule-editor" onSubmit={submit}>
-    <p className={'schedule-save-state' + (dirty ? ' unsaved' : '')} role="status">{!saved ? 'График ещё не сохранён. Выберите рабочие дни.' : dirty ? 'Изменения графика ещё не сохранены.' : 'Действует сохранённый график.'}</p>
-    <fieldset className="schedule-fields" disabled={busy}><div className="form-row"><label>Начало дня<input type="time" value={opening} onChange={event => { setOpening(event.target.value); setMessage(''); }} required/></label><label>Конец дня<input type="time" value={closing} onChange={event => { setClosing(event.target.value); setMessage(''); }} required/></label></div><label>Часовой пояс{lockedOffset !== undefined ? <span>UTC+{lockedOffset / 60} · По времени салона</span> : <select value={offset} onChange={event => { setOffset(Number(event.target.value)); setMessage(''); }}>{Array.from({ length: 11 }, (_, index) => (index + 2) * 60).map(value => <option key={value} value={value}>UTC+{value / 60}</option>)}</select>}</label><fieldset className="weekday-picker"><legend>Рабочие дни</legend>{['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'].map((label, index) => { const day = (index + 1) % 7; return <label key={day}><input type="checkbox" checked={days.includes(day)} onChange={event => { const checked = event.target.checked; setDays(current => checked ? [...current, day] : current.filter(value => value !== day)); setMessage(''); }}/>{label}</label>; })}</fieldset></fieldset>
-    {!days.length ? <p className="setup-hint">Рабочие дни не выбраны. После сохранения онлайн-запись будет закрыта.</p> : null}
-    {message ? <p role="status">{message}</p> : null}{error ? <p className="form-error" role="alert">{error}</p> : null}<button className="button button-dark" disabled={busy || !dirty}><Settings2 size={16}/>{busy ? 'Сохраняем…' : 'Сохранить график'}</button>
-  </form>;
+  return <form className="settings-form schedule-editor" onSubmit={submit}><p className={'schedule-save-state'+(dirty?' unsaved':'')} role="status">{!saved?'График ещё не сохранён.':dirty?'Изменения ещё не сохранены.':'Действует сохранённый график.'}</p><fieldset className="schedule-fields" disabled={busy}><ScheduleFields value={value} onChange={setValue} lockedOffset={lockedOffset}/></fieldset>{!scheduleHasWork(value)?<p className="setup-hint">Рабочие дни не выбраны. После сохранения онлайн-запись будет закрыта.</p>:null}{message?<p role="status">{message}</p>:null}{error?<p className="form-error" role="alert">{error}</p>:null}<button className="button button-dark" disabled={busy||!dirty}><Settings2 size={16}/>{busy?'Сохраняем…':'Сохранить график'}</button></form>;
 }
 
 export function AppointmentList({ appointments, onChange, master = false, offset }: { appointments: Appointment[]; onChange: () => void; master?: boolean; offset?: number }) {

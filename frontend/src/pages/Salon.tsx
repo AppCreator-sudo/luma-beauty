@@ -31,7 +31,7 @@ export function SalonPage() {
   const workspaces = me.workspaces?.filter(w => w.kind === 'salon') || [];
   const workspace = workspaces.find(w => w.id === workspaceId) || workspaces[0];
   if (workspace?.role === 'owner') return <WorkspaceCabinet key={me.user.id + workspace.id} id={workspace.id} onWorkspaceChange={setWorkspaceId}/>;
-  return <div className={"container salon-page" + (workspace?.role === 'staff' ? ' employee-workspace' : workspace?.role === 'owner' ? ' owner-workspace' : '')}>
+  return <div className={"container salon-page" + (!workspace ? " salon-onboarding" : "") + (workspace?.role === 'staff' ? ' employee-workspace' : workspace?.role === 'owner' ? ' owner-workspace' : '')}>
     {!workspace ? <div className="studio-welcome"><div><span className="eyebrow">МОЙ САЛОН</span><h1>Соберите <em>команду.</em></h1><p>Начните с названия и города. Сотрудников добавим следующим шагом.</p></div><div className="studio-header-actions"><Link className="button button-outline" to="/access">Вход и безопасность</Link>{me.user.account_type === 'master' ? <Link className="button button-outline" to="/studio">Личная практика</Link> : null}<button className="button button-outline" onClick={async () => { await json('/auth/logout', 'POST', {}); await refreshMe(); navigate('/'); }}><LogOut size={16}/> Выйти</button></div></div> : null}
     {workspaces.length > 1 ? <label className="salon-switch">Рабочее место<select value={workspace?.id} onChange={e => setWorkspaceId(e.target.value)}>{workspaces.map(w => <option key={w.id} value={w.id}>{w.name}</option>)}</select></label> : null}
     {workspace ? <WorkspaceCabinet key={me.user.id + workspace.id} id={workspace.id}/> : <CreateSalon onDone={refreshMe}/>}

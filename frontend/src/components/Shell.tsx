@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useState, useRef, type ReactNode } from 'react';
 import { Link, NavLink, Outlet, useLocation } from 'react-router-dom';
-import { ArrowUpRight, CalendarDays, Compass, Heart, Home, MapPin, Menu, UserRound, X } from 'lucide-react';
+import { ArrowUpRight, Heart, Menu, UserRound, X } from 'lucide-react';
 import { api, cabinetPath, type Me } from '../lib/api';
 import '../navigation-glass.css';
 import '../interface-motion.css';
@@ -33,7 +33,7 @@ export function Shell() {
   const standaloneCabinet = (clientReference&&me?.user?.account_type==='client') || (['/studio','/calendar'].includes(location.pathname) && me?.user?.account_type === 'master' && Boolean(me.profile)) || (location.pathname === '/salon' && Boolean(me?.workspaces?.some(w => w.kind === 'salon' && w.role === 'owner')));
   const bookingReference = /^\/book\/[^/]+\/?$/.test(location.pathname) || /^\/s\/[^/]+\/book\/?$/.test(location.pathname) || location.pathname === '/visit';
   const mapReference = location.pathname === '/map';
-  const publicReference = (clientReference&&!standaloneCabinet) || bookingReference || /^\/(m|s|w)\/[^/]+\/?$/.test(location.pathname) || ['/masters', '/inspiration', '/auth'].includes(location.pathname) || mapReference;
+  const publicReference = (clientReference&&!standaloneCabinet) || bookingReference || /^\/(m|s|w)\/[^/]+\/?$/.test(location.pathname) || ['/masters', '/inspiration', '/auth'].includes(location.pathname) || (!standaloneCabinet && ['/access','/join','/studio','/calendar','/salon'].includes(location.pathname)) || mapReference;
   const accountTo = cabinetPath(me);
   const accountLabel = accountTo === '/salon' ? 'Салон' : accountTo === '/studio' ? 'Студия' : me?.user ? 'Моё' : 'Войти';
   return <AppContext.Provider value={{ me, refreshMe }}>
@@ -51,13 +51,10 @@ export function Shell() {
     </header> : null}
     <main id="main" className={mapReference ? 'map-reference-main' : undefined}><Outlet/></main>
     {!standaloneCabinet && !bookingReference && !clientReference && !mapReference ? <footer className={'site-footer'+(publicReference?' public-reference-footer':'')}><div><Brand/><p>Красота начинается с человека.</p></div><nav aria-label="Навигация внизу страницы"><Link to="/masters">Мастера</Link><Link to="/inspiration">Вдохновение</Link><Link to="/map">Карта</Link><Link to="/studio">Открыть студию</Link></nav><span>© {new Date().getFullYear()} Luma Beauty</span></footer> : null}
-    {!standaloneCabinet && !publicReference ? <nav className="bottom-nav navigation-glass" aria-label="Навигация приложения"><MobileNavItem to="/" label="Главная" icon={<Home size={20}/>}/><MobileNavItem to="/masters" label="Мастера" icon={<Compass size={20}/>}/><MobileNavItem to="/inspiration" label="Работы" icon={<Heart size={20}/>}/><MobileNavItem to="/map" label="Карта" icon={<MapPin size={20}/>}/><MobileNavItem to={accountTo} label={accountLabel} icon={me?.user?.account_type === 'master' ? <CalendarDays size={20}/> : <UserRound size={20}/>}/></nav> : null}
+
   </AppContext.Provider>;
 }
 
-function MobileNavItem({ to, label, icon }: { to: string; label: string; icon: ReactNode }) {
-  return <NavLink to={to} end={to === '/'} className={({ isActive }) => isActive ? 'bottom-link active' : 'bottom-link'}>{icon}<span>{label}</span></NavLink>;
-}
 
 export function Loading({ text = 'Открываем пространство…' }: { text?: string }) { return <div className="page-state"><div className="state-mark">L</div><p>{text}</p></div>; }
 export function ErrorState({ message, retry }: { message: string; retry?: () => void }) { return <div className="page-state"><span className="eyebrow">ЧТО-ТО ПОШЛО НЕ ТАК</span><h2>Не удалось открыть страницу</h2><p>{message}</p>{retry ? <button className="button button-dark" onClick={retry}>Попробовать ещё раз</button> : <Link className="button button-dark" to="/">На главную</Link>}</div>; }

@@ -1,0 +1,21 @@
+{
+  "at": "2026-10-15T17:16:45+07:00",
+  "status": "local_verified_not_published",
+  "scope": "Snapshot at local verification; publication and GitHub were subsequent separate steps, see release report.",
+  "subsequent_release": "../2026-10-15-cabinet-release/server-result.json",
+  "browser_api_unique_pass": 180,
+  "reports": {
+    "report.json": 104,
+    "edge-report.json": 64,
+    "inventory-report.json": 18,
+    "publication-final-report.json": 3
+  },
+  "targeted_tests_pass": 18,
+  "frontend_asset": "/v2/assets/index-CN5klrUV.js",
+  "production_changed": false,
+  "github_synced": false,
+  "known_limitations": [
+    "BUG-002 old salon-public/workspaces HTTP fixture setup",
+    "Physical phone OS gestures and exhaustive U-11 are not certified"
+  ]
+}
