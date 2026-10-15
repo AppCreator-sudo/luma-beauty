@@ -1,0 +1,77 @@
+{
+  "at": "2026-10-15T13:51:53.025Z",
+  "tag": "20261015-v2-salon-simplicity",
+  "origin": "https://atelie-13-143-66-1.sslip.io",
+  "scope": "Production UI/API GET/HEAD only; temporary owner session; no business writes",
+  "checks": [
+    {
+      "name": "HTTPS release cache health and owner boundary",
+      "status": "PASS"
+    },
+    {
+      "name": "shared catalog 1440",
+      "status": "PASS"
+    },
+    {
+      "name": "borderless editor and performer assignments 1440",
+      "status": "PASS"
+    },
+    {
+      "name": "master service context and Back 1440",
+      "status": "PASS"
+    },
+    {
+      "name": "calendar schedule and works context 1440",
+      "status": "PASS"
+    },
+    {
+      "name": "public nearest window to master and contact 1440",
+      "status": "PASS"
+    },
+    {
+      "name": "shared catalog 390",
+      "status": "PASS"
+    },
+    {
+      "name": "borderless editor and performer assignments 390",
+      "status": "PASS"
+    },
+    {
+      "name": "master service context and Back 390",
+      "status": "PASS"
+    },
+    {
+      "name": "calendar schedule and works context 390",
+      "status": "PASS"
+    },
+    {
+      "name": "public nearest window to master and contact 390",
+      "status": "PASS"
+    },
+    {
+      "name": "shared catalog 320",
+      "status": "PASS"
+    },
+    {
+      "name": "borderless editor and performer assignments 320",
+      "status": "PASS"
+    },
+    {
+      "name": "master service context and Back 320",
+      "status": "PASS"
+    },
+    {
+      "name": "calendar schedule and works context 320",
+      "status": "PASS"
+    },
+    {
+      "name": "public nearest window to master and contact 320",
+      "status": "PASS"
+    }
+  ],
+  "pageErrors": [],
+  "blockedWrites": [],
+  "catalogServices": 7,
+  "needsReview": 1,
+  "result": "PASS"
+}

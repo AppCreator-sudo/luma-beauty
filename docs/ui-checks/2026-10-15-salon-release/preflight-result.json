@@ -1,0 +1,14 @@
+{
+  "tables_preserved": 42,
+  "rows_preserved": 146,
+  "imported_offers": 7,
+  "catalog_services": 7,
+  "needs_review": 1,
+  "integrity": "ok",
+  "foreign_keys": "ok",
+  "schema_sha256": "50ee7c771807a2cc767899228d3a239bca85d1c72623ecbf6a632c61792de4a6",
+  "preflight_at": "2026-10-15T20:49:54+07:00",
+  "snapshot_sha256": "4dad53fe3744949b8b8012fd037ba13e6e7460a20838bfe4ad33965627490aed",
+  "api_checks": 30,
+  "tag": "20261015-v2-salon-simplicity"
+}

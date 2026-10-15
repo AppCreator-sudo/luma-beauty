@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-15T20:32:08+07:00",
+  "updated_at": "2026-10-15T20:55:12+07:00",
   "timezone": "Asia/Novosibirsk",
   "next_task_id": "U-10-23",
   "tasks": [
@@ -2247,7 +2247,7 @@
       "id": "U-10-20",
       "title": "Общий прайс салона и назначения: данные и API",
       "phase": "completed",
-      "status": "verified",
+      "status": "published",
       "dependencies": [
         "U-10-19"
       ],
@@ -2270,7 +2270,7 @@
       "started_at": "2026-10-15T19:49:33+07:00",
       "local_done_at": "2026-10-15T20:28:46+07:00",
       "verified_at": "2026-10-15T20:32:08+07:00",
-      "published_at": null,
+      "published_at": "2026-10-15T20:50:16+07:00",
       "due_at": null,
       "owner_chat": "Текущий чат pwa — простой салон",
       "card": "U-10-20.md",
@@ -2280,7 +2280,7 @@
       "id": "U-10-21",
       "title": "Простой салон: услуги, мастера, графики и списки",
       "phase": "completed",
-      "status": "verified",
+      "status": "published",
       "dependencies": [
         "U-10-20"
       ],
@@ -2303,7 +2303,7 @@
       "started_at": "2026-10-15T20:12:54+07:00",
       "local_done_at": "2026-10-15T20:28:46+07:00",
       "verified_at": "2026-10-15T20:32:08+07:00",
-      "published_at": null,
+      "published_at": "2026-10-15T20:50:16+07:00",
       "due_at": null,
       "owner_chat": "Текущий чат pwa — простой салон",
       "card": "U-10-21.md",
@@ -2313,7 +2313,7 @@
       "id": "U-10-22",
       "title": "Проверка простого салона и подготовка выпуска",
       "phase": "completed",
-      "status": "verified",
+      "status": "published",
       "dependencies": [
         "U-10-21"
       ],
@@ -2336,7 +2336,7 @@
       "started_at": "2026-10-15T20:12:54+07:00",
       "local_done_at": "2026-10-15T20:28:46+07:00",
       "verified_at": "2026-10-15T20:32:08+07:00",
-      "published_at": null,
+      "published_at": "2026-10-15T20:50:16+07:00",
       "due_at": null,
       "owner_chat": "Текущий чат pwa — простой салон",
       "card": "U-10-22.md",
@@ -2346,7 +2346,7 @@
       "id": "U-10-23",
       "title": "Публикация простого салона и синхронизация GitHub",
       "phase": "ui",
-      "status": "awaiting_input",
+      "status": "in_progress",
       "dependencies": [
         "U-10-22"
       ],
@@ -2359,13 +2359,13 @@
       "skills": [
         ".agents/skills/atelier-v2-ui-implementation/SKILL.md"
       ],
-      "approved_at": null,
-      "started_at": null,
+      "approved_at": "2026-10-15T20:44:57+07:00",
+      "started_at": "2026-10-15T20:44:57+07:00",
       "local_done_at": null,
       "verified_at": null,
       "published_at": null,
       "due_at": null,
-      "owner_chat": null,
+      "owner_chat": "Текущий чат pwa — публикация простого салона",
       "card": "U-10-23.md",
       "order": 113
     }
