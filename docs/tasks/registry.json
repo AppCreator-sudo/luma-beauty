@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-15T20:55:12+07:00",
+  "updated_at": "2026-10-15T20:57:15+07:00",
   "timezone": "Asia/Novosibirsk",
-  "next_task_id": "U-10-23",
+  "next_task_id": "U-10-01",
   "tasks": [
     {
       "id": "U-00",
@@ -2345,8 +2345,8 @@
     {
       "id": "U-10-23",
       "title": "Публикация простого салона и синхронизация GitHub",
-      "phase": "ui",
-      "status": "in_progress",
+      "phase": "completed",
+      "status": "published",
       "dependencies": [
         "U-10-22"
       ],
@@ -2361,9 +2361,9 @@
       ],
       "approved_at": "2026-10-15T20:44:57+07:00",
       "started_at": "2026-10-15T20:44:57+07:00",
-      "local_done_at": null,
-      "verified_at": null,
-      "published_at": null,
+      "local_done_at": "2026-10-15T20:57:15+07:00",
+      "verified_at": "2026-10-15T20:57:15+07:00",
+      "published_at": "2026-10-15T20:50:16+07:00",
       "due_at": null,
       "owner_chat": "Текущий чат pwa — публикация простого салона",
       "card": "U-10-23.md",

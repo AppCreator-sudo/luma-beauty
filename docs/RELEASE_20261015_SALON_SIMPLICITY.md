@@ -4,7 +4,7 @@
 
 - Current: `/opt/atelie/releases/20261015-v2-salon-simplicity`; предыдущий `/opt/atelie/releases/20261015-v2-master-portfolio` сохранён.
 - Frontend `index-CbdQYBIA.js`; SW `luma-v2-shell-20261015-v2-salon-simplicity`.
-- Код реализации `f0ce291`; SW и сведения о выпуске фиксируются следующим коммитом. GitHub подтверждается отдельно в U-10-23.
+- Код реализации `f0ce291`; SW/выпуск `95d21b1`. GitHub подтверждён 2026-10-15T20:57:15+07:00: [синхронизация](GITHUB_SYNC_20261015_SALON.md).
 - [Manifest](ui-checks/2026-10-15-salon-release/package-manifest.json): 118 файлов, архив SHA256 `32314c2d4f56f1b37a0c23c4fe24a94632b3e24502ad90f5e079c788303f0120`.
 
 ## Результат
