@@ -1,0 +1,61 @@
+{
+  "at": "2026-10-15T07:34:12.032Z",
+  "tag": "20261015-v2-profile-service-polish",
+  "origin": "https://atelie-13-143-66-1.sslip.io",
+  "scope": "Anonymous production GET/HEAD only; no profiles, services, settings, accounts, appointments or reviews written",
+  "checks": [
+    {
+      "name": "published build, PWA cache, health and protected data",
+      "status": "PASS"
+    },
+    {
+      "name": "master actual service/filter/price/duration and ratings API",
+      "status": "PASS"
+    },
+    {
+      "name": "salon actual service/filter/price/duration and ratings API",
+      "status": "PASS"
+    },
+    {
+      "name": "master full address, buttons, pattern and footer 1440",
+      "status": "PASS"
+    },
+    {
+      "name": "salon full address, buttons, pattern and footer 1440",
+      "status": "PASS"
+    },
+    {
+      "name": "catalog actual ratings, addresses and aligned footer 1440",
+      "status": "PASS"
+    },
+    {
+      "name": "master map choice and matching booking link 1440",
+      "status": "PASS"
+    },
+    {
+      "name": "salon map choice and matching booking link 1440",
+      "status": "PASS"
+    },
+    {
+      "name": "master full address, buttons, pattern and footer 390",
+      "status": "PASS"
+    },
+    {
+      "name": "salon full address, buttons, pattern and footer 390",
+      "status": "PASS"
+    },
+    {
+      "name": "catalog actual ratings, addresses and aligned footer 390",
+      "status": "PASS"
+    },
+    {
+      "name": "master map choice and matching booking link 390",
+      "status": "PASS"
+    }
+  ],
+  "pageErrors": [],
+  "blockedWrites": [],
+  "result": "FAIL",
+  "error": "locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Открыть карточку: салон красоты', exact: true })\u001b[22m\n",
+  "limitation": "Acceptance viewport only: map correctly preserved the previous city, excluding the other-city target. New probe scopes its initial map search to target city. App unchanged."
+}

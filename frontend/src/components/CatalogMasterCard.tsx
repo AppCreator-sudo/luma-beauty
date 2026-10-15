@@ -3,6 +3,7 @@ import { ArrowUpRight, CalendarDays, MapPin, Star } from 'lucide-react';
 import { bookingPath, profilePath, masterDate, masterTime, money, type Profile } from '../lib/api';
 import { PromotionBadge } from './PromotionBadge';
 import '../compact-catalog.css';
+import {ProfileBadges} from './ProfileBadges';
 
 function teamLabel(count: number) {
   const last = count % 10;
@@ -27,17 +28,18 @@ export function CatalogMasterCard({ profile }: { profile: Profile }) {
         {image ? <img src={image} alt="" loading="lazy" width="84" height="84"/> : <span aria-hidden="true">{Array.from(profile.name.trim())[0] || 'а'}</span>}
       </Link>
       <div className="compact-master-copy">
-        <div className="compact-master-tags"><span className="compact-master-kind">{salon ? 'Салон' : staff ? 'Мастер салона' : 'Индивидуальный мастер'}</span>{profile.teaches ? <span className="compact-master-training">{salon?'Обучаем':'Обучаю'}</span> : null}</div>
+        <ProfileBadges className="compact-master-tags" salon={salon} staff={staff} teaches={profile.teaches} models={profile.looking_models}/>
         <h3><Link to={detailPath} title={profile.name}>{profile.name}</Link></h3>
-        <p className="compact-master-location">{profile.city ? <span><MapPin size={13} aria-hidden="true"/>{profile.city}</span> : null}{salon ? <span>{teamLabel(profile.staff?.length || 0)}</span> : staff && profile.salon_name ? <span>{profile.salon_name}</span> : null}</p>
+        <p className="compact-master-location">{profile.city||profile.address ? <span><MapPin size={13} aria-hidden="true"/>{[profile.city,profile.address].filter(Boolean).join(', ')}</span> : null}{salon ? <span>{teamLabel(profile.staff?.length || 0)}</span> : staff && profile.salon_name ? <span>{profile.salon_name}</span> : null}</p>
         <p className="compact-master-directions" title={directions}>{directions || (salon ? 'Услуги команды' : 'Услуги мастера')}</p>
         <p className="compact-master-rating"><Star size={14} aria-hidden="true"/><span>{profile.rating ? profile.rating.toFixed(1) : 'Пока без оценок'}{profile.review_count ? ' · ' + profile.review_count + ' отзывов' : ''}</span></p>
       </div>
     </div>
     {salon && match ? <Link className="compact-master-match" to={'/s/' + profile.slug + '?master=' + encodeURIComponent(match.id) + '#works'}>В команде: {profile.matching_staff?.map(person => person.name).join(' · ')}<ArrowUpRight size={15} aria-hidden="true"/></Link> : null}
     <PromotionBadge promotion={profile.promotion}/>
-    <div className="compact-master-footer">
       {profile.next_available && canBook ? <Link className="compact-master-next" to={nextPath}><CalendarDays size={15} aria-hidden="true"/><span>{masterDate(profile.next_available, profile.schedule?.utc_offset)} · {masterTime(profile.next_available, profile.schedule?.utc_offset)}</span><ArrowUpRight size={14} aria-hidden="true"/></Link> : null}
+    <div className="compact-master-footer">
+
       <div className="compact-master-actions"><p className="compact-master-price">{profile.services?.length ? 'От ' + money(Math.min(...profile.services.map(service => service.price))) : 'Услуги пока не добавлены'}</p><Link className={'compact-master-book' + (canBook ? '' : ' compact-master-details')} to={canBook ? bookPath : detailPath} aria-label={(canBook ? salon ? 'Записаться в ' : 'Записаться к ' : 'Открыть страницу ') + profile.name}>{canBook ? 'Записаться' : 'Подробнее'}<ArrowUpRight size={16} aria-hidden="true"/></Link></div>
     </div>
   </article>;

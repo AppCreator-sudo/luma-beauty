@@ -1,3 +1,4 @@
+import {ServiceDirectionSelect} from './ServiceDirection';
 import { useHistoryState } from '../lib/useHistoryState';
 import { ExperienceFields } from './ExperienceFields';
 import {useEffect,useId,useRef,useState,type ChangeEvent,type FormEvent} from 'react';
@@ -22,6 +23,7 @@ export function StaffSetupForm({workspace,team,staff,onDone}:{workspace:Pick<Wor
   const [weekdays,setWeekdays]=useState<number[]>(staff?.schedule_configured?staff.schedule.weekdays:[]);
   const [selected,setSelected]=useState<string[]>(staff?.services.map(keyOf)||[]);
   const [visible,setVisible]=useState(staff?Boolean(staff.bookable):true);
+  const [newCategory,setNewCategory]=useState('');const selectedCategory=categories.includes(newCategory)?newCategory:categories.length===1?categories[0]:'';
   const [newName,setNewName]=useState(''),[price,setPrice]=useState(''),[duration,setDuration]=useState('60');
   const [addingService,setAddingService]=useState(false),[preview,setPreview]=useState('');
   const [photo,setPhoto]=useState<File|null>(null),[step,setStep]=useHistoryState('staff-setup-step-' + workspace.id + '-' + (staff?.id || 'new'), 0, { backOnDecrease: true });
@@ -62,6 +64,7 @@ export function StaffSetupForm({workspace,team,staff,onDone}:{workspace:Pick<Wor
   }
   function detailsError(){
     if(!weekdays.length||!validHours)return 'Выберите рабочие дни и проверьте часы';
+    if(newName.trim()&&!selectedCategory)return 'Выберите направление новой услуги';
     if(newName.trim()&&!validNewService)return 'Проверьте цену и длительность новой услуги';
     if(visible&&!selected.length&&!validNewService)return 'Для онлайн-записи назначьте услугу';
     return '';
@@ -90,7 +93,7 @@ export function StaffSetupForm({workspace,team,staff,onDone}:{workspace:Pick<Wor
     payload.set('service_ids',JSON.stringify(bank.filter(s=>selected.includes(keyOf(s))).map(s=>s.id)));
     payload.set('visible',String(!draft&&visible));payload.set('draft',String(draft));if(photo)payload.set('image',photo);
     if(validNewService){
-      payload.set('new_service',JSON.stringify({name:newName,price:Number(price),duration:Number(duration)}));
+      payload.set('new_service',JSON.stringify({name:newName,price:Number(price),duration:Number(duration),category:selectedCategory||undefined}));
     }
     submitting.current=true;setBusy(true);
     try{
@@ -112,7 +115,7 @@ export function StaffSetupForm({workspace,team,staff,onDone}:{workspace:Pick<Wor
       <label className="staff-setup-check"><input type="checkbox" checked={teaches} onChange={e=>setTeaches(e.target.checked)}/>Обучает других мастеров</label>
       </>:null}
       {staff||step===1?<>
-      <fieldset className="staff-setup-services"><legend>Услуги мастера</legend>{bank.length?<div className="staff-service-choices">{bank.map(s=><label key={keyOf(s)}><input type="checkbox" checked={selected.includes(keyOf(s))} onChange={e=>setSelected(e.target.checked?[...selected,keyOf(s)]:selected.filter(k=>k!==keyOf(s)))}/><span>{s.name}<small>{money(s.price)} · {s.duration} мин</small></span></label>)}</div>:<p>Добавьте первую услугу. Затем её можно назначить другим мастерам.</p>}<button type="button" className="text-link" onClick={()=>setAddingService(v=>!v)}>{addingService?'Скрыть новую услугу':'Добавить новую услугу'}</button>{addingService?<div className="staff-new-service"><label>Название услуги<input value={newName} onChange={e=>setNewName(e.target.value)} maxLength={120}/></label><div className="staff-setup-hours"><label>Цена, ₽<input type="number" value={price} min="0" max="1000000" onChange={e=>setPrice(e.target.value)}/></label><label>Длительность, мин<input type="number" value={duration} min="5" max="720" onChange={e=>setDuration(e.target.value)}/></label></div></div>:null}</fieldset>
+      <fieldset className="staff-setup-services"><legend>Услуги мастера</legend>{bank.length?<div className="staff-service-choices">{bank.map(s=><label key={keyOf(s)}><input type="checkbox" checked={selected.includes(keyOf(s))} onChange={e=>setSelected(e.target.checked?[...selected,keyOf(s)]:selected.filter(k=>k!==keyOf(s)))}/><span>{s.name}<small>{money(s.price)} · {s.duration} мин</small></span></label>)}</div>:<p>Добавьте первую услугу. Затем её можно назначить другим мастерам.</p>}<button type="button" className="text-link" onClick={()=>setAddingService(v=>!v)}>{addingService?'Скрыть новую услугу':'Добавить новую услугу'}</button>{addingService?<div className="staff-new-service"><ServiceDirectionSelect categories={categories} value={selectedCategory} onChange={setNewCategory} disabled={busy}/><label>Название услуги<input value={newName} onChange={e=>setNewName(e.target.value)} maxLength={120}/></label><div className="staff-setup-hours"><label>Цена, ₽<input type="number" value={price} min="0" max="1000000" onChange={e=>setPrice(e.target.value)}/></label><label>Длительность, мин<input type="number" value={duration} min="5" max="720" onChange={e=>setDuration(e.target.value)}/></label></div></div>:null}</fieldset>
       <fieldset className="staff-setup-schedule"><legend>График работы</legend>{team.some(p=>p.id!==staff?.id&&p.schedule_configured)?<label>Скопировать график<select defaultValue="" onChange={e=>copySchedule(e.target.value)}><option value="">Заполнить самостоятельно</option>{team.filter(p=>p.id!==staff?.id&&p.schedule_configured).map(p=><option key={p.id} value={p.id}>{p.name}</option>)}</select></label>:null}<div className="staff-setup-days">{days.map(([n,label])=><label key={n}><input type="checkbox" checked={weekdays.includes(n)} onChange={e=>setWeekdays(e.target.checked?[...weekdays,n]:weekdays.filter(v=>v!==n))}/>{label}</label>)}</div><div className="staff-setup-hours"><label>Начало<input type="time" value={opening} onChange={e=>setOpening(e.target.value)}/></label><label>Окончание<input type="time" value={closing} onChange={e=>setClosing(e.target.value)}/></label></div><small>Время салона · UTC+{(workspace.utc_offset??180)/60}. График применится после сохранения.</small></fieldset>
       <label className="staff-setup-check"><input type="checkbox" checked={visible} onChange={e=>setVisible(e.target.checked)}/>Показывать в салоне и разрешить онлайн-запись</label>
       </>:null}

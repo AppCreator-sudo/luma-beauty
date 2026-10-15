@@ -17,9 +17,9 @@
 .compact-master-copy h3{margin:4px 0 2px;font-size:27px;line-height:1.03;overflow-wrap:anywhere}
 .compact-master-copy h3>a{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:44px;max-height:56px}
 .compact-master-copy h3>a:hover{color:var(--card-accent)}
-.compact-master-location{display:flex;flex-wrap:wrap;align-items:center;gap:4px 10px;margin:1px 0 8px;color:#716c61;font-size:11px;line-height:1.5;overflow-wrap:anywhere}
-.compact-master-location>span{display:inline-flex;align-items:center;gap:3px;min-width:0}
-.compact-master-location svg{flex:none}
+.compact-master-location{display:flex;flex-wrap:wrap;align-items:center;gap:4px 10px;margin:5px 0 8px;color:#716c61;font-size:11px;line-height:1.5;overflow-wrap:anywhere}
+.compact-master-location>span{display:inline-flex;align-items:flex-start;gap:3px;min-width:0}
+.compact-master-location svg{flex:none;margin-top:2px}
 .compact-master-directions{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;overflow-wrap:anywhere;margin:0 0 8px;font-size:12px;line-height:1.55;color:#625f55}
 .compact-master-rating{display:flex;align-items:start;gap:5px;margin:0;font-size:11px;line-height:1.5;color:#686155}
 .compact-master-rating svg{flex:none;color:#a98145;margin-top:1px}
@@ -42,3 +42,9 @@
 @media(max-width:1050px){.compact-masters-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:680px){.compact-masters-grid{grid-template-columns:minmax(0,1fr);gap:12px}.compact-master-card{padding:16px}.compact-master-identity{gap:14px}.compact-master-copy h3{font-size:27px}.compact-master-footer{padding-top:12px}}
 @media(max-width:380px){.compact-master-card{padding:13px}.compact-master-identity{grid-template-columns:76px minmax(0,1fr);gap:11px}.compact-master-avatar{width:76px;height:76px}.compact-master-copy h3{font-size:25px}.compact-master-kind,.compact-master-training{padding:3px 6px}.compact-master-directions{font-size:11px}.compact-master-price{font-size:12px}.compact-master-book{padding-inline:11px;gap:6px}.compact-master-actions{gap:8px}}
+
+/* Full names and addresses grow naturally; flex keeps the shared action row aligned. */
+.compact-master-copy h3>a{display:block;overflow:visible;max-height:none;min-height:44px}
+.compact-master-card .profile-badges{margin:0 0 6px;gap:5px}
+.compact-master-next{margin-top:10px;margin-bottom:0}
+.compact-master-actions{min-height:57px}

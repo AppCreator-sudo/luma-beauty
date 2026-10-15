@@ -1,3 +1,4 @@
+import {ServiceDirectionEditor,ServiceDirectionSelect} from './ServiceDirection';
 import { MenuOverlay } from './MenuOverlay';
 import { useHistoryState } from '../lib/useHistoryState';
 import { useEffect, useRef, useState, type FormEvent } from 'react';
@@ -146,9 +147,9 @@ function SalonNextWindows({ salon, onOpen, refreshKey }: {
 function SalonStaffServices({ staff, onDone }: {
     staff: Performer;
     onDone: () => Promise<unknown>;
-}) { const [name, setName] = useState(''), [price, setPrice] = useState(''), [duration, setDuration] = useState('60'), [busy, setBusy] = useState(false), [error, setError] = useState(''), [notice, setNotice] = useState(''); const saving = useRef(false); async function submit(e: FormEvent) { e.preventDefault(); if (saving.current)
+}) { const [category,setCategory]=useState('');const categories=staff.profile?.categories||[],selectedCategory=categories.includes(category)?category:categories.length===1?categories[0]:''; const [name, setName] = useState(''), [price, setPrice] = useState(''), [duration, setDuration] = useState('60'), [busy, setBusy] = useState(false), [error, setError] = useState(''), [notice, setNotice] = useState(''); const saving = useRef(false); async function submit(e: FormEvent) { e.preventDefault(); if (saving.current)
     return; saving.current = true; setBusy(true); setError(''); try {
-    await json('/performers/' + staff.id + '/services', 'POST', { name, price: Number(price), duration: Number(duration) });
+    await json('/performers/' + staff.id + '/services', 'POST', { name, price: Number(price), duration: Number(duration),category:selectedCategory });
     setName('');
     setPrice('');
     await onDone();
@@ -171,4 +172,4 @@ catch (e) {
 }
 finally {
     setBusy(false);
-} } return <div className="salon-reference-services"><div>{staff.services.map(s => <article key={s.id}><span><b>{s.name}</b><small>{s.duration} мин</small></span><strong>{money(s.price)}</strong><button aria-label={'Удалить услугу ' + s.name} disabled={busy} onClick={() => void remove(s)}>Удалить</button></article>)}{!staff.services.length ? <p>Назначьте первую услугу, чтобы открыть онлайн-запись.</p> : null}</div><form onSubmit={submit}><h3>Новая услуга</h3><fieldset disabled={busy}><label>Название услуги<input required maxLength={120} value={name} onChange={e => setName(e.target.value)}/></label><div className="form-row"><label>Цена, ₽<input type="number" required min={0} max={1000000} value={price} onChange={e => setPrice(e.target.value)}/></label><label>Длительность, мин<input type="number" required min={5} max={720} value={duration} onChange={e => setDuration(e.target.value)}/></label></div></fieldset><button className="button button-wine" disabled={busy}>{busy ? 'Сохраняем…' : 'Добавить услугу'}</button></form>{error ? <p className="form-error" role="alert">{error}</p> : null}{notice ? <p role="status">{notice}</p> : null}</div>; }
+} } return <div className="salon-reference-services"><div>{staff.services.map(s => <article key={s.id}><span><b>{s.name}</b><small>{s.duration} мин</small><ServiceDirectionEditor key={s.id+':'+s.category+':'+categories.join()} service={s} categories={categories} endpoint={'/performers/'+staff.id+'/services'} onDone={onDone}/></span><strong>{money(s.price)}</strong><button aria-label={'Удалить услугу ' + s.name} disabled={busy} onClick={() => void remove(s)}>Удалить</button></article>)}{!staff.services.length ? <p>Назначьте первую услугу, чтобы открыть онлайн-запись.</p> : null}</div><form onSubmit={submit}><h3>Новая услуга</h3><fieldset disabled={busy}><label>Название услуги<input required maxLength={120} value={name} onChange={e => setName(e.target.value)}/></label><div className="form-row"><label>Цена, ₽<input type="number" required min={0} max={1000000} value={price} onChange={e => setPrice(e.target.value)}/></label><label>Длительность, мин<input type="number" required min={5} max={720} value={duration} onChange={e => setDuration(e.target.value)}/></label></div><ServiceDirectionSelect categories={categories} value={selectedCategory} onChange={setCategory} disabled={busy}/></fieldset><button className="button button-wine" disabled={busy}>{busy ? 'Сохраняем…' : 'Добавить услугу'}</button></form>{error ? <p className="form-error" role="alert">{error}</p> : null}{notice ? <p role="status">{notice}</p> : null}</div>; }

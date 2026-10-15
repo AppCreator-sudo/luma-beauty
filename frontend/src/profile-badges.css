@@ -1,0 +1,2 @@
+.profile-badges{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:8px 0;min-width:0}
+.profile-badges>span{display:inline-flex;align-items:center;min-height:24px;box-sizing:border-box;border:1px solid #c7b695;border-radius:20px;padding:3px 8px;background:#faf7f1;color:#74634b;font:400 11px/1.5 Manrope,sans-serif;max-width:100%;overflow-wrap:anywhere}

@@ -3,7 +3,7 @@
 .public-reference.public-page-shell .public-cover{height:190px;isolation:isolate;background:#193b30;color:#faf7f1;--cover-pattern-opacity:.62}
 .public-reference.public-page-shell .public-cover-cream{background:#e5d8c4;color:#213a30;--cover-pattern-opacity:.13}
 .public-reference.public-page-shell .public-cover-wine{background:#70243d;--cover-pattern-opacity:.32}
-.public-reference.public-page-shell .public-cover-pattern{background:transparent url('/v2/assets/ornament.webp') center/cover no-repeat;mix-blend-mode:luminosity;opacity:var(--cover-pattern-opacity);pointer-events:none}
+.public-reference.public-page-shell .public-cover-pattern{background:transparent url('/v2/assets/ornament.webp') center/max(100%,900px) auto no-repeat;mix-blend-mode:luminosity;opacity:var(--cover-pattern-opacity);pointer-events:none}
 .public-reference.public-page-shell .public-cover-heading{left:max(40px,calc((100% - 1426px)/2));bottom:34px;color:inherit;text-shadow:none}
 .public-reference.public-page-shell .public-cover-heading p{font-size:40px;line-height:1.05;margin-top:8px}
 .public-reference.public-page-shell .public-cover-heading em{color:#c1a071}
@@ -19,7 +19,6 @@
 .public-reference.public-page-shell .public-identity-title{grid-column:2;grid-row:1;font:400 42px/1.08 'Cormorant Garamond',serif;margin:0 0 4px;min-width:0;overflow-wrap:anywhere}
 .public-reference.public-page-shell .public-profile-meta{display:flex;flex-wrap:wrap;align-items:center;gap:0 18px}
 .public-reference.public-page-shell .public-kind{width:auto;justify-content:flex-start;flex-wrap:wrap;gap:6px;border:0;padding:0;margin:8px 0}
-.public-reference.public-page-shell .public-kind>span{border:1px solid #c7b695;border-radius:20px;padding:4px 9px;font-size:11px;line-height:1.5}
 .public-reference.public-page-shell .public-address{justify-content:flex-start;margin:6px 0}
 .public-reference.public-page-shell .public-categories{margin:6px 0}
 .public-reference.public-page-shell .public-rating{margin:6px 0 0;flex-wrap:wrap;min-height:22px}
@@ -62,8 +61,7 @@
  .public-reference.public-page-shell .public-identity-copy{grid-column:1/-1;grid-row:2;width:auto}
  .public-reference.public-page-shell .public-identity-title{font-size:30px;align-self:center}
  .public-reference.public-page-shell .public-kind{margin-block:8px;gap:5px}
- .public-reference.public-page-shell .public-kind>span{font-size:10px;padding:3px 7px}
- .public-reference.public-page-shell .public-identity-actions{display:flex;grid-column:1/-1;grid-row:3;justify-content:flex-start;gap:8px;width:100%;padding:0}
+  .public-reference.public-page-shell .public-identity-actions{display:flex;grid-column:1/-1;grid-row:3;justify-content:flex-start;gap:8px;width:100%;padding:0}
  .public-reference.public-page-shell .public-identity-actions .button{flex:1;white-space:normal;padding-inline:10px}
  .public-reference.public-page-shell .public-master-layout{display:flex;flex-direction:column;gap:20px}
  .public-reference.public-page-shell .public-tabs{gap:24px}
@@ -77,3 +75,10 @@
  .public-reference.public-page-preview .public-cover-heading{left:14px}
  .public-reference.public-page-preview .public-identity-title{font-size:27px}
 }
+
+.public-reference.public-page-shell .public-address{align-items:flex-start;overflow-wrap:anywhere;line-height:1.6}
+.public-reference.public-page-shell .public-address svg{flex:none;margin-top:3px}
+.public-window-actions{display:grid;gap:10px;width:100%}
+.public-window .public-window-actions .button{width:100%;min-height:46px;box-sizing:border-box;justify-content:center;padding:11px 8px;font-size:17px;line-height:1.25;white-space:normal;text-align:center}
+.site-footer.public-reference-footer{padding-block:32px 24px;gap:24px}
+@media(max-width:760px){.site-footer.public-reference-footer{padding-top:28px;padding-bottom:calc(24px + env(safe-area-inset-bottom));gap:24px}}

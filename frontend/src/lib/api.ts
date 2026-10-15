@@ -1,4 +1,4 @@
-export type Service = { id: string; user_id: string; name: string; price: number; duration: number };
+export type Service = { id: string; user_id: string; name: string; price: number; duration: number; category?: string };
 export type Photo = { id: string; image: string };
 export type Work = {
   id: string; user_id: string; image: string; images?: Photo[]; caption: string;

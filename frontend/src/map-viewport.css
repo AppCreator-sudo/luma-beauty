@@ -54,3 +54,6 @@
 .map-reference .map-card-profile{font-weight:400}.map-reference .map-list-state .button{background:var(--map-wine);font:400 22px/1.2 "Cormorant Garamond",Georgia,serif;letter-spacing:0}
 
 .map-rating{display:flex;align-items:center;gap:6px;color:#66736a;font:12px/1.5 Manrope,Arial,sans-serif;margin:6px 0 8px}.map-rating svg{flex:none;color:#b18b4c;fill:#b18b4c;stroke-width:1}.map-card-identity .map-rating{font-size:12px;margin:7px 0 0;flex-wrap:wrap}.map-reference .map-result .map-rating{display:flex}
+.map-service-picker{display:grid;gap:6px;margin:12px 0;font-size:11px;color:var(--muted)}
+.map-service-picker select{width:100%;min-width:0;min-height:44px;border:1px solid var(--line);background:var(--paper);color:var(--ink);padding:9px 28px 9px 10px;font:inherit;font-size:12px;border-radius:3px}
+.map-card-address{overflow-wrap:anywhere}

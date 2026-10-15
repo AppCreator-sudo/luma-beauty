@@ -1,0 +1,99 @@
+{
+  "at": "2026-10-14T17:57:17.711Z",
+  "scope": "Real local app/API, disposable synthetic SQLite only",
+  "checks": [
+    {
+      "name": "real-api-save-reload-rights-category-filter-duration-price-and-salon-group-id",
+      "pass": true
+    },
+    {
+      "name": "master-1440",
+      "pass": true
+    },
+    {
+      "name": "salon-1440",
+      "pass": true
+    },
+    {
+      "name": "master-390",
+      "pass": true
+    },
+    {
+      "name": "master-footer-390",
+      "pass": true
+    },
+    {
+      "name": "salon-390",
+      "pass": true
+    },
+    {
+      "name": "salon-footer-390",
+      "pass": true
+    },
+    {
+      "name": "master-320",
+      "pass": true
+    },
+    {
+      "name": "salon-320",
+      "pass": true
+    },
+    {
+      "name": "catalog-1440",
+      "pass": true
+    },
+    {
+      "name": "catalog-320",
+      "pass": true
+    },
+    {
+      "name": "master-services-1440",
+      "pass": true
+    },
+    {
+      "name": "master-services-390",
+      "pass": true
+    },
+    {
+      "name": "owner-services-1440",
+      "pass": true
+    },
+    {
+      "name": "owner-services-390",
+      "pass": true
+    },
+    {
+      "name": "map-service-1440",
+      "pass": true
+    },
+    {
+      "name": "map-service-booking-back-1440",
+      "pass": true
+    },
+    {
+      "name": "map-service-390",
+      "pass": true
+    },
+    {
+      "name": "map-service-booking-back-390",
+      "pass": true
+    },
+    {
+      "name": "map-service-320",
+      "pass": true
+    },
+    {
+      "name": "map-service-booking-back-320",
+      "pass": true
+    },
+    {
+      "name": "salon-map-service-1440",
+      "pass": true
+    },
+    {
+      "name": "salon-map-service-390",
+      "pass": true
+    }
+  ],
+  "pageErrors": []
+}

@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-14T23:33:01+07:00",
+  "updated_at": "2026-10-15T14:38:43+07:00",
   "timezone": "Asia/Novosibirsk",
-  "next_task_id": "U-10-01",
+  "next_task_id": "U-06-04",
   "tasks": [
     {
       "id": "U-00",
@@ -1824,6 +1824,121 @@
       "owner_chat": "01a102e0-744b-7a33-931d-ab120601f36a",
       "card": "OPS-05.md",
       "order": 66
+    },
+    {
+      "id": "U-06-03",
+      "title": "Компактные публичные профили: узор, адрес и выбор времени",
+      "phase": "ui",
+      "status": "published",
+      "dependencies": [
+        "U-06-02"
+      ],
+      "sources": [
+        "frontend/src/pages/PublicMaster.tsx",
+        "frontend/src/pages/SalonProfile.tsx",
+        "frontend/src/components/SalonPublicWindow.tsx",
+        "docs/V2_PROFILE_SERVICE_POLISH.md"
+      ],
+      "skills": [
+        ".agents/skills/atelier-v2-product-design/SKILL.md",
+        ".agents/skills/atelier-v2-ui-implementation/SKILL.md"
+      ],
+      "approved_at": "2026-10-15T00:09:35+07:00",
+      "started_at": "2026-10-15T00:09:35+07:00",
+      "local_done_at": "2026-10-15T01:03:17+07:00",
+      "verified_at": "2026-10-15T01:03:17+07:00",
+      "published_at": "2026-10-15T14:31:04+07:00",
+      "due_at": null,
+      "owner_chat": "01a102e0-744b-7a33-931d-ab120601f36a",
+      "card": "U-06-03.md",
+      "order": 67
+    },
+    {
+      "id": "U-07-01",
+      "title": "Единые карточки каталога: адреса, рейтинги и бейджи",
+      "phase": "ui",
+      "status": "published",
+      "dependencies": [
+        "U-06-02",
+        "U-07"
+      ],
+      "sources": [
+        "frontend/src/components/CatalogMasterCard.tsx",
+        "frontend/src/compact-catalog.css",
+        "docs/V2_PROFILE_SERVICE_POLISH.md"
+      ],
+      "skills": [
+        ".agents/skills/atelier-v2-product-design/SKILL.md",
+        ".agents/skills/atelier-v2-ui-implementation/SKILL.md"
+      ],
+      "approved_at": "2026-10-15T00:09:35+07:00",
+      "started_at": "2026-10-15T00:09:35+07:00",
+      "local_done_at": "2026-10-15T01:03:17+07:00",
+      "verified_at": "2026-10-15T01:03:17+07:00",
+      "published_at": "2026-10-15T14:31:04+07:00",
+      "due_at": null,
+      "owner_chat": "01a102e0-744b-7a33-931d-ab120601f36a",
+      "card": "U-07-01.md",
+      "order": 68
+    },
+    {
+      "id": "U-09-06",
+      "title": "Направления услуг и выбор услуги в карточке карты",
+      "phase": "ui",
+      "status": "published",
+      "dependencies": [
+        "U-09-03",
+        "U-06-02"
+      ],
+      "sources": [
+        "lib/map-viewport.mjs",
+        "lib/workspaces.mjs",
+        "frontend/src/components/MapProfileCard.tsx",
+        "docs/V2_PROFILE_SERVICE_POLISH.md",
+        "lib/service-directions.mjs",
+        "tests/service-directions.test.mjs"
+      ],
+      "skills": [
+        ".agents/skills/atelier-v2-product-design/SKILL.md",
+        ".agents/skills/atelier-v2-ui-implementation/SKILL.md"
+      ],
+      "approved_at": "2026-10-15T00:09:35+07:00",
+      "started_at": "2026-10-15T00:09:35+07:00",
+      "local_done_at": "2026-10-15T01:03:17+07:00",
+      "verified_at": "2026-10-15T01:03:17+07:00",
+      "published_at": "2026-10-15T14:31:04+07:00",
+      "due_at": null,
+      "owner_chat": "01a102e0-744b-7a33-931d-ab120601f36a",
+      "card": "U-09-06.md",
+      "order": 69
+    },
+    {
+      "id": "U-06-04",
+      "title": "Публикация правок профилей, каталога и направлений услуг",
+      "phase": "operations",
+      "status": "in_progress",
+      "dependencies": [
+        "U-06-03",
+        "U-07-01",
+        "U-09-06"
+      ],
+      "sources": [
+        "docs/V2_PROFILE_SERVICE_POLISH.md",
+        "docs/ui-checks/2026-10-15-profile-service-polish/README.md",
+        "lib/service-directions.mjs"
+      ],
+      "skills": [
+        ".agents/skills/atelier-v2-ui-implementation/SKILL.md"
+      ],
+      "approved_at": "2026-10-15T14:28:14+07:00",
+      "started_at": "2026-10-15T14:28:14+07:00",
+      "local_done_at": "2026-10-15T14:38:43+07:00",
+      "verified_at": "2026-10-15T14:38:43+07:00",
+      "published_at": "2026-10-15T14:31:04+07:00",
+      "due_at": null,
+      "owner_chat": "01a102e0-744b-7a33-931d-ab120601f36a",
+      "card": "U-06-04.md",
+      "order": 70
     }
   ]
 }

@@ -1,5 +1,6 @@
 import {reviewRating,publicReviews} from './lib/review-ratings.mjs';
 import {pageOptions} from './lib/profile-page-options.mjs';
+import {migrateServiceDirections,servicesWithDirections,checkedServiceDirection,saveServiceDirection} from './lib/service-directions.mjs';
 import { clientCabinet } from './lib/client-cabinet.mjs';
 import { appointmentEditing } from './lib/appointment-editing.mjs';
 import { experienceMonths, migrateProfileExperience } from './lib/profile-experience.mjs';
@@ -86,14 +87,14 @@ function profile(id){const p=one('SELECT * FROM profiles WHERE user_id=?',id);re
 function requireProfile(req,res,next){if(!profile(req.user.id))return res.status(400).json({error:'Сначала создайте страницу мастера'});next()}
 const schedule=schedules({db,fail,relatedMasters:id=>access.relatedIds(id),relatedMasterGroups:ids=>relatedPerformersBatch(db,ids),cityForMaster:id=>profile(id)?.city||personalAddress(id)?.city||''});
 function futureAvailability(master){return schedule.availability(master)}
-function publicProfile(p,viewer=''){const reviews=publicReviews(db,'master',p.user_id),rating=reviewRating(db,'master',p.user_id);return {...p,categories:p.categories||profileCategories(p.user_id),following:Boolean(viewer&&one('SELECT 1 FROM follows WHERE user_id=? AND master_id=?',viewer,p.user_id)),rating:rating.rating||null,review_count:rating.review_count,reviews,services:q('SELECT * FROM services WHERE user_id=?',p.user_id),works:portfolio(p.user_id,viewer),schedule:schedule.config(p.user_id),availability:futureAvailability(p.user_id)}}
+function publicProfile(p,viewer=''){const reviews=publicReviews(db,'master',p.user_id),rating=reviewRating(db,'master',p.user_id);return {...p,categories:p.categories||profileCategories(p.user_id),following:Boolean(viewer&&one('SELECT 1 FROM follows WHERE user_id=? AND master_id=?',viewer,p.user_id)),rating:rating.rating||null,review_count:rating.review_count,reviews,services:servicesWithDirections(db,p.user_id),works:portfolio(p.user_id,viewer),schedule:schedule.config(p.user_id),availability:futureAvailability(p.user_id)}}
 const catalogVisibility=`(p.published=1 AND NOT EXISTS (
   SELECT 1 FROM performers person JOIN workspaces salon ON salon.id=person.workspace_id WHERE person.id=p.user_id AND salon.kind='salon'
 ))`;
 function catalogProfile(p,nextAvailable=null){
  const rating=reviewRating(db,'master',p.user_id);
  const salon=one("SELECT w.id,w.slug,w.name,w.city,w.address,w.latitude,w.longitude,w.logo,w.cover,w.utc_offset FROM performers person JOIN workspaces w ON w.id=person.workspace_id WHERE person.id=? AND w.kind='salon'",p.user_id);
- return {...p,...(salon?{kind:'staff',published:1,city:salon.city,address:salon.address,latitude:salon.latitude,longitude:salon.longitude,salon_id:salon.id,salon_slug:salon.slug,salon_name:salon.name,salon_logo:salon.logo,salon_cover:salon.cover}:{}),categories:profileCategories(p.user_id),rating:rating.rating||null,review_count:rating.review_count,services:q('SELECT * FROM services WHERE user_id=?',p.user_id),works:q('SELECT id,user_id,image,caption,created FROM works WHERE user_id=? ORDER BY pinned DESC,position DESC,created DESC,id DESC LIMIT 1',p.user_id),schedule:{...schedule.config(p.user_id),...(salon?{utc_offset:salon.utc_offset}:{})},next_available:nextAvailable};
+ return {...p,...(salon?{kind:'staff',published:1,city:salon.city,address:salon.address,latitude:salon.latitude,longitude:salon.longitude,salon_id:salon.id,salon_slug:salon.slug,salon_name:salon.name,salon_logo:salon.logo,salon_cover:salon.cover}:{}),categories:profileCategories(p.user_id),rating:rating.rating||null,review_count:rating.review_count,services:servicesWithDirections(db,p.user_id),works:q('SELECT id,user_id,image,caption,created FROM works WHERE user_id=? ORDER BY pinned DESC,position DESC,created DESC,id DESC LIMIT 1',p.user_id),schedule:{...schedule.config(p.user_id),...(salon?{utc_offset:salon.utc_offset}:{})},next_available:nextAvailable};
 }
 const vapidFile=path.join(DATA,'vapid.json');
 const vapid=fs.existsSync(vapidFile)?JSON.parse(fs.readFileSync(vapidFile,'utf8')):webpush.generateVAPIDKeys();
@@ -205,7 +206,7 @@ app.get('/api/map/masters',(req,res)=>{
   res.json(results);
 });
 app.get('/api/profiles/:slug',(req,res)=>{const p=one('SELECT * FROM profiles WHERE slug=?',req.params.slug);if(!p||(!p.published&&p.user_id!==req.user?.id))fail('Страница не найдена',404);res.json(publicProfile(p,req.user?.id))});
-app.get('/api/masters/:id/booking',(req,res)=>{const p=profile(req.params.id);if(!p?.published)fail('Мастер не найден',404);res.json({user_id:p.user_id,name:p.name,slug:p.slug,is_demo:p.is_demo,services:q('SELECT * FROM services WHERE user_id=?',p.user_id)})});
+app.get('/api/masters/:id/booking',(req,res)=>{const p=profile(req.params.id);if(!p?.published)fail('Мастер не найден',404);res.json({user_id:p.user_id,name:p.name,slug:p.slug,is_demo:p.is_demo,services:servicesWithDirections(db,p.user_id)})});
 app.post('/api/masters/:id/follow',requireUser,(req,res)=>{const p=profile(req.params.id);if(!p?.published)fail('Мастер не найден',404);if(req.params.id===req.user.id)fail('Нельзя подписаться на себя');run('INSERT OR IGNORE INTO follows VALUES(?,?,?)',req.user.id,req.params.id,Date.now());res.json({following:true})});
 app.delete('/api/masters/:id/follow',requireUser,(req,res)=>{run('DELETE FROM follows WHERE user_id=? AND master_id=?',req.user.id,req.params.id);res.json({following:false})});
 function personalAddress(id){return one("SELECT city,address,latitude,longitude FROM workspaces WHERE id=? AND kind='solo' AND owner_user_id=?",'solo:'+id,id)}
@@ -269,8 +270,9 @@ app.patch('/api/profile/publication',requireUser,requireMaster,requireProfile,(r
   }catch(error){db.exec('ROLLBACK');throw error}
   res.json({published:Number(req.body.published)});
 });
-app.get('/api/studio',requireUser,requireMaster,(req,res)=>{const p=profile(req.user.id),draft=p?null:personalAddress(req.user.id);res.json({profile:p||null,address_draft:draft?.address?draft:null,services:q('SELECT * FROM services WHERE user_id=?',req.user.id),works:portfolio(req.user.id,req.user.id),schedule:schedule.config(req.user.id),schedule_configured:Boolean(one('SELECT 1 FROM master_schedules WHERE master_id=?',req.user.id)),availability:futureAvailability(req.user.id)})});
-app.post('/api/services',requireUser,requireProfile,(req,res)=>{const name=str(req.body.name,120);if(!name)fail('Укажите название услуги');if(one('SELECT COUNT(*) n FROM services WHERE user_id=?',req.user.id).n>=100)fail('Не более 100 услуг');const id=randomUUID();run('INSERT INTO services VALUES(?,?,?,?,?)',id,req.user.id,name,Math.round(number(req.body.price,0,1000000)),Math.round(number(req.body.duration,5,720)));res.status(201).json({id})});
+app.get('/api/studio',requireUser,requireMaster,(req,res)=>{const p=profile(req.user.id),draft=p?null:personalAddress(req.user.id);res.json({profile:p||null,address_draft:draft?.address?draft:null,services:servicesWithDirections(db,req.user.id),works:portfolio(req.user.id,req.user.id),schedule:schedule.config(req.user.id),schedule_configured:Boolean(one('SELECT 1 FROM master_schedules WHERE master_id=?',req.user.id)),availability:futureAvailability(req.user.id)})});
+app.post('/api/services',requireUser,requireProfile,(req,res)=>{const name=str(req.body.name,120);if(!name)fail('Укажите название услуги');if(one('SELECT COUNT(*) n FROM services WHERE user_id=?',req.user.id).n>=100)fail('Не более 100 услуг');const id=randomUUID(),price=Math.round(number(req.body.price,0,1000000)),duration=Math.round(number(req.body.duration,5,720)),category=checkedServiceDirection(db,req.user.id,req.body.category,fail);db.exec('BEGIN IMMEDIATE');try{run('INSERT INTO services VALUES(?,?,?,?,?)',id,req.user.id,name,price,duration);saveServiceDirection(db,id,category);db.exec('COMMIT')}catch(error){db.exec('ROLLBACK');throw error}res.status(201).json({id})});
+app.patch('/api/services/:id/direction',requireUser,requireProfile,(req,res)=>{const service=one('SELECT id FROM services WHERE id=? AND user_id=?',req.params.id,req.user.id);if(!service)fail('Услуга не найдена',404);const category=checkedServiceDirection(db,req.user.id,req.body.category,fail);saveServiceDirection(db,service.id,category);res.json({ok:true,category})});
 app.delete('/api/services/:id',requireUser,(req,res)=>{if(one('SELECT id FROM works WHERE service_id=? AND user_id=? LIMIT 1',req.params.id,req.user.id))fail('Эта услуга связана с работой. Сначала удалите работу или выберите для неё другую услугу.',409);run('DELETE FROM services WHERE id=? AND user_id=?',req.params.id,req.user.id);res.json({ok:true})});
 app.put('/api/schedule',requireUser,requireMaster,(req,res)=>res.json(schedule.save(req.user.id,req.body)));
 app.post('/api/availability',requireUser,requireProfile,(req,res)=>{const start=Number(req.body.start),end=Number(req.body.end);if(!Number.isFinite(start)||!Number.isFinite(end)||start<Date.now()||end-start<15*60000||end-start>12*3600000)fail('Проверьте время свободного окна');if(one("SELECT id FROM appointments WHERE master_id=? AND status IN ('pending','confirmed') AND start<? AND end>?",req.user.id,end,start))fail('В это время уже есть заявка или запись',409);if(one('SELECT id FROM availability_slots WHERE master_id=? AND start<? AND end>?',req.user.id,end,start))fail('Это свободное окно пересекается с другим окном',409);const id=randomUUID();run('INSERT INTO availability_slots VALUES(?,?,?,?,?)',id,req.user.id,start,end,Date.now());res.status(201).json({id})});
@@ -278,6 +280,7 @@ app.delete('/api/availability/:id',requireUser,(req,res)=>{run('DELETE FROM avai
 const publicationControl=publications({app,db,dataDir:DATA,requireUser,requireMaster,requireProfile,fail});
 const {hydrate,portfolio,workDetail,isPublicWork,savedWorks}=publicationControl;
 migratePerformers(db,{backupDir:path.join(DATA,'migration-backups')});
+migrateServiceDirections(db,{backupDir:path.join(DATA,'migration-backups')});
 migrateProfileCover(db,{backupDir:path.join(DATA,'migration-backups')});
 const access=workspaceAccess(db);
 salonRoutes({app,db,requireUser,fail,schedule,access,categories:CATEGORIES,dataDir:DATA,publications:publicationControl});
