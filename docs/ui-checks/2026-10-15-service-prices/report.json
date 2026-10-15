@@ -1,0 +1,81 @@
+{
+  "at": "2026-10-15T10:43:53.238Z",
+  "scope": "Local synthetic fixture. No production access. Existing service and appointment rows compared before/after.",
+  "checks": [
+    {
+      "name": "master service price near name and single prefix 1440",
+      "status": "PASS"
+    },
+    {
+      "name": "long name and maximum price wrap without overlap 1440",
+      "status": "PASS"
+    },
+    {
+      "name": "salon service price near name and single prefix 1440",
+      "status": "PASS"
+    },
+    {
+      "name": "public master window and price list use from 1440",
+      "status": "PASS"
+    },
+    {
+      "name": "booking offer summary uses from 1440",
+      "status": "PASS"
+    },
+    {
+      "name": "stored visit prices remain fixed 1440",
+      "status": "PASS"
+    },
+    {
+      "name": "master service price near name and single prefix 390",
+      "status": "PASS"
+    },
+    {
+      "name": "long name and maximum price wrap without overlap 390",
+      "status": "PASS"
+    },
+    {
+      "name": "salon service price near name and single prefix 390",
+      "status": "PASS"
+    },
+    {
+      "name": "public master window and price list use from 390",
+      "status": "PASS"
+    },
+    {
+      "name": "booking offer summary uses from 390",
+      "status": "PASS"
+    },
+    {
+      "name": "stored visit prices remain fixed 390",
+      "status": "PASS"
+    },
+    {
+      "name": "master service price near name and single prefix 320",
+      "status": "PASS"
+    },
+    {
+      "name": "long name and maximum price wrap without overlap 320",
+      "status": "PASS"
+    },
+    {
+      "name": "salon service price near name and single prefix 320",
+      "status": "PASS"
+    },
+    {
+      "name": "public master window and price list use from 320",
+      "status": "PASS"
+    },
+    {
+      "name": "booking offer summary uses from 320",
+      "status": "PASS"
+    },
+    {
+      "name": "stored visit prices remain fixed 320",
+      "status": "PASS"
+    }
+  ],
+  "pageErrors": [],
+  "numeric_data_unchanged": true,
+  "result": "PASS"
+}

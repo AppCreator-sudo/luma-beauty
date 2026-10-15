@@ -1,7 +1,7 @@
 import { useEffect, useRef, type FormEvent, type ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, ArrowRight, Check, ChevronDown, Clock3, ShieldCheck } from 'lucide-react';
-import { masterDate, masterTime, money } from '../lib/api';
+import { masterDate, masterTime, servicePriceLabel } from '../lib/api';
 import '../booking-reference.css';
 
 export type BookingIdentityValue = { name: string; city?: string; address?: string; image?: string; salon?: boolean };
@@ -11,7 +11,7 @@ export function BookingIdentity({ identity }: { identity: BookingIdentityValue }
 
 type SummaryProps = { identity: BookingIdentityValue; service?: { name: string; price: number; duration: number } | null; start?: number | null; offset: number; master?: string };
 function SummaryBody({ identity, service, start, offset, master }: SummaryProps) {
-  return <div className="summary-body"><BookingIdentity identity={identity}/><dl><div><dt>Услуга</dt><dd>{service?.name || 'Выберите услугу'}</dd></div>{identity.salon ? <div><dt>Мастер</dt><dd>{master || 'Выберите мастера'}</dd></div> : null}<div><dt>Длительность</dt><dd>{service ? service.duration + ' мин' : '—'}</dd></div><div><dt>Дата и время</dt><dd>{start ? masterDate(start, offset, { day: 'numeric', month: 'long' }) + ', ' + masterTime(start, offset) : 'Выберите время'}</dd></div></dl><div className="total"><span>Стоимость {identity.salon ? 'в салоне' : 'у мастера'}</span><strong>{service ? money(service.price) : '—'}</strong></div><p className="privacy">Оплата напрямую {identity.salon ? 'в салоне' : 'мастеру'}.<br/>Заявка ожидает подтверждения.</p></div>;
+  return <div className="summary-body"><BookingIdentity identity={identity}/><dl><div><dt>Услуга</dt><dd>{service?.name || 'Выберите услугу'}</dd></div>{identity.salon ? <div><dt>Мастер</dt><dd>{master || 'Выберите мастера'}</dd></div> : null}<div><dt>Длительность</dt><dd>{service ? service.duration + ' мин' : '—'}</dd></div><div><dt>Дата и время</dt><dd>{start ? masterDate(start, offset, { day: 'numeric', month: 'long' }) + ', ' + masterTime(start, offset) : 'Выберите время'}</dd></div></dl><div className="total"><span>Стоимость {identity.salon ? 'в салоне' : 'у мастера'}</span><strong>{service ? servicePriceLabel(service.price) : '—'}</strong></div><p className="privacy">Оплата напрямую {identity.salon ? 'в салоне' : 'мастеру'}.<br/>Заявка ожидает подтверждения.</p></div>;
 }
 
 export function BookingLayout({ backTo, labels, step, setStep, summary, busy, children }: {
@@ -25,7 +25,7 @@ export function BookingLayout({ backTo, labels, step, setStep, summary, busy, ch
     heading?.focus({ preventScroll: true });
     if (heading) { const rect = heading.getBoundingClientRect(); if (rect.top < 0 || rect.bottom > innerHeight) heading.scrollIntoView({ block: 'start' }); }
   }, [step]);
-  return <div className="booking-reference"><Link className="back-link" to={backTo}><ArrowLeft size={14}/> На страницу {summary.identity.salon ? 'салона' : 'мастера'}</Link><div className="booking-top"><span className="eyebrow">ЗАПИСЬ {summary.identity.salon ? 'В САЛОН' : 'К МАСТЕРУ'}</span><p>{summary.identity.name}</p></div><nav className="progress" aria-label="Шаги записи">{labels.map((label, i) => <button type="button" key={label} className={i + 1 === step ? 'active' : i + 1 < step ? 'done' : ''} disabled={busy || i + 1 > step} aria-current={i + 1 === step ? 'step' : undefined} onClick={() => setStep(i + 1)}><span>{i + 1 < step ? <Check size={12}/> : i + 1}</span>{label}</button>)}</nav><div className="layout"><div ref={content} className="step-content"><section className="reference-step" key={step}>{children}</section></div><aside className="summary desktop-summary" aria-label="Сводка записи"><SummaryBody {...summary}/></aside><details className="summary mobile-summary"><summary><span>Ваша запись{summary.service ? ' · ' + money(summary.service.price) : ''}</span><ChevronDown size={14}/></summary><SummaryBody {...summary}/></details></div></div>;
+  return <div className="booking-reference"><Link className="back-link" to={backTo}><ArrowLeft size={14}/> На страницу {summary.identity.salon ? 'салона' : 'мастера'}</Link><div className="booking-top"><span className="eyebrow">ЗАПИСЬ {summary.identity.salon ? 'В САЛОН' : 'К МАСТЕРУ'}</span><p>{summary.identity.name}</p></div><nav className="progress" aria-label="Шаги записи">{labels.map((label, i) => <button type="button" key={label} className={i + 1 === step ? 'active' : i + 1 < step ? 'done' : ''} disabled={busy || i + 1 > step} aria-current={i + 1 === step ? 'step' : undefined} onClick={() => setStep(i + 1)}><span>{i + 1 < step ? <Check size={12}/> : i + 1}</span>{label}</button>)}</nav><div className="layout"><div ref={content} className="step-content"><section className="reference-step" key={step}>{children}</section></div><aside className="summary desktop-summary" aria-label="Сводка записи"><SummaryBody {...summary}/></aside><details className="summary mobile-summary"><summary><span>Ваша запись{summary.service ? ' · ' + servicePriceLabel(summary.service.price) : ''}</span><ChevronDown size={14}/></summary><SummaryBody {...summary}/></details></div></div>;
 }
 
 export function BookingHeading({ step, total, title, accent, text }: { step: number; total: number; title: string; accent: string; text: string }) {
@@ -38,7 +38,7 @@ export function BookingActions({ back, next, disabled, busy = false }: { back: (
   return <div className="step-actions"><button type="button" className="button outline" onClick={back} disabled={busy}>Назад</button>{next ? <button type="button" className="button wine" onClick={next} disabled={disabled || busy}>Продолжить <ArrowRight size={16}/></button> : null}</div>;
 }
 export function BookingServiceChoice({ service, selected, onSelect }: { service: { id: string; name: string; duration: number; price: number }; selected: boolean; onSelect: () => void }) {
-  return <button className="service-row" type="button" onClick={onSelect} aria-pressed={selected}><div><h3>{service.name}</h3><p>{service.duration} мин</p></div><strong>{money(service.price)}</strong><ArrowRight className="arrow" size={18}/></button>;
+  return <button className="service-row" type="button" onClick={onSelect} aria-pressed={selected}><div><h3>{service.name}</h3><p>{service.duration} мин</p></div><strong>{servicePriceLabel(service.price)}</strong><ArrowRight className="arrow" size={18}/></button>;
 }
 export function BookingContactForm({ name, contact, notes, onName, onContact, onNotes, onSubmit, back, busy, disabled, salon = false }: {
   name: string; contact: string; notes: string; onName: (value: string) => void; onContact: (value: string) => void; onNotes: (value: string) => void;

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-15T17:33:42+07:00",
+  "updated_at": "2026-10-15T18:40:02+07:00",
   "timezone": "Asia/Novosibirsk",
   "next_task_id": "U-10-01",
   "tasks": [
@@ -2124,6 +2124,91 @@
       "owner_chat": "Текущий чат pwa — публикация+гитхаб",
       "card": "U-10-15.md",
       "order": 105
+    },
+    {
+      "id": "U-10-16",
+      "title": "Компактные цены услуг и единое «от»",
+      "phase": "completed",
+      "status": "published",
+      "dependencies": [
+        "U-10-15"
+      ],
+      "sources": [
+        "frontend/src/components/SalonOwnerCabinet.tsx",
+        "frontend/src/pages/Studio.tsx",
+        "frontend/src/lib/api.ts",
+        "frontend/src/ui-density.css",
+        "docs/V2_CABINET_REFINEMENT.md",
+        "scripts/verify-service-prices.mjs",
+        "docs/ui-checks/2026-10-15-service-prices/README.md"
+      ],
+      "skills": [
+        ".agents/skills/atelier-v2-ui-implementation/SKILL.md"
+      ],
+      "approved_at": "2026-10-15T17:38:11+07:00",
+      "started_at": "2026-10-15T17:38:11+07:00",
+      "local_done_at": "2026-10-15T17:45:52+07:00",
+      "verified_at": "2026-10-15T17:45:52+07:00",
+      "published_at": "2026-10-15T18:40:02+07:00",
+      "due_at": null,
+      "owner_chat": "Текущий чат pwa — цены услуг",
+      "card": "U-10-16.md",
+      "order": 106
+    },
+    {
+      "id": "U-10-17",
+      "title": "Публикация и GitHub компактных цен услуг",
+      "phase": "completed",
+      "status": "published",
+      "dependencies": [
+        "U-10-16"
+      ],
+      "sources": [
+        "docs/tasks/U-10-16.md",
+        "docs/ui-checks/2026-10-15-service-prices/README.md",
+        "docs/CLOUD_SERVER_ACCESS.md",
+        "docs/RELEASE_20261015_MASTER_PORTFOLIO.md"
+      ],
+      "skills": [
+        ".agents/skills/atelier-v2-ui-implementation/SKILL.md"
+      ],
+      "approved_at": "2026-10-15T18:23:33+07:00",
+      "started_at": "2026-10-15T18:32:24+07:00",
+      "local_done_at": "2026-10-15T18:35:24+07:00",
+      "verified_at": "2026-10-15T18:40:02+07:00",
+      "published_at": "2026-10-15T18:40:02+07:00",
+      "due_at": null,
+      "owner_chat": "Текущий чат pwa — деплой портфолио",
+      "card": "U-10-17.md",
+      "order": 107
+    },
+    {
+      "id": "U-10-18",
+      "title": "Сетка портфолио и пошаговая загрузка работ мастера",
+      "phase": "completed",
+      "status": "published",
+      "dependencies": [
+        "U-10-15"
+      ],
+      "sources": [
+        "frontend/src/pages/Studio.tsx",
+        "frontend/src/components/WorkUpload.tsx",
+        "frontend/src/ui-density.css",
+        "docs/RELEASE_20261015_MASTER_PORTFOLIO.md",
+        "docs/ui-checks/2026-10-15-master-portfolio/README.md"
+      ],
+      "skills": [
+        ".agents/skills/atelier-v2-ui-implementation/SKILL.md"
+      ],
+      "approved_at": "2026-10-15T18:03:46+07:00",
+      "started_at": "2026-10-15T18:03:46+07:00",
+      "local_done_at": "2026-10-15T18:18:00+07:00",
+      "verified_at": "2026-10-15T18:18:00+07:00",
+      "published_at": "2026-10-15T18:40:02+07:00",
+      "due_at": null,
+      "owner_chat": "Текущий чат pwa — деплой портфолио",
+      "card": "U-10-18.md",
+      "order": 108
     }
   ]
 }

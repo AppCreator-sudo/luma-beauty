@@ -1,0 +1,41 @@
+{
+  "at": "2026-10-15T10:42:42.607Z",
+  "scope": "Local synthetic fixture. No production access. Existing service and appointment rows compared before/after.",
+  "checks": [
+    {
+      "name": "master service price near name and single prefix 1440",
+      "status": "PASS"
+    },
+    {
+      "name": "long name and maximum price wrap without overlap 1440",
+      "status": "PASS"
+    },
+    {
+      "name": "salon service price near name and single prefix 1440",
+      "status": "PASS"
+    },
+    {
+      "name": "public master window and price list use from 1440",
+      "status": "PASS"
+    },
+    {
+      "name": "booking offer summary uses from 1440",
+      "status": "PASS"
+    },
+    {
+      "name": "stored visit prices remain fixed 1440",
+      "status": "PASS"
+    },
+    {
+      "name": "master service price near name and single prefix 390",
+      "status": "PASS"
+    },
+    {
+      "name": "long name and maximum price wrap without overlap 390",
+      "status": "PASS"
+    }
+  ],
+  "pageErrors": [],
+  "result": "FAIL",
+  "error": "locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Услуги и графики', exact: true })\u001b[22m\n"
+}

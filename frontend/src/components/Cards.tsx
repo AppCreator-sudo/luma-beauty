@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { ArrowUpRight, CalendarDays, Heart, MapPin, MoveUpRight, Star } from 'lucide-react';
 import { motion, useReducedMotion } from 'motion/react';
-import { bookingPath, profilePath, masterDate, masterTime, money, type Profile, type Work } from '../lib/api';
+import { bookingPath, profilePath, masterDate, masterTime, servicePriceLabel, type Profile, type Work } from '../lib/api';
 import { PromotionBadge } from './PromotionBadge';
 import { SalonCardVisual } from './SalonVisual';
 import '../catalog-concept.css';
@@ -23,7 +23,7 @@ export function MasterCard({ profile, index = 0 }: { profile: Profile; index?: n
     <div className="identity-social"><Star size={15}/><span>{profile.rating ? profile.rating.toFixed(1) : 'Пока без оценок'}{profile.review_count ? ' · '+profile.review_count+' отзывов' : ''}</span>{profile.teaches ? <span className="master-training-badge">Обучает</span> : null}</div>
     <p className="identity-directions">{categories.join(' · ') || (salon ? 'Услуги команды' : 'Услуги мастера')}</p>
     <PromotionBadge promotion={profile.promotion}/>
-    <p className="master-price">{profile.services?.length ? 'От '+money(Math.min(...profile.services.map(service => service.price))) : 'Услуги пока не добавлены'}</p>
+    <p className="master-price">{profile.services?.length ? servicePriceLabel(Math.min(...profile.services.map(service => service.price))) : 'Услуги пока не добавлены'}</p>
     <div className="identity-card-footer">{profile.next_available && canBook ? <Link className="master-available" to={bookingPath(profile) + (staff ? '&' : '?') + 'start=' + profile.next_available}><CalendarDays size={17}/><span>{masterDate(profile.next_available, profile.schedule?.utc_offset)} · {masterTime(profile.next_available, profile.schedule?.utc_offset)}</span><ArrowUpRight size={15}/></Link> : <p className="identity-time"><CalendarDays size={17}/>{profile.is_demo ? 'Пример оформления' : 'Выберите время при записи'}</p>}<Link className={'button full ' + (canBook ? 'button-wine' : 'button-outline')} to={canBook ? bookingPath(profile) : profilePath(profile)}>{canBook ? 'Записаться' : 'Посмотреть страницу'}<ArrowUpRight size={17}/></Link></div>
     </div>
   </motion.article>;

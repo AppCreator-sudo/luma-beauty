@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { ArrowUpRight, CalendarDays, MapPin, Star } from 'lucide-react';
-import { bookingPath, profilePath, masterDate, masterTime, money, type Profile } from '../lib/api';
+import { bookingPath, profilePath, masterDate, masterTime, servicePriceLabel, type Profile } from '../lib/api';
 import { PromotionBadge } from './PromotionBadge';
 import '../compact-catalog.css';
 import {ProfileBadges} from './ProfileBadges';
@@ -40,7 +40,7 @@ export function CatalogMasterCard({ profile }: { profile: Profile }) {
       {profile.next_available && canBook ? <Link className="compact-master-next" to={nextPath}><CalendarDays size={15} aria-hidden="true"/><span>{masterDate(profile.next_available, profile.schedule?.utc_offset)} · {masterTime(profile.next_available, profile.schedule?.utc_offset)}</span><ArrowUpRight size={14} aria-hidden="true"/></Link> : null}
     <div className="compact-master-footer">
 
-      <div className="compact-master-actions"><p className="compact-master-price">{profile.services?.length ? 'От ' + money(Math.min(...profile.services.map(service => service.price))) : 'Услуги пока не добавлены'}</p><Link className={'compact-master-book' + (canBook ? '' : ' compact-master-details')} to={canBook ? bookPath : detailPath} aria-label={(canBook ? salon ? 'Записаться в ' : 'Записаться к ' : 'Открыть страницу ') + profile.name}>{canBook ? 'Записаться' : 'Подробнее'}<ArrowUpRight size={16} aria-hidden="true"/></Link></div>
+      <div className="compact-master-actions"><p className="compact-master-price">{profile.services?.length ? servicePriceLabel(Math.min(...profile.services.map(service => service.price))) : 'Услуги пока не добавлены'}</p><Link className={'compact-master-book' + (canBook ? '' : ' compact-master-details')} to={canBook ? bookPath : detailPath} aria-label={(canBook ? salon ? 'Записаться в ' : 'Записаться к ' : 'Открыть страницу ') + profile.name}>{canBook ? 'Записаться' : 'Подробнее'}<ArrowUpRight size={16} aria-hidden="true"/></Link></div>
     </div>
   </article>;
 }

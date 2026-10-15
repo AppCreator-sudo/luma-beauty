@@ -1,7 +1,7 @@
 import {useEffect,useRef,useState} from 'react';
 import {Link} from 'react-router-dom';
 import {ArrowRight,MapPin,X} from 'lucide-react';
-import {api,bookingPath,masterDate,masterDayKey,masterTime,money,profilePath} from '../lib/api';
+import {api,bookingPath,masterDate,masterDayKey,masterTime,servicePriceLabel,profilePath} from '../lib/api';
 import {mapIdentity,type MapDetails,type MapMaster} from '../lib/map';
 import {currentPromotion,usePromotionClock} from '../lib/promotions';
 import {MapRating} from './MapRating';
@@ -73,9 +73,9 @@ export function MapProfileCard({profile,category,soon,onClose,onLayout}:{profile
       {catalog?.services.length?<label className="map-service-picker">Услуга<select value={selected?.id||''} onChange={event=>setChoice({scope,service:event.target.value})}>{catalog.services.map(service=><option key={service.id} value={service.id}>{service.title}</option>)}</select></label>:null}
       {result.error?<div className="map-card-error" role="alert"><p>{result.error}</p><button className="text-link" type="button" onClick={retry}>Обновить услуги</button></div>:loading?<p className="map-card-loading" role="status">Ищем ближайшее время…</p>:slot?<>
         <div className="map-card-slot"><span>Ближайшая запись</span><strong>{slotLabel(slot.start,slot.utc_offset)}</strong></div>
-        <div className="map-card-price"><span>{slot.service.duration} мин{slot.performer?' · '+slot.performer.name:''}</span><strong>{money(slot.service.price)}</strong></div>
+        <div className="map-card-price"><span>{slot.service.duration} мин{slot.performer?' · '+slot.performer.name:''}</span><strong>{servicePriceLabel(slot.service.price)}</strong></div>
       </>:<p className="map-card-loading">{current.is_demo?'Пример страницы · запись недоступна':!catalog?.services.length?category?'Нет услуг в выбранном направлении':'Услуги пока не добавлены':soon?'У этой услуги нет времени в ближайший час. Выберите другую услугу или измените фильтр.':'У этой услуги нет свободного времени в ближайшие 7 дней'}</p>}
-      {!slot&&selected&&!loading&&!result.error?<div className="map-card-price"><span>{selected.duration} мин</span><strong>{money(selected.price)}</strong></div>:null}
+      {!slot&&selected&&!loading&&!result.error?<div className="map-card-price"><span>{selected.duration} мин</span><strong>{servicePriceLabel(selected.price)}</strong></div>:null}
       {!current.is_demo&&!loading&&!result.error&&details&&selected?<Link className="button button-wine map-card-book" to={book}>{slot?'Записаться':'Посмотреть расписание'}<ArrowRight size={17}/></Link>:null}
       <Link className="map-card-profile text-link" to={profilePath(current)}>Страница {current.kind==='salon'?'салона':'мастера'} <ArrowRight size={13}/></Link>
     </div>

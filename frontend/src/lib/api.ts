@@ -66,6 +66,7 @@ export function json<T>(path: string, method: 'POST' | 'PUT' | 'PATCH' | 'DELETE
   return api<T>(path, { method, headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
 }
 export function money(value: number) { return new Intl.NumberFormat('ru-RU').format(value) + ' ₽'; }
+export function servicePriceLabel(value: number) { return 'от ' + money(value); }
 export function dayKey(value: number | Date) {
   const date = value instanceof Date ? value : new Date(value);
   return [date.getFullYear(), String(date.getMonth() + 1).padStart(2, '0'), String(date.getDate()).padStart(2, '0')].join('-');
