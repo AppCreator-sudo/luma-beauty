@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-15T14:38:43+07:00",
+  "updated_at": "2026-10-15T14:41:35+07:00",
   "timezone": "Asia/Novosibirsk",
-  "next_task_id": "U-06-04",
+  "next_task_id": "U-10-01",
   "tasks": [
     {
       "id": "U-00",
@@ -1828,7 +1828,7 @@
     {
       "id": "U-06-03",
       "title": "Компактные публичные профили: узор, адрес и выбор времени",
-      "phase": "ui",
+      "phase": "completed",
       "status": "published",
       "dependencies": [
         "U-06-02"
@@ -1856,7 +1856,7 @@
     {
       "id": "U-07-01",
       "title": "Единые карточки каталога: адреса, рейтинги и бейджи",
-      "phase": "ui",
+      "phase": "completed",
       "status": "published",
       "dependencies": [
         "U-06-02",
@@ -1884,7 +1884,7 @@
     {
       "id": "U-09-06",
       "title": "Направления услуг и выбор услуги в карточке карты",
-      "phase": "ui",
+      "phase": "completed",
       "status": "published",
       "dependencies": [
         "U-09-03",
@@ -1915,8 +1915,8 @@
     {
       "id": "U-06-04",
       "title": "Публикация правок профилей, каталога и направлений услуг",
-      "phase": "operations",
-      "status": "in_progress",
+      "phase": "completed",
+      "status": "published",
       "dependencies": [
         "U-06-03",
         "U-07-01",
