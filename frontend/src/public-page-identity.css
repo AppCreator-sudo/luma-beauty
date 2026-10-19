@@ -80,5 +80,5 @@
 .public-reference.public-page-shell .public-address svg{flex:none;margin-top:3px}
 .public-window-actions{display:grid;gap:10px;width:100%}
 .public-window .public-window-actions .button{width:100%;min-height:46px;box-sizing:border-box;justify-content:center;padding:11px 8px;font-size:17px;line-height:1.25;white-space:normal;text-align:center}
-.site-footer.public-reference-footer{padding-block:32px 24px;gap:24px}
-@media(max-width:760px){.site-footer.public-reference-footer{padding-top:28px;padding-bottom:calc(24px + env(safe-area-inset-bottom));gap:24px}}
+.site-footer.public-reference-footer{padding-block:20px 16px;gap:20px}
+@media(max-width:760px){.site-footer.public-reference-footer{padding:14px 20px calc(12px + env(safe-area-inset-bottom));gap:10px 16px}}

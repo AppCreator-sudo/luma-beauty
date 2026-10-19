@@ -1,0 +1,20 @@
+{
+  "phase": "publish",
+  "tag": "20261019-v2-mobile-ui-polish",
+  "baseline": "20261019-v2-stories-ui-polish",
+  "active_release": "/opt/atelie/releases/20261019-v2-mobile-ui-polish",
+  "checks": [
+    "/api/health",
+    "/api/me",
+    "/api/profiles",
+    "/api/inspiration",
+    "/api/map/viewport?bbox=37.5,55.6,37.8,55.9&zoom=12",
+    "/api/stories/active",
+    "/v2/",
+    "/sw.js",
+    "entry-asset"
+  ],
+  "pre_switch_sha256": "745cd48b9134270d8829f6d7d0d35615ddd2e9809d32a08064839c7f951c30b9",
+  "active_tables": 46,
+  "status": "active"
+}

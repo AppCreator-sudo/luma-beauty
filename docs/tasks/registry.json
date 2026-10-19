@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-19T14:20:00+07:00",
+  "updated_at": "2026-10-19T15:20:00+07:00",
   "timezone": "Asia/Novosibirsk",
-  "next_task_id": "BUG-019",
+  "next_task_id": "U-10-07",
   "tasks": [
     {
       "id": "U-00",
@@ -2815,8 +2815,8 @@
     {
       "id": "BUG-019",
       "title": "Мобильное боковое меню: фризы анимации и смена кнопки закрытия",
-      "phase": "ui",
-      "status": "in_progress",
+      "phase": "completed",
+      "status": "published",
       "dependencies": [
         "U-07N"
       ],
@@ -2833,9 +2833,9 @@
       ],
       "approved_at": null,
       "started_at": "2026-10-19T12:03:45+07:00",
-      "local_done_at": null,
-      "verified_at": null,
-      "published_at": null,
+      "local_done_at": "2026-10-19T14:45:00+07:00",
+      "verified_at": "2026-10-19T15:00:00+07:00",
+      "published_at": "2026-10-19T15:20:00+07:00",
       "due_at": null,
       "owner_chat": "BUG-019 / оптимизация меню / текущий чат",
       "card": "BUG-019.md",
