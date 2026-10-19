@@ -1,0 +1,21 @@
+{
+  "phase": "preflight",
+  "tag": "20261019-v2-stories-avatar-fix",
+  "baseline": "20261019-v2-mobile-ui-fixes",
+  "checks": [
+    "/api/health",
+    "/api/me",
+    "/api/profiles",
+    "/api/inspiration",
+    "/api/map/viewport?bbox=37.5,55.6,37.8,55.9&zoom=12",
+    "/api/stories/active",
+    "/v2/",
+    "/sw.js",
+    "entry-asset",
+    "/api/studio"
+  ],
+  "backup_snapshot_sha256": "0bc5ae16ee604b491ccd5414e009f27d7e81f3ba4fc8f53d1d3c420f38fbd72c",
+  "baseline_tables": 46,
+  "baseline_media": 16,
+  "ready_for_publish": true
+}

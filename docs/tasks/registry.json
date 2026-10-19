@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-19T15:20:00+07:00",
+  "updated_at": "2026-10-19T17:07:01+07:00",
   "timezone": "Asia/Novosibirsk",
   "next_task_id": "U-10-07",
   "tasks": [
@@ -2920,6 +2920,35 @@
       "owner_chat": "текущий чат / BUG-021",
       "card": "BUG-021.md",
       "order": 131
+    },
+    {
+      "id": "BUG-022",
+      "title": "Сторисы: неподвижный аватар и единый ободок",
+      "phase": "ui",
+      "status": "verified",
+      "dependencies": ["F-14"],
+      "sources": [
+        "frontend/src/components/StoryRingAvatar.tsx",
+        "frontend/src/components/CatalogMasterCard.tsx",
+        "frontend/src/stories.css",
+        "scripts/verify-stories.mjs"
+      ],
+      "skills": [
+        ".agents/skills/atelier-v2-product-design/SKILL.md",
+        ".agents/skills/atelier-v2-ui-implementation/SKILL.md",
+        ".agents/skills/impeccable/SKILL.md",
+        ".agents/skills/taste-skill/SKILL.md",
+        ".agents/skills/animate/SKILL.md"
+      ],
+      "approved_at": "2026-10-19",
+      "started_at": null,
+      "local_done_at": null,
+      "verified_at": "2026-10-19T17:07:01+07:00",
+      "published_at": null,
+      "due_at": null,
+      "owner_chat": "текущий чат / BUG-022",
+      "card": "BUG-022.md",
+      "order": 132
     }
   ]
 }

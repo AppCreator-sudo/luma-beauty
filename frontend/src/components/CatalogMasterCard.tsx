@@ -28,7 +28,7 @@ export function CatalogMasterCard({ profile, hasStory = false, onStoryClick }: {
   return <article className={'compact-master-card compact-master-card-' + (salon ? 'salon' : staff ? 'staff' : 'personal') + (profile.promotion ? ' compact-master-card-promoted' : '')} data-catalog-id={(profile.kind || 'master') + ':' + profile.user_id}>
     <div className="compact-master-identity">
       {hasStory ? (
-        <StoryRingAvatar hasStory={true} size={84} onClick={onStoryClick}>
+        <StoryRingAvatar hasStory={true} className="compact-master-avatar" onClick={onStoryClick}>
           {avatarContent}
         </StoryRingAvatar>
       ) : (

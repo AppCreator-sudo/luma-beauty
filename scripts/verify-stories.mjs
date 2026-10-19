@@ -12,7 +12,7 @@ fs.mkdirSync(root, { recursive: true });
 const port = '3290';
 const origin = 'http://localhost:' + port;
 
-const out = path.resolve('docs/ui-checks/2026-10-19-stories');
+const out = path.resolve('docs/ui-checks/2026-10-19-stories-avatar');
 fs.mkdirSync(out, { recursive: true });
 
 // Setup synthetic server fixture
@@ -57,6 +57,26 @@ async function api(context, url, body, method = body === undefined ? 'GET' : 'PO
 async function checkOverflow(page, name) {
   const overflow = await page.evaluate(() => Math.max(0, document.documentElement.scrollWidth - window.innerWidth));
   assert.equal(overflow, 0, `${name} has horizontal overflow: ${overflow}px`);
+}
+
+async function checkStableAvatar(page, selector, label, expectedWidth) {
+  const avatar = page.locator(selector).first();
+  await avatar.scrollIntoViewIfNeeded();
+  await page.waitForTimeout(650);
+  const before = await avatar.boundingBox();
+  const beforeScrollY = await page.evaluate(() => window.scrollY);
+  assert.ok(before, `${label}: avatar is missing`);
+  if (expectedWidth) assert.equal(Math.round(before.width), expectedWidth, `${label}: avatar width changed`);
+  const ring = await avatar.evaluate(element => getComputedStyle(element).boxShadow);
+  const parentOpacity = await avatar.evaluate(element => getComputedStyle(element.parentElement).opacity);
+  await avatar.hover();
+  const after = await avatar.boundingBox();
+  const afterScrollY = await page.evaluate(() => window.scrollY);
+  assert.ok(after, `${label}: avatar disappeared on hover`);
+  assert.ok(Math.abs(after.x - before.x) < 0.1 && Math.abs(after.y + afterScrollY - before.y - beforeScrollY) < 0.1 && Math.abs(after.width - before.width) < 0.1, `${label}: avatar moves on hover (${JSON.stringify(before)} → ${JSON.stringify(after)}, scroll ${beforeScrollY} → ${afterScrollY})`);
+  assert.equal(await avatar.evaluate(element => getComputedStyle(element).boxShadow), ring, `${label}: ring changes on hover`);
+  assert.equal(await avatar.evaluate(element => getComputedStyle(element.parentElement).opacity), parentOpacity, `${label}: avatar fades on hover`);
+  return ring;
 }
 
 async function run() {
@@ -198,6 +218,10 @@ async function run() {
       const card = visitorPage.locator('.compact-master-card').first();
       await expect(card.locator('.story-avatar-ring')).toBeVisible();
 
+      const feedRing = await checkStableAvatar(visitorPage, '.stories-feed-item .story-avatar-ring', `feed ${width}px`, 66);
+      const cardRing = await checkStableAvatar(visitorPage, '.compact-master-card .story-avatar-ring', `card ${width}px`, width === 1440 ? 112 : width === 390 ? 72 : 64);
+      assert.equal(cardRing, feedRing, `card ${width}px: ring differs from feed`);
+
       await visitorPage.screenshot({ path: path.join(out, `02-catalog-stories-feed-${width}.png`) });
 
       // Click story in the feed to open StoryViewer
@@ -238,6 +262,8 @@ async function run() {
       const profileAvatar = visitorPage.locator('.public-identity .public-avatar.public-avatar-has-story');
       await expect(profileAvatar).toBeVisible();
 
+      assert.equal(await checkStableAvatar(visitorPage, '.public-identity .public-avatar.public-avatar-has-story', `master page ${width}px`), feedRing, `master page ${width}px: ring differs from catalog`);
+
       // Check avatar dimensions - must NOT be shrunken (should be >= 140px on desktop)
       const box = await profileAvatar.boundingBox();
       assert.ok(box && box.width >= (width === 1440 ? 140 : 80), `Avatar width must be full size, got: ${box?.width}`);
@@ -255,6 +281,39 @@ async function run() {
 
       await visitorContext.close();
     }
+
+    // Salon uses the same identity component, including its own mobile layout.
+    const salonContext = await browser.newContext({ viewport: { width: 1440, height: 900 } });
+    await api(salonContext, '/auth/register', {
+      login: 'storysalon', password: 'SalonPassword123!', account_type: 'salon'
+    }, 'POST', 201);
+    const salon = await api(salonContext, '/salons', { name: 'Синтетический салон историй', city: 'Новосибирск' }, 'POST', 201);
+    await api(salonContext, `/salons/${salon.id}/page`, {
+      name: 'Синтетический салон историй', city: 'Новосибирск', slug: 'story-salon',
+      published: false, utc_offset: 420
+    }, 'PUT');
+    const salonStory = await salonContext.request.fetch(origin + '/api/stories', {
+      method: 'POST', headers: { Origin: origin },
+      multipart: {
+        owner_type: 'salon', workspace_id: salon.id,
+        image: { name: 'story.jpg', mimeType: 'image/jpeg', buffer: imageBuf }
+      }
+    });
+    assert.equal(salonStory.status(), 201, `Salon story upload returned ${salonStory.status()}`);
+    const salonPage = await salonContext.newPage();
+    for (const width of widths) {
+      await salonPage.setViewportSize({ width, height: width === 1440 ? 900 : 844 });
+      await salonPage.goto(origin + '/v2/s/story-salon');
+      const salonAvatar = salonPage.locator('.public-identity .public-avatar.public-avatar-has-story');
+      await expect(salonAvatar).toBeVisible();
+      await checkStableAvatar(salonPage, '.public-identity .public-avatar.public-avatar-has-story', `salon page ${width}px`);
+      await checkOverflow(salonPage, `Public salon profile ${width}px`);
+      await salonPage.screenshot({ path: path.join(out, `05-public-salon-${width}.png`) });
+      await salonAvatar.click();
+      await expect(salonPage.locator('.story-viewer-overlay')).toBeVisible();
+      await salonPage.keyboard.press('Escape');
+    }
+    await salonContext.close();
 
     // Step 5: Test Delete Story in Studio
     await masterPage.bringToFront();

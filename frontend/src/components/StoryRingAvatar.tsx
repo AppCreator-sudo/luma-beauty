@@ -15,14 +15,14 @@ export function StoryRingAvatar({
   hasStory = false,
   avatar,
   name = '',
-  size = 64,
+  size,
   className = '',
   onClick,
   children
 }: Props) {
   const content = children || (
     avatar ? (
-      <img src={avatar} alt={name} width={size} height={size} loading="lazy" />
+      <img src={avatar} alt={name} loading="lazy" />
     ) : (
       <span>{Array.from(name.trim())[0] || 'L'}</span>
     )
@@ -43,7 +43,7 @@ export function StoryRingAvatar({
   return (
     <div
       className={`story-avatar-ring ${className}`}
-      style={{ width: size, height: size }}
+      style={size ? { width: size, height: size } : undefined}
       onClick={handleClick}
       role={onClick ? 'button' : undefined}
       tabIndex={onClick ? 0 : undefined}

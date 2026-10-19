@@ -5,18 +5,14 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 2.5px;
+  padding: 0;
+  border: 1px solid #faf7f1;
   border-radius: 50%;
-  background: linear-gradient(135deg, #722F37 0%, #C5A059 100%);
+  background: #eee4d6;
+  box-shadow: 0 0 0 2px #faf7f1, 0 0 0 4.5px #722f37, 0 0 0 6px #c5a059;
   cursor: pointer;
-  transition: transform 0.2s cubic-bezier(0.2, 0.9, 0.4, 1), box-shadow 0.2s ease;
   flex-shrink: 0;
   box-sizing: border-box;
-}
-
-.story-avatar-ring:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 14px rgba(114, 47, 55, 0.25);
 }
 
 .story-avatar-ring-inner {
@@ -24,8 +20,8 @@
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  padding: 2px;
-  background: #ffffff;
+  padding: 0;
+  background: #eee4d6;
   width: 100%;
   height: 100%;
   box-sizing: border-box;
@@ -38,6 +34,19 @@
   height: 100%;
   object-fit: cover;
   display: block;
+}
+
+.story-avatar-ring img {
+  object-position: center 25%;
+}
+
+.story-avatar-ring:focus-visible {
+  outline: 2px solid #722f37;
+  outline-offset: 8px;
+}
+
+.reference-catalog .compact-master-card .compact-master-avatar.story-avatar-ring {
+  border-color: #faf7f1;
 }
 
 /* 2. Top Stories Feed Carousel (Masters Catalog / Inspiration) */
@@ -75,11 +84,6 @@
   max-width: 80px;
   text-align: center;
   font-family: inherit;
-  transition: opacity 0.15s ease;
-}
-
-.stories-feed-item:hover {
-  opacity: 0.9;
 }
 
 .stories-feed-item:focus-visible {
@@ -441,25 +445,14 @@
 /* 4. Public Profile Avatar Story Ring */
 .public-avatar.public-avatar-has-story {
   cursor: pointer;
+  border-width: 1px;
   border-color: #faf7f1 !important;
-  box-shadow: 0 0 0 3px #faf7f1, 0 0 0 6.5px #722F37, 0 0 0 8px #C5A059, 0 10px 28px rgba(114, 47, 55, 0.28) !important;
-  transition: transform 0.22s cubic-bezier(0.2, 0.9, 0.4, 1), box-shadow 0.22s ease;
-}
-
-.public-avatar.public-avatar-has-story:hover {
-  transform: scale(1.025);
-  box-shadow: 0 0 0 3px #faf7f1, 0 0 0 6.5px #8A3742, 0 0 0 9px #D8B268, 0 14px 34px rgba(114, 47, 55, 0.38) !important;
+  box-shadow: 0 0 0 2px #faf7f1, 0 0 0 4.5px #722f37, 0 0 0 6px #c5a059 !important;
 }
 
 .public-avatar.public-avatar-has-story:focus-visible {
   outline: 2px solid #722F37;
   outline-offset: 8px;
-}
-
-@media (max-width: 760px) {
-  .public-avatar.public-avatar-has-story {
-    box-shadow: 0 0 0 2.5px #faf7f1, 0 0 0 5px #722F37, 0 0 0 6.5px #C5A059, 0 6px 18px rgba(114, 47, 55, 0.2) !important;
-  }
 }
 
 /* 5. Cabinet Stories Management Styles */
