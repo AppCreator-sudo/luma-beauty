@@ -1,0 +1,99 @@
+{
+  "at": "2026-10-15T14:27:03.976Z",
+  "scope": "U-10-02 only; isolated synthetic SQLite and fake address provider; no production access",
+  "origin": "http://localhost:3261",
+  "fixture": "C:\\Users\\Admin\\Desktop\\pwa\\.cache\\u10-02-onboarding-1792074406628",
+  "widths": [
+    1440,
+    390,
+    320
+  ],
+  "checks": [
+    {
+      "name": "guest-studio-1440",
+      "pass": true
+    },
+    {
+      "name": "register-master-via-ui-1440",
+      "pass": true
+    },
+    {
+      "name": "calendar-without-profile-redirect-1440",
+      "pass": true
+    },
+    {
+      "name": "first-form-1440-layout",
+      "pass": true
+    },
+    {
+      "name": "invalid-house-and-profile-before-address-rejected-1440",
+      "pass": true
+    },
+    {
+      "name": "provider-error-preserves-typed-fields-and-confirmed-draft-1440",
+      "pass": true
+    },
+    {
+      "name": "address-error-1440-layout",
+      "pass": true
+    },
+    {
+      "name": "confirmed-address-reload-1440",
+      "pass": true
+    },
+    {
+      "name": "hidden-profile-data-and-privacy-1440",
+      "pass": true
+    },
+    {
+      "name": "no-service-no-schedule-refused-1440",
+      "pass": true
+    },
+    {
+      "name": "first-service-save-reload-1440",
+      "pass": true
+    },
+    {
+      "name": "unsaved-default-schedule-is-not-ready-1440",
+      "pass": true
+    },
+    {
+      "name": "explicit-weekly-schedule-save-reload-1440",
+      "pass": true
+    },
+    {
+      "name": "ready-to-publish-1440-layout",
+      "pass": true
+    },
+    {
+      "name": "publish-weekly-reload-public-page-1440",
+      "pass": true
+    },
+    {
+      "name": "public-master-1440-layout",
+      "pass": true
+    },
+    {
+      "name": "public-slots-use-saved-hours-and-timezone-1440",
+      "pass": true
+    },
+    {
+      "name": "hide-reload-private-again-1440",
+      "pass": true
+    },
+    {
+      "name": "cycle-ready-1440-layout",
+      "pass": true
+    },
+    {
+      "name": "cycle-publication-error-1440-layout",
+      "pass": true
+    },
+    {
+      "name": "publish-cycle-1440",
+      "pass": false,
+      "message": "Saved 2/2 schedule must allow publication\n\n400 !== 200\n"
+    }
+  ],
+  "pageErrors": []
+}

@@ -1,0 +1,71 @@
+{
+  "at": "2026-10-18T20:46:58+07:00",
+  "task": "BUG-015",
+  "scope": "Local synthetic HTTP tests only; no production deployment",
+  "evidence": "image-policy-tests.tap",
+  "command": "node --test --test-concurrency=1 --test-reporter=tap tests/publication-image-limits.test.mjs tests/publications.test.mjs",
+  "process_exit_code": 0,
+  "tests": 9,
+  "passed": 9,
+  "failed": 0,
+  "cases": [
+    {
+      "width": 10000,
+      "height": 256,
+      "status": 201,
+      "verdict": "PASS"
+    },
+    {
+      "width": 256,
+      "height": 10000,
+      "status": 201,
+      "verdict": "PASS"
+    },
+    {
+      "width": 10001,
+      "height": 256,
+      "status": 400,
+      "rows_and_files_unchanged": true,
+      "verdict": "PASS"
+    },
+    {
+      "width": 256,
+      "height": 10001,
+      "status": 400,
+      "rows_and_files_unchanged": true,
+      "verdict": "PASS"
+    },
+    {
+      "kind": "valid then too wide in one batch",
+      "status": 400,
+      "converted_files_removed": true,
+      "existing_rows_and_bytes_unchanged": true,
+      "verdict": "PASS"
+    },
+    {
+      "kind": "PUT replacement with retained existing_images, a valid new image and a later oversize image",
+      "method": "PUT",
+      "status": 400,
+      "converted_files_removed": true,
+      "existing_metadata_rows_images_and_bytes_unchanged": true,
+      "verdict": "PASS"
+    },
+    {
+      "kind": "valid then corrupt metadata in one batch",
+      "status": 400,
+      "public_error": "Не удалось прочитать фото. Используйте JPEG, PNG или WebP.",
+      "existing_rows_and_bytes_unchanged": true,
+      "verdict": "PASS"
+    }
+  ],
+  "integrity": "ok",
+  "foreign_keys": [],
+  "formats_and_animated_policy_unchanged": true,
+  "avatar_minimums_not_applied_to_portfolio": true,
+  "temporary_fixture_cleanup_verified": true,
+  "initial_parallel_attempt": {
+    "process_exit_code": 1,
+    "reason": "Both synthetic test servers exceeded the existing 10-second readiness window before image assertions ran. The same two tests passed when run sequentially."
+  },
+  "production_changed": false
+}

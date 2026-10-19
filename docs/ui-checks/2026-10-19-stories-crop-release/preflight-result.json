@@ -1,0 +1,28 @@
+{
+  "tag": "20261019-v2-stories-crop-polish",
+  "baseline": "20261018-v2-auth-upload-stability",
+  "at": 1792391892.1991706,
+  "archive_sha256": "e537498f873a43183b570d70558680f55278203edaff5198b80be85d1b226b15",
+  "backup": "/opt/atelie/backups/20261019-v2-stories-crop-polish",
+  "snapshot_sha256": "6248e17d4f98a84c2570588d3b79741d1f0c0e30cb5df8e476797b430426d1ba",
+  "files": 146,
+  "tables": 45,
+  "rows": 205,
+  "schema_and_business_preserved": true,
+  "production_data_not_replaced": true,
+  "read_checks": [
+    "/api/health",
+    "/api/me",
+    "/api/profiles",
+    "/api/inspiration",
+    "/api/map/viewport?bbox=37.5,55.6,37.8,55.9&zoom=12",
+    "/api/stories/active",
+    "/v2/",
+    "/sw.js",
+    "entry-asset",
+    "/api/studio"
+  ],
+  "smoke_stopped": true,
+  "smoke_copy_removed": true,
+  "entry": "index-DC0t1Lof.js"
+}

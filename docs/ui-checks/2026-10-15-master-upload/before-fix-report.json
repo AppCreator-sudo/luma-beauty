@@ -1,0 +1,213 @@
+{
+  "at": "2026-10-15T15:53:32.527Z",
+  "mode": "before-fix focused reproduction",
+  "scope": "U-10-04 remaining master upload states only; isolated synthetic SQLite, fake address provider, local generated photos; no production access or real credentials",
+  "origin": "http://localhost:3265",
+  "fixture": "C:\\Users\\Admin\\Desktop\\pwa\\.cache\\u10-04-upload-1792079603309",
+  "fixtureStopped": true,
+  "widths": [
+    390
+  ],
+  "checks": [
+    {
+      "name": "reopened-empty-draft-step3-390-layout",
+      "pass": true
+    },
+    {
+      "name": "close-reopen-step3-empty-draft-original-defect-reproduced",
+      "pass": true
+    },
+    {
+      "name": "busy-toggle-two-pending-posts-390-layout",
+      "pass": true
+    },
+    {
+      "name": "busy-toggle-second-concurrent-post-original-defect-reproduced",
+      "pass": true
+    },
+    {
+      "name": "busy-toggle-two-identical-works-persisted-reproduced",
+      "pass": true
+    },
+    {
+      "name": "saved-but-success-missing-refresh-error-390-layout",
+      "pass": true
+    },
+    {
+      "name": "post201-refresh500-saved-work-without-visible-success-reproduced",
+      "pass": true
+    },
+    {
+      "name": "synthetic-database-integrity-and-foreign-keys-after-stop",
+      "pass": true
+    }
+  ],
+  "pageErrors": [],
+  "layouts": [
+    {
+      "name": "reopened-empty-draft-step3-390",
+      "horizontalOverflow": 0,
+      "controls": [
+        {
+          "tag": "BUTTON",
+          "label": "Закрыть форму",
+          "width": 163.5625,
+          "height": 44
+        },
+        {
+          "tag": "BUTTON",
+          "label": "1Услуга",
+          "width": 90,
+          "height": 48
+        },
+        {
+          "tag": "BUTTON",
+          "label": "2Фото",
+          "width": 90,
+          "height": 48
+        },
+        {
+          "tag": "BUTTON",
+          "label": "3Подпись",
+          "width": 90,
+          "height": 48
+        },
+        {
+          "tag": "TEXTAREA",
+          "label": "caption",
+          "width": 286,
+          "height": 94
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Назад",
+          "width": 69.03125,
+          "height": 44
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Опубликовать",
+          "width": 208.96875,
+          "height": 44
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Удалить работу",
+          "width": 44,
+          "height": 44
+        }
+      ],
+      "formWidth": 316
+    },
+    {
+      "name": "busy-toggle-two-pending-posts-390",
+      "horizontalOverflow": 0,
+      "controls": [
+        {
+          "tag": "BUTTON",
+          "label": "Закрыть форму",
+          "width": 163.5625,
+          "height": 44
+        },
+        {
+          "tag": "BUTTON",
+          "label": "1Услуга",
+          "width": 90,
+          "height": 48
+        },
+        {
+          "tag": "BUTTON",
+          "label": "2Фото",
+          "width": 90,
+          "height": 48
+        },
+        {
+          "tag": "BUTTON",
+          "label": "3Подпись",
+          "width": 90,
+          "height": 48
+        },
+        {
+          "tag": "TEXTAREA",
+          "label": "Параллельная синтетическая публикация",
+          "width": 286,
+          "height": 94
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Назад",
+          "width": 69.03125,
+          "height": 44
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Сохраняем…",
+          "width": 208.96875,
+          "height": 44
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Удалить работу",
+          "width": 44,
+          "height": 44
+        }
+      ],
+      "formWidth": 316
+    },
+    {
+      "name": "saved-but-success-missing-refresh-error-390",
+      "horizontalOverflow": 0,
+      "controls": [
+        {
+          "tag": "BUTTON",
+          "label": "Добавить работу",
+          "width": 175.0625,
+          "height": 44
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Удалить работу",
+          "width": 44,
+          "height": 44
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Удалить работу",
+          "width": 44,
+          "height": 44
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Удалить работу",
+          "width": 44,
+          "height": 44
+        }
+      ],
+      "formWidth": null
+    }
+  ],
+  "observations": [
+    {
+      "defect": "close-reopen-retains-step-with-empty-draft",
+      "width": 390,
+      "reopenedStep": 3,
+      "serviceEmpty": true,
+      "captionEmpty": true,
+      "photoCount": 0
+    },
+    {
+      "defect": "busy-toggle-unmount-allows-second-concurrent-post",
+      "width": 390,
+      "pendingPostCount": 2,
+      "toggleEnabledWhileBusy": true
+    },
+    {
+      "defect": "post201-refresh500-hides-success-for-populated-portfolio",
+      "width": 390,
+      "postStatus": 201,
+      "savedWorkPresentInDatabase": true,
+      "refreshErrorVisible": true,
+      "successStatusCount": 0
+    }
+  ]
+}

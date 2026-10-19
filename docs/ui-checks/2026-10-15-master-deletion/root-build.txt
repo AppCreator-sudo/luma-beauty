@@ -1,0 +1,3 @@
+npm notice run atelie@0.1.0 build
+npm notice run node scripts/build.mjs
+Application syntax, static assets and PWA icons verified.

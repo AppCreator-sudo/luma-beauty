@@ -1,0 +1,481 @@
+{
+  "at": "2026-10-15T14:57:36.027Z",
+  "mode": "acceptance",
+  "scope": "BUG-008 only; fresh synthetic SQLite and fake existing address provider; no production access or credentials recorded",
+  "origin": "http://localhost:3262",
+  "fixture": "C:\\Users\\Admin\\Desktop\\pwa\\.cache\\bug008-deletion-1792076236060",
+  "fixtureStopped": true,
+  "widths": [
+    1440,
+    390,
+    320
+  ],
+  "checks": [
+    {
+      "name": "synthetic-fixture-ready-1440",
+      "pass": true
+    },
+    {
+      "name": "service-cancel-sends-zero-requests-1440",
+      "pass": true
+    },
+    {
+      "name": "service-server-visible-error-preserved-retry-enabled-1440",
+      "pass": true
+    },
+    {
+      "name": "service-error-1440-layout",
+      "pass": true
+    },
+    {
+      "name": "service-network-visible-error-preserved-retry-enabled-1440",
+      "pass": true
+    },
+    {
+      "name": "service-delayed-double-visible-error-preserved-retry-enabled-1440",
+      "pass": true
+    },
+    {
+      "name": "service-acknowledged-delete-survives-refresh-failure-and-refresh-retry-1440",
+      "pass": true
+    },
+    {
+      "name": "service-success-1440-layout",
+      "pass": true
+    },
+    {
+      "name": "service-retry-removes-object-persists-reload-preserves-visits-and-other-master-1440",
+      "pass": true
+    },
+    {
+      "name": "work-cancel-sends-zero-requests-1440",
+      "pass": true
+    },
+    {
+      "name": "work-server-visible-error-preserved-retry-enabled-1440",
+      "pass": true
+    },
+    {
+      "name": "work-error-1440-layout",
+      "pass": true
+    },
+    {
+      "name": "work-network-visible-error-preserved-retry-enabled-1440",
+      "pass": true
+    },
+    {
+      "name": "work-delayed-double-visible-error-preserved-retry-enabled-1440",
+      "pass": true
+    },
+    {
+      "name": "work-acknowledged-delete-survives-refresh-failure-and-refresh-retry-1440",
+      "pass": true
+    },
+    {
+      "name": "work-success-1440-layout",
+      "pass": true
+    },
+    {
+      "name": "work-retry-removes-object-persists-reload-preserves-visits-and-other-master-1440",
+      "pass": true
+    },
+    {
+      "name": "linked-service-conflict-1440-layout",
+      "pass": true
+    },
+    {
+      "name": "real409-keeps-linked-service-visible-and-enabled-1440",
+      "pass": true
+    },
+    {
+      "name": "api-ownership-boundaries-and-visits-preserved-1440",
+      "pass": true
+    },
+    {
+      "name": "synthetic-fixture-ready-390",
+      "pass": true
+    },
+    {
+      "name": "service-cancel-sends-zero-requests-390",
+      "pass": true
+    },
+    {
+      "name": "service-server-visible-error-preserved-retry-enabled-390",
+      "pass": true
+    },
+    {
+      "name": "service-error-390-layout",
+      "pass": true
+    },
+    {
+      "name": "service-network-visible-error-preserved-retry-enabled-390",
+      "pass": true
+    },
+    {
+      "name": "service-delayed-double-visible-error-preserved-retry-enabled-390",
+      "pass": true
+    },
+    {
+      "name": "service-acknowledged-delete-survives-refresh-failure-and-refresh-retry-390",
+      "pass": true
+    },
+    {
+      "name": "service-success-390-layout",
+      "pass": true
+    },
+    {
+      "name": "service-retry-removes-object-persists-reload-preserves-visits-and-other-master-390",
+      "pass": true
+    },
+    {
+      "name": "work-cancel-sends-zero-requests-390",
+      "pass": true
+    },
+    {
+      "name": "work-server-visible-error-preserved-retry-enabled-390",
+      "pass": true
+    },
+    {
+      "name": "work-error-390-layout",
+      "pass": true
+    },
+    {
+      "name": "work-network-visible-error-preserved-retry-enabled-390",
+      "pass": true
+    },
+    {
+      "name": "work-delayed-double-visible-error-preserved-retry-enabled-390",
+      "pass": true
+    },
+    {
+      "name": "work-acknowledged-delete-survives-refresh-failure-and-refresh-retry-390",
+      "pass": true
+    },
+    {
+      "name": "work-success-390-layout",
+      "pass": true
+    },
+    {
+      "name": "work-retry-removes-object-persists-reload-preserves-visits-and-other-master-390",
+      "pass": true
+    },
+    {
+      "name": "linked-service-conflict-390-layout",
+      "pass": true
+    },
+    {
+      "name": "real409-keeps-linked-service-visible-and-enabled-390",
+      "pass": true
+    },
+    {
+      "name": "api-ownership-boundaries-and-visits-preserved-390",
+      "pass": true
+    },
+    {
+      "name": "synthetic-fixture-ready-320",
+      "pass": true
+    },
+    {
+      "name": "service-cancel-sends-zero-requests-320",
+      "pass": true
+    },
+    {
+      "name": "service-server-visible-error-preserved-retry-enabled-320",
+      "pass": true
+    },
+    {
+      "name": "service-error-320-layout",
+      "pass": true
+    },
+    {
+      "name": "service-network-visible-error-preserved-retry-enabled-320",
+      "pass": true
+    },
+    {
+      "name": "service-delayed-double-visible-error-preserved-retry-enabled-320",
+      "pass": true
+    },
+    {
+      "name": "service-acknowledged-delete-survives-refresh-failure-and-refresh-retry-320",
+      "pass": true
+    },
+    {
+      "name": "service-success-320-layout",
+      "pass": true
+    },
+    {
+      "name": "service-retry-removes-object-persists-reload-preserves-visits-and-other-master-320",
+      "pass": true
+    },
+    {
+      "name": "work-cancel-sends-zero-requests-320",
+      "pass": true
+    },
+    {
+      "name": "work-server-visible-error-preserved-retry-enabled-320",
+      "pass": true
+    },
+    {
+      "name": "work-error-320-layout",
+      "pass": true
+    },
+    {
+      "name": "work-network-visible-error-preserved-retry-enabled-320",
+      "pass": true
+    },
+    {
+      "name": "work-delayed-double-visible-error-preserved-retry-enabled-320",
+      "pass": true
+    },
+    {
+      "name": "work-acknowledged-delete-survives-refresh-failure-and-refresh-retry-320",
+      "pass": true
+    },
+    {
+      "name": "work-success-320-layout",
+      "pass": true
+    },
+    {
+      "name": "work-retry-removes-object-persists-reload-preserves-visits-and-other-master-320",
+      "pass": true
+    },
+    {
+      "name": "linked-service-conflict-320-layout",
+      "pass": true
+    },
+    {
+      "name": "real409-keeps-linked-service-visible-and-enabled-320",
+      "pass": true
+    },
+    {
+      "name": "api-ownership-boundaries-and-visits-preserved-320",
+      "pass": true
+    },
+    {
+      "name": "no-unhandled-javascript-errors",
+      "pass": true
+    }
+  ],
+  "pageErrors": [],
+  "layouts": [
+    {
+      "name": "service-error-1440",
+      "horizontalOverflow": 0,
+      "actions": [
+        {
+          "label": "Удалить услугу Синтетическая услуга own",
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "Удалить услугу Услуга с работой own",
+          "width": 44,
+          "height": 44
+        }
+      ]
+    },
+    {
+      "name": "service-success-1440",
+      "horizontalOverflow": 0,
+      "actions": [
+        {
+          "label": "Удалить услугу Услуга с работой own",
+          "width": 44,
+          "height": 44
+        }
+      ]
+    },
+    {
+      "name": "work-error-1440",
+      "horizontalOverflow": 0,
+      "actions": [
+        {
+          "label": "Удалить работу",
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "Удалить работу",
+          "width": 44,
+          "height": 44
+        }
+      ]
+    },
+    {
+      "name": "work-success-1440",
+      "horizontalOverflow": 0,
+      "actions": [
+        {
+          "label": "Удалить работу",
+          "width": 44,
+          "height": 44
+        }
+      ]
+    },
+    {
+      "name": "linked-service-conflict-1440",
+      "horizontalOverflow": 0,
+      "actions": [
+        {
+          "label": "Удалить услугу Услуга с работой own",
+          "width": 44,
+          "height": 44
+        }
+      ]
+    },
+    {
+      "name": "service-error-390",
+      "horizontalOverflow": 0,
+      "actions": [
+        {
+          "label": "Удалить услугу Синтетическая услуга own",
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "Удалить услугу Услуга с работой own",
+          "width": 44,
+          "height": 44
+        }
+      ]
+    },
+    {
+      "name": "service-success-390",
+      "horizontalOverflow": 0,
+      "actions": [
+        {
+          "label": "Удалить услугу Услуга с работой own",
+          "width": 44,
+          "height": 44
+        }
+      ]
+    },
+    {
+      "name": "work-error-390",
+      "horizontalOverflow": 0,
+      "actions": [
+        {
+          "label": "Удалить работу",
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "Удалить работу",
+          "width": 44,
+          "height": 44
+        }
+      ]
+    },
+    {
+      "name": "work-success-390",
+      "horizontalOverflow": 0,
+      "actions": [
+        {
+          "label": "Удалить работу",
+          "width": 44,
+          "height": 44
+        }
+      ]
+    },
+    {
+      "name": "linked-service-conflict-390",
+      "horizontalOverflow": 0,
+      "actions": [
+        {
+          "label": "Удалить услугу Услуга с работой own",
+          "width": 44,
+          "height": 44
+        }
+      ]
+    },
+    {
+      "name": "service-error-320",
+      "horizontalOverflow": 0,
+      "actions": [
+        {
+          "label": "Удалить услугу Синтетическая услуга own",
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "Удалить услугу Услуга с работой own",
+          "width": 44,
+          "height": 44
+        }
+      ]
+    },
+    {
+      "name": "service-success-320",
+      "horizontalOverflow": 0,
+      "actions": [
+        {
+          "label": "Удалить услугу Услуга с работой own",
+          "width": 44,
+          "height": 44
+        }
+      ]
+    },
+    {
+      "name": "work-error-320",
+      "horizontalOverflow": 0,
+      "actions": [
+        {
+          "label": "Удалить работу",
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "Удалить работу",
+          "width": 44,
+          "height": 44
+        }
+      ]
+    },
+    {
+      "name": "work-success-320",
+      "horizontalOverflow": 0,
+      "actions": [
+        {
+          "label": "Удалить работу",
+          "width": 44,
+          "height": 44
+        }
+      ]
+    },
+    {
+      "name": "linked-service-conflict-320",
+      "horizontalOverflow": 0,
+      "actions": [
+        {
+          "label": "Удалить услугу Услуга с работой own",
+          "width": 44,
+          "height": 44
+        }
+      ]
+    }
+  ],
+  "observations": [],
+  "database_check": {
+    "quick_check": "ok",
+    "foreign_key_check": []
+  },
+  "reference_files_unchanged": 172,
+  "builds": {
+    "frontend": "PASS: npm.cmd --prefix frontend run build",
+    "root": "PASS: npm.cmd run build",
+    "entry": "index-Bsde624L.js",
+    "studio": "Studio-Ceg2X8Jo.js"
+  },
+  "documentation_validation": {
+    "tasks": 90,
+    "local_links": 2890,
+    "next_task": "U-10-03",
+    "errors": [],
+    "inventory": "tracked + non-ignored untracked; original validator unchanged"
+  },
+  "source_sha256": {
+    "frontend/src/pages/Studio.tsx": "496d947cabb34b3122b098cee9ecd37975ef61b6c6cb9adca1da8d3e2b625c5c",
+    "frontend/src/ui-density.css": "0ed600ab8052da971f06185a0b345a231d26c643317197b1b27eb46f7c8aca2d",
+    "scripts/verify-master-deletion.mjs": "5df761fa83e4a7dd32bf2735da9e688f5268fd4a3853e7449deeb5b1a9b0c546"
+  }
+}

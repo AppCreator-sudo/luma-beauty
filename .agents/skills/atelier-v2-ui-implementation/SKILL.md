@@ -24,6 +24,13 @@ Use this skill when editing Atelier v2 frontend code or connecting UI changes to
 - For the shared works section, use a responsive Pinterest-like grid with four desktop columns and two mobile columns, author links, useful filters, and explicit pagination or “show more.”
 - For the map, preserve the current provider and data flow unless a provider change is approved. Keep map points, result cards, and filters synchronized.
 
+## Visual craft and motion
+
+- Apply the installed design standards:
+  - **Impeccable** ([../impeccable/SKILL.md](../impeccable/SKILL.md)): high craft floor, zero "AI slop", typography hierarchy, token contrast, and rigorous state handling.
+  - **Taste Skill** ([../taste-skill/SKILL.md](../taste-skill/SKILL.md)): intentional composition, thoughtful rhythm, and identity-driven design.
+  - **Animation Skill** ([../animate/SKILL.md](../animate/SKILL.md)): Emil Kowalski's motion discipline (never `scale(0)`, avoid sluggish `ease-in`, use hardware-accelerated `transform`/`opacity`, gate frequency, and respect `prefers-reduced-motion`).
+
 ## Data and safety
 
 - Follow the existing role checks and protect client and account information.

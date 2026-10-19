@@ -1,0 +1,9 @@
+{
+  "checkedAt": "2026-10-18T13:42:41.146090+00:00",
+  "historicalReport": "incomplete-report-20261015.json",
+  "verification": "Exact absolute fixture path from historical report was checked against node.exe CommandLine using Win32_Process; workspace cache boundary verified. No matching process was running.",
+  "matchingProcesses": 0,
+  "processesStopped": 0,
+  "otherPortsOrProcessesTouched": false,
+  "historicalIncompleteReportIsAcceptanceGate": false
+}

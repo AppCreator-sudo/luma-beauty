@@ -2,13 +2,14 @@ import { useHistoryState } from '../lib/useHistoryState';
 import { useEffect, useRef, useState } from 'react';
 import { Link, useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import { ArrowRight, Heart, Share2 } from 'lucide-react';
-import { api, json, masterDate, masterTime, servicePriceLabel, type PublicSalon, type Slot } from '../lib/api';
+import { api, json, masterDate, masterTime, servicePriceLabel, type PublicSalon, type Slot, type StoryAuthor } from '../lib/api';
 import { useResource } from '../lib/useResource';
 import { EmptyState, ErrorState, Loading, useApp } from '../components/Shell';
 import {PublicPageCover,PublicPageIdentity,PublicReviews} from '../components/PublicPageIdentity';
 import {SalonPublicWindow} from '../components/SalonPublicWindow';
 import { PublicWorkTile } from '../components/PublicWorkTile';
 import { experienceText } from '../components/ExperienceFields';
+import { StoryViewer } from '../components/StoryViewer';
 
 const tabs = [['services', 'Услуги'], ['team', 'Команда'], ['works', 'Работы'], ['reviews','Отзывы'], ['about', 'О салоне']] as const;
 type Tab = typeof tabs[number][0];
@@ -26,6 +27,8 @@ export function PublicSalonPage() {
   const [busy,setBusy]=useState(false);
   const { slug = '' } = useParams(), [params, setParams] = useSearchParams();
   const resource = useResource(() => api<PublicSalon>('/public/salons/' + encodeURIComponent(slug)), [slug]);
+  const storiesResource = useResource(() => api<StoryAuthor>('/stories/owner/' + encodeURIComponent(slug)), [slug]);
+  const [showStories, setShowStories] = useState(false);
   const selected = params.get('master') || '';
   const [tab, setTab] = useHistoryState<Tab>('salon-public-tab', () => selected ? 'works' : 'team'), [teamLimit, setTeamLimit] = useState(4), [notice, setNotice] = useState('');
   
@@ -50,7 +53,7 @@ export function PublicSalonPage() {
   const categories = [...new Set(salon.staff.flatMap(p => p.categories))];
   const portfolio = <section id="works" className="public-panel"><div className="public-section-title"><h2>{person ? 'Работы: ' + person.name : 'Работы команды'}</h2><span>{works.length} работ</span></div><div className="public-author-filter"><label>Автор работ<select value={person?.id || ''} onChange={e => setParams(e.target.value ? { master: e.target.value } : {}, { preventScrollReset: true })}><option value="">Все мастера</option>{salon.staff.map(p => <option value={p.id} key={p.id}>{p.name}</option>)}</select></label>{person && salon.services.some(s => s.master_ids.includes(person.id)) ? <Link className="button button-wine" to={'/s/' + slug + '/book?master=' + person.id}>Записаться к мастеру <ArrowRight size={16}/></Link> : null}</div>{works.length ? <div className="public-work-grid">{works.map(w => <PublicWorkTile key={w.id} work={w} showAuthor/>)}</div> : <EmptyState title="Работы скоро появятся" text={person ? 'У этого мастера пока нет опубликованных работ.' : 'Команда ещё готовит портфолио.'}/>}</section>;
   return <div className="public-reference public-salon public-page-shell"><PublicPageCover cover={salon.cover} theme={salon.theme}/><div className="public-content">
-    <PublicPageIdentity name={salon.name} image={salon.logo} salon teaches={salon.teaches} models={salon.looking_models} address={[salon.city,salon.address].filter(Boolean).join(', ')} categories={categories} rating={salon.rating} count={salon.review_count} reviews={()=>setTab('reviews')} actions={<>
+    <PublicPageIdentity name={salon.name} image={salon.logo} salon teaches={salon.teaches} models={salon.looking_models} address={[salon.city,salon.address].filter(Boolean).join(', ')} categories={categories} rating={salon.rating} count={salon.review_count} reviews={()=>setTab('reviews')} hasStory={Boolean(storiesResource.data?.stories?.length)} onStoryClick={() => setShowStories(true)} actions={<>
       {!salon.services.length||!salon.published?<p className="public-muted">Онлайн-запись пока закрыта</p>:null}
       <button type="button" className="public-icon" aria-label={salon.saved?'Убрать салон из избранного':'Добавить салон в избранное'} aria-pressed={Boolean(salon.saved)} disabled={busy||!salon.published} onClick={()=>void saveSalon()}><Heart size={20} fill={salon.saved?'currentColor':'none'}/></button>
       <button type="button" className="public-icon" aria-label="Поделиться страницей" onClick={()=>void share()}><Share2 size={19}/></button>
@@ -63,5 +66,12 @@ export function PublicSalonPage() {
       {tab === 'services' ? <section className="public-panel"><h2>Услуги и цены</h2>{salon.services.length ? <div className="public-service-list">{salon.services.map(s => <article key={s.id}><div><h3>{s.name}</h3><small>{s.duration_varies?'от ':''}{s.duration} мин · мастеров: {s.master_ids.length}</small></div><strong>{servicePriceLabel(s.price)}</strong><Link to={'/s/' + slug + '/book?service=' + encodeURIComponent(s.id)} aria-label={'Записаться: ' + s.name}><ArrowRight size={18}/></Link></article>)}</div> : <EmptyState title="Услуги готовятся" text="Онлайн-запись пока закрыта."/>}</section> : null}
       {tab === 'reviews'?<section className="public-panel"><h2>Отзывы клиентов</h2><PublicReviews reviews={salon.reviews}/></section>:null}
       {tab === 'about' ? <section className="public-panel"><h2>О салоне</h2><p className="public-description">{salon.bio || 'Салон пока не добавил описание.'}</p>{salon.latitude != null && salon.longitude != null ? <a className="button button-outline" href={`https://www.openstreetmap.org/?mlat=${salon.latitude}&mlon=${salon.longitude}#map=18/${salon.latitude}/${salon.longitude}`} target="_blank" rel="noopener noreferrer">Точный адрес на карте <ArrowRight size={16}/></a> : null}<p className="public-muted">Время салона · UTC+{salon.utc_offset / 60}</p></section> : null}
-    </div></div></div></div>;
+    </div></div></div>
+    {showStories && storiesResource.data?.stories?.length ? (
+      <StoryViewer
+        authors={[storiesResource.data]}
+        onClose={() => setShowStories(false)}
+      />
+    ) : null}
+  </div>;
 }

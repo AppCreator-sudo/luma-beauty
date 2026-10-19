@@ -1,0 +1,27 @@
+{
+  "tag": "20261015-v2-master-refinement",
+  "baseline": "20261015-v2-salon-simplicity",
+  "at": 1792077685.881548,
+  "archive_sha256": "ccf3000f4d6c18f87fad026ef2eb4dbccf86a91c73f43a8af1c0603b58526048",
+  "backup": "/opt/atelie/backups/20261015-v2-master-refinement",
+  "snapshot_sha256": "545053bf1802011a26c7292573c906af8447a16c0b2f155e4dd42edc45a96b67",
+  "files": 139,
+  "tables": 45,
+  "rows": 189,
+  "schema_and_business_preserved": true,
+  "production_data_not_replaced": true,
+  "read_checks": [
+    "/api/health",
+    "/api/me",
+    "/api/profiles",
+    "/api/inspiration",
+    "/api/map/viewport?bbox=37.5,55.6,37.8,55.9&zoom=12",
+    "/v2/",
+    "/sw.js",
+    "entry-asset",
+    "/api/studio"
+  ],
+  "smoke_stopped": true,
+  "smoke_copy_removed": true,
+  "entry": "index-Bsde624L.js"
+}

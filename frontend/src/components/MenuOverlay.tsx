@@ -15,8 +15,9 @@ export function MenuOverlay(props: MenuProps) {
 function MenuSurface({ close, trigger, id, label, drawer, children }: MenuProps) {
   const dialog = useRef<HTMLDialogElement>(null), reduce = useReducedMotion(), navigate = useNavigate();
   const [rect, setRect] = useState(() => trigger.current?.getBoundingClientRect());
+  const [compact, setCompact] = useState(() => window.matchMedia('(max-width:800px)').matches);
   useLayoutEffect(() => {
-    const update = () => setRect(trigger.current?.getBoundingClientRect());
+    const update = () => { setRect(trigger.current?.getBoundingClientRect()); setCompact(window.matchMedia('(max-width:800px)').matches); };
     window.addEventListener('resize', update);
     return () => window.removeEventListener('resize', update);
   }, [trigger]);
@@ -24,6 +25,7 @@ function MenuSurface({ close, trigger, id, label, drawer, children }: MenuProps)
     const top = window.scrollY, left = window.scrollX, href = window.location.href;
     const body = document.body, html = document.documentElement;
     const surface = dialog.current;
+    const opener = trigger.current;
     const saved = { position: body.style.position, top: body.style.top, left: body.style.left, right: body.style.right, width: body.style.width, overflow: html.style.overflow, overscroll: html.style.overscrollBehavior };
     body.style.position = 'fixed'; body.style.top = -top + 'px'; body.style.left = '0'; body.style.right = '0'; body.style.width = '100%';
     html.style.overflow = 'hidden'; html.style.overscrollBehavior = 'none';
@@ -33,7 +35,9 @@ function MenuSurface({ close, trigger, id, label, drawer, children }: MenuProps)
       Object.assign(body.style, { position: saved.position, top: saved.top, left: saved.left, right: saved.right, width: saved.width });
       html.style.overflow = saved.overflow; html.style.overscrollBehavior = saved.overscroll;
       window.scrollTo({ left, top: window.location.href === href ? top : 0, behavior: 'instant' });
-      requestAnimationFrame(() => { if (!surface?.open && trigger.current?.isConnected) trigger.current.focus({ preventScroll: true }); });
+      requestAnimationFrame(() => {
+        if (opener?.isConnected && !document.querySelector('dialog[open]')) opener.focus({ preventScroll: true });
+      });
     };
   }, [trigger]);
   const style = !drawer && rect ? { '--menu-anchor-top': Math.round(rect.bottom + 16) + 'px', '--menu-anchor-right': Math.max(16, Math.round(window.innerWidth - rect.right)) + 'px', '--menu-close-top': Math.round(rect.top) + 'px', '--menu-close-right': Math.round(window.innerWidth - rect.right) + 'px' } as CSSProperties : undefined;
@@ -45,8 +49,11 @@ function MenuSurface({ close, trigger, id, label, drawer, children }: MenuProps)
     event.preventDefault();
     navigate(url.pathname.slice(3) + url.search + url.hash, { replace: true });
   }}>
-    <motion.button className="luma-menu-scrim" aria-label="Закрыть меню" onClick={close} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: reduce ? 0 : .35 }} tabIndex={-1}/>
-    <motion.div id={id} className={drawer ? 'luma-drawer-panel' : 'home-menu-panel luma-navigation-panel'} initial="hidden" animate="visible" exit="hidden" variants={{
+    <motion.button className="luma-menu-scrim" aria-label="Закрыть меню" onClick={close} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: reduce ? 0 : compact ? .18 : .35 }} tabIndex={-1}/>
+    <motion.div id={id} className={drawer ? 'luma-drawer-panel' : 'home-menu-panel luma-navigation-panel'} initial="hidden" animate="visible" exit="hidden" variants={compact ? {
+      hidden: { opacity: 0, y: reduce ? 0 : -12, scale: reduce ? 1 : .98, transition: { duration: reduce ? 0 : .18 } },
+      visible: { opacity: 1, y: 0, scale: 1, transition: { duration: reduce ? 0 : .22, ease: [.22, 1, .36, 1], delayChildren: .04, staggerChildren: .025 } },
+    } : {
       hidden: { opacity: 0, y: reduce ? 0 : -38, scale: reduce ? 1 : .08, borderRadius: reduce ? 8 : 36, transition: { duration: reduce ? 0 : .24, ease: [.32, 0, .67, 0] } },
       visible: { opacity: 1, y: 0, scale: 1, borderRadius: 8, transition: reduce ? { duration: 0 } : { scale: { type: 'spring', stiffness: 260, damping: 24, mass: .9 }, y: { type: 'spring', stiffness: 260, damping: 24, mass: .9 }, opacity: { duration: .18 }, borderRadius: { duration: .5 }, delayChildren: .12, staggerChildren: .055 } },
     }}>

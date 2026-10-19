@@ -4,6 +4,7 @@ import { bookingPath, profilePath, masterDate, masterTime, servicePriceLabel, ty
 import { PromotionBadge } from './PromotionBadge';
 import '../compact-catalog.css';
 import {ProfileBadges} from './ProfileBadges';
+import {StoryRingAvatar} from './StoryRingAvatar';
 
 function teamLabel(count: number) {
   const last = count % 10;
@@ -11,7 +12,7 @@ function teamLabel(count: number) {
   return count + ' ' + (teen ? 'мастеров' : last === 1 ? 'мастер' : last >= 2 && last <= 4 ? 'мастера' : 'мастеров');
 }
 
-export function CatalogMasterCard({ profile }: { profile: Profile }) {
+export function CatalogMasterCard({ profile, hasStory = false, onStoryClick }: { profile: Profile; hasStory?: boolean; onStoryClick?: () => void }) {
   const salon = profile.kind === 'salon';
   const staff = profile.kind === 'staff';
   const canBook = !profile.is_demo && profile.services?.length > 0;
@@ -22,11 +23,19 @@ export function CatalogMasterCard({ profile }: { profile: Profile }) {
   const nextPath = bookPath + (bookPath.includes('?') ? '&' : '?') + 'start=' + profile.next_available;
   const match = profile.matching_staff?.[0];
 
+  const avatarContent = image ? <img src={image} alt="" loading="lazy" width="84" height="84"/> : <span aria-hidden="true">{Array.from(profile.name.trim())[0] || 'а'}</span>;
+
   return <article className={'compact-master-card compact-master-card-' + (salon ? 'salon' : staff ? 'staff' : 'personal') + (profile.promotion ? ' compact-master-card-promoted' : '')} data-catalog-id={(profile.kind || 'master') + ':' + profile.user_id}>
     <div className="compact-master-identity">
-      <Link to={detailPath} className="compact-master-avatar" aria-label={'Открыть страницу ' + profile.name}>
-        {image ? <img src={image} alt="" loading="lazy" width="84" height="84"/> : <span aria-hidden="true">{Array.from(profile.name.trim())[0] || 'а'}</span>}
-      </Link>
+      {hasStory ? (
+        <StoryRingAvatar hasStory={true} size={84} onClick={onStoryClick}>
+          {avatarContent}
+        </StoryRingAvatar>
+      ) : (
+        <Link to={detailPath} className="compact-master-avatar" aria-label={'Открыть страницу ' + profile.name}>
+          {avatarContent}
+        </Link>
+      )}
       <div className="compact-master-copy">
         <ProfileBadges className="compact-master-tags" salon={salon} staff={staff} teaches={profile.teaches} models={profile.looking_models}/>
         <h3><Link to={detailPath} title={profile.name}>{profile.name}</Link></h3>

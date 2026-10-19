@@ -1,0 +1,80 @@
+{
+  "at": "2026-10-15T15:52:52.301Z",
+  "scope": "Separate synthetic SQLite and localhost only; no production configuration, credentials or data",
+  "origin": "http://127.0.0.1:3266",
+  "data_dir": ".cache/u10-04-image-policy-gNo8AV",
+  "policy": {
+    "maxSide": 10000,
+    "maxPixels": 40000000,
+    "maxBytes": 8388608
+  },
+  "cases": [
+    {
+      "width": 10000,
+      "height": 256,
+      "pixels": 2560000,
+      "format": "png",
+      "mime": "image/png",
+      "bytes": 34770,
+      "expected_status": 201,
+      "actual_status": 201,
+      "accepted": true,
+      "response": {
+        "id": "4f605597-84f4-4241-8f2d-7f92455f74c1"
+      },
+      "works_before": 0,
+      "works_after": 1,
+      "images_before": 0,
+      "images_after": 1,
+      "files_before": 0,
+      "files_after": 1,
+      "new_files": [
+        "d5635fd0-4cde-43ab-91de-2055399cc69f.webp"
+      ],
+      "previous_files_preserved": true,
+      "stored_dimensions": {
+        "format": "webp",
+        "width": 1600,
+        "height": 41
+      }
+    },
+    {
+      "width": 10001,
+      "height": 256,
+      "pixels": 2560256,
+      "format": "png",
+      "mime": "image/png",
+      "bytes": 34771,
+      "expected_status": 400,
+      "actual_status": 201,
+      "accepted": true,
+      "response": {
+        "id": "c2e045a2-6529-44ae-8611-f9e12d218d40"
+      },
+      "works_before": 1,
+      "works_after": 2,
+      "images_before": 1,
+      "images_after": 2,
+      "files_before": 1,
+      "files_after": 2,
+      "new_files": [
+        "dcfc6051-466b-4e86-81b7-45296ba55af0.webp"
+      ],
+      "previous_files_preserved": true,
+      "stored_dimensions": {
+        "format": "webp",
+        "width": 1600,
+        "height": 41
+      }
+    }
+  ],
+  "integrity": "ok",
+  "foreign_keys": [],
+  "defect_confirmed": true,
+  "fixture_stopped": true,
+  "fixture_exit": {
+    "code": null,
+    "signal": "SIGTERM"
+  },
+  "port_closed": true
+}

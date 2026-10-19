@@ -1,0 +1,184 @@
+{
+  "reviewedAt": "2026-10-18T20:50:45+07:00",
+  "task": "U-10-04",
+  "method": "All final acceptance PNG files opened and visually inspected with view_image. Compare accepted U-10-18 cabinet form/grid and current approved shared UI.",
+  "screenshotsReviewed": 29,
+  "screenshots": [
+    {
+      "file": "empty-portfolio-wizard-1440.png",
+      "sha256": "3fa5e1829299dd08f1262e0385b828956884a904a1c85c30984b7865b7ddc767",
+      "review": "PASS",
+      "notes": "Inspected rendered screenshot: approved palette, readable fields/errors/actions, compact form or portfolio grid, no overlaps."
+    },
+    {
+      "file": "full-reload-fresh-empty-draft-1440.png",
+      "sha256": "3fa5e1829299dd08f1262e0385b828956884a904a1c85c30984b7865b7ddc767",
+      "review": "PASS",
+      "notes": "Inspected rendered screenshot: approved palette, readable fields/errors/actions, compact form or portfolio grid, no overlaps."
+    },
+    {
+      "file": "invalid-photo-server-error-1440.png",
+      "sha256": "7b08fcd97691abb6fc52979b6d8c3ce923bd2c6b3ac885849860d9076ae02c7e",
+      "review": "PASS",
+      "notes": "Inspected rendered screenshot: approved palette, readable fields/errors/actions, compact form or portfolio grid, no overlaps. Invalid-photo desktop preview intentionally shows corrupt selected file until correction."
+    },
+    {
+      "file": "corrected-ready-to-publish-1440.png",
+      "sha256": "e36cb91b175a906c02aacfea9875bd453316372b58c6d24e8735e530ff1c7254",
+      "review": "PASS",
+      "notes": "Inspected rendered screenshot: approved palette, readable fields/errors/actions, compact form or portfolio grid, no overlaps."
+    },
+    {
+      "file": "upload-server-error-1440.png",
+      "sha256": "86f4de23d3e74792350291795e4286417cb4e410cd22bc25b941a852928001d9",
+      "review": "PASS",
+      "notes": "Inspected rendered screenshot: approved palette, readable fields/errors/actions, compact form or portfolio grid, no overlaps."
+    },
+    {
+      "file": "first-upload-saved-collapsed-1440.png",
+      "sha256": "ebb54a4733d30f88b532ef07f80b70a4311120d05135dc430b3ca5e946e362ec",
+      "review": "PASS",
+      "notes": "Inspected rendered screenshot: approved palette, readable fields/errors/actions, compact form or portfolio grid, no overlaps."
+    },
+    {
+      "file": "upload-network-error-1440.png",
+      "sha256": "e654bbc3762c415f6cd4996fce4911bc1a16586be4f787952f994a7aedab4da0",
+      "review": "PASS",
+      "notes": "Inspected rendered screenshot: approved palette, readable fields/errors/actions, compact form or portfolio grid, no overlaps."
+    },
+    {
+      "file": "populated-upload-saved-reload-1440.png",
+      "sha256": "86c1f0f44af444a1b06db159a9ed24f3a5b609e6a08a77ea4928c92b46e2d895",
+      "review": "PASS",
+      "notes": "Inspected rendered screenshot: approved palette, readable fields/errors/actions, compact form or portfolio grid, no overlaps."
+    },
+    {
+      "file": "saved-refresh-error-1440.png",
+      "sha256": "26c88a65ef0b201914899fd08c106fcf8060f6a3e41c51b3ee24915d7da920f1",
+      "review": "PASS",
+      "notes": "Inspected rendered screenshot: approved palette, readable fields/errors/actions, compact form or portfolio grid, no overlaps."
+    },
+    {
+      "file": "empty-portfolio-wizard-390.png",
+      "sha256": "42d44f3e515a68a066177c9fe0dbc5d49ba667bbfcd2367de1180456b7b22874",
+      "review": "PASS",
+      "notes": "Inspected rendered screenshot: approved palette, readable fields/errors/actions, compact form or portfolio grid, no overlaps."
+    },
+    {
+      "file": "full-reload-fresh-empty-draft-390.png",
+      "sha256": "42d44f3e515a68a066177c9fe0dbc5d49ba667bbfcd2367de1180456b7b22874",
+      "review": "PASS",
+      "notes": "Inspected rendered screenshot: approved palette, readable fields/errors/actions, compact form or portfolio grid, no overlaps."
+    },
+    {
+      "file": "invalid-photo-server-error-390.png",
+      "sha256": "dc0f755cc47fbceedc8eb23f39d225b2ba17503016ce30ed2fad33bc31ca23c3",
+      "review": "PASS",
+      "notes": "Inspected rendered screenshot: approved palette, readable fields/errors/actions, compact form or portfolio grid, no overlaps. Invalid-photo desktop preview intentionally shows corrupt selected file until correction."
+    },
+    {
+      "file": "corrected-ready-to-publish-390.png",
+      "sha256": "98c34ff201de3b99d639850954803979aa5d3cc6ddcd334b51791f2625222455",
+      "review": "PASS",
+      "notes": "Inspected rendered screenshot: approved palette, readable fields/errors/actions, compact form or portfolio grid, no overlaps."
+    },
+    {
+      "file": "upload-server-error-390.png",
+      "sha256": "aae14d5ed60ff7169c741db151e4738166c41c8def902db2b75fa718ce90f223",
+      "review": "PASS",
+      "notes": "Inspected rendered screenshot: approved palette, readable fields/errors/actions, compact form or portfolio grid, no overlaps."
+    },
+    {
+      "file": "first-upload-saved-collapsed-390.png",
+      "sha256": "6f20a4d9aa21cf2e94b50a9770b8c6149650bb65c0017c15918dcf8126890a34",
+      "review": "PASS",
+      "notes": "Inspected rendered screenshot: approved palette, readable fields/errors/actions, compact form or portfolio grid, no overlaps."
+    },
+    {
+      "file": "upload-network-error-390.png",
+      "sha256": "9a14d3f720f988027669d385fc078dd4030808c127edcea0a9ada6914ef54482",
+      "review": "PASS",
+      "notes": "Inspected rendered screenshot: approved palette, readable fields/errors/actions, compact form or portfolio grid, no overlaps."
+    },
+    {
+      "file": "populated-upload-saved-reload-390.png",
+      "sha256": "50915646d541d4534c3ae642fd775edd5912337fb1e0574700daeb9d0b7ed291",
+      "review": "PASS",
+      "notes": "Inspected rendered screenshot: approved palette, readable fields/errors/actions, compact form or portfolio grid, no overlaps."
+    },
+    {
+      "file": "saved-refresh-error-390.png",
+      "sha256": "acbdd1ec686d437874ce6ef8ae5988224acf8de9db7681a3dda6bebf2bd302f5",
+      "review": "PASS",
+      "notes": "Inspected rendered screenshot: approved palette, readable fields/errors/actions, compact form or portfolio grid, no overlaps."
+    },
+    {
+      "file": "empty-portfolio-wizard-320.png",
+      "sha256": "9f612fc9ae56814349d68893a77e50e615302c8cef45ddbd7da44e538aae0de1",
+      "review": "PASS",
+      "notes": "Inspected rendered screenshot: approved palette, readable fields/errors/actions, compact form or portfolio grid, no overlaps."
+    },
+    {
+      "file": "full-reload-fresh-empty-draft-320.png",
+      "sha256": "9f612fc9ae56814349d68893a77e50e615302c8cef45ddbd7da44e538aae0de1",
+      "review": "PASS",
+      "notes": "Inspected rendered screenshot: approved palette, readable fields/errors/actions, compact form or portfolio grid, no overlaps."
+    },
+    {
+      "file": "invalid-photo-server-error-320.png",
+      "sha256": "11458b3436b086f7a7096479d0d9fb098ad96bf92ed16133ba43aad5fafa49ab",
+      "review": "PASS",
+      "notes": "Inspected rendered screenshot: approved palette, readable fields/errors/actions, compact form or portfolio grid, no overlaps. Invalid-photo desktop preview intentionally shows corrupt selected file until correction."
+    },
+    {
+      "file": "corrected-ready-to-publish-320.png",
+      "sha256": "27042cfa9d32c07a961665900c3f678b27c2c224b8cc8e517e0d8e789619ed92",
+      "review": "PASS",
+      "notes": "Inspected rendered screenshot: approved palette, readable fields/errors/actions, compact form or portfolio grid, no overlaps."
+    },
+    {
+      "file": "upload-server-error-320.png",
+      "sha256": "3debedee27d4f603d41412049fd8c6bdfb378dd1844a8fb1d045e347190910e1",
+      "review": "PASS",
+      "notes": "Inspected rendered screenshot: approved palette, readable fields/errors/actions, compact form or portfolio grid, no overlaps."
+    },
+    {
+      "file": "first-upload-saved-collapsed-320.png",
+      "sha256": "47331547ba857f5a0f0bece5e1b10105aa96139374c791d80374f9c12b2dd24e",
+      "review": "PASS",
+      "notes": "Inspected rendered screenshot: approved palette, readable fields/errors/actions, compact form or portfolio grid, no overlaps."
+    },
+    {
+      "file": "upload-network-error-320.png",
+      "sha256": "1de9d1fb6fd2455b646cffee45bc8ca9a238c89f78d773dbd06403dc8414c952",
+      "review": "PASS",
+      "notes": "Inspected rendered screenshot: approved palette, readable fields/errors/actions, compact form or portfolio grid, no overlaps."
+    },
+    {
+      "file": "populated-upload-saved-reload-320.png",
+      "sha256": "87727f061cfbd0a99b784494d72ba021b15458fcad7cd8446189b8f251e812ce",
+      "review": "PASS",
+      "notes": "Inspected rendered screenshot: approved palette, readable fields/errors/actions, compact form or portfolio grid, no overlaps."
+    },
+    {
+      "file": "saved-refresh-error-320.png",
+      "sha256": "b56d5eb4ec57ea916550de5a0e24de8b6164a6416c91ee722f65a72a790c49f1",
+      "review": "PASS",
+      "notes": "Inspected rendered screenshot: approved palette, readable fields/errors/actions, compact form or portfolio grid, no overlaps."
+    },
+    {
+      "file": "inline-created-service-work-saved-390.png",
+      "sha256": "0d4a2640976515d0dc175734a48fef7c9dbc1e9c13cccb1d0a855ba06e7473b8",
+      "review": "PASS",
+      "notes": "Inspected rendered screenshot: approved palette, readable fields/errors/actions, compact form or portfolio grid, no overlaps."
+    },
+    {
+      "file": "first-upload-remount-saved-refresh-error-390.png",
+      "sha256": "e8b61a7581476b44ed5a91d41ddfe142a493b073d06c718e4de3917cb6743da7",
+      "review": "PASS",
+      "notes": "Inspected rendered screenshot: approved palette, readable fields/errors/actions, compact form or portfolio grid, no overlaps."
+    }
+  ],
+  "blockingVisualDefects": [],
+  "limits": "Synthetic solid-colour local photos are deliberate fixtures. Portrait/icon fallback is circular. Corrupt-photo preview is not a real saved image. Production browser inspection is outside this local acceptance."
+}

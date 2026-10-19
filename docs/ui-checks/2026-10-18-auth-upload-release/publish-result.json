@@ -1,0 +1,28 @@
+{
+  "tag": "20261018-v2-auth-upload-stability",
+  "previous": "20261015-v2-master-refinement",
+  "at": 1792333692.294446,
+  "current": "/opt/atelie/releases/20261018-v2-auth-upload-stability",
+  "entry": "index-D4kBlu6Z.js",
+  "service": "active",
+  "health": true,
+  "schema_unchanged": true,
+  "preserved_tables": 47,
+  "preserved_rows_at_switch": 209,
+  "business_sessions_media_preserved_at_switch": true,
+  "shared_inodes_preserved": true,
+  "backup": "/opt/atelie/backups/20261018-v2-auth-upload-stability",
+  "pre_switch_sha256": "3641e666ac77d05c8d29074194a6707fcb1b7b368ad94acc974d0cc33c74b054",
+  "files": 139,
+  "read_checks": [
+    "/api/health",
+    "/api/me",
+    "/api/profiles",
+    "/api/inspiration",
+    "/api/map/viewport?bbox=37.5,55.6,37.8,55.9&zoom=12",
+    "/v2/",
+    "/sw.js",
+    "entry-asset"
+  ],
+  "rollback": "Code-only switch to 20261015-v2-master-refinement; retain current shared database/uploads"
+}

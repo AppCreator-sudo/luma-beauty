@@ -56,6 +56,28 @@ export type Appointment = {
   salon_slug?: string; salon_name?: string; utc_offset?: number;
   is_break?: boolean; reschedule_request_id?: string | null;
 };
+export type StoryItem = {
+  id: string;
+  image: string;
+  caption: string;
+  service_id?: string | null;
+  service_name?: string | null;
+  service_price?: number | null;
+  created: number;
+  expires_at: number;
+  remaining_ms?: number;
+  remaining_hours?: number;
+};
+export type StoryAuthor = {
+  owner_type: 'master' | 'salon';
+  owner_id: string;
+  owner_slug: string;
+  owner_name: string;
+  owner_avatar: string;
+  latest_created?: number;
+  stories: StoryItem[];
+};
+
 export type Studio = { profile: Profile | null; address_draft?: { city: string; address: string; latitude: number | null; longitude: number | null } | null; services: Service[]; works: Work[]; schedule?: Schedule; schedule_configured?: boolean; availability?: Slot[] };
 export type Feed = { items: Work[]; next: string | null };
 

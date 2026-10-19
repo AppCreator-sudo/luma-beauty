@@ -1,0 +1,2584 @@
+{
+  "at": "2026-10-18T14:01:02.216Z",
+  "task": "BUG-018",
+  "mode": "before-fix evidence",
+  "scope": "Local isolated data; auth layout only; no registration/login submissions or production access",
+  "origin": "http://localhost:3270",
+  "fixtureStopped": true,
+  "viewports": [
+    {
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "width": 1366,
+      "height": 620
+    },
+    {
+      "width": 390,
+      "height": 844
+    },
+    {
+      "width": 320,
+      "height": 740
+    },
+    {
+      "width": 390,
+      "height": 600
+    }
+  ],
+  "checks": [
+    {
+      "name": "login-register-1440x900-recorded-20-layout-deltas",
+      "pass": true
+    },
+    {
+      "name": "both-modes-no-horizontal-overflow-1440x900",
+      "pass": true
+    },
+    {
+      "name": "return-login-1440x900-recorded-0-layout-deltas",
+      "pass": true
+    },
+    {
+      "name": "login-register-1366x620-recorded-18-layout-deltas",
+      "pass": true
+    },
+    {
+      "name": "both-modes-no-horizontal-overflow-1366x620",
+      "pass": true
+    },
+    {
+      "name": "return-login-1366x620-recorded-0-layout-deltas",
+      "pass": true
+    },
+    {
+      "name": "login-register-390x844-recorded-15-layout-deltas",
+      "pass": true
+    },
+    {
+      "name": "both-modes-no-horizontal-overflow-390x844",
+      "pass": true
+    },
+    {
+      "name": "return-login-390x844-recorded-0-layout-deltas",
+      "pass": true
+    },
+    {
+      "name": "login-register-320x740-recorded-11-layout-deltas",
+      "pass": true
+    },
+    {
+      "name": "both-modes-no-horizontal-overflow-320x740",
+      "pass": true
+    },
+    {
+      "name": "return-login-320x740-recorded-0-layout-deltas",
+      "pass": true
+    },
+    {
+      "name": "login-register-390x600-recorded-15-layout-deltas",
+      "pass": true
+    },
+    {
+      "name": "both-modes-no-horizontal-overflow-390x600",
+      "pass": true
+    },
+    {
+      "name": "return-login-390x600-recorded-0-layout-deltas",
+      "pass": true
+    },
+    {
+      "name": "no-unhandled-javascript-page-errors",
+      "pass": true
+    },
+    {
+      "name": "no-registration-login-or-business-writes",
+      "pass": true
+    }
+  ],
+  "measurements": [
+    {
+      "label": "login-1440x900",
+      "scrollY": 0,
+      "scrollX": 0,
+      "documentHeight": 1053,
+      "documentWidth": 1440,
+      "viewportWidth": 1440,
+      "viewportHeight": 900,
+      "overflow": 0,
+      "anchors": {
+        "art": {
+          "x": 0,
+          "y": 68,
+          "width": 682.09375,
+          "height": 826,
+          "display": "flex"
+        },
+        "artHeading": {
+          "x": 72,
+          "y": 396.765625,
+          "width": 538.09375,
+          "height": 134.375,
+          "display": "block"
+        },
+        "artEyebrow": {
+          "x": 72,
+          "y": 132,
+          "width": 538.09375,
+          "height": 15,
+          "display": "block"
+        },
+        "artEnd": {
+          "x": 72,
+          "y": 792.5,
+          "width": 538.09375,
+          "height": 37.5,
+          "display": "block"
+        },
+        "side": {
+          "x": 682.09375,
+          "y": 68,
+          "width": 757.90625,
+          "height": 826,
+          "display": "grid"
+        },
+        "card": {
+          "x": 851.046875,
+          "y": 144.671875,
+          "width": 420,
+          "height": 672.65625,
+          "display": "block"
+        },
+        "heading": {
+          "x": 851.046875,
+          "y": 180.671875,
+          "width": 420,
+          "height": 50.390625,
+          "display": "block"
+        },
+        "subtitle": {
+          "x": 851.046875,
+          "y": 246.0625,
+          "width": 420,
+          "height": 20.390625,
+          "display": "block"
+        },
+        "tabs": {
+          "x": 851.046875,
+          "y": 290.453125,
+          "width": 420,
+          "height": 45,
+          "display": "flex"
+        },
+        "providers": {
+          "x": 851.046875,
+          "y": 355.453125,
+          "width": 420,
+          "height": 72,
+          "display": "grid"
+        },
+        "providerNote": {
+          "x": 851.046875,
+          "y": 439.453125,
+          "width": 420,
+          "height": 18.6875,
+          "display": "block"
+        },
+        "credentialsLabel": {
+          "x": 851.046875,
+          "y": 480.140625,
+          "width": 420,
+          "height": 16.5,
+          "display": "flex"
+        },
+        "login": {
+          "x": 851.046875,
+          "y": 537.640625,
+          "width": 420,
+          "height": 48,
+          "display": "inline-block"
+        },
+        "password": {
+          "x": 851.046875,
+          "y": 645.640625,
+          "width": 420,
+          "height": 48,
+          "display": "block"
+        },
+        "passwordToggle": {
+          "x": 1224.046875,
+          "y": 647.640625,
+          "width": 44,
+          "height": 44,
+          "display": "block"
+        },
+        "submit": {
+          "x": 851.046875,
+          "y": 728.640625,
+          "width": 420,
+          "height": 50,
+          "display": "flex"
+        },
+        "note": {
+          "x": 851.046875,
+          "y": 798.640625,
+          "width": 420,
+          "height": 18.6875,
+          "display": "flex"
+        }
+      },
+      "artBackground": {
+        "image": "url(\"http://localhost:3270/v2/assets/ornament.webp\")",
+        "size": "auto 100%",
+        "position": "50% 50%"
+      }
+    },
+    {
+      "label": "register-1440x900",
+      "scrollY": 0,
+      "scrollX": 0,
+      "documentHeight": 1123,
+      "documentWidth": 1440,
+      "viewportWidth": 1440,
+      "viewportHeight": 900,
+      "overflow": 0,
+      "anchors": {
+        "art": {
+          "x": 0,
+          "y": 68,
+          "width": 682.09375,
+          "height": 895.4375,
+          "display": "flex"
+        },
+        "artHeading": {
+          "x": 72,
+          "y": 431.484375,
+          "width": 538.09375,
+          "height": 134.375,
+          "display": "block"
+        },
+        "artEyebrow": {
+          "x": 72,
+          "y": 132,
+          "width": 538.09375,
+          "height": 15,
+          "display": "block"
+        },
+        "artEnd": {
+          "x": 72,
+          "y": 861.9375,
+          "width": 538.09375,
+          "height": 37.5,
+          "display": "block"
+        },
+        "side": {
+          "x": 682.09375,
+          "y": 68,
+          "width": 757.90625,
+          "height": 895.4375,
+          "display": "grid"
+        },
+        "card": {
+          "x": 851.046875,
+          "y": 110,
+          "width": 420,
+          "height": 811.4375,
+          "display": "block"
+        },
+        "heading": {
+          "x": 851.046875,
+          "y": 146,
+          "width": 420,
+          "height": 100.78125,
+          "display": "block"
+        },
+        "subtitle": {
+          "x": 851.046875,
+          "y": 261.78125,
+          "width": 420,
+          "height": 40.78125,
+          "display": "block"
+        },
+        "tabs": {
+          "x": 851.046875,
+          "y": 326.5625,
+          "width": 420,
+          "height": 45,
+          "display": "flex"
+        },
+        "providers": {
+          "x": 851.046875,
+          "y": 459.5625,
+          "width": 420,
+          "height": 72,
+          "display": "grid"
+        },
+        "providerNote": {
+          "x": 851.046875,
+          "y": 543.5625,
+          "width": 420,
+          "height": 18.6875,
+          "display": "block"
+        },
+        "credentialsLabel": {
+          "x": 851.046875,
+          "y": 584.25,
+          "width": 420,
+          "height": 16.5,
+          "display": "flex"
+        },
+        "login": {
+          "x": 851.046875,
+          "y": 641.75,
+          "width": 420,
+          "height": 48,
+          "display": "inline-block"
+        },
+        "password": {
+          "x": 851.046875,
+          "y": 749.75,
+          "width": 420,
+          "height": 48,
+          "display": "block"
+        },
+        "passwordToggle": {
+          "x": 1224.046875,
+          "y": 751.75,
+          "width": 44,
+          "height": 44,
+          "display": "block"
+        },
+        "submit": {
+          "x": 851.046875,
+          "y": 832.75,
+          "width": 420,
+          "height": 50,
+          "display": "flex"
+        },
+        "note": {
+          "x": 851.046875,
+          "y": 902.75,
+          "width": 420,
+          "height": 18.6875,
+          "display": "flex"
+        }
+      },
+      "artBackground": {
+        "image": "url(\"http://localhost:3270/v2/assets/ornament.webp\")",
+        "size": "auto 100%",
+        "position": "50% 50%"
+      }
+    },
+    {
+      "label": "login-register-1440x900-deltas",
+      "deltas": [
+        {
+          "anchor": "art",
+          "axis": "height",
+          "delta": 69.438
+        },
+        {
+          "anchor": "artHeading",
+          "axis": "y",
+          "delta": 34.719
+        },
+        {
+          "anchor": "artEnd",
+          "axis": "y",
+          "delta": 69.438
+        },
+        {
+          "anchor": "side",
+          "axis": "height",
+          "delta": 69.438
+        },
+        {
+          "anchor": "card",
+          "axis": "y",
+          "delta": -34.672
+        },
+        {
+          "anchor": "card",
+          "axis": "height",
+          "delta": 138.781
+        },
+        {
+          "anchor": "heading",
+          "axis": "y",
+          "delta": -34.672
+        },
+        {
+          "anchor": "heading",
+          "axis": "height",
+          "delta": 50.391
+        },
+        {
+          "anchor": "subtitle",
+          "axis": "y",
+          "delta": 15.719
+        },
+        {
+          "anchor": "subtitle",
+          "axis": "height",
+          "delta": 20.391
+        },
+        {
+          "anchor": "tabs",
+          "axis": "y",
+          "delta": 36.109
+        },
+        {
+          "anchor": "providers",
+          "axis": "y",
+          "delta": 104.109
+        },
+        {
+          "anchor": "providerNote",
+          "axis": "y",
+          "delta": 104.109
+        },
+        {
+          "anchor": "credentialsLabel",
+          "axis": "y",
+          "delta": 104.109
+        },
+        {
+          "anchor": "login",
+          "axis": "y",
+          "delta": 104.109
+        },
+        {
+          "anchor": "password",
+          "axis": "y",
+          "delta": 104.109
+        },
+        {
+          "anchor": "passwordToggle",
+          "axis": "y",
+          "delta": 104.109
+        },
+        {
+          "anchor": "submit",
+          "axis": "y",
+          "delta": 104.109
+        },
+        {
+          "anchor": "note",
+          "axis": "y",
+          "delta": 104.109
+        },
+        {
+          "anchor": "document",
+          "axis": "height",
+          "delta": 70
+        }
+      ]
+    },
+    {
+      "label": "return-login-1440x900",
+      "scrollY": 0,
+      "scrollX": 0,
+      "documentHeight": 1053,
+      "documentWidth": 1440,
+      "viewportWidth": 1440,
+      "viewportHeight": 900,
+      "overflow": 0,
+      "anchors": {
+        "art": {
+          "x": 0,
+          "y": 68,
+          "width": 682.09375,
+          "height": 826,
+          "display": "flex"
+        },
+        "artHeading": {
+          "x": 72,
+          "y": 396.765625,
+          "width": 538.09375,
+          "height": 134.375,
+          "display": "block"
+        },
+        "artEyebrow": {
+          "x": 72,
+          "y": 132,
+          "width": 538.09375,
+          "height": 15,
+          "display": "block"
+        },
+        "artEnd": {
+          "x": 72,
+          "y": 792.5,
+          "width": 538.09375,
+          "height": 37.5,
+          "display": "block"
+        },
+        "side": {
+          "x": 682.09375,
+          "y": 68,
+          "width": 757.90625,
+          "height": 826,
+          "display": "grid"
+        },
+        "card": {
+          "x": 851.046875,
+          "y": 144.671875,
+          "width": 420,
+          "height": 672.65625,
+          "display": "block"
+        },
+        "heading": {
+          "x": 851.046875,
+          "y": 180.671875,
+          "width": 420,
+          "height": 50.390625,
+          "display": "block"
+        },
+        "subtitle": {
+          "x": 851.046875,
+          "y": 246.0625,
+          "width": 420,
+          "height": 20.390625,
+          "display": "block"
+        },
+        "tabs": {
+          "x": 851.046875,
+          "y": 290.453125,
+          "width": 420,
+          "height": 45,
+          "display": "flex"
+        },
+        "providers": {
+          "x": 851.046875,
+          "y": 355.453125,
+          "width": 420,
+          "height": 72,
+          "display": "grid"
+        },
+        "providerNote": {
+          "x": 851.046875,
+          "y": 439.453125,
+          "width": 420,
+          "height": 18.6875,
+          "display": "block"
+        },
+        "credentialsLabel": {
+          "x": 851.046875,
+          "y": 480.140625,
+          "width": 420,
+          "height": 16.5,
+          "display": "flex"
+        },
+        "login": {
+          "x": 851.046875,
+          "y": 537.640625,
+          "width": 420,
+          "height": 48,
+          "display": "inline-block"
+        },
+        "password": {
+          "x": 851.046875,
+          "y": 645.640625,
+          "width": 420,
+          "height": 48,
+          "display": "block"
+        },
+        "passwordToggle": {
+          "x": 1224.046875,
+          "y": 647.640625,
+          "width": 44,
+          "height": 44,
+          "display": "block"
+        },
+        "submit": {
+          "x": 851.046875,
+          "y": 728.640625,
+          "width": 420,
+          "height": 50,
+          "display": "flex"
+        },
+        "note": {
+          "x": 851.046875,
+          "y": 798.640625,
+          "width": 420,
+          "height": 18.6875,
+          "display": "flex"
+        }
+      },
+      "artBackground": {
+        "image": "url(\"http://localhost:3270/v2/assets/ornament.webp\")",
+        "size": "auto 100%",
+        "position": "50% 50%"
+      }
+    },
+    {
+      "label": "return-login-1440x900-deltas",
+      "deltas": []
+    },
+    {
+      "label": "login-1366x620",
+      "scrollY": 0,
+      "scrollX": 0,
+      "documentHeight": 984,
+      "documentWidth": 1366,
+      "viewportWidth": 1366,
+      "viewportHeight": 620,
+      "overflow": 0,
+      "anchors": {
+        "art": {
+          "x": 0,
+          "y": 68,
+          "width": 647.046875,
+          "height": 756.65625,
+          "display": "flex"
+        },
+        "artHeading": {
+          "x": 68.296875,
+          "y": 362.09375,
+          "width": 510.453125,
+          "height": 134.375,
+          "display": "block"
+        },
+        "artEyebrow": {
+          "x": 68.296875,
+          "y": 132,
+          "width": 510.453125,
+          "height": 15,
+          "display": "block"
+        },
+        "artEnd": {
+          "x": 68.296875,
+          "y": 723.15625,
+          "width": 510.453125,
+          "height": 37.5,
+          "display": "block"
+        },
+        "side": {
+          "x": 647.046875,
+          "y": 68,
+          "width": 718.953125,
+          "height": 756.65625,
+          "display": "grid"
+        },
+        "card": {
+          "x": 796.515625,
+          "y": 110,
+          "width": 420,
+          "height": 672.65625,
+          "display": "block"
+        },
+        "heading": {
+          "x": 796.515625,
+          "y": 146,
+          "width": 420,
+          "height": 50.390625,
+          "display": "block"
+        },
+        "subtitle": {
+          "x": 796.515625,
+          "y": 211.390625,
+          "width": 420,
+          "height": 20.390625,
+          "display": "block"
+        },
+        "tabs": {
+          "x": 796.515625,
+          "y": 255.78125,
+          "width": 420,
+          "height": 45,
+          "display": "flex"
+        },
+        "providers": {
+          "x": 796.515625,
+          "y": 320.78125,
+          "width": 420,
+          "height": 72,
+          "display": "grid"
+        },
+        "providerNote": {
+          "x": 796.515625,
+          "y": 404.78125,
+          "width": 420,
+          "height": 18.6875,
+          "display": "block"
+        },
+        "credentialsLabel": {
+          "x": 796.515625,
+          "y": 445.46875,
+          "width": 420,
+          "height": 16.5,
+          "display": "flex"
+        },
+        "login": {
+          "x": 796.515625,
+          "y": 502.96875,
+          "width": 420,
+          "height": 48,
+          "display": "inline-block"
+        },
+        "password": {
+          "x": 796.515625,
+          "y": 610.96875,
+          "width": 420,
+          "height": 48,
+          "display": "block"
+        },
+        "passwordToggle": {
+          "x": 1169.515625,
+          "y": 612.96875,
+          "width": 44,
+          "height": 44,
+          "display": "block"
+        },
+        "submit": {
+          "x": 796.515625,
+          "y": 693.96875,
+          "width": 420,
+          "height": 50,
+          "display": "flex"
+        },
+        "note": {
+          "x": 796.515625,
+          "y": 763.96875,
+          "width": 420,
+          "height": 18.6875,
+          "display": "flex"
+        }
+      },
+      "artBackground": {
+        "image": "url(\"http://localhost:3270/v2/assets/ornament.webp\")",
+        "size": "auto 100%",
+        "position": "50% 50%"
+      }
+    },
+    {
+      "label": "register-1366x620",
+      "scrollY": 0,
+      "scrollX": 0,
+      "documentHeight": 1123,
+      "documentWidth": 1366,
+      "viewportWidth": 1366,
+      "viewportHeight": 620,
+      "overflow": 0,
+      "anchors": {
+        "art": {
+          "x": 0,
+          "y": 68,
+          "width": 647.046875,
+          "height": 895.4375,
+          "display": "flex"
+        },
+        "artHeading": {
+          "x": 68.296875,
+          "y": 431.484375,
+          "width": 510.453125,
+          "height": 134.375,
+          "display": "block"
+        },
+        "artEyebrow": {
+          "x": 68.296875,
+          "y": 132,
+          "width": 510.453125,
+          "height": 15,
+          "display": "block"
+        },
+        "artEnd": {
+          "x": 68.296875,
+          "y": 861.9375,
+          "width": 510.453125,
+          "height": 37.5,
+          "display": "block"
+        },
+        "side": {
+          "x": 647.046875,
+          "y": 68,
+          "width": 718.953125,
+          "height": 895.4375,
+          "display": "grid"
+        },
+        "card": {
+          "x": 796.515625,
+          "y": 110,
+          "width": 420,
+          "height": 811.4375,
+          "display": "block"
+        },
+        "heading": {
+          "x": 796.515625,
+          "y": 146,
+          "width": 420,
+          "height": 100.78125,
+          "display": "block"
+        },
+        "subtitle": {
+          "x": 796.515625,
+          "y": 261.78125,
+          "width": 420,
+          "height": 40.78125,
+          "display": "block"
+        },
+        "tabs": {
+          "x": 796.515625,
+          "y": 326.5625,
+          "width": 420,
+          "height": 45,
+          "display": "flex"
+        },
+        "providers": {
+          "x": 796.515625,
+          "y": 459.5625,
+          "width": 420,
+          "height": 72,
+          "display": "grid"
+        },
+        "providerNote": {
+          "x": 796.515625,
+          "y": 543.5625,
+          "width": 420,
+          "height": 18.6875,
+          "display": "block"
+        },
+        "credentialsLabel": {
+          "x": 796.515625,
+          "y": 584.25,
+          "width": 420,
+          "height": 16.5,
+          "display": "flex"
+        },
+        "login": {
+          "x": 796.515625,
+          "y": 641.75,
+          "width": 420,
+          "height": 48,
+          "display": "inline-block"
+        },
+        "password": {
+          "x": 796.515625,
+          "y": 749.75,
+          "width": 420,
+          "height": 48,
+          "display": "block"
+        },
+        "passwordToggle": {
+          "x": 1169.515625,
+          "y": 751.75,
+          "width": 44,
+          "height": 44,
+          "display": "block"
+        },
+        "submit": {
+          "x": 796.515625,
+          "y": 832.75,
+          "width": 420,
+          "height": 50,
+          "display": "flex"
+        },
+        "note": {
+          "x": 796.515625,
+          "y": 902.75,
+          "width": 420,
+          "height": 18.6875,
+          "display": "flex"
+        }
+      },
+      "artBackground": {
+        "image": "url(\"http://localhost:3270/v2/assets/ornament.webp\")",
+        "size": "auto 100%",
+        "position": "50% 50%"
+      }
+    },
+    {
+      "label": "login-register-1366x620-deltas",
+      "deltas": [
+        {
+          "anchor": "art",
+          "axis": "height",
+          "delta": 138.781
+        },
+        {
+          "anchor": "artHeading",
+          "axis": "y",
+          "delta": 69.391
+        },
+        {
+          "anchor": "artEnd",
+          "axis": "y",
+          "delta": 138.781
+        },
+        {
+          "anchor": "side",
+          "axis": "height",
+          "delta": 138.781
+        },
+        {
+          "anchor": "card",
+          "axis": "height",
+          "delta": 138.781
+        },
+        {
+          "anchor": "heading",
+          "axis": "height",
+          "delta": 50.391
+        },
+        {
+          "anchor": "subtitle",
+          "axis": "y",
+          "delta": 50.391
+        },
+        {
+          "anchor": "subtitle",
+          "axis": "height",
+          "delta": 20.391
+        },
+        {
+          "anchor": "tabs",
+          "axis": "y",
+          "delta": 70.781
+        },
+        {
+          "anchor": "providers",
+          "axis": "y",
+          "delta": 138.781
+        },
+        {
+          "anchor": "providerNote",
+          "axis": "y",
+          "delta": 138.781
+        },
+        {
+          "anchor": "credentialsLabel",
+          "axis": "y",
+          "delta": 138.781
+        },
+        {
+          "anchor": "login",
+          "axis": "y",
+          "delta": 138.781
+        },
+        {
+          "anchor": "password",
+          "axis": "y",
+          "delta": 138.781
+        },
+        {
+          "anchor": "passwordToggle",
+          "axis": "y",
+          "delta": 138.781
+        },
+        {
+          "anchor": "submit",
+          "axis": "y",
+          "delta": 138.781
+        },
+        {
+          "anchor": "note",
+          "axis": "y",
+          "delta": 138.781
+        },
+        {
+          "anchor": "document",
+          "axis": "height",
+          "delta": 139
+        }
+      ]
+    },
+    {
+      "label": "return-login-1366x620",
+      "scrollY": 0,
+      "scrollX": 0,
+      "documentHeight": 984,
+      "documentWidth": 1366,
+      "viewportWidth": 1366,
+      "viewportHeight": 620,
+      "overflow": 0,
+      "anchors": {
+        "art": {
+          "x": 0,
+          "y": 68,
+          "width": 647.046875,
+          "height": 756.65625,
+          "display": "flex"
+        },
+        "artHeading": {
+          "x": 68.296875,
+          "y": 362.09375,
+          "width": 510.453125,
+          "height": 134.375,
+          "display": "block"
+        },
+        "artEyebrow": {
+          "x": 68.296875,
+          "y": 132,
+          "width": 510.453125,
+          "height": 15,
+          "display": "block"
+        },
+        "artEnd": {
+          "x": 68.296875,
+          "y": 723.15625,
+          "width": 510.453125,
+          "height": 37.5,
+          "display": "block"
+        },
+        "side": {
+          "x": 647.046875,
+          "y": 68,
+          "width": 718.953125,
+          "height": 756.65625,
+          "display": "grid"
+        },
+        "card": {
+          "x": 796.515625,
+          "y": 110,
+          "width": 420,
+          "height": 672.65625,
+          "display": "block"
+        },
+        "heading": {
+          "x": 796.515625,
+          "y": 146,
+          "width": 420,
+          "height": 50.390625,
+          "display": "block"
+        },
+        "subtitle": {
+          "x": 796.515625,
+          "y": 211.390625,
+          "width": 420,
+          "height": 20.390625,
+          "display": "block"
+        },
+        "tabs": {
+          "x": 796.515625,
+          "y": 255.78125,
+          "width": 420,
+          "height": 45,
+          "display": "flex"
+        },
+        "providers": {
+          "x": 796.515625,
+          "y": 320.78125,
+          "width": 420,
+          "height": 72,
+          "display": "grid"
+        },
+        "providerNote": {
+          "x": 796.515625,
+          "y": 404.78125,
+          "width": 420,
+          "height": 18.6875,
+          "display": "block"
+        },
+        "credentialsLabel": {
+          "x": 796.515625,
+          "y": 445.46875,
+          "width": 420,
+          "height": 16.5,
+          "display": "flex"
+        },
+        "login": {
+          "x": 796.515625,
+          "y": 502.96875,
+          "width": 420,
+          "height": 48,
+          "display": "inline-block"
+        },
+        "password": {
+          "x": 796.515625,
+          "y": 610.96875,
+          "width": 420,
+          "height": 48,
+          "display": "block"
+        },
+        "passwordToggle": {
+          "x": 1169.515625,
+          "y": 612.96875,
+          "width": 44,
+          "height": 44,
+          "display": "block"
+        },
+        "submit": {
+          "x": 796.515625,
+          "y": 693.96875,
+          "width": 420,
+          "height": 50,
+          "display": "flex"
+        },
+        "note": {
+          "x": 796.515625,
+          "y": 763.96875,
+          "width": 420,
+          "height": 18.6875,
+          "display": "flex"
+        }
+      },
+      "artBackground": {
+        "image": "url(\"http://localhost:3270/v2/assets/ornament.webp\")",
+        "size": "auto 100%",
+        "position": "50% 50%"
+      }
+    },
+    {
+      "label": "return-login-1366x620-deltas",
+      "deltas": []
+    },
+    {
+      "label": "login-390x844",
+      "scrollY": 0,
+      "scrollX": 0,
+      "documentHeight": 1305,
+      "documentWidth": 390,
+      "viewportWidth": 390,
+      "viewportHeight": 844,
+      "overflow": 0,
+      "anchors": {
+        "art": {
+          "x": 0,
+          "y": 72,
+          "width": 390,
+          "height": 178,
+          "display": "flex"
+        },
+        "artHeading": {
+          "x": 20,
+          "y": 116.90625,
+          "width": 350,
+          "height": 88.1875,
+          "display": "block"
+        },
+        "artEyebrow": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "display": "none"
+        },
+        "artEnd": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "display": "none"
+        },
+        "side": {
+          "x": 0,
+          "y": 250,
+          "width": 390,
+          "height": 730.765625,
+          "display": "grid"
+        },
+        "card": {
+          "x": 20,
+          "y": 280,
+          "width": 350,
+          "height": 660.765625,
+          "display": "block"
+        },
+        "heading": {
+          "x": 20,
+          "y": 316,
+          "width": 350,
+          "height": 42,
+          "display": "block"
+        },
+        "subtitle": {
+          "x": 20,
+          "y": 373,
+          "width": 350,
+          "height": 20.390625,
+          "display": "block"
+        },
+        "tabs": {
+          "x": 20,
+          "y": 413.390625,
+          "width": 350,
+          "height": 45,
+          "display": "flex"
+        },
+        "providers": {
+          "x": 20,
+          "y": 478.390625,
+          "width": 350,
+          "height": 70.5,
+          "display": "grid"
+        },
+        "providerNote": {
+          "x": 20,
+          "y": 560.890625,
+          "width": 350,
+          "height": 18.6875,
+          "display": "block"
+        },
+        "credentialsLabel": {
+          "x": 20,
+          "y": 601.578125,
+          "width": 350,
+          "height": 16.5,
+          "display": "flex"
+        },
+        "login": {
+          "x": 20,
+          "y": 659.078125,
+          "width": 350,
+          "height": 50,
+          "display": "inline-block"
+        },
+        "password": {
+          "x": 20,
+          "y": 769.078125,
+          "width": 350,
+          "height": 50,
+          "display": "block"
+        },
+        "passwordToggle": {
+          "x": 323,
+          "y": 773.078125,
+          "width": 44,
+          "height": 44,
+          "display": "block"
+        },
+        "submit": {
+          "x": 20,
+          "y": 854.078125,
+          "width": 350,
+          "height": 50,
+          "display": "flex"
+        },
+        "note": {
+          "x": 20,
+          "y": 922.078125,
+          "width": 350,
+          "height": 18.6875,
+          "display": "flex"
+        }
+      },
+      "artBackground": {
+        "image": "url(\"http://localhost:3270/v2/assets/ornament.webp\")",
+        "size": "auto 100%",
+        "position": "50% 50%"
+      }
+    },
+    {
+      "label": "register-390x844",
+      "scrollY": 0,
+      "scrollX": 0,
+      "documentHeight": 1547,
+      "documentWidth": 390,
+      "viewportWidth": 390,
+      "viewportHeight": 844,
+      "overflow": 0,
+      "anchors": {
+        "art": {
+          "x": 0,
+          "y": 72,
+          "width": 390,
+          "height": 178,
+          "display": "flex"
+        },
+        "artHeading": {
+          "x": 20,
+          "y": 116.90625,
+          "width": 350,
+          "height": 88.1875,
+          "display": "block"
+        },
+        "artEyebrow": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "display": "none"
+        },
+        "artEnd": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "display": "none"
+        },
+        "side": {
+          "x": 0,
+          "y": 250,
+          "width": 390,
+          "height": 973.15625,
+          "display": "grid"
+        },
+        "card": {
+          "x": 20,
+          "y": 280,
+          "width": 350,
+          "height": 903.15625,
+          "display": "block"
+        },
+        "heading": {
+          "x": 20,
+          "y": 316,
+          "width": 350,
+          "height": 84,
+          "display": "block"
+        },
+        "subtitle": {
+          "x": 20,
+          "y": 415,
+          "width": 350,
+          "height": 40.78125,
+          "display": "block"
+        },
+        "tabs": {
+          "x": 20,
+          "y": 475.78125,
+          "width": 350,
+          "height": 45,
+          "display": "flex"
+        },
+        "providers": {
+          "x": 20,
+          "y": 720.78125,
+          "width": 350,
+          "height": 70.5,
+          "display": "grid"
+        },
+        "providerNote": {
+          "x": 20,
+          "y": 803.28125,
+          "width": 350,
+          "height": 18.6875,
+          "display": "block"
+        },
+        "credentialsLabel": {
+          "x": 20,
+          "y": 843.96875,
+          "width": 350,
+          "height": 16.5,
+          "display": "flex"
+        },
+        "login": {
+          "x": 20,
+          "y": 901.46875,
+          "width": 350,
+          "height": 50,
+          "display": "inline-block"
+        },
+        "password": {
+          "x": 20,
+          "y": 1011.46875,
+          "width": 350,
+          "height": 50,
+          "display": "block"
+        },
+        "passwordToggle": {
+          "x": 323,
+          "y": 1015.46875,
+          "width": 44,
+          "height": 44,
+          "display": "block"
+        },
+        "submit": {
+          "x": 20,
+          "y": 1096.46875,
+          "width": 350,
+          "height": 50,
+          "display": "flex"
+        },
+        "note": {
+          "x": 20,
+          "y": 1164.46875,
+          "width": 350,
+          "height": 18.6875,
+          "display": "flex"
+        }
+      },
+      "artBackground": {
+        "image": "url(\"http://localhost:3270/v2/assets/ornament.webp\")",
+        "size": "auto 100%",
+        "position": "50% 50%"
+      }
+    },
+    {
+      "label": "login-register-390x844-deltas",
+      "deltas": [
+        {
+          "anchor": "side",
+          "axis": "height",
+          "delta": 242.391
+        },
+        {
+          "anchor": "card",
+          "axis": "height",
+          "delta": 242.391
+        },
+        {
+          "anchor": "heading",
+          "axis": "height",
+          "delta": 42
+        },
+        {
+          "anchor": "subtitle",
+          "axis": "y",
+          "delta": 42
+        },
+        {
+          "anchor": "subtitle",
+          "axis": "height",
+          "delta": 20.391
+        },
+        {
+          "anchor": "tabs",
+          "axis": "y",
+          "delta": 62.391
+        },
+        {
+          "anchor": "providers",
+          "axis": "y",
+          "delta": 242.391
+        },
+        {
+          "anchor": "providerNote",
+          "axis": "y",
+          "delta": 242.391
+        },
+        {
+          "anchor": "credentialsLabel",
+          "axis": "y",
+          "delta": 242.391
+        },
+        {
+          "anchor": "login",
+          "axis": "y",
+          "delta": 242.391
+        },
+        {
+          "anchor": "password",
+          "axis": "y",
+          "delta": 242.391
+        },
+        {
+          "anchor": "passwordToggle",
+          "axis": "y",
+          "delta": 242.391
+        },
+        {
+          "anchor": "submit",
+          "axis": "y",
+          "delta": 242.391
+        },
+        {
+          "anchor": "note",
+          "axis": "y",
+          "delta": 242.391
+        },
+        {
+          "anchor": "document",
+          "axis": "height",
+          "delta": 242
+        }
+      ]
+    },
+    {
+      "label": "return-login-390x844",
+      "scrollY": 0,
+      "scrollX": 0,
+      "documentHeight": 1305,
+      "documentWidth": 390,
+      "viewportWidth": 390,
+      "viewportHeight": 844,
+      "overflow": 0,
+      "anchors": {
+        "art": {
+          "x": 0,
+          "y": 72,
+          "width": 390,
+          "height": 178,
+          "display": "flex"
+        },
+        "artHeading": {
+          "x": 20,
+          "y": 116.90625,
+          "width": 350,
+          "height": 88.1875,
+          "display": "block"
+        },
+        "artEyebrow": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "display": "none"
+        },
+        "artEnd": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "display": "none"
+        },
+        "side": {
+          "x": 0,
+          "y": 250,
+          "width": 390,
+          "height": 730.765625,
+          "display": "grid"
+        },
+        "card": {
+          "x": 20,
+          "y": 280,
+          "width": 350,
+          "height": 660.765625,
+          "display": "block"
+        },
+        "heading": {
+          "x": 20,
+          "y": 316,
+          "width": 350,
+          "height": 42,
+          "display": "block"
+        },
+        "subtitle": {
+          "x": 20,
+          "y": 373,
+          "width": 350,
+          "height": 20.390625,
+          "display": "block"
+        },
+        "tabs": {
+          "x": 20,
+          "y": 413.390625,
+          "width": 350,
+          "height": 45,
+          "display": "flex"
+        },
+        "providers": {
+          "x": 20,
+          "y": 478.390625,
+          "width": 350,
+          "height": 70.5,
+          "display": "grid"
+        },
+        "providerNote": {
+          "x": 20,
+          "y": 560.890625,
+          "width": 350,
+          "height": 18.6875,
+          "display": "block"
+        },
+        "credentialsLabel": {
+          "x": 20,
+          "y": 601.578125,
+          "width": 350,
+          "height": 16.5,
+          "display": "flex"
+        },
+        "login": {
+          "x": 20,
+          "y": 659.078125,
+          "width": 350,
+          "height": 50,
+          "display": "inline-block"
+        },
+        "password": {
+          "x": 20,
+          "y": 769.078125,
+          "width": 350,
+          "height": 50,
+          "display": "block"
+        },
+        "passwordToggle": {
+          "x": 323,
+          "y": 773.078125,
+          "width": 44,
+          "height": 44,
+          "display": "block"
+        },
+        "submit": {
+          "x": 20,
+          "y": 854.078125,
+          "width": 350,
+          "height": 50,
+          "display": "flex"
+        },
+        "note": {
+          "x": 20,
+          "y": 922.078125,
+          "width": 350,
+          "height": 18.6875,
+          "display": "flex"
+        }
+      },
+      "artBackground": {
+        "image": "url(\"http://localhost:3270/v2/assets/ornament.webp\")",
+        "size": "auto 100%",
+        "position": "50% 50%"
+      }
+    },
+    {
+      "label": "return-login-390x844-deltas",
+      "deltas": []
+    },
+    {
+      "label": "login-320x740",
+      "scrollY": 0,
+      "scrollX": 0,
+      "documentHeight": 1409,
+      "documentWidth": 320,
+      "viewportWidth": 320,
+      "viewportHeight": 740,
+      "overflow": 0,
+      "anchors": {
+        "art": {
+          "x": 0,
+          "y": 72,
+          "width": 320,
+          "height": 178,
+          "display": "flex"
+        },
+        "artHeading": {
+          "x": 20,
+          "y": 116.90625,
+          "width": 280,
+          "height": 88.1875,
+          "display": "block"
+        },
+        "artEyebrow": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "display": "none"
+        },
+        "artEnd": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "display": "none"
+        },
+        "side": {
+          "x": 0,
+          "y": 250,
+          "width": 320,
+          "height": 793.15625,
+          "display": "grid"
+        },
+        "card": {
+          "x": 20,
+          "y": 280,
+          "width": 280,
+          "height": 723.15625,
+          "display": "block"
+        },
+        "heading": {
+          "x": 20,
+          "y": 316,
+          "width": 280,
+          "height": 84,
+          "display": "block"
+        },
+        "subtitle": {
+          "x": 20,
+          "y": 415,
+          "width": 280,
+          "height": 40.78125,
+          "display": "block"
+        },
+        "tabs": {
+          "x": 20,
+          "y": 475.78125,
+          "width": 280,
+          "height": 45,
+          "display": "flex"
+        },
+        "providers": {
+          "x": 20,
+          "y": 540.78125,
+          "width": 280,
+          "height": 70.5,
+          "display": "grid"
+        },
+        "providerNote": {
+          "x": 20,
+          "y": 623.28125,
+          "width": 280,
+          "height": 18.6875,
+          "display": "block"
+        },
+        "credentialsLabel": {
+          "x": 20,
+          "y": 663.96875,
+          "width": 280,
+          "height": 16.5,
+          "display": "flex"
+        },
+        "login": {
+          "x": 20,
+          "y": 721.46875,
+          "width": 280,
+          "height": 50,
+          "display": "inline-block"
+        },
+        "password": {
+          "x": 20,
+          "y": 831.46875,
+          "width": 280,
+          "height": 50,
+          "display": "block"
+        },
+        "passwordToggle": {
+          "x": 253,
+          "y": 835.46875,
+          "width": 44,
+          "height": 44,
+          "display": "block"
+        },
+        "submit": {
+          "x": 20,
+          "y": 916.46875,
+          "width": 280,
+          "height": 50,
+          "display": "flex"
+        },
+        "note": {
+          "x": 20,
+          "y": 984.46875,
+          "width": 280,
+          "height": 18.6875,
+          "display": "flex"
+        }
+      },
+      "artBackground": {
+        "image": "url(\"http://localhost:3270/v2/assets/ornament.webp\")",
+        "size": "auto 100%",
+        "position": "50% 50%"
+      }
+    },
+    {
+      "label": "register-320x740",
+      "scrollY": 0,
+      "scrollX": 0,
+      "documentHeight": 1589,
+      "documentWidth": 320,
+      "viewportWidth": 320,
+      "viewportHeight": 740,
+      "overflow": 0,
+      "anchors": {
+        "art": {
+          "x": 0,
+          "y": 72,
+          "width": 320,
+          "height": 178,
+          "display": "flex"
+        },
+        "artHeading": {
+          "x": 20,
+          "y": 116.90625,
+          "width": 280,
+          "height": 88.1875,
+          "display": "block"
+        },
+        "artEyebrow": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "display": "none"
+        },
+        "artEnd": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "display": "none"
+        },
+        "side": {
+          "x": 0,
+          "y": 250,
+          "width": 320,
+          "height": 973.15625,
+          "display": "grid"
+        },
+        "card": {
+          "x": 20,
+          "y": 280,
+          "width": 280,
+          "height": 903.15625,
+          "display": "block"
+        },
+        "heading": {
+          "x": 20,
+          "y": 316,
+          "width": 280,
+          "height": 84,
+          "display": "block"
+        },
+        "subtitle": {
+          "x": 20,
+          "y": 415,
+          "width": 280,
+          "height": 40.78125,
+          "display": "block"
+        },
+        "tabs": {
+          "x": 20,
+          "y": 475.78125,
+          "width": 280,
+          "height": 45,
+          "display": "flex"
+        },
+        "providers": {
+          "x": 20,
+          "y": 720.78125,
+          "width": 280,
+          "height": 70.5,
+          "display": "grid"
+        },
+        "providerNote": {
+          "x": 20,
+          "y": 803.28125,
+          "width": 280,
+          "height": 18.6875,
+          "display": "block"
+        },
+        "credentialsLabel": {
+          "x": 20,
+          "y": 843.96875,
+          "width": 280,
+          "height": 16.5,
+          "display": "flex"
+        },
+        "login": {
+          "x": 20,
+          "y": 901.46875,
+          "width": 280,
+          "height": 50,
+          "display": "inline-block"
+        },
+        "password": {
+          "x": 20,
+          "y": 1011.46875,
+          "width": 280,
+          "height": 50,
+          "display": "block"
+        },
+        "passwordToggle": {
+          "x": 253,
+          "y": 1015.46875,
+          "width": 44,
+          "height": 44,
+          "display": "block"
+        },
+        "submit": {
+          "x": 20,
+          "y": 1096.46875,
+          "width": 280,
+          "height": 50,
+          "display": "flex"
+        },
+        "note": {
+          "x": 20,
+          "y": 1164.46875,
+          "width": 280,
+          "height": 18.6875,
+          "display": "flex"
+        }
+      },
+      "artBackground": {
+        "image": "url(\"http://localhost:3270/v2/assets/ornament.webp\")",
+        "size": "auto 100%",
+        "position": "50% 50%"
+      }
+    },
+    {
+      "label": "login-register-320x740-deltas",
+      "deltas": [
+        {
+          "anchor": "side",
+          "axis": "height",
+          "delta": 180
+        },
+        {
+          "anchor": "card",
+          "axis": "height",
+          "delta": 180
+        },
+        {
+          "anchor": "providers",
+          "axis": "y",
+          "delta": 180
+        },
+        {
+          "anchor": "providerNote",
+          "axis": "y",
+          "delta": 180
+        },
+        {
+          "anchor": "credentialsLabel",
+          "axis": "y",
+          "delta": 180
+        },
+        {
+          "anchor": "login",
+          "axis": "y",
+          "delta": 180
+        },
+        {
+          "anchor": "password",
+          "axis": "y",
+          "delta": 180
+        },
+        {
+          "anchor": "passwordToggle",
+          "axis": "y",
+          "delta": 180
+        },
+        {
+          "anchor": "submit",
+          "axis": "y",
+          "delta": 180
+        },
+        {
+          "anchor": "note",
+          "axis": "y",
+          "delta": 180
+        },
+        {
+          "anchor": "document",
+          "axis": "height",
+          "delta": 180
+        }
+      ]
+    },
+    {
+      "label": "return-login-320x740",
+      "scrollY": 0,
+      "scrollX": 0,
+      "documentHeight": 1409,
+      "documentWidth": 320,
+      "viewportWidth": 320,
+      "viewportHeight": 740,
+      "overflow": 0,
+      "anchors": {
+        "art": {
+          "x": 0,
+          "y": 72,
+          "width": 320,
+          "height": 178,
+          "display": "flex"
+        },
+        "artHeading": {
+          "x": 20,
+          "y": 116.90625,
+          "width": 280,
+          "height": 88.1875,
+          "display": "block"
+        },
+        "artEyebrow": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "display": "none"
+        },
+        "artEnd": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "display": "none"
+        },
+        "side": {
+          "x": 0,
+          "y": 250,
+          "width": 320,
+          "height": 793.15625,
+          "display": "grid"
+        },
+        "card": {
+          "x": 20,
+          "y": 280,
+          "width": 280,
+          "height": 723.15625,
+          "display": "block"
+        },
+        "heading": {
+          "x": 20,
+          "y": 316,
+          "width": 280,
+          "height": 84,
+          "display": "block"
+        },
+        "subtitle": {
+          "x": 20,
+          "y": 415,
+          "width": 280,
+          "height": 40.78125,
+          "display": "block"
+        },
+        "tabs": {
+          "x": 20,
+          "y": 475.78125,
+          "width": 280,
+          "height": 45,
+          "display": "flex"
+        },
+        "providers": {
+          "x": 20,
+          "y": 540.78125,
+          "width": 280,
+          "height": 70.5,
+          "display": "grid"
+        },
+        "providerNote": {
+          "x": 20,
+          "y": 623.28125,
+          "width": 280,
+          "height": 18.6875,
+          "display": "block"
+        },
+        "credentialsLabel": {
+          "x": 20,
+          "y": 663.96875,
+          "width": 280,
+          "height": 16.5,
+          "display": "flex"
+        },
+        "login": {
+          "x": 20,
+          "y": 721.46875,
+          "width": 280,
+          "height": 50,
+          "display": "inline-block"
+        },
+        "password": {
+          "x": 20,
+          "y": 831.46875,
+          "width": 280,
+          "height": 50,
+          "display": "block"
+        },
+        "passwordToggle": {
+          "x": 253,
+          "y": 835.46875,
+          "width": 44,
+          "height": 44,
+          "display": "block"
+        },
+        "submit": {
+          "x": 20,
+          "y": 916.46875,
+          "width": 280,
+          "height": 50,
+          "display": "flex"
+        },
+        "note": {
+          "x": 20,
+          "y": 984.46875,
+          "width": 280,
+          "height": 18.6875,
+          "display": "flex"
+        }
+      },
+      "artBackground": {
+        "image": "url(\"http://localhost:3270/v2/assets/ornament.webp\")",
+        "size": "auto 100%",
+        "position": "50% 50%"
+      }
+    },
+    {
+      "label": "return-login-320x740-deltas",
+      "deltas": []
+    },
+    {
+      "label": "login-390x600",
+      "scrollY": 0,
+      "scrollX": 0,
+      "documentHeight": 1305,
+      "documentWidth": 390,
+      "viewportWidth": 390,
+      "viewportHeight": 600,
+      "overflow": 0,
+      "anchors": {
+        "art": {
+          "x": 0,
+          "y": 72,
+          "width": 390,
+          "height": 178,
+          "display": "flex"
+        },
+        "artHeading": {
+          "x": 20,
+          "y": 116.90625,
+          "width": 350,
+          "height": 88.1875,
+          "display": "block"
+        },
+        "artEyebrow": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "display": "none"
+        },
+        "artEnd": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "display": "none"
+        },
+        "side": {
+          "x": 0,
+          "y": 250,
+          "width": 390,
+          "height": 730.765625,
+          "display": "grid"
+        },
+        "card": {
+          "x": 20,
+          "y": 280,
+          "width": 350,
+          "height": 660.765625,
+          "display": "block"
+        },
+        "heading": {
+          "x": 20,
+          "y": 316,
+          "width": 350,
+          "height": 42,
+          "display": "block"
+        },
+        "subtitle": {
+          "x": 20,
+          "y": 373,
+          "width": 350,
+          "height": 20.390625,
+          "display": "block"
+        },
+        "tabs": {
+          "x": 20,
+          "y": 413.390625,
+          "width": 350,
+          "height": 45,
+          "display": "flex"
+        },
+        "providers": {
+          "x": 20,
+          "y": 478.390625,
+          "width": 350,
+          "height": 70.5,
+          "display": "grid"
+        },
+        "providerNote": {
+          "x": 20,
+          "y": 560.890625,
+          "width": 350,
+          "height": 18.6875,
+          "display": "block"
+        },
+        "credentialsLabel": {
+          "x": 20,
+          "y": 601.578125,
+          "width": 350,
+          "height": 16.5,
+          "display": "flex"
+        },
+        "login": {
+          "x": 20,
+          "y": 659.078125,
+          "width": 350,
+          "height": 50,
+          "display": "inline-block"
+        },
+        "password": {
+          "x": 20,
+          "y": 769.078125,
+          "width": 350,
+          "height": 50,
+          "display": "block"
+        },
+        "passwordToggle": {
+          "x": 323,
+          "y": 773.078125,
+          "width": 44,
+          "height": 44,
+          "display": "block"
+        },
+        "submit": {
+          "x": 20,
+          "y": 854.078125,
+          "width": 350,
+          "height": 50,
+          "display": "flex"
+        },
+        "note": {
+          "x": 20,
+          "y": 922.078125,
+          "width": 350,
+          "height": 18.6875,
+          "display": "flex"
+        }
+      },
+      "artBackground": {
+        "image": "url(\"http://localhost:3270/v2/assets/ornament.webp\")",
+        "size": "auto 100%",
+        "position": "50% 50%"
+      }
+    },
+    {
+      "label": "register-390x600",
+      "scrollY": 0,
+      "scrollX": 0,
+      "documentHeight": 1547,
+      "documentWidth": 390,
+      "viewportWidth": 390,
+      "viewportHeight": 600,
+      "overflow": 0,
+      "anchors": {
+        "art": {
+          "x": 0,
+          "y": 72,
+          "width": 390,
+          "height": 178,
+          "display": "flex"
+        },
+        "artHeading": {
+          "x": 20,
+          "y": 116.90625,
+          "width": 350,
+          "height": 88.1875,
+          "display": "block"
+        },
+        "artEyebrow": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "display": "none"
+        },
+        "artEnd": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "display": "none"
+        },
+        "side": {
+          "x": 0,
+          "y": 250,
+          "width": 390,
+          "height": 973.15625,
+          "display": "grid"
+        },
+        "card": {
+          "x": 20,
+          "y": 280,
+          "width": 350,
+          "height": 903.15625,
+          "display": "block"
+        },
+        "heading": {
+          "x": 20,
+          "y": 316,
+          "width": 350,
+          "height": 84,
+          "display": "block"
+        },
+        "subtitle": {
+          "x": 20,
+          "y": 415,
+          "width": 350,
+          "height": 40.78125,
+          "display": "block"
+        },
+        "tabs": {
+          "x": 20,
+          "y": 475.78125,
+          "width": 350,
+          "height": 45,
+          "display": "flex"
+        },
+        "providers": {
+          "x": 20,
+          "y": 720.78125,
+          "width": 350,
+          "height": 70.5,
+          "display": "grid"
+        },
+        "providerNote": {
+          "x": 20,
+          "y": 803.28125,
+          "width": 350,
+          "height": 18.6875,
+          "display": "block"
+        },
+        "credentialsLabel": {
+          "x": 20,
+          "y": 843.96875,
+          "width": 350,
+          "height": 16.5,
+          "display": "flex"
+        },
+        "login": {
+          "x": 20,
+          "y": 901.46875,
+          "width": 350,
+          "height": 50,
+          "display": "inline-block"
+        },
+        "password": {
+          "x": 20,
+          "y": 1011.46875,
+          "width": 350,
+          "height": 50,
+          "display": "block"
+        },
+        "passwordToggle": {
+          "x": 323,
+          "y": 1015.46875,
+          "width": 44,
+          "height": 44,
+          "display": "block"
+        },
+        "submit": {
+          "x": 20,
+          "y": 1096.46875,
+          "width": 350,
+          "height": 50,
+          "display": "flex"
+        },
+        "note": {
+          "x": 20,
+          "y": 1164.46875,
+          "width": 350,
+          "height": 18.6875,
+          "display": "flex"
+        }
+      },
+      "artBackground": {
+        "image": "url(\"http://localhost:3270/v2/assets/ornament.webp\")",
+        "size": "auto 100%",
+        "position": "50% 50%"
+      }
+    },
+    {
+      "label": "login-register-390x600-deltas",
+      "deltas": [
+        {
+          "anchor": "side",
+          "axis": "height",
+          "delta": 242.391
+        },
+        {
+          "anchor": "card",
+          "axis": "height",
+          "delta": 242.391
+        },
+        {
+          "anchor": "heading",
+          "axis": "height",
+          "delta": 42
+        },
+        {
+          "anchor": "subtitle",
+          "axis": "y",
+          "delta": 42
+        },
+        {
+          "anchor": "subtitle",
+          "axis": "height",
+          "delta": 20.391
+        },
+        {
+          "anchor": "tabs",
+          "axis": "y",
+          "delta": 62.391
+        },
+        {
+          "anchor": "providers",
+          "axis": "y",
+          "delta": 242.391
+        },
+        {
+          "anchor": "providerNote",
+          "axis": "y",
+          "delta": 242.391
+        },
+        {
+          "anchor": "credentialsLabel",
+          "axis": "y",
+          "delta": 242.391
+        },
+        {
+          "anchor": "login",
+          "axis": "y",
+          "delta": 242.391
+        },
+        {
+          "anchor": "password",
+          "axis": "y",
+          "delta": 242.391
+        },
+        {
+          "anchor": "passwordToggle",
+          "axis": "y",
+          "delta": 242.391
+        },
+        {
+          "anchor": "submit",
+          "axis": "y",
+          "delta": 242.391
+        },
+        {
+          "anchor": "note",
+          "axis": "y",
+          "delta": 242.391
+        },
+        {
+          "anchor": "document",
+          "axis": "height",
+          "delta": 242
+        }
+      ]
+    },
+    {
+      "label": "return-login-390x600",
+      "scrollY": 0,
+      "scrollX": 0,
+      "documentHeight": 1305,
+      "documentWidth": 390,
+      "viewportWidth": 390,
+      "viewportHeight": 600,
+      "overflow": 0,
+      "anchors": {
+        "art": {
+          "x": 0,
+          "y": 72,
+          "width": 390,
+          "height": 178,
+          "display": "flex"
+        },
+        "artHeading": {
+          "x": 20,
+          "y": 116.90625,
+          "width": 350,
+          "height": 88.1875,
+          "display": "block"
+        },
+        "artEyebrow": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "display": "none"
+        },
+        "artEnd": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "display": "none"
+        },
+        "side": {
+          "x": 0,
+          "y": 250,
+          "width": 390,
+          "height": 730.765625,
+          "display": "grid"
+        },
+        "card": {
+          "x": 20,
+          "y": 280,
+          "width": 350,
+          "height": 660.765625,
+          "display": "block"
+        },
+        "heading": {
+          "x": 20,
+          "y": 316,
+          "width": 350,
+          "height": 42,
+          "display": "block"
+        },
+        "subtitle": {
+          "x": 20,
+          "y": 373,
+          "width": 350,
+          "height": 20.390625,
+          "display": "block"
+        },
+        "tabs": {
+          "x": 20,
+          "y": 413.390625,
+          "width": 350,
+          "height": 45,
+          "display": "flex"
+        },
+        "providers": {
+          "x": 20,
+          "y": 478.390625,
+          "width": 350,
+          "height": 70.5,
+          "display": "grid"
+        },
+        "providerNote": {
+          "x": 20,
+          "y": 560.890625,
+          "width": 350,
+          "height": 18.6875,
+          "display": "block"
+        },
+        "credentialsLabel": {
+          "x": 20,
+          "y": 601.578125,
+          "width": 350,
+          "height": 16.5,
+          "display": "flex"
+        },
+        "login": {
+          "x": 20,
+          "y": 659.078125,
+          "width": 350,
+          "height": 50,
+          "display": "inline-block"
+        },
+        "password": {
+          "x": 20,
+          "y": 769.078125,
+          "width": 350,
+          "height": 50,
+          "display": "block"
+        },
+        "passwordToggle": {
+          "x": 323,
+          "y": 773.078125,
+          "width": 44,
+          "height": 44,
+          "display": "block"
+        },
+        "submit": {
+          "x": 20,
+          "y": 854.078125,
+          "width": 350,
+          "height": 50,
+          "display": "flex"
+        },
+        "note": {
+          "x": 20,
+          "y": 922.078125,
+          "width": 350,
+          "height": 18.6875,
+          "display": "flex"
+        }
+      },
+      "artBackground": {
+        "image": "url(\"http://localhost:3270/v2/assets/ornament.webp\")",
+        "size": "auto 100%",
+        "position": "50% 50%"
+      }
+    },
+    {
+      "label": "return-login-390x600-deltas",
+      "deltas": []
+    }
+  ],
+  "pageErrors": [],
+  "blockedWrites": []
+}

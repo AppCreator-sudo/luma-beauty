@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-19T12:10:24+07:00",
+  "frontendBuild": "PASS",
+  "rootBuild": "PASS",
+  "browserChecks": 87,
+  "browserPassed": 87,
+  "syntheticDatabaseIntegrity": "ok",
+  "foreignKeys": "PASS",
+  "fixtureStopped": true,
+  "referencePngsUnchanged": 163,
+  "visuallyInspectedScreenshots": [
+    "master-1440.png",
+    "master-320-insecure.png",
+    "master-320.png",
+    "master-390-worker-unavailable.png",
+    "master-390.png",
+    "salon-1440.png",
+    "salon-320-insecure.png",
+    "salon-320.png",
+    "salon-390-worker-unavailable.png",
+    "salon-390.png"
+  ],
+  "published": false,
+  "physicalPushDelivery": "not tested; F-08-02",
+  "documentsValidation": {
+    "status": "PASS",
+    "tasks": 100,
+    "links": 3366,
+    "scope": "current working tree via temporary index; original Git index unchanged"
+  }
+}

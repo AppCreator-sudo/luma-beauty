@@ -1,0 +1,575 @@
+/* Luma Beauty — Stories Styles */
+
+/* 1. Gradient Story Ring for Avatars */
+.story-avatar-ring {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #722F37 0%, #C5A059 100%);
+  cursor: pointer;
+  transition: transform 0.2s cubic-bezier(0.2, 0.9, 0.4, 1), box-shadow 0.2s ease;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+.story-avatar-ring:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 14px rgba(114, 47, 55, 0.25);
+}
+
+.story-avatar-ring-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  padding: 2px;
+  background: #ffffff;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.story-avatar-ring img,
+.story-avatar-ring span {
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* 2. Top Stories Feed Carousel (Masters Catalog / Inspiration) */
+.stories-feed-bar {
+  margin: 0 0 24px 0;
+  padding: 4px 0 12px 0;
+  position: relative;
+}
+
+.stories-feed-scroll {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 4px 2px 8px 2px;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.stories-feed-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.stories-feed-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  min-width: 72px;
+  max-width: 80px;
+  text-align: center;
+  font-family: inherit;
+  transition: opacity 0.15s ease;
+}
+
+.stories-feed-item:hover {
+  opacity: 0.9;
+}
+
+.stories-feed-item:focus-visible {
+  outline: 2px solid #722F37;
+  outline-offset: 3px;
+  border-radius: 12px;
+}
+
+.stories-feed-item .story-avatar-ring {
+  width: 66px;
+  height: 66px;
+}
+
+.stories-feed-name {
+  font-size: 11.5px;
+  font-weight: 500;
+  color: #2D2727;
+  line-height: 1.25;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+}
+
+/* Add story item for logged-in master / salon */
+.stories-feed-add {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  min-width: 72px;
+  max-width: 80px;
+  text-align: center;
+  font-family: inherit;
+  text-decoration: none;
+}
+
+.stories-feed-add-avatar {
+  width: 66px;
+  height: 66px;
+  border-radius: 50%;
+  border: 1.5px dashed #C5A059;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: #FAF7F2;
+  box-sizing: border-box;
+}
+
+.stories-feed-add-avatar img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  opacity: 0.75;
+}
+
+.stories-feed-add-badge {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #722F37;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #ffffff;
+}
+
+/* 3. Fullscreen Story Viewer Modal */
+.story-viewer-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: #0a090a;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: storyFadeIn 0.2s ease-out;
+}
+
+@keyframes storyFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.story-viewer-stage {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  height: 100%;
+  max-height: 860px;
+  background: #141213;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  user-select: none;
+}
+
+@media (min-width: 600px) {
+  .story-viewer-stage {
+    border-radius: 20px;
+    height: 92vh;
+    box-shadow: 0 24px 64px rgba(0, 0, 0, 0.7);
+  }
+}
+
+/* Progress bar segments */
+.story-progress-row {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 30;
+  display: flex;
+  gap: 4px;
+  padding: 12px 14px 4px 14px;
+  pointer-events: none;
+}
+
+.story-progress-segment {
+  flex: 1;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.32);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.story-progress-fill {
+  height: 100%;
+  background: #ffffff;
+  border-radius: 3px;
+  will-change: width;
+}
+
+/* Story Header */
+.story-header {
+  position: absolute;
+  top: 18px;
+  left: 0;
+  right: 0;
+  z-index: 30;
+  padding: 8px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.story-header-author {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.story-header-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1.5px solid #C5A059;
+}
+
+.story-header-placeholder {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #722F37;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 15px;
+  border: 1.5px solid #C5A059;
+}
+
+.story-header-meta {
+  display: flex;
+  flex-direction: column;
+}
+
+.story-header-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 1.2;
+}
+
+.story-header-time {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.story-close-button {
+  background: rgba(30, 26, 28, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.story-close-button:hover {
+  background: rgba(50, 42, 45, 0.9);
+}
+
+/* Story Media */
+.story-media {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: #000000;
+}
+
+.story-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+/* Tap Areas */
+.story-nav-tap {
+  position: absolute;
+  top: 60px;
+  bottom: 90px;
+  z-index: 25;
+  cursor: pointer;
+}
+
+.story-nav-tap.left {
+  left: 0;
+  width: 35%;
+}
+
+.story-nav-tap.right {
+  right: 0;
+  width: 65%;
+}
+
+/* Story Caption */
+.story-caption-card {
+  position: absolute;
+  bottom: 84px;
+  left: 14px;
+  right: 14px;
+  z-index: 30;
+  background: rgba(18, 16, 17, 0.78);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  padding: 10px 14px;
+  color: #ffffff;
+  font-size: 13.5px;
+  line-height: 1.4;
+  pointer-events: auto;
+}
+
+/* Direct Action CTA Button */
+.story-cta-container {
+  position: absolute;
+  bottom: 16px;
+  left: 14px;
+  right: 14px;
+  z-index: 30;
+}
+
+.story-cta-button {
+  width: 100%;
+  min-height: 48px;
+  padding: 10px 18px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #722F37 0%, #8D3A44 100%);
+  border: 1px solid rgba(197, 160, 89, 0.4);
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 4px 18px rgba(114, 47, 55, 0.4);
+  transition: transform 0.15s ease, background 0.15s ease;
+  box-sizing: border-box;
+}
+
+.story-cta-button:hover {
+  background: linear-gradient(135deg, #81343E 0%, #A0424E 100%);
+  transform: translateY(-1px);
+}
+
+.story-cta-button:active {
+  transform: translateY(1px);
+}
+
+/* External Desktop Navigation Arrows */
+.story-desktop-arrow {
+  display: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(30, 26, 28, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 40;
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+
+.story-desktop-arrow:hover {
+  background: rgba(50, 42, 45, 0.95);
+  transform: translateY(-50%) scale(1.08);
+}
+
+.story-desktop-arrow.prev {
+  left: calc(50% - 220px - 70px);
+}
+
+.story-desktop-arrow.next {
+  right: calc(50% - 220px - 70px);
+}
+
+@media (min-width: 660px) {
+  .story-desktop-arrow {
+    display: flex;
+  }
+}
+
+/* 4. Cabinet Stories Management Styles */
+.cabinet-stories-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.stories-manager-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+  margin-top: 14px;
+}
+
+.story-card {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #FAF7F2;
+  border: 1px solid #ECE4DC;
+  display: flex;
+  flex-direction: column;
+}
+
+.story-card-thumb {
+  width: 100%;
+  aspect-ratio: 9/16;
+  max-height: 280px;
+  object-fit: cover;
+  background: #1A1718;
+}
+
+.story-card-body {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.story-card-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #722F37;
+  font-weight: 500;
+}
+
+.story-card-caption {
+  font-size: 13px;
+  color: #383030;
+  line-height: 1.35;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.story-card-service {
+  font-size: 12px;
+  color: #776D6A;
+  background: #F1ECE6;
+  padding: 4px 8px;
+  border-radius: 6px;
+  align-self: flex-start;
+}
+
+.story-card-delete {
+  background: transparent;
+  border: 1px solid #E0D3C7;
+  border-radius: 8px;
+  padding: 8px;
+  color: #A33A3A;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 12.5px;
+  font-family: inherit;
+  margin-top: auto;
+  transition: background 0.15s ease;
+}
+
+.story-card-delete:hover {
+  background: #FDE8E8;
+  border-color: #F8B4B4;
+}
+
+/* Upload form in cabinet */
+.story-upload-form {
+  background: #FAF7F2;
+  border: 1px solid #ECE4DC;
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.story-dropzone {
+  border: 2px dashed #C5A059;
+  border-radius: 12px;
+  padding: 24px 16px;
+  text-align: center;
+  cursor: pointer;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  transition: border-color 0.15s ease;
+}
+
+.story-dropzone:hover {
+  border-color: #722F37;
+}
+
+.story-dropzone img {
+  max-width: 140px;
+  max-height: 220px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .story-avatar-ring,
+  .story-cta-button,
+  .story-desktop-arrow {
+    transition: none !important;
+    animation: none !important;
+  }
+}

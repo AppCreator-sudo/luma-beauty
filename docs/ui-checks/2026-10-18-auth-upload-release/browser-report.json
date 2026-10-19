@@ -1,0 +1,454 @@
+{
+  "at": "2026-10-18T14:28:50.790Z",
+  "origin": "https://atelie-13-143-66-1.sslip.io",
+  "expectedEntry": "index-D4kBlu6Z.js",
+  "expectedTag": "20261018-v2-auth-upload-stability",
+  "viewports": [
+    {
+      "width": 1366,
+      "height": 620
+    },
+    {
+      "width": 390,
+      "height": 844
+    }
+  ],
+  "scope": "Read-only deployed auth layout smoke. Only same-origin GET/HEAD requests are forwarded; no registration, login, account/session creation, clipboard access or production business writes.",
+  "checks": [
+    {
+      "name": "auth-login-1366x620-screenshot-no-overflow-touch-targets",
+      "pass": true
+    },
+    {
+      "name": "deployed-entry-http200-and-service-worker-tag",
+      "pass": true
+    },
+    {
+      "name": "desktop-shared-layout-and-document-height-stable",
+      "pass": true
+    },
+    {
+      "name": "auth-register-1366x620-screenshot-no-overflow-touch-targets",
+      "pass": true
+    },
+    {
+      "name": "return-to-login-restores-layout-1366x620",
+      "pass": true
+    },
+    {
+      "name": "auth-login-390x844-screenshot-no-overflow-touch-targets",
+      "pass": true
+    },
+    {
+      "name": "mobile-top-stable-only-180px-role-expansion-below-tabs",
+      "pass": true
+    },
+    {
+      "name": "auth-register-390x844-screenshot-no-overflow-touch-targets",
+      "pass": true
+    },
+    {
+      "name": "return-to-login-restores-layout-390x844",
+      "pass": true
+    },
+    {
+      "name": "no-unhandled-javascript-page-errors",
+      "pass": true
+    },
+    {
+      "name": "production-write-requests-zero",
+      "pass": true
+    }
+  ],
+  "layouts": [
+    {
+      "name": "login-1366x620",
+      "intro": {
+        "x": 796.515625,
+        "y": 110,
+        "width": 420,
+        "height": 192.5625
+      },
+      "title": {
+        "x": 796.515625,
+        "y": 146,
+        "width": 420,
+        "height": 100.78125
+      },
+      "description": {
+        "x": 796.515625,
+        "y": 261.78125,
+        "width": 420,
+        "height": 40.78125
+      },
+      "tabs": {
+        "x": 796.515625,
+        "y": 326.5625,
+        "width": 420,
+        "height": 45
+      },
+      "art": {
+        "x": 0,
+        "y": 68,
+        "width": 647.046875,
+        "height": 895.4375
+      },
+      "artTitle": {
+        "x": 68.296875,
+        "y": 431.484375,
+        "width": 510.453125,
+        "height": 134.375
+      },
+      "providers": {
+        "x": 796.515625,
+        "y": 459.5625,
+        "width": 420,
+        "height": 72
+      },
+      "form": {
+        "x": 796.515625,
+        "y": 616.75,
+        "width": 420,
+        "height": 266
+      },
+      "roles": {
+        "x": 796.515625,
+        "y": 391.5625,
+        "width": 420,
+        "height": 48
+      },
+      "documentHeight": 1123,
+      "overflow": 0,
+      "scrollY": 0,
+      "backgroundSize": "auto 100%",
+      "backgroundPosition": "50% 50%"
+    },
+    {
+      "name": "register-1366x620",
+      "intro": {
+        "x": 796.515625,
+        "y": 110,
+        "width": 420,
+        "height": 192.5625
+      },
+      "title": {
+        "x": 796.515625,
+        "y": 146,
+        "width": 420,
+        "height": 100.78125
+      },
+      "description": {
+        "x": 796.515625,
+        "y": 261.78125,
+        "width": 420,
+        "height": 40.78125
+      },
+      "tabs": {
+        "x": 796.515625,
+        "y": 326.5625,
+        "width": 420,
+        "height": 45
+      },
+      "art": {
+        "x": 0,
+        "y": 68,
+        "width": 647.046875,
+        "height": 895.4375
+      },
+      "artTitle": {
+        "x": 68.296875,
+        "y": 431.484375,
+        "width": 510.453125,
+        "height": 134.375
+      },
+      "providers": {
+        "x": 796.515625,
+        "y": 459.5625,
+        "width": 420,
+        "height": 72
+      },
+      "form": {
+        "x": 796.515625,
+        "y": 616.75,
+        "width": 420,
+        "height": 266
+      },
+      "roles": {
+        "x": 796.515625,
+        "y": 391.5625,
+        "width": 420,
+        "height": 48
+      },
+      "documentHeight": 1123,
+      "overflow": 0,
+      "scrollY": 0,
+      "backgroundSize": "auto 100%",
+      "backgroundPosition": "50% 50%"
+    },
+    {
+      "name": "returned-login-1366x620",
+      "intro": {
+        "x": 796.515625,
+        "y": 110,
+        "width": 420,
+        "height": 192.5625
+      },
+      "title": {
+        "x": 796.515625,
+        "y": 146,
+        "width": 420,
+        "height": 100.78125
+      },
+      "description": {
+        "x": 796.515625,
+        "y": 261.78125,
+        "width": 420,
+        "height": 40.78125
+      },
+      "tabs": {
+        "x": 796.515625,
+        "y": 326.5625,
+        "width": 420,
+        "height": 45
+      },
+      "art": {
+        "x": 0,
+        "y": 68,
+        "width": 647.046875,
+        "height": 895.4375
+      },
+      "artTitle": {
+        "x": 68.296875,
+        "y": 431.484375,
+        "width": 510.453125,
+        "height": 134.375
+      },
+      "providers": {
+        "x": 796.515625,
+        "y": 459.5625,
+        "width": 420,
+        "height": 72
+      },
+      "form": {
+        "x": 796.515625,
+        "y": 616.75,
+        "width": 420,
+        "height": 266
+      },
+      "roles": {
+        "x": 796.515625,
+        "y": 391.5625,
+        "width": 420,
+        "height": 48
+      },
+      "documentHeight": 1123,
+      "overflow": 0,
+      "scrollY": 0,
+      "backgroundSize": "auto 100%",
+      "backgroundPosition": "50% 50%"
+    },
+    {
+      "name": "login-390x844",
+      "intro": {
+        "x": 20,
+        "y": 280,
+        "width": 350,
+        "height": 175.78125
+      },
+      "title": {
+        "x": 20,
+        "y": 316,
+        "width": 350,
+        "height": 84
+      },
+      "description": {
+        "x": 20,
+        "y": 415,
+        "width": 350,
+        "height": 40.78125
+      },
+      "tabs": {
+        "x": 20,
+        "y": 475.78125,
+        "width": 350,
+        "height": 45
+      },
+      "art": {
+        "x": 0,
+        "y": 72,
+        "width": 390,
+        "height": 178
+      },
+      "artTitle": {
+        "x": 20,
+        "y": 116.90625,
+        "width": 350,
+        "height": 88.1875
+      },
+      "providers": {
+        "x": 20,
+        "y": 540.78125,
+        "width": 350,
+        "height": 70.5
+      },
+      "form": {
+        "x": 20,
+        "y": 696.46875,
+        "width": 350,
+        "height": 270
+      },
+      "roles": {
+        "x": 20,
+        "y": 540.78125,
+        "width": 350,
+        "height": 0
+      },
+      "documentHeight": 1367,
+      "overflow": 0,
+      "scrollY": 0,
+      "backgroundSize": "auto 100%",
+      "backgroundPosition": "50% 50%"
+    },
+    {
+      "name": "register-390x844",
+      "intro": {
+        "x": 20,
+        "y": 280,
+        "width": 350,
+        "height": 175.78125
+      },
+      "title": {
+        "x": 20,
+        "y": 316,
+        "width": 350,
+        "height": 84
+      },
+      "description": {
+        "x": 20,
+        "y": 415,
+        "width": 350,
+        "height": 40.78125
+      },
+      "tabs": {
+        "x": 20,
+        "y": 475.78125,
+        "width": 350,
+        "height": 45
+      },
+      "art": {
+        "x": 0,
+        "y": 72,
+        "width": 390,
+        "height": 178
+      },
+      "artTitle": {
+        "x": 20,
+        "y": 116.90625,
+        "width": 350,
+        "height": 88.1875
+      },
+      "providers": {
+        "x": 20,
+        "y": 720.78125,
+        "width": 350,
+        "height": 70.5
+      },
+      "form": {
+        "x": 20,
+        "y": 876.46875,
+        "width": 350,
+        "height": 270
+      },
+      "roles": {
+        "x": 20,
+        "y": 540.78125,
+        "width": 350,
+        "height": 160
+      },
+      "documentHeight": 1547,
+      "overflow": 0,
+      "scrollY": 0,
+      "backgroundSize": "auto 100%",
+      "backgroundPosition": "50% 50%"
+    },
+    {
+      "name": "returned-login-390x844",
+      "intro": {
+        "x": 20,
+        "y": 280,
+        "width": 350,
+        "height": 175.78125
+      },
+      "title": {
+        "x": 20,
+        "y": 316,
+        "width": 350,
+        "height": 84
+      },
+      "description": {
+        "x": 20,
+        "y": 415,
+        "width": 350,
+        "height": 40.78125
+      },
+      "tabs": {
+        "x": 20,
+        "y": 475.78125,
+        "width": 350,
+        "height": 45
+      },
+      "art": {
+        "x": 0,
+        "y": 72,
+        "width": 390,
+        "height": 178
+      },
+      "artTitle": {
+        "x": 20,
+        "y": 116.90625,
+        "width": 350,
+        "height": 88.1875
+      },
+      "providers": {
+        "x": 20,
+        "y": 540.78125,
+        "width": 350,
+        "height": 70.5
+      },
+      "form": {
+        "x": 20,
+        "y": 696.46875,
+        "width": 350,
+        "height": 270
+      },
+      "roles": {
+        "x": 20,
+        "y": 540.78125,
+        "width": 350,
+        "height": 0
+      },
+      "documentHeight": 1367,
+      "overflow": 0,
+      "scrollY": 0,
+      "backgroundSize": "auto 100%",
+      "backgroundPosition": "50% 50%"
+    }
+  ],
+  "screenshots": [
+    "auth-login-1366x620.png",
+    "auth-register-1366x620.png",
+    "auth-login-390x844.png",
+    "auth-register-390x844.png"
+  ],
+  "pageErrors": [],
+  "accounting": {
+    "attemptedWriteRequests": 0,
+    "blockedWriteRequests": 0,
+    "forwardedWriteRequests": 0,
+    "forwardedReadRequests": 40,
+    "blockedExternalRequests": 0
+  },
+  "cookiesCleared": true,
+  "browserClosed": true,
+  "passed": true
+}

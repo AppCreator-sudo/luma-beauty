@@ -2,3 +2,21 @@
 @media(max-width:800px){.master-cabinet>.cabinet-sidebar{display:none}.luma-menu-layer .luma-navigation-panel{grid-template-columns:1fr;gap:0;padding:16px;width:calc(100vw - 40px)}.luma-menu-layer .home-menu-note{display:none}.luma-menu-layer .home-menu-links a{min-height:56px;font-size:27px}}
 .luma-drawer-panel .cabinet-owner,.luma-drawer-panel .cabinet-sidebar>nav>*{animation:luma-drawer-item .5s cubic-bezier(.22,1,.36,1) .12s both}.luma-drawer-panel .cabinet-sidebar>nav>*:nth-child(2){animation-delay:.175s}.luma-drawer-panel .cabinet-sidebar>nav>*:nth-child(3){animation-delay:.23s}.luma-drawer-panel .cabinet-sidebar>nav>*:nth-child(4){animation-delay:.285s}.luma-drawer-panel .cabinet-sidebar>nav>*:nth-child(5){animation-delay:.34s}.luma-drawer-panel .cabinet-sidebar>nav>*:nth-child(6){animation-delay:.395s}.luma-drawer-panel .cabinet-sidebar>nav>*:nth-child(7){animation-delay:.45s}.luma-drawer-panel .cabinet-sidebar>nav>*:nth-child(8){animation-delay:.505s}@keyframes luma-drawer-item{from{opacity:0;transform:translateX(16px)}to{opacity:1;transform:translateX(0)}}
 @media(prefers-reduced-motion:reduce){.luma-menu-layer *{scroll-behavior:auto!important;animation:none!important}}
+
+/* The dialog remains open through exit; show its close control until it leaves the top layer. */
+body:has(>dialog.luma-menu-layer[open]) :is(.public-menu-toggle,.home-menu-toggle,.cabinet-menu-toggle,.mobile-menu-toggle){visibility:hidden}
+/* Keep the mobile backdrop static: only the scrim opacity and panel transform animate. */
+@media(max-width:800px){
+ .luma-menu-layer::backdrop{backdrop-filter:blur(5px)}
+ .luma-menu-layer .luma-menu-scrim{backdrop-filter:none}
+ .luma-menu-layer .luma-navigation-panel,.luma-drawer-panel{border-radius:8px}
+ .luma-drawer-panel .cabinet-owner,.luma-drawer-panel .cabinet-sidebar>nav>*{animation-name:luma-mobile-menu-item;animation-duration:.18s;animation-delay:.04s}
+ .luma-drawer-panel .cabinet-sidebar>nav>*:nth-child(2){animation-delay:.065s}
+ .luma-drawer-panel .cabinet-sidebar>nav>*:nth-child(3){animation-delay:.09s}
+ .luma-drawer-panel .cabinet-sidebar>nav>*:nth-child(4){animation-delay:.115s}
+ .luma-drawer-panel .cabinet-sidebar>nav>*:nth-child(5){animation-delay:.14s}
+ .luma-drawer-panel .cabinet-sidebar>nav>*:nth-child(6){animation-delay:.165s}
+ .luma-drawer-panel .cabinet-sidebar>nav>*:nth-child(7){animation-delay:.19s}
+ .luma-drawer-panel .cabinet-sidebar>nav>*:nth-child(8){animation-delay:.215s}
+}
+@keyframes luma-mobile-menu-item{from{opacity:0}to{opacity:1}}

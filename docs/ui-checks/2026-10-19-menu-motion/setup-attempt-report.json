@@ -1,0 +1,17 @@
+{
+  "at": "2026-10-19T05:05:46.213Z",
+  "before": false,
+  "entry": "index-DcCAGfnM.js",
+  "scope": "Isolated SQLite; browser-only client mocks; 4x CPU Chrome desktop emulation, not physical phone performance proof",
+  "checks": [
+    {
+      "name": "runner",
+      "pass": false,
+      "message": "expect(locator).toBeVisible() failed\n\nLocator: locator('button[aria-expanded][aria-label*=\"Открыть\"]').visible().last()\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n  - Expect \"toBeVisible\" locator('button[aria-expanded][aria-label*=\"Открыть\"]').visible().last() with timeout 5000ms\n  - waiting for locator('button[aria-expanded][aria-label*=\"Открыть\"]').visible().last()\n"
+    }
+  ],
+  "measurements": [],
+  "errors": [],
+  "writes": [],
+  "stopped": true
+}

@@ -1,0 +1,17 @@
+{
+  "at": "2026-10-18T20:51:43+07:00",
+  "frontend_build": "PASS",
+  "root_build": "PASS",
+  "frontend_entry": "index-BD2DiSeI.js",
+  "frontend_sha256": "5f7bdc4084e1cf39925e97a0a1d7e0f39276d3c69ede411b85678caf3af57d58",
+  "master_browser_checks": 115,
+  "shared_browser_checks": 16,
+  "targeted_node_tests": 9,
+  "page_errors": 0,
+  "horizontal_overflow": 0,
+  "reference_count": 172,
+  "references_changed": [],
+  "review": "Independent UI/hooks/lifecycle/image-policy review PASS; first empty upload tab-remount acknowledgement and PUT replacement added",
+  "production_changed": false,
+  "github_changed": false
+}

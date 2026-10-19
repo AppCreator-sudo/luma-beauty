@@ -1,0 +1,22 @@
+{
+  "at": "2026-10-19T05:02:38.883Z",
+  "scope": "U-10-06; browser API simulation, synthetic SQLite; no physical push delivery",
+  "root": "C:\\Users\\Admin\\Desktop\\pwa\\.cache\\professional-push-1792386143385",
+  "fixtureStopped": true,
+  "checks": [
+    {
+      "name": "baseline-worker-ready-hangs-for-10-seconds",
+      "pass": true
+    },
+    {
+      "name": "baseline-missing-notification-exposes-technical-error",
+      "pass": true
+    },
+    {
+      "name": "fixture-stopped-database-integrity-and-foreign-keys",
+      "pass": true
+    }
+  ],
+  "errors": [],
+  "layouts": []
+}

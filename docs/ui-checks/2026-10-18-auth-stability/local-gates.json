@@ -1,0 +1,18 @@
+{
+  "at": "2026-10-18T21:27:59+07:00",
+  "frontend_build": "PASS",
+  "root_build": "PASS",
+  "sw_release_tag_syntax": "PASS",
+  "frontend_entry": "index-D4kBlu6Z.js",
+  "frontend_sha256": "c1b811786887492688f89e5040c4c9410e9189fcaaea15ad009245e13c93dbc0",
+  "browser_checks": 96,
+  "js_errors": 0,
+  "overflow": 0,
+  "actual_browser_writes": 0,
+  "mock_registration_submissions": 2,
+  "clipboard_final": "browser-only stub",
+  "approved_reference_files": 172,
+  "approved_references_changed": [],
+  "production_changed_at_local_acceptance": false,
+  "github_changed": false
+}

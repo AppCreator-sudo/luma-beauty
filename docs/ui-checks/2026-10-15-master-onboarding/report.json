@@ -1,0 +1,519 @@
+{
+  "at": "2026-10-15T14:44:26.571Z",
+  "scope": "U-10-02 only; isolated synthetic SQLite and fake address provider; no production access",
+  "origin": "http://localhost:3261",
+  "fixture": "C:\\Users\\Admin\\Desktop\\pwa\\.cache\\u10-02-onboarding-1792075413975",
+  "widths": [
+    1440,
+    390,
+    320
+  ],
+  "checks": [
+    {
+      "name": "guest-studio-1440",
+      "pass": true
+    },
+    {
+      "name": "register-master-via-ui-1440",
+      "pass": true
+    },
+    {
+      "name": "calendar-without-profile-redirect-1440",
+      "pass": true
+    },
+    {
+      "name": "first-form-1440-layout",
+      "pass": true
+    },
+    {
+      "name": "invalid-house-and-profile-before-address-rejected-1440",
+      "pass": true
+    },
+    {
+      "name": "provider-error-preserves-typed-fields-and-confirmed-draft-1440",
+      "pass": true
+    },
+    {
+      "name": "address-error-1440-layout",
+      "pass": true
+    },
+    {
+      "name": "confirmed-address-reload-1440",
+      "pass": true
+    },
+    {
+      "name": "hidden-profile-data-and-privacy-1440",
+      "pass": true
+    },
+    {
+      "name": "no-service-no-schedule-refused-1440",
+      "pass": true
+    },
+    {
+      "name": "first-service-save-reload-1440",
+      "pass": true
+    },
+    {
+      "name": "unsaved-default-schedule-is-not-ready-1440",
+      "pass": true
+    },
+    {
+      "name": "explicit-weekly-schedule-save-reload-1440",
+      "pass": true
+    },
+    {
+      "name": "ready-to-publish-1440-layout",
+      "pass": true
+    },
+    {
+      "name": "publish-weekly-reload-public-page-1440",
+      "pass": true
+    },
+    {
+      "name": "public-master-1440-layout",
+      "pass": true
+    },
+    {
+      "name": "public-slots-use-saved-hours-and-timezone-1440",
+      "pass": true
+    },
+    {
+      "name": "booking-available-1440-layout",
+      "pass": true
+    },
+    {
+      "name": "public-page-to-booking-1440",
+      "pass": true
+    },
+    {
+      "name": "hide-reload-private-again-1440",
+      "pass": true
+    },
+    {
+      "name": "cycle-ready-1440-layout",
+      "pass": true
+    },
+    {
+      "name": "publish-cycle-save-reload-1440",
+      "pass": true
+    },
+    {
+      "name": "guest-studio-390",
+      "pass": true
+    },
+    {
+      "name": "register-master-via-ui-390",
+      "pass": true
+    },
+    {
+      "name": "calendar-without-profile-redirect-390",
+      "pass": true
+    },
+    {
+      "name": "first-form-390-layout",
+      "pass": true
+    },
+    {
+      "name": "invalid-house-and-profile-before-address-rejected-390",
+      "pass": true
+    },
+    {
+      "name": "provider-error-preserves-typed-fields-and-confirmed-draft-390",
+      "pass": true
+    },
+    {
+      "name": "address-error-390-layout",
+      "pass": true
+    },
+    {
+      "name": "confirmed-address-reload-390",
+      "pass": true
+    },
+    {
+      "name": "hidden-profile-data-and-privacy-390",
+      "pass": true
+    },
+    {
+      "name": "no-service-no-schedule-refused-390",
+      "pass": true
+    },
+    {
+      "name": "first-service-save-reload-390",
+      "pass": true
+    },
+    {
+      "name": "unsaved-default-schedule-is-not-ready-390",
+      "pass": true
+    },
+    {
+      "name": "explicit-weekly-schedule-save-reload-390",
+      "pass": true
+    },
+    {
+      "name": "ready-to-publish-390-layout",
+      "pass": true
+    },
+    {
+      "name": "publish-weekly-reload-public-page-390",
+      "pass": true
+    },
+    {
+      "name": "public-master-390-layout",
+      "pass": true
+    },
+    {
+      "name": "public-slots-use-saved-hours-and-timezone-390",
+      "pass": true
+    },
+    {
+      "name": "booking-available-390-layout",
+      "pass": true
+    },
+    {
+      "name": "public-page-to-booking-390",
+      "pass": true
+    },
+    {
+      "name": "hide-reload-private-again-390",
+      "pass": true
+    },
+    {
+      "name": "cycle-ready-390-layout",
+      "pass": true
+    },
+    {
+      "name": "publish-cycle-save-reload-390",
+      "pass": true
+    },
+    {
+      "name": "guest-studio-320",
+      "pass": true
+    },
+    {
+      "name": "register-master-via-ui-320",
+      "pass": true
+    },
+    {
+      "name": "calendar-without-profile-redirect-320",
+      "pass": true
+    },
+    {
+      "name": "first-form-320-layout",
+      "pass": true
+    },
+    {
+      "name": "invalid-house-and-profile-before-address-rejected-320",
+      "pass": true
+    },
+    {
+      "name": "provider-error-preserves-typed-fields-and-confirmed-draft-320",
+      "pass": true
+    },
+    {
+      "name": "address-error-320-layout",
+      "pass": true
+    },
+    {
+      "name": "confirmed-address-reload-320",
+      "pass": true
+    },
+    {
+      "name": "hidden-profile-data-and-privacy-320",
+      "pass": true
+    },
+    {
+      "name": "no-service-no-schedule-refused-320",
+      "pass": true
+    },
+    {
+      "name": "first-service-save-reload-320",
+      "pass": true
+    },
+    {
+      "name": "unsaved-default-schedule-is-not-ready-320",
+      "pass": true
+    },
+    {
+      "name": "explicit-weekly-schedule-save-reload-320",
+      "pass": true
+    },
+    {
+      "name": "ready-to-publish-320-layout",
+      "pass": true
+    },
+    {
+      "name": "publish-weekly-reload-public-page-320",
+      "pass": true
+    },
+    {
+      "name": "public-master-320-layout",
+      "pass": true
+    },
+    {
+      "name": "public-slots-use-saved-hours-and-timezone-320",
+      "pass": true
+    },
+    {
+      "name": "booking-available-320-layout",
+      "pass": true
+    },
+    {
+      "name": "public-page-to-booking-320",
+      "pass": true
+    },
+    {
+      "name": "hide-reload-private-again-320",
+      "pass": true
+    },
+    {
+      "name": "cycle-ready-320-layout",
+      "pass": true
+    },
+    {
+      "name": "publish-cycle-save-reload-320",
+      "pass": true
+    },
+    {
+      "name": "client-role-and-calendar-boundaries",
+      "pass": true
+    },
+    {
+      "name": "client-salon-workspace-redirect",
+      "pass": true
+    },
+    {
+      "name": "salon-account-studio-calendar-redirect",
+      "pass": true
+    },
+    {
+      "name": "no-javascript-page-errors",
+      "pass": true
+    }
+  ],
+  "pageErrors": [],
+  "layouts": [
+    {
+      "name": "first-form-1440",
+      "overflow": 0,
+      "primaryActions": [
+        {
+          "label": "Сохранить",
+          "height": 49
+        },
+        {
+          "label": "Создать страницу",
+          "height": 49
+        }
+      ]
+    },
+    {
+      "name": "address-error-1440",
+      "overflow": 0,
+      "primaryActions": [
+        {
+          "label": "Сохранить",
+          "height": 49
+        },
+        {
+          "label": "Создать страницу",
+          "height": 49
+        }
+      ]
+    },
+    {
+      "name": "ready-to-publish-1440",
+      "overflow": 0,
+      "primaryActions": [
+        {
+          "label": "Открыть страницу клиентам",
+          "height": 51
+        },
+        {
+          "label": "Сохранить график",
+          "height": 51
+        }
+      ]
+    },
+    {
+      "name": "public-master-1440",
+      "overflow": 0,
+      "primaryActions": []
+    },
+    {
+      "name": "booking-available-1440",
+      "overflow": 0,
+      "primaryActions": []
+    },
+    {
+      "name": "cycle-ready-1440",
+      "overflow": 0,
+      "primaryActions": [
+        {
+          "label": "Открыть страницу клиентам",
+          "height": 51
+        },
+        {
+          "label": "Сохранить график",
+          "height": 51
+        }
+      ]
+    },
+    {
+      "name": "first-form-390",
+      "overflow": 0,
+      "primaryActions": [
+        {
+          "label": "Сохранить",
+          "height": 49
+        },
+        {
+          "label": "Создать страницу",
+          "height": 49
+        }
+      ]
+    },
+    {
+      "name": "address-error-390",
+      "overflow": 0,
+      "primaryActions": [
+        {
+          "label": "Сохранить",
+          "height": 49
+        },
+        {
+          "label": "Создать страницу",
+          "height": 49
+        }
+      ]
+    },
+    {
+      "name": "ready-to-publish-390",
+      "overflow": 0,
+      "primaryActions": [
+        {
+          "label": "Открыть страницу клиентам",
+          "height": 44
+        },
+        {
+          "label": "Сохранить график",
+          "height": 44
+        }
+      ]
+    },
+    {
+      "name": "public-master-390",
+      "overflow": 0,
+      "primaryActions": []
+    },
+    {
+      "name": "booking-available-390",
+      "overflow": 0,
+      "primaryActions": []
+    },
+    {
+      "name": "cycle-ready-390",
+      "overflow": 0,
+      "primaryActions": [
+        {
+          "label": "Открыть страницу клиентам",
+          "height": 44
+        },
+        {
+          "label": "Сохранить график",
+          "height": 44
+        }
+      ]
+    },
+    {
+      "name": "first-form-320",
+      "overflow": 0,
+      "primaryActions": [
+        {
+          "label": "Сохранить",
+          "height": 49
+        },
+        {
+          "label": "Создать страницу",
+          "height": 49
+        }
+      ]
+    },
+    {
+      "name": "address-error-320",
+      "overflow": 0,
+      "primaryActions": [
+        {
+          "label": "Сохранить",
+          "height": 49
+        },
+        {
+          "label": "Создать страницу",
+          "height": 49
+        }
+      ]
+    },
+    {
+      "name": "ready-to-publish-320",
+      "overflow": 0,
+      "primaryActions": [
+        {
+          "label": "Открыть страницу клиентам",
+          "height": 63
+        },
+        {
+          "label": "Сохранить график",
+          "height": 44
+        }
+      ]
+    },
+    {
+      "name": "public-master-320",
+      "overflow": 0,
+      "primaryActions": []
+    },
+    {
+      "name": "booking-available-320",
+      "overflow": 0,
+      "primaryActions": []
+    },
+    {
+      "name": "cycle-ready-320",
+      "overflow": 0,
+      "primaryActions": [
+        {
+          "label": "Открыть страницу клиентам",
+          "height": 63
+        },
+        {
+          "label": "Сохранить график",
+          "height": 44
+        }
+      ]
+    }
+  ],
+  "database_check": {
+    "quick_check": "ok",
+    "foreign_key_check": [],
+    "synthetic_master_profiles": 3
+  },
+  "reference_files_unchanged": 172,
+  "builds": {
+    "frontend": "PASS: npm.cmd --prefix frontend run build",
+    "root": "PASS: npm.cmd run build",
+    "frontend_entry": "index-CbdQYBIA.js",
+    "source_ui_changed": false
+  },
+  "targeted_tests": {
+    "command": "node --test tests/master-publication.test.mjs tests/address-save.test.mjs",
+    "pass": 7,
+    "fail": 0,
+    "tap": "targeted-tests.tap"
+  },
+  "documentation_validation": {
+    "tasks": 90,
+    "local_links": 2853,
+    "next_task": "BUG-008",
+    "errors": [],
+    "inventory": "tracked + non-ignored untracked; original validator source unchanged"
+  }
+}

@@ -18,6 +18,7 @@ import webpush from 'web-push';
 import { publications } from './lib/publications.mjs';
 import { guestBookings } from './lib/guest-bookings.mjs';
 import { schedules, relatedPerformersBatch } from './lib/schedule.mjs';
+import { scheduleHasWork } from './lib/schedule-patterns.mjs';
 import { createGeocoder, parseAddress } from './lib/geocoding.mjs';
 import { migratePerformers, workspaceAccess, salonRoutes } from './lib/workspaces.mjs';
 import { socialAuth } from './lib/social-auth.mjs';
@@ -29,6 +30,7 @@ import { addressSuggestions } from './lib/address-suggestions.mjs';
 import { mapViewport } from './lib/map-viewport.mjs';
 import { createImageUpload } from './lib/image-upload.mjs';
 import { migrateProfileCover, profileAppearance } from './lib/profile-appearance.mjs';
+import { storiesModule } from './lib/stories.mjs';
 
 const scrypt=promisify(scryptCb), app=express();
 const PORT=Number(process.env.PORT||3100), ORIGIN=process.env.APP_ORIGIN||`http://localhost:${PORT}`;
@@ -264,8 +266,8 @@ app.patch('/api/profile/publication',requireUser,requireMaster,requireProfile,(r
   db.exec('BEGIN IMMEDIATE');
   try{
     if(req.body.published){
-      const configured=one('SELECT weekdays FROM master_schedules WHERE master_id=?',req.user.id);
-      if(!one('SELECT 1 FROM services WHERE user_id=?',req.user.id)||!configured||!JSON.parse(configured.weekdays).length)fail('Добавьте услугу и сохраните график хотя бы с одним рабочим днём');
+      const configured=one('SELECT 1 FROM master_schedules WHERE master_id=?',req.user.id);
+      if(!one('SELECT 1 FROM services WHERE user_id=?',req.user.id)||!configured||!scheduleHasWork(schedule.config(req.user.id)))fail('Добавьте услугу и сохраните график хотя бы с одним рабочим днём');
     }
     run('UPDATE profiles SET published=? WHERE user_id=?',Number(req.body.published),req.user.id);
     db.exec('COMMIT');
@@ -298,6 +300,7 @@ mapViewport({app,db,fail,promotionControl,schedule,backupDir:path.join(DATA,'mig
 const social=socialAuth({app,db,authLimit,fail,session,cookie,hash,str,origin:ORIGIN,secureCookie:SECURE_COOKIE,access,requireUser,passwordOk});
 const portraitUpload=createImageUpload({dataDir:DATA,fail});
 profileAppearance({app,db,dataDir:DATA,requireUser,requireMaster,requireProfile,fail});
+storiesModule({app,db,dataDir:DATA,requireUser,fail,access});
 app.get('/api/works/:id',(req,res)=>{const result=workDetail(req.params.id);if(!result||(!result.public_visible&&result.user_id!==req.user?.id&&!access.canManage(req.user?.id,result.user_id)))fail('Работа не найдена',404);const {public_visible,...w}=result;res.json({...hydrate(w),services:servicesWithDirections(db,w.user_id),saved:Boolean(req.user&&one('SELECT 1 FROM saved_works WHERE user_id=? AND work_id=?',req.user.id,w.id)),following:Boolean(req.user&&one('SELECT 1 FROM follows WHERE user_id=? AND master_id=?',req.user.id,w.user_id))})});
 app.post('/api/works/:id/save',requireUser,(req,res)=>{if(!isPublicWork(req.params.id))fail('Работа не найдена',404);run('INSERT OR IGNORE INTO saved_works VALUES(?,?,?)',req.user.id,req.params.id,Date.now());res.json({saved:true})});
 app.delete('/api/works/:id/save',requireUser,(req,res)=>{run('DELETE FROM saved_works WHERE user_id=? AND work_id=?',req.user.id,req.params.id);res.json({saved:false})});

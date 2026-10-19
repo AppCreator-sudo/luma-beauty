@@ -2,12 +2,13 @@ import { useHistoryState } from '../lib/useHistoryState';
 import { useEffect, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { ArrowRight, CalendarDays, Heart, Share2 } from 'lucide-react';
-import { api, json, servicePriceLabel, masterDate, masterTime, type Profile } from '../lib/api';
+import { api, json, servicePriceLabel, masterDate, masterTime, type Profile, type StoryAuthor } from '../lib/api';
 import { useResource } from '../lib/useResource';
 import { useApp, Loading, ErrorState, EmptyState } from '../components/Shell';
 import { PublicWorkTile } from '../components/PublicWorkTile';
 import {PublicPageCover,PublicPageIdentity,PublicReviews} from '../components/PublicPageIdentity';
 import { experienceText } from '../components/ExperienceFields';
+import { StoryViewer } from '../components/StoryViewer';
 
 const tabs = [['works', 'Портфолио'], ['services', 'Услуги'], ['reviews', 'Отзывы'], ['about', 'О мастере']] as const;
 type Tab = typeof tabs[number][0];
@@ -15,6 +16,8 @@ type Tab = typeof tabs[number][0];
 export function ProfilePage() {
   const { slug = '' } = useParams(), navigate = useNavigate(), { me } = useApp();
   const resource = useResource(() => api<Profile>('/profiles/' + encodeURIComponent(slug)), [slug]);
+  const storiesResource = useResource(() => api<StoryAuthor>('/stories/owner/' + encodeURIComponent(slug)), [slug]);
+  const [showStories, setShowStories] = useState(false);
   const [tab, setTab] = useHistoryState<Tab>('master-public-tab', 'works'), [serviceId, setServiceId] = useHistoryState('master-window-service', '');
   const [selectedStart, setSelectedStart] = useHistoryState<number | null>('master-window-start', null);
   const [busy, setBusy] = useState(false), [notice, setNotice] = useState('');
@@ -42,7 +45,7 @@ export function ProfilePage() {
   return <div className="public-reference public-master public-page-shell">
     <PublicPageCover cover={p.cover} theme={p.theme||'cream'}/>
     <div className="public-content">
-      <PublicPageIdentity name={p.name} image={p.avatar} teaches={p.teaches} models={p.looking_models} address={[p.city,p.address].filter(Boolean).join(', ')} categories={p.categories?.length?p.categories:[p.category]} rating={p.rating} count={p.review_count} reviews={()=>setTab('reviews')} actions={<>
+      <PublicPageIdentity name={p.name} image={p.avatar} teaches={p.teaches} models={p.looking_models} address={[p.city,p.address].filter(Boolean).join(', ')} categories={p.categories?.length?p.categories:[p.category]} rating={p.rating} count={p.review_count} reviews={()=>setTab('reviews')} hasStory={Boolean(storiesResource.data?.stories?.length)} onStoryClick={() => setShowStories(true)} actions={<>
         {!canBook?<p className="public-muted">Онлайн-запись пока закрыта</p>:null}
         <button type="button" className="public-icon" aria-label={p.following?'Отписаться от мастера':'Подписаться на мастера'} aria-pressed={Boolean(p.following)} disabled={busy} onClick={()=>void follow()}><Heart size={20} fill={p.following?'currentColor':'none'}/></button>
         <button type="button" className="public-icon" aria-label="Поделиться страницей" onClick={()=>void share()}><Share2 size={19}/></button>
@@ -57,5 +60,11 @@ export function ProfilePage() {
           {tab === 'about' ? <section className="public-panel"><h2>О мастере</h2>{about}</section> : null}
         </div></div>
     </div>
+    {showStories && storiesResource.data?.stories?.length ? (
+      <StoryViewer
+        authors={[storiesResource.data]}
+        onClose={() => setShowStories(false)}
+      />
+    ) : null}
   </div>;
 }

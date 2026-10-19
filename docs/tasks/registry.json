@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-15T20:57:15+07:00",
+  "updated_at": "2026-10-19T13:40:00+07:00",
   "timezone": "Asia/Novosibirsk",
-  "next_task_id": "U-10-01",
+  "next_task_id": "BUG-019",
   "tasks": [
     {
       "id": "U-00",
@@ -380,8 +380,8 @@
     {
       "id": "U-10-01",
       "title": "Остаточный UI: матрица маршрутов, ролей и состояний",
-      "phase": "ui",
-      "status": "ready",
+      "phase": "completed",
+      "status": "verified",
       "dependencies": [
         "U-09-02",
         "U-09-05"
@@ -389,108 +389,126 @@
       "sources": [
         "frontend/src/main.tsx",
         "frontend/src/components/Shell.tsx",
-        "docs/V2_UI_REFERENCE_IMPLEMENTATION.md"
+        "docs/V2_UI_REFERENCE_IMPLEMENTATION.md",
+        "docs/V2_REMAINING_UI_AUDIT.md",
+        "docs/ui-checks/2026-10-15-ui-residual-audit/README.md"
       ],
       "skills": [
         ".agents/skills/atelier-v2-product-design/SKILL.md"
       ],
       "approved_at": null,
-      "started_at": null,
-      "local_done_at": null,
-      "verified_at": null,
+      "started_at": "2026-10-15T21:02:26+07:00",
+      "local_done_at": "2026-10-15T21:12:10+07:00",
+      "verified_at": "2026-10-15T21:12:10+07:00",
       "published_at": null,
       "due_at": null,
-      "owner_chat": null,
+      "owner_chat": "U-10-01 / остаточный аудит / 2026-10-15",
       "card": "U-10-01.md",
       "order": 15
     },
     {
       "id": "U-10-02",
       "title": "Первичная настройка и профиль мастера",
-      "phase": "ui",
-      "status": "blocked",
+      "phase": "completed",
+      "status": "verified",
       "dependencies": [
-        "U-10-01"
+        "U-10-01",
+        "BUG-011"
       ],
       "sources": [
         "frontend/src/pages/Studio.tsx",
         "frontend/src/components/AddressFields.tsx",
         "frontend/src/components/ExperienceFields.tsx",
-        "docs/V2_CABINET_UX.md"
+        "docs/V2_CABINET_UX.md",
+        "docs/V2_REMAINING_UI_AUDIT.md",
+        "server.mjs",
+        "tests/master-publication.test.mjs",
+        "scripts/verify-master-onboarding.mjs",
+        "docs/ui-checks/2026-10-15-master-onboarding/README.md"
       ],
       "skills": [
         ".agents/skills/atelier-v2-product-design/SKILL.md",
         ".agents/skills/atelier-v2-ui-implementation/SKILL.md"
       ],
       "approved_at": null,
-      "started_at": null,
-      "local_done_at": null,
-      "verified_at": null,
+      "started_at": "2026-10-15T21:19:36+07:00",
+      "local_done_at": "2026-10-15T21:47:41+07:00",
+      "verified_at": "2026-10-15T21:47:41+07:00",
       "published_at": null,
       "due_at": null,
-      "owner_chat": null,
+      "owner_chat": "U-10-02 / первый запуск мастера / 2026-10-15",
       "card": "U-10-02.md",
       "order": 16
     },
     {
       "id": "U-10-03",
       "title": "Услуги мастера",
-      "phase": "ui",
-      "status": "blocked",
+      "phase": "completed",
+      "status": "verified",
       "dependencies": [
-        "U-10-01"
+        "U-10-01",
+        "BUG-008"
       ],
       "sources": [
         "frontend/src/pages/Studio.tsx",
-        "docs/V2_CABINET_UX.md"
+        "docs/V2_CABINET_UX.md",
+        "docs/V2_REMAINING_UI_AUDIT.md",
+        "docs/ui-checks/2026-10-15-master-deletion/README.md",
+        "docs/ui-checks/2026-10-15-master-services/README.md"
       ],
       "skills": [
         ".agents/skills/atelier-v2-product-design/SKILL.md",
         ".agents/skills/atelier-v2-ui-implementation/SKILL.md"
       ],
       "approved_at": null,
-      "started_at": null,
+      "started_at": "2026-10-15T22:05:53+07:00",
       "local_done_at": null,
-      "verified_at": null,
+      "verified_at": "2026-10-15T22:09:31+07:00",
       "published_at": null,
       "due_at": null,
-      "owner_chat": null,
+      "owner_chat": "U-10-03 / проверка и выпуск / 2026-10-15",
       "card": "U-10-03.md",
       "order": 17
     },
     {
       "id": "U-10-04",
       "title": "Частное портфолио и публикация мастера",
-      "phase": "ui",
-      "status": "blocked",
+      "phase": "completed",
+      "status": "verified",
       "dependencies": [
-        "U-10-01"
+        "U-10-01",
+        "BUG-008"
       ],
       "sources": [
         "frontend/src/pages/Studio.tsx",
         "frontend/src/components/WorkUpload.tsx",
         "frontend/src/work-upload.css",
-        "lib/image-rules.json"
+        "lib/image-rules.json",
+        "docs/V2_REMAINING_UI_AUDIT.md",
+        "docs/ui-checks/2026-10-15-master-deletion/README.md",
+        "docs/ui-checks/2026-10-15-master-upload/README.md",
+        "docs/ui-checks/2026-10-15-master-upload/report.json",
+        "docs/RELEASE_20261018_AUTH_UPLOAD_STABILITY.md"
       ],
       "skills": [
         ".agents/skills/atelier-v2-product-design/SKILL.md",
         ".agents/skills/atelier-v2-ui-implementation/SKILL.md"
       ],
       "approved_at": null,
-      "started_at": null,
-      "local_done_at": null,
-      "verified_at": null,
-      "published_at": null,
+      "started_at": "2026-10-15T22:47:15+07:00",
+      "local_done_at": "2026-10-18T20:54:21+07:00",
+      "verified_at": "2026-10-18T20:54:21+07:00",
+      "published_at": "2026-10-18T21:28:12+07:00",
       "due_at": null,
-      "owner_chat": null,
+      "owner_chat": "U-10-04 / приёмка загрузки портфолио / завершено 2026-10-18",
       "card": "U-10-04.md",
       "order": 18
     },
     {
       "id": "U-10-05",
       "title": "Оформление страницы мастера",
-      "phase": "ui",
-      "status": "blocked",
+      "phase": "completed",
+      "status": "verified",
       "dependencies": [
         "U-10-01"
       ],
@@ -499,7 +517,8 @@
         "frontend/src/components/AppearanceEditor.tsx",
         "frontend/src/components/SalonVisual.tsx",
         "frontend/src/cabinet-appearance.css",
-        "lib/image-rules.json"
+        "lib/image-rules.json",
+        "docs/V2_REMAINING_UI_AUDIT.md"
       ],
       "skills": [
         ".agents/skills/atelier-v2-product-design/SKILL.md",
@@ -508,10 +527,10 @@
       "approved_at": null,
       "started_at": null,
       "local_done_at": null,
-      "verified_at": null,
+      "verified_at": "2026-10-15T21:12:10+07:00",
       "published_at": null,
       "due_at": null,
-      "owner_chat": null,
+      "owner_chat": "U-10-01 / остаточный аудит / 2026-10-15",
       "card": "U-10-05.md",
       "order": 19
     },
@@ -519,7 +538,7 @@
       "id": "U-10-06",
       "title": "График и настройки мастера",
       "phase": "ui",
-      "status": "blocked",
+      "status": "verified",
       "dependencies": [
         "U-10-01"
       ],
@@ -527,19 +546,20 @@
         "frontend/src/pages/Studio.tsx",
         "frontend/src/components/AccountTools.tsx",
         "frontend/src/components/SalonOwnerCabinet.tsx",
-        "tests/schedule.test.mjs"
+        "tests/schedule.test.mjs",
+        "docs/V2_REMAINING_UI_AUDIT.md"
       ],
       "skills": [
         ".agents/skills/atelier-v2-product-design/SKILL.md",
         ".agents/skills/atelier-v2-ui-implementation/SKILL.md"
       ],
       "approved_at": null,
-      "started_at": null,
-      "local_done_at": null,
-      "verified_at": null,
+      "started_at": "2026-10-19T12:00:17+07:00",
+      "local_done_at": "2026-10-19T12:10:24+07:00",
+      "verified_at": "2026-10-19T12:10:24+07:00",
       "published_at": null,
       "due_at": null,
-      "owner_chat": null,
+      "owner_chat": "01a1527b-6907-7791-a895-29399450f40f / U-10-06",
       "card": "U-10-06.md",
       "order": 20
     },
@@ -547,14 +567,15 @@
       "id": "U-10-07",
       "title": "Первое создание салона",
       "phase": "ui",
-      "status": "blocked",
+      "status": "ready",
       "dependencies": [
         "U-10-01"
       ],
       "sources": [
         "frontend/src/pages/Salon.tsx",
         "frontend/src/components/SalonOwnerCabinet.tsx",
-        "docs/V2_SALON_OWNER_FLOW.md"
+        "docs/V2_SALON_OWNER_FLOW.md",
+        "docs/V2_REMAINING_UI_AUDIT.md"
       ],
       "skills": [
         ".agents/skills/atelier-v2-product-design/SKILL.md",
@@ -574,7 +595,7 @@
       "id": "U-10-08",
       "title": "Доступ и профессиональные инструменты аккаунта",
       "phase": "ui",
-      "status": "blocked",
+      "status": "ready",
       "dependencies": [
         "U-10-01"
       ],
@@ -585,7 +606,8 @@
         "docs/ui-concepts/2026-10-11-luma/auth-review-02/README.md",
         "frontend/src/components/ClientSettings.tsx",
         "frontend/src/pages/Auth.tsx",
-        "server.mjs"
+        "server.mjs",
+        "docs/V2_REMAINING_UI_AUDIT.md"
       ],
       "skills": [
         ".agents/skills/atelier-v2-product-design/SKILL.md",
@@ -605,7 +627,7 @@
       "id": "U-10-09",
       "title": "Совместимость старых сотрудников и ссылок приглашения",
       "phase": "ui",
-      "status": "blocked",
+      "status": "ready",
       "dependencies": [
         "U-10-01"
       ],
@@ -614,7 +636,8 @@
         "frontend/src/pages/Join.tsx",
         "docs/V2_SALONS.md",
         "docs/V2_SALON_OWNER_FLOW.md",
-        "tests/workspaces.test.mjs"
+        "tests/workspaces.test.mjs",
+        "docs/V2_REMAINING_UI_AUDIT.md"
       ],
       "skills": [
         ".agents/skills/atelier-v2-product-design/SKILL.md",
@@ -636,12 +659,15 @@
       "phase": "ui",
       "status": "blocked",
       "dependencies": [
-        "U-10-01"
+        "U-10-01",
+        "BUG-009",
+        "BUG-010"
       ],
       "sources": [
         "frontend/src/main.tsx",
         "frontend/src/components/Shell.tsx",
-        "docs/V2_NAVIGATION_AUTH_REFERENCE.md"
+        "docs/V2_NAVIGATION_AUTH_REFERENCE.md",
+        "docs/V2_REMAINING_UI_AUDIT.md"
       ],
       "skills": [
         ".agents/skills/atelier-v2-product-design/SKILL.md",
@@ -672,13 +698,15 @@
         "U-10-07",
         "U-10-08",
         "U-10-09",
-        "U-10-10"
+        "U-10-10",
+        "BUG-009"
       ],
       "sources": [
         "frontend/src/components/Shell.tsx",
         "frontend/src/styles.css",
         "frontend/src/main.tsx",
-        "docs/V2_UI_REFERENCE_IMPLEMENTATION.md"
+        "docs/V2_UI_REFERENCE_IMPLEMENTATION.md",
+        "docs/V2_REMAINING_UI_AUDIT.md"
       ],
       "skills": [
         ".agents/skills/atelier-v2-ui-implementation/SKILL.md"
@@ -704,7 +732,8 @@
       "sources": [
         "docs/V2_UI_REFERENCE_IMPLEMENTATION.md",
         "docs/V2_CABINET_UX.md",
-        "docs/RELEASE_20261011_CLIENT_CABINET_REFERENCE.md"
+        "docs/RELEASE_20261011_CLIENT_CABINET_REFERENCE.md",
+        "docs/V2_REMAINING_UI_AUDIT.md"
       ],
       "skills": [
         ".agents/skills/atelier-v2-product-design/SKILL.md",
@@ -2368,6 +2397,529 @@
       "owner_chat": "Текущий чат pwa — публикация простого салона",
       "card": "U-10-23.md",
       "order": 113
+    },
+    {
+      "id": "BUG-008",
+      "title": "Мастер: ошибки удаления услуги и работы не показаны",
+      "phase": "completed",
+      "status": "published",
+      "dependencies": [
+        "U-10-01"
+      ],
+      "sources": [
+        "frontend/src/pages/Studio.tsx",
+        "frontend/src/components/WorkUpload.tsx",
+        "docs/V2_REMAINING_UI_AUDIT.md",
+        "frontend/src/ui-density.css",
+        "scripts/verify-master-deletion.mjs",
+        "docs/ui-checks/2026-10-15-master-deletion/README.md",
+        "docs/RELEASE_20261015_MASTER_REFINEMENT.md",
+        "docs/ui-checks/2026-10-15-master-release/README.md"
+      ],
+      "skills": [
+        ".agents/skills/atelier-v2-product-design/SKILL.md",
+        ".agents/skills/atelier-v2-ui-implementation/SKILL.md"
+      ],
+      "approved_at": null,
+      "started_at": "2026-10-15T21:51:25+07:00",
+      "local_done_at": "2026-10-15T22:02:45+07:00",
+      "verified_at": "2026-10-15T22:02:45+07:00",
+      "published_at": "2026-10-15T22:21:56+07:00",
+      "due_at": null,
+      "owner_chat": "BUG-008 / удаление мастера / 2026-10-15",
+      "card": "BUG-008.md",
+      "order": 114
+    },
+    {
+      "id": "BUG-009",
+      "title": "Завершающий слеш нарушает выбор оболочки v2",
+      "phase": "ui",
+      "status": "ready",
+      "dependencies": [
+        "U-10-01"
+      ],
+      "sources": [
+        "frontend/src/main.tsx",
+        "frontend/src/components/Shell.tsx",
+        "docs/V2_REMAINING_UI_AUDIT.md"
+      ],
+      "skills": [
+        ".agents/skills/atelier-v2-product-design/SKILL.md",
+        ".agents/skills/atelier-v2-ui-implementation/SKILL.md"
+      ],
+      "approved_at": null,
+      "started_at": null,
+      "local_done_at": null,
+      "verified_at": null,
+      "published_at": null,
+      "due_at": null,
+      "owner_chat": null,
+      "card": "BUG-009.md",
+      "order": 115
+    },
+    {
+      "id": "BUG-010",
+      "title": "Сбой проверки сессии показывается как гостевой вход",
+      "phase": "ui",
+      "status": "ready",
+      "dependencies": [
+        "U-10-01"
+      ],
+      "sources": [
+        "frontend/src/components/Shell.tsx",
+        "frontend/src/pages/Access.tsx",
+        "frontend/src/pages/Account.tsx",
+        "docs/V2_REMAINING_UI_AUDIT.md"
+      ],
+      "skills": [
+        ".agents/skills/atelier-v2-product-design/SKILL.md",
+        ".agents/skills/atelier-v2-ui-implementation/SKILL.md"
+      ],
+      "approved_at": null,
+      "started_at": null,
+      "local_done_at": null,
+      "verified_at": null,
+      "published_at": null,
+      "due_at": null,
+      "owner_chat": null,
+      "card": "BUG-010.md",
+      "order": 116
+    },
+    {
+      "id": "BUG-011",
+      "title": "Публикация мастера отклоняет сменный график и исключения",
+      "phase": "completed",
+      "status": "published",
+      "dependencies": [
+        "U-10-12"
+      ],
+      "sources": [
+        "server.mjs",
+        "lib/schedule-patterns.mjs",
+        "lib/schedule.mjs",
+        "tests/master-publication.test.mjs",
+        "docs/ui-checks/2026-10-15-master-onboarding/README.md",
+        "docs/RELEASE_20261015_MASTER_REFINEMENT.md",
+        "docs/ui-checks/2026-10-15-master-release/README.md"
+      ],
+      "skills": [
+        ".agents/skills/atelier-v2-product-design/SKILL.md",
+        ".agents/skills/atelier-v2-ui-implementation/SKILL.md"
+      ],
+      "approved_at": null,
+      "started_at": null,
+      "local_done_at": "2026-10-15T21:47:41+07:00",
+      "verified_at": "2026-10-15T21:47:41+07:00",
+      "published_at": "2026-10-15T22:21:56+07:00",
+      "due_at": null,
+      "owner_chat": "U-10-02 / первый запуск мастера / 2026-10-15",
+      "card": "BUG-011.md",
+      "order": 117
+    },
+    {
+      "id": "BUG-012",
+      "title": "Старый PUT профиля допускает публикацию без проверки готовности",
+      "phase": "verification",
+      "status": "ready",
+      "dependencies": [
+        "U-10-02"
+      ],
+      "sources": [
+        "server.mjs",
+        "frontend/src/pages/Studio.tsx",
+        "tests/address-save.test.mjs",
+        "tests/master-publication.test.mjs",
+        "docs/ui-checks/2026-10-15-master-onboarding/README.md"
+      ],
+      "skills": [
+        ".agents/skills/atelier-v2-product-design/SKILL.md",
+        ".agents/skills/atelier-v2-ui-implementation/SKILL.md"
+      ],
+      "approved_at": null,
+      "started_at": null,
+      "local_done_at": null,
+      "verified_at": null,
+      "published_at": null,
+      "due_at": null,
+      "owner_chat": null,
+      "card": "BUG-012.md",
+      "order": 118
+    },
+    {
+      "id": "CHECK-002",
+      "title": "Адресная fixture пересылает числовые отметки страницы",
+      "phase": "completed",
+      "status": "verified",
+      "dependencies": [],
+      "sources": [
+        "tests/address-save.test.mjs",
+        "lib/profile-page-options.mjs",
+        "docs/ui-checks/2026-10-15-master-onboarding/README.md"
+      ],
+      "skills": [
+        ".agents/skills/atelier-v2-product-design/SKILL.md",
+        ".agents/skills/atelier-v2-ui-implementation/SKILL.md"
+      ],
+      "approved_at": null,
+      "started_at": null,
+      "local_done_at": "2026-10-15T21:47:41+07:00",
+      "verified_at": "2026-10-15T21:47:41+07:00",
+      "published_at": null,
+      "due_at": null,
+      "owner_chat": "U-10-02 / первый запуск мастера / 2026-10-15",
+      "card": "CHECK-002.md",
+      "order": 119
+    },
+    {
+      "id": "U-10-24",
+      "title": "Выпуск проверенных исправлений кабинета мастера",
+      "phase": "completed",
+      "status": "published",
+      "dependencies": [
+        "U-10-03",
+        "BUG-008",
+        "BUG-011"
+      ],
+      "sources": [
+        "docs/tasks/U-10-03.md",
+        "docs/ui-checks/2026-10-15-master-services/README.md",
+        "scripts/release-master-refinement.py",
+        "deploy/release-master-refinement.py",
+        "docs/RELEASE_20261015_MASTER_REFINEMENT.md",
+        "docs/ui-checks/2026-10-15-master-release/README.md"
+      ],
+      "skills": [
+        ".agents/skills/atelier-v2-ui-implementation/SKILL.md"
+      ],
+      "approved_at": "2026-10-15T22:20:52+07:00",
+      "started_at": "2026-10-15T22:20:52+07:00",
+      "local_done_at": "2026-10-15T22:21:56+07:00",
+      "verified_at": "2026-10-15T22:26:33+07:00",
+      "published_at": "2026-10-15T22:21:56+07:00",
+      "due_at": null,
+      "owner_chat": "U-10-03 / проверка и выпуск / 2026-10-15",
+      "card": "U-10-24.md",
+      "order": 120
+    },
+    {
+      "id": "BUG-013",
+      "title": "Портфолио: повторное открытие формы возвращает пустой последний шаг",
+      "phase": "completed",
+      "status": "published",
+      "dependencies": [
+        "U-10-18"
+      ],
+      "sources": [
+        "frontend/src/components/WorkUpload.tsx",
+        "docs/tasks/U-10-04.md",
+        "docs/ui-checks/2026-10-15-master-upload/before-fix-report.json",
+        "docs/ui-checks/2026-10-15-master-upload/README.md",
+        "docs/ui-checks/2026-10-15-master-upload/report.json",
+        "docs/RELEASE_20261018_AUTH_UPLOAD_STABILITY.md"
+      ],
+      "skills": [
+        ".agents/skills/atelier-v2-product-design/SKILL.md",
+        ".agents/skills/atelier-v2-ui-implementation/SKILL.md"
+      ],
+      "approved_at": null,
+      "started_at": "2026-10-15T22:55:00+07:00",
+      "local_done_at": "2026-10-18T20:54:21+07:00",
+      "verified_at": "2026-10-18T20:54:21+07:00",
+      "published_at": "2026-10-18T21:28:12+07:00",
+      "due_at": null,
+      "owner_chat": "U-10-04 / приёмка загрузки портфолио / завершено 2026-10-18",
+      "card": "BUG-013.md",
+      "order": 121
+    },
+    {
+      "id": "BUG-014",
+      "title": "Портфолио: закрытие во время отправки позволяет создать дубль",
+      "phase": "completed",
+      "status": "published",
+      "dependencies": [
+        "U-10-18"
+      ],
+      "sources": [
+        "frontend/src/pages/Studio.tsx",
+        "docs/tasks/U-10-04.md",
+        "docs/ui-checks/2026-10-15-master-upload/before-fix-report.json",
+        "docs/ui-checks/2026-10-15-master-upload/README.md",
+        "docs/ui-checks/2026-10-15-master-upload/report.json",
+        "docs/RELEASE_20261018_AUTH_UPLOAD_STABILITY.md"
+      ],
+      "skills": [
+        ".agents/skills/atelier-v2-product-design/SKILL.md",
+        ".agents/skills/atelier-v2-ui-implementation/SKILL.md"
+      ],
+      "approved_at": null,
+      "started_at": "2026-10-15T22:55:00+07:00",
+      "local_done_at": "2026-10-18T20:54:21+07:00",
+      "verified_at": "2026-10-18T20:54:21+07:00",
+      "published_at": "2026-10-18T21:28:12+07:00",
+      "due_at": null,
+      "owner_chat": "U-10-04 / приёмка загрузки портфолио / завершено 2026-10-18",
+      "card": "BUG-014.md",
+      "order": 122
+    },
+    {
+      "id": "BUG-015",
+      "title": "Портфолио: не соблюдается предел размера фото по стороне",
+      "phase": "completed",
+      "status": "published",
+      "dependencies": [
+        "U-10-18"
+      ],
+      "sources": [
+        "lib/publications.mjs",
+        "docs/tasks/U-10-04.md",
+        "docs/ui-checks/2026-10-15-master-upload/image-policy-before.json",
+        "docs/ui-checks/2026-10-15-master-upload/README.md",
+        "docs/ui-checks/2026-10-15-master-upload/report.json",
+        "docs/RELEASE_20261018_AUTH_UPLOAD_STABILITY.md"
+      ],
+      "skills": [
+        ".agents/skills/atelier-v2-product-design/SKILL.md",
+        ".agents/skills/atelier-v2-ui-implementation/SKILL.md"
+      ],
+      "approved_at": null,
+      "started_at": "2026-10-15T22:55:00+07:00",
+      "local_done_at": "2026-10-18T20:54:21+07:00",
+      "verified_at": "2026-10-18T20:54:21+07:00",
+      "published_at": "2026-10-18T21:28:12+07:00",
+      "due_at": null,
+      "owner_chat": "U-10-04 / приёмка загрузки портфолио / завершено 2026-10-18",
+      "card": "BUG-015.md",
+      "order": 123
+    },
+    {
+      "id": "BUG-016",
+      "title": "Портфолио: пропадает подтверждение сохранения при сбое обновления",
+      "phase": "completed",
+      "status": "published",
+      "dependencies": [
+        "U-10-18"
+      ],
+      "sources": [
+        "frontend/src/pages/Studio.tsx",
+        "docs/tasks/U-10-04.md",
+        "docs/ui-checks/2026-10-15-master-upload/before-fix-report.json",
+        "docs/ui-checks/2026-10-15-master-upload/README.md",
+        "docs/ui-checks/2026-10-15-master-upload/report.json",
+        "docs/RELEASE_20261018_AUTH_UPLOAD_STABILITY.md"
+      ],
+      "skills": [
+        ".agents/skills/atelier-v2-product-design/SKILL.md",
+        ".agents/skills/atelier-v2-ui-implementation/SKILL.md"
+      ],
+      "approved_at": null,
+      "started_at": "2026-10-15T22:55:00+07:00",
+      "local_done_at": "2026-10-18T20:54:21+07:00",
+      "verified_at": "2026-10-18T20:54:21+07:00",
+      "published_at": "2026-10-18T21:28:12+07:00",
+      "due_at": null,
+      "owner_chat": "U-10-04 / приёмка загрузки портфолио / завершено 2026-10-18",
+      "card": "BUG-016.md",
+      "order": 124
+    },
+    {
+      "id": "BUG-017",
+      "title": "Портфолио: сетевой отказ показывает технический текст на английском",
+      "phase": "completed",
+      "status": "published",
+      "dependencies": [
+        "U-10-18"
+      ],
+      "sources": [
+        "frontend/src/components/WorkUpload.tsx",
+        "docs/tasks/U-10-04.md",
+        "docs/ui-checks/2026-10-15-master-upload/README.md",
+        "docs/ui-checks/2026-10-15-master-upload/report.json",
+        "docs/RELEASE_20261018_AUTH_UPLOAD_STABILITY.md"
+      ],
+      "skills": [
+        ".agents/skills/atelier-v2-ui-implementation/SKILL.md"
+      ],
+      "approved_at": null,
+      "started_at": "2026-10-15T22:57:16+07:00",
+      "local_done_at": "2026-10-18T20:54:21+07:00",
+      "verified_at": "2026-10-18T20:54:21+07:00",
+      "published_at": "2026-10-18T21:28:12+07:00",
+      "due_at": null,
+      "owner_chat": "U-10-04 / приёмка загрузки портфолио / завершено 2026-10-18",
+      "card": "BUG-017.md",
+      "order": 125
+    },
+    {
+      "id": "BUG-018",
+      "title": "Вход и регистрация: скачки композиции при переключении",
+      "phase": "completed",
+      "status": "published",
+      "dependencies": [
+        "U-07N"
+      ],
+      "sources": [
+        "frontend/src/pages/Auth.tsx",
+        "frontend/src/auth-reference.css",
+        "docs/V2_NAVIGATION_AUTH_REFERENCE.md",
+        "docs/ui-concepts/2026-10-11-luma/auth-review-02/README.md",
+        "docs/ui-checks/2026-10-18-auth-stability/README.md",
+        "scripts/verify-auth-layout-stability.mjs",
+        "docs/RELEASE_20261018_AUTH_UPLOAD_STABILITY.md"
+      ],
+      "skills": [
+        ".agents/skills/atelier-v2-product-design/SKILL.md",
+        ".agents/skills/atelier-v2-ui-implementation/SKILL.md"
+      ],
+      "approved_at": null,
+      "started_at": "2026-10-18T21:06:11+07:00",
+      "local_done_at": "2026-10-18T21:27:03+07:00",
+      "verified_at": "2026-10-18T21:27:03+07:00",
+      "published_at": "2026-10-18T21:28:12+07:00",
+      "due_at": null,
+      "owner_chat": "BUG-018 / стабильность входа / 2026-10-18",
+      "card": "BUG-018.md",
+      "order": 126
+    },
+    {
+      "id": "U-10-25",
+      "title": "Выпуск проверенных исправлений входа и загрузки портфолио",
+      "phase": "completed",
+      "status": "published",
+      "dependencies": [
+        "U-10-04",
+        "BUG-018"
+      ],
+      "sources": [
+        "docs/tasks/BUG-018.md",
+        "docs/tasks/U-10-04.md",
+        "docs/CLOUD_SERVER_ACCESS.md",
+        "scripts/release-auth-upload-stability.py",
+        "deploy/release-master-refinement.py",
+        "docs/RELEASE_20261018_AUTH_UPLOAD_STABILITY.md",
+        "docs/ui-checks/2026-10-18-auth-upload-release/README.md",
+        "scripts/verify-auth-release.mjs"
+      ],
+      "skills": [
+        ".agents/skills/atelier-v2-ui-implementation/SKILL.md"
+      ],
+      "approved_at": "2026-10-18T21:27:03+07:00",
+      "started_at": "2026-10-18T21:27:03+07:00",
+      "local_done_at": "2026-10-18T21:28:12+07:00",
+      "verified_at": "2026-10-18T21:31:10+07:00",
+      "published_at": "2026-10-18T21:28:12+07:00",
+      "due_at": null,
+      "owner_chat": "U-10-25 / выпуск Auth и портфолио / 2026-10-18",
+      "card": "U-10-25.md",
+      "order": 127
+    },
+    {
+      "id": "BUG-019",
+      "title": "Мобильное боковое меню: фризы анимации и смена кнопки закрытия",
+      "phase": "ui",
+      "status": "in_progress",
+      "dependencies": [
+        "U-07N"
+      ],
+      "sources": [
+        "frontend/src/components/MenuOverlay.tsx",
+        "frontend/src/components/PublicHeader.tsx",
+        "frontend/src/menu-overlay.css",
+        "docs/V2_NAVIGATION_AUTH_REFERENCE.md",
+        "docs/V2_UI_REFERENCE_IMPLEMENTATION.md"
+      ],
+      "skills": [
+        ".agents/skills/atelier-v2-product-design/SKILL.md",
+        ".agents/skills/atelier-v2-ui-implementation/SKILL.md"
+      ],
+      "approved_at": null,
+      "started_at": "2026-10-19T12:03:45+07:00",
+      "local_done_at": null,
+      "verified_at": null,
+      "published_at": null,
+      "due_at": null,
+      "owner_chat": "BUG-019 / оптимизация меню / текущий чат",
+      "card": "BUG-019.md",
+      "order": 128
+    },
+    {
+      "id": "BUG-020",
+      "title": "Уведомления: зависание службы и технические ошибки",
+      "phase": "ui",
+      "status": "verified",
+      "dependencies": [
+        "U-10-01"
+      ],
+      "sources": [
+        "frontend/src/components/AccountTools.tsx",
+        "scripts/verify-professional-push.mjs"
+      ],
+      "skills": [
+        ".agents/skills/atelier-v2-ui-implementation/SKILL.md"
+      ],
+      "approved_at": null,
+      "started_at": "2026-10-19T12:03:56+07:00",
+      "local_done_at": "2026-10-19T12:10:24+07:00",
+      "verified_at": "2026-10-19T12:10:24+07:00",
+      "published_at": null,
+      "due_at": null,
+      "owner_chat": "01a1527b-6907-7791-a895-29399450f40f / U-10-06",
+      "card": "BUG-020.md",
+      "order": 129
+    },
+    {
+      "id": "F-14",
+      "title": "Истории мастеров и салонов (Stories 24 часа) с записью в один клик",
+      "phase": "functional",
+      "status": "published",
+      "dependencies": [],
+      "sources": [
+        "lib/stories.mjs",
+        "frontend/src/components/StoryViewer.tsx",
+        "frontend/src/components/StoriesFeedBar.tsx",
+        "frontend/src/components/CabinetStories.tsx",
+        "frontend/src/stories.css",
+        "docs/PRODUCT_FEATURES_VISION.md"
+      ],
+      "skills": [
+        ".agents/skills/atelier-v2-product-design/SKILL.md",
+        ".agents/skills/atelier-v2-ui-implementation/SKILL.md"
+      ],
+      "approved_at": "2026-10-19",
+      "started_at": "2026-10-19T12:20:00+07:00",
+      "local_done_at": "2026-10-19T12:35:00+07:00",
+      "verified_at": "2026-10-19T12:38:10+07:00",
+      "published_at": "2026-10-19T13:38:23+07:00",
+      "due_at": null,
+      "owner_chat": "текущий чат / Stories 24h",
+      "card": "F-14.md",
+      "order": 130
+    },
+    {
+      "id": "BUG-021",
+      "title": "Кроп фото: удаление мешающей точки изменения размера и центрирование масштабирования",
+      "phase": "ui",
+      "status": "published",
+      "dependencies": [
+        "U-10-05"
+      ],
+      "sources": [
+        "frontend/src/components/ImageCropDialog.tsx",
+        "frontend/src/image-editor.css",
+        "scripts/verify-crop-dialog.mjs"
+      ],
+      "skills": [
+        ".agents/skills/atelier-v2-product-design/SKILL.md",
+        ".agents/skills/atelier-v2-ui-implementation/SKILL.md"
+      ],
+      "approved_at": null,
+      "started_at": "2026-10-19T13:15:00+07:00",
+      "local_done_at": "2026-10-19T13:20:00+07:00",
+      "verified_at": "2026-10-19T13:22:16+07:00",
+      "published_at": "2026-10-19T13:38:23+07:00",
+      "due_at": null,
+      "owner_chat": "текущий чат / BUG-021",
+      "card": "BUG-021.md",
+      "order": 131
     }
   ]
 }

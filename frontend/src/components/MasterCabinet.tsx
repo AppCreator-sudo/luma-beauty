@@ -5,12 +5,12 @@ import { MenuOverlay } from './MenuOverlay';
 import { useHistoryState } from '../lib/useHistoryState';
 import { useEffect, useRef, useState, type ReactNode } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowUpRight, CalendarDays, Check, ChevronDown, ChevronRight, Clock, Home, Image, Leaf, Menu, Pencil, Plus, Scissors, Search, Settings, Share2, X } from 'lucide-react';
+import { ArrowUpRight, CalendarDays, Check, ChevronDown, ChevronRight, Clock, Home, Image, Leaf, Menu, Pencil, Plus, Scissors, Search, Settings, Share2, Sparkles, X } from 'lucide-react';
 import { dayKey, json, masterDate, masterDayKey, masterTime, money, statusLabel, type Appointment, type Profile, type Studio } from '../lib/api';
 import '../master-cabinet.css';
 
-export type CabinetTab = 'overview' | 'works' | 'services' | 'appearance' | 'settings';
-const sections = [{ key: 'overview', label: 'Обзор', Icon: Home }, { key: 'services', label: 'Услуги', Icon: Scissors }, { key: 'works', label: 'Портфолио', Icon: Image }, { key: 'appearance', label: 'Оформление', Icon: Leaf }, { key: 'settings', label: 'Настройки', Icon: Settings }] as const;
+export type CabinetTab = 'overview' | 'works' | 'stories' | 'services' | 'appearance' | 'settings';
+const sections = [{ key: 'overview', label: 'Обзор', Icon: Home }, { key: 'services', label: 'Услуги', Icon: Scissors }, { key: 'works', label: 'Портфолио', Icon: Image }, { key: 'stories', label: 'Истории', Icon: Sparkles }, { key: 'appearance', label: 'Оформление', Icon: Leaf }, { key: 'settings', label: 'Настройки', Icon: Settings }] as const;
 export function Initial({ name, image, className = '' }: { name: string; image?: string; className?: string }) { return <span className={'cabinet-avatar ' + className}>{image ? <img src={image} alt=""/> : name.trim().slice(0, 1).toUpperCase()}</span>; }
 
 export function MasterCabinet({ profile, tab, openTab, share, children }: { profile: Profile; tab: CabinetTab | 'calendar'; openTab: (tab: CabinetTab) => void; share: () => Promise<void>; children: ReactNode }) {

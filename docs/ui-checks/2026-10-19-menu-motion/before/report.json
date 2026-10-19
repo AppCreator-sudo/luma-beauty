@@ -1,0 +1,140 @@
+{
+  "at": "2026-10-19T05:04:36.668Z",
+  "before": true,
+  "entry": "index-ChiJ-n7v.js",
+  "scope": "Isolated SQLite; browser-only client mocks; 4x CPU Chrome desktop emulation, not physical phone performance proof",
+  "checks": [
+    {
+      "name": "auth-open-layout-scroll-lock-touch",
+      "pass": true
+    },
+    {
+      "name": "auth-close-restores-focus-scroll",
+      "pass": true
+    },
+    {
+      "name": "home-open-layout-scroll-lock-touch",
+      "pass": true
+    },
+    {
+      "name": "home-close-restores-focus-scroll",
+      "pass": true
+    },
+    {
+      "name": "client-open-layout-scroll-lock-touch",
+      "pass": true
+    },
+    {
+      "name": "client-close-restores-focus-scroll",
+      "pass": true
+    },
+    {
+      "name": "no-js-errors-or-writes",
+      "pass": true
+    }
+  ],
+  "measurements": [
+    {
+      "name": "auth",
+      "width": 390,
+      "height": 844,
+      "cpuThrottle": 4,
+      "reducedMotion": false,
+      "metrics": {
+        "LayoutDuration": 0.026223,
+        "RecalcStyleDuration": 0.140114,
+        "TaskDuration": 0.874117
+      },
+      "frames": {
+        "count": 29,
+        "over34ms": 6,
+        "max": 100.29999999999995
+      },
+      "layout": {
+        "overflow": 0,
+        "scrollLock": "hidden",
+        "blur": "blur(5px)",
+        "buttons": [
+          {
+            "width": 46,
+            "height": 46
+          }
+        ],
+        "animations": 0
+      },
+      "closing": {
+        "dialogPresent": true,
+        "visibleHamburgers": 1
+      }
+    },
+    {
+      "name": "home",
+      "width": 390,
+      "height": 844,
+      "cpuThrottle": 4,
+      "reducedMotion": false,
+      "metrics": {
+        "LayoutDuration": 0.061505,
+        "RecalcStyleDuration": 0.201863,
+        "TaskDuration": 0.936654
+      },
+      "frames": {
+        "count": 40,
+        "over34ms": 3,
+        "max": 116.90000000000009
+      },
+      "layout": {
+        "overflow": 0,
+        "scrollLock": "hidden",
+        "blur": "blur(5px)",
+        "buttons": [
+          {
+            "width": 46,
+            "height": 46
+          }
+        ],
+        "animations": 0
+      },
+      "closing": {
+        "dialogPresent": true,
+        "visibleHamburgers": 1
+      }
+    },
+    {
+      "name": "client",
+      "width": 390,
+      "height": 844,
+      "cpuThrottle": 4,
+      "reducedMotion": false,
+      "metrics": {
+        "LayoutDuration": 0.13106,
+        "RecalcStyleDuration": 0.139315,
+        "TaskDuration": 1.055297
+      },
+      "frames": {
+        "count": 23,
+        "over34ms": 7,
+        "max": 167.20000000000005
+      },
+      "layout": {
+        "overflow": 0,
+        "scrollLock": "hidden",
+        "blur": "blur(5px)",
+        "buttons": [
+          {
+            "width": 44,
+            "height": 44
+          }
+        ],
+        "animations": 11
+      },
+      "closing": {
+        "dialogPresent": true,
+        "visibleHamburgers": 1
+      }
+    }
+  ],
+  "errors": [],
+  "writes": [],
+  "stopped": true
+}

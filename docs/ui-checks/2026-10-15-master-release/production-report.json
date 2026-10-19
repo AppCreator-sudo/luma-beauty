@@ -1,0 +1,468 @@
+{
+  "at": "2026-10-15T15:22:57.874Z",
+  "scope": "Read-only production browser verification of deployed master fixes; DELETE failures are fulfilled inside the browser and never sent to server; no production objects or contacts retained",
+  "origin": "https://atelie-13-143-66-1.sslip.io",
+  "expectedEntry": "index-Bsde624L.js",
+  "expectedTag": "20261015-v2-master-refinement",
+  "widths": [
+    1440,
+    390,
+    320
+  ],
+  "checks": [
+    {
+      "name": "deployed-entry-and-service-worker-tag-match-release",
+      "pass": true
+    },
+    {
+      "name": "service-authenticated-load-and-reload-1440",
+      "pass": true
+    },
+    {
+      "name": "service-loaded-1440-layout",
+      "pass": true
+    },
+    {
+      "name": "service-browser-mocked500-inline-alert-row-retained-retry-enabled-1440",
+      "pass": true
+    },
+    {
+      "name": "service-mocked-error-1440-layout",
+      "pass": true
+    },
+    {
+      "name": "service-reload-clears-local-mock-error-keeps-production-row-1440",
+      "pass": true
+    },
+    {
+      "name": "work-authenticated-load-and-reload-1440",
+      "pass": true
+    },
+    {
+      "name": "work-loaded-1440-layout",
+      "pass": true
+    },
+    {
+      "name": "work-browser-mocked500-inline-alert-row-retained-retry-enabled-1440",
+      "pass": true
+    },
+    {
+      "name": "work-mocked-error-1440-layout",
+      "pass": true
+    },
+    {
+      "name": "work-reload-clears-local-mock-error-keeps-production-row-1440",
+      "pass": true
+    },
+    {
+      "name": "public-catalog-load-no-overflow-1440",
+      "pass": true
+    },
+    {
+      "name": "public-map-shell-load-no-overflow-1440",
+      "pass": true
+    },
+    {
+      "name": "service-authenticated-load-and-reload-390",
+      "pass": true
+    },
+    {
+      "name": "service-loaded-390-layout",
+      "pass": true
+    },
+    {
+      "name": "service-browser-mocked500-inline-alert-row-retained-retry-enabled-390",
+      "pass": true
+    },
+    {
+      "name": "service-mocked-error-390-layout",
+      "pass": true
+    },
+    {
+      "name": "service-reload-clears-local-mock-error-keeps-production-row-390",
+      "pass": true
+    },
+    {
+      "name": "work-authenticated-load-and-reload-390",
+      "pass": true
+    },
+    {
+      "name": "work-loaded-390-layout",
+      "pass": true
+    },
+    {
+      "name": "work-browser-mocked500-inline-alert-row-retained-retry-enabled-390",
+      "pass": true
+    },
+    {
+      "name": "work-mocked-error-390-layout",
+      "pass": true
+    },
+    {
+      "name": "work-reload-clears-local-mock-error-keeps-production-row-390",
+      "pass": true
+    },
+    {
+      "name": "public-catalog-load-no-overflow-390",
+      "pass": true
+    },
+    {
+      "name": "public-map-shell-load-no-overflow-390",
+      "pass": true
+    },
+    {
+      "name": "service-authenticated-load-and-reload-320",
+      "pass": true
+    },
+    {
+      "name": "service-loaded-320-layout",
+      "pass": true
+    },
+    {
+      "name": "service-browser-mocked500-inline-alert-row-retained-retry-enabled-320",
+      "pass": true
+    },
+    {
+      "name": "service-mocked-error-320-layout",
+      "pass": true
+    },
+    {
+      "name": "service-reload-clears-local-mock-error-keeps-production-row-320",
+      "pass": true
+    },
+    {
+      "name": "work-authenticated-load-and-reload-320",
+      "pass": true
+    },
+    {
+      "name": "work-loaded-320-layout",
+      "pass": true
+    },
+    {
+      "name": "work-browser-mocked500-inline-alert-row-retained-retry-enabled-320",
+      "pass": true
+    },
+    {
+      "name": "work-mocked-error-320-layout",
+      "pass": true
+    },
+    {
+      "name": "work-reload-clears-local-mock-error-keeps-production-row-320",
+      "pass": true
+    },
+    {
+      "name": "public-catalog-load-no-overflow-320",
+      "pass": true
+    },
+    {
+      "name": "public-map-shell-load-no-overflow-320",
+      "pass": true
+    },
+    {
+      "name": "no-unhandled-javascript-page-errors",
+      "pass": true
+    },
+    {
+      "name": "production-forwarded-write-requests-zero",
+      "pass": true
+    }
+  ],
+  "skips": [],
+  "layouts": [
+    {
+      "name": "service-loaded-1440",
+      "horizontalOverflow": 0,
+      "controls": [
+        {
+          "width": 1054.5625,
+          "height": 44
+        },
+        {
+          "width": 515.28125,
+          "height": 44
+        },
+        {
+          "width": 257.640625,
+          "height": 44
+        },
+        {
+          "width": 1054.5625,
+          "height": 44
+        },
+        {
+          "width": 194.53125,
+          "height": 51
+        },
+        {
+          "width": 340,
+          "height": 44
+        },
+        {
+          "width": 44,
+          "height": 44
+        },
+        {
+          "width": 340,
+          "height": 44
+        },
+        {
+          "width": 44,
+          "height": 44
+        },
+        {
+          "width": 340,
+          "height": 44
+        },
+        {
+          "width": 44,
+          "height": 44
+        }
+      ]
+    },
+    {
+      "name": "service-mocked-error-1440",
+      "horizontalOverflow": 0,
+      "controls": [
+        {
+          "width": 44,
+          "height": 44
+        },
+        {
+          "width": 44,
+          "height": 44
+        },
+        {
+          "width": 44,
+          "height": 44
+        }
+      ]
+    },
+    {
+      "name": "work-loaded-1440",
+      "horizontalOverflow": 0,
+      "controls": [
+        {
+          "width": 153.359375,
+          "height": 44
+        },
+        {
+          "width": 44,
+          "height": 44
+        }
+      ]
+    },
+    {
+      "name": "work-mocked-error-1440",
+      "horizontalOverflow": 0,
+      "controls": [
+        {
+          "width": 44,
+          "height": 44
+        }
+      ]
+    },
+    {
+      "name": "service-loaded-390",
+      "horizontalOverflow": 0,
+      "controls": [
+        {
+          "width": 290,
+          "height": 44
+        },
+        {
+          "width": 139,
+          "height": 44
+        },
+        {
+          "width": 139,
+          "height": 44
+        },
+        {
+          "width": 290,
+          "height": 44
+        },
+        {
+          "width": 290,
+          "height": 44
+        },
+        {
+          "width": 256,
+          "height": 44
+        },
+        {
+          "width": 44,
+          "height": 44
+        },
+        {
+          "width": 256,
+          "height": 44
+        },
+        {
+          "width": 44,
+          "height": 44
+        },
+        {
+          "width": 256,
+          "height": 44
+        },
+        {
+          "width": 44,
+          "height": 44
+        }
+      ]
+    },
+    {
+      "name": "service-mocked-error-390",
+      "horizontalOverflow": 0,
+      "controls": [
+        {
+          "width": 44,
+          "height": 44
+        },
+        {
+          "width": 44,
+          "height": 44
+        },
+        {
+          "width": 44,
+          "height": 44
+        }
+      ]
+    },
+    {
+      "name": "work-loaded-390",
+      "horizontalOverflow": 0,
+      "controls": [
+        {
+          "width": 175.0625,
+          "height": 44
+        },
+        {
+          "width": 44,
+          "height": 44
+        }
+      ]
+    },
+    {
+      "name": "work-mocked-error-390",
+      "horizontalOverflow": 0,
+      "controls": [
+        {
+          "width": 44,
+          "height": 44
+        }
+      ]
+    },
+    {
+      "name": "service-loaded-320",
+      "horizontalOverflow": 0,
+      "controls": [
+        {
+          "width": 220,
+          "height": 44
+        },
+        {
+          "width": 104,
+          "height": 44
+        },
+        {
+          "width": 104.625,
+          "height": 44
+        },
+        {
+          "width": 220,
+          "height": 44
+        },
+        {
+          "width": 220,
+          "height": 44
+        },
+        {
+          "width": 186,
+          "height": 44
+        },
+        {
+          "width": 44,
+          "height": 44
+        },
+        {
+          "width": 186,
+          "height": 44
+        },
+        {
+          "width": 44,
+          "height": 44
+        },
+        {
+          "width": 186,
+          "height": 44
+        },
+        {
+          "width": 44,
+          "height": 44
+        }
+      ]
+    },
+    {
+      "name": "service-mocked-error-320",
+      "horizontalOverflow": 0,
+      "controls": [
+        {
+          "width": 44,
+          "height": 44
+        },
+        {
+          "width": 44,
+          "height": 44
+        },
+        {
+          "width": 44,
+          "height": 44
+        }
+      ]
+    },
+    {
+      "name": "work-loaded-320",
+      "horizontalOverflow": 0,
+      "controls": [
+        {
+          "width": 175.0625,
+          "height": 44
+        },
+        {
+          "width": 44,
+          "height": 44
+        }
+      ]
+    },
+    {
+      "name": "work-mocked-error-320",
+      "horizontalOverflow": 0,
+      "controls": [
+        {
+          "width": 44,
+          "height": 44
+        }
+      ]
+    }
+  ],
+  "pageErrors": [],
+  "accounting": {
+    "attemptedWriteRequests": 6,
+    "blockedWriteRequests": 0,
+    "forwardedWriteRequests": 0,
+    "mockedDeletes": 6,
+    "blockedExternalRequests": 56,
+    "forwardedReadRequests": 794
+  },
+  "cookieCleared": true,
+  "browserClosed": true,
+  "visual_review": {
+    "screenshots_reviewed": 12,
+    "result": "PASS with stated masking limitation",
+    "notes": [
+      "All twelve PNGs inspected: services and portfolio load/error states at 1440,390,320 px. Layouts fit the viewport, controls remain visible and unobstructed, service error text wraps clearly, approved colors and composition preserved.",
+      "Account identities, real service titles, work captions and photos are intentionally masked. Portfolio error paragraph is also covered by the existing privacy mask on all three widths; its text cannot be visually assessed from these PNGs, while DOM role=alert and retry-enabled behavior are confirmed by the browser checks. No visible UI defect found."
+    ]
+  }
+}

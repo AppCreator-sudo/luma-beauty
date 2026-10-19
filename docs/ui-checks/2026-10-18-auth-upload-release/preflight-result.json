@@ -1,0 +1,27 @@
+{
+  "tag": "20261018-v2-auth-upload-stability",
+  "baseline": "20261015-v2-master-refinement",
+  "at": 1792333653.0327277,
+  "archive_sha256": "6a677751cdc63047cbf57ebaf5da02db452ebd4bf0b81717b3960ed46dafeb3e",
+  "backup": "/opt/atelie/backups/20261018-v2-auth-upload-stability",
+  "snapshot_sha256": "3641e666ac77d05c8d29074194a6707fcb1b7b368ad94acc974d0cc33c74b054",
+  "files": 139,
+  "tables": 45,
+  "rows": 205,
+  "schema_and_business_preserved": true,
+  "production_data_not_replaced": true,
+  "read_checks": [
+    "/api/health",
+    "/api/me",
+    "/api/profiles",
+    "/api/inspiration",
+    "/api/map/viewport?bbox=37.5,55.6,37.8,55.9&zoom=12",
+    "/v2/",
+    "/sw.js",
+    "entry-asset",
+    "/api/studio"
+  ],
+  "smoke_stopped": true,
+  "smoke_copy_removed": true,
+  "entry": "index-D4kBlu6Z.js"
+}

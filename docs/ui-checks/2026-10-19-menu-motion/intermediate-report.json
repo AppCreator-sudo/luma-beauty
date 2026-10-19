@@ -1,0 +1,340 @@
+{
+  "at": "2026-10-19T05:06:52.899Z",
+  "before": false,
+  "entry": "index-DcCAGfnM.js",
+  "scope": "Isolated SQLite; browser-only client mocks; 4x CPU Chrome desktop emulation, not physical phone performance proof",
+  "checks": [
+    {
+      "name": "auth-open-layout-scroll-lock-touch",
+      "pass": true
+    },
+    {
+      "name": "auth-no-hamburger-before-exit",
+      "pass": true
+    },
+    {
+      "name": "auth-close-restores-focus-scroll",
+      "pass": true
+    },
+    {
+      "name": "auth-escape",
+      "pass": true
+    },
+    {
+      "name": "auth-browser-back",
+      "pass": true
+    },
+    {
+      "name": "auth-rapid-close",
+      "pass": true
+    },
+    {
+      "name": "home-open-layout-scroll-lock-touch",
+      "pass": true
+    },
+    {
+      "name": "home-no-hamburger-before-exit",
+      "pass": true
+    },
+    {
+      "name": "home-close-restores-focus-scroll",
+      "pass": true
+    },
+    {
+      "name": "home-escape",
+      "pass": true
+    },
+    {
+      "name": "home-browser-back",
+      "pass": true
+    },
+    {
+      "name": "home-rapid-close",
+      "pass": true
+    },
+    {
+      "name": "client-open-layout-scroll-lock-touch",
+      "pass": true
+    },
+    {
+      "name": "client-no-hamburger-before-exit",
+      "pass": true
+    },
+    {
+      "name": "client-close-restores-focus-scroll",
+      "pass": true
+    },
+    {
+      "name": "client-escape",
+      "pass": true
+    },
+    {
+      "name": "client-browser-back",
+      "pass": true
+    },
+    {
+      "name": "client-rapid-close",
+      "pass": true
+    },
+    {
+      "name": "narrow-open-layout-scroll-lock-touch",
+      "pass": true
+    },
+    {
+      "name": "narrow-no-hamburger-before-exit",
+      "pass": true
+    },
+    {
+      "name": "narrow-close-restores-focus-scroll",
+      "pass": true
+    },
+    {
+      "name": "narrow-escape",
+      "pass": true
+    },
+    {
+      "name": "narrow-browser-back",
+      "pass": true
+    },
+    {
+      "name": "narrow-rapid-close",
+      "pass": true
+    },
+    {
+      "name": "desktop-open-layout-scroll-lock-touch",
+      "pass": true
+    },
+    {
+      "name": "desktop-no-hamburger-before-exit",
+      "pass": true
+    },
+    {
+      "name": "desktop-close-restores-focus-scroll",
+      "pass": true
+    },
+    {
+      "name": "desktop-escape",
+      "pass": true
+    },
+    {
+      "name": "desktop-browser-back",
+      "pass": true
+    },
+    {
+      "name": "desktop-rapid-close",
+      "pass": true
+    },
+    {
+      "name": "reduced-open-layout-scroll-lock-touch",
+      "pass": true
+    },
+    {
+      "name": "runner",
+      "pass": false,
+      "message": "expect(locator).toBeFocused() failed\n\nLocator:  locator('button[aria-expanded][aria-label*=\"Открыть\"]').visible().last()\nExpected: focused\nReceived: inactive\nTimeout:  5000ms\n\nCall log:\n  - Expect \"toBeFocused\" locator('button[aria-expanded][aria-label*=\"Открыть\"]').visible().last() with timeout 5000ms\n  - waiting for locator('button[aria-expanded][aria-label*=\"Открыть\"]').visible().last()\n    14 × locator resolved to <button type=\"button\" aria-expanded=\"false\" aria-label=\"Открыть меню\" class=\"public-menu-toggle\" aria-controls=\"public-reference-menu\">…</button>\n       - unexpected value \"inactive\"\n"
+    }
+  ],
+  "measurements": [
+    {
+      "name": "auth",
+      "width": 390,
+      "height": 844,
+      "cpuThrottle": 4,
+      "reducedMotion": false,
+      "metrics": {
+        "LayoutDuration": 0.025105,
+        "RecalcStyleDuration": 0.125682,
+        "TaskDuration": 0.702239
+      },
+      "frames": {
+        "count": 36,
+        "over34ms": 3,
+        "max": 133.5999999999999
+      },
+      "layout": {
+        "overflow": 0,
+        "scrollLock": "hidden",
+        "blur": "none",
+        "buttons": [
+          {
+            "width": 46,
+            "height": 46
+          }
+        ],
+        "animations": 0
+      },
+      "closing": {
+        "dialogPresent": true,
+        "visibleHamburgers": 0
+      }
+    },
+    {
+      "name": "home",
+      "width": 390,
+      "height": 844,
+      "cpuThrottle": 4,
+      "reducedMotion": false,
+      "metrics": {
+        "LayoutDuration": 0.058997,
+        "RecalcStyleDuration": 0.184283,
+        "TaskDuration": 0.9011
+      },
+      "frames": {
+        "count": 39,
+        "over34ms": 3,
+        "max": 150.4000000000001
+      },
+      "layout": {
+        "overflow": 0,
+        "scrollLock": "hidden",
+        "blur": "none",
+        "buttons": [
+          {
+            "width": 46,
+            "height": 46
+          }
+        ],
+        "animations": 0
+      },
+      "closing": {
+        "dialogPresent": true,
+        "visibleHamburgers": 0
+      }
+    },
+    {
+      "name": "client",
+      "width": 390,
+      "height": 844,
+      "cpuThrottle": 4,
+      "reducedMotion": false,
+      "metrics": {
+        "LayoutDuration": 0.14171999999999998,
+        "RecalcStyleDuration": 0.08374599999999999,
+        "TaskDuration": 0.8425870000000001
+      },
+      "frames": {
+        "count": 28,
+        "over34ms": 6,
+        "max": 150.4000000000001
+      },
+      "layout": {
+        "overflow": 0,
+        "scrollLock": "hidden",
+        "blur": "none",
+        "buttons": [
+          {
+            "width": 44,
+            "height": 44
+          }
+        ],
+        "animations": 11
+      },
+      "closing": {
+        "dialogPresent": true,
+        "visibleHamburgers": 0
+      }
+    },
+    {
+      "name": "narrow",
+      "width": 320,
+      "height": 568,
+      "cpuThrottle": 4,
+      "reducedMotion": false,
+      "metrics": {
+        "LayoutDuration": 0.02449,
+        "RecalcStyleDuration": 0.142501,
+        "TaskDuration": 0.8706820000000001
+      },
+      "frames": {
+        "count": 33,
+        "over34ms": 4,
+        "max": 150.29999999999995
+      },
+      "layout": {
+        "overflow": 0,
+        "scrollLock": "hidden",
+        "blur": "none",
+        "buttons": [
+          {
+            "width": 46,
+            "height": 46
+          }
+        ],
+        "animations": 0
+      },
+      "closing": {
+        "dialogPresent": true,
+        "visibleHamburgers": 0
+      }
+    },
+    {
+      "name": "desktop",
+      "width": 1440,
+      "height": 900,
+      "cpuThrottle": 4,
+      "reducedMotion": false,
+      "metrics": {
+        "LayoutDuration": 0.074051,
+        "RecalcStyleDuration": 0.165194,
+        "TaskDuration": 0.885474
+      },
+      "frames": {
+        "count": 35,
+        "over34ms": 5,
+        "max": 116.90000000000009
+      },
+      "layout": {
+        "overflow": 0,
+        "scrollLock": "hidden",
+        "blur": "blur(5px)",
+        "buttons": [
+          {
+            "width": 46,
+            "height": 46
+          }
+        ],
+        "animations": 0
+      },
+      "closing": {
+        "dialogPresent": true,
+        "visibleHamburgers": 0
+      }
+    },
+    {
+      "name": "reduced",
+      "width": 390,
+      "height": 844,
+      "cpuThrottle": 4,
+      "reducedMotion": true,
+      "metrics": {
+        "LayoutDuration": 0.016266,
+        "RecalcStyleDuration": 0.038879,
+        "TaskDuration": 0.428695
+      },
+      "frames": {
+        "count": 47,
+        "over34ms": 2,
+        "max": 66.80000000000007
+      },
+      "layout": {
+        "overflow": 0,
+        "scrollLock": "hidden",
+        "blur": "none",
+        "buttons": [
+          {
+            "width": 46,
+            "height": 46
+          }
+        ],
+        "animations": 0
+      },
+      "closing": {
+        "dialogPresent": false,
+        "visibleHamburgers": 1
+      }
+    }
+  ],
+  "errors": [],
+  "writes": [],
+  "stopped": true
+}

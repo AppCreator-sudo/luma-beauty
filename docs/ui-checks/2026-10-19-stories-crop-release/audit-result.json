@@ -1,0 +1,21 @@
+{
+  "tag": "20261019-v2-stories-crop-polish",
+  "current": "/opt/atelie/releases/20261019-v2-stories-crop-polish",
+  "active": "active",
+  "health": true,
+  "files_verified": 146,
+  "integrity": "ok",
+  "foreign_keys": [],
+  "qa_session_removed": true,
+  "read_checks": [
+    "/api/health",
+    "/api/me",
+    "/api/profiles",
+    "/api/inspiration",
+    "/api/map/viewport?bbox=37.5,55.6,37.8,55.9&zoom=12",
+    "/api/stories/active",
+    "/v2/",
+    "/sw.js",
+    "entry-asset"
+  ]
+}

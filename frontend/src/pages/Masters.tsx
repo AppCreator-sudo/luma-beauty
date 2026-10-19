@@ -7,6 +7,9 @@ import { currentPromotion, usePromotionClock } from '../lib/promotions';
 import { CatalogMasterCard } from '../components/CatalogMasterCard';
 import { ShowMore } from '../components/ShowMore';
 import { EmptyState, ErrorState, Loading, useApp } from '../components/Shell';
+import { StoriesFeedBar } from '../components/StoriesFeedBar';
+import { StoryViewer } from '../components/StoryViewer';
+import type { StoryAuthor } from '../lib/api';
 import directions from '../../../lib/categories.json';
 import '../catalog-navigation.css';
 import '../catalog-reference.css';
@@ -34,6 +37,23 @@ export function MastersPage() {
   const [query, setQuery] = useState(search), [filtersOpen, setFiltersOpen] = useState(false);
   const input = useRef<HTMLInputElement>(null), results = useRef<HTMLDivElement>(null), restored = useRef('');
   const jump = useRef(false);
+  const [activeStorySlugs, setActiveStorySlugs] = useState<Set<string>>(new Set());
+  const [viewingAuthor, setViewingAuthor] = useState<StoryAuthor | null>(null);
+
+  useEffect(() => {
+    api<{ slugs: string[] }>('/stories/active-slugs')
+      .then(res => setActiveStorySlugs(new Set(res.slugs)))
+      .catch(() => {});
+  }, []);
+
+  async function openStoryForSlug(slug: string) {
+    try {
+      const data = await api<StoryAuthor>('/stories/owner/' + encodeURIComponent(slug));
+      if (data && data.stories?.length) {
+        setViewingAuthor(data);
+      }
+    } catch {}
+  }
   const resource = useMore<Profile, string>(key, cursor, async position => {
     const request = new URLSearchParams(filterKey);
     if (position) request.set('cursor', position);
@@ -97,6 +117,7 @@ export function MastersPage() {
   if (category !== 'Все') mapParams.set('category', category);
   return <div className="container reference-catalog compact-catalog-page">
     <div className="catalog-heading"><h1>Мастера и салоны</h1><p>Выбирайте по работам.</p></div>
+    <StoriesFeedBar />
     <div className="catalog-toolbar">
       <div className="catalog-search-row"><label className="catalog-search"><Search size={19}/><input ref={input} value={query} maxLength={100} placeholder="Имя, услуга или город" aria-label="Поиск мастеров и салонов" onChange={event => setQuery(event.target.value)}/>{query ? <button type="button" onClick={() => setQuery('')} aria-label="Очистить поиск"><X size={17}/></button> : null}</label><button className={'catalog-filter-toggle' + (filtersOpen ? ' active' : '')} type="button" aria-expanded={filtersOpen} aria-controls="catalog-filters" onClick={() => setFiltersOpen(value => !value)}><SlidersHorizontal size={19}/>Фильтры{activeFilters ? ' · ' + activeFilters : ''}</button><Link className="catalog-filter-toggle" to={'/map' + (mapParams.size ? '?' + mapParams : '')}><MapPin size={18}/>На карте</Link></div>
       {filtersOpen ? <div className="catalog-filters" id="catalog-filters"><label>Направление<select value={category} onChange={event => changeFilter('category', event.target.value === 'Все' ? '' : event.target.value)}>{categories.map(value => <option key={value}>{value}</option>)}</select></label><label>Свободный день<input type="date" value={date} min={dayKey(Date.now())} max={dayKey(Date.now() + 89 * 86400000)} onChange={event => changeFilter('date', event.target.value)}/></label><label>Длительность<select value={duration} disabled={!date} onChange={event => changeFilter('duration', event.target.value)}>{durations.map(value => <option key={value} value={value}>{value} мин</option>)}</select></label><button type="button" className="catalog-reset" onClick={reset}>Сбросить</button>{!date ? <small>Длительность доступна после выбора дня.</small> : null}</div> : null}
@@ -104,7 +125,8 @@ export function MastersPage() {
     </div>
     <div className="catalog-results" ref={results} aria-busy={resource.loading || resource.loadingMore}>
       <div className="catalog-result-heading" aria-live="polite"><span>{resource.ready ? displayed.length ? 'Показано: ' + displayed.length : 'Ничего не найдено' : 'Ищем мастеров и салоны…'}</span></div>
-      {resource.error ? <ErrorState message={resource.error} retry={resource.reload}/> : !resource.ready ? <Loading text="Ищем мастеров и салоны…"/> : displayed.length ? <><div className="compact-masters-grid" onClickCapture={rememberPosition}>{displayed.map(profile => <CatalogMasterCard key={(profile.kind || 'master') + ':' + profile.user_id} profile={profile}/>)}</div><ShowMore hasNext={resource.data?.next !== null} busy={resource.loadingMore} error={resource.moreError} onClick={() => void resource.more()} subject="карточки"/></> : <EmptyState title="Пока никого не нашли" text="Попробуйте другой город, день или направление."><button className="button button-dark" type="button" onClick={reset}>Сбросить фильтры</button></EmptyState>}
+      {resource.error ? <ErrorState message={resource.error} retry={resource.reload}/> : !resource.ready ? <Loading text="Ищем мастеров и салоны…"/> : displayed.length ? <><div className="compact-masters-grid" onClickCapture={rememberPosition}>{displayed.map(profile => <CatalogMasterCard key={(profile.kind || 'master') + ':' + profile.user_id} profile={profile} hasStory={activeStorySlugs.has(profile.slug)} onStoryClick={() => void openStoryForSlug(profile.slug)}/>)}</div><ShowMore hasNext={resource.data?.next !== null} busy={resource.loadingMore} error={resource.moreError} onClick={() => void resource.more()} subject="карточки"/></> : <EmptyState title="Пока никого не нашли" text="Попробуйте другой город, день или направление."><button className="button button-dark" type="button" onClick={reset}>Сбросить фильтры</button></EmptyState>}
     </div>
+    {viewingAuthor ? <StoryViewer authors={[viewingAuthor]} onClose={() => setViewingAuthor(null)} /> : null}
   </div>;
 }

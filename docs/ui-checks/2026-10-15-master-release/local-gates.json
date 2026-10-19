@@ -1,0 +1,26 @@
+{
+  "at": "2026-10-15T15:21:34.473318+00:00",
+  "frontend_build": "PASS",
+  "root_build": "PASS",
+  "frontend_entry": "index-Bsde624L.js",
+  "studio_chunk": "Studio-Ceg2X8Jo.js",
+  "targeted_node_tests": {
+    "pass": 7,
+    "fail": 0,
+    "files": [
+      "tests/master-publication.test.mjs",
+      "tests/address-save.test.mjs"
+    ]
+  },
+  "local_browser_checks": {
+    "onboarding": 70,
+    "deletion": 61,
+    "services": 134,
+    "fail": 0
+  },
+  "approved_references": {
+    "checked": 172,
+    "changed": []
+  },
+  "release_script_review": "3 blocking findings corrected before any switch; final independent read-only review PASS"
+}

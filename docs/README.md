@@ -1,5 +1,7 @@
 # Документация Luma Beauty
 
+Последний подтверждённый выпуск — [20261018-v2-auth-upload-stability](RELEASE_20261018_AUTH_UPLOAD_STABILITY.md): BUG-013…018 опубликованы, [production11/11](ui-checks/2026-10-18-auth-upload-release/README.md). [Стабильность входа96/96](ui-checks/2026-10-18-auth-stability/README.md), портфолио115+16/9HTTP. Следующая [BUG-019](tasks/BUG-019.md), проверка мобильного бокового меню; затем [U-10-06](tasks/U-10-06.md), только PushButton. [Остаточная матрица](V2_REMAINING_UI_AUDIT.md).
+
 Актуализировано 14.10.2026 (Asia/Novosibirsk). Начать с инструкции и одной карточки, не со всех старых планов.
 
 | Что нужно | Документ |

@@ -1,0 +1,87 @@
+{
+  "at": "2026-10-15T14:53:19.299Z",
+  "mode": "before-fix reproduction",
+  "scope": "BUG-008 only; fresh synthetic SQLite and fake existing address provider; no production access or credentials recorded",
+  "origin": "http://localhost:3262",
+  "fixture": "C:\\Users\\Admin\\Desktop\\pwa\\.cache\\bug008-deletion-1792075993663",
+  "widths": [
+    390
+  ],
+  "checks": [
+    {
+      "name": "synthetic-fixture-ready-390",
+      "pass": true
+    },
+    {
+      "name": "service-missing-error-390-layout",
+      "pass": true
+    },
+    {
+      "name": "service-original-unhandled-rejection-and-missing-error-reproduced-390",
+      "pass": true
+    },
+    {
+      "name": "work-missing-error-390-layout",
+      "pass": true
+    },
+    {
+      "name": "work-original-unhandled-rejection-and-missing-error-reproduced-390",
+      "pass": true
+    }
+  ],
+  "pageErrors": [
+    "Синтетический сбой удаления. Повторите попытку.",
+    "Синтетический сбой удаления. Повторите попытку."
+  ],
+  "layouts": [
+    {
+      "name": "service-missing-error-390",
+      "horizontalOverflow": 0,
+      "actions": [
+        {
+          "label": "Удалить услугу Синтетическая услуга own",
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "Удалить услугу Услуга с работой own",
+          "width": 44,
+          "height": 44
+        }
+      ]
+    },
+    {
+      "name": "work-missing-error-390",
+      "horizontalOverflow": 0,
+      "actions": [
+        {
+          "label": "Удалить работу",
+          "width": 44,
+          "height": 44
+        }
+      ]
+    }
+  ],
+  "observations": [
+    {
+      "kind": "service",
+      "width": 390,
+      "deleteRequests": 1,
+      "visibleAlert": false,
+      "objectRetained": true,
+      "unhandledPageErrors": [
+        "Синтетический сбой удаления. Повторите попытку."
+      ]
+    },
+    {
+      "kind": "work",
+      "width": 390,
+      "deleteRequests": 1,
+      "visibleAlert": false,
+      "objectRetained": true,
+      "unhandledPageErrors": [
+        "Синтетический сбой удаления. Повторите попытку."
+      ]
+    }
+  ]
+}

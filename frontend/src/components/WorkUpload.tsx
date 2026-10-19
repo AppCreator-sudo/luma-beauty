@@ -5,12 +5,14 @@ import { api, json, servicePriceLabel, type Service, type Work } from '../lib/ap
 import { CabinetSteps } from './CabinetSteps';
 import '../work-upload.css';
 
-export function WorkUpload({ services, onDone, endpoint = '/works', serviceEndpoint = '/services', selector, requireService = true, existing, onCancel, validateSelection, contextSummary, reference = false, navigationKey = '' }: { navigationKey?: string; reference?: boolean; services: Service[]; onDone: () => void | Promise<unknown>; endpoint?: string; serviceEndpoint?: string; selector?: ReactNode; requireService?: boolean; existing?: Pick<Work,'id'|'caption'|'image'|'images'|'service_id'>; onCancel?: () => void; validateSelection?: () => string | undefined; contextSummary?: ReactNode }) {
+export function WorkUpload({ services, onDone, endpoint = '/works', serviceEndpoint = '/services', selector, requireService = true, existing, onCancel, validateSelection, contextSummary, reference = false, navigationKey = '', pending = false, onBusyChange, onSaved }: { navigationKey?: string; reference?: boolean; pending?: boolean; onBusyChange?: (busy: boolean) => void; onSaved?: (message: string) => void; services: Service[]; onDone: () => void | Promise<unknown>; endpoint?: string; serviceEndpoint?: string; selector?: ReactNode; requireService?: boolean; existing?: Pick<Work,'id'|'caption'|'image'|'images'|'service_id'>; onCancel?: () => void; validateSelection?: () => string | undefined; contextSummary?: ReactNode }) {
   const wizard = !existing;
   const fileInput = useRef<HTMLInputElement>(null);
-  const [step, setStep] = useHistoryState('work-upload-step-' + endpoint + '-' + (existing?.id || 'new') + '-' + navigationKey, 0, { backOnDecrease: true });
-  const [previews, setPreviews] = useState<{ url: string; name: string }[]>(() => existing ? (existing.images?.length ? existing.images : [{image:existing.image}]).map(photo => ({url:photo.image,name:'Фото публикации'})) : []);
   const id = useId();
+  const [draftId] = useState(() => crypto.randomUUID());
+  // A remount or full reload loses local inputs, so it needs a fresh step history.
+  const [step, setStep] = useHistoryState('work-upload-step-' + endpoint + '-' + (existing?.id || 'new') + '-' + navigationKey + '-' + draftId, 0, { backOnDecrease: true });
+  const [previews, setPreviews] = useState<{ url: string; name: string }[]>(() => existing ? (existing.images?.length ? existing.images : [{image:existing.image}]).map(photo => ({url:photo.image,name:'Фото публикации'})) : []);
   const [caption, setCaption] = useState(existing?.caption || '');
   const [serviceId, setServiceId] = useState(existing?.service_id || '');
   const [createdServices, setCreatedServices] = useState<Service[]>([]);
@@ -22,13 +24,24 @@ export function WorkUpload({ services, onDone, endpoint = '/works', serviceEndpo
   const [error, setError] = useState('');
   const [busyAction, setBusyAction] = useState<'work' | 'service' | null>(null);
   const busyRef = useRef(false);
-  const busy = busyAction !== null;
+  const busy = busyAction !== null || pending;
   const [message, setMessage] = useState('');
   const allServices = [...services, ...createdServices.filter(item => !services.some(service => service.id === item.id))];
   const selectedService = allServices.find(service => service.id === serviceId);
   const validServiceId = selectedService?.id || '';
   useEffect(() => () => previews.forEach(photo => URL.revokeObjectURL(photo.url)), [previews]);
   useEffect(() => { setCreatedServices([]); setServiceId(existing?.service_id || ''); setAddingService(false); }, [serviceEndpoint, existing?.service_id]);
+
+  function changeBusy(action: 'work' | 'service' | null) {
+    busyRef.current = action !== null;
+    setBusyAction(action);
+    onBusyChange?.(action !== null);
+  }
+
+  function savedNotice(message: string) {
+    if (onSaved) onSaved(message);
+    else setMessage(message);
+  }
 
   function choosePhotos(event: ChangeEvent<HTMLInputElement>) {
     const files = Array.from(event.target.files || []);
@@ -47,47 +60,47 @@ export function WorkUpload({ services, onDone, endpoint = '/works', serviceEndpo
   }
 
   function moveStep(next: number) {
-    if (busyRef.current || next < 0 || next > 2) return;
+    if (busyRef.current || pending || next < 0 || next > 2) return;
     for (let index = step; index < next; index++) if (!validateStep(index)) { setStep(index); return; }
     setError(''); setStep(next);
   }
 
   async function createService() {
-    if (busyRef.current) return;
+    if (busyRef.current || pending) return;
     const name = serviceName.trim(), price = Number(servicePrice), duration = Number(serviceDuration);
     if (!name || servicePrice === '' || !Number.isFinite(price) || price < 0 || !Number.isFinite(duration) || duration < 5) {
       setError('Укажите название, цену и длительность услуги'); return;
     }
-    busyRef.current = true; setBusyAction('service'); setError(''); setMessage('');
+    changeBusy('service'); setError(''); setMessage('');
     try {
       const result = await json<{ id: string }>(serviceEndpoint, 'POST', { name, price, duration });
       setCreatedServices(current => [...current, { id: result.id, user_id: '', name, price, duration }]);
       setServiceId(result.id); setErrors(current => ({ ...current, service: undefined }));
       setAddingService(false); setServiceName(''); setServicePrice(''); setServiceDuration('60');
-    } catch (reason) { setError(reason instanceof Error ? reason.message : 'Не удалось создать услугу'); }
-    finally { busyRef.current = false; setBusyAction(null); }
+    } catch (reason) { setError(reason instanceof TypeError ? 'Не удалось связаться с сервером. Попробуйте ещё раз.' : reason instanceof Error ? reason.message : 'Не удалось создать услугу'); }
+    finally { changeBusy(null); }
   }
 
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    if (busyRef.current) return;
+    if (busyRef.current || pending) return;
     if (wizard && step < 2) { moveStep(step + 1); return; }
     for (let index = 0; index < 3; index++) if (!validateStep(index)) { if (wizard) setStep(index); return; }
     const form = event.currentTarget;
     const payload = new FormData(form);
-    busyRef.current = true; setBusyAction('work'); setError(''); setMessage('');
+    changeBusy('work'); setError(''); setMessage('');
     try {
       await api(endpoint + (existing ? '/' + existing.id : ''), { method: existing ? 'PUT' : 'POST', body: payload });
     } catch (reason) {
-      setError(reason instanceof Error ? reason.message : 'Не удалось опубликовать');
-      busyRef.current = false; setBusyAction(null); return;
+      setError(reason instanceof TypeError ? 'Не удалось связаться с сервером. Попробуйте ещё раз.' : reason instanceof Error ? reason.message : 'Не удалось опубликовать');
+      changeBusy(null); return;
     }
     if (!existing) { form.reset(); setPreviews([]); setCaption(''); setServiceId(''); setStep(0); }
     const success = existing ? 'Публикация обновлена.' : selector ? 'Публикация сохранена.' : 'Работа добавлена в портфолио.';
-    setMessage(success);
+    savedNotice(success);
     try { await onDone(); }
-    catch { setMessage(success + ' Обновите список публикаций, чтобы увидеть изменения.'); }
-    finally { busyRef.current = false; setBusyAction(null); }
+    catch { savedNotice(success + ' Обновите список публикаций, чтобы увидеть изменения.'); }
+    finally { changeBusy(null); }
   }
 
   return <form className={'upload-form work-upload' + (wizard ? ' cabinet-flow' : '')} onSubmit={submit} noValidate aria-busy={busy} style={wizard && step === 0 ? {gridTemplateColumns:'minmax(0, 1fr)'} : undefined}>

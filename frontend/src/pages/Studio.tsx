@@ -3,7 +3,7 @@ import {scheduleHasWork} from '../../../lib/schedule-patterns.mjs';
 import {ServiceDirectionEditor,ServiceDirectionSelect} from '../components/ServiceDirection';
 import { useHistoryState } from '../lib/useHistoryState';
 import { ExperienceFields } from '../components/ExperienceFields';
-import { useMemo, useRef, useState, type FormEvent } from 'react';
+import { useCallback, useMemo, useRef, useState, type FormEvent } from 'react';
 import { Link, Navigate, useNavigate, useSearchParams } from 'react-router-dom';
 import { ArrowRight, Check, LogOut, Plus, Settings2, Trash2 } from 'lucide-react';
 import { api, json, money, servicePriceLabel, prettyDate, prettyTime, masterDayKey, masterDate, masterTime, statusLabel, type Appointment, type Schedule, type Studio } from '../lib/api';
@@ -20,20 +20,62 @@ import { PersonalAppearance } from '../components/AppearanceEditor';
 import { CalendarWorkspace } from '../components/CalendarWorkspace';
 import '../cabinet-flows.css';
 import { MasterCabinet, MasterOverview } from '../components/MasterCabinet';
+import { CabinetStories } from '../components/CabinetStories';
 
-type StudioTab = 'overview' | 'works' | 'services' | 'appearance' | 'settings';
+type StudioTab = 'overview' | 'works' | 'stories' | 'services' | 'appearance' | 'settings';
 type StudioData = [Studio, Appointment[], string];
+type StudioRemoval = { ownerId: string; kind: 'work' | 'service'; id: string; pending: boolean; error: string; notice: string };
 
 export function StudioPage() {
   const { me, refreshMe } = useApp();
   const navigate = useNavigate();
   const [studioParams] = useSearchParams();
   const requestedTab = studioParams.get('tab');
-  const [tab, setTab] = useHistoryState<StudioTab>('studio-tab', () => ['overview','works','services','appearance','settings'].includes(requestedTab || '') ? requestedTab as StudioTab : 'overview');
+  const [tab, setTab] = useHistoryState<StudioTab>('studio-tab', () => ['overview','works','stories','services','appearance','settings'].includes(requestedTab || '') ? requestedTab as StudioTab : 'overview');
   const [saveNotice, setSaveNotice] = useState('');
   const [addingWork, setAddingWork] = useState(false);
+  const [workBusy, setWorkBusy] = useState(false);
+  const [workNotice, setWorkNotice] = useState('');
+  const workUploadLock = useRef(false);
+  const onWorkBusyChange = useCallback((busy: boolean) => {
+    workUploadLock.current = busy;
+    setWorkBusy(busy);
+    if (busy) setWorkNotice('');
+  }, []);
+  const [removal, setRemoval] = useState<StudioRemoval | null>(null);
+  const removalLock = useRef(false);
   const masterId = me?.user?.account_type === 'master' ? me.user.id : '';
+  const removalOwner = useRef(masterId);
+  removalOwner.current = masterId;
   const resource = useResource<StudioData>(() => masterId ? Promise.all([api<Studio>('/studio'), api<Appointment[]>('/appointments')]).then(([studio, appointments]): StudioData => [studio, appointments, masterId]) : Promise.resolve([{ profile: null, services: [], works: [] }, [], '']), [masterId]);
+  async function remove(kind: StudioRemoval['kind'], id: string) {
+    if (!masterId || removalLock.current || !confirm(kind === 'work' ? 'Удалить работу?' : 'Удалить услугу?')) return;
+    const ownerId = masterId;
+    removalLock.current = true;
+    setRemoval({ ownerId, kind, id, pending: true, error: '', notice: kind === 'work' ? 'Удаляем работу…' : 'Удаляем услугу…' });
+    try {
+      await api((kind === 'work' ? '/works/' : '/services/') + id, { method: 'DELETE' });
+      if (removalOwner.current !== ownerId) return;
+      // Apply the acknowledged deletion even when refreshing the remaining list fails.
+      resource.setData(previous => {
+        if (!previous || previous[2] !== ownerId) return previous;
+        const studio = previous[0];
+        return [{ ...studio, ...(kind === 'work' ? { works: studio.works.filter(item => item.id !== id) } : { services: studio.services.filter(item => item.id !== id) }) }, previous[1], ownerId];
+      });
+      await resource.reload();
+      if (removalOwner.current === ownerId) setRemoval({ ownerId, kind, id, pending: false, error: '', notice: kind === 'work' ? 'Работа удалена.' : 'Услуга удалена.' });
+    } catch (reason) {
+      if (removalOwner.current === ownerId) setRemoval({ ownerId, kind, id, pending: false, notice: '', error: reason instanceof TypeError ? 'Не удалось связаться с сервером. Попробуйте ещё раз.' : reason instanceof Error ? reason.message : 'Не удалось удалить. Попробуйте ещё раз.' });
+    } finally {
+      removalLock.current = false;
+      setRemoval(previous => previous?.ownerId === ownerId && previous.pending ? { ...previous, pending: false, notice: '' } : previous);
+    }
+  }
+  function removalFeedback(kind: StudioRemoval['kind'], id?: string) {
+    if (!removal || removal.ownerId !== masterId || removal.kind !== kind) return null;
+    if (id ? removal.id !== id || (!removal.error && !removal.pending) : removal.error || removal.pending) return null;
+    return removal.error ? <p className="form-error studio-removal-feedback" role="alert">{removal.error}</p> : removal.notice ? <p className="studio-action-notice studio-removal-feedback" role="status">{removal.notice}</p> : null;
+  }
   if (!me) return <Loading/>;
   if (me.user?.account_type === 'salon' || (me.user?.account_type === 'client' && me.workspaces?.some(w => w.kind === 'salon'))) return <Navigate to="/salon" replace/>;
   if (!me.user) return <div className="container page-content"><div className="editorial-heading"><span className="eyebrow">ДЛЯ ТЕХ, КТО СОЗДАЁТ КРАСОТУ</span><h1>Ваше личное <em>пространство.</em></h1><p>Откройте студию, опубликуйте работы и принимайте запись по личной ссылке.</p><Link className="button button-wine" to="/auth?role=master">Создать студию <ArrowRight size={17}/></Link></div></div>;
@@ -47,8 +89,9 @@ export function StudioPage() {
     {saveNotice ? <p role="status">{saveNotice}</p> : null}
     {resource.error ? <div className="studio-refresh-error" role="alert"><span>Не удалось обновить кабинет: {resource.error}</span><button className="text-link" type="button" disabled={resource.loading} onClick={() => void resource.reload()}>Повторить обновление</button></div> : null}
     {tab === 'overview' ? <MasterOverview studio={{...studio, profile}} appointments={appointments} openTab={setTab} reload={resource.reload}/> : null}
-    {tab === 'works' ? <section className="studio-panel studio-works-panel"><div className="section-head compact"><div><span className="eyebrow">ВАШИ ИСТОРИИ</span><h2>Мои <em>работы.</em></h2></div><button type="button" className="button button-wine studio-add-work-toggle" onClick={() => setAddingWork(value => !value)}><Plus size={16}/>{addingWork ? 'Закрыть форму' : 'Добавить работу'}</button></div>{(addingWork || studio.works.length === 0) ? <div className="studio-work-upload-card"><WorkUpload services={studio.services} onDone={async () => { setAddingWork(false); await resource.reload(); }} onCancel={studio.works.length > 0 ? () => setAddingWork(false) : undefined}/></div> : null}<div className="studio-list-heading"><h3>Ваше портфолио</h3><span>Работ: {studio.works.length}</span></div>{studio.works.length ? <div className="studio-work-grid">{studio.works.map(work => <article key={work.id}><Link to={'/w/' + work.id} title={work.caption || 'Просмотр работы'}><img src={work.image} alt={work.caption || 'Ваша работа'} loading="lazy"/></Link><div><p title={work.caption || 'Без подписи'}>{work.caption || 'Без подписи'}</p><button type="button" aria-label="Удалить работу" onClick={async () => { if (confirm('Удалить работу?')) { await api('/works/' + work.id, { method: 'DELETE' }); resource.reload(); } }}><Trash2 size={17}/></button></div></article>)}</div> : <p className="studio-list-hint">Сохранённые работы появятся здесь. Добавить фото можно и на скрытой странице.</p>}</section> : null}
-    {tab === 'services' ? <section className="studio-panel studio-services-panel"><div className="section-head compact"><div><span className="eyebrow">ВАШИ УСЛУГИ</span><h2>Услуги <em>и цены.</em></h2></div></div><details className="service-create"><summary>Добавить услугу</summary><ServiceForm categories={studio.profile?.categories||[]} onDone={resource.reload}/></details><div className="studio-list-heading"><h3>Список услуг</h3><span>Услуг: {studio.services.length}</span></div>{studio.services.length ? <div className="services-list">{studio.services.map(service => <div className="service-row cabinet-service-item" key={service.id}><div className="cabinet-service-details"><div className="cabinet-service-heading"><h3>{service.name}</h3><strong>{servicePriceLabel(service.price)}</strong></div><span>{service.duration} мин</span><ServiceDirectionEditor key={service.id+':'+service.category+':'+studio.profile?.categories?.join()} service={service} categories={studio.profile?.categories||[]} endpoint="/services" onDone={resource.reload}/></div><button className="cabinet-service-remove" type="button" aria-label={'Удалить услугу ' + service.name} onClick={async () => { if (confirm('Удалить услугу?')) { await api('/services/' + service.id, { method: 'DELETE' }); resource.reload(); } }}><Trash2 size={17}/></button></div>)}</div> : <EmptyState title="Услуг пока нет" text="Добавьте первую услугу, чтобы клиенты могли выбрать время записи."/>}</section> : null}
+    {tab === 'works' ? <section className="studio-panel studio-works-panel"><div className="section-head compact"><div><span className="eyebrow">ВАШИ ИСТОРИИ</span><h2>Мои <em>работы.</em></h2></div><button type="button" className="button button-wine studio-add-work-toggle" disabled={workBusy} onClick={() => { if (workUploadLock.current) return; setWorkNotice(''); setAddingWork(value => !value); }}><Plus size={16}/>{addingWork ? 'Закрыть форму' : 'Добавить работу'}</button></div>{(addingWork || studio.works.length === 0) ? <div className="studio-work-upload-card"><WorkUpload services={studio.services} pending={workBusy} onBusyChange={onWorkBusyChange} onSaved={setWorkNotice} onDone={async () => { setAddingWork(false); await resource.reload(); }} onCancel={studio.works.length > 0 ? () => setAddingWork(false) : undefined}/></div> : null}{workNotice ? <p className="studio-action-notice" role="status">{workNotice}</p> : null}{removalFeedback('work')}<div className="studio-list-heading"><h3>Ваше портфолио</h3><span>Работ: {studio.works.length}</span></div>{studio.works.length ? <div className="studio-work-grid">{studio.works.map(work => <article key={work.id}><Link to={'/w/' + work.id} title={work.caption || 'Просмотр работы'}><img src={work.image} alt={work.caption || 'Ваша работа'} loading="lazy"/></Link><div><p title={work.caption || 'Без подписи'}>{work.caption || 'Без подписи'}</p><button type="button" aria-label="Удалить работу" disabled={Boolean(removal?.pending)} aria-busy={removal?.pending && removal.id === work.id} onClick={() => void remove('work', work.id)}><Trash2 size={17}/></button></div>{removalFeedback('work', work.id)}</article>)}</div> : <p className="studio-list-hint">Сохранённые работы появятся здесь. Добавить фото можно и на скрытой странице.</p>}</section> : null}
+    {tab === 'stories' ? <CabinetStories ownerType="master" services={studio.services} onChange={resource.reload}/> : null}
+    {tab === 'services' ? <section className="studio-panel studio-services-panel"><div className="section-head compact"><div><span className="eyebrow">ВАШИ УСЛУГИ</span><h2>Услуги <em>и цены.</em></h2></div></div><details className="service-create"><summary>Добавить услугу</summary><ServiceForm categories={studio.profile?.categories||[]} onDone={resource.reload}/></details>{removalFeedback('service')}<div className="studio-list-heading"><h3>Список услуг</h3><span>Услуг: {studio.services.length}</span></div>{studio.services.length ? <div className="services-list">{studio.services.map(service => <div className="service-row cabinet-service-item" key={service.id}><div className="cabinet-service-details"><div className="cabinet-service-heading"><h3>{service.name}</h3><strong>{servicePriceLabel(service.price)}</strong></div><span>{service.duration} мин</span><ServiceDirectionEditor key={service.id+':'+service.category+':'+studio.profile?.categories?.join()} service={service} categories={studio.profile?.categories||[]} endpoint="/services" onDone={resource.reload}/>{removalFeedback('service', service.id)}</div><button className="cabinet-service-remove" type="button" aria-label={'Удалить услугу ' + service.name} disabled={Boolean(removal?.pending)} aria-busy={removal?.pending && removal.id === service.id} onClick={() => void remove('service', service.id)}><Trash2 size={17}/></button></div>)}</div> : <EmptyState title="Услуг пока нет" text="Добавьте первую услугу, чтобы клиенты могли выбрать время записи."/>}</section> : null}
     {tab === 'appearance' ? <PersonalAppearance key={profile.user_id} profile={profile} onDone={() => { resource.reload(); void refreshMe(); }}/>: null}
     {tab === 'settings' ? <div className="studio-settings"><section className="studio-panel"><div className="section-head compact"><div><span className="eyebrow">ПРОФЕССИОНАЛЬНАЯ ВИЗИТКА</span><h2>О вашей <em>странице.</em></h2></div></div><PublicationControl studio={studio} onDone={() => { resource.reload(); refreshMe(); }} openTab={setTab}/><ProfileForm initial={profile} onDone={notice => { setSaveNotice(notice || ""); resource.reload(); refreshMe(); }}/></section><div className="studio-settings-side"><section className="studio-panel" id="studio-schedule"><div className="section-head compact"><div><span className="eyebrow">ДЛЯ ЗАПИСИ</span><h2>Рабочий <em>график.</em></h2></div></div>{studio.schedule ? <ScheduleForm schedule={studio.schedule} configured={studio.schedule_configured} onDone={resource.reload}/> : <p>Обновите страницу, чтобы настроить расписание.</p>}</section><section className="studio-panel"><h2>Аккаунт</h2><Link className="button button-outline" to="/access">Вход и безопасность</Link><div className="settings-aside"><p>Уведомления о новых заявках</p><PushButton/></div><button className="button button-outline logout-button" onClick={async () => { await json('/auth/logout', 'POST', {}); await refreshMe(); navigate('/'); }}><LogOut size={16}/> Выйти</button></section></div></div> : null}</MasterCabinet>;
 }

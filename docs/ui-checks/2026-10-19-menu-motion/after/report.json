@@ -1,0 +1,97 @@
+{
+  "at": "2026-10-19T05:12:07.478Z",
+  "before": false,
+  "browserVersion": "155.0.8059.82",
+  "entry": "index-BieFBA8y.js",
+  "scope": "Isolated SQLite; browser-only client mocks; 4x CPU Chrome desktop emulation, not physical phone performance proof",
+  "checks": [
+    {
+      "name": "reduced-open-layout-scroll-lock-touch",
+      "pass": true
+    },
+    {
+      "name": "runner",
+      "pass": false,
+      "message": "expect(locator).toBeFocused() failed\n\nLocator:  locator('button[aria-expanded][aria-label*=\"Открыть\"]').visible().last()\nExpected: focused\nReceived: inactive\nTimeout:  5000ms\n\nCall log:\n  - Expect \"toBeFocused\" locator('button[aria-expanded][aria-label*=\"Открыть\"]').visible().last() with timeout 5000ms\n  - waiting for locator('button[aria-expanded][aria-label*=\"Открыть\"]').visible().last()\n    13 × locator resolved to <button type=\"button\" aria-expanded=\"false\" aria-label=\"Открыть меню\" class=\"public-menu-toggle\" aria-controls=\"public-reference-menu\">…</button>\n       - unexpected value \"inactive\"\n"
+    }
+  ],
+  "measurements": [
+    {
+      "name": "reduced",
+      "width": 390,
+      "height": 844,
+      "cpuThrottle": 4,
+      "reducedMotion": true,
+      "metrics": {
+        "LayoutDuration": 0.015063,
+        "RecalcStyleDuration": 0.042988,
+        "TaskDuration": 0.557238
+      },
+      "frames": {
+        "count": 35,
+        "over34ms": 4,
+        "max": 100.19999999999993
+      },
+      "layout": {
+        "overflow": 0,
+        "scrollLock": "hidden",
+        "blur": "none",
+        "backdropBlur": "blur(5px)",
+        "radius": "8px",
+        "buttons": [
+          {
+            "width": 46,
+            "height": 46
+          }
+        ],
+        "animations": 0
+      },
+      "closing": {
+        "dialogPresent": false,
+        "visibleHamburgers": 1
+      }
+    },
+    {
+      "name": "reduced-focus-debug",
+      "data": {
+        "active": "<body style=\"\">\n    <div id=\"root\"><a class=\"skip-link\" href=\"#main\">К содержимому</a><header class=\"public-reference-header\"><div class=\"public-header-inner\"><a class=\"cabinet-brand\" aria-label=\"Luma Beauty — главная\" href=\"/v2\" data-discover=\"true\"",
+        "hasFocus": true,
+        "restoreRAF": {
+          "dialogs": [],
+          "buttons": [
+            {
+              "visibility": "hidden",
+              "expanded": "false"
+            }
+          ]
+        },
+        "log": [
+          {
+            "t": 764.6999999880791,
+            "tag": "BUTTON",
+            "class": "public-menu-toggle"
+          },
+          {
+            "t": 1077.2999999523163,
+            "tag": "BUTTON",
+            "class": "luma-menu-scrim"
+          },
+          {
+            "t": 2601.099999964237,
+            "tag": "BUTTON",
+            "class": "luma-menu-close"
+          }
+        ],
+        "visibility": [
+          {
+            "style": "",
+            "expanded": "false"
+          }
+        ]
+      }
+    }
+  ],
+  "errors": [],
+  "writes": [],
+  "stopped": true
+}

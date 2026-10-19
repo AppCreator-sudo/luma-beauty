@@ -1,0 +1,448 @@
+{
+  "at": "2026-10-15T16:00:21.841Z",
+  "mode": "acceptance",
+  "scope": "U-10-04 remaining master upload states only; isolated synthetic SQLite, fake address provider, local generated photos; no production access or real credentials",
+  "origin": "http://localhost:3265",
+  "fixture": "C:\\Users\\Admin\\Desktop\\pwa\\.cache\\u10-04-upload-1792080003046",
+  "fixtureStopped": false,
+  "widths": [
+    1440,
+    390,
+    320
+  ],
+  "checks": [
+    {
+      "name": "empty-portfolio-wizard-1440-layout",
+      "pass": true
+    },
+    {
+      "name": "empty-portfolio-opens-wizard-service-step-1440",
+      "pass": true
+    },
+    {
+      "name": "missing-service-inline-error-zero-post-1440",
+      "pass": true
+    },
+    {
+      "name": "missing-photo-inline-error-zero-post-1440",
+      "pass": true
+    },
+    {
+      "name": "seven-photo-client-error-zero-post-1440",
+      "pass": true
+    },
+    {
+      "name": "missing-caption-inline-error-zero-post-1440",
+      "pass": true
+    },
+    {
+      "name": "invalid-photo-server-error-1440-layout",
+      "pass": true
+    },
+    {
+      "name": "corrupt-photo-real400-keeps-service-photo-caption-and-empty-portfolio-1440",
+      "pass": true
+    },
+    {
+      "name": "explicit-back-preserves-service-photos-caption-1440",
+      "pass": true
+    },
+    {
+      "name": "browser-back-between-steps-preserves-service-photos-caption-1440",
+      "pass": true
+    },
+    {
+      "name": "corrected-ready-to-publish-1440-layout",
+      "pass": true
+    },
+    {
+      "name": "upload-server-error-visible-draft-and-existing-data-preserved-1440",
+      "pass": true
+    },
+    {
+      "name": "upload-server-error-1440-layout",
+      "pass": true
+    },
+    {
+      "name": "first-upload-saved-collapsed-1440-layout",
+      "pass": true
+    },
+    {
+      "name": "server-error-retry-publishes-two-photos-author-service-caption-reload-autocollapse-1440",
+      "pass": true
+    },
+    {
+      "name": "populated-open-reset-cancel-keeps-existing-work-1440",
+      "pass": true
+    },
+    {
+      "name": "populated-toggle-opens-and-closes-form-1440",
+      "pass": true
+    },
+    {
+      "name": "close-caption-step-reopen-fresh-draft-starts-at-service-1440",
+      "pass": true
+    },
+    {
+      "name": "upload-network-error-visible-draft-and-existing-data-preserved-1440",
+      "pass": true
+    },
+    {
+      "name": "upload-network-error-1440-layout",
+      "pass": true
+    },
+    {
+      "name": "pending-upload-external-toggle-disabled-draft-stays-mounted-1440",
+      "pass": true
+    },
+    {
+      "name": "network-retry-double-synchronous-submit-one-post-busy-fieldset-1440",
+      "pass": true
+    },
+    {
+      "name": "populated-upload-saved-reload-1440-layout",
+      "pass": true
+    },
+    {
+      "name": "network-retry-saves-once-reload-keeps-first-work-and-collapses-1440",
+      "pass": true
+    },
+    {
+      "name": "saved-refresh-error-1440-layout",
+      "pass": true
+    },
+    {
+      "name": "post201-refresh500-visible-success-get-only-retry-reload-one-work-1440",
+      "pass": true
+    },
+    {
+      "name": "pending-upload-across-tabs-1440",
+      "pass": false,
+      "message": "expect(locator).toBeDisabled() failed\n\nLocator:  locator('.work-upload').locator('fieldset')\nExpected: disabled\nReceived: enabled\nTimeout:  5000ms\n\nCall log:\n  - Expect \"toBeDisabled\" locator('.work-upload').locator('fieldset') with timeout 5000ms\n  - waiting for locator('.work-upload').locator('fieldset')\n    14 × locator resolved to <fieldset disabled class=\"work-upload-fields\">…</fieldset>\n       - unexpected value \"enabled\"\n"
+    }
+  ],
+  "pageErrors": [],
+  "layouts": [
+    {
+      "name": "empty-portfolio-wizard-1440",
+      "horizontalOverflow": 0,
+      "controls": [
+        {
+          "tag": "BUTTON",
+          "label": "Добавить работу",
+          "width": 153.359375,
+          "height": 44
+        },
+        {
+          "tag": "BUTTON",
+          "label": "1Услуга",
+          "width": 194,
+          "height": 48
+        },
+        {
+          "tag": "BUTTON",
+          "label": "2Фото",
+          "width": 194,
+          "height": 48
+        },
+        {
+          "tag": "BUTTON",
+          "label": "3Подпись",
+          "width": 194,
+          "height": 48
+        },
+        {
+          "tag": "SELECT",
+          "label": "Выберите услугуПервая синтетическая услуга · от 1 800 ₽Выбранная синтетическая услуга · от 2 700 ₽",
+          "width": 598,
+          "height": 44
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Добавить новую услугу",
+          "width": 163.9375,
+          "height": 44
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Далее: фото",
+          "width": 93.953125,
+          "height": 44
+        }
+      ],
+      "formWidth": 640
+    },
+    {
+      "name": "invalid-photo-server-error-1440",
+      "horizontalOverflow": 0,
+      "controls": [
+        {
+          "tag": "BUTTON",
+          "label": "Добавить работу",
+          "width": 153.359375,
+          "height": 44
+        },
+        {
+          "tag": "BUTTON",
+          "label": "1Услуга",
+          "width": 92,
+          "height": 48
+        },
+        {
+          "tag": "BUTTON",
+          "label": "2Фото",
+          "width": 92,
+          "height": 48
+        },
+        {
+          "tag": "BUTTON",
+          "label": "3Подпись",
+          "width": 92,
+          "height": 48
+        },
+        {
+          "tag": "TEXTAREA",
+          "label": "Синтетическая работа 1440",
+          "width": 292,
+          "height": 85
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Назад",
+          "width": 62.125,
+          "height": 44
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Опубликовать",
+          "width": 131.40625,
+          "height": 44
+        }
+      ],
+      "formWidth": 640
+    },
+    {
+      "name": "corrected-ready-to-publish-1440",
+      "horizontalOverflow": 0,
+      "controls": [
+        {
+          "tag": "BUTTON",
+          "label": "Добавить работу",
+          "width": 153.359375,
+          "height": 44
+        },
+        {
+          "tag": "BUTTON",
+          "label": "1Услуга",
+          "width": 92,
+          "height": 48
+        },
+        {
+          "tag": "BUTTON",
+          "label": "2Фото",
+          "width": 92,
+          "height": 48
+        },
+        {
+          "tag": "BUTTON",
+          "label": "3Подпись",
+          "width": 92,
+          "height": 48
+        },
+        {
+          "tag": "TEXTAREA",
+          "label": "Синтетическая работа 1440",
+          "width": 292,
+          "height": 85
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Назад",
+          "width": 62.125,
+          "height": 44
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Опубликовать",
+          "width": 131.40625,
+          "height": 44
+        }
+      ],
+      "formWidth": 640
+    },
+    {
+      "name": "upload-server-error-1440",
+      "horizontalOverflow": 0,
+      "controls": [
+        {
+          "tag": "BUTTON",
+          "label": "Добавить работу",
+          "width": 153.359375,
+          "height": 44
+        },
+        {
+          "tag": "BUTTON",
+          "label": "1Услуга",
+          "width": 92,
+          "height": 48
+        },
+        {
+          "tag": "BUTTON",
+          "label": "2Фото",
+          "width": 92,
+          "height": 48
+        },
+        {
+          "tag": "BUTTON",
+          "label": "3Подпись",
+          "width": 92,
+          "height": 48
+        },
+        {
+          "tag": "TEXTAREA",
+          "label": "Синтетическая работа 1440",
+          "width": 292,
+          "height": 85
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Назад",
+          "width": 62.125,
+          "height": 44
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Опубликовать",
+          "width": 131.40625,
+          "height": 44
+        }
+      ],
+      "formWidth": 640
+    },
+    {
+      "name": "first-upload-saved-collapsed-1440",
+      "horizontalOverflow": 0,
+      "controls": [
+        {
+          "tag": "BUTTON",
+          "label": "Добавить работу",
+          "width": 153.359375,
+          "height": 44
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Удалить работу",
+          "width": 44,
+          "height": 44
+        }
+      ],
+      "formWidth": null
+    },
+    {
+      "name": "upload-network-error-1440",
+      "horizontalOverflow": 0,
+      "controls": [
+        {
+          "tag": "BUTTON",
+          "label": "Закрыть форму",
+          "width": 144.015625,
+          "height": 44
+        },
+        {
+          "tag": "BUTTON",
+          "label": "1Услуга",
+          "width": 92,
+          "height": 48
+        },
+        {
+          "tag": "BUTTON",
+          "label": "2Фото",
+          "width": 92,
+          "height": 48
+        },
+        {
+          "tag": "BUTTON",
+          "label": "3Подпись",
+          "width": 92,
+          "height": 48
+        },
+        {
+          "tag": "TEXTAREA",
+          "label": "Повтор и двойная публикация 1440",
+          "width": 292,
+          "height": 85
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Назад",
+          "width": 62.125,
+          "height": 44
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Опубликовать",
+          "width": 131.40625,
+          "height": 44
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Удалить работу",
+          "width": 44,
+          "height": 44
+        }
+      ],
+      "formWidth": 640
+    },
+    {
+      "name": "populated-upload-saved-reload-1440",
+      "horizontalOverflow": 0,
+      "controls": [
+        {
+          "tag": "BUTTON",
+          "label": "Добавить работу",
+          "width": 153.359375,
+          "height": 44
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Удалить работу",
+          "width": 44,
+          "height": 44
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Удалить работу",
+          "width": 44,
+          "height": 44
+        }
+      ],
+      "formWidth": null
+    },
+    {
+      "name": "saved-refresh-error-1440",
+      "horizontalOverflow": 0,
+      "controls": [
+        {
+          "tag": "BUTTON",
+          "label": "Добавить работу",
+          "width": 153.359375,
+          "height": 44
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Удалить работу",
+          "width": 44,
+          "height": 44
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Удалить работу",
+          "width": 44,
+          "height": 44
+        }
+      ],
+      "formWidth": null
+    }
+  ],
+  "observations": []
+}

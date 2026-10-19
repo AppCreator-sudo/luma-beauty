@@ -1,0 +1,425 @@
+{
+  "at": "2026-10-19T05:10:01.693Z",
+  "scope": "U-10-06; browser API simulation, synthetic SQLite; no physical push delivery",
+  "root": "C:\\Users\\Admin\\Desktop\\pwa\\test-results\\professional-push-1792386428575",
+  "fixtureStopped": true,
+  "checks": [
+    {
+      "name": "master-1440-unsupported-message-retry-layout",
+      "pass": true
+    },
+    {
+      "name": "master-1440-insecure-message-retry-layout",
+      "pass": true
+    },
+    {
+      "name": "master-1440-no-notification-message-retry-layout",
+      "pass": true
+    },
+    {
+      "name": "master-1440-denied-message-retry-layout",
+      "pass": true
+    },
+    {
+      "name": "master-1440-dismissed-message-retry-layout",
+      "pass": true
+    },
+    {
+      "name": "master-1440-key-error-message-retry-layout",
+      "pass": true
+    },
+    {
+      "name": "master-1440-invalid-key-message-retry-layout",
+      "pass": true
+    },
+    {
+      "name": "master-1440-network-error-message-retry-layout",
+      "pass": true
+    },
+    {
+      "name": "master-1440-browser-subscribe-error-message-retry-layout",
+      "pass": true
+    },
+    {
+      "name": "master-1440-server-subscribe-error-message-retry-layout",
+      "pass": true
+    },
+    {
+      "name": "master-1440-worker-unavailable-message-retry-layout",
+      "pass": true
+    },
+    {
+      "name": "master-1440-worker-rejected-message-retry-layout",
+      "pass": true
+    },
+    {
+      "name": "master-1440-existing-message-retry-layout",
+      "pass": true
+    },
+    {
+      "name": "master-1440-busy-message-retry-layout",
+      "pass": true
+    },
+    {
+      "name": "salon-1440-unsupported-message-retry-layout",
+      "pass": true
+    },
+    {
+      "name": "salon-1440-insecure-message-retry-layout",
+      "pass": true
+    },
+    {
+      "name": "salon-1440-no-notification-message-retry-layout",
+      "pass": true
+    },
+    {
+      "name": "salon-1440-denied-message-retry-layout",
+      "pass": true
+    },
+    {
+      "name": "salon-1440-dismissed-message-retry-layout",
+      "pass": true
+    },
+    {
+      "name": "salon-1440-key-error-message-retry-layout",
+      "pass": true
+    },
+    {
+      "name": "salon-1440-invalid-key-message-retry-layout",
+      "pass": true
+    },
+    {
+      "name": "salon-1440-network-error-message-retry-layout",
+      "pass": true
+    },
+    {
+      "name": "salon-1440-browser-subscribe-error-message-retry-layout",
+      "pass": true
+    },
+    {
+      "name": "salon-1440-server-subscribe-error-message-retry-layout",
+      "pass": true
+    },
+    {
+      "name": "salon-1440-worker-unavailable-message-retry-layout",
+      "pass": true
+    },
+    {
+      "name": "salon-1440-worker-rejected-message-retry-layout",
+      "pass": true
+    },
+    {
+      "name": "salon-1440-existing-message-retry-layout",
+      "pass": true
+    },
+    {
+      "name": "salon-1440-busy-message-retry-layout",
+      "pass": true
+    },
+    {
+      "name": "master-390-unsupported-message-retry-layout",
+      "pass": true
+    },
+    {
+      "name": "master-390-insecure-message-retry-layout",
+      "pass": true
+    },
+    {
+      "name": "master-390-no-notification-message-retry-layout",
+      "pass": true
+    },
+    {
+      "name": "master-390-denied-message-retry-layout",
+      "pass": true
+    },
+    {
+      "name": "master-390-dismissed-message-retry-layout",
+      "pass": true
+    },
+    {
+      "name": "master-390-key-error-message-retry-layout",
+      "pass": true
+    },
+    {
+      "name": "master-390-invalid-key-message-retry-layout",
+      "pass": true
+    },
+    {
+      "name": "master-390-network-error-message-retry-layout",
+      "pass": true
+    },
+    {
+      "name": "master-390-browser-subscribe-error-message-retry-layout",
+      "pass": true
+    },
+    {
+      "name": "master-390-server-subscribe-error-message-retry-layout",
+      "pass": true
+    },
+    {
+      "name": "master-390-worker-unavailable-message-retry-layout",
+      "pass": true
+    },
+    {
+      "name": "master-390-worker-rejected-message-retry-layout",
+      "pass": true
+    },
+    {
+      "name": "master-390-existing-message-retry-layout",
+      "pass": true
+    },
+    {
+      "name": "master-390-busy-message-retry-layout",
+      "pass": true
+    },
+    {
+      "name": "salon-390-unsupported-message-retry-layout",
+      "pass": true
+    },
+    {
+      "name": "salon-390-insecure-message-retry-layout",
+      "pass": true
+    },
+    {
+      "name": "salon-390-no-notification-message-retry-layout",
+      "pass": true
+    },
+    {
+      "name": "salon-390-denied-message-retry-layout",
+      "pass": true
+    },
+    {
+      "name": "salon-390-dismissed-message-retry-layout",
+      "pass": true
+    },
+    {
+      "name": "salon-390-key-error-message-retry-layout",
+      "pass": true
+    },
+    {
+      "name": "salon-390-invalid-key-message-retry-layout",
+      "pass": true
+    },
+    {
+      "name": "salon-390-network-error-message-retry-layout",
+      "pass": true
+    },
+    {
+      "name": "salon-390-browser-subscribe-error-message-retry-layout",
+      "pass": true
+    },
+    {
+      "name": "salon-390-server-subscribe-error-message-retry-layout",
+      "pass": true
+    },
+    {
+      "name": "salon-390-worker-unavailable-message-retry-layout",
+      "pass": true
+    },
+    {
+      "name": "salon-390-worker-rejected-message-retry-layout",
+      "pass": true
+    },
+    {
+      "name": "salon-390-existing-message-retry-layout",
+      "pass": true
+    },
+    {
+      "name": "salon-390-busy-message-retry-layout",
+      "pass": true
+    },
+    {
+      "name": "master-320-unsupported-message-retry-layout",
+      "pass": true
+    },
+    {
+      "name": "master-320-insecure-message-retry-layout",
+      "pass": true
+    },
+    {
+      "name": "master-320-no-notification-message-retry-layout",
+      "pass": true
+    },
+    {
+      "name": "master-320-denied-message-retry-layout",
+      "pass": true
+    },
+    {
+      "name": "master-320-dismissed-message-retry-layout",
+      "pass": true
+    },
+    {
+      "name": "master-320-key-error-message-retry-layout",
+      "pass": true
+    },
+    {
+      "name": "master-320-invalid-key-message-retry-layout",
+      "pass": true
+    },
+    {
+      "name": "master-320-network-error-message-retry-layout",
+      "pass": true
+    },
+    {
+      "name": "master-320-browser-subscribe-error-message-retry-layout",
+      "pass": true
+    },
+    {
+      "name": "master-320-server-subscribe-error-message-retry-layout",
+      "pass": true
+    },
+    {
+      "name": "master-320-worker-unavailable-message-retry-layout",
+      "pass": true
+    },
+    {
+      "name": "master-320-worker-rejected-message-retry-layout",
+      "pass": true
+    },
+    {
+      "name": "master-320-existing-message-retry-layout",
+      "pass": true
+    },
+    {
+      "name": "master-320-busy-message-retry-layout",
+      "pass": true
+    },
+    {
+      "name": "salon-320-unsupported-message-retry-layout",
+      "pass": true
+    },
+    {
+      "name": "salon-320-insecure-message-retry-layout",
+      "pass": true
+    },
+    {
+      "name": "salon-320-no-notification-message-retry-layout",
+      "pass": true
+    },
+    {
+      "name": "salon-320-denied-message-retry-layout",
+      "pass": true
+    },
+    {
+      "name": "salon-320-dismissed-message-retry-layout",
+      "pass": true
+    },
+    {
+      "name": "salon-320-key-error-message-retry-layout",
+      "pass": true
+    },
+    {
+      "name": "salon-320-invalid-key-message-retry-layout",
+      "pass": true
+    },
+    {
+      "name": "salon-320-network-error-message-retry-layout",
+      "pass": true
+    },
+    {
+      "name": "salon-320-browser-subscribe-error-message-retry-layout",
+      "pass": true
+    },
+    {
+      "name": "salon-320-server-subscribe-error-message-retry-layout",
+      "pass": true
+    },
+    {
+      "name": "salon-320-worker-unavailable-message-retry-layout",
+      "pass": true
+    },
+    {
+      "name": "salon-320-worker-rejected-message-retry-layout",
+      "pass": true
+    },
+    {
+      "name": "salon-320-existing-message-retry-layout",
+      "pass": true
+    },
+    {
+      "name": "salon-320-busy-message-retry-layout",
+      "pass": true
+    },
+    {
+      "name": "no-unhandled-javascript-errors",
+      "pass": true
+    },
+    {
+      "name": "subscriptions-persist-without-duplicate-endpoints",
+      "pass": true
+    },
+    {
+      "name": "fixture-stopped-database-integrity-and-foreign-keys",
+      "pass": true
+    }
+  ],
+  "errors": [],
+  "layouts": [
+    {
+      "role": "master",
+      "width": 1440,
+      "overflow": 0,
+      "button": {
+        "x": 964.1875,
+        "y": 524.359375,
+        "width": 246.1875,
+        "height": 51
+      }
+    },
+    {
+      "role": "salon",
+      "width": 1440,
+      "overflow": 0,
+      "button": {
+        "x": 304.4375,
+        "y": 372.09375,
+        "width": 246.1875,
+        "height": 51
+      }
+    },
+    {
+      "role": "master",
+      "width": 390,
+      "overflow": 0,
+      "button": {
+        "x": 62,
+        "y": 677.796875,
+        "width": 229.3125,
+        "height": 44
+      }
+    },
+    {
+      "role": "salon",
+      "width": 390,
+      "overflow": 0,
+      "button": {
+        "x": 37,
+        "y": 317.28125,
+        "width": 229.3125,
+        "height": 44
+      }
+    },
+    {
+      "role": "master",
+      "width": 320,
+      "overflow": 0,
+      "button": {
+        "x": 62,
+        "y": 677.59375,
+        "width": 196,
+        "height": 63
+      }
+    },
+    {
+      "role": "salon",
+      "width": 320,
+      "overflow": 0,
+      "button": {
+        "x": 31,
+        "y": 308.03125,
+        "width": 229.3125,
+        "height": 44
+      }
+    }
+  ]
+}

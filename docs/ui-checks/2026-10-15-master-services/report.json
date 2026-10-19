@@ -1,0 +1,1959 @@
+{
+  "at": "2026-10-15T15:09:31.549Z",
+  "scope": "U-10-03 remaining states; new synthetic SQLite, fake address provider, no production access or real credentials recorded",
+  "origin": "http://localhost:3263",
+  "fixture": "C:\\Users\\Admin\\Desktop\\pwa\\.cache\\u10-03-services-1792076932904",
+  "fixtureStopped": true,
+  "widths": [
+    1440,
+    390,
+    320
+  ],
+  "checks": [
+    {
+      "name": "empty-service-form-1440-layout",
+      "pass": true
+    },
+    {
+      "name": "empty-list-preserved-approved-cabinet-1440",
+      "pass": true
+    },
+    {
+      "name": "native-missing-name-blocks-request-1440",
+      "pass": true
+    },
+    {
+      "name": "native-missing-price-blocks-request-1440",
+      "pass": true
+    },
+    {
+      "name": "native-missing-duration-blocks-request-1440",
+      "pass": true
+    },
+    {
+      "name": "native-missing-direction-blocks-request-1440",
+      "pass": true
+    },
+    {
+      "name": "native-negative-price-blocks-request-1440",
+      "pass": true
+    },
+    {
+      "name": "native-too-high-price-blocks-request-1440",
+      "pass": true
+    },
+    {
+      "name": "native-short-duration-blocks-request-1440",
+      "pass": true
+    },
+    {
+      "name": "native-long-duration-blocks-request-1440",
+      "pass": true
+    },
+    {
+      "name": "native-fraction-price-blocks-request-1440",
+      "pass": true
+    },
+    {
+      "name": "native-fraction-duration-blocks-request-1440",
+      "pass": true
+    },
+    {
+      "name": "whitespace-name-server-error-without-data-loss-1440",
+      "pass": true
+    },
+    {
+      "name": "api-missing-name-400-keeps-services-1440",
+      "pass": true
+    },
+    {
+      "name": "api-missing-price-400-keeps-services-1440",
+      "pass": true
+    },
+    {
+      "name": "api-missing-duration-400-keeps-services-1440",
+      "pass": true
+    },
+    {
+      "name": "api-negative-price-400-keeps-services-1440",
+      "pass": true
+    },
+    {
+      "name": "api-too-high-price-400-keeps-services-1440",
+      "pass": true
+    },
+    {
+      "name": "api-short-duration-400-keeps-services-1440",
+      "pass": true
+    },
+    {
+      "name": "api-long-duration-400-keeps-services-1440",
+      "pass": true
+    },
+    {
+      "name": "api-non-numeric-price-400-keeps-services-1440",
+      "pass": true
+    },
+    {
+      "name": "api-non-numeric-duration-400-keeps-services-1440",
+      "pass": true
+    },
+    {
+      "name": "api-foreign-direction-400-keeps-services-1440",
+      "pass": true
+    },
+    {
+      "name": "api-padded-direction-400-keeps-services-1440",
+      "pass": true
+    },
+    {
+      "name": "api-invalid-direction-type-400-keeps-services-1440",
+      "pass": true
+    },
+    {
+      "name": "valid-boundary-0-5-save-reload-1440",
+      "pass": true
+    },
+    {
+      "name": "valid-boundary-1000000-720-save-reload-1440",
+      "pass": true
+    },
+    {
+      "name": "valid-boundaries-1440-layout",
+      "pass": true
+    },
+    {
+      "name": "add-server-error-visible-fields-and-database-preserved-1440",
+      "pass": true
+    },
+    {
+      "name": "add-server-error-1440-layout",
+      "pass": true
+    },
+    {
+      "name": "add-server-retry-saves-once-and-reloads-1440",
+      "pass": true
+    },
+    {
+      "name": "add-network-error-visible-fields-and-database-preserved-1440",
+      "pass": true
+    },
+    {
+      "name": "add-network-error-1440-layout",
+      "pass": true
+    },
+    {
+      "name": "add-network-retry-saves-once-and-reloads-1440",
+      "pass": true
+    },
+    {
+      "name": "double-synchronous-submit-one-post-busy-fields-disabled-1440",
+      "pass": true
+    },
+    {
+      "name": "legacy-needs-direction-1440-layout",
+      "pass": true
+    },
+    {
+      "name": "legacy-multi-category-empty-direction-clear-helper-1440",
+      "pass": true
+    },
+    {
+      "name": "legacy-server-direction-error-restores-selection-keeps-values-1440",
+      "pass": true
+    },
+    {
+      "name": "legacy-direction-error-1440-layout",
+      "pass": true
+    },
+    {
+      "name": "legacy-network-direction-error-restores-selection-keeps-values-1440",
+      "pass": true
+    },
+    {
+      "name": "legacy-direction-saved-1440-layout",
+      "pass": true
+    },
+    {
+      "name": "legacy-direction-retry-patch-busy-save-reload-keeps-id-name-price-duration-1440",
+      "pass": true
+    },
+    {
+      "name": "invalid-direction-patch-keeps-all-service-values-1440",
+      "pass": true
+    },
+    {
+      "name": "foreign-direction-patch-404-preserves-foreign-studio-1440",
+      "pass": true
+    },
+    {
+      "name": "empty-service-form-390-layout",
+      "pass": true
+    },
+    {
+      "name": "empty-list-preserved-approved-cabinet-390",
+      "pass": true
+    },
+    {
+      "name": "native-missing-name-blocks-request-390",
+      "pass": true
+    },
+    {
+      "name": "native-missing-price-blocks-request-390",
+      "pass": true
+    },
+    {
+      "name": "native-missing-duration-blocks-request-390",
+      "pass": true
+    },
+    {
+      "name": "native-missing-direction-blocks-request-390",
+      "pass": true
+    },
+    {
+      "name": "native-negative-price-blocks-request-390",
+      "pass": true
+    },
+    {
+      "name": "native-too-high-price-blocks-request-390",
+      "pass": true
+    },
+    {
+      "name": "native-short-duration-blocks-request-390",
+      "pass": true
+    },
+    {
+      "name": "native-long-duration-blocks-request-390",
+      "pass": true
+    },
+    {
+      "name": "native-fraction-price-blocks-request-390",
+      "pass": true
+    },
+    {
+      "name": "native-fraction-duration-blocks-request-390",
+      "pass": true
+    },
+    {
+      "name": "whitespace-name-server-error-without-data-loss-390",
+      "pass": true
+    },
+    {
+      "name": "api-missing-name-400-keeps-services-390",
+      "pass": true
+    },
+    {
+      "name": "api-missing-price-400-keeps-services-390",
+      "pass": true
+    },
+    {
+      "name": "api-missing-duration-400-keeps-services-390",
+      "pass": true
+    },
+    {
+      "name": "api-negative-price-400-keeps-services-390",
+      "pass": true
+    },
+    {
+      "name": "api-too-high-price-400-keeps-services-390",
+      "pass": true
+    },
+    {
+      "name": "api-short-duration-400-keeps-services-390",
+      "pass": true
+    },
+    {
+      "name": "api-long-duration-400-keeps-services-390",
+      "pass": true
+    },
+    {
+      "name": "api-non-numeric-price-400-keeps-services-390",
+      "pass": true
+    },
+    {
+      "name": "api-non-numeric-duration-400-keeps-services-390",
+      "pass": true
+    },
+    {
+      "name": "api-foreign-direction-400-keeps-services-390",
+      "pass": true
+    },
+    {
+      "name": "api-padded-direction-400-keeps-services-390",
+      "pass": true
+    },
+    {
+      "name": "api-invalid-direction-type-400-keeps-services-390",
+      "pass": true
+    },
+    {
+      "name": "valid-boundary-0-5-save-reload-390",
+      "pass": true
+    },
+    {
+      "name": "valid-boundary-1000000-720-save-reload-390",
+      "pass": true
+    },
+    {
+      "name": "valid-boundaries-390-layout",
+      "pass": true
+    },
+    {
+      "name": "add-server-error-visible-fields-and-database-preserved-390",
+      "pass": true
+    },
+    {
+      "name": "add-server-error-390-layout",
+      "pass": true
+    },
+    {
+      "name": "add-server-retry-saves-once-and-reloads-390",
+      "pass": true
+    },
+    {
+      "name": "add-network-error-visible-fields-and-database-preserved-390",
+      "pass": true
+    },
+    {
+      "name": "add-network-error-390-layout",
+      "pass": true
+    },
+    {
+      "name": "add-network-retry-saves-once-and-reloads-390",
+      "pass": true
+    },
+    {
+      "name": "double-synchronous-submit-one-post-busy-fields-disabled-390",
+      "pass": true
+    },
+    {
+      "name": "legacy-needs-direction-390-layout",
+      "pass": true
+    },
+    {
+      "name": "legacy-multi-category-empty-direction-clear-helper-390",
+      "pass": true
+    },
+    {
+      "name": "legacy-server-direction-error-restores-selection-keeps-values-390",
+      "pass": true
+    },
+    {
+      "name": "legacy-direction-error-390-layout",
+      "pass": true
+    },
+    {
+      "name": "legacy-network-direction-error-restores-selection-keeps-values-390",
+      "pass": true
+    },
+    {
+      "name": "legacy-direction-saved-390-layout",
+      "pass": true
+    },
+    {
+      "name": "legacy-direction-retry-patch-busy-save-reload-keeps-id-name-price-duration-390",
+      "pass": true
+    },
+    {
+      "name": "invalid-direction-patch-keeps-all-service-values-390",
+      "pass": true
+    },
+    {
+      "name": "foreign-direction-patch-404-preserves-foreign-studio-390",
+      "pass": true
+    },
+    {
+      "name": "empty-service-form-320-layout",
+      "pass": true
+    },
+    {
+      "name": "empty-list-preserved-approved-cabinet-320",
+      "pass": true
+    },
+    {
+      "name": "native-missing-name-blocks-request-320",
+      "pass": true
+    },
+    {
+      "name": "native-missing-price-blocks-request-320",
+      "pass": true
+    },
+    {
+      "name": "native-missing-duration-blocks-request-320",
+      "pass": true
+    },
+    {
+      "name": "native-missing-direction-blocks-request-320",
+      "pass": true
+    },
+    {
+      "name": "native-negative-price-blocks-request-320",
+      "pass": true
+    },
+    {
+      "name": "native-too-high-price-blocks-request-320",
+      "pass": true
+    },
+    {
+      "name": "native-short-duration-blocks-request-320",
+      "pass": true
+    },
+    {
+      "name": "native-long-duration-blocks-request-320",
+      "pass": true
+    },
+    {
+      "name": "native-fraction-price-blocks-request-320",
+      "pass": true
+    },
+    {
+      "name": "native-fraction-duration-blocks-request-320",
+      "pass": true
+    },
+    {
+      "name": "whitespace-name-server-error-without-data-loss-320",
+      "pass": true
+    },
+    {
+      "name": "api-missing-name-400-keeps-services-320",
+      "pass": true
+    },
+    {
+      "name": "api-missing-price-400-keeps-services-320",
+      "pass": true
+    },
+    {
+      "name": "api-missing-duration-400-keeps-services-320",
+      "pass": true
+    },
+    {
+      "name": "api-negative-price-400-keeps-services-320",
+      "pass": true
+    },
+    {
+      "name": "api-too-high-price-400-keeps-services-320",
+      "pass": true
+    },
+    {
+      "name": "api-short-duration-400-keeps-services-320",
+      "pass": true
+    },
+    {
+      "name": "api-long-duration-400-keeps-services-320",
+      "pass": true
+    },
+    {
+      "name": "api-non-numeric-price-400-keeps-services-320",
+      "pass": true
+    },
+    {
+      "name": "api-non-numeric-duration-400-keeps-services-320",
+      "pass": true
+    },
+    {
+      "name": "api-foreign-direction-400-keeps-services-320",
+      "pass": true
+    },
+    {
+      "name": "api-padded-direction-400-keeps-services-320",
+      "pass": true
+    },
+    {
+      "name": "api-invalid-direction-type-400-keeps-services-320",
+      "pass": true
+    },
+    {
+      "name": "valid-boundary-0-5-save-reload-320",
+      "pass": true
+    },
+    {
+      "name": "valid-boundary-1000000-720-save-reload-320",
+      "pass": true
+    },
+    {
+      "name": "valid-boundaries-320-layout",
+      "pass": true
+    },
+    {
+      "name": "add-server-error-visible-fields-and-database-preserved-320",
+      "pass": true
+    },
+    {
+      "name": "add-server-error-320-layout",
+      "pass": true
+    },
+    {
+      "name": "add-server-retry-saves-once-and-reloads-320",
+      "pass": true
+    },
+    {
+      "name": "add-network-error-visible-fields-and-database-preserved-320",
+      "pass": true
+    },
+    {
+      "name": "add-network-error-320-layout",
+      "pass": true
+    },
+    {
+      "name": "add-network-retry-saves-once-and-reloads-320",
+      "pass": true
+    },
+    {
+      "name": "double-synchronous-submit-one-post-busy-fields-disabled-320",
+      "pass": true
+    },
+    {
+      "name": "legacy-needs-direction-320-layout",
+      "pass": true
+    },
+    {
+      "name": "legacy-multi-category-empty-direction-clear-helper-320",
+      "pass": true
+    },
+    {
+      "name": "legacy-server-direction-error-restores-selection-keeps-values-320",
+      "pass": true
+    },
+    {
+      "name": "legacy-direction-error-320-layout",
+      "pass": true
+    },
+    {
+      "name": "legacy-network-direction-error-restores-selection-keeps-values-320",
+      "pass": true
+    },
+    {
+      "name": "legacy-direction-saved-320-layout",
+      "pass": true
+    },
+    {
+      "name": "legacy-direction-retry-patch-busy-save-reload-keeps-id-name-price-duration-320",
+      "pass": true
+    },
+    {
+      "name": "invalid-direction-patch-keeps-all-service-values-320",
+      "pass": true
+    },
+    {
+      "name": "foreign-direction-patch-404-preserves-foreign-studio-320",
+      "pass": true
+    },
+    {
+      "name": "no-unhandled-javascript-page-errors",
+      "pass": true
+    },
+    {
+      "name": "synthetic-database-integrity-and-foreign-keys-after-stop",
+      "pass": true
+    }
+  ],
+  "pageErrors": [],
+  "layouts": [
+    {
+      "name": "empty-service-form-1440",
+      "horizontalOverflow": 0,
+      "actions": [
+        {
+          "label": "Название услуги",
+          "width": 1054.5625,
+          "height": 44
+        },
+        {
+          "label": "Цена от, ₽",
+          "width": 515.28125,
+          "height": 44
+        },
+        {
+          "label": "Длительность, мин",
+          "width": 257.640625,
+          "height": 44
+        },
+        {
+          "label": "НаправлениеВыберите направлениеМакияжБрови",
+          "width": 1054.5625,
+          "height": 44
+        },
+        {
+          "label": "Добавить услугу",
+          "width": 194.53125,
+          "height": 51
+        }
+      ]
+    },
+    {
+      "name": "valid-boundaries-1440",
+      "horizontalOverflow": 0,
+      "actions": [
+        {
+          "label": "Название услуги",
+          "width": 1054.5625,
+          "height": 44
+        },
+        {
+          "label": "Цена от, ₽",
+          "width": 515.28125,
+          "height": 44
+        },
+        {
+          "label": "Длительность, мин",
+          "width": 257.640625,
+          "height": 44
+        },
+        {
+          "label": "НаправлениеВыберите направлениеМакияжБрови",
+          "width": 1054.5625,
+          "height": 44
+        },
+        {
+          "label": "Добавить услугу",
+          "width": 194.53125,
+          "height": 51
+        },
+        {
+          "label": "НаправлениеВыберите направлениеМакияжБрови",
+          "width": 340,
+          "height": 44
+        },
+        {
+          "label": "Удалить услугу Нулевая цена и пять минут",
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "НаправлениеВыберите направлениеМакияжБрови",
+          "width": 340,
+          "height": 44
+        },
+        {
+          "label": "Удалить услугу Максимальная цена и длительность",
+          "width": 44,
+          "height": 44
+        }
+      ]
+    },
+    {
+      "name": "add-server-error-1440",
+      "horizontalOverflow": 0,
+      "actions": [
+        {
+          "label": "Название услуги",
+          "width": 1054.5625,
+          "height": 44
+        },
+        {
+          "label": "Цена от, ₽",
+          "width": 515.28125,
+          "height": 44
+        },
+        {
+          "label": "Длительность, мин",
+          "width": 257.640625,
+          "height": 44
+        },
+        {
+          "label": "НаправлениеВыберите направлениеМакияжБрови",
+          "width": 1054.5625,
+          "height": 44
+        },
+        {
+          "label": "Добавить услугу",
+          "width": 194.53125,
+          "height": 51
+        },
+        {
+          "label": "НаправлениеВыберите направлениеМакияжБрови",
+          "width": 340,
+          "height": 44
+        },
+        {
+          "label": "Удалить услугу Нулевая цена и пять минут",
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "НаправлениеВыберите направлениеМакияжБрови",
+          "width": 340,
+          "height": 44
+        },
+        {
+          "label": "Удалить услугу Максимальная цена и длительность",
+          "width": 44,
+          "height": 44
+        }
+      ]
+    },
+    {
+      "name": "add-network-error-1440",
+      "horizontalOverflow": 0,
+      "actions": [
+        {
+          "label": "Название услуги",
+          "width": 1054.5625,
+          "height": 44
+        },
+        {
+          "label": "Цена от, ₽",
+          "width": 515.28125,
+          "height": 44
+        },
+        {
+          "label": "Длительность, мин",
+          "width": 257.640625,
+          "height": 44
+        },
+        {
+          "label": "НаправлениеВыберите направлениеМакияжБрови",
+          "width": 1054.5625,
+          "height": 44
+        },
+        {
+          "label": "Добавить услугу",
+          "width": 194.53125,
+          "height": 51
+        },
+        {
+          "label": "НаправлениеВыберите направлениеМакияжБрови",
+          "width": 340,
+          "height": 44
+        },
+        {
+          "label": "Удалить услугу Нулевая цена и пять минут",
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "НаправлениеВыберите направлениеМакияжБрови",
+          "width": 340,
+          "height": 44
+        },
+        {
+          "label": "Удалить услугу Максимальная цена и длительность",
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "НаправлениеВыберите направлениеМакияжБрови",
+          "width": 340,
+          "height": 44
+        },
+        {
+          "label": "Удалить услугу Повтор после server",
+          "width": 44,
+          "height": 44
+        }
+      ]
+    },
+    {
+      "name": "legacy-needs-direction-1440",
+      "horizontalOverflow": 0,
+      "actions": [
+        {
+          "label": "Название услуги",
+          "width": 1054.5625,
+          "height": 44
+        },
+        {
+          "label": "Цена от, ₽",
+          "width": 515.28125,
+          "height": 44
+        },
+        {
+          "label": "Длительность, мин",
+          "width": 257.640625,
+          "height": 44
+        },
+        {
+          "label": "НаправлениеВыберите направлениеМакияжБрови",
+          "width": 1054.5625,
+          "height": 44
+        },
+        {
+          "label": "Добавить услугу",
+          "width": 194.53125,
+          "height": 51
+        },
+        {
+          "label": "НаправлениеВыберите направлениеМакияжБрови",
+          "width": 340,
+          "height": 44
+        },
+        {
+          "label": "Удалить услугу Нулевая цена и пять минут",
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "НаправлениеВыберите направлениеМакияжБрови",
+          "width": 340,
+          "height": 44
+        },
+        {
+          "label": "Удалить услугу Максимальная цена и длительность",
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "НаправлениеВыберите направлениеМакияжБрови",
+          "width": 340,
+          "height": 44
+        },
+        {
+          "label": "Удалить услугу Повтор после server",
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "НаправлениеВыберите направлениеМакияжБрови",
+          "width": 340,
+          "height": 44
+        },
+        {
+          "label": "Удалить услугу Повтор после network",
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "НаправлениеВыберите направлениеМакияжБрови",
+          "width": 340,
+          "height": 44
+        },
+        {
+          "label": "Удалить услугу Одна услуга при двойном нажатии",
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "НаправлениеВыберите направлениеМакияжБрови",
+          "width": 340,
+          "height": 44
+        },
+        {
+          "label": "Удалить услугу Старая услуга без направления",
+          "width": 44,
+          "height": 44
+        }
+      ]
+    },
+    {
+      "name": "legacy-direction-error-1440",
+      "horizontalOverflow": 0,
+      "actions": [
+        {
+          "label": "Цена от, ₽",
+          "width": 515.28125,
+          "height": 44
+        },
+        {
+          "label": "Длительность, мин",
+          "width": 257.640625,
+          "height": 44
+        },
+        {
+          "label": "НаправлениеВыберите направлениеМакияжБрови",
+          "width": 1054.5625,
+          "height": 44
+        },
+        {
+          "label": "Добавить услугу",
+          "width": 194.53125,
+          "height": 51
+        },
+        {
+          "label": "НаправлениеВыберите направлениеМакияжБрови",
+          "width": 340,
+          "height": 44
+        },
+        {
+          "label": "Удалить услугу Нулевая цена и пять минут",
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "НаправлениеВыберите направлениеМакияжБрови",
+          "width": 340,
+          "height": 44
+        },
+        {
+          "label": "Удалить услугу Максимальная цена и длительность",
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "НаправлениеВыберите направлениеМакияжБрови",
+          "width": 340,
+          "height": 44
+        },
+        {
+          "label": "Удалить услугу Повтор после server",
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "НаправлениеВыберите направлениеМакияжБрови",
+          "width": 340,
+          "height": 44
+        },
+        {
+          "label": "Удалить услугу Повтор после network",
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "НаправлениеВыберите направлениеМакияжБрови",
+          "width": 340,
+          "height": 44
+        },
+        {
+          "label": "Удалить услугу Одна услуга при двойном нажатии",
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "НаправлениеВыберите направлениеМакияжБрови",
+          "width": 340,
+          "height": 44
+        },
+        {
+          "label": "Удалить услугу Старая услуга без направления",
+          "width": 44,
+          "height": 44
+        }
+      ]
+    },
+    {
+      "name": "legacy-direction-saved-1440",
+      "horizontalOverflow": 0,
+      "actions": [
+        {
+          "label": "Название услуги",
+          "width": 1054.5625,
+          "height": 44
+        },
+        {
+          "label": "Цена от, ₽",
+          "width": 515.28125,
+          "height": 44
+        },
+        {
+          "label": "Длительность, мин",
+          "width": 257.640625,
+          "height": 44
+        },
+        {
+          "label": "НаправлениеВыберите направлениеМакияжБрови",
+          "width": 1054.5625,
+          "height": 44
+        },
+        {
+          "label": "Добавить услугу",
+          "width": 194.53125,
+          "height": 51
+        },
+        {
+          "label": "НаправлениеВыберите направлениеМакияжБрови",
+          "width": 340,
+          "height": 44
+        },
+        {
+          "label": "Удалить услугу Нулевая цена и пять минут",
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "НаправлениеВыберите направлениеМакияжБрови",
+          "width": 340,
+          "height": 44
+        },
+        {
+          "label": "Удалить услугу Максимальная цена и длительность",
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "НаправлениеВыберите направлениеМакияжБрови",
+          "width": 340,
+          "height": 44
+        },
+        {
+          "label": "Удалить услугу Повтор после server",
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "НаправлениеВыберите направлениеМакияжБрови",
+          "width": 340,
+          "height": 44
+        },
+        {
+          "label": "Удалить услугу Повтор после network",
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "НаправлениеВыберите направлениеМакияжБрови",
+          "width": 340,
+          "height": 44
+        },
+        {
+          "label": "Удалить услугу Одна услуга при двойном нажатии",
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "НаправлениеВыберите направлениеМакияжБрови",
+          "width": 340,
+          "height": 44
+        },
+        {
+          "label": "Удалить услугу Старая услуга без направления",
+          "width": 44,
+          "height": 44
+        }
+      ]
+    },
+    {
+      "name": "empty-service-form-390",
+      "horizontalOverflow": 0,
+      "actions": [
+        {
+          "label": "Название услуги",
+          "width": 290,
+          "height": 44
+        },
+        {
+          "label": "Цена от, ₽",
+          "width": 139,
+          "height": 44
+        },
+        {
+          "label": "Длительность, мин",
+          "width": 139,
+          "height": 44
+        },
+        {
+          "label": "НаправлениеВыберите направлениеМакияжБрови",
+          "width": 290,
+          "height": 44
+        },
+        {
+          "label": "Добавить услугу",
+          "width": 290,
+          "height": 44
+        }
+      ]
+    },
+    {
+      "name": "valid-boundaries-390",
+      "horizontalOverflow": 0,
+      "actions": [
+        {
+          "label": "Название услуги",
+          "width": 290,
+          "height": 44
+        },
+        {
+          "label": "Цена от, ₽",
+          "width": 139,
+          "height": 44
+        },
+        {
+          "label": "Длительность, мин",
+          "width": 139,
+          "height": 44
+        },
+        {
+          "label": "НаправлениеВыберите направлениеМакияжБрови",
+          "width": 290,
+          "height": 44
+        },
+        {
+          "label": "Добавить услугу",
+          "width": 290,
+          "height": 44
+        },
+        {
+          "label": "НаправлениеВыберите направлениеМакияжБрови",
+          "width": 256,
+          "height": 44
+        },
+        {
+          "label": "Удалить услугу Нулевая цена и пять минут",
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "НаправлениеВыберите направлениеМакияжБрови",
+          "width": 256,
+          "height": 44
+        },
+        {
+          "label": "Удалить услугу Максимальная цена и длительность",
+          "width": 44,
+          "height": 44
+        }
+      ]
+    },
+    {
+      "name": "add-server-error-390",
+      "horizontalOverflow": 0,
+      "actions": [
+        {
+          "label": "Название услуги",
+          "width": 290,
+          "height": 44
+        },
+        {
+          "label": "Цена от, ₽",
+          "width": 139,
+          "height": 44
+        },
+        {
+          "label": "Длительность, мин",
+          "width": 139,
+          "height": 44
+        },
+        {
+          "label": "НаправлениеВыберите направлениеМакияжБрови",
+          "width": 290,
+          "height": 44
+        },
+        {
+          "label": "Добавить услугу",
+          "width": 290,
+          "height": 44
+        },
+        {
+          "label": "НаправлениеВыберите направлениеМакияжБрови",
+          "width": 256,
+          "height": 44
+        },
+        {
+          "label": "Удалить услугу Нулевая цена и пять минут",
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "НаправлениеВыберите направлениеМакияжБрови",
+          "width": 256,
+          "height": 44
+        },
+        {
+          "label": "Удалить услугу Максимальная цена и длительность",
+          "width": 44,
+          "height": 44
+        }
+      ]
+    },
+    {
+      "name": "add-network-error-390",
+      "horizontalOverflow": 0,
+      "actions": [
+        {
+          "label": "Название услуги",
+          "width": 290,
+          "height": 44
+        },
+        {
+          "label": "Цена от, ₽",
+          "width": 139,
+          "height": 44
+        },
+        {
+          "label": "Длительность, мин",
+          "width": 139,
+          "height": 44
+        },
+        {
+          "label": "НаправлениеВыберите направлениеМакияжБрови",
+          "width": 290,
+          "height": 44
+        },
+        {
+          "label": "Добавить услугу",
+          "width": 290,
+          "height": 44
+        },
+        {
+          "label": "НаправлениеВыберите направлениеМакияжБрови",
+          "width": 256,
+          "height": 44
+        },
+        {
+          "label": "Удалить услугу Нулевая цена и пять минут",
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "НаправлениеВыберите направлениеМакияжБрови",
+          "width": 256,
+          "height": 44
+        },
+        {
+          "label": "Удалить услугу Максимальная цена и длительность",
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "НаправлениеВыберите направлениеМакияжБрови",
+          "width": 256,
+          "height": 44
+        },
+        {
+          "label": "Удалить услугу Повтор после server",
+          "width": 44,
+          "height": 44
+        }
+      ]
+    },
+    {
+      "name": "legacy-needs-direction-390",
+      "horizontalOverflow": 0,
+      "actions": [
+        {
+          "label": "Название услуги",
+          "width": 290,
+          "height": 44
+        },
+        {
+          "label": "Цена от, ₽",
+          "width": 139,
+          "height": 44
+        },
+        {
+          "label": "Длительность, мин",
+          "width": 139,
+          "height": 44
+        },
+        {
+          "label": "НаправлениеВыберите направлениеМакияжБрови",
+          "width": 290,
+          "height": 44
+        },
+        {
+          "label": "Добавить услугу",
+          "width": 290,
+          "height": 44
+        },
+        {
+          "label": "НаправлениеВыберите направлениеМакияжБрови",
+          "width": 256,
+          "height": 44
+        },
+        {
+          "label": "Удалить услугу Нулевая цена и пять минут",
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "НаправлениеВыберите направлениеМакияжБрови",
+          "width": 256,
+          "height": 44
+        },
+        {
+          "label": "Удалить услугу Максимальная цена и длительность",
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "НаправлениеВыберите направлениеМакияжБрови",
+          "width": 256,
+          "height": 44
+        },
+        {
+          "label": "Удалить услугу Повтор после server",
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "НаправлениеВыберите направлениеМакияжБрови",
+          "width": 256,
+          "height": 44
+        },
+        {
+          "label": "Удалить услугу Повтор после network",
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "НаправлениеВыберите направлениеМакияжБрови",
+          "width": 256,
+          "height": 44
+        },
+        {
+          "label": "Удалить услугу Одна услуга при двойном нажатии",
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "НаправлениеВыберите направлениеМакияжБрови",
+          "width": 256,
+          "height": 44
+        },
+        {
+          "label": "Удалить услугу Старая услуга без направления",
+          "width": 44,
+          "height": 44
+        }
+      ]
+    },
+    {
+      "name": "legacy-direction-error-390",
+      "horizontalOverflow": 0,
+      "actions": [
+        {
+          "label": "Название услуги",
+          "width": 290,
+          "height": 44
+        },
+        {
+          "label": "Цена от, ₽",
+          "width": 139,
+          "height": 44
+        },
+        {
+          "label": "Длительность, мин",
+          "width": 139,
+          "height": 44
+        },
+        {
+          "label": "НаправлениеВыберите направлениеМакияжБрови",
+          "width": 290,
+          "height": 44
+        },
+        {
+          "label": "Добавить услугу",
+          "width": 290,
+          "height": 44
+        },
+        {
+          "label": "НаправлениеВыберите направлениеМакияжБрови",
+          "width": 256,
+          "height": 44
+        },
+        {
+          "label": "Удалить услугу Нулевая цена и пять минут",
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "НаправлениеВыберите направлениеМакияжБрови",
+          "width": 256,
+          "height": 44
+        },
+        {
+          "label": "Удалить услугу Максимальная цена и длительность",
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "НаправлениеВыберите направлениеМакияжБрови",
+          "width": 256,
+          "height": 44
+        },
+        {
+          "label": "Удалить услугу Повтор после server",
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "НаправлениеВыберите направлениеМакияжБрови",
+          "width": 256,
+          "height": 44
+        },
+        {
+          "label": "Удалить услугу Повтор после network",
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "НаправлениеВыберите направлениеМакияжБрови",
+          "width": 256,
+          "height": 44
+        },
+        {
+          "label": "Удалить услугу Одна услуга при двойном нажатии",
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "НаправлениеВыберите направлениеМакияжБрови",
+          "width": 256,
+          "height": 44
+        },
+        {
+          "label": "Удалить услугу Старая услуга без направления",
+          "width": 44,
+          "height": 44
+        }
+      ]
+    },
+    {
+      "name": "legacy-direction-saved-390",
+      "horizontalOverflow": 0,
+      "actions": [
+        {
+          "label": "Название услуги",
+          "width": 290,
+          "height": 44
+        },
+        {
+          "label": "Цена от, ₽",
+          "width": 139,
+          "height": 44
+        },
+        {
+          "label": "Длительность, мин",
+          "width": 139,
+          "height": 44
+        },
+        {
+          "label": "НаправлениеВыберите направлениеМакияжБрови",
+          "width": 290,
+          "height": 44
+        },
+        {
+          "label": "Добавить услугу",
+          "width": 290,
+          "height": 44
+        },
+        {
+          "label": "НаправлениеВыберите направлениеМакияжБрови",
+          "width": 256,
+          "height": 44
+        },
+        {
+          "label": "Удалить услугу Нулевая цена и пять минут",
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "НаправлениеВыберите направлениеМакияжБрови",
+          "width": 256,
+          "height": 44
+        },
+        {
+          "label": "Удалить услугу Максимальная цена и длительность",
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "НаправлениеВыберите направлениеМакияжБрови",
+          "width": 256,
+          "height": 44
+        },
+        {
+          "label": "Удалить услугу Повтор после server",
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "НаправлениеВыберите направлениеМакияжБрови",
+          "width": 256,
+          "height": 44
+        },
+        {
+          "label": "Удалить услугу Повтор после network",
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "НаправлениеВыберите направлениеМакияжБрови",
+          "width": 256,
+          "height": 44
+        },
+        {
+          "label": "Удалить услугу Одна услуга при двойном нажатии",
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "НаправлениеВыберите направлениеМакияжБрови",
+          "width": 256,
+          "height": 44
+        },
+        {
+          "label": "Удалить услугу Старая услуга без направления",
+          "width": 44,
+          "height": 44
+        }
+      ]
+    },
+    {
+      "name": "empty-service-form-320",
+      "horizontalOverflow": 0,
+      "actions": [
+        {
+          "label": "Название услуги",
+          "width": 220,
+          "height": 44
+        },
+        {
+          "label": "Цена от, ₽",
+          "width": 104,
+          "height": 44
+        },
+        {
+          "label": "Длительность, мин",
+          "width": 104.625,
+          "height": 44
+        },
+        {
+          "label": "НаправлениеВыберите направлениеМакияжБрови",
+          "width": 220,
+          "height": 44
+        },
+        {
+          "label": "Добавить услугу",
+          "width": 220,
+          "height": 44
+        }
+      ]
+    },
+    {
+      "name": "valid-boundaries-320",
+      "horizontalOverflow": 0,
+      "actions": [
+        {
+          "label": "Название услуги",
+          "width": 220,
+          "height": 44
+        },
+        {
+          "label": "Цена от, ₽",
+          "width": 104,
+          "height": 44
+        },
+        {
+          "label": "Длительность, мин",
+          "width": 104.625,
+          "height": 44
+        },
+        {
+          "label": "НаправлениеВыберите направлениеМакияжБрови",
+          "width": 220,
+          "height": 44
+        },
+        {
+          "label": "Добавить услугу",
+          "width": 220,
+          "height": 44
+        },
+        {
+          "label": "НаправлениеВыберите направлениеМакияжБрови",
+          "width": 186,
+          "height": 44
+        },
+        {
+          "label": "Удалить услугу Нулевая цена и пять минут",
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "НаправлениеВыберите направлениеМакияжБрови",
+          "width": 186,
+          "height": 44
+        },
+        {
+          "label": "Удалить услугу Максимальная цена и длительность",
+          "width": 44,
+          "height": 44
+        }
+      ]
+    },
+    {
+      "name": "add-server-error-320",
+      "horizontalOverflow": 0,
+      "actions": [
+        {
+          "label": "Название услуги",
+          "width": 220,
+          "height": 44
+        },
+        {
+          "label": "Цена от, ₽",
+          "width": 104,
+          "height": 44
+        },
+        {
+          "label": "Длительность, мин",
+          "width": 104.625,
+          "height": 44
+        },
+        {
+          "label": "НаправлениеВыберите направлениеМакияжБрови",
+          "width": 220,
+          "height": 44
+        },
+        {
+          "label": "Добавить услугу",
+          "width": 220,
+          "height": 44
+        },
+        {
+          "label": "НаправлениеВыберите направлениеМакияжБрови",
+          "width": 186,
+          "height": 44
+        },
+        {
+          "label": "Удалить услугу Нулевая цена и пять минут",
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "НаправлениеВыберите направлениеМакияжБрови",
+          "width": 186,
+          "height": 44
+        },
+        {
+          "label": "Удалить услугу Максимальная цена и длительность",
+          "width": 44,
+          "height": 44
+        }
+      ]
+    },
+    {
+      "name": "add-network-error-320",
+      "horizontalOverflow": 0,
+      "actions": [
+        {
+          "label": "Название услуги",
+          "width": 220,
+          "height": 44
+        },
+        {
+          "label": "Цена от, ₽",
+          "width": 104,
+          "height": 44
+        },
+        {
+          "label": "Длительность, мин",
+          "width": 104.625,
+          "height": 44
+        },
+        {
+          "label": "НаправлениеВыберите направлениеМакияжБрови",
+          "width": 220,
+          "height": 44
+        },
+        {
+          "label": "Добавить услугу",
+          "width": 220,
+          "height": 44
+        },
+        {
+          "label": "НаправлениеВыберите направлениеМакияжБрови",
+          "width": 186,
+          "height": 44
+        },
+        {
+          "label": "Удалить услугу Нулевая цена и пять минут",
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "НаправлениеВыберите направлениеМакияжБрови",
+          "width": 186,
+          "height": 44
+        },
+        {
+          "label": "Удалить услугу Максимальная цена и длительность",
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "НаправлениеВыберите направлениеМакияжБрови",
+          "width": 186,
+          "height": 44
+        },
+        {
+          "label": "Удалить услугу Повтор после server",
+          "width": 44,
+          "height": 44
+        }
+      ]
+    },
+    {
+      "name": "legacy-needs-direction-320",
+      "horizontalOverflow": 0,
+      "actions": [
+        {
+          "label": "Название услуги",
+          "width": 220,
+          "height": 44
+        },
+        {
+          "label": "Цена от, ₽",
+          "width": 104,
+          "height": 44
+        },
+        {
+          "label": "Длительность, мин",
+          "width": 104.625,
+          "height": 44
+        },
+        {
+          "label": "НаправлениеВыберите направлениеМакияжБрови",
+          "width": 220,
+          "height": 44
+        },
+        {
+          "label": "Добавить услугу",
+          "width": 220,
+          "height": 44
+        },
+        {
+          "label": "НаправлениеВыберите направлениеМакияжБрови",
+          "width": 186,
+          "height": 44
+        },
+        {
+          "label": "Удалить услугу Нулевая цена и пять минут",
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "НаправлениеВыберите направлениеМакияжБрови",
+          "width": 186,
+          "height": 44
+        },
+        {
+          "label": "Удалить услугу Максимальная цена и длительность",
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "НаправлениеВыберите направлениеМакияжБрови",
+          "width": 186,
+          "height": 44
+        },
+        {
+          "label": "Удалить услугу Повтор после server",
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "НаправлениеВыберите направлениеМакияжБрови",
+          "width": 186,
+          "height": 44
+        },
+        {
+          "label": "Удалить услугу Повтор после network",
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "НаправлениеВыберите направлениеМакияжБрови",
+          "width": 186,
+          "height": 44
+        },
+        {
+          "label": "Удалить услугу Одна услуга при двойном нажатии",
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "НаправлениеВыберите направлениеМакияжБрови",
+          "width": 186,
+          "height": 44
+        },
+        {
+          "label": "Удалить услугу Старая услуга без направления",
+          "width": 44,
+          "height": 44
+        }
+      ]
+    },
+    {
+      "name": "legacy-direction-error-320",
+      "horizontalOverflow": 0,
+      "actions": [
+        {
+          "label": "Название услуги",
+          "width": 220,
+          "height": 44
+        },
+        {
+          "label": "Цена от, ₽",
+          "width": 104,
+          "height": 44
+        },
+        {
+          "label": "Длительность, мин",
+          "width": 104.625,
+          "height": 44
+        },
+        {
+          "label": "НаправлениеВыберите направлениеМакияжБрови",
+          "width": 220,
+          "height": 44
+        },
+        {
+          "label": "Добавить услугу",
+          "width": 220,
+          "height": 44
+        },
+        {
+          "label": "НаправлениеВыберите направлениеМакияжБрови",
+          "width": 186,
+          "height": 44
+        },
+        {
+          "label": "Удалить услугу Нулевая цена и пять минут",
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "НаправлениеВыберите направлениеМакияжБрови",
+          "width": 186,
+          "height": 44
+        },
+        {
+          "label": "Удалить услугу Максимальная цена и длительность",
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "НаправлениеВыберите направлениеМакияжБрови",
+          "width": 186,
+          "height": 44
+        },
+        {
+          "label": "Удалить услугу Повтор после server",
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "НаправлениеВыберите направлениеМакияжБрови",
+          "width": 186,
+          "height": 44
+        },
+        {
+          "label": "Удалить услугу Повтор после network",
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "НаправлениеВыберите направлениеМакияжБрови",
+          "width": 186,
+          "height": 44
+        },
+        {
+          "label": "Удалить услугу Одна услуга при двойном нажатии",
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "НаправлениеВыберите направлениеМакияжБрови",
+          "width": 186,
+          "height": 44
+        },
+        {
+          "label": "Удалить услугу Старая услуга без направления",
+          "width": 44,
+          "height": 44
+        }
+      ]
+    },
+    {
+      "name": "legacy-direction-saved-320",
+      "horizontalOverflow": 0,
+      "actions": [
+        {
+          "label": "Название услуги",
+          "width": 220,
+          "height": 44
+        },
+        {
+          "label": "Цена от, ₽",
+          "width": 104,
+          "height": 44
+        },
+        {
+          "label": "Длительность, мин",
+          "width": 104.625,
+          "height": 44
+        },
+        {
+          "label": "НаправлениеВыберите направлениеМакияжБрови",
+          "width": 220,
+          "height": 44
+        },
+        {
+          "label": "Добавить услугу",
+          "width": 220,
+          "height": 44
+        },
+        {
+          "label": "НаправлениеВыберите направлениеМакияжБрови",
+          "width": 186,
+          "height": 44
+        },
+        {
+          "label": "Удалить услугу Нулевая цена и пять минут",
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "НаправлениеВыберите направлениеМакияжБрови",
+          "width": 186,
+          "height": 44
+        },
+        {
+          "label": "Удалить услугу Максимальная цена и длительность",
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "НаправлениеВыберите направлениеМакияжБрови",
+          "width": 186,
+          "height": 44
+        },
+        {
+          "label": "Удалить услугу Повтор после server",
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "НаправлениеВыберите направлениеМакияжБрови",
+          "width": 186,
+          "height": 44
+        },
+        {
+          "label": "Удалить услугу Повтор после network",
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "НаправлениеВыберите направлениеМакияжБрови",
+          "width": 186,
+          "height": 44
+        },
+        {
+          "label": "Удалить услугу Одна услуга при двойном нажатии",
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "НаправлениеВыберите направлениеМакияжБрови",
+          "width": 186,
+          "height": 44
+        },
+        {
+          "label": "Удалить услугу Старая услуга без направления",
+          "width": 44,
+          "height": 44
+        }
+      ]
+    }
+  ],
+  "visual_review": {
+    "notes": "Messages and actions fit all widths; existing native select placeholder clips at320, selected directions and helper remain readable. No UI edits.",
+    "references": [
+      "docs/ui-concepts/2026-10-10-luma/cabinet-review-01/desktop.png",
+      "docs/ui-concepts/2026-10-10-luma/cabinet-review-01/mobile.png"
+    ],
+    "reviewed_pngs": 21,
+    "result": "PASS"
+  },
+  "bundle": "index-Bsde624L.js"
+}

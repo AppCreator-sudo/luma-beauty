@@ -1,0 +1,250 @@
+{
+  "startedAt": "2026-10-18T13:50:07.795Z",
+  "at": "2026-10-18T13:50:19.236Z",
+  "scope": "Focused shared WorkUpload regression, routed salon reference and fixed-author reference modes; fresh synthetic SQLite, generated media, fake address helper; no production access",
+  "frontendEntry": "index-BD2DiSeI.js",
+  "frontendEntrySha256": "5f7bdc4084e1cf39925e97a0a1d7e0f39276d3c69ede411b85678caf3af57d58",
+  "origin": "http://localhost:3269",
+  "fixture": "C:\\Users\\Admin\\Desktop\\pwa\\.cache\\u10-04-shared-1792331407751",
+  "fixtureStopped": true,
+  "widths": [
+    390
+  ],
+  "checks": [
+    {
+      "name": "shared-optional-pending-and-inline-success-defaults-preserved-in-source",
+      "pass": true
+    },
+    {
+      "name": "fresh-salon-and-ready-staff-synthetic-fixture",
+      "pass": true
+    },
+    {
+      "name": "salon-reference-photo-description-review-back-browser-back-retains-draft",
+      "pass": true
+    },
+    {
+      "name": "salon-description-back-390-no-overflow-touch-targets",
+      "pass": true
+    },
+    {
+      "name": "salon-reference-cancel-reopen-fresh-photo-step",
+      "pass": true
+    },
+    {
+      "name": "salon-reference-full-reload-fresh-photo-step",
+      "pass": true
+    },
+    {
+      "name": "salon-review-interior-390-no-overflow-touch-targets",
+      "pass": true
+    },
+    {
+      "name": "salon-reference-save-reload-interior-salon-context-one-post",
+      "pass": true
+    },
+    {
+      "name": "fixed-author-reference-requires-service-back-browser-back-retains-author-service-photo-caption",
+      "pass": true
+    },
+    {
+      "name": "fixed-author-back-390-no-overflow-touch-targets",
+      "pass": true
+    },
+    {
+      "name": "fixed-author-reference-cancel-reopen-fresh-photo-step-same-author",
+      "pass": true
+    },
+    {
+      "name": "fixed-author-reference-full-reload-fresh-photo-step-same-author",
+      "pass": true
+    },
+    {
+      "name": "fixed-author-review-390-no-overflow-touch-targets",
+      "pass": true
+    },
+    {
+      "name": "fixed-author-reference-save-reload-same-author-service-no-other-author-or-duplicate-post",
+      "pass": true
+    },
+    {
+      "name": "no-unhandled-javascript-errors",
+      "pass": true
+    },
+    {
+      "name": "synthetic-database-integrity-and-foreign-keys-after-stop",
+      "pass": true
+    }
+  ],
+  "pageErrors": [],
+  "layouts": [
+    {
+      "name": "salon-description-back-390",
+      "horizontalOverflow": 0,
+      "controls": [
+        {
+          "label": "1Фото",
+          "width": 100,
+          "height": 48
+        },
+        {
+          "label": "2Описание",
+          "width": 100,
+          "height": 48
+        },
+        {
+          "label": "3Проверка",
+          "width": 100,
+          "height": 48
+        },
+        {
+          "label": "Вид публикации",
+          "width": 316,
+          "height": 44
+        },
+        {
+          "label": "caption",
+          "width": 316,
+          "height": 94
+        },
+        {
+          "label": "Назад",
+          "width": 72.296875,
+          "height": 44
+        },
+        {
+          "label": "Далее",
+          "width": 235.703125,
+          "height": 44
+        }
+      ]
+    },
+    {
+      "name": "salon-review-interior-390",
+      "horizontalOverflow": 0,
+      "controls": [
+        {
+          "label": "1Фото",
+          "width": 100,
+          "height": 48
+        },
+        {
+          "label": "2Описание",
+          "width": 100,
+          "height": 48
+        },
+        {
+          "label": "3Проверка",
+          "width": 100,
+          "height": 48
+        },
+        {
+          "label": "Назад",
+          "width": 72.296875,
+          "height": 44
+        },
+        {
+          "label": "Опубликовать",
+          "width": 235.703125,
+          "height": 44
+        }
+      ]
+    },
+    {
+      "name": "fixed-author-back-390",
+      "horizontalOverflow": 0,
+      "controls": [
+        {
+          "label": "1Фото",
+          "width": 100,
+          "height": 48
+        },
+        {
+          "label": "2Описание",
+          "width": 100,
+          "height": 48
+        },
+        {
+          "label": "3Проверка",
+          "width": 100,
+          "height": 48
+        },
+        {
+          "label": "service_id",
+          "width": 316,
+          "height": 44
+        },
+        {
+          "label": "Добавить новую услугу",
+          "width": 163.9375,
+          "height": 44
+        },
+        {
+          "label": "caption",
+          "width": 316,
+          "height": 94
+        },
+        {
+          "label": "Назад",
+          "width": 72.296875,
+          "height": 44
+        },
+        {
+          "label": "Далее",
+          "width": 235.703125,
+          "height": 44
+        }
+      ]
+    },
+    {
+      "name": "fixed-author-review-390",
+      "horizontalOverflow": 0,
+      "controls": [
+        {
+          "label": "1Фото",
+          "width": 100,
+          "height": 48
+        },
+        {
+          "label": "2Описание",
+          "width": 100,
+          "height": 48
+        },
+        {
+          "label": "3Проверка",
+          "width": 100,
+          "height": 48
+        },
+        {
+          "label": "Назад",
+          "width": 72.296875,
+          "height": 44
+        },
+        {
+          "label": "Опубликовать",
+          "width": 235.703125,
+          "height": 44
+        }
+      ]
+    }
+  ],
+  "screenshots": [
+    "shared-salon-description-back-390.png",
+    "shared-salon-review-interior-390.png",
+    "shared-fixed-author-back-390.png",
+    "shared-fixed-author-review-390.png"
+  ],
+  "observations": [
+    {
+      "salonMode": "reference; requireService=false; photo-description-review",
+      "fixedAuthorMode": "reference; requireService=true; immutable performer_id",
+      "publicationPosts": 2,
+      "published": 2,
+      "otherAuthorWorks": 0
+    }
+  ],
+  "limits": [
+    "StaffPortfolio is currently not imported/routed; its optional callback/pending defaults are checked in source only.",
+    "This focused regression does not repeat image limits, master full wizard acceptance, full salon flows, or deployment verification."
+  ]
+}
