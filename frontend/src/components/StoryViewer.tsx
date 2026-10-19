@@ -8,6 +8,7 @@ import '../stories.css';
 type Props = {
   authors: StoryAuthor[];
   initialAuthorIndex?: number;
+  initialStoryId?: string;
   onClose: () => void;
 };
 
@@ -20,10 +21,16 @@ function formatTimeAgo(timestamp: number): string {
   return `${diffHours} ч назад`;
 }
 
-export function StoryViewer({ authors, initialAuthorIndex = 0, onClose }: Props) {
+export function StoryViewer({ authors, initialAuthorIndex = 0, initialStoryId, onClose }: Props) {
   const navigate = useNavigate();
   const [authorIndex, setAuthorIndex] = useState(initialAuthorIndex);
-  const [storyIndex, setStoryIndex] = useState(0);
+  const [storyIndex, setStoryIndex] = useState(() => {
+    if (initialStoryId && authors[initialAuthorIndex]?.stories) {
+      const idx = authors[initialAuthorIndex].stories.findIndex(s => s.id === initialStoryId);
+      if (idx !== -1) return idx;
+    }
+    return 0;
+  });
   const [progress, setProgress] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const touchStartY = useRef<number | null>(null);

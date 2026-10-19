@@ -1,0 +1,29 @@
+{
+  "tag": "20261019-v2-stories-ui-polish",
+  "previous": "20261019-v2-stories-crop-polish",
+  "at": 1792394408.202608,
+  "current": "/opt/atelie/releases/20261019-v2-stories-ui-polish",
+  "entry": "index-BE7f_AGt.js",
+  "service": "active",
+  "health": true,
+  "schema_evolution_verified": true,
+  "preserved_tables": 48,
+  "preserved_rows_at_switch": 210,
+  "business_sessions_media_preserved_at_switch": true,
+  "shared_inodes_preserved": true,
+  "backup": "/opt/atelie/backups/20261019-v2-stories-ui-polish",
+  "pre_switch_sha256": "1a38971ffae9c13577ddad33eb993b2e42bddc74863b2a1a161a90167feff8e5",
+  "files": 146,
+  "read_checks": [
+    "/api/health",
+    "/api/me",
+    "/api/profiles",
+    "/api/inspiration",
+    "/api/map/viewport?bbox=37.5,55.6,37.8,55.9&zoom=12",
+    "/api/stories/active",
+    "/v2/",
+    "/sw.js",
+    "entry-asset"
+  ],
+  "rollback": "Code-only switch to 20261019-v2-stories-crop-polish; retain current shared database/uploads"
+}

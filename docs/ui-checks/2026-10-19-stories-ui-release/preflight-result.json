@@ -1,0 +1,28 @@
+{
+  "tag": "20261019-v2-stories-ui-polish",
+  "baseline": "20261019-v2-stories-crop-polish",
+  "at": 1792394368.0916147,
+  "archive_sha256": "0caedeaf3cdb76830df53e2481f6dfd9445321ccc13a6f6774d4cc3f15427d58",
+  "backup": "/opt/atelie/backups/20261019-v2-stories-ui-polish",
+  "snapshot_sha256": "1a38971ffae9c13577ddad33eb993b2e42bddc74863b2a1a161a90167feff8e5",
+  "files": 146,
+  "tables": 46,
+  "rows": 206,
+  "schema_and_business_preserved": true,
+  "production_data_not_replaced": true,
+  "read_checks": [
+    "/api/health",
+    "/api/me",
+    "/api/profiles",
+    "/api/inspiration",
+    "/api/map/viewport?bbox=37.5,55.6,37.8,55.9&zoom=12",
+    "/api/stories/active",
+    "/v2/",
+    "/sw.js",
+    "entry-asset",
+    "/api/studio"
+  ],
+  "smoke_stopped": true,
+  "smoke_copy_removed": true,
+  "entry": "index-BE7f_AGt.js"
+}

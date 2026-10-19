@@ -135,16 +135,44 @@ async function run() {
     await masterPage.getByRole('button', { name: 'Опубликовать историю' }).click();
     await expect(masterPage.locator('.story-upload-form')).toBeVisible();
 
-    // Fill upload form
+    // Fill upload form - test live preview
     const fileInput = masterPage.locator('.story-upload-form input[type=file]');
     await fileInput.setInputFiles(storyPhotoPath);
-    await masterPage.locator('.story-upload-form textarea').fill('Окна на вечерний макияж со скидкой 15% ✨ Запись в один клик!');
-    await masterPage.locator('.story-upload-form select').selectOption(svc.id);
+    await masterPage.locator('.story-form-textarea').fill('Окна на вечерний макияж со скидкой 15% ✨ Запись в один клик!');
+    await masterPage.locator('.story-form-select').selectOption(svc.id);
+
+    // Verify live preview overlay is visible in the 9:16 frame
+    await expect(masterPage.locator('.story-preview-overlay')).toBeVisible();
+    await expect(masterPage.locator('.story-preview-caption-text')).toContainText('Окна на вечерний макияж');
+    await expect(masterPage.locator('.story-preview-cta-pill')).toBeVisible();
+
+    await masterPage.screenshot({ path: path.join(out, '01-studio-stories-form-open-1440.png'), fullPage: true });
 
     // Click submit
     await masterPage.getByRole('button', { name: 'Опубликовать на 24 часа' }).click();
     await expect(masterPage.locator('.story-card')).toBeVisible();
     console.log('Story successfully published in Studio cabinet!');
+
+    // Test editing the active story
+    await masterPage.locator('.story-action-btn.edit').click();
+    await expect(masterPage.locator('.story-form-header h3')).toContainText('Настройки активной истории');
+    await masterPage.locator('.story-form-textarea').fill('Обновленный текст: Последнее окно на сегодня!');
+    await masterPage.screenshot({ path: path.join(out, '01-studio-stories-form-edit-1440.png'), fullPage: true });
+    await masterPage.getByRole('button', { name: 'Сохранить изменения' }).click();
+    await expect(masterPage.locator('.story-card-caption')).toContainText('Обновленный текст: Последнее окно на сегодня!');
+    console.log('Story edit successfully tested!');
+
+    // Revert text back with service for catalog/viewer test
+    await masterPage.locator('.story-action-btn.edit').click();
+    await masterPage.locator('.story-form-textarea').fill('Окна на вечерний макияж со скидкой 15% ✨ Запись в один клик!');
+    await masterPage.locator('.story-form-select').selectOption(svc.id);
+    await masterPage.getByRole('button', { name: 'Сохранить изменения' }).click();
+
+    // Test author preview from cabinet
+    await masterPage.locator('.story-card-preview-trigger').click();
+    await expect(masterPage.locator('.story-viewer-overlay')).toBeVisible();
+    await masterPage.keyboard.press('Escape');
+    await expect(masterPage.locator('.story-viewer-overlay')).toHaveCount(0);
 
     await masterPage.screenshot({ path: path.join(out, '01-studio-stories-cabinet-1440.png'), fullPage: true });
 
@@ -206,12 +234,18 @@ async function run() {
       await expect(visitorPage.locator('.public-identity')).toBeVisible();
       await checkOverflow(visitorPage, `Public master profile ${width}px`);
 
-      // Verify profile header avatar has the story ring
-      const profileAvatarRing = visitorPage.locator('.public-identity .story-avatar-ring');
-      await expect(profileAvatarRing).toBeVisible();
+      // Verify profile header avatar has the story ring class directly on .public-avatar
+      const profileAvatar = visitorPage.locator('.public-identity .public-avatar.public-avatar-has-story');
+      await expect(profileAvatar).toBeVisible();
+
+      // Check avatar dimensions - must NOT be shrunken (should be >= 140px on desktop)
+      const box = await profileAvatar.boundingBox();
+      assert.ok(box && box.width >= (width === 1440 ? 140 : 80), `Avatar width must be full size, got: ${box?.width}`);
+
+      await visitorPage.screenshot({ path: path.join(out, `04-public-profile-${width}.png`) });
 
       // Click avatar to open story
-      await profileAvatarRing.click();
+      await profileAvatar.click();
       await expect(visitorPage.locator('.story-viewer-overlay')).toBeVisible();
 
       // Click Direct Booking CTA button and verify navigation to booking
@@ -226,7 +260,7 @@ async function run() {
     await masterPage.bringToFront();
     // Handle dialog
     masterPage.on('dialog', d => d.accept());
-    await masterPage.locator('.story-card-delete').click();
+    await masterPage.locator('.story-action-btn.delete').click();
     await expect(masterPage.locator('.story-card')).toHaveCount(0);
     console.log('Story deleted successfully!');
 

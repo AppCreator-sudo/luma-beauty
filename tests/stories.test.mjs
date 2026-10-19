@@ -140,11 +140,28 @@ test('stories lifecycle: upload, 24h expiration, active feed, direct CTA, slug q
   assert.equal(mine.data.length, 2);
   assert.equal(mine.data[0].remaining_hours, 24);
 
-  // 8. Other user cannot delete master's story
+  // 8. Other user cannot edit master's story
+  const editForbidden = await other.call('/stories/' + story1Id, { caption: 'Hacked caption' }, 'PATCH');
+  assert.equal(editForbidden.status, 403);
+
+  // 9. Master can edit caption and attach service
+  const editSuccess = await master.call('/stories/' + story1Id, { caption: 'Обновленная подпись к истории', service_id: serviceId }, 'PATCH');
+  assert.equal(editSuccess.status, 200);
+  assert.ok(editSuccess.data.ok);
+  assert.equal(editSuccess.data.story.caption, 'Обновленная подпись к истории');
+  assert.equal(editSuccess.data.story.service_id, serviceId);
+
+  // Verify edited story in active feed
+  const feedEdited = await visitor.call('/stories/active');
+  const foundEdited = feedEdited.data[0].stories.find(s => s.id === story1Id);
+  assert.equal(foundEdited.caption, 'Обновленная подпись к истории');
+  assert.equal(foundEdited.service_id, serviceId);
+
+  // 10. Other user cannot delete master's story
   const deleteForbidden = await other.call('/stories/' + story1Id, undefined, 'DELETE');
   assert.equal(deleteForbidden.status, 403);
 
-  // 9. Master deletes story 1
+  // 11. Master deletes story 1
   const deleteSuccess = await master.call('/stories/' + story1Id, undefined, 'DELETE');
   assert.equal(deleteSuccess.status, 200);
   assert.ok(deleteSuccess.data.ok);

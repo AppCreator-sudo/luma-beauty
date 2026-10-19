@@ -3,7 +3,6 @@ import {MapPin,Star} from 'lucide-react';
 import type {Review} from '../lib/api';
 import '../public-page-identity.css';
 import {ProfileBadges} from './ProfileBadges';
-import {StoryRingAvatar} from './StoryRingAvatar';
 
 export function PublicPageCover({cover,theme='green',children}:{cover?:string;theme?:string;children?:ReactNode}) {
   return <div className={'public-cover public-cover-'+theme+(cover?' public-cover-photo':'')}>
@@ -20,14 +19,20 @@ export function PublicPageIdentity({name,image,salon=false,teaches,models,addres
   const Heading=heading;
   const avatarContent = image ? <img src={image} alt={(salon ? 'Логотип ' : 'Фото ') + name} /> : <span aria-hidden="true">{Array.from(name.trim())[0] || 'L'}</span>;
   return <section className="public-identity">
-    <div className="public-avatar">
-      {hasStory ? (
-        <StoryRingAvatar hasStory={true} size={92} onClick={onStoryClick}>
-          {avatarContent}
-        </StoryRingAvatar>
-      ) : (
-        avatarContent
-      )}
+    <div
+      className={'public-avatar' + (hasStory ? ' public-avatar-has-story' : '')}
+      onClick={hasStory ? onStoryClick : undefined}
+      role={hasStory ? 'button' : undefined}
+      tabIndex={hasStory ? 0 : undefined}
+      aria-label={hasStory ? `Смотреть истории: ${name}` : undefined}
+      onKeyDown={e => {
+        if (hasStory && onStoryClick && (e.key === 'Enter' || e.key === ' ')) {
+          e.preventDefault();
+          onStoryClick();
+        }
+      }}
+    >
+      {avatarContent}
       {imageControls}
     </div>
     <Heading className="public-identity-title">{name}</Heading><div className="public-identity-copy"><ProfileBadges className="public-kind" salon={salon} teaches={teaches} models={models}/><div className="public-profile-meta">{address?<p className="public-address"><MapPin size={14}/><span>{address}</span></p>:null}{categories?.length?<p className="public-categories">{categories.join(' · ')}</p>:null}</div>

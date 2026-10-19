@@ -1,4 +1,4 @@
-const CACHE='luma-v2-shell-20261019-v2-stories-crop-polish';
+const CACHE='luma-v2-shell-20261019-v2-stories-ui-polish';
 const SHELL=['/v2/','/v2/hero-v2.webp','/assets/ornament.webp','/favicon.svg','/icon-192.png','/icon-512.png'];
 self.addEventListener('install',e=>{e.waitUntil((async()=>{const cache=await caches.open(CACHE);await cache.addAll(SHELL);const html=await (await cache.match('/v2/')).text();const assets=[...html.matchAll(/(?:src|href)="(\/v2\/assets\/[^\"]+)"/g)].map(match=>match[1]);if(assets.length)await cache.addAll(assets)})());self.skipWaiting()});
 self.addEventListener('activate',e=>e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));

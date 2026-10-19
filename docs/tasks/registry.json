@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-19T13:40:00+07:00",
+  "updated_at": "2026-10-19T14:20:00+07:00",
   "timezone": "Asia/Novosibirsk",
   "next_task_id": "BUG-019",
   "tasks": [
@@ -2887,8 +2887,8 @@
       "approved_at": "2026-10-19",
       "started_at": "2026-10-19T12:20:00+07:00",
       "local_done_at": "2026-10-19T12:35:00+07:00",
-      "verified_at": "2026-10-19T12:38:10+07:00",
-      "published_at": "2026-10-19T13:38:23+07:00",
+      "verified_at": "2026-10-19T14:13:00+07:00",
+      "published_at": "2026-10-19T14:20:00+07:00",
       "due_at": null,
       "owner_chat": "текущий чат / Stories 24h",
       "card": "F-14.md",
