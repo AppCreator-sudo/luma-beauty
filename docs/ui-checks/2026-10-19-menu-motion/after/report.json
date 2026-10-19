@@ -1,36 +1,214 @@
 {
-  "at": "2026-10-19T05:12:07.478Z",
+  "at": "2026-10-19T09:40:59.624Z",
   "before": false,
   "browserVersion": "155.0.8059.82",
-  "entry": "index-BieFBA8y.js",
+  "entry": "index-D89ms70a.js",
   "scope": "Isolated SQLite; browser-only client mocks; 4x CPU Chrome desktop emulation, not physical phone performance proof",
   "checks": [
+    {
+      "name": "auth-open-layout-scroll-lock-touch",
+      "pass": true
+    },
+    {
+      "name": "auth-no-hamburger-before-exit",
+      "pass": true
+    },
+    {
+      "name": "auth-close-restores-focus-scroll",
+      "pass": true
+    },
+    {
+      "name": "auth-escape",
+      "pass": true
+    },
+    {
+      "name": "auth-browser-back",
+      "pass": true
+    },
+    {
+      "name": "auth-rapid-close",
+      "pass": true
+    },
+    {
+      "name": "auth-backdrop-close",
+      "pass": true
+    },
+    {
+      "name": "auth-menu-navigation-back-does-not-reopen",
+      "pass": true
+    },
+    {
+      "name": "home-open-layout-scroll-lock-touch",
+      "pass": true
+    },
+    {
+      "name": "home-no-hamburger-before-exit",
+      "pass": true
+    },
+    {
+      "name": "home-close-restores-focus-scroll",
+      "pass": true
+    },
+    {
+      "name": "home-escape",
+      "pass": true
+    },
+    {
+      "name": "home-browser-back",
+      "pass": true
+    },
+    {
+      "name": "home-rapid-close",
+      "pass": true
+    },
+    {
+      "name": "client-open-layout-scroll-lock-touch",
+      "pass": true
+    },
+    {
+      "name": "client-no-hamburger-before-exit",
+      "pass": true
+    },
+    {
+      "name": "client-close-restores-focus-scroll",
+      "pass": true
+    },
+    {
+      "name": "client-escape",
+      "pass": true
+    },
+    {
+      "name": "client-browser-back",
+      "pass": true
+    },
+    {
+      "name": "client-rapid-close",
+      "pass": true
+    },
+    {
+      "name": "narrow-open-layout-scroll-lock-touch",
+      "pass": true
+    },
+    {
+      "name": "narrow-no-hamburger-before-exit",
+      "pass": true
+    },
+    {
+      "name": "narrow-close-restores-focus-scroll",
+      "pass": true
+    },
+    {
+      "name": "narrow-escape",
+      "pass": true
+    },
+    {
+      "name": "narrow-browser-back",
+      "pass": true
+    },
+    {
+      "name": "narrow-rapid-close",
+      "pass": true
+    },
+    {
+      "name": "desktop-open-layout-scroll-lock-touch",
+      "pass": true
+    },
+    {
+      "name": "desktop-no-hamburger-before-exit",
+      "pass": true
+    },
+    {
+      "name": "desktop-close-restores-focus-scroll",
+      "pass": true
+    },
+    {
+      "name": "desktop-escape",
+      "pass": true
+    },
+    {
+      "name": "desktop-browser-back",
+      "pass": true
+    },
+    {
+      "name": "desktop-rapid-close",
+      "pass": true
+    },
     {
       "name": "reduced-open-layout-scroll-lock-touch",
       "pass": true
     },
     {
-      "name": "runner",
-      "pass": false,
-      "message": "expect(locator).toBeFocused() failed\n\nLocator:  locator('button[aria-expanded][aria-label*=\"Открыть\"]').visible().last()\nExpected: focused\nReceived: inactive\nTimeout:  5000ms\n\nCall log:\n  - Expect \"toBeFocused\" locator('button[aria-expanded][aria-label*=\"Открыть\"]').visible().last() with timeout 5000ms\n  - waiting for locator('button[aria-expanded][aria-label*=\"Открыть\"]').visible().last()\n    13 × locator resolved to <button type=\"button\" aria-expanded=\"false\" aria-label=\"Открыть меню\" class=\"public-menu-toggle\" aria-controls=\"public-reference-menu\">…</button>\n       - unexpected value \"inactive\"\n"
+      "name": "reduced-close-restores-focus-scroll",
+      "pass": true
+    },
+    {
+      "name": "reduced-escape",
+      "pass": true
+    },
+    {
+      "name": "reduced-browser-back",
+      "pass": true
+    },
+    {
+      "name": "reduced-rapid-close",
+      "pass": true
+    },
+    {
+      "name": "no-js-errors-or-writes",
+      "pass": true
     }
   ],
   "measurements": [
     {
-      "name": "reduced",
+      "name": "auth",
       "width": 390,
       "height": 844,
       "cpuThrottle": 4,
-      "reducedMotion": true,
+      "reducedMotion": false,
       "metrics": {
-        "LayoutDuration": 0.015063,
-        "RecalcStyleDuration": 0.042988,
-        "TaskDuration": 0.557238
+        "LayoutDuration": 0.022325,
+        "RecalcStyleDuration": 0.113793,
+        "TaskDuration": 0.7772030000000001
       },
       "frames": {
-        "count": 35,
-        "over34ms": 4,
-        "max": 100.19999999999993
+        "count": 29,
+        "over34ms": 5,
+        "max": 133.5999999999999
+      },
+      "layout": {
+        "overflow": 0,
+        "scrollLock": "hidden",
+        "blur": "none",
+        "backdropBlur": "blur(5px)",
+        "radius": "8px",
+        "buttons": [
+          {
+            "width": 44,
+            "height": 44
+          }
+        ],
+        "animations": 0
+      },
+      "closing": {
+        "dialogPresent": true,
+        "visibleHamburgers": 0
+      }
+    },
+    {
+      "name": "home",
+      "width": 390,
+      "height": 844,
+      "cpuThrottle": 4,
+      "reducedMotion": false,
+      "metrics": {
+        "LayoutDuration": 0.05594,
+        "RecalcStyleDuration": 0.188828,
+        "TaskDuration": 0.8891070000000001
+      },
+      "frames": {
+        "count": 42,
+        "over34ms": 3,
+        "max": 133.60000000000014
       },
       "layout": {
         "overflow": 0,
@@ -47,47 +225,148 @@
         "animations": 0
       },
       "closing": {
-        "dialogPresent": false,
-        "visibleHamburgers": 1
+        "dialogPresent": true,
+        "visibleHamburgers": 0
       }
     },
     {
-      "name": "reduced-focus-debug",
-      "data": {
-        "active": "<body style=\"\">\n    <div id=\"root\"><a class=\"skip-link\" href=\"#main\">К содержимому</a><header class=\"public-reference-header\"><div class=\"public-header-inner\"><a class=\"cabinet-brand\" aria-label=\"Luma Beauty — главная\" href=\"/v2\" data-discover=\"true\"",
-        "hasFocus": true,
-        "restoreRAF": {
-          "dialogs": [],
-          "buttons": [
-            {
-              "visibility": "hidden",
-              "expanded": "false"
-            }
-          ]
-        },
-        "log": [
+      "name": "client",
+      "width": 390,
+      "height": 844,
+      "cpuThrottle": 4,
+      "reducedMotion": false,
+      "metrics": {
+        "LayoutDuration": 0.052685,
+        "RecalcStyleDuration": 0.062736,
+        "TaskDuration": 0.583086
+      },
+      "frames": {
+        "count": 30,
+        "over34ms": 6,
+        "max": 133.60000000000002
+      },
+      "layout": {
+        "overflow": 0,
+        "scrollLock": "hidden",
+        "blur": "none",
+        "backdropBlur": "blur(5px)",
+        "radius": "8px",
+        "buttons": [
           {
-            "t": 764.6999999880791,
-            "tag": "BUTTON",
-            "class": "public-menu-toggle"
-          },
-          {
-            "t": 1077.2999999523163,
-            "tag": "BUTTON",
-            "class": "luma-menu-scrim"
-          },
-          {
-            "t": 2601.099999964237,
-            "tag": "BUTTON",
-            "class": "luma-menu-close"
+            "width": 44,
+            "height": 44
           }
         ],
-        "visibility": [
+        "animations": 11
+      },
+      "closing": {
+        "dialogPresent": true,
+        "visibleHamburgers": 0
+      }
+    },
+    {
+      "name": "narrow",
+      "width": 320,
+      "height": 568,
+      "cpuThrottle": 4,
+      "reducedMotion": false,
+      "metrics": {
+        "LayoutDuration": 0.021362,
+        "RecalcStyleDuration": 0.144049,
+        "TaskDuration": 0.806393
+      },
+      "frames": {
+        "count": 39,
+        "over34ms": 4,
+        "max": 100.39999999999986
+      },
+      "layout": {
+        "overflow": 0,
+        "scrollLock": "hidden",
+        "blur": "none",
+        "backdropBlur": "blur(5px)",
+        "radius": "8px",
+        "buttons": [
           {
-            "style": "",
-            "expanded": "false"
+            "width": 44,
+            "height": 44
           }
-        ]
+        ],
+        "animations": 0
+      },
+      "closing": {
+        "dialogPresent": true,
+        "visibleHamburgers": 0
+      }
+    },
+    {
+      "name": "desktop",
+      "width": 1440,
+      "height": 900,
+      "cpuThrottle": 4,
+      "reducedMotion": false,
+      "metrics": {
+        "LayoutDuration": 0.091064,
+        "RecalcStyleDuration": 0.176399,
+        "TaskDuration": 0.926597
+      },
+      "frames": {
+        "count": 35,
+        "over34ms": 4,
+        "max": 133.60000000000014
+      },
+      "layout": {
+        "overflow": 0,
+        "scrollLock": "hidden",
+        "blur": "blur(5px)",
+        "backdropBlur": "none",
+        "radius": "8px",
+        "buttons": [
+          {
+            "width": 46,
+            "height": 46
+          }
+        ],
+        "animations": 0
+      },
+      "closing": {
+        "dialogPresent": true,
+        "visibleHamburgers": 0
+      }
+    },
+    {
+      "name": "reduced",
+      "width": 390,
+      "height": 844,
+      "cpuThrottle": 4,
+      "reducedMotion": true,
+      "metrics": {
+        "LayoutDuration": 0.020377,
+        "RecalcStyleDuration": 0.040165,
+        "TaskDuration": 0.537594
+      },
+      "frames": {
+        "count": 40,
+        "over34ms": 4,
+        "max": 117
+      },
+      "layout": {
+        "overflow": 0,
+        "scrollLock": "hidden",
+        "blur": "none",
+        "backdropBlur": "blur(5px)",
+        "radius": "8px",
+        "buttons": [
+          {
+            "width": 44,
+            "height": 44
+          }
+        ],
+        "animations": 0
+      },
+      "closing": {
+        "dialogPresent": false,
+        "visibleHamburgers": 1
       }
     }
   ],

@@ -22,25 +22,39 @@ function MenuSurface({ close, trigger, id, label, drawer, children }: MenuProps)
     return () => window.removeEventListener('resize', update);
   }, [trigger]);
   useLayoutEffect(() => {
-    const top = window.scrollY, left = window.scrollX, href = window.location.href;
-    const body = document.body, html = document.documentElement;
+    const html = document.documentElement;
+    const body = document.body;
     const surface = dialog.current;
     const opener = trigger.current;
-    const saved = { position: body.style.position, top: body.style.top, left: body.style.left, right: body.style.right, width: body.style.width, overflow: html.style.overflow, overscroll: html.style.overscrollBehavior };
-    body.style.position = 'fixed'; body.style.top = -top + 'px'; body.style.left = '0'; body.style.right = '0'; body.style.width = '100%';
-    html.style.overflow = 'hidden'; html.style.overscrollBehavior = 'none';
+    const savedHtmlOverflow = html.style.overflow;
+    const savedHtmlOverscroll = html.style.overscrollBehavior;
+    const savedBodyOverflow = body.style.overflow;
+    html.style.overflow = 'hidden';
+    html.style.overscrollBehavior = 'none';
+    body.style.overflow = 'hidden';
     surface?.showModal();
     return () => {
       surface?.close();
-      Object.assign(body.style, { position: saved.position, top: saved.top, left: saved.left, right: saved.right, width: saved.width });
-      html.style.overflow = saved.overflow; html.style.overscrollBehavior = saved.overscroll;
-      window.scrollTo({ left, top: window.location.href === href ? top : 0, behavior: 'instant' });
-      requestAnimationFrame(() => {
-        if (opener?.isConnected && !document.querySelector('dialog[open]')) opener.focus({ preventScroll: true });
-      });
+      html.style.overflow = savedHtmlOverflow;
+      html.style.overscrollBehavior = savedHtmlOverscroll;
+      body.style.overflow = savedBodyOverflow;
+      const restoreFocus = () => {
+        if (opener?.isConnected) opener.focus({ preventScroll: true });
+      };
+      restoreFocus();
+      requestAnimationFrame(restoreFocus);
+      setTimeout(restoreFocus, 16);
+      setTimeout(restoreFocus, 60);
     };
   }, [trigger]);
-  const style = !drawer && rect ? { '--menu-anchor-top': Math.round(rect.bottom + 16) + 'px', '--menu-anchor-right': Math.max(16, Math.round(window.innerWidth - rect.right)) + 'px', '--menu-close-top': Math.round(rect.top) + 'px', '--menu-close-right': Math.round(window.innerWidth - rect.right) + 'px' } as CSSProperties : undefined;
+  const style = !drawer && rect ? {
+    '--menu-anchor-top': Math.round(rect.bottom + 16) + 'px',
+    '--menu-anchor-right': Math.max(16, Math.round(window.innerWidth - rect.right)) + 'px',
+    '--menu-close-top': rect.top + 'px',
+    '--menu-close-right': (window.innerWidth - rect.right) + 'px',
+    '--menu-close-width': rect.width + 'px',
+    '--menu-close-height': rect.height + 'px'
+  } as CSSProperties : undefined;
   return <dialog ref={dialog} className={'luma-menu-layer' + (drawer ? ' luma-menu-drawer' : '')} aria-label={label} style={style} onCancel={event => { event.preventDefault(); close(); }} onClickCapture={event => {
     const link = (event.target as Element).closest<HTMLAnchorElement>('a[href]');
     if (!link || event.defaultPrevented || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey || event.button !== 0 || link.target === '_blank') return;

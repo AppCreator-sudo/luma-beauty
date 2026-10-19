@@ -23,7 +23,7 @@
 .reference-catalog .compact-master-card-salon .compact-master-avatar{padding:0;border:1px solid #d8c5a7}
 .reference-catalog .compact-master-copy{display:flex;flex-direction:column}
 .reference-catalog .compact-master-copy h3{order:-1;font:27px/1.05 'Cormorant Garamond',serif;margin:0 0 4px}
-.reference-catalog .compact-master-copy h3>a{display:block;min-height:44px;max-height:none;overflow:visible}
+.reference-catalog .compact-master-copy h3>a{display:block;min-height:auto;max-height:none;overflow:visible}
 .reference-catalog .compact-master-kind{border:1px solid #d8c5a7;background:transparent;color:#a17d42;border-radius:4px;font-size:9px;padding:3px 7px}
 .reference-catalog .compact-master-location{font-size:10px;margin:5px 0}
 .reference-catalog .compact-master-directions{font-size:10px;margin:0 0 6px}
@@ -88,7 +88,35 @@
 @media(max-width:900px){.reference-masonry{--masonry-columns:2;--masonry-gap:12}.reference-catalog .compact-masters-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:760px){.reference-catalog,.reference-work{padding:18px 20px 14px}.reference-catalog .catalog-heading h1{font-size:36px}.reference-catalog .compact-masters-grid{grid-template-columns:1fr;gap:14px}.reference-catalog .catalog-search-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}.reference-catalog .catalog-search{grid-column:1/-1}.reference-catalog .catalog-filter-toggle{padding:8px 12px;font-size:20px}.reference-catalog .catalog-filters{grid-template-columns:1fr;padding:16px;gap:14px}.reference-catalog .catalog-reset{justify-self:start}.reference-catalog .catalog-result-heading{justify-content:flex-start}.reference-catalog .compact-master-card{padding:16px}.reference-catalog .compact-master-identity{grid-template-columns:84px minmax(0,1fr);gap:14px}.reference-catalog .compact-master-avatar{width:84px;height:84px}.reference-catalog .compact-master-copy h3{font-size:28px}.reference-catalog .compact-master-actions{flex-wrap:wrap}.reference-catalog .compact-master-book{margin:0;flex:1;min-width:150px;font-size:23px}.reference-catalog .compact-master-price{font-size:23px}.reference-show-more{margin-top:12px}.reference-show-more>button{width:100%}.reference-inspiration-heading{flex-direction:column;align-items:stretch;gap:12px}.reference-inspiration-heading label{flex:auto}.reference-masonry{--masonry-gap:12}.reference-inspiration-caption{font-size:20px;line-height:1.08}.reference-inspiration-author{gap:6px}.reference-inspiration-author b{font-size:10px}.reference-inspiration-author small{font-size:9px}.reference-inspiration-author>img,.reference-author-initial{width:30px;height:30px;flex-basis:30px}.reference-work .work-detail-grid{grid-template-columns:1fr;gap:24px}.reference-work .work-main-image{height:auto;max-height:none}.reference-work .work-main-image img{height:auto;max-height:none}.reference-work h1{font-size:36px;margin-bottom:18px}.reference-work .work-actions>.button{font-size:21px}.reference-work .work-thumbs>button{width:60px;height:60px;flex-basis:60px}.reference-work .work-service{padding:18px 0}.reference-work .work-master-line strong{font-size:27px}}
 @media(min-width:761px){.reference-catalog .compact-master-footer{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:8px;align-items:center;border-top:1px solid #e0d4c3;margin-top:auto;padding-top:8px;min-height:57px}.reference-catalog .compact-master-actions{display:contents}.reference-catalog .compact-master-price{grid-column:1;grid-row:1}.reference-catalog .compact-master-next{grid-column:2;grid-row:1;justify-self:center}.reference-catalog .compact-master-next svg{display:none}.reference-catalog .compact-master-book{grid-column:3;grid-row:1}}
-@media(max-width:760px){.reference-catalog .compact-master-identity{grid-template-columns:100px minmax(0,1fr);gap:0 14px}.reference-catalog .compact-master-avatar{width:100px;height:100px;grid-row:1/5;grid-column:1}.reference-catalog .compact-master-copy{display:contents}.reference-catalog .compact-master-copy h3{grid-column:2;grid-row:1}.reference-catalog .compact-master-tags{grid-column:2;grid-row:2}.reference-catalog .compact-master-rating{grid-column:2;grid-row:3;margin:5px 0}.reference-catalog .compact-master-location{grid-column:2;grid-row:4}.reference-catalog .compact-master-card-salon .compact-master-location{grid-row:4}.reference-catalog .compact-master-directions{grid-column:1/-1;grid-row:5;margin:12px 0 0;font-size:12px}.reference-catalog .compact-master-actions{flex-direction:column;align-items:stretch}.reference-catalog .compact-master-book{flex:none;width:100%}.reference-show-more>button{color:#70243d}}
-@media(max-width:380px){.reference-catalog .compact-master-identity{grid-template-columns:84px minmax(0,1fr);gap:0 12px}.reference-catalog .compact-master-avatar{width:84px;height:84px}}
-@media(max-width:380px){.reference-catalog,.reference-work{padding-inline:16px}.reference-catalog .catalog-heading h1{font-size:33px}.reference-catalog .compact-master-identity{grid-template-columns:72px minmax(0,1fr);gap:12px}.reference-catalog .compact-master-avatar{width:72px;height:72px}.reference-catalog .compact-master-copy h3{font-size:26px}.reference-catalog .compact-master-book{width:100%;flex:auto}.reference-catalog .compact-master-actions{gap:10px}.reference-masonry{--masonry-gap:10}.reference-inspiration-caption{font-size:18px}.reference-inspiration-author{gap:5px}.reference-inspiration-author>img,.reference-author-initial{width:28px;height:28px;flex-basis:28px}}
+@media(max-width:760px){
+  .reference-catalog .compact-master-card{padding:14px}
+  .reference-catalog .compact-master-identity{display:flex;flex-direction:row;align-items:flex-start;gap:12px}
+  .reference-catalog .compact-master-avatar{width:72px;height:72px;flex:0 0 72px;aspect-ratio:1;border-radius:50%;align-self:flex-start}
+  .reference-catalog .compact-master-card-salon .compact-master-avatar{padding:0}
+  .reference-catalog .compact-master-copy{display:flex;flex-direction:column;flex:1;min-width:0;gap:3px}
+  .reference-catalog .compact-master-copy h3{font:24px/1.1 'Cormorant Garamond',serif;margin:0}
+  .reference-catalog .compact-master-copy h3>a{display:inline-block;min-height:auto;max-height:none;overflow:visible;line-height:1.1;margin:0}
+  .reference-catalog .compact-master-tags{display:flex;flex-wrap:wrap;align-items:center;gap:4px;margin:2px 0 3px;min-height:auto}
+  .reference-catalog .compact-master-tags>span,.reference-catalog .compact-master-kind{font-size:10px;padding:2px 7px;min-height:20px;line-height:1.3;border-radius:4px;border:1px solid #d8c5a7;color:#a17d42;background:transparent}
+  .reference-catalog .compact-master-rating{font-size:11px;margin:1px 0;display:flex;align-items:center;gap:4px;line-height:1.4;color:#686155}
+  .reference-catalog .compact-master-location{font-size:11px;margin:1px 0;display:flex;flex-wrap:wrap;gap:3px 8px;line-height:1.4;color:#716c61}
+  .reference-catalog .compact-master-directions{margin:10px 0 0;font-size:11.5px;line-height:1.45;color:#625f55}
+  .reference-catalog .compact-master-actions{display:flex;flex-direction:column;align-items:stretch;gap:8px;padding-top:10px;border-top:1px solid #e0d4c3}
+  .reference-catalog .compact-master-price{font:20px/1.2 'Cormorant Garamond',serif;margin:0}
+  .reference-catalog .compact-master-book{width:100%;min-height:42px;font:18px/1.2 'Cormorant Garamond',serif;border-radius:4px;padding:9px 14px;justify-content:center;background:#70243d;color:#fff}
+  .reference-show-more>button{color:#70243d}
+}
+@media(max-width:380px){
+  .reference-catalog,.reference-work{padding-inline:14px}
+  .reference-catalog .catalog-heading h1{font-size:32px}
+  .reference-catalog .compact-master-card{padding:12px}
+  .reference-catalog .compact-master-identity{gap:10px}
+  .reference-catalog .compact-master-avatar{width:64px;height:64px;flex:0 0 64px}
+  .reference-catalog .compact-master-copy h3{font-size:22px}
+  .reference-catalog .compact-master-actions{gap:8px}
+  .reference-masonry{--masonry-gap:10}
+  .reference-inspiration-caption{font-size:18px}
+  .reference-inspiration-author{gap:5px}
+  .reference-inspiration-author>img,.reference-author-initial{width:28px;height:28px;flex-basis:28px}
+}
 @media(prefers-reduced-motion:reduce){.reference-masonry>article{animation:none}.reference-inspiration-photo img{transition:none}}
